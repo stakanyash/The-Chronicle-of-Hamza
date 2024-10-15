@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
+<resource>
+	<string
+		id="1"
+		modelName="mask_hero"
+		value="|Я пересёк Пустыню Смерти! И даже здесь – следы человека. Где только люди не селятся!"
+		sound="data\sounds\Speech\r4m1\r4m1_1_hero.ogg"
+		time="1" />
+
+	<string
+		id="2"
+		modelName="mask_hero"
+		value="|Прежде всего, надо найти мастерскую, где можно заправиться и починиться, а там посмотрим, что делать."
+		sound="data\sounds\Speech\r4m1\r4m1_2_hero.ogg"
+		time="1" />
+
+	<string
+		id="3"
+		modelName="mask_hero"
+		value="|Вот и Нефтехранилище, доехал без особых проблем. Сейчас загружу полный кузов и прицеп – и в обратный путь."
+		sound="data\sounds\Speech\r4m1\r4m1_3_hero.ogg"
+		time="1" />
+
+	<string
+		id="4"
+		image=""
+		value="Поздравляем! Вы выиграли гонку!"
+		time="5" />
+
+	<string
+		id="5"
+		image=""
+		value="Вы заняли призовое 2-ое место."
+		time="5" />
+
+	<string
+		id="6"
+		image=""
+		value="Вы заняли призовое 3-е место."
+		time="5" />
+
+	<string
+		id="7"
+		image=""
+		value="Вы проиграли гонку."
+		time="5" />
+
+	<string
+		id="8"
+		image=""
+		value="Вы разбили машину и не можете продолжить гонку."
+		time="5" />
+
+	<string
+		id="9"
+		image=""
+		value="Фальстарт! Вы проиграли."
+		time="5" />
+
+	<string
+		id="10"
+		modelName="mask_hero"
+		value="|Давно мечтал поездить на машине с прицепом. Мечты сбываются..."
+		sound="data\sounds\Speech\r4m1\r4m1_10_hero.ogg"
+		time="5" />
+
+	<string
+		id="11"
+		modelName="mask_hero"
+		value="|Мой родной грузовик. Я уж заскучал по нему! К чертям этот прицеп, меня и так всё устраивает."
+		sound="data\sounds\Speech\r4m1\r4m1_11_hero.ogg"
+		time="5" />
+<!-- Привезли бухарцев в порт -->
+	<string
+		id="12"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="135"
+		modelSlot="1"
+		value="СТАРИК|Вот мы и приехали в порт. Спасибо тебе за защиту от супостата."
+		sound="data\sounds\Speech\r4m1\r4m1_12_oldman.ogg"
+		time="5" />
+
+	<string
+		id="13"
+		modelName="mask_hero"
+		value="|Всегда пожалуйста. Удачно вам переправиться на другие земли."
+		sound="data\sounds\Speech\r4m1\r4m1_13_hero.ogg"
+		time="5" />
+<!-- Эта строка если с Лисой ехали -->
+	<string
+		id="14"
+		modelName="mask_hero"
+		value="|И заберите с собой Лису, а то с ней не всё в порядке."
+		sound="data\sounds\Speech\r4m1\r4m1_14_hero.ogg"
+		time="5" />
+
+	<string
+		id="15"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="135"
+		modelSlot="1"
+		value="СТАРИК|Сначала я не хотел тебе этого говорить, но тот человек, о котором ты спрашивал, действительно был в нашей деревне. Он отправился дальше на восток. Заклинаю тебя: не следуй за ним! Там тебя ждёт только смерть. Или то, что хуже смерти."
+		sound="data\sounds\Speech\r4m1\r4m1_15_oldman.ogg"
+		time="5" />
+<!-- Инженер сдох -->
+	<string
+		id="16"
+		modelName="mask_hero"
+		value="|Чёрт побери! Что же его так напугало? Совсем слетел с катушек, бедняга... Что я теперь скажу в городе?"
+		sound="data\sounds\Speech\r4m1\r4m1_16_hero.ogg"
+		time="5" />
+
+	<string
+		id="17"
+		modelName="mask_hero"
+		value="|А мне придётся как-то выкручиваться в Кефе."
+		sound="data\sounds\Speech\r4m1\r4m1_17_hero.ogg"
+		time="5" />
+<!-- Лиса бесится -->
+	<string
+		id="18"
+		modelName="mask_lisa"
+		modelSlot="1"
+		value="ЛИСА|Что-то мне нехорошо. Как только мы приехали в эту пустыню, я как-то странно себя чувствую."
+		sound="data\sounds\Speech\r4m1\r4m1_18_alice.ogg"
+		time="5" />
+
+	<string
+		id="19"
+		modelName="mask_hero"
+		value="|Крепись! Я чувствую, что мы уже недалеко от цели!"
+		sound="data\sounds\Speech\r4m1\r4m1_19_hero.ogg"
+		time="5" />
+
+	<string
+		id="20"
+		modelName="mask_lisa"
+		modelSlot="1"
+		value="ЛИСА|Всё из-за тебя! Это ты затащил меня сюда, а теперь собираешься бросить подыхать среди этих чёртовых дюн!"
+		sound="data\sounds\Speech\r4m1\r4m1_20_alice.ogg"
+		time="5" />
+
+	<string
+		id="21"
+		modelName="mask_hero"
+		value="|[Она, похоже, подвинулась рассудком. Этого мне только не хватало.] Послушай, Лиса, всё в порядке, у тебя тёплые ноги. Сосчитай до десяти и успокойся."
+		sound="data\sounds\Speech\r4m1\r4m1_21_hero.ogg"
+		time="1" />
+
+	<string
+		id="22"
+		modelName="mask_lisa"
+		modelSlot="1"
+		value="ЛИСА|Извини... Со мной что-то происходит... Постараюсь держать себя в руках... Эта пустыня... Давит на меня..."
+		sound="data\sounds\Speech\r4m1\r4m1_22_alice.ogg"
+		time="5" />
+
+<!-- The Chronicles of Hamza -->
+
+	<string
+		id="40"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Чёртовы безумцы. Откуда они берутся то?"
+		sound=""
+		time="3" />
+
+	<string
+		id="41"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Понятия не имею. Они просто появляются из ниоткуда и пытаются уничтожить всё, что видят на своём пути!"
+		sound=""
+		time="5" />
+
+	<string
+		id="42"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Они не могут появляться из пустоты. Может они из чужих земель приезжают?"
+		sound=""
+		time="4" />
+
+	<string
+		id="43"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Всё может быть, но они очень похожи на жителей наших земель. Может здесь было что-то такое, что некоторых превратило в безумцев?"
+		sound=""
+		time="7" />
+
+	<string
+		id="44"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Я что-то про это слышал. Но я не уверен в том, насколько это свя..."
+		sound=""
+		time="3" />
+
+	<string
+		id="45"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Опять эти безумцы! Атакуем их с двух сторон, иначе нам не выжить!"
+		sound=""
+		time="6" />
+
+	<string
+		id="46"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Проклятые безумцы, да откуда они всё лезут то? Мы еле уцелели!"
+		sound=""
+		time="4" />
+
+	<string
+		id="47"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Успокойся, Хамза. Злоба ничего хорошего сейчас не даст. Нам нужно побыстрее найти место, где можно починится, пока не наткнулись на ещё одну колонну безумцев."
+		sound=""
+		time="4" />
+
+	<string
+		id="48"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Ты прав. Так что ты там говорил до этого?"
+		sound=""
+		time="3" />
+
+	<string
+		id="49"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Ах, да. Я не уверен насколько это связано, но в мире очень давно произошла катастрофа, из-за которой погибло много людей. Как я читал в старых книгах, произошла она не прям, чтобы очень далеко отсюда. Возможно они лезут оттуда."
+		sound=""
+		time="10" />
+
+	<string
+		id="50"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Это интересно. Неужели за это время не было никого, кто бы решился устранить последствия катастрофы?"
+		sound=""
+		time="4" />
+
+	<string
+		id="51"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Этого я сказать увы не могу. Либо об этом нигде не написано, либо никто не отваживался на такой рискованный шаг. В любом случае, я замечал, что безумцы такие же молодые как и мы. И мне интересно: каким образом люди становятся безумцами?"
+		sound=""
+		time="10" />
+
+	<string
+		id="52"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Нашёл конечно кого спросить. Знать бы откуда они лезут, а ты хочешь узнать как именно люди становятся безумцами."
+		sound=""
+		time="4" />
+
+	<string
+		id="53"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Этот вопрос был адресован не тебе, успокойся, пожалуйста. Это был общий вопрос, на который ответа нет, увы."
+		sound=""
+		time="4" />
+
+	<string
+		id="54"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Да я и не нервничал, не волнуйся."
+		sound=""
+		time="3" />
+
+	<string
+		id="55"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|К слову, у меня тут лежит книга о катастрофе. Я её уже прочёл и мне она не нужна. Если хочешь - могу отдать."
+		sound=""
+		time="4" />
+
+	<string
+		id="56"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|А почему бы и нет? Почитаю на досуге."
+		sound=""
+		time="3" />
+
+	<string
+		id="57"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|О, а вот и заправка. Тут то мы и починимся."
+		sound=""
+		time="4" />
+
+	<string
+		id="58"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Давай я первым починюсь, если ты не против."
+		sound=""
+		time="3" />
+
+	<string
+		id="59"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Да, конечно. Стой, кажется по рации кто-то на связь выходит."
+		sound=""
+		time="3" />
+
+	<string
+		id="60"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Хамза, это отец. Ты где?"
+		sound=""
+		time="3" />
+
+	<string
+		id="61"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Недалеко с Мансуром езжу, а что?"
+		sound=""
+		time="3" />
+
+	<string
+		id="62"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Давай прекращай свои покатушки и езжай домой. Дело есть. Да и безумцы всё таки тут в округе, мало ли нарвёшься."
+		sound=""
+		time="4" />
+
+	<string
+		id="63"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Хорошо, отец. Скоро буду."
+		sound=""
+		time="3" />
+
+	<string
+		id="64"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Как хорошо, что мы нашли место, где починится, а то думаю отец не обрадуется, если увидит повреждённую машину. А ты я смотрю уже починился."
+		sound=""
+		time="6" />
+
+	<string
+		id="65"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Да, я уже починился. Мне нужно сейчас в другое место съездить, поэтому я поеду. Счастливо и береги себя."
+		sound=""
+		time="5" />
+
+	<string
+		id="66"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|До встречи!"
+		sound=""
+		time="2" />
+
+	<string
+		id="67"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Что ты хотел показать мне, отец?"
+		sound=""
+		time="3" />
+
+	<string
+		id="68"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Сын, я тут так подумал и решил, что наверное лучше мой Урал отдать тебе. Мне машина всё равно не нужна."
+		sound=""
+		time="5" />
+
+	<string
+		id="69"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Отец, ты уверен в этом? А если нужно будет куда-то съездить?"
+		sound=""
+		time="4" />
+
+	<string
+		id="70"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Поверь, мне проще будет попросить кого-нибудь меня подвезти. Ну или как вариант я могу ездить на твоём Молоковозе. Хотя если хочешь - можешь его продать."
+		sound=""
+		time="6" />
+
+	<string
+		id="71"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Ну хорошо. Спасибо огромное, отец. Я Молоковоз никуда продавать не буду, пусть будет на всякий случай."
+		sound=""
+		time="5" />
+
+	<string
+		id="72"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Слушай, отец, ты не будешь против, если я поеду встречусь с Мансуром?"
+		sound=""
+		time="4" />
+
+	<string
+		id="73"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Конечно езжай. Только не задерживайся до поздна, пожалуйста."
+		sound=""
+		time="3" />
+
+	<string
+		id="74"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Хорошо. Я поехал."
+		sound=""
+		time="2" />
+
+	<string
+		id="75"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Неплохая гонка выдалась, не так ли, Хамза?"
+		sound=""
+		time="5" />
+
+	<string
+		id="76"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Да, гонка была то, что надо!"
+		sound=""
+		time="4" />
+
+	<string
+		id="77"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Куда дальше поедем?"
+		sound=""
+		time="3" />
+
+	<string
+		id="78"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Не знаю, можем просто покататься, поговорить."
+		sound=""
+		time="4" />
+
+	<string
+		id="79"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Почему бы и не..."
+		sound=""
+		time="3" />
+
+	<string
+		id="80"
+		modelAutosized="true"
+		modelName="gadget_12"
+		modelSlot="1"
+		value="РАЦИЯ|Внимание всем! На Гадад совершено нападение безумцев! Нам нужна помощь в отражении атаки каждого, кто находится рядом!"
+		sound=""
+		time="7" />
+
+	<string
+		id="81"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Некогда нам кататься! Быстрее поехали отбивать нападение!"
+		sound=""
+		time="5" />
+
+	<string
+		id="82"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|О, боже, сколько же здесь этих безумцев. Нам будет явно не просто..."
+		sound=""
+		time="5" />
+
+	<string
+		id="83"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Давай смелее, мы же не можем просто стоять и смотреть!"
+		sound=""
+		time="4" />
+
+	<string
+		id="84"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Мы справились!"
+		sound=""
+		time="3" />
+
+	<string
+		id="85"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Слушай, похоже на какое-то организованное нападение. Разве может столько сильно вооруженных машин резко решить напасть на город?!"
+		sound=""
+		time="6" />
+
+	<string
+		id="86"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Да, очень похоже на организованное нападение... Но как-будто это впервые... Главное, что мы справились, остальное не так важно."
+		sound=""
+		time="5" />
+
+	<string
+		id="87"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Ты прав. У нас есть те, кто погиб?"
+		sound=""
+		time="4" />
+
+	<string
+		id="88"
+		modelName="r4_man"
+		modelSkin="2"
+		modelCfg="315"
+		modelSlot="1"
+		value="ДЖАМИЛЬ|Да, и их не мало. Скажу больше... Мансур..."
+		sound=""
+		time="5" />
+
+	<string
+		id="89"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Что?!"
+		sound=""
+		time="3" />
+
+	<string
+		id="90"
+		modelName="r4_man"
+		modelSkin="2"
+		modelCfg="315"
+		modelSlot="1"
+		value="ДЖАМИЛЬ|Твоя сестра к сожалению стала первой, которая погибла от рук безумцев... Её задело взрывной волной от ракеты..."
+		sound=""
+		time="6" />
+
+	<string
+		id="91"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Я не знаю, что сказать... Это безумные ракшаксы убили мою сестру!.."
+		sound=""
+		time="5" />
+
+	<string
+		id="92"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Мансур, мне очень жаль."
+		sound=""
+		time="4" />
+
+	<string
+		id="93"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Понятное дело тебе будет жаль... Ты же мой друг всё-таки..."
+		sound=""
+		time="5" />
+
+	<string
+		id="94"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Мансур, тебе ли не кажется, что пора действовать? Нам нужно узнать, откуда берутся эти безумцы и найти путь уничтожить их!"
+		sound=""
+		time="7" />
+
+	<string
+		id="95"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Хамза... Не сейчас, прошу тебя... Оставь меня в покое..."
+		sound=""
+		time="5" />
+
+	<string
+		id="96"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Мансур..."
+		sound=""
+		time="3" />
+
+	<string
+		id="97"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Я сказал... ОСТАВЬ МЕНЯ В ПОКОЕ!"
+		sound=""
+		time="5" />
+
+	<string
+		id="98"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Ладно, как скажешь..."
+		sound=""
+		time="4" />
+
+	<string
+		id="99"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Хамза?! Хамза, отвечай!"
+		sound=""
+		time="4" />
+
+	<string
+		id="100"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Отец, что такое?"
+		sound=""
+		time="3" />
+
+	<string
+		id="101"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Я слышал по рации, что на Гадад напали безумцы. Вы в порядке?!"
+		sound=""
+		time="4" />
+
+	<string
+		id="102"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Да, мы в порядке. На момент начала нападения нас не было в Гададе, но мы приехали отбивать нападение. Но без потерь не обошлось... Погибла сестра Мансура..."
+		sound=""
+		time="7" />
+
+	<string
+		id="103"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Какой ужас..."
+		sound=""
+		time="3" />
+
+	<string
+		id="104"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|И не говори... Мне нужно переговорить с Мансуром, скоро буду."
+		sound=""
+		time="5" />
+
+	<string
+		id="105"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Жду."
+		sound=""
+		time="3" />
+
+	<string
+		id="106"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Смотри! Кажется это тот самый, о котором говорил Шараф!"
+		sound=""
+		time="5" />
+
+	<string
+		id="107"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Жёлтый Урал... И синяя эмблема с волком. Это опредённо тот, кто нам нужен!"
+		sound=""
+		time="5" />
+
+	<string
+		id="108"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Мы можем убить его сразу, а можем и проследовать за ним. Вдруг он нас на свою базу приведёт!"
+		sound=""
+		time="6" />
+
+	<string
+		id="109"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Нет. Никаких слежек."
+		sound=""
+		time="3" />
+
+	<string
+		id="110"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|ЭЙ ТЫ! А НУ СТОЯТЬ!"
+		sound=""
+		time="4" />
+
+	<string
+		id="111"
+		modelName="r2_man"
+		modelSkin="2"
+		modelCfg="350"
+		modelSlot="1"
+		value="ГРАБИТЕЛЬ|Чего тебе надо? Отвали, сопля!"
+		sound=""
+		time="5" />
+
+	<string
+		id="112"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Для начала верни то, что украл у жены моего знакомого!"
+		sound=""
+		time="5" />
+
+	<string
+		id="113"
+		modelName="r2_man"
+		modelSkin="2"
+		modelCfg="350"
+		modelSlot="1"
+		value="ГРАБИТЕЛЬ|Мелочь, я не понимаю о чём ты, иди гуляй, пока я тебе кузов для профилактики не изрешетил!"
+		sound=""
+		time="6" />
+
+	<string
+		id="114"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Я с тобой тут не шутки шучу! Не хочешь по хорошему, будет по плохому. Последнее желание можешь не загадывать, оно всё равно не сбудется, ведь сейчас ты будешь убит!"
+		sound=""
+		time="5" />
+
+	<string
+		id="115"
+		value="Шараф погиб. Теперь вам не узнать, где находятся бухарцы."
+		numButtons="1" />
+
+
+	<string
+		id="8801"
+		value="Вы желаете покинуть эту область?"
+		numButtons="2" />
+
+	<string
+		id="8802"
+		modelName="mask_hero"
+		sound="data\sounds\Speech\r3m1\r3m1_8802_hero.ogg"
+		value="Я не знаю, куда ведёт эта дорога, поэтому останусь здесь."
+		time="5" />
+
+	<string
+		id="8803"
+		modelName="mask_hero"
+		sound="data\sounds\Speech\r3m1\r3m1_8803_hero.ogg"
+		value="Что-то там непонятное. Не буду туда соваться." />
+
+	<string
+		id="8804"
+		modelName="mask_hero"
+		value="Похоже, прибор, вызывающий корабль, сломался. Или бандиты украли всю технику в порту. В любом случае придётся ехать на своих четырех."
+		numButtons="1"/>
+
+	<string
+		id="8901"
+		value="Вы не смогли спасти Бухарцев. Теперь Вам никогда не достигнуть цели." />
+
+	<string
+		id="8902"
+		value="Прицеп разрушен, доставка нефти отменяется." />
+
+	<string
+		id="8906"
+		value="Мансур погиб." />
+</resource>
