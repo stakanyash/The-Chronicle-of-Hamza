@@ -625,7 +625,7 @@
 				ModelName="r4_man"
 				skin="1"
 				cfg="195"
-				helloReplyNames="Kef_Bar_Customer1_1_N01 Kef_Bar_Customer1_1a_N01 Kef_Bar_Customer1_2_N01 Kef_Bar_Customer1_3_N01"
+				helloReplyNames="Dlg_npc_001470"
 				SpokenCount="0" />
 
 			<Object
@@ -662,6 +662,16 @@
 				ModelName="r4_man"
 				cfg="39"
 				helloReplyNames="Dlg_npc_001388 Dlg_npc_001402 Dlg_npc_001425 Dlg_npc_001443"
+				SpokenCount="0" />
+
+			<Object
+				Name="Kef_Mansur"
+				Belong="1025"
+				Prototype="NPC"
+				ModelName="r4_man"
+				skin="1"
+				cfg="195"
+				helloReplyNames="Dlg_npc_001478"
 				SpokenCount="0" />
 		</Object>
 

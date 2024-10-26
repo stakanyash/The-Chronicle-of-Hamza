@@ -1751,4 +1751,79 @@
         trigger:Deactivate()
 		</script>
 	</trigger>
+
+	<trigger	Name="cinHamzaOilQuest"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+			TActivate("cinHamzaOilQuest_End")
+			TActivate("cinHamzaOilQuest_FadeIn")
+			local veh=getObj("PlayerMolokovoz")
+			if veh then
+				veh:SetExternalPathByName("molokovozStartPath")
+			end
+			Fly("molokovozExit", CINEMATIC_NO_AIM, nil, 10, 1,1)
+			StartCinematic()
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="cinHamzaOilQuest_FadeIn"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			if GetPlayerVehicle() then
+				GetPlayerVehicle():SetThrottle( 0 )
+				GetPlayerVehicle():SetCustomLinearVelocity( 0 )
+				GetPlayerVehicle():SetGamePositionOnGround(CVector(getPos("PlayerCar_loc")))
+				GetPlayerVehicle():SetRotation(Quaternion(0.021, 0.994, -0.008, 0.106))
+			end
+			AddCinematicMessage( 116, 0.5 )
+			CreateHuman( "Human", 1001, CVector(getPos("AddHumanSpawn1_loc")), "AddWalkerHuman1")
+			CreateHuman( "Human", 1001, CVector(getPos("AddHumanSpawn2_loc")), "AddWalkerHuman2")
+			CreateHuman( "Human", 1001, CVector(getPos("AddHumanSpawn3_loc")), "AddWalkerHuman3")
+			TActivate("ConnectMansuronHamzasCar")
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+
+	<trigger	Name="cinHamzaOilQuest_End"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			trigger:Deactivate()
+			local veh = getObj("PlayerMolokovoz")
+			if veh then
+				veh:SetExternalPathByName("molokovozStartPath")
+				veh:PlaceToEndOfPath("molokovozStartPath")
+			end
+
+			SaveWeaponGroups()
+			GetPlayerVehicle():setGodMode(true)
+			CapturePlayerVehicle(0, "OilPlayer")
+
+			local veh=getObj("PlayerMolokovoz")
+			if veh then
+	   		   g_Player:AddChild(veh)
+			end
+			TActivate("trHamzaOiler")
+			TDeactivate("cinHamzaOilQuest_FadeIn")
+			TDeactivate("cinHamzaOilQuest")
+			SetCameraBehindPlayerVehicle()
+
+			local town1 = GetEntityByName("TheKef")
+			if town1 then town1:SetOpenGateToPlayer( false ) end
+
+			local town2 = GetEntityByName("TheGadad")
+			if town2 then town2:SetOpenGateToPlayer( false ) end
+
+			local town3 = GetEntityByName("TheKazif")
+			if town3 then town3:SetOpenGateToPlayer( false ) end
+
+			local a = GetEntityByName("StartGonka_loc")
+			if a then a:SetProperty("Active",0) end
+
+			RestoreAllToleranceStatus()
+		</script>
+	</trigger>
 </triggers>

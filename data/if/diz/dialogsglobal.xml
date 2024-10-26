@@ -641,6 +641,80 @@
 		text="Надеюсь на обратное... Спасибо вам за помощь! Берегите себя."
 		role="PLAYER"
 		scriptResult="CompleteQuest('GoToBuhara_quest'); TakeQuest('BackToSharafAfterBuhara_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Марио--><!--Root/r4m1/The Chronicle of Hamza/Марио/Первый диалог-->
+	<Reply
+		name="Dlg_npc_001470"
+		text="Ха-а-мза! Здравствуй, дорогой! Что-то хотел?"
+		role="NPC"
+		scriptCondition="QuestStatus('BackToSharafAfterBuhara_quest')==Q_COMPLETED and QuestStatus('TalkWithMario_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_001471" />
+
+	<Reply
+		name="Dlg_pl_001471"
+		text="Здравствуй. Что за суматоха у нас в городе? Говорят ты знаешь в чём дело."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001472" />
+
+	<Reply
+		name="Dlg_npc_001472"
+		text='Из-за последних событий с этим нападением на Гадад все боятся ездить в Казиф за нефтью! "Слишком рискованно"! Наши запасы на исходе, источник наш уже давным-давно пересох! Никто не знает, что делать! Все сейчас пытаются наладить контакты в Алихаме или в том же Гададе, но пока что мы получаем одни отказы!'
+		role="NPC"
+		nextReplies="Dlg_pl_001473" />
+
+	<Reply
+		name="Dlg_pl_001473"
+		text="А если допустим этим буду заниматься я или Мансур?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001474" />
+
+	<Reply
+		name="Dlg_npc_001474"
+		text="Нет, тут я сам не хочу вас к этому пускать, потому что я наслышан о ваших делах, полностью вас поддерживаю и не хочу, чтобы ваше дело остановилось из-за этого! Да и к тому же это реально рискованно, всё же ты за нефтью не на своей машине будешь ездить! Для безумцев и бандитов машина с нефтью это лакомый кусочек. Они не упустят шанса напасть на такую машину, поэтому мы ищем как минимум опытного человека!"
+		role="NPC"
+		nextReplies="Dlg_pl_001475" />
+
+	<Reply
+		name="Dlg_pl_001475"
+		text="От того, что я съезжу один раз ничего страшного не случится, Мансур может сесть за руль моей машины и поехать в сопровождении."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001476" />
+
+	<Reply
+		name="Dlg_npc_001476"
+		text="Ну хорошо, один раз я дам вам съездить. Поговори только с Мансуром. Потому что если он не согласится, то одного я тебя не пущу."
+		role="NPC"
+		nextReplies="Dlg_pl_001477" />
+
+	<Reply
+		name="Dlg_pl_001477"
+		text="Хорошо."
+		role="PLAYER"
+		scriptResult="CompleteQuest('TalkWithMario_quest'); TakeQuest('TalkWithMansurOil_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Марио/После диалога с Мансуром-->
+	<Reply
+		name="Dlg_npc_001486"
+		text="Поговорил с Мансуром?"
+		role="NPC"
+		scriptCondition="QuestStatus('TalkWithMansurOil_quest')==Q_COMPLETED and QuestStatus('TakeOilKef_quest')==Q_TAKEN "
+		nextReplies="Dlg_pl_001487" />
+
+	<Reply
+		name="Dlg_pl_001487"
+		text="Да, он согласился."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001488" />
+
+	<Reply
+		name="Dlg_npc_001488"
+		text="Отлично. Бери тогда в задней части города машину и отправляйтесь вот сюда. Скажите, что для Кефа, вам всё погрузят."
+		role="NPC"
+		nextReplies="Dlg_pl_001489" />
+
+	<Reply
+		name="Dlg_pl_001489"
+		text="Хорошо."
+		role="PLAYER"
+		scriptResult="TActivate('OilQuestCarTake_tr'); CompleteQuest('TakeOilKef_TakeOilCar_quest'); TakeQuest('TakeOilKef_GoToOiler_quest'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Шараф/Первый диалог-->
 	<Reply
 		name="Dlg_npc_001388"
@@ -769,7 +843,7 @@
 		name="Dlg_npc_001425"
 		text="Пошли вон, злобные альвахады! Не место вам здесь! Не место!"
 		role="NPC"
-		scriptCondition="QuestStatus('KillTheRobfinal_quest')==Q_COMPLETED"
+		scriptCondition="QuestStatus('KillTheRobfinal_quest')==Q_COMPLETED and QuestStatus('KefDefend_quest')==Q_TAKEN "
 		nextReplies="Dlg_pl_001426" />
 
 	<Reply
@@ -943,8 +1017,21 @@
 
 	<Reply
 		name="Dlg_pl_001465"
-		text="Хорошо, удачи."
-		role="PLAYER" />
+		text="Подожди, с того момента как мы уехали здесь явно что-то случилось. Все в суматохе какой-то бегают. Что произошло?!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001466" />
+
+	<Reply
+		name="Dlg_npc_001466"
+		text="Спроси об этом у Марио, он всё знает, долгая история, мне некогда. Всё, я убежал!"
+		role="NPC"
+		nextReplies="Dlg_pl_001467" />
+
+	<Reply
+		name="Dlg_pl_001467"
+		text="Ну ладно..."
+		role="PLAYER"
+		scriptResult="CompleteQuest('BackToSharafAfterBuhara_quest'); TakeQuest('TalkWithMario_quest'); EndConversation()  " />
 
 	<Reply
 		name="Dlg_pl_001444"
@@ -996,8 +1083,21 @@
 
 	<Reply
 		name="Dlg_pl_001453"
-		text="Хорошо, удачи."
-		role="PLAYER" />
+		text="Подожди, с того момента как мы уехали здесь явно что-то случилось. Все в суматохе какой-то бегают. Что произошло?!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001468" />
+
+	<Reply
+		name="Dlg_npc_001468"
+		text="Спроси об этом у Марио, он всё знает, долгая история, мне некогда. Всё, я убежал! "
+		role="NPC"
+		nextReplies="Dlg_pl_001469" />
+
+	<Reply
+		name="Dlg_pl_001469"
+		text="Ну ладно..."
+		role="PLAYER"
+		scriptResult="CompleteQuest('BackToSharafAfterBuhara_quest'); TakeQuest('TalkWithMario_quest'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/Первый приезд на Урале-->
 	<Reply
 		name="Dlg_npc_001334"
@@ -1140,6 +1240,55 @@
 		text="Без проблем. Давай, поехали уже!"
 		role="PLAYER"
 		scriptResult="EndConversation(); CompleteQuest('TalkToMansur_quest'); AddPlayerMoney(500); TakeQuest('GoTalkWithIdris_quest')" />
+<!--Root/r4m1/The Chronicle of Hamza/Мансур/После диалога с Марио-->
+	<Reply
+		name="Dlg_npc_001478"
+		text="Ну что там? Узнал что происходит?"
+		role="NPC"
+		scriptCondition="QuestStatus('TalkWithMario_quest')==Q_COMPLETED and QuestStatus('TalkWithMansurOil_quest')==Q_TAKEN "
+		nextReplies="Dlg_pl_001479" />
+
+	<Reply
+		name="Dlg_pl_001479"
+		text="С нефтью у нас проблемы. Все отказываются ездить из-за недавнего нападения на твой город. Говорят слишком рискованно. Никто не соглашается!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001480" />
+
+	<Reply
+		name="Dlg_npc_001480"
+		text="Зная тебя стоит ожидать того, что ты предложил свою помощь. Так ведь?"
+		role="NPC"
+		nextReplies="Dlg_pl_001481" />
+
+	<Reply
+		name="Dlg_pl_001481"
+		text="Совершенно верно. Но только на один раз. Больше меня Марио к этому пускать не хочет, он оказывается в курсе наших дел и хочет, чтобы мы довели это дело до конца. В общем: я поеду в другой машине, ты в моей как сопровождение. На нас нападут с большой долей вероятности, поэтому сопровождение необходимо. Марио одного меня не пускает, да и самому не очень хочется... Что скажешь?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001482" />
+
+	<Reply
+		name="Dlg_npc_001482"
+		text="Хорошо, я согласен. Вроде более менее отошёл от произошедшего и могу сесть за руль."
+		role="NPC"
+		nextReplies="Dlg_pl_001483" />
+
+	<Reply
+		name="Dlg_pl_001483"
+		text="Ты уверен в этом? Нам нельзя будет расслабляться не в коем случае, пока мы везём нефть!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001484" />
+
+	<Reply
+		name="Dlg_npc_001484"
+		text="Уверен. Абсолютно."
+		role="NPC"
+		nextReplies="Dlg_pl_001485" />
+
+	<Reply
+		name="Dlg_pl_001485"
+		text="Хорошо, готовься, я пойду скажу Марио о готовности."
+		role="PLAYER"
+		scriptResult="CompleteQuest('TalkWithMansurOil_quest'); TakeQuest('TakeOilKef_quest'); TakeQuest('TakeOilKef_TakeOilCar_quest'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/Первый приезд (непочиненный)-->
 	<Reply
 		name="Dlg_npc_001302"

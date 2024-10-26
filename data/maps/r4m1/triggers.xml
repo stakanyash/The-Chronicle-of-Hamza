@@ -19,7 +19,7 @@
 	</trigger>
 <!--
 **************************************************************************************************
-** Сюжет
+** пїЅпїЅпїЅпїЅпїЅ
 **************************************************************************************************
 -->
 	<trigger	Name="trStartMap"	active="1">
@@ -192,7 +192,7 @@
 
 <!--
 **************************************************************************************************
-** Эвакуация в порт
+** пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
 **************************************************************************************************
 -->
 	<trigger	Name="trPlayerEnterToPort"	active="0">
@@ -304,7 +304,7 @@
 
 <!--
 **************************************************************************************************
-** Взрывы бочек
+** пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 **************************************************************************************************
 -->
 	<trigger	Name="trBabah"	active="1">
@@ -434,7 +434,7 @@
 
 <!--
 **************************************************************************************************
-** Гонки
+** пїЅпїЅпїЅпїЅпїЅ
 **************************************************************************************************
 -->
 	<trigger	Name="trA"	active="0">
@@ -683,7 +683,7 @@
 					if name=="PlayerFormula" then
 --					  println(2)
 						local pointnum = GetVar("NextPoint").AsInt
--- Игрок приехал в правильный чекпоинт
+-- пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 						if locnum==pointnum then
 --					  println(3)
 							AddFadingMsgId( "fm_race_chekpoint" )
@@ -1238,8 +1238,8 @@
 			if plcar then 
 			   plcar:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
 			   plcar:SetGamePositionOnGround(CVector(getPos("RaceStart8_loc"))+CVector(0,1,0))
-			   plcar:SetMaxSpeed(61)
-			   plcar:SetMaxTorque(350)	
+			   plcar:SetMaxSpeed(75)
+			   plcar:SetMaxTorque(475)	
 			   plcar:setImmortalMode(1)
 			end
 
@@ -1614,8 +1614,8 @@
 				PlCar:SetGamePositionOnGround(CVector(4609.427, 280.077, 2162.831))
 				PlCar:SetRotation(Quaternion(0.001, 0.157, 0.000, -0.988))
 				PlCar:setImmortalMode(0)
-				PlCar:SetMaxTorque(120)
-				PlCar:SetMaxSpeed(33)
+				PlCar:SetMaxTorque(240)
+				PlCar:SetMaxSpeed(45)
 			end
 
 			local ManCar = CreateVehicleEx("UralMansur","MansurCar",CVector(4615.387, 280.066, 2194.772), 1090)
@@ -1758,11 +1758,9 @@
 	<trigger Name="KefSurvive" active="0">
 		<event	eventid="GE_OBJECT_DIE"		ObjName="BanditsTeam" />
 		<script>
-			CompleteQuest("KefDefend_quest")
-
 			StartConversation("Kef_Sharaf")
 
-			TakeQuest("GoToBuhara_quest")
+			TDeactivate("SharafDied")
 
 			trigger:Deactivate() 
 		</script>
@@ -1771,9 +1769,102 @@
 	<trigger Name="GoToBuhara_tr" active="0">
 		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="Buhara_loc" />
 		<script>
-		StartConversation("r4m1_BuharsLeader")
+		    StartConversation("r4m1_BuharsLeader")
 
-        trigger:Deactivate()
+            trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="OilQuestCarTake_tr"	active="0">
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="TheKef" />
+		<script>
+			local veh=CreateVehicleEx("Molokovoz01","PlayerMolokovoz",CVector(getPos("MolokovozSpawn_loc")))
+			if veh then
+				veh:SetRotation(Quaternion(-0.007, -0.769, -0.008, 0.639))
+				veh:SetRandomSkin()
+				veh:AttachTrailer("MolokovozTrailer")
+
+			   local nametr = veh:GetName().."_Trailer"
+			   local trailer = getObj(nametr)
+			   if trailer then
+				   trailer:SetSkin(veh:GetSkin())
+				   local tr = getObj("trTrailerDie")
+				   if tr then
+				      tr:AddEvent("GE_OBJECT_DIE",nametr)
+			    	  TActivate("trTrailerDie")
+	   			   end
+			   end
+
+				local vehPlayer = GetPlayerVehicle()
+				if vehPlayer then
+			   		vehPlayer:SetNameFromScript("OilHamzaCar")
+				end
+
+			   local tr = getObj("trHamzaEndExitTown")
+			   if tr then
+			      tr:AddEvent("GE_TARGET_REACHED", "OilHamzaCar")
+		    	  TActivate("trHamzaEndExitTown")
+ 			   end
+			end
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="trHamzaEndExitTown"	active="0">
+		<script>
+			TActivate("cinHamzaOilQuest")
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="ConnectMansuronHamzasCar" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            SetTolerance(1100, 1090, RS_ALLY)
+			SetTolerance(1090, 1002, RS_ENEMY)
+			SetTolerance(1090, 1062, RS_ENEMY)
+			SetTolerance(1090, 1023, RS_ALLY)
+			SetTolerance(1090, 1025, RS_NEUTRAL)
+			SetTolerance(1090, 1060, RS_NEUTRAL)
+
+            TeamCreate("MansurHamzaCar", 1090, CVector(6907.314, 302.515, 5295.529), {"UralDadHamza"}, nil, nil, Quaternion(0.009, 0.988, 0.009, 0.155))
+
+			local vehMansur = getObj("MansurHamzaCar_vehicle_0")
+			if vehMansur then
+				vehMansur:SetSkin(1)
+				vehMansur:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "MansurControllerR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehMansur)
+				end
+			end
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger	Name="trHamzaOiler"	active="0">
+		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="Oil_loc" />
+		<script>
+			local amount=trigger:GetTriggeredObjectAmount()
+			for i=0,amount - 1 do
+				local veh = getObj(trigger:GetTriggeredObjectID(i))
+				if veh:GetName()=="PlayerMolokovoz" then
+					if QuestStatus("TakeOilKef_GoToOiler_quest")==Q_TAKEN then
+						CompleteQuest("TakeOilKef_GoToOiler_quest")
+						TakeQuest("TakeOilKef_BackToKef_quest")
+					end
+					do break end
+				end
+			end
+			trigger:Deactivate()
 		</script>
 	</trigger>
 </triggers>

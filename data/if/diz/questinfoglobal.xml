@@ -488,6 +488,38 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="TakeOilKef_BackToKef_quest"
+		briefDiz="Вернуться в Кеф"
+		isMainQuest="1">
+		<Map
+			name="r4m1" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="TakeOilKef_GoToOiler_quest"
+		briefDiz="Поехать к источнику нефти"
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="Oil_loc" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="TakeOilKef_TakeOilCar_quest"
+		briefDiz="Взять машину для перевозки нефти у Марио"
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="TakeOilKef_quest"
+		briefDiz="Доставить нефть в Кеф"
+		fullDiz="Мансур согласился на помощь в доставке нефти. Дело за малым. Нужно на специальной машине доехать до источника, забрать бочки и привезти в Кеф."
+		isMainQuest="1" />
+
+	<QuestInfo
 		questName="TalkProfessor_Quest"
 		briefDiz="Рассказать ученым о знаках"
 		fullDiz="Ума не приложу, что могло вызвать это странное явление. Ученые в Мидгарде могут разобраться, что здесь на самом деле происходит."
@@ -525,6 +557,26 @@
 		<Map
 			name="r1m1"
 			targetObjName="TheGloohoe" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="TalkWithMansurOil_quest"
+		briefDiz="Поговорить с Мансуром"
+		fullDiz="Нужно переговорить с Мансуром насчёт того, чтобы привезти один раз нефть в Кеф, потому что я не могу бросить свой город на произвол судьбы из-за того, что все испугались ездить за нефтью!"
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="TalkWithMario_quest"
+		briefDiz="Поговорить с Марио"
+		fullDiz="Кажется в городе какой-то переполох. Сплошная суматоха, такого у нас давно не было. Шараф сказал спросить у Марио по поводу всего этого. Но ведь Марио нефтянник. Надеюсь с нефтью ничего не случилось, иначе будет тяжко..."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
 	</QuestInfo>
 
 	<QuestInfo

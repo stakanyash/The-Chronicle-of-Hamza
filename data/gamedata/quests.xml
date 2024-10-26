@@ -393,6 +393,48 @@
 		SubQuestsCondition="and"
 		CheckAll="0"
 		ConditionToGive="all complete" />
+
+	<quest
+		Name="TalkWithMario_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
+
+	<quest
+		Name="TalkWithMansurOil_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
+
+	<quest
+		Name="TakeOilKef_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete">
+		<quest
+			Name="TakeOilKef_TakeOilCar_quest"
+			Automatic="0"
+			SubQuestsCondition="and"
+			CheckAll="0"
+			ConditionToGive="all complete" />
+
+		<quest
+			Name="TakeOilKef_GoToOiler_quest"
+			Automatic="0"
+			SubQuestsCondition="and"
+			CheckAll="0"
+			ConditionToGive="all complete" />
+
+		<quest
+			Name="TakeOilKef_BackToKef_quest"
+			Automatic="0"
+			SubQuestsCondition="and"
+			CheckAll="0"
+			ConditionToGive="all complete" />
+	</quest>
 <!--Root/r3m2/Сюжетные--><!--Root/r3m2/Опциональнае--><!--Root/r3m2/Опциональнае/Поле со знаками-->
 	<quest
 		Name="q_PlaceWithSign"

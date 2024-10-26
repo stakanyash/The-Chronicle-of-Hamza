@@ -913,6 +913,16 @@
 		value="Шараф погиб. Теперь вам не узнать, где находятся бухарцы."
 		numButtons="1" />
 
+	<string
+		id="116"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Ну что. Пора ехать."
+		sound=""
+		time="5" />
+
 
 	<string
 		id="8801"

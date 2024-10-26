@@ -1802,6 +1802,11 @@
 		value="Урал" />
 
 	<Item
+		id="UralShot1"
+		locForm="0"
+		value="Урал" />
+
+	<Item
 		id="UralStartBez"
 		locForm="0"
 		value="Урал" />
