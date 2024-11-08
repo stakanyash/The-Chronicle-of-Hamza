@@ -686,6 +686,11 @@
 		value="Танк" />
 
 	<Item
+		id="TankBez"
+		locForm="0"
+		value="Танк" />
+
+	<Item
 		id="hornet01"
 		locForm="0"
 		value="Шершень" />
@@ -1217,6 +1222,11 @@
 
 	<Item
 		id="BelazShot"
+		locForm="0"
+		value="Белаз" />
+
+	<Item
+		id="BelazShot1"
 		locForm="0"
 		value="Белаз" />
 
