@@ -1509,6 +1509,18 @@
 			PVeh:PlaceToEndOfPath("GadadDefend_path")
 			PVeh:UnlimitMaxSpeed()
 		end
+
+		local town1 = GetEntityByName("TheKef")
+		if town1 then town1:SetOpenGateToPlayer( false ) end
+
+		local town2 = GetEntityByName("TheGadad")
+		if town2 then town2:SetOpenGateToPlayer( false ) end
+
+		local town3 = GetEntityByName("TheKazif")
+		if town3 then town3:SetOpenGateToPlayer( false ) end
+
+		local a = GetEntityByName("StartGonka_loc")
+		if a then a:SetProperty("Active",0) end
         
         SetCameraBehindPlayerVehicle()
 
@@ -1641,6 +1653,18 @@
 		if DzhaCar then
 		    DzhaCar:Remove()
 		end
+
+		local town1 = GetEntityByName("TheKef")
+		if town1 then town1:SetOpenGateToPlayer( true ) end
+
+		local town2 = GetEntityByName("TheGadad")
+		if town2 then town2:SetOpenGateToPlayer( true ) end
+
+		local town3 = GetEntityByName("TheKazif")
+		if town3 then town3:SetOpenGateToPlayer( true ) end
+
+		local a = GetEntityByName("StartGonka_loc")
+		if a then a:SetProperty("Active",1) end
 
         CompleteQuest("DefendGadad_quest")
 		TakeQuest("TalkToMansur_quest")
