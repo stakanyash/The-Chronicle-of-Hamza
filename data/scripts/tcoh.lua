@@ -2,7 +2,7 @@
 
 
 function CreateGadadAttackers()
-	CreateTeam("GadadDebyli",1062,CVector(5525.333, 260.348, 6889.820),{"Tank01","UralShot","BezHunter","Hunter01","Tank01"},CVector(5587.709, 260.537, 6833.567), nil)
+	CreateTeam("GadadDebyli",1062,CVector(5525.333, 260.348, 6889.820),{"TankBez","UralShot","BelazShot1","TankBez","TankBez"},CVector(5587.709, 260.537, 6833.567), nil)
 
 	local veh0 = getObj("GadadDebyli_vehicle_0")
 	if veh0 then
@@ -58,7 +58,7 @@ function CreateHarakatDefenders()
 end
 
 function CreateAlfaranDefenders()
-	CreateTeam("GadadAlfaDefenders",1092,CVector(5504.042, 274.573, 6686.349),{"Bug02","Hunter01"},CVector(5479.855, 264.233, 6680.261), nil)
+	CreateTeam("GadadAlfaDefenders",1092,CVector(5504.042, 274.573, 6686.349),{"BelazShot","Hunter01"},CVector(5479.855, 264.233, 6680.261), nil)
 
 	local veh0 = getObj("GadadAlfaDefenders_vehicle_0")
 	if veh0 then

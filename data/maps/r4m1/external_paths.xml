@@ -712,6 +712,15 @@
 	</Path>
 
 	<Path
+		Name="GadadDefend_path">
+		<Point
+			coord="5476.264 6588.549" />
+
+		<Point
+			coord="5515.169 6729.392" />
+	</Path>
+
+	<Path
 		Name="Gonka_1-2_L">
 		<Point
 			coord="3463.343 1428.842" />

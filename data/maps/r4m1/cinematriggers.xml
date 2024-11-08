@@ -978,7 +978,7 @@
 
 			local MCarCam = mdCar:GetId()
 
-			CreateTeam("StartDebyli",1062,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","BezHunter","BezHunter"},CVector(2594.501, 262.854, 3906.361), nil)
+			CreateTeam("StartDebyli",1062,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","UralStartBez","BezHunter", "UralStartBez"},CVector(2594.501, 262.854, 3906.361), nil)
 
             Fly("startgameHamza_cam1", CINEMATIC_AIM_TO_ID, PlfID, 11, 1, 0 )
 			Fly("startgameHamza_cam2", CINEMATIC_AIM_TO_ID, PlfID, 6, 0, 0 )
@@ -1091,8 +1091,16 @@
 		end
 
 		TActivate("FirstDebyli_Die")
-
 		TActivate("MansurCar_Die")
+
+		local bablo = random(3)
+		    if bablo == 1 then
+				AddPlayerMoney(608)
+			elseif bablo == 2 then
+				AddPlayerMoney(819)
+			elseif bablo == 3 then
+				AddPlayerMoney(726)
+			end
 
 		RestoreAllToleranceStatus()
 
@@ -1441,6 +1449,16 @@
 		if PVeh then
 			PVeh:SetThrottle( 0 )
 			PVeh:SetCustomLinearVelocity( 0 )
+			PVeh:SetGamePositionOnGround( CVector(5459.207, 251.206, 6512.162))
+			PVeh:SetRotation(Quaternion(0.002, 0.146, 0.003, 0.989))
+			PVeh:SetExternalPathByName("GadadDefend_path")
+			PVeh:LimitMaxSpeed(25)
+		end
+
+		local vehMansur = getObj("MansurCar_vehicle_0")
+		if vehMansur then
+			vehMansur:SetGamePositionOnGround( CVector(5462.912, 250.988, 6480.071))
+			vehMansur:SetRotation(Quaternion(0.001, -0.134, 0.011, -0.991))
 		end
 
 		CreateGadadAttackers()
@@ -1451,12 +1469,24 @@
 
 		StartCinematic()
 
+		TActivate("ArrivedToGadadForDefend_Fade")
 		TActivate("ArrivedToGadadForDefend_End")
 
 		AddCinematicMessage( 82, 0.25 )
 		AddCinematicMessage( 83, 0.25 )
 
         trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="ArrivedToGadadForDefend_Fade" active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			SetTolerance(1091, 1062, RS_ENEMY)
+			SetTolerance(1092, 1062, RS_ENEMY)
+			SetTolerance(1090, 1062, RS_ENEMY)
+            
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -1467,20 +1497,24 @@
 		RestoreAllToleranceStatus()
 
         SetTolerance(1100, 1062, RS_ENEMY)
-		SetTolerance(1091, 1062, RS_ENEMY)
-		SetTolerance(1092, 1062, RS_ENEMY)
-		SetTolerance(1090, 1062, RS_ENEMY)
 		SetTolerance(1100, 1090, RS_ALLY)
 		SetTolerance(1100, 1091, RS_ALLY)
 		SetTolerance(1100, 1092, RS_ALLY)
 		SetTolerance(1091, 1090, RS_ALLY)
 		SetTolerance(1092, 1090, RS_ALLY)
 		SetTolerance(1091, 1092, RS_ALLY)
+
+		local PVeh = GetPlayerVehicle()
+		if PVeh then
+			PVeh:PlaceToEndOfPath("GadadDefend_path")
+			PVeh:UnlimitMaxSpeed()
+		end
         
         SetCameraBehindPlayerVehicle()
 
 		TActivate("AlfaHaraAllyforBattle")
 		TActivate("AfterGadadDefendRolik_Start")
+		TActivate("MansurCar_DieOnGadadDefend")
 
         trigger:Deactivate()
 		</script>

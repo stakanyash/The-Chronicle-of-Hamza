@@ -1702,6 +1702,19 @@
 		</script>
 	</trigger>
 
+	<trigger Name="MansurCar_DieOnGadadDefend" active="0">
+		<event eventid="GE_OBJECT_DIE" ObjName="MansurTachka" />
+		<script>
+            TDeactivate("AfterGadadDefendRolik_Start")
+
+		    SpawnMessageBox("8906")
+
+			ShowDeathMenu()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
 	<trigger Name="MansurSeeRob_activate" active="0">
 		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="MansurSeeRob_loc" />
 		<script>
