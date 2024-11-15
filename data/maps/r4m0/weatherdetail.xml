@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
+<Weather>
+	<WeatherItem
+		name="r4m0_clear">
+		<ColorType
+			name="sunrise"
+			LightmapTexture="ltmap_r4m0_rise.dds"
+			CloudsTexture="skyblight.dds" />
+
+		<ColorType
+			name="day"
+			LightmapTexture="ltma_r4m0.dds"
+			CloudsTexture="skyblight.dds" />
+
+		<ColorType
+			name="sunset"
+			LightmapTexture="ltmap_r4m0_evening.dds"
+			CloudsTexture="skyblight.dds" />
+
+		<ColorType
+			name="night"
+			LightmapTexture="ltmap_r4m0_night.dds"
+			CloudsTexture="skyblight.dds" />
+	</WeatherItem>
+</Weather>

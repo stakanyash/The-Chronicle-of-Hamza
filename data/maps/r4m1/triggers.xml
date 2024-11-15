@@ -19,7 +19,7 @@
 	</trigger>
 <!--
 **************************************************************************************************
-** пїЅпїЅпїЅпїЅпїЅ
+** Сюжет
 **************************************************************************************************
 -->
 	<trigger	Name="trStartMap"	active="1">
@@ -192,7 +192,7 @@
 
 <!--
 **************************************************************************************************
-** пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
+** Эвакуация в порт
 **************************************************************************************************
 -->
 	<trigger	Name="trPlayerEnterToPort"	active="0">
@@ -304,7 +304,7 @@
 
 <!--
 **************************************************************************************************
-** пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+** Взрывы бочек
 **************************************************************************************************
 -->
 	<trigger	Name="trBabah"	active="1">
@@ -352,8 +352,8 @@
  		</script>
 	</trigger>
 
-	<trigger Name="trExitToR1M1" active="1">
-		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="ExitFromMapToR1M1_loc" />
+	<trigger Name="trExitToR4M0" active="1">
+		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="ExitFromMapToR4M0_loc" />
 		<script>
 			GetPlayerVehicle():SetThrottle( 0 )
 			GetPlayerVehicle():SetCustomLinearVelocity( 0 )
@@ -363,7 +363,7 @@
 				if b == 1 then
 	--				println ( "Yes" )
 	--				TActivate("cinExit11OkFirst")
-					PassToMap("r1m1", "FromR4M1", -1 )
+					PassToMap("r4m0", "FromR4M1", -1 )
 				else
 	--				println ( "No" )
 					TActivate("cinExit11ReturnFirst")
@@ -434,7 +434,7 @@
 
 <!--
 **************************************************************************************************
-** пїЅпїЅпїЅпїЅпїЅ
+** Гонки
 **************************************************************************************************
 -->
 	<trigger	Name="trA"	active="0">
@@ -683,7 +683,7 @@
 					if name=="PlayerFormula" then
 --					  println(2)
 						local pointnum = GetVar("NextPoint").AsInt
--- пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+-- Игрок приехал в правильный чекпоинт
 						if locnum==pointnum then
 --					  println(3)
 							AddFadingMsgId( "fm_race_chekpoint" )
@@ -1494,12 +1494,26 @@
 			local Plf = GetPlayerVehicle()
 			local PlfID = GetPlayerVehicleId()
 
+			GetPlayerVehicle():setGodMode(1)
+
 			FlyLinked("linkedcam", CTochID, 5, 0, 1, PlfID)
 			StartCinematic()
 
 		    AddCinematicMessage( place+3, 0.5 )
+
+			TActivate("trFinishRace1_End")
 		    TActivate("trRemoveAllRaceFinish")
 		    trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="trFinishRace1_End" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			GetPlayerVehicle():setGodMode(0)
+			
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -1878,6 +1892,80 @@
 				end
 			end
 			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="TestAddTR" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            local Workshop = GetEntityByName("Kef_Workshop")
+			local Repository = Workshop:GetRepositoryByTypename("Vehicles")
+			Repository:RemoveItems("Scout01", 1)
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="Kef_Sell_Remove" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            local KefWorkshop = GetEntityByName("Kef_Workshop")
+			local VehiclesRepo = KefWorkshop:GetRepositoryByTypename("Vehicles")
+			local CabinBasketRepo = KefWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
+			
+			if VehiclesRepo then
+				VehiclesRepo:RemoveItems("UralForSale", 1)
+				VehiclesRepo:RemoveItems("BelazForSale", 1)
+				VehiclesRepo:RemoveItems("MirotvorecForSale", 1)
+			end
+
+			if CabinBasketRepo then
+				CabinBasketRepo:RemoveItems("bugCargo02", 1)
+				CabinBasketRepo:RemoveItems("bugCargo03", 1)
+				CabinBasketRepo:RemoveItems("molokovozCargo02", 1)
+				CabinBasketRepo:RemoveItems("molokovozCargo03", 1)
+				CabinBasketRepo:RemoveItems("uralCargo01", 1)
+				CabinBasketRepo:RemoveItems("uralCargo02", 1)
+				CabinBasketRepo:RemoveItems("uralCargo03", 1)
+				CabinBasketRepo:RemoveItems("uralCargo04", 1)
+				CabinBasketRepo:RemoveItems("belazCargo01", 1)
+				CabinBasketRepo:RemoveItems("belazCargo02", 1)
+				CabinBasketRepo:RemoveItems("belazCargo03", 1)
+				CabinBasketRepo:RemoveItems("belazCargo04", 1)
+				CabinBasketRepo:RemoveItems("belazCargo02", 1)
+				CabinBasketRepo:RemoveItems("belazCargo03", 1)
+				CabinBasketRepo:RemoveItems("belazCargo04", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCargo01", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCargo02", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCargo03", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCargo05", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCargo03", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCargo05", 1)
+				CabinBasketRepo:RemoveItems("bugCab02", 1)
+				CabinBasketRepo:RemoveItems("bugCab03", 1)
+				CabinBasketRepo:RemoveItems("molokovozCab02", 1)
+				CabinBasketRepo:RemoveItems("molokovozCab03", 1)
+				CabinBasketRepo:RemoveItems("belazCab01", 1)
+				CabinBasketRepo:RemoveItems("belazCab02", 1)
+				CabinBasketRepo:RemoveItems("belazCab03", 1)
+				CabinBasketRepo:RemoveItems("belazCab04", 1)
+				CabinBasketRepo:RemoveItems("belazCab03", 1)
+				CabinBasketRepo:RemoveItems("belazCab04", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCab01", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCab02", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCab03", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCab05", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCab02", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCab03", 1)
+				CabinBasketRepo:RemoveItems("mirotvorecCab05", 1)
+				CabinBasketRepo:RemoveItems("uralCab02", 1)
+				CabinBasketRepo:RemoveItems("uralCab03", 1)
+				CabinBasketRepo:RemoveItems("uralCab04", 1)
+				CabinBasketRepo:RemoveItems("uralCab05", 1)
+				CabinBasketRepo:RemoveItems("uralCab05", 1)
+			end
+
+			trigger:Deactivate() 
 		</script>
 	</trigger>
 </triggers>

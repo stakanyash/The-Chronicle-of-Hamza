@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1251" standalone="yes"?>
+<Paths>
+    <Path Name = "r4m1refuse_cam">                         
+		<Point  coord="1182.626 296.805 395.896" rotation="-0.047 0.942 -0.151 0.295"/>
+		<Point  coord="1142.261 292.639 383.288" rotation="0.057 0.931 -0.167 -0.320"/>
+	</Path>
+
+	<Path Name = "r1m1refuse_cam">                         
+		<Point  coord="1988.355 283.691 3556.381" rotation="-0.146 -0.417 0.068 0.895"/>
+		<Point  coord="2040.921 270.386 3571.402" rotation="-0.135 0.201 -0.028 0.970"/>
+	</Path>
+
+</Paths>

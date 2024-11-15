@@ -607,7 +607,7 @@
 		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
 			EnableGodMode()
-			TDeactivate("trExitToR1M1")
+			TDeactivate("trExitToR4M0")
 			TActivate("cinExit11OkFirst")
 			TActivate("cinExit11Ok_FadeIn")
 			TActivate("cinExit11Ok_End")
@@ -635,8 +635,8 @@
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
 			DisableGodMode()
-			TActivate("trExitToR1M1")
-			PassToMap("r1m1", "FromR4M1", 0 , true)
+			TActivate("trExitToR4M0")
+			PassToMap("r4m0", "FromR4M1", 0 , true)
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -712,7 +712,7 @@
 					vehLisa:SetSkin(2)
 					vehLisa:setImmortalMode(1)
 					TActivate("trENEMYLISA_DEAD")
-					TDeactivate("trExitToR1M1")
+					TDeactivate("trExitToR4M0")
 					SetTolerance(1100, 1042, RS_ENEMY)
 				else
 					LOG("ERROR! EnemyLisa does not exists!")
@@ -840,7 +840,7 @@
 
 			TDeactivate("Rolik_ENEMYLISADEAD_Fade")
 			TDeactivate("Rolik_ENEMYLISADEAD_Msg22")
-			TActivate("trExitToR1M1")
+			TActivate("trExitToR4M0")
 
 			trigger:Deactivate()
 		</script>

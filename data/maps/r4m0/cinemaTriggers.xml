@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
+<triggers>
+
+    <trigger Name="R4M1ExitRefuse_rolik" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            SaveAllToleranceStatus(RS_NEUTRAL)
+
+            local PlfID = GetPlayerVehicleId()
+
+            Fly("r4m1refuse_cam", CINEMATIC_AIM_TO_ID, PlfID, 5, 1, 1 )
+            StartCinematic()
+
+            TActivate("R4M1ExitRefuse_rolik_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+    <trigger Name="R4M1ExitRefuse_rolik_end" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+            RestoreAllToleranceStatus()
+
+            SetCameraBehindPlayerVehicle()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+    <trigger Name="R1M1ExitRefuse_rolik" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            SaveAllToleranceStatus(RS_NEUTRAL)
+
+            local PlfID = GetPlayerVehicleId()
+
+            Fly("r1m1refuse_cam", CINEMATIC_AIM_TO_ID, PlfID, 5, 1, 1 )
+            StartCinematic()
+
+            TActivate("R1M1ExitRefuse_rolik_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+    <trigger Name="R1M1ExitRefuse_rolik_end" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+            RestoreAllToleranceStatus()
+
+            SetCameraBehindPlayerVehicle()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+</triggers>
