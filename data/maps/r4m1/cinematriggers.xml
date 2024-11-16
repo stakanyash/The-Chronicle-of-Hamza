@@ -1428,6 +1428,13 @@
 		    MCar:Remove()
 		end
 
+		TActivate("Kef_Sell_Add")
+		TActivate("Gadad_Sell_Add")
+		TActivate("Kazif_Sell_Add")
+
+		AddFadingMsgId( "fm_all_sale_added" )
+		AddImportantFadingMsgByStrIdFormatted( "fm_all_sale_added" )
+
 		TActivate("ConnectMansur_AfterRace")
 		TActivate("GadadForDefendrolik_start")
 		TakeQuest("DefendGadad_quest")

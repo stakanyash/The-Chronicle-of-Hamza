@@ -1897,18 +1897,7 @@
 		</script>
 	</trigger>
 
-	<trigger Name="TestAddTR" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-            local Workshop = GetEntityByName("Kef_Workshop")
-			local Repository = Workshop:GetRepositoryByTypename("Vehicles")
-			Repository:RemoveItems("Scout01", 1)
-
-			trigger:Deactivate() 
-		</script>
-	</trigger>
-
-	<trigger Name="Kef_Sell_Remove" active="0">
+	<trigger Name="Kef_Sell_Add" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
             local KefWorkshop = GetEntityByName("Kef_Workshop")
@@ -1916,55 +1905,182 @@
 			local CabinBasketRepo = KefWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
 			
 			if VehiclesRepo then
-				VehiclesRepo:RemoveItems("UralForSale", 1)
-				VehiclesRepo:RemoveItems("BelazForSale", 1)
-				VehiclesRepo:RemoveItems("MirotvorecForSale", 1)
+				VehiclesRepo:AddItems("UralForSale", 1)
+				VehiclesRepo:AddItems("BelazForSale", 1)
+				VehiclesRepo:AddItems("MirotvorecForSale", 1)
 			end
 
 			if CabinBasketRepo then
-				CabinBasketRepo:RemoveItems("bugCargo02", 1)
-				CabinBasketRepo:RemoveItems("bugCargo03", 1)
-				CabinBasketRepo:RemoveItems("molokovozCargo02", 1)
-				CabinBasketRepo:RemoveItems("molokovozCargo03", 1)
-				CabinBasketRepo:RemoveItems("uralCargo01", 1)
-				CabinBasketRepo:RemoveItems("uralCargo02", 1)
-				CabinBasketRepo:RemoveItems("uralCargo03", 1)
-				CabinBasketRepo:RemoveItems("uralCargo04", 1)
-				CabinBasketRepo:RemoveItems("belazCargo01", 1)
-				CabinBasketRepo:RemoveItems("belazCargo02", 1)
-				CabinBasketRepo:RemoveItems("belazCargo03", 1)
-				CabinBasketRepo:RemoveItems("belazCargo04", 1)
-				CabinBasketRepo:RemoveItems("belazCargo02", 1)
-				CabinBasketRepo:RemoveItems("belazCargo03", 1)
-				CabinBasketRepo:RemoveItems("belazCargo04", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCargo01", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCargo02", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCargo03", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCargo05", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCargo03", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCargo05", 1)
-				CabinBasketRepo:RemoveItems("bugCab02", 1)
-				CabinBasketRepo:RemoveItems("bugCab03", 1)
-				CabinBasketRepo:RemoveItems("molokovozCab02", 1)
-				CabinBasketRepo:RemoveItems("molokovozCab03", 1)
-				CabinBasketRepo:RemoveItems("belazCab01", 1)
-				CabinBasketRepo:RemoveItems("belazCab02", 1)
-				CabinBasketRepo:RemoveItems("belazCab03", 1)
-				CabinBasketRepo:RemoveItems("belazCab04", 1)
-				CabinBasketRepo:RemoveItems("belazCab03", 1)
-				CabinBasketRepo:RemoveItems("belazCab04", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCab01", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCab02", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCab03", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCab05", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCab02", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCab03", 1)
-				CabinBasketRepo:RemoveItems("mirotvorecCab05", 1)
-				CabinBasketRepo:RemoveItems("uralCab02", 1)
-				CabinBasketRepo:RemoveItems("uralCab03", 1)
-				CabinBasketRepo:RemoveItems("uralCab04", 1)
-				CabinBasketRepo:RemoveItems("uralCab05", 1)
-				CabinBasketRepo:RemoveItems("uralCab05", 1)
+				CabinBasketRepo:AddItems("bugCargo02", 1)
+				CabinBasketRepo:AddItems("bugCargo03", 1)
+				CabinBasketRepo:AddItems("molokovozCargo02", 1)
+				CabinBasketRepo:AddItems("molokovozCargo03", 1)
+				CabinBasketRepo:AddItems("uralCargo01", 1)
+				CabinBasketRepo:AddItems("uralCargo02", 1)
+				CabinBasketRepo:AddItems("uralCargo03", 1)
+				CabinBasketRepo:AddItems("uralCargo04", 1)
+				CabinBasketRepo:AddItems("belazCargo01", 1)
+				CabinBasketRepo:AddItems("belazCargo02", 1)
+				CabinBasketRepo:AddItems("belazCargo03", 1)
+				CabinBasketRepo:AddItems("belazCargo04", 1)
+				CabinBasketRepo:AddItems("belazCargo02", 1)
+				CabinBasketRepo:AddItems("belazCargo03", 1)
+				CabinBasketRepo:AddItems("belazCargo04", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo01", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo02", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo03", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo05", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo03", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo05", 1)
+				CabinBasketRepo:AddItems("bugCab02", 1)
+				CabinBasketRepo:AddItems("bugCab03", 1)
+				CabinBasketRepo:AddItems("molokovozCab02", 1)
+				CabinBasketRepo:AddItems("molokovozCab03", 1)
+				CabinBasketRepo:AddItems("belazCab01", 1)
+				CabinBasketRepo:AddItems("belazCab02", 1)
+				CabinBasketRepo:AddItems("belazCab03", 1)
+				CabinBasketRepo:AddItems("belazCab04", 1)
+				CabinBasketRepo:AddItems("belazCab03", 1)
+				CabinBasketRepo:AddItems("belazCab04", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab01", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab02", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab03", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab05", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab02", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab03", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab05", 1)
+				CabinBasketRepo:AddItems("uralCab02", 1)
+				CabinBasketRepo:AddItems("uralCab03", 1)
+				CabinBasketRepo:AddItems("uralCab04", 1)
+				CabinBasketRepo:AddItems("uralCab05", 1)
+				CabinBasketRepo:AddItems("uralCab05", 1)
+			end
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="Gadad_Sell_Add" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            local GadadWorkshop = GetEntityByName("Gadad_Workshop")
+			local VehiclesRepo = GadadWorkshop:GetRepositoryByTypename("Vehicles")
+			local CabinBasketRepo = GadadWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
+			
+			if VehiclesRepo then
+				VehiclesRepo:AddItems("UralForSale", 1)
+				VehiclesRepo:AddItems("BelazForSale", 1)
+				VehiclesRepo:AddItems("MirotvorecForSale", 1)
+			end
+
+			if CabinBasketRepo then
+				CabinBasketRepo:AddItems("bugCargo02", 1)
+				CabinBasketRepo:AddItems("bugCargo03", 1)
+				CabinBasketRepo:AddItems("molokovozCargo02", 1)
+				CabinBasketRepo:AddItems("molokovozCargo03", 1)
+				CabinBasketRepo:AddItems("uralCargo01", 1)
+				CabinBasketRepo:AddItems("uralCargo02", 1)
+				CabinBasketRepo:AddItems("uralCargo03", 1)
+				CabinBasketRepo:AddItems("uralCargo01", 1)
+				CabinBasketRepo:AddItems("uralCargo02", 1)
+				CabinBasketRepo:AddItems("uralCargo03", 1)
+				CabinBasketRepo:AddItems("belazCargo01", 1)
+				CabinBasketRepo:AddItems("belazCargo02", 1)
+				CabinBasketRepo:AddItems("belazCargo03", 1)
+				CabinBasketRepo:AddItems("belazCargo04", 1)
+				CabinBasketRepo:AddItems("belazCargo05", 1)
+				CabinBasketRepo:AddItems("belazCargo03", 1)
+				CabinBasketRepo:AddItems("belazCargo04", 1)
+				CabinBasketRepo:AddItems("belazCargo05", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo01", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo02", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo03", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo04", 1)
+				CabinBasketRepo:AddItems("bugCab02", 1)
+				CabinBasketRepo:AddItems("bugCab03", 1)
+				CabinBasketRepo:AddItems("molokovozCab02", 1)
+				CabinBasketRepo:AddItems("molokovozCab03", 1)
+				CabinBasketRepo:AddItems("belazCab01", 1)
+				CabinBasketRepo:AddItems("belazCab02", 1)
+				CabinBasketRepo:AddItems("belazCab03", 1)
+				CabinBasketRepo:AddItems("belazCab04", 1)
+				CabinBasketRepo:AddItems("belazCab05", 1)
+				CabinBasketRepo:AddItems("belazCab03", 1)
+				CabinBasketRepo:AddItems("belazCab04", 1)
+				CabinBasketRepo:AddItems("belazCab05", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab01", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab02", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab03", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab04", 1)
+				CabinBasketRepo:AddItems("uralCab02", 1)
+				CabinBasketRepo:AddItems("uralCab03", 1)
+				CabinBasketRepo:AddItems("uralCab04", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab04", 1)
+				CabinBasketRepo:AddItems("uralCab02", 1)
+				CabinBasketRepo:AddItems("uralCab03", 1)
+				CabinBasketRepo:AddItems("uralCab04", 1)
+			end
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="Kazif_Sell_Add" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            local KazifWorkshop = GetEntityByName("Kazif_Workshop")
+			local VehiclesRepo = KazifWorkshop:GetRepositoryByTypename("Vehicles")
+			local CabinBasketRepo = KazifWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
+			
+			if VehiclesRepo then
+				VehiclesRepo:AddItems("UralForSale", 1)
+				VehiclesRepo:AddItems("BelazForSale", 1)
+				VehiclesRepo:AddItems("MirotvorecForSale", 1)
+			end
+
+			if CabinBasketRepo then
+				CabinBasketRepo:AddItems("bugCargo02", 1)
+				CabinBasketRepo:AddItems("bugCargo03", 1)
+				CabinBasketRepo:AddItems("molokovozCargo02", 1)
+				CabinBasketRepo:AddItems("molokovozCargo03", 1)
+				CabinBasketRepo:AddItems("uralCargo01", 1)
+				CabinBasketRepo:AddItems("uralCargo02", 1)
+				CabinBasketRepo:AddItems("uralCargo04", 1)
+				CabinBasketRepo:AddItems("belazCargo01", 1)
+				CabinBasketRepo:AddItems("belazCargo02", 1)
+				CabinBasketRepo:AddItems("belazCargo03", 1)
+				CabinBasketRepo:AddItems("belazCargo05", 1)
+				CabinBasketRepo:AddItems("belazCargo03", 1)
+				CabinBasketRepo:AddItems("belazCargo05", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo01", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo02", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo03", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo04", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo05", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo03", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo04", 1)
+				CabinBasketRepo:AddItems("mirotvorecCargo05", 1)
+				CabinBasketRepo:AddItems("bugCab02", 1)
+				CabinBasketRepo:AddItems("bugCab03", 1)
+				CabinBasketRepo:AddItems("molokovozCab02", 1)
+				CabinBasketRepo:AddItems("molokovozCab03", 1)
+				CabinBasketRepo:AddItems("belazCab01", 1)
+				CabinBasketRepo:AddItems("belazCab02", 1)
+				CabinBasketRepo:AddItems("belazCab03", 1)
+				CabinBasketRepo:AddItems("belazCab05", 1)
+				CabinBasketRepo:AddItems("belazCab03", 1)
+				CabinBasketRepo:AddItems("belazCab05", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab01", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab02", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab03", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab04", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab05", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab03", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab04", 1)
+				CabinBasketRepo:AddItems("mirotvorecCab05", 1)
+				CabinBasketRepo:AddItems("uralCab01", 1)
+				CabinBasketRepo:AddItems("uralCab02", 1)
+				CabinBasketRepo:AddItems("uralCab04", 1)
 			end
 
 			trigger:Deactivate() 
