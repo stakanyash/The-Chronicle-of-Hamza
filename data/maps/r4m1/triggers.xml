@@ -1115,7 +1115,7 @@
 			local NC = CreateVehicleEx("UralDadHamza","NewCar", CVector(6555.777, 268.324, 5661.137))
 			if NC then
                 NC:SetRotation(Quaternion(-0.001, 0.915, -0.003, -0.404))
-				NC:SetSkin(1)
+				NC:SetSkin(7)
 			end
 
 			TActivate("NewOldCarRolik_Start")
@@ -1154,6 +1154,18 @@
 		<script>
 			TActivate("CarNameToUral")
 			TActivate("trA1")
+
+			local town1 = GetEntityByName("TheKef")
+			if town1 then town1:SetOpenGateToPlayer( false ) end
+
+			local town2 = GetEntityByName("TheGadad")
+			if town2 then town2:SetOpenGateToPlayer( false ) end
+
+			local town3 = GetEntityByName("TheKazif")
+			if town3 then town3:SetOpenGateToPlayer( false ) end
+
+			local a = GetEntityByName("StartGonka_loc")
+			if a then a:SetProperty("Active",0) end
 
 			trigger:Deactivate()
 		</script>
@@ -1206,23 +1218,29 @@
 	</trigger>
 
 	<trigger	Name="trA1"	active="0">
-		<event	timeout="1"		eventid="GE_TIME_PERIOD" />
+		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
 		<script>
-            local veh = CreateVehicleEx("Ural01","FormulaCar1",  CVector(getPos("RaceStart1_loc"))+CVector(0,1,0), 1100)
+			if GetPlayerVehicle() then
+				SaveWeaponGroups()
+			end
+
+			CapturePlayerVehicle(0, "PlayerRace")
+
+            local veh = CreateVehicleEx("UralRace00","FormulaCar1",  CVector(getPos("RaceStart1_loc"))+CVector(0,1,0), 1100)
 				if veh then 
 				   veh:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
 				   veh:SetRandomSkin()
-				   veh:SetForcedMaxTorque(350)
-				   veh:SetMaxSpeed(69)
+				   veh:SetForcedMaxTorque(500)
+				   veh:SetMaxSpeed(83.4)
 				   veh:SetCruisingSpeed(65)
 				end
 
-			local veh2 = CreateVehicleEx("Ural01","FormulaCar2",  CVector(getPos("RaceStart4_loc"))+CVector(0,1,0), 1100)
+			local veh2 = CreateVehicleEx("UralRace01","FormulaCar2",  CVector(getPos("RaceStart4_loc"))+CVector(0,1,0), 1100)
 				if veh2 then 
 				   veh2:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
 				   veh2:SetRandomSkin()
-				   veh2:SetForcedMaxTorque(350)
-				   veh2:SetMaxSpeed(69)
+				   veh2:SetForcedMaxTorque(500)
+				   veh2:SetMaxSpeed(83.4)
 				   veh2:SetCruisingSpeed(65)
 				end
 
@@ -1230,19 +1248,31 @@
 				if veh3 then 
 				   veh3:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
 				   veh3:SetSkin(1)
-				   veh3:SetForcedMaxTorque(350)
-				   veh3:SetMaxSpeed(69)
+				   veh3:SetForcedMaxTorque(500)
+				   veh3:SetMaxSpeed(83.4)
 				   veh3:SetCruisingSpeed(65)
 				end
 
 
-			local plcar=GetPlayerVehicle()
-			if plcar then 
+			local plcar=CreateVehicleEx("UralDadHamza_Race","PlayerFormula",  CVector(getPos("RaceStart8_loc"))+CVector(0,1,0), 1100)
+			local pl=g_Player
+			if pl and plcar then 
 			   plcar:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
-			   plcar:SetGamePositionOnGround(CVector(getPos("RaceStart8_loc"))+CVector(0,1,0))
-			   plcar:SetMaxSpeed(75)
-			   plcar:SetMaxTorque(475)	
+			   plcar:SetSkin(7)	
 			   plcar:setImmortalMode(1)
+			   plcar:SetMaxTorque(690)
+			   plcar:SetMaxSpeed(83.4)
+			   pl:AddChild(plcar)
+			end
+
+			local explayercar = getObj("MyCar")
+			if explayercar then
+				explayercar:SetGamePositionOnGround(CVector(7089.932, 321.672, 1223.257))
+				explayercar:SetRotation(Quaternion(0.001, 0.418, 0.000, -0.908))
+				explayercar:SetCustomControlEnabled( true )
+				explayercar:SetCustomLinearVelocity( 0 )
+				explayercar:SetThrottle( 0 )
+				explayercar:SetCustomControlEnabled( false )
 			end
 
 		    if getObj("MansurControllerR4M1") then
@@ -1277,7 +1307,7 @@
 				SetVar("PointCarCount".."0".."_"..j,0)
 			end
 
-			TActivate("trRaceTimer1")
+			TActivate("RaceStart_cs")
 			TActivate("trFalseStar1")
 			TActivate("trRaceCarDie1")
 			TActivate("trCheckPoints1")
@@ -1289,22 +1319,17 @@
 	</trigger>
 
 	<trigger	Name="trRaceTimer1"	active="0">
-		<event	timeout="1"		eventid="GE_TIME_PERIOD" />
+		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
 		<script>
-			local nummsg=GetVar("nummsg").AsInt
-			AddFadingMsgByStrIdFormatted( "fm_race_start_1", nummsg)
-			AddImportantFadingMsgByStrIdFormatted( "fm_race_start_1", nummsg)
-			SetVar("nummsg",nummsg-1)
-			if nummsg==1 then 
-			    TActivate("trStartRace1")		   
-			    trigger:Deactivate()
-			end
+			TActivate("trStartRace1")
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
 
 	<trigger	Name="trStartRace1"	active="0">
-		<event	timeout="1"		eventid="GE_TIME_PERIOD" />
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
 			AddFadingMsgId( "fm_race_start_0" )
 			AddImportantFadingMsgByStrIdFormatted( "fm_race_start_0" )
@@ -1405,7 +1430,7 @@
 				  local locname = trigger:GetCallObjName()
 				  local carnum=tonumber(strsub(name,11,11))
 
-                  if name=="MyCar" then
+                  if name=="PlayerFormula" then
                      carnum = 0
                   end
 				  local maxcar = GetVar("CountCar").AsInt
@@ -1414,7 +1439,7 @@
 				  local CurCarCounter=GetVar("PointCarCount"..lap.."_"..locnum).AsInt+1
 
 
-				if name=="MyCar" then
+				if name=="PlayerFormula" then
 
 						local pointnum = GetVar("NextPoint").AsInt
 						if locnum==pointnum then
@@ -1520,7 +1545,7 @@
 	</trigger>
 
 	<trigger	Name="trPlayerFormulaDie1"	active="0">	
-		<event eventid="GE_VEHICLE_WITHOUT_HEALTH" ObjName="MyCar" />
+		<event eventid="GE_VEHICLE_WITHOUT_HEALTH" ObjName="PlayerFormula" />
 		<script>
 			local Plf = GetPlayerVehicle()
 			if Plf~=nil then 
@@ -1573,6 +1598,7 @@
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<script>
+			CapturePlayerVehicle(0, "PlayerFormula")
 			AllowSave( true )
 			TDeactivate("trRaceCarDie1")
 			TDeactivate("trCheckPoints1")
@@ -1586,17 +1612,37 @@
 			   end
 			end
 
+			local veh=getObj("PlayerFormula")
+			if veh then 
+			     veh:Remove()
+			end
+
 			local CToch = GetEntityByName("CamTochka")
 			if CToch then CToch:Remove() end
 
-			local PlCar = GetPlayerVehicle()
-			if PlCar then
-			    PlCar:setGodMode(0)
+			local pl=g_Player
+			local PlCar=getObj("MyCar")
+			if pl and PlCar then
+				pl:AddChild(PlCar)
+				PlCar:setGodMode(0)
 			    PlCar:SetCustomControlEnabled(0)
 				PlCar:SetGamePositionOnGround(CVector(4609.427, 280.077, 2162.831))
 				PlCar:SetRotation(Quaternion(0.001, 0.157, 0.000, -0.988))
 				PlCar:setImmortalMode(0)
+				RestoreWeaponGroups()
 			end
+
+			local town1 = GetEntityByName("TheKef")
+			if town1 then town1:SetOpenGateToPlayer( true ) end
+
+			local town2 = GetEntityByName("TheGadad")
+			if town2 then town2:SetOpenGateToPlayer( true ) end
+
+			local town3 = GetEntityByName("TheKazif")
+			if town3 then town3:SetOpenGateToPlayer( true ) end
+
+			local a = GetEntityByName("StartGonka_loc")
+			if a then a:SetProperty("Active",1) end
 
 			StopPlayingCustomMusic()
 		    trigger:Deactivate()
@@ -1607,6 +1653,7 @@
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<script>
+			CapturePlayerVehicle(0, "PlayerFormula")
 			AllowSave( true )
 			TDeactivate("trRaceCarDie1")
 			TDeactivate("trCheckPoints1")
@@ -1620,18 +1667,24 @@
 			   end
 			end
 
+			local veh=getObj("PlayerFormula")
+			if veh then 
+			     veh:Remove()
+			end
+
 			local CToch = GetEntityByName("CamTochka")
 			if CToch then CToch:Remove() end
 
-			local PlCar = GetPlayerVehicle()
-			if PlCar then
-			    PlCar:setGodMode(0)
+			local pl=g_Player
+			local PlCar=getObj("MyCar")
+			if pl and PlCar then
+				pl:AddChild(PlCar)
+				PlCar:setGodMode(0)
 			    PlCar:SetCustomControlEnabled(0)
 				PlCar:SetGamePositionOnGround(CVector(4609.427, 280.077, 2162.831))
 				PlCar:SetRotation(Quaternion(0.001, 0.157, 0.000, -0.988))
 				PlCar:setImmortalMode(0)
-				PlCar:SetMaxTorque(240)
-				PlCar:SetMaxSpeed(45)
+				RestoreWeaponGroups()
 			end
 
 			local ManCar = CreateVehicleEx("UralMansur","MansurCar",CVector(4615.387, 280.066, 2194.772), 1090)

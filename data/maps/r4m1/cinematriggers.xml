@@ -1364,7 +1364,7 @@
         if PUral then
             PUral:SetGamePositionOnGround( CVector(6555.777, 268.324, 5661.137))
 			PUral:SetRotation(Quaternion(-0.001, 0.915, -0.003, -0.404))
-			PUral:SetSkin(1)
+			PUral:SetSkin(7)
 		end
 
         trigger:Deactivate()
@@ -1431,13 +1431,21 @@
 		TActivate("Kef_Sell_Add")
 		TActivate("Gadad_Sell_Add")
 		TActivate("Kazif_Sell_Add")
-
-		AddFadingMsgId( "fm_all_sale_added" )
-		AddImportantFadingMsgByStrIdFormatted( "fm_all_sale_added" )
+		TActivate("all_sale_added_fading")
 
 		TActivate("ConnectMansur_AfterRace")
 		TActivate("GadadForDefendrolik_start")
 		TakeQuest("DefendGadad_quest")
+
+        trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="all_sale_added_fading" active="0">
+		<event	timeout="1"			eventid="GE_TIME_PERIOD" />
+		<script>
+		AddFadingMsgId( "fm_all_sale_added" )
+		AddImportantFadingMsgByStrIdFormatted( "fm_all_sale_added" )
 
         trigger:Deactivate()
 		</script>
@@ -1889,6 +1897,93 @@
 			if a then a:SetProperty("Active",0) end
 
 			RestoreAllToleranceStatus()
+		</script>
+	</trigger>
+
+	<trigger	Name="RaceStart_cs"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			local FVeh1 = GetEntityByName("FormulaCar1")
+			local FVeh1ID = FVeh1:GetId()
+
+			local FVeh2 = GetEntityByName("FormulaCar2")
+			local FVeh2ID = FVeh2:GetId()
+
+			local FVeh3 = GetEntityByName("FormulaCar3")
+			local FVeh3ID = FVeh3:GetId()
+
+			local Plf = GetPlayerVehicle()
+        	local PlfID = GetPlayerVehicleId()
+			
+			Fly("RaceStart_cam01", CINEMATIC_AIM_TO_ID, FVeh1ID, 3, 1, 0 )
+			Fly("RaceStart_cam02", CINEMATIC_AIM_TO_ID, FVeh2ID, 3, 0, 0 )
+			Fly("RaceStart_cam03", CINEMATIC_AIM_TO_ID, FVeh3ID, 3, 0, 0 )
+			Fly("RaceStart_cam04", CINEMATIC_AIM_TO_ID, PlfID, 3, 0, 1 )
+			StartCinematic()
+
+			PlayCustomMusic("RaceQuest")
+
+			TActivate("RaceStart_cs_fade")
+			TActivate("RaceStart_cs_cam02")
+			TActivate("RaceStart_cs_cam03")
+			TActivate("RaceStart_cs_cam04")
+			TActivate("RaceStart_cs_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="RaceStart_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			AddCinematicMessage( 117, 0.25 )
+
+			RuleConsole("mus_Volume 55")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceStart_cs_cam02" active="0">
+		<event flypath="RaceStart_cam02" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage( 1171, 0.25 )
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceStart_cs_cam03" active="0">
+		<event flypath="RaceStart_cam03" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage( 1172, 0.25 )
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceStart_cs_cam04" active="0">
+		<event flypath="RaceStart_cam04" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage( 1173, 0.25 )
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="RaceStart_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+
+			SetCameraBehindPlayerVehicle()
+
+			TActivate("trRaceTimer1")
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 </triggers>

@@ -1624,6 +1624,19 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 
 	<Prototype
 		Class			= "Vehicle"
+		Name			= "TankBez"
+		ParentPrototype 	= "Tank"
+		VisibleInEncyclopedia	= "true">
+		<Parts>
+			<Part id = "CABIN"			Prototype = "tankCab01" />
+			<Part id = "TANK_GUN"	Prototype = "tank01" />
+			<Part id = "CHASSIS_SMALL_GUN"	Prototype = "kord01" />
+			<Part id = "BASKET"		Prototype = "fakeCargo" />
+		</Parts>
+	</Prototype>
+
+	<Prototype
+		Class			= "Vehicle"
 		Name			= "Bug01"
 		ParentPrototype 	= "Bug">
 		<Parts>
@@ -1694,6 +1707,26 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 			<Part id = "BASKET_BIG_GUN_0"	Prototype = "rapier01" /> 
 		</Parts>
 	</Prototype>
+
+	<Prototype
+		Class			= "Vehicle"
+		Name			= "UralRace00"
+		ParentPrototype 	= "Ural">
+		<Parts>
+			<Part id = "CABIN"			Prototype = "uralCab03" />
+			<Part id = "BASKET"			Prototype = "uralCargo01" />
+		</Parts>
+	</Prototype>
+
+	<Prototype
+		Class			= "Vehicle"
+		Name			= "UralRace01"
+		ParentPrototype 	= "Ural">
+		<Parts>
+			<Part id = "CABIN"			Prototype = "uralCab05" />
+			<Part id = "BASKET"			Prototype = "uralCargo05" />
+		</Parts>
+	</Prototype>
 	
     <Prototype
 		Class			= "Vehicle"
@@ -1718,9 +1751,6 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 		<Parts>
 			<Part id = "CABIN"			Prototype = "uralCab04" />
 			<Part id = "BASKET"			Prototype = "uralCargo03" />
-			<Part id = "CABIN_BIG_GUN_1"		Prototype = "kpvt01" />
-			<Part id = "BASKET_GIANT_GUN"	Prototype = "octopus01"/>
-			<Part id = "BASKET_BIG_GUN_0"	Prototype = "rainmetal01" /> 
 		</Parts>
 	</Prototype>
 
@@ -2410,6 +2440,20 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 
 	<Prototype
 		Class			= "Vehicle"
+		Name			= "BelazShot1"
+		ParentPrototype 	= "Belaz">
+		<Parts>
+			<Part id = "CABIN"			Prototype = "belazCab05" />
+			<Part id = "CABIN_BIG_GUN_1"		Prototype = "vulcan01" /> 
+			<Part id = "CABIN_GIANT_GUN" 		Prototype = "octopus01" /> 
+			<Part id = "BASKET"			Prototype = "belazCargo05" />
+			<Part id = "BASKET_BIG_GUN_0" 	Prototype = "kpvt01" /> 
+			<Part id = "BASKET_SIDE_GUN_0"	Prototype = "marsSideGun" /> 
+		</Parts>
+	</Prototype>
+
+	<Prototype
+		Class			= "Vehicle"
 		Name			= "UralShot"
 		ParentPrototype 	= "Ural">
 		<Parts>
@@ -2450,12 +2494,21 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 		Name			= "UralDadHamza"
 		ParentPrototype 	= "Ural">
 		<Parts>
-			<Part id = "CABIN"			Prototype = "uralCab03" />
+			<Part id = "CABIN"			Prototype = "uralCab04" />
 			<Part id = "BASKET"			Prototype = "uralCargo03" />
-			<Part id = "CABIN_BIG_GUN_1"		Prototype = "vulcan01" /> 
-			<Part id = "CABIN_BIG_GUN_2"		Prototype = "vulcan01" /> 
+			<Part id = "CABIN_BIG_GUN_1"		Prototype = "vulcan01" />  
 			<Part id = "BASKET_BIG_GUN_0"		Prototype = "vulcan01" /> 
 			<Part id = "BASKET_GIANT_GUN"		Prototype = "octopus01" /> 
+		</Parts>
+	</Prototype>
+
+	<Prototype
+		Class			= "Vehicle"
+		Name			= "UralDadHamza_Race"
+		ParentPrototype 	= "Ural">
+		<Parts>
+			<Part id = "CABIN"			Prototype = "uralCab04" />
+			<Part id = "BASKET"			Prototype = "uralCargo03" /> 
 		</Parts>
 	</Prototype>
 

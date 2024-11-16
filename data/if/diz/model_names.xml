@@ -1812,6 +1812,21 @@
 		value="Óðàë" />
 
 	<Item
+		id="UralDadHamza_Race"
+		locForm="0"
+		value="Óðàë" />
+
+	<Item
+		id="UralRace00"
+		locForm="0"
+		value="Óðàë" />
+
+	<Item
+		id="UralRace01"
+		locForm="0"
+		value="Óðàë" />
+
+	<Item
 		id="UralShot1"
 		locForm="0"
 		value="Óðàë" />
