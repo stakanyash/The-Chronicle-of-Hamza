@@ -1490,7 +1490,7 @@
 				place=4
 			end
 
-			CreateNewDummyObject( "brick_debris1", "CamTochka", -1, -1, CVector(4176.459, 284.317, 2168.970), Quaternion(0, 0, 0, 0), 0)
+			CreateNewDummyObject( "brick_debris1", "CamTochka", -1, -1, CVector(4189.459, 288.317, 2168.970), Quaternion(0, 0, 0, 0), 0)
 			local CToch = GetEntityByName("CamTochka")
 			local CTochID = CToch:GetId()
 			local Plf = GetPlayerVehicle()
