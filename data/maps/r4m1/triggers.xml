@@ -1052,6 +1052,8 @@
 	<trigger	Name="HamzaStartGame_tr"	active="1">
 		<event	timeout="0.1"			eventid="GE_TIME_PERIOD" />
 		<script>
+			g_ObjCont:SetGameTime( 20, 0, 2, 10, 2234 )
+
 			SetRadarUpgrade(1)
 
 			ShowMap()
