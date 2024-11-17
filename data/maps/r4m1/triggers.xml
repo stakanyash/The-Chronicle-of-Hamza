@@ -104,13 +104,9 @@
 	</trigger>
 
 	<trigger	Name="trSetTolNeutral"	active="1">
-		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="NearKef_loc" />
-		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="NearGadad_loc" />
-		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="NearAliham_loc" />
-		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="NearZuhel_loc" />
+		<event	timeout="0"			eventid="GE_TIME_PERIOD" />
 		<script>
 		    SetTolerance(1100, 1023,RS_NEUTRAL)
-
 		    SetTolerance(1042, 1023,RS_NEUTRAL)
 
 --			trigger:Deactivate()
@@ -123,9 +119,8 @@
 		<event	eventid="GE_OBJECT_LEAVES_LOCATION"	ObjName="NearAliham_loc" />
 		<event	eventid="GE_OBJECT_LEAVES_LOCATION"	ObjName="NearZuhel_loc" />
 		<script>
-		    SetTolerance(1100, 1023,RS_ENEMY)
-
-		    SetTolerance(1100, 1023,RS_ENEMY)
+		    SetTolerance(1100, 1023,RS_NEUTRAL)
+		    SetTolerance(1042, 1023,RS_NEUTRAL)
 
 --			trigger:Deactivate()
 		</script>
@@ -1124,31 +1119,6 @@
 		</script>
 	</trigger>
 
-	<trigger Name="RepairQuest_Check" active="0">
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="TheGadad"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="TheKef"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="TheKazif"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="r4_AlihamVil"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="TheOilCity"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="TheZuhel"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown1"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown2"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown3"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown4"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown5"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown6"/>
-		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown7"/>
-		<script>
-			local PCar = GetPlayerVehicle()
-
-			if PCar:GetHealth() >= 1499 then
-			    CompleteQuest("Repair_quest")
-			end
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
 	<trigger Name="StartUralRace" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
@@ -1772,7 +1742,7 @@
 	</trigger>
 
 	<trigger Name="MansurCar_DieOnGadadDefend" active="0">
-		<event eventid="GE_OBJECT_DIE" ObjName="MansurTachka" />
+		<event eventid="GE_OBJECT_DIE" ObjName="MansurTachka_vehicle_0" />
 		<script>
             TDeactivate("AfterGadadDefendRolik_Start")
 
@@ -1810,6 +1780,8 @@
 
 			CreateTeam("SharafCar",1025,CVector(6367.207, 249.990, 5101.260),{"BelazShot"},CVector(6367.207, 249.990, 5101.260), nil)
 
+			SetTolerance(1025, 1024, RS_ENEMY)
+
 			local Shv = getObj("SharafCar_vehicle_0")
 
 			if Shv then
@@ -1845,6 +1817,20 @@
 			TDeactivate("SharafDied")
 
 			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="StopBattleMusic" active="0">
+		<event timeout="0.0" eventid="GE_TIME_PERIOD" />
+		<script>
+		    StopPlayingCustomMusic()
+
+			local SCar = getObj("SharafCar_vehicle_0")
+			if SCar then
+				SCar:Remove()
+			end
+
+            trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -1913,7 +1899,7 @@
 
 			local vehMansur = getObj("MansurHamzaCar_vehicle_0")
 			if vehMansur then
-				vehMansur:SetSkin(1)
+				vehMansur:SetSkin(7)
 				vehMansur:setImmortalMode(1)
 
 				local newControllerId = CreateNewObject {
@@ -1940,12 +1926,14 @@
 				local veh = getObj(trigger:GetTriggeredObjectID(i))
 				if veh:GetName()=="PlayerMolokovoz" then
 					if QuestStatus("TakeOilKef_GoToOiler_quest")==Q_TAKEN then
+						TActivate("HamzaReachOil_cs")
 						CompleteQuest("TakeOilKef_GoToOiler_quest")
 						TakeQuest("TakeOilKef_BackToKef_quest")
 					end
 					do break end
 				end
 			end
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -2134,6 +2122,48 @@
 				CabinBasketRepo:AddItems("uralCab01", 1)
 				CabinBasketRepo:AddItems("uralCab02", 1)
 				CabinBasketRepo:AddItems("uralCab04", 1)
+			end
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger	Name="HamzaReturnCar"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="OilVehicleChange_loc" />
+		<script>
+			TActivate("HamzaReturnCar_cs_start")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="ConnectMansur_GoToBuhara_Again" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            SetTolerance(1100, 1090, RS_ALLY)
+			SetTolerance(1090, 1002, RS_ENEMY)
+			SetTolerance(1090, 1062, RS_ENEMY)
+			SetTolerance(1090, 1023, RS_ALLY)
+			SetTolerance(1090, 1025, RS_NEUTRAL)
+			SetTolerance(1090, 1060, RS_NEUTRAL)
+
+            TeamCreate("MansurCar", 1090, CVector(5432.852, 251.100, 7027.151), {"UralMansur"}, nil, nil, Quaternion(0.002, -0.932, -0.003, -0.362))
+
+			local vehMansur = getObj("MansurCar_vehicle_0")
+			if vehMansur then
+				vehMansur:SetSkin(1)
+				vehMansur:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "MansurControllerBuharaR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehMansur)
+				end
 			end
 
 			trigger:Deactivate() 

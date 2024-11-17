@@ -300,6 +300,17 @@
         <Point  coord="4158.405 285.745 2052.357" rotation="-0.207 -0.182 0.039 0.961"/>
 	</Path>
 
+	<Path Name = "mswp_cam">
+		<Point  coord="5399.854 295.518 7063.280" rotation="0.086 0.914 -0.282 -0.280"/>
+		<Point  coord="5433.245 280.872 7055.532" rotation="0.022 0.950 -0.303 -0.069"/>
+		<Point  coord="5445.928 260.130 7048.385" rotation="-0.006 0.988 -0.147 0.039"/>
+	</Path>
+
+	<Path Name = "mswp_cam01">
+		<Point  coord="5445.928 260.130 7048.385" rotation="-0.006 0.988 -0.147 0.039"/>
+		<Point  coord="5433.401 254.554 7010.858" rotation="-0.010 0.981 -0.053 0.185"/>
+	</Path>
+
 	<Path Name = "ENEMYLISADEAD_cam01">
 		<Point  coord="-10 5 -15" />
 		<Point  coord="10 8 -20" />

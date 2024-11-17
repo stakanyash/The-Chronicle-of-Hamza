@@ -337,7 +337,7 @@
 <!--Root/r4m1/The Chronicle of Hamza--><!--Root/r4m1/The Chronicle of Hamza/Отец--><!--Root/r4m1/The Chronicle of Hamza/Мансур--><!--Root/r4m1/The Chronicle of Hamza/Гонка-->
 	<Reply
 		name="Adrenalin_NPC_dialog_1"
-		text="Приветствую, молодые люди. Не упустите свой шанс, только сегодня у нас проводятся гонки на Уралах"
+		text="Приветствую, молодые люди! Не упустите свой шанс - сегодня у нас проводятся гонки на Уралах. Как я вижу, вы приехали на этих автомобилях, так что вы точно не захотите пропустить это событие!"
 		role="NPC"
 		scriptCondition="QuestStatus('GonkaUral')==Q_TAKEN"
 		nextReplies="Dlg_pl_001348" />
@@ -383,7 +383,7 @@
 
 	<Reply
 		name="Dlg_npc_001358"
-		text="Правила просты: фальстарт - проиграл, разбил машину - проиграл. Приедешь первым - получишь 40 000 монет. Приедешь вторым - получишь 20 000 монет. Приедешь третьим - получишь 10 000 монет. Круг у гонки всего один, так как Уралы не такие быстрые, как гоночные болиды. На время гонки на вашу машину будет установлено оборудование, которое может увеличить скорость вашего автомобиля до двух раз. Для зрелищности. Так-же на время гонки придётся снять оружие в целях безопасности."
+		text="Правила просты: фальстарт - проиграл, разбил машину - проиграл. Приедешь первым - получишь 40 000 монет. Приедешь вторым - получишь 20 000 монет. Приедешь третьим - получишь 10 000 монет. Гонка состоит из одного круга, так как Уралы не такие быстрые, как гоночные болиды. На время гонки на вашу машину будет установлено оборудование, которое может увеличить скорость вашего автомобиля в два раза. Также на время гонки придётся снять оружие в целях безопасности, как вашей, так и других участников."
 		role="NPC"
 		nextReplies="Dlg_pl_001359" />
 
@@ -401,7 +401,7 @@
 
 	<Reply
 		name="Dlg_pl_001361"
-		text="Отлично, спасибо. Мансур, поехали! Давай покажем им где раки зимуют!"
+		text="Отлично, спасибо. Мансур, поехали! Давай покажем им, где раки зимуют!"
 		role="PLAYER"
 		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
 
@@ -419,13 +419,13 @@
 
 	<Reply
 		name="Dlg_pl_001355"
-		text="Фальстарт - проиграл, разбил машину - проиграл. Первое место - 40 000, второе - 20 000, третье - 10 000. У гонки один круг. "
+		text="Фальстарт - проиграл, разбил машину - проиграл. Первое место - 40 000 монет, второе - 20 000, третье - 10 000. Гонка состоит из одного круга."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001356" />
 
 	<Reply
 		name="Dlg_npc_001356"
-		text="Отлично, только вы кое-что забыли. На вашу машину будет установлено оборудование, которое увеличит его скорость до двух раз. Так-же оружие на время гонки придётся снять в целях безопасности."
+		text="Отлично, только вы кое-что забыли. На вашу машину будет установлено оборудование, которое увеличит его скорость до двух раз. Так-же оружие на время гонки придётся снять в целях безопасности, как вашей, так и других участников."
 		role="NPC"
 		nextReplies="Dlg_pl_001357" />
 
@@ -707,7 +707,7 @@
 		name="Dlg_npc_001486"
 		text="Поговорил с Мансуром?"
 		role="NPC"
-		scriptCondition="QuestStatus('TalkWithMansurOil_quest')==Q_COMPLETED and QuestStatus('TakeOilKef_quest')==Q_TAKEN "
+		scriptCondition="QuestStatus('TalkWithMansurOil_quest')==Q_COMPLETED and QuestStatus('TakeOilKef_TakeOilCar_quest')==Q_TAKEN "
 		nextReplies="Dlg_pl_001487" />
 
 	<Reply
@@ -727,6 +727,55 @@
 		text="Хорошо."
 		role="PLAYER"
 		scriptResult="TActivate('OilQuestCarTake_tr'); CompleteQuest('TakeOilKef_TakeOilCar_quest'); TakeQuest('TakeOilKef_GoToOiler_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Марио/После доставки нефти-->
+	<Reply
+		name="Dlg_npc_001504"
+		text="Хамза, ты уже вернулся? Быстро ты!"
+		role="NPC"
+		scriptCondition="QuestStatus('TakeOilKef_TalkWithMario_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_001505" />
+
+	<Reply
+		name="Dlg_pl_001505"
+		text="Да, Марио, я вернулся. Привёз нефти прям под завязку. Насколько этого хватит?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001506" />
+
+	<Reply
+		name="Dlg_npc_001506"
+		text="Отлично! Увы, надолго этого не хватит, но надеюсь, что мы найдём кого ещё отправить за нефтью."
+		role="NPC"
+		nextReplies="Dlg_pl_001507" />
+
+	<Reply
+		name="Dlg_pl_001507"
+		text="Смотрю у нас намечаются тяжёлые времена..."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001508" />
+
+	<Reply
+		name="Dlg_npc_001508"
+		text="Увы, но да. Времена нас ждут тяжёлые. Надеюсь долго это не продлится. Каковы ваши дальнейшие планы?"
+		role="NPC"
+		nextReplies="Dlg_pl_001509" />
+
+	<Reply
+		name="Dlg_pl_001509"
+		text="Надо сначала с Мансуром обсудить. Кажется он хочет дальше на восток направится. А мне надо подумать..."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001510" />
+
+	<Reply
+		name="Dlg_npc_001510"
+		text="Удачи, я верю в вас."
+		role="NPC"
+		nextReplies="Dlg_pl_001511" />
+
+	<Reply
+		name="Dlg_pl_001511"
+		text="Спасибо."
+		role="PLAYER"
+		scriptResult="CompleteQuest('TakeOilKef_TalkWithMario_quest'); CompleteQuest('TakeOilKef_quest'); TakeQuest('TalkToMansurAfterOil_quest'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Шараф/Первый диалог-->
 	<Reply
 		name="Dlg_npc_001388"
@@ -803,15 +852,15 @@
 
 	<Reply
 		name="Dlg_npc_001400"
-		text="Отправляйтесь его искать. Как найдёте и накажете - возвращайтесь."
+		text="Отправляйтесь его искать. Как найдёте и накажете - возвраща... [Ха-а-а-амза!!!]  Тебя кажется твой отец зовёт. В общем, возвращайтесь как закончите."
 		role="NPC"
 		nextReplies="Dlg_pl_001401" />
 
 	<Reply
 		name="Dlg_pl_001401"
-		text="Хорошо, скоро увидимся!"
+		text="Хорошо, скоро увидимся! [Отец?! Что ему нужно?]"
 		role="PLAYER"
-		scriptResult="TakeQuest('KillTheRob_quest'); CompleteQuest('SpeakToSharaf_quest'); TActivate('MansurSeeRob_activate'); EndConversation()" />
+		scriptResult="TakeQuest('TalkToFatherAfterSharaf_quest'); CompleteQuest('SpeakToSharaf_quest'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Шараф/После убийства вора-->
 	<Reply
 		name="Dlg_npc_001402"
@@ -946,7 +995,7 @@
 		name="Dlg_pl_001440"
 		text="Хорошо, увидимся."
 		role="PLAYER"
-		scriptResult="CompleteQuest('KefDefend_quest'); TakeQuest('GoToBuhara_quest'); TActivate('GoToBuhara_tr'); EndConversation()" />
+		scriptResult="CompleteQuest('KefDefend_quest'); TakeQuest('GoToBuhara_quest'); TActivate('GoToBuhara_tr'); TActivate('StopBattleMusic'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Шараф/После диалога с бухарцами-->
 	<Reply
 		name="Dlg_npc_001443"
@@ -1301,6 +1350,67 @@
 		text="Хорошо, готовься, я пойду скажу Марио о готовности."
 		role="PLAYER"
 		scriptResult="CompleteQuest('TalkWithMansurOil_quest'); TakeQuest('TakeOilKef_quest'); TakeQuest('TakeOilKef_TakeOilCar_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Мансур/После доставки нефти-->
+	<Reply
+		name="Dlg_npc_001512"
+		text="Хамза. Мне кажется надо уже действовать дальше."
+		role="NPC"
+		scriptCondition="QuestStatus('TalkToMansurAfterOil_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_001513" />
+
+	<Reply
+		name="Dlg_pl_001513"
+		text="Ты всё таки хочешь поехать на восток, да?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001514" />
+
+	<Reply
+		name="Dlg_npc_001514"
+		text="Конечно! А у нас есть другие варианты?"
+		role="NPC"
+		nextReplies="Dlg_pl_001515" />
+
+	<Reply
+		name="Dlg_pl_001515"
+		text="Мансур, я честно говоря не знаю, как мне действовать дальше. Я сомневаюсь в необходимости туда ехать..."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001516" />
+
+	<Reply
+		name="Dlg_npc_001516"
+		text="Ты сейчас серьёзно? Хочешь сказать, что ты скорее прислушаешься к этому шарлатану Шарафу, чем ко мне или другим, кто нас поддерживает?"
+		role="NPC"
+		nextReplies="Dlg_pl_001517" />
+
+	<Reply
+		name="Dlg_pl_001517"
+		text="Нет. Вовсе нет..."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001518" />
+
+	<Reply
+		name="Dlg_npc_001518"
+		text="Ну? А чего ты тогда? Давай, Хамза! Мы начали это дело и должны его закончить! Мы уже примерно знаем откуда они прут, нам нужно лишь в этом убедится! Если будет какая-то опасность, то сразу уезжаем обратно!"
+		role="NPC"
+		nextReplies="Dlg_pl_001519" />
+
+	<Reply
+		name="Dlg_pl_001519"
+		text="Ну... Ой, ладно, поедем. Но не прямо сейчас же."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001520" />
+
+	<Reply
+		name="Dlg_npc_001520"
+		text="Разумеется! Сначала надо как минимум родным сообщить. Давай, иди поговори со своим отцом, ты же недавно чуть с ним не поругался из-за того, что не хотел рассказывать наши планы. Настало время рассказать."
+		role="NPC"
+		nextReplies="Dlg_pl_001521" />
+
+	<Reply
+		name="Dlg_pl_001521"
+		text="Да, ты прав. Так и сделаю."
+		role="PLAYER"
+		scriptResult="CompleteQuest('TalkToMansurAfterOil_quest'); TakeQuest('TalkToFatherPrepToTrip_quest'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/Первый приезд (непочиненный)-->
 	<Reply
 		name="Dlg_npc_001302"
@@ -1495,6 +1605,164 @@
 		text="Пошли."
 		role="PLAYER"
 		scriptResult="CompleteQuest('BackToHome_quest'); TakeQuest('GoToMansur_quest'); TActivate('NewOldCar_tr'); LeaveTown(true)" />
+<!--Root/r4m1/The Chronicle of Hamza/Отец/После первого диалога с Шарафом-->
+	<Reply
+		name="Dlg_npc_001492"
+		text="Хамза!"
+		role="NPC"
+		scriptCondition="QuestStatus('TalkToFatherAfterSharaf_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_001493" />
+
+	<Reply
+		name="Dlg_pl_001493"
+		text="Отец, что такое?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001494" />
+
+	<Reply
+		name="Dlg_npc_001494"
+		text="Что вы затеяли? Я видел, как ты говорил сначала с Акилем, затем с Шарафом."
+		role="NPC"
+		nextReplies="Dlg_pl_001495" />
+
+	<Reply
+		name="Dlg_pl_001495"
+		text="Отец, я пока ничего не могу рассказать, правда."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001496" />
+
+	<Reply
+		name="Dlg_npc_001496"
+		text="Не могу рассказать? Ты что, считаешь меня дураком?"
+		role="NPC"
+		nextReplies="Dlg_pl_001497" />
+
+	<Reply
+		name="Dlg_pl_001497"
+		text="Это не так просто. Поверь мне, сейчас лучше не знать всех деталей."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001498" />
+
+	<Reply
+		name="Dlg_npc_001498"
+		text="Не знать? Ты хочешь, чтобы я сидел и ждал, пока всё не взорвётся нам в лицо?"
+		role="NPC"
+		nextReplies="Dlg_pl_001499" />
+
+	<Reply
+		name="Dlg_pl_001499"
+		text="Есть вещи, которые лучше оставить в тайне. Хотя бы на время."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001500" />
+
+	<Reply
+		name="Dlg_npc_001500"
+		text="Тайны? Ты говоришь о тайнах? У нас нет места для тайн, Хамза! Ты должен понять, что твои действия могут поставить всех нас под угрозу! Ты думаешь я не в состоянии связать недавнее нападение на Гадад и твой диалог с Акилем, который занимается поиском старых, давно ушедших отсюда жителей? А Шараф. Он же каждый день твердит, что знает, где они находятся!"
+		role="NPC"
+		nextReplies="Dlg_pl_001501" />
+
+	<Reply
+		name="Dlg_pl_001501"
+		text="Поверь мне, я знаю, что делаю. Всё будет хорошо."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001502" />
+
+	<Reply
+		name="Dlg_npc_001502"
+		text="Ты уверен? Потому что я вижу только проблемы на горизонте. Ты должен быть осторожен, Хамза."
+		role="NPC"
+		nextReplies="Dlg_pl_001503" />
+
+	<Reply
+		name="Dlg_pl_001503"
+		text="Спасибо за понимание, отец."
+		role="PLAYER"
+		scriptResult="CompleteQuest('TalkToFatherAfterSharaf_quest'); TakeQuest('KillTheRob_quest'); TActivate('MansurSeeRob_activate'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Отец/Перед поездкой в Зармек-->
+	<Reply
+		name="Dlg_npc_001522"
+		text="Хамза, мы можем поговорить?"
+		role="NPC"
+		scriptCondition="QuestStatus('TalkToFatherPrepToTrip_quest')==Q_TAKEN "
+		nextReplies="Dlg_pl_001523" />
+
+	<Reply
+		name="Dlg_pl_001523"
+		text="Как раз за этим я и пришёл."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001524" />
+
+	<Reply
+		name="Dlg_npc_001524"
+		text="Тогда говори."
+		role="NPC"
+		nextReplies="Dlg_pl_001525" />
+
+	<Reply
+		name="Dlg_pl_001525"
+		text="Отец, сейчас я готов рассказать тебе, что происходит. Дело в том, что после произошедшего в Гададе мы с Мансуром решили выяснить откуда безумцы лезут и найти способ их уничтожить. Сейчас мы близки к тому, чтобы понять откуда они лезут. Понятное дело, что вдвоём мы уничтожить всех не сможем. Но убедится в верности наших догадок нам стоит. "
+		role="PLAYER"
+		nextReplies="Dlg_npc_001526" />
+
+	<Reply
+		name="Dlg_npc_001526"
+		text="И вот это ты от меня скрывал? Неужели ты думал, что я не поддержу тебя? Хамза, я горд за тебя и за Мансура. Делайте то, что должны. Когда вы собираетесь выдвигаться?"
+		role="NPC"
+		nextReplies="Dlg_pl_001527" />
+
+	<Reply
+		name="Dlg_pl_001527"
+		text="Для начала нам нужно съездить в Гадад. Мансур должен поговорить со своими родителями. А там уже будем думать."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001528" />
+
+	<Reply
+		name="Dlg_npc_001528"
+		text="Удачи вам. Если что-то пойдёт не так, пытайся выйти на связь, попытаемся помочь, чем сможем."
+		role="NPC"
+		nextReplies="Dlg_pl_001529" />
+
+	<Reply
+		name="Dlg_pl_001529"
+		text="Спасибо, отец. Крепитесь тут, с нефтью беда, я привёз немного, но Марио сказал, что надолго не хватит."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001530" />
+
+	<Reply
+		name="Dlg_npc_001530"
+		text="Я недавно с Марио разговаривал. Нашёлся какой-то человек, который согласился нам помочь, он как раз сейчас уехал за нефтью, дожидался вашего возвращения. Причём он не наш житель, он с других земель."
+		role="NPC"
+		nextReplies="Dlg_pl_001531" />
+
+	<Reply
+		name="Dlg_pl_001531"
+		text="С других земель?! А вдруг он безумец?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001532" />
+
+	<Reply
+		name="Dlg_npc_001532"
+		text="Я такой вопрос ему задал. Он уверил меня, что с ним всё в порядке."
+		role="NPC"
+		nextReplies="Dlg_pl_001533" />
+
+	<Reply
+		name="Dlg_pl_001533"
+		text="Ну хорошо. Ладно, отец. Мансур уже наверное заждался, нам пора ехать."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001534" />
+
+	<Reply
+		name="Dlg_npc_001534"
+		text="Удачи!"
+		role="NPC"
+		nextReplies="Dlg_pl_001535" />
+
+	<Reply
+		name="Dlg_pl_001535"
+		text="До встречи!"
+		role="PLAYER"
+		scriptResult="CompleteQuest('TalkToFatherPrepToTrip_quest'); TakeQuest('GoToMansurParents_quest'); TActivate('MansurSpeakWithParents_cs'); EndConversation()" />
 <!--Root/r4m1/Опциональные/Гонки-->
 	<Reply
 		name="r4_Racers_Men_1_N01"

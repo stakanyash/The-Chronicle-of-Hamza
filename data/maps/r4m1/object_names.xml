@@ -55,6 +55,10 @@
 	<Object
 		Name="Kef_Sharaf"
 		FullName="Шараф" />
+	
+	<Object
+		Name="Kef_Mansur"
+		FullName="Мансур" />
 
 	<Object
 		Name="Kef_Workshop"

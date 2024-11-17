@@ -964,6 +964,236 @@
 		time="2" />
 
 	<string
+		id="118"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Та-а-ак... Я на месте. Надо загрузиться по полной, чтобы на большее время хватило."
+		sound=""
+		time="5" />
+
+	<string
+		id="119"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Нефть доставлена, надо Марио об этом сказать."
+		sound=""
+		time="5" />
+
+	<string
+		id="120"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Мама, папа, привет. Нам нужно поговорить, времени немного. Мы с Хамзой решили отправиться на восток, чтобы найти место катастрофы. У нас есть догадки, что безумцы приходят именно оттуда."
+		sound=""
+		time="10" />
+
+	<string
+		id="121"
+		modelName="r4_man"
+		modelSkin="2"
+		modelCfg="285"
+		modelSlot="1"
+		value="ОТЕЦ МАНСУРА|Что?! Ты совсем потерял рассудок? После всего, что случилось с твоей сестрой, ты хочешь рисковать своей жизнью?"
+		sound=""
+		time="7" />
+
+	<string
+		id="122"
+		modelName="r1_woman"
+		modelSkin="0"
+		modelCfg="117"
+		modelSlot="1"
+		value="МАТЬ МАНСУРА|Мансур, пожалуйста, не делай этого. Мы не можем потерять еще и тебя."
+		sound=""
+		time="5" />
+
+	<string
+		id="123"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Я понимаю ваши чувства, но это очень важно для нас. Если мы не отправимся туда сейчас, то наши поиски причин всего происходящего зайдут в тупик."
+		sound=""
+		time="8" />
+
+	<string
+		id="124"
+		modelName="r4_man"
+		modelSkin="2"
+		modelCfg="285"
+		modelSlot="1"
+		value="ОТЕЦ МАНСУРА|Причины? Какие еще причины? Ты хочешь найти причины, по которым твоя сестра погибла? Это безумие!"
+		sound=""
+		time="7" />
+
+	<string
+		id="125"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Нет, папа. Безумие - это постоянно отбиваться от их атак и ничего не предпринимать!"
+		sound=""
+		time="5" />
+
+	<string
+		id="126"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Мансур прав. Мы должны это сделать. Мой отец гордится нашим решением и верит, что всё пройдёт успешно."
+		sound=""
+		time="6" />
+
+	<string
+		id="127"
+		modelName="r4_man"
+		modelSkin="2"
+		modelCfg="285"
+		modelSlot="1"
+		value="ОТЕЦ МАНСУРА|Хамза, помолчи пожалуйста! Лучше не делаешь! Мансур, ты же знаешь, насколько это опасно!"
+		sound=""
+		time="6" />
+
+	<string
+		id="128"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Да, я знаю. Но мы будем осторожны. Если почувствуем какую-либо опасность, мы сразу вернемся."
+		sound=""
+		time="5" />
+
+	<string
+		id="129"
+		modelName="r4_man"
+		modelSkin="2"
+		modelCfg="285"
+		modelSlot="1"
+		value="ОТЕЦ МАНСУРА|Мансур, ты не понимаешь, насколько это серьезно. Оттуда еще никто не возвращался. Ты хочешь, чтобы мы потеряли и тебя?"
+		sound=""
+		time="7" />
+
+	<string
+		id="130"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Папа, я понимаю ваши страхи. Но мы должны попытаться. Это единственный способ найти ответы и, возможно, предотвратить новые трагедии."
+		sound=""
+		time="7" />
+
+	<string
+		id="131"
+		modelName="r4_man"
+		modelSkin="2"
+		modelCfg="285"
+		modelSlot="1"
+		value="ОТЕЦ МАНСУРА|Ладно, Мансур. Но обещай, что будешь осторожен и сразу же вернешься, если что-то пойдет не так. Мы не можем потерять еще и тебя... Мы до сих пор от потери Мусибы не отошли..."
+		sound=""
+		time="9" />
+
+	<string
+		id="132"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Обещаю, папа. Мы будем осторожны. Это ради неё."
+		sound=""
+		time="5" />
+
+	<string
+		id="133"
+		modelName="r1_woman"
+		modelSkin="0"
+		modelCfg="117"
+		modelSlot="1"
+		value="МАТЬ МАНСУРА|Мансур. Мы верим в тебя. Будьте осторожны и возвращайтесь целыми и невредимыми."
+		sound=""
+		time="5" />
+
+	<string
+		id="134"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Спасибо, мама. Мы вернемся, обещаю."
+		sound=""
+		time="5" />
+
+	<string
+		id="135"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Хамза? Хамза, приём!"
+		sound=""
+		time="4" />
+
+	<string
+		id="136"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Да, отец, слышу тебя хорошо, что случилось?"
+		sound=""
+		time="5" />
+
+	<string
+		id="137"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Хамза, похоже, что тот приезжий с других земель, о котором я тебе говорил, здесь с целями, схожими с вашими. Как мне сказал Марио, сейчас он направился к бухарцам. Если вы всё ещё здесь, советую поехать туда и поговорить с ним."
+		sound=""
+		time="12" />
+
+	<string
+		id="138"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Понял тебя. Спасибо за информацию, отец."
+		sound=""
+		time="5" />
+
+	<string
+		id="139"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Ну что, Мансур, поехали снова к бухарцам?"
+		sound=""
+		time="5" />
+
+	<string
+		id="140"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Поехали."
+		sound=""
+		time="4" />
+	
+	<string
 		id="8801"
 		value="Вы желаете покинуть эту область?"
 		numButtons="2" />

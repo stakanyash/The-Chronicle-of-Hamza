@@ -296,6 +296,15 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="GoToMansurParents_quest"
+		briefDiz="Довезти Мансура до Гадада"
+		fullDiz="Я уже поговорил с отцом, теперь Мансуру нужно обсудить ситуацию со своими родителями. Поскольку он до сих пор ездит со мной в одной машине, мне предстоит довезти его до их дома."
+		isMainQuest="1">
+		<Map
+			name="r4m1" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="GoToMansur_quest"
 		briefDiz="Поехать к Мансуру"
 		fullDiz='Отец отдал мне свой старый Урал, так как ему более не нужна машина, ведь он практически никуда не ездит. Теперь у меня такая же машина, как у Мансура, надо съездить к нему показать свою "новую" машину.'
@@ -492,7 +501,8 @@
 		briefDiz="Вернуться в Кеф"
 		isMainQuest="1">
 		<Map
-			name="r4m1" />
+			name="r4m1"
+			targetObjName="OilVehicleChange_loc" />
 	</QuestInfo>
 
 	<QuestInfo
@@ -514,6 +524,15 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="TakeOilKef_TalkWithMario_quest"
+		briefDiz="Поговорить с Марио"
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="TakeOilKef_quest"
 		briefDiz="Доставить нефть в Кеф"
 		fullDiz="Мансур согласился на помощь в доставке нефти. Дело за малым. Нужно на специальной машине доехать до источника, забрать бочки и привезти в Кеф."
@@ -527,6 +546,31 @@
 		<Map
 			name="r1m2"
 			targetObjName="Midragd" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="TalkToFatherAfterSharaf_quest"
+		briefDiz="Поговорить с отцом"
+		fullDiz="Отец как-то странно меня подзывает. Похоже он чем-то недоволен..."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="TalkToFatherPrepToTrip_quest"
+		briefDiz="Поговорить с отцом"
+		fullDiz="Мансур смог убедить меня поехать на восток, надо поговорить с отцом касаемо этого."
+		isMainQuest="1" />
+
+	<QuestInfo
+		questName="TalkToMansurAfterOil_quest"
+		briefDiz="Поговорить с Мансуром"
+		fullDiz="Надо обсудить наши дальнейшие действия. Либо мы сейчас прекращаем наше 'расследование', либо отправляемся дальше на восток. "
+		isMainQuest="1">
+		<Map
+			name="r4m1" />
 	</QuestInfo>
 
 	<QuestInfo

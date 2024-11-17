@@ -1143,7 +1143,6 @@
 
             TActivate("AfterBezumBoiRolik_Fade")
 			TActivate("AfterBezumBoiRolik_End")
-			TActivate("RepairQuest_Check")
 
 			trigger:Deactivate()
 		</script>
@@ -1297,7 +1296,6 @@
 			end
 
 		TakeQuest("BackToHome_quest")
-		TakeQuest("Repair_quest")
 
 		AddBook("r4_04062012")
 
@@ -1358,14 +1356,25 @@
 		    DadCar:Remove()
 		end
 
-		AddPlayerVehicle("UralDadHamza")
+		local PVeh = GetPlayerVehicle()
+			if PVeh then
+			    PVeh:SetNameFromScript("MyCar")
+			end
 
-		local PUral = GetPlayerVehicle()
-        if PUral then
-            PUral:SetGamePositionOnGround( CVector(6555.777, 268.324, 5661.137))
-			PUral:SetRotation(Quaternion(-0.001, 0.915, -0.003, -0.404))
-			PUral:SetSkin(7)
-		end
+		CapturePlayerVehicle(0, "PlayerOldCar")
+
+		local plcar=CreateVehicleEx("UralDadHamza","DadUral",  CVector(6555.777, 268.324, 5661.137), 1100)
+		local pl=g_Player
+			if pl and plcar then 
+			   plcar:SetRotation(Quaternion(-0.001, 0.915, -0.003, -0.404))
+			   plcar:SetSkin(7)
+			   pl:AddChild(plcar)
+			end
+
+		local explayercar = getObj("MyCar")
+			if explayercar then
+				explayercar:Remove()
+			end
 
         trigger:Deactivate()
 		</script>
@@ -1778,10 +1787,6 @@
 	<trigger Name="MansurSeeRob_cam04" active="0">
 		<event flypath="MansurSeeRob_cam04" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
-		local PVeh = GetPlayerVehicle()
-		if PVeh then
-		    PVeh:UnlimitMaxSpeed()
-		end
 
 		AddCinematicMessage( 110, 0.25 )
 		AddCinematicMessage( 111, 0.25 )
@@ -1811,6 +1816,12 @@
 		    RobVehA:SetRotation(Quaternion(0.006, 0.968, -0.001, 0.250))
 		end
 
+		local PVeh = GetPlayerVehicle()
+		if PVeh then
+		    PVeh:UnlimitMaxSpeed()
+			PVeh:PlaceToEndOfPath("RobSpy_Path")
+		end
+
 		CompleteQuest("KillTheRob_quest")
 
 		TakeQuest("KillTheRobfinal_quest")
@@ -1829,14 +1840,18 @@
 		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
 			SaveAllToleranceStatus(RS_NEUTRAL)
+
 			TActivate("cinHamzaOilQuest_End")
 			TActivate("cinHamzaOilQuest_FadeIn")
+
 			local veh=getObj("PlayerMolokovoz")
 			if veh then
 				veh:SetExternalPathByName("molokovozStartPath")
 			end
+
 			Fly("molokovozExit", CINEMATIC_NO_AIM, nil, 10, 1,1)
 			StartCinematic()
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -1879,6 +1894,13 @@
 			if veh then
 	   		   g_Player:AddChild(veh)
 			end
+
+			local explayercar = getObj("OilHamzaCar")
+			if explayercar then
+				explayercar:SetGamePositionOnGround(CVector(7089.932, 321.672, 1223.257))
+				explayercar:SetRotation(Quaternion(0.001, 0.418, 0.000, -0.908))
+			end
+
 			TActivate("trHamzaOiler")
 			TDeactivate("cinHamzaOilQuest_FadeIn")
 			TDeactivate("cinHamzaOilQuest")
@@ -1897,6 +1919,81 @@
 			if a then a:SetProperty("Active",0) end
 
 			RestoreAllToleranceStatus()
+		</script>
+	</trigger>
+
+	<trigger	Name="HamzaReachOil_cs"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+			
+			local PCar = GetPlayerVehicle()
+			if PCar then
+				PCar:SetThrottle( 0 )
+				PCar:SetCustomLinearVelocity( 0 )
+			end
+
+			local PCarID = GetPlayerVehicleId()
+
+			TActivate("HamzaReachOil_cs_fade")
+			TActivate("HamzaReachOil_cs_fly")
+			TActivate("HamzaReachOil_cs_end")
+
+			Fly("OilPath1", CINEMATIC_AIM_TO_ID, PCarID, 6, 1, 0)
+			Fly("OilPath2", CINEMATIC_AIM_TO_ID, PCarID, 4, 0, 1)
+			StartCinematic()
+
+			PlayCustomMusic("Techno03")
+            trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="HamzaReachOil_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			local PCar = GetPlayerVehicle()
+			if PCar then
+				PCar:SetGamePositionOnGround(CVector(getPos("ZapravkaCar_loc")))
+				PCar:SetRotation(Quaternion(-0.005, -0.666, -0.005, 0.746))
+				PCar:SetExternalPathByName("ZapravkaIn")
+			end
+
+			AddCinematicMessage( 118, 0.5 )
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="HamzaReachOil_cs_fly" active="0">
+		<event flypath="OilPath2" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			local PCar = GetPlayerVehicle()
+			if PCar then
+				PCar:SetExternalPathByName("ZapravkaOut")
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+
+	<trigger	Name="HamzaReachOil_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			StopPlayingCustomMusic()
+
+			local PCar = GetPlayerVehicle()
+			if PCar then
+				PCar:SetExternalPathByName("ZapravkaOut")
+				PCar:PlaceToEndOfPath("ZapravkaOut")
+			end
+
+			SetCameraBehindPlayerVehicle()
+			RestoreAllToleranceStatus()
+
+			TActivate("HamzaReturnCar")
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -1982,6 +2079,197 @@
 			SetCameraBehindPlayerVehicle()
 
 			TActivate("trRaceTimer1")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="HamzaReturnCar_cs_start"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			TActivate("HamzaReturnCar_cs_end")
+			TActivate("HamzaReturnCar_cs_fade")
+            TDeactivate("trTrailerDie")
+
+			local veh=getObj("OilHamzaCar")
+			if veh then
+				veh:SetExternalPathByName("playerMolokPath")
+				veh:SetCruisingSpeed(15)
+			end
+
+			Fly("molokovozExit", CINEMATIC_NO_AIM, nil, 11, 1,1)
+			StartCinematic()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="HamzaReturnCar_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			if GetPlayerVehicle() then
+				AddCinematicMessage( 119, 0.5 )
+				GetPlayerVehicle():SetThrottle( 0 )
+				GetPlayerVehicle():SetCustomLinearVelocity( 0 )
+				GetPlayerVehicle():SetGamePositionOnGround(CVector(getPos("MolokovozSpawn_loc")))
+				GetPlayerVehicle():SetRotation(Quaternion(-0.047, -0.883, 0.025, 0.467))
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+
+	<trigger	Name="HamzaReturnCar_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			local veh=getObj("OilHamzaCar")
+			if veh then
+			    CapturePlayerVehicle(0, "MolokozPl")
+	   		    g_Player:AddChild(veh)
+	   		    RestoreWeaponGroups()
+				veh:SetCustomControlEnabled(1)
+
+				veh:SetExternalPathByName("playerMolokPath")
+				veh:PlaceToEndOfPath("playerMolokPath")
+
+				veh:setGodMode(false)
+				veh:SetCustomControlEnabled(0)
+			end
+
+			local vehmol=getObj("PlayerMolokovoz")
+			if vehmol then
+	   		   vehmol:Remove()
+			end
+
+			local vehMansur = getObj("MansurHamzaCar_vehicle_0")
+			if vehMansur then
+				vehMansur:Remove()
+			end
+
+			local contMansur = getObj("MansurControllerR4M1")
+			if contMansur then
+				contMansur:Remove()
+			end
+
+			SetCameraBehindPlayerVehicle()
+			RestoreAllToleranceStatus()
+
+			CompleteQuest("TakeOilKef_BackToKef_quest")
+			TakeQuest("TakeOilKef_TalkWithMario_quest")
+
+			local town1 = GetEntityByName("TheKef")
+			if town1 then town1:SetOpenGateToPlayer( true ) end
+
+			local town2 = GetEntityByName("TheGadad")
+			if town2 then town2:SetOpenGateToPlayer( true ) end
+
+			local town3 = GetEntityByName("TheKazif")
+			if town3 then town3:SetOpenGateToPlayer( true ) end
+
+			local a = GetEntityByName("StartGonka_loc")
+			if a then a:SetProperty("Active",1) end
+
+			TDeactivate("HamzaReturnCar_cs_start")
+			TDeactivate("HamzaReturnCar_cs_fade")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MansurSpeakWithParents_cs"	active="0">
+		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="TheGadad_enter" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			PlayCustomMusic("Techno01")
+
+			CreateMansurAndParents()
+
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetGamePositionOnGround( CVector(5425.003, 251.144, 6988.131))
+				PVeh:SetRotation(Quaternion(0.008, -0.467, 0.001, -0.884))
+				PVeh:SetThrottle( 0 )
+				PVeh:SetCustomLinearVelocity( 0 )
+			end
+
+			Fly("mswp_cam", CINEMATIC_NO_AIM, nil, 101, 1, 0)
+			Fly("mswp_cam01", CINEMATIC_NO_AIM, nil, 37, 0, 1)
+			StartCinematic()
+
+			TActivate("MansurSpeakWithParents_cs_fade")
+			TActivate("MansurSpeakWithParents_cs_cam01")
+			TActivate("MansurSpeakWithParents_cs_msg124")
+			TActivate("MansurSpeakWithParents_cs_msg131")
+			TActivate("MansurSpeakWithParents_cs_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MansurSpeakWithParents_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			CinematicMessageMSWP()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="MansurSpeakWithParents_cs_cam01" active="0">
+		<event flypath="mswp_cam01" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			CinematicMessageMSWPCam01()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="MansurSpeakWithParents_cs_msg124" active="0">
+		<event msgid="124" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+			PlayCustomMusic("IntenseDialogue01")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="MansurSpeakWithParents_cs_msg131" active="0">
+		<event msgid="131" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+			PlayCustomMusic("QuietDialogue01")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MansurSpeakWithParents_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+			SetCameraBehindPlayerVehicle()
+
+			StopPlayingCustomMusic()
+
+			local Parents = getObj("ParentsCar")
+			if Parents then
+				Parents:Remove()
+			end
+
+			local Mansur = getObj("MansurCar")
+			if Mansur then
+				Mansur:Remove()
+			end
+
+			TActivate("ConnectMansur_GoToBuhara_Again")
+
+			CompleteQuest("GoToMansurParents_quest")
+			TakeQuest("GoToBuharaAgain_quest")
 
 			trigger:Deactivate()
 		</script>

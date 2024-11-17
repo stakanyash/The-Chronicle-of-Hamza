@@ -302,13 +302,6 @@
 		SubQuestsCondition="and"
 		CheckAll="0"
 		ConditionToGive="all complete" />
-
-	<quest
-		Name="Repair_quest"
-		Automatic="0"
-		SubQuestsCondition="and"
-		CheckAll="0"
-		ConditionToGive="all complete" />
 <!--Root/r4m1/Сюжетные/The Chronicle of Hamza/Гонка-->
 	<quest
 		Name="GonkaUral"
@@ -386,6 +379,13 @@
 		SubQuestsCondition="and"
 		CheckAll="0"
 		ConditionToGive="all complete" />
+
+	<quest
+		Name="TalkToFatherAfterSharaf_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
 <!--Root/r4m1/Сюжетные/The Chronicle of Hamza/После разговора с бухарцами-->
 	<quest
 		Name="BackToSharafAfterBuhara_quest"
@@ -434,7 +434,35 @@
 			SubQuestsCondition="and"
 			CheckAll="0"
 			ConditionToGive="all complete" />
+
+		<quest
+			Name="TakeOilKef_TalkWithMario_quest"
+			Automatic="0"
+			SubQuestsCondition="and"
+			CheckAll="0"
+			ConditionToGive="all complete" />
 	</quest>
+<!--Root/r4m1/Сюжетные/The Chronicle of Hamza/После доставки нефти (подготовка к поездке в Зармек)-->
+	<quest
+		Name="TalkToMansurAfterOil_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
+
+	<quest
+		Name="TalkToFatherPrepToTrip_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
+
+	<quest
+		Name="GoToMansurParents_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
 <!--Root/r3m2/Сюжетные--><!--Root/r3m2/Опциональнае--><!--Root/r3m2/Опциональнае/Поле со знаками-->
 	<quest
 		Name="q_PlaceWithSign"
