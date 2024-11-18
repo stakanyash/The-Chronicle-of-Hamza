@@ -147,4 +147,18 @@
 			<Sound id="neutral_died" 		samples="174" 			probability="20"/>
 		</Enemy>
 	</Group>
+
+	<Group name="Foreigner" belongs="1095">
+		<Neutral>
+			<Sound id="player_hit_me" samples="182 183 184 185" probability="100"/>
+			<Sound id="player_become_enemy" samples="174 175 176 77" probability="100"/>
+			<Sound id="enemy_broken" samples="178 179 180 181" probability="50"/>
+			<Sound id="self_broken" samples="182 183 184 185" probability="50"/>
+			<Sound id="enemy_died" samples="186 187 188 189 190" probability="70"/>
+			<Sound id="self_died" samples="191 192 193 194" probability="50"/>
+			<Sound id="neutral_died" samples="195" probability="50"/>
+		</Neutral>
+		<Enemy>
+		</Enemy>
+	</Group>
 </RadioSounds>
