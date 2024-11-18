@@ -311,6 +311,20 @@
 		<Point  coord="5433.401 254.554 7010.858" rotation="-0.010 0.981 -0.053 0.185"/>
 	</Path>
 
+	<Path Name = "savejrandbuhara_cam">
+		<Point  coord="2598.070 575.557 5995.957" rotation="-0.149 0.509 -0.090 0.843"/>
+		<Point  coord="1740.900 380.252 5830.453" rotation="-0.094 -0.014 0.001 0.995"/>
+		<Point  coord="1456.209 298.744 6627.275" rotation="-0.061 -0.817 0.089 0.566"/>
+		<Point  coord="1712.107 284.760 6757.948" rotation="-0.009 0.987 -0.148 0.063"/>
+		<Point  coord="1978.146 284.760 6684.175" rotation="-0.063 0.800 -0.085 0.591"/>
+	</Path>
+
+	<Path Name = "buharaevacuated_cam">
+		<Point  coord="1472.523 234.073 3065.348" rotation="-0.097 -0.029 0.003 0.995"/>
+		<Point  coord="1433.693 234.073 3082.202" rotation="-0.093 -0.394 0.040 0.913"/>
+		<Point  coord="1442.052 231.421 3127.787" rotation="-0.068 -0.776 0.085 0.622"/>
+	</Path>
+
 	<Path Name = "ENEMYLISADEAD_cam01">
 		<Point  coord="-10 5 -15" />
 		<Point  coord="10 8 -20" />

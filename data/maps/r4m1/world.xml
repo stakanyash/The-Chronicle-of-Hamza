@@ -2,7 +2,7 @@
 <World
 	name="Object307"
 	class="SgNode"
-	LastId="76475637">
+	LastId="76476770">
 	<Node
 		name="Object1"
 		class="SgAnimatedModelNode"
@@ -9135,20 +9135,20 @@
 	<Node
 		name="Object3345"
 		class="SgAnimatedModelNode"
-		org="3860.471 0.000 2266.708"
+		org="3860.471 -1.000 2266.708"
 		orgRel="1"
 		rot="0.0000 0.3867 0.0000 0.9222"
-		scale="0.293 0.293 0.293"
+		scale="0.393 0.393 0.393"
 		id="nadTrasnizza+"
 		ndmAction="0" />
 
 	<Node
 		name="Object3346"
 		class="SgAnimatedModelNode"
-		org="4162.344 0.000 2010.635"
+		org="4162.344 -0.500 2010.635"
 		orgRel="1"
 		rot="0.0000 0.7343 0.0000 0.6788"
-		scale="0.244 0.244 0.244"
+		scale="0.344 0.344 0.344"
 		id="nadTrasnizza+"
 		ndmAction="0" />
 
@@ -9158,7 +9158,7 @@
 		org="4014.265 0.362 1397.267"
 		orgRel="1"
 		rot="0.0000 0.9511 0.0000 0.3090"
-		scale="0.275 0.275 0.275"
+		scale="0.375 0.375 0.375"
 		id="nadTrasnizza+"
 		ndmAction="0" />
 
@@ -9168,7 +9168,7 @@
 		org="3447.540 0.000 3373.719"
 		orgRel="1"
 		rot="0.0000 0.9997 0.0000 0.0240"
-		scale="0.244 0.244 0.244"
+		scale="0.344 0.344 0.344"
 		id="nadTrasnizza+"
 		ndmAction="0" />
 
@@ -9398,7 +9398,7 @@
 		org="3750.750 0.000 3018.472"
 		orgRel="1"
 		rot="0.0000 0.1024 0.0000 0.9947"
-		scale="0.293 0.293 0.293"
+		scale="0.393 0.393 0.393"
 		id="nadTrasnizza+"
 		ndmAction="0" />
 
@@ -9843,10 +9843,10 @@
 	<Node
 		name="Object3553"
 		class="SgAnimatedModelNode"
-		org="2993.323 0.000 2093.104"
+		org="2993.323 -1.600 2093.104"
 		orgRel="1"
 		rot="0.0000 -0.9833 0.0000 0.1822"
-		scale="0.293 0.293 0.293"
+		scale="0.393 0.393 0.393"
 		id="nadTrasnizza+"
 		ndmAction="0" />
 
@@ -10329,8 +10329,8 @@
 		class="SgAnimatedModelNode"
 		org="3264.508 -2.073 2529.627"
 		orgRel="1"
-		rot="0.0000 -0.8192 0.0000 0.5736"
-		scale="0.293 0.293 0.293"
+		rot="0.0000 -0.8192 0.0000 0.5735"
+		scale="0.393 0.393 0.393"
 		id="nadTrasnizza+"
 		ndmAction="0" />
 
@@ -13204,20 +13204,20 @@
 	<Node
 		name="Object5211"
 		class="SgAnimatedModelNode"
-		org="4188.003 0.000 2203.322"
+		org="4188.003 -0.500 2203.322"
 		orgRel="1"
-		rot="0.0000 0.7518 0.0000 0.6593"
-		scale="0.244 0.244 0.244"
+		rot="0.0000 0.7518 0.0000 0.6594"
+		scale="0.344 0.344 0.344"
 		id="nadTrasnizza+"
 		ndmAction="0" />
 
 	<Node
 		name="Object5213"
 		class="SgAnimatedModelNode"
-		org="3454.627 -0.496 1434.011"
+		org="3454.627 -1.996 1434.011"
 		orgRel="1"
-		rot="0.0000 -0.9966 0.0000 0.0828"
-		scale="0.293 0.293 0.293"
+		rot="-0.0177 -0.9964 -0.0096 0.0825"
+		scale="0.393 0.393 0.393"
 		id="nadTrasnizza+"
 		ndmAction="0" />
 
@@ -14520,7 +14520,7 @@
 		org="4082.378 -0.726 2886.962"
 		orgRel="1"
 		rot="0.0000 0.7254 0.0000 0.6883"
-		scale="0.293 0.293 0.293"
+		scale="0.393 0.393 0.393"
 		id="nadTrasnizza+"
 		ndmAction="0" />
 

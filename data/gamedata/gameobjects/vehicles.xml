@@ -2067,7 +2067,7 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 		<Parts>
 			<Part id = "CABIN"			Prototype = "molokovozCab01" />
 			<Part id = "BASKET"			Prototype = "molokovozCargo01" />
-			<Part id = "BASKET_SMALL_GUN_0"	Prototype = "hornet01" /> 
+			<Part id = "BASKET_SMALL_GUN_0"	Prototype = "maxim01" /> 
 		</Parts>
 	</Prototype>
 
@@ -2100,7 +2100,7 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 		<Parts>
 			<Part id = "CABIN"			Prototype = "uralCab01" />
 			<Part id = "BASKET"			Prototype = "uralCargo01" />
-			<Part id = "BASKET_BIG_GUN_0"		Prototype = "vulcan01" /> 
+			<Part id = "BASKET_BIG_GUN_0"		Prototype = "odin01" /> 
 		</Parts>
 	</Prototype>
 

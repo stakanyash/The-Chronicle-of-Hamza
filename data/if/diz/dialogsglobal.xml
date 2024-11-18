@@ -545,115 +545,91 @@
 		text="[Шараф может знать, где находятся бухарцы???]"
 		role="PLAYER"
 		scriptResult="CompleteQuest('TalkWithAkil_quest'); TakeQuest('SpeakToSharaf_quest'); EndConversation()" />
-<!--Root/r4m1/The Chronicle of Hamza/Шараф--><!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев-->
+<!--Root/r4m1/The Chronicle of Hamza/Шараф--><!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев--><!--Root/r4m1/The Chronicle of Hamza/Марио--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча/Первая часть диалога-->
 	<Reply
-		name="Dlg_npc_001406"
-		text="Кто вы такие и что вам нужно?"
+		name="Dlg_npc_001536"
+		text="Смерть бандитам!"
 		role="NPC"
-		nextReplies="Dlg_pl_001407" />
+		nextReplies="Dlg_pl_001537" />
 
 	<Reply
-		name="Dlg_pl_001407"
-		text="Я живу здесь. Меня зовут Хамза. Хотелось бы узнать у вас про безумцев."
+		name="Dlg_pl_001537"
+		text="Стой, стой! Мы мирные, мы вам помогли! Староста нас знает, он может это подтвердить!"
 		role="PLAYER"
-		nextReplies="Dlg_npc_001408" />
-
+		scriptResult="StartConversation('r4m1_BuharsLeader_AfterTheirSave0')" />
+<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча/Вторая часть диалога-->
 	<Reply
-		name="Dlg_npc_001408"
-		text="Какие у меня могут быть причины доверять тебе?"
+		name="Dlg_npc_001540"
+		text="О чём ты говоришь?"
 		role="NPC"
-		nextReplies="Dlg_pl_001409" />
+		nextReplies="Dlg_pl_001541" />
 
 	<Reply
-		name="Dlg_pl_001409"
-		text="Мы хотим разобраться откуда безумцы берутся, потому что они в последнее время постоянно совершают на нас нападения. Недавно они напали на город, где живет мой друг Мансур и в результате этого нападения погибла его сестра."
+		name="Dlg_pl_001541"
+		text="Ты здесь, чтобы найти место катастрофы, не так ли?"
 		role="PLAYER"
-		nextReplies="Dlg_npc_001410" />
+		nextReplies="Dlg_npc_001542" />
 
 	<Reply
-		name="Dlg_npc_001410"
-		text="Мне жаль это слышать... Хорошо, я расскажу вам об этом. Много лет назад мир пережил серьёзное потрясение, после которого нам удалось восстановиться и начать всё с чистого листа. Однако спустя какое-то время стало заметно, что у некоторых людей появляются необъяснимые перемены в поведении — от радости до агрессии. Мы долго не могли понять, что происходит. Но однажды спокойный и добродушный человек неожиданно напал на своих близких. Он утверждал, что ничего не помнит, но его слова не приняли всерьёз. Его приговорили к казне и с того момента доверять даже самым близким."
+		name="Dlg_npc_001542"
+		text="Я здесь, чтобы найти тех, кто уничтожил мою деревню, и наказать их. Лучше бы вам не быть теми самыми безумцами!"
 		role="NPC"
-		nextReplies="Dlg_pl_001411" />
+		nextReplies="Dlg_pl_001543" />
 
 	<Reply
-		name="Dlg_pl_001411"
-		text="Именно поэтому вы прячетесь здесь?"
+		name="Dlg_pl_001543"
+		text="Спокойно, мы точно не из таких. Я и мой друг никогда в своей жизни не покидали этих земель, ибо, как мне рассказывал отец, в одну и в другую сторону - опасно. Ты сказал про безумцев. Я так понимаю ты их ищещь, да?"
 		role="PLAYER"
-		nextReplies="Dlg_npc_001412" />
+		nextReplies="Dlg_npc_001544" />
 
 	<Reply
-		name="Dlg_npc_001412"
-		text='Именно так. После этого случая мы решили, что оставаться среди остальных - небезопасно. Со временем так называемые "безумцы" стали собираться в группы и нападать друг на друга. Нас это не затронуло, потому что сильные эмоции характерны для молодых, таких как вы. А мы уже тогда были слишком стары для подобных чувств.'
+		name="Dlg_npc_001544"
+		text="Именно."
 		role="NPC"
-		nextReplies="Dlg_pl_001413" />
+		nextReplies="Dlg_pl_001545" />
 
 	<Reply
-		name="Dlg_pl_001413"
-		text="А где произошла эта катастрофа?"
+		name="Dlg_pl_001545"
+		text="Я и мой друг тоже. Поэтому я и сказал, что мы преследуем схожие цели. Как насчёт того, чтобы скооперироваться?"
 		role="PLAYER"
-		nextReplies="Dlg_npc_001420" />
+		nextReplies="Dlg_npc_001546" />
 
 	<Reply
-		name="Dlg_npc_001420"
-		text="Неподалёку от наших земель дальше на восток. Только прошу вас - не следуйте туда! Вас там ждёт то, что хуже смерти! Поклянитесь мне, что никогда туда не поедете!"
+		name="Dlg_npc_001546"
+		text="Я не против."
 		role="NPC"
-		nextReplies="Dlg_pl_001421" />
+		nextReplies="Dlg_pl_001547" />
 
 	<Reply
-		name="Dlg_pl_001421"
-		text="Клянёмся. Можно ещё один вопрос?"
+		name="Dlg_pl_001547"
+		text="Отлично! Стоп... На машинах нападавших эмблема Альфарана... Я что... Убил своих же?.."
 		role="PLAYER"
-		nextReplies="Dlg_npc_001422" />
-
+		scriptResult="StartConversation('MansurAfterBuharaSave_talk')" />
+<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча/Третья часть диалога-->
 	<Reply
-		name="Dlg_npc_001422"
-		text="Спрашивай."
+		name="Dlg_npc_001553"
+		text="Что ещё за 'джасусы' и 'кельбы'?"
 		role="NPC"
-		nextReplies="Dlg_pl_001423" />
+		nextReplies="Dlg_pl_001554" />
 
 	<Reply
-		name="Dlg_pl_001423"
-		text="Вы всё время тут сидите?"
+		name="Dlg_pl_001554"
+		text="Джасусы - засланцы, а кельбы - собаки."
 		role="PLAYER"
-		nextReplies="Dlg_npc_001414" />
-
+		scriptResult="StartConversation('r4m1_BuharsLeader_AfterTheirSave')" />
+<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча/Четвёртая часть диалога-->
 	<Reply
-		name="Dlg_npc_001414"
-		text="Можно и так сказать. Нам некуда бежать, поэтому нам приходиться ждать, пока нас найдут и убьют. И судя по всему, это произойдёт уже очень скоро."
+		name="Dlg_npc_001560"
+		text="У меня есть устройство, с помощью которого я вызову корабль и смогу эвакуировать бухарцев туда, где живут нормальные люди."
 		role="NPC"
-		nextReplies="Dlg_pl_001415" />
+		nextReplies="Dlg_pl_001561" />
 
 	<Reply
-		name="Dlg_pl_001415"
-		text="Не волнуйтесь, я никому не расскажу о вашем местоположении. Вы нам очень помогли!"
+		name="Dlg_pl_001561"
+		text="Такое возможно?!"
 		role="PLAYER"
-		nextReplies="Dlg_npc_001416" />
-
-	<Reply
-		name="Dlg_npc_001416"
-		text="Но вы же нас искали. Не думаю, что вы просто решили приехать сюда в надежде, что мы будем здесь."
-		role="NPC"
-		nextReplies="Dlg_pl_001417" />
-
-	<Reply
-		name="Dlg_pl_001417"
-		text="Действительно, нам дали наводку на то, где вы можете быть. Но ведь мы можем сказать, что не нашли вас здесь!"
-		role="PLAYER"
-		nextReplies="Dlg_npc_001418" />
-
-	<Reply
-		name="Dlg_npc_001418"
-		text="Ты конечно сказать можешь, но послать сюда людей они всё равно могут..."
-		role="NPC"
-		nextReplies="Dlg_pl_001419" />
-
-	<Reply
-		name="Dlg_pl_001419"
-		text="Надеюсь на обратное... Спасибо вам за помощь! Берегите себя."
-		role="PLAYER"
-		scriptResult="CompleteQuest('GoToBuhara_quest'); TakeQuest('BackToSharafAfterBuhara_quest'); EndConversation()" />
-<!--Root/r4m1/The Chronicle of Hamza/Марио--><!--Root/r4m1/The Chronicle of Hamza/Марио/Первый диалог-->
+		scriptResult="StartConversation('r4m1_BuharsLeader_BeforeEvac')" />
+<!--Root/r4m1/The Chronicle of Hamza/Марио/Первый диалог-->
 	<Reply
 		name="Dlg_npc_001470"
 		text="Ха-а-мза! Здравствуй, дорогой! Что-то хотел?"
@@ -776,6 +752,162 @@
 		text="Спасибо."
 		role="PLAYER"
 		scriptResult="CompleteQuest('TakeOilKef_TalkWithMario_quest'); CompleteQuest('TakeOilKef_quest'); TakeQuest('TalkToMansurAfterOil_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев/Первый диалог-->
+	<Reply
+		name="Dlg_npc_001406"
+		text="Кто вы такие и что вам нужно?"
+		role="NPC"
+		nextReplies="Dlg_pl_001407" />
+
+	<Reply
+		name="Dlg_pl_001407"
+		text="Я живу здесь. Меня зовут Хамза. Хотелось бы узнать у вас про безумцев."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001408" />
+
+	<Reply
+		name="Dlg_npc_001408"
+		text="Какие у меня могут быть причины доверять тебе?"
+		role="NPC"
+		nextReplies="Dlg_pl_001409" />
+
+	<Reply
+		name="Dlg_pl_001409"
+		text="Мы хотим разобраться откуда безумцы берутся, потому что они в последнее время постоянно совершают на нас нападения. Недавно они напали на город, где живет мой друг Мансур и в результате этого нападения погибла его сестра."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001410" />
+
+	<Reply
+		name="Dlg_npc_001410"
+		text="Мне жаль это слышать... Хорошо, я расскажу вам об этом. Много лет назад мир пережил серьёзное потрясение, после которого нам удалось восстановиться и начать всё с чистого листа. Однако спустя какое-то время стало заметно, что у некоторых людей появляются необъяснимые перемены в поведении — от радости до агрессии. Мы долго не могли понять, что происходит. Но однажды спокойный и добродушный человек неожиданно напал на своих близких. Он утверждал, что ничего не помнит, но его слова не приняли всерьёз. Его приговорили к казне и с того момента доверять даже самым близким."
+		role="NPC"
+		nextReplies="Dlg_pl_001411" />
+
+	<Reply
+		name="Dlg_pl_001411"
+		text="Именно поэтому вы прячетесь здесь?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001412" />
+
+	<Reply
+		name="Dlg_npc_001412"
+		text='Именно так. После этого случая мы решили, что оставаться среди остальных - небезопасно. Со временем так называемые "безумцы" стали собираться в группы и нападать друг на друга. Нас это не затронуло, потому что сильные эмоции характерны для молодых, таких как вы. А мы уже тогда были слишком стары для подобных чувств.'
+		role="NPC"
+		nextReplies="Dlg_pl_001413" />
+
+	<Reply
+		name="Dlg_pl_001413"
+		text="А где произошла эта катастрофа?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001420" />
+
+	<Reply
+		name="Dlg_npc_001420"
+		text="Неподалёку от наших земель дальше на восток. Только прошу вас - не следуйте туда! Вас там ждёт то, что хуже смерти! Поклянитесь мне, что никогда туда не поедете!"
+		role="NPC"
+		nextReplies="Dlg_pl_001421" />
+
+	<Reply
+		name="Dlg_pl_001421"
+		text="Клянёмся. Можно ещё один вопрос?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001422" />
+
+	<Reply
+		name="Dlg_npc_001422"
+		text="Спрашивай."
+		role="NPC"
+		nextReplies="Dlg_pl_001423" />
+
+	<Reply
+		name="Dlg_pl_001423"
+		text="Вы всё время тут сидите?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001414" />
+
+	<Reply
+		name="Dlg_npc_001414"
+		text="Можно и так сказать. Нам некуда бежать, поэтому нам приходиться ждать, пока нас найдут и убьют. И судя по всему, это произойдёт уже очень скоро."
+		role="NPC"
+		nextReplies="Dlg_pl_001415" />
+
+	<Reply
+		name="Dlg_pl_001415"
+		text="Не волнуйтесь, я никому не расскажу о вашем местоположении. Вы нам очень помогли!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001416" />
+
+	<Reply
+		name="Dlg_npc_001416"
+		text="Но вы же нас искали. Не думаю, что вы просто решили приехать сюда в надежде, что мы будем здесь."
+		role="NPC"
+		nextReplies="Dlg_pl_001417" />
+
+	<Reply
+		name="Dlg_pl_001417"
+		text="Действительно, нам дали наводку на то, где вы можете быть. Но ведь мы можем сказать, что не нашли вас здесь!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001418" />
+
+	<Reply
+		name="Dlg_npc_001418"
+		text="Ты конечно сказать можешь, но послать сюда людей они всё равно могут..."
+		role="NPC"
+		nextReplies="Dlg_pl_001419" />
+
+	<Reply
+		name="Dlg_pl_001419"
+		text="Надеюсь на обратное... Спасибо вам за помощь! Берегите себя."
+		role="PLAYER"
+		scriptResult="CompleteQuest('GoToBuhara_quest'); TakeQuest('BackToSharafAfterBuhara_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев/Второй диалог--><!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев/Второй диалог/Первая часть-->
+	<Reply
+		name="Dlg_npc_001538"
+		text="Да, он не врёт, мы с ним встречались не так давно."
+		role="NPC"
+		nextReplies="Dlg_pl_001539" />
+
+	<Reply
+		name="Dlg_pl_001539"
+		text="Вот! Видишь? Мы тебе не враги! Более того, мы похоже преследуем схожие цели."
+		role="PLAYER"
+		scriptResult="StartConversation('Chujezemets1')" />
+<!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев/Второй диалог/Вторая часть-->
+	<Reply
+		name="Dlg_npc_001556"
+		text="Слушайте. Мы победили, но они вернутся. Это только вопрос времени. У нас не осталось больше сил сражаться.  "
+		role="NPC"
+		nextReplies="Dlg_pl_001557" />
+
+	<Reply
+		name="Dlg_pl_001557"
+		text="И что же нам делать? Надо как-то спасти вас, нельзя вот так бросать на произвол судьбы!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001558" />
+
+	<Reply
+		name="Dlg_npc_001558"
+		text="Поблизости есть порт, но там не осталось кораблей. Хотя мы проверяли всю технику, она работает. "
+		role="NPC"
+		nextReplies="Dlg_pl_001559" />
+
+	<Reply
+		name="Dlg_pl_001559"
+		text="Ну и какой толк от этого порта, если там нет кораблей?"
+		role="PLAYER"
+		scriptResult="StartConversation('Chujezemets3')" />
+<!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев/Второй диалог/Третья часть-->
+	<Reply
+		name="Dlg_npc_001562"
+		text="Мне тоже с трудом верится, но у нас сейчас нет выбора."
+		role="NPC"
+		nextReplies="Dlg_pl_001563" />
+
+	<Reply
+		name="Dlg_pl_001563"
+		text="Чего мы тогда стоим? Скорее поехали в порт!"
+		role="PLAYER"
+		scriptResult="CompleteQuest('GoToBuharaAgain_quest'); TakeQuest('EvacuateBuharas_quest'); TActivate('RemoveBuharaAndJrTeams_AfterFight'); TActivate('BuharaEvacuation'); TActivate('StopBattleMusic'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Шараф/Первый диалог-->
 	<Reply
 		name="Dlg_npc_001388"
@@ -995,7 +1127,7 @@
 		name="Dlg_pl_001440"
 		text="Хорошо, увидимся."
 		role="PLAYER"
-		scriptResult="CompleteQuest('KefDefend_quest'); TakeQuest('GoToBuhara_quest'); TActivate('GoToBuhara_tr'); TActivate('StopBattleMusic'); EndConversation()" />
+		scriptResult="CompleteQuest('KefDefend_quest'); TakeQuest('GoToBuhara_quest'); TActivate('GoToBuhara_tr'); TActivate('StopBattleMusic'); TActivate('RemoveSharaf'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Шараф/После диалога с бухарцами-->
 	<Reply
 		name="Dlg_npc_001443"
@@ -1411,6 +1543,42 @@
 		text="Да, ты прав. Так и сделаю."
 		role="PLAYER"
 		scriptResult="CompleteQuest('TalkToMansurAfterOil_quest'); TakeQuest('TalkToFatherPrepToTrip_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Мансур/Посреди первого диалога с чужеземцем-->
+	<Reply
+		name="Dlg_npc_001548"
+		text="Хамза, это похоже джасусы какие-то! Среди них нет ни одного знакомого лица!"
+		role="NPC"
+		nextReplies="Dlg_pl_001549" />
+
+	<Reply
+		name="Dlg_pl_001549"
+		text="Ты уверен?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001550" />
+
+	<Reply
+		name="Dlg_npc_001550"
+		text="Уверен, можешь сам посмотреть!"
+		role="NPC"
+		nextReplies="Dlg_pl_001551" />
+
+	<Reply
+		name="Dlg_pl_001551"
+		text="И правда, мне никто из них не знаком. Неужто безумцы замаскировались?!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001552" />
+
+	<Reply
+		name="Dlg_npc_001552"
+		text="Проклятые кельбы, как они мне уже надоели!"
+		role="NPC"
+		nextReplies="Dlg_pl_001564" />
+
+	<Reply
+		name="Dlg_pl_001564"
+		text="А кому из нас они не надоели?!"
+		role="PLAYER"
+		scriptResult="StartConversation('Chujezemets2')" />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/Первый приезд (непочиненный)-->
 	<Reply
 		name="Dlg_npc_001302"

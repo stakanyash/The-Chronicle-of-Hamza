@@ -3,45 +3,6 @@
 	<Path
 		Name="BuharsEvac_Path1_1">
 		<Point
-			coord="1947.926 6212.294" />
-
-		<Point
-			coord="1906.385 6168.233" />
-
-		<Point
-			coord="1850.533 6118.397" />
-
-		<Point
-			coord="1796.911 6096.271" />
-
-		<Point
-			coord="1744.082 6115.634" />
-
-		<Point
-			coord="1678.883 6212.509" />
-
-		<Point
-			coord="1617.094 6342.020" />
-
-		<Point
-			coord="1593.339 6400.536" />
-
-		<Point
-			coord="1613.412 6468.840" />
-
-		<Point
-			coord="1679.431 6509.901" />
-
-		<Point
-			coord="1733.879 6510.799" />
-
-		<Point
-			coord="1787.989 6538.240" />
-
-		<Point
-			coord="1946.109 6641.639" />
-
-		<Point
 			coord="2032.289 6641.767" />
 
 		<Point
@@ -371,27 +332,6 @@
 
 	<Path
 		Name="BuharsEvac_Path2_1">
-		<Point
-			coord="1946.440 6178.485" />
-
-		<Point
-			coord="1900.157 6123.214" />
-
-		<Point
-			coord="1795.761 6079.784" />
-
-		<Point
-			coord="1646.901 6218.251" />
-
-		<Point
-			coord="1616.570 6336.665" />
-
-		<Point
-			coord="1681.048 6388.866" />
-
-		<Point
-			coord="1920.983 6500.784" />
-
 		<Point
 			coord="2022.679 6619.721" />
 
@@ -2059,6 +1999,21 @@
 
 		<Point
 			coord="4159.277 1560.235" />
+	</Path>
+
+	<Path
+		Name="HamzaGoToSaveBuhara">
+		<Point
+			coord="2641.791 6741.607" />
+
+		<Point
+			coord="2552.301 6737.536" />
+
+		<Point
+			coord="2446.774 6748.844" />
+
+		<Point
+			coord="2285.986 6708.141" />
 	</Path>
 
 	<Path

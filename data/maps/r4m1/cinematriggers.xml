@@ -2267,9 +2267,298 @@
 			end
 
 			TActivate("ConnectMansur_GoToBuhara_Again")
+			TActivate("FirstMeetAivanJr_SaveThem_cs")
 
 			CompleteQuest("GoToMansurParents_quest")
 			TakeQuest("GoToBuharaAgain_quest")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="FirstMeetAivanJr_SaveThem_cs"	active="0">
+		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="FirstMeetAivanJr_SaveThem_loc" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			PlayCustomMusic("Battle01")
+
+			CreateBuharaAndAivanJrAttackers()
+			CreateBuharaAndAivanJr()
+
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetGamePositionOnGround(CVector(getPos("HamzaPos_SaveBhrnJr_loc")))
+				PVeh:SetRotation(Quaternion(-0.015, -0.844, 0.014, 0.536))
+				PVeh:SetExternalPathByName("HamzaGoToSaveBuhara")
+				PVeh:SetThrottle( 0 )
+				PVeh:SetCustomLinearVelocity( 0 )
+			end
+
+			local vehMansur = getObj("MansurCar_vehicle_0")
+			if vehMansur then
+				vehMansur:SetGamePositionOnGround(CVector(getPos("MansurPos_SaveBhrnJr_loc")))
+				vehMansur:SetRotation(Quaternion(-0.015, -0.844, 0.014, 0.536))
+			end
+
+			local buhara0god = getObj("Buharers_vehicle_0")
+			if buhara0god then
+				buhara0god:setGodMode(1)
+			end
+
+			local buhara1god = getObj("Buharers_vehicle_1")
+			if buhara1god then
+				buhara1god:setGodMode(1)
+			end
+
+			local aivanjrgod = getObj("AivanJr_vehicle_0")
+			if aivanjrgod then
+				aivanjrgod:setGodMode(1)
+			end
+
+			local vehA0 = getObj("BuharaAttack_vehicle_0")
+			if vehA0 then
+				vehA0:setGodMode(1)
+			end
+
+			local vehA1 = getObj("BuharaAttack_vehicle_1")
+			if vehA1 then
+				vehA1:setGodMode(1)
+			end
+
+			local vehA2 = getObj("BuharaAttack_vehicle_2")
+			if vehA2 then
+				vehA2:setGodMode(1)
+			end
+
+			local vehA3 = getObj("BuharaAttack_vehicle_3")
+			if vehA3 then
+				vehA3:setGodMode(1)
+			end
+
+			SetTolerance(1100,1025, RS_ENEMY)
+			SetTolerance(1026,1025, RS_ENEMY)
+			SetTolerance(1090,1025, RS_ENEMY)
+			SetTolerance(1008,1025, RS_ENEMY)
+
+			Fly("savejrandbuhara_cam", CINEMATIC_NO_AIM, nil, 10, 1, 1)
+			StartCinematic()
+
+			TActivate("FirstMeetAivanJr_SaveThem_cs_fade")
+			TActivate("FirstMeetAivanJr_SaveThem_cs_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="FirstMeetAivanJr_SaveThem_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			AddCinematicMessage(141, 0.25)
+			AddCinematicMessage(142, 0.25)
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="FirstMeetAivanJr_SaveThem_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+			SetCameraBehindPlayerVehicle()
+
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetExternalPathByName("HamzaGoToSaveBuhara")
+				PVeh:PlaceToEndOfPath("HamzaGoToSaveBuhara")
+				PVeh:SetGamePositionOnGround( CVector(1895.075, 229.861, 6603.666))
+				PVeh:SetRotation(Quaternion(-0.015, -0.844, 0.014, 0.536))
+			end
+
+			local vehMansur = getObj("MansurCar_vehicle_0")
+			if vehMansur then
+				vehMansur:SetGamePositionOnGround( CVector(1854.443, 231.509, 6617.965))
+				vehMansur:SetRotation(Quaternion(-0.038, -0.794, 0.041, 0.605))
+			end
+
+			local buhara0god = getObj("Buharers_vehicle_0")
+			if buhara0god then
+				buhara0god:setGodMode(0)
+			end
+
+			local buhara1god = getObj("Buharers_vehicle_1")
+			if buhara1god then
+				buhara1god:setGodMode(0)
+			end
+
+			local aivanjrgod = getObj("AivanJr_vehicle_0")
+			if aivanjrgod then
+				aivanjrgod:setGodMode(0)
+			end
+
+			local vehA0 = getObj("BuharaAttack_vehicle_0")
+			if vehA0 then
+				vehA0:setGodMode(0)
+			end
+
+			local vehA1 = getObj("BuharaAttack_vehicle_1")
+			if vehA1 then
+				vehA1:setGodMode(0)
+			end
+
+			local vehA2 = getObj("BuharaAttack_vehicle_2")
+			if vehA2 then
+				vehA2:setGodMode(0)
+			end
+
+			local vehA3 = getObj("BuharaAttack_vehicle_3")
+			if vehA3 then
+				vehA3:setGodMode(0)
+			end
+
+			TActivate("AivanJrDies")
+			TActivate("OneOfBuharaDies")
+			TActivate("MansurDiesOnBuharaAndJrDefend")
+			TActivate("AttackersDies")
+			TActivate("PlayerDiesOnBuharaAndJrDefend")
+			TActivate("SetTolerance_BuharaSave")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="BuharaEvacuated_cs"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetCustomLinearVelocity( 0 )
+				PVeh:SetThrottle( 0 )
+			end
+
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			TActivate("BuharaEvacuated_cs_fade")
+			TActivate("BuharaEvacuated_cs_end")
+
+			PlayCustomMusic("QuietDialogue03")
+
+			Fly("buharaevacuated_cam", CINEMATIC_NO_AIM, nil, 56, 1,1)
+			StartCinematic()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="BuharaEvacuated_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			for i=0,1 do
+				local buh = getObj("Buhara_"..i)
+				if buh then
+					buh:SetMaxTorque(0)
+					buh:SetMaxSpeed(0)
+				end
+			end
+
+			local veh1 = getObj("Buhara_0")
+			if veh1 then
+				veh1:SetGamePositionOnGround(CVector(getPos("BuharaEvacuated_cs_Buhara0_loc")))
+				veh1:SetRotation(Quaternion(0.020, 0.672, -0.008, 0.740))
+			end
+
+			local veh2 = getObj("Buhara_1")
+			if veh2 then
+				veh2:SetGamePositionOnGround(CVector(getPos("BuharaEvacuated_cs_Buhara1_loc")))
+				veh2:SetRotation(Quaternion(0.010, 0.880, 0.003, 0.475))
+			end
+
+			local PlVeh = GetPlayerVehicle()
+			if PlVeh then
+				PlVeh:SetGamePositionOnGround(CVector(getPos("BuharaEvacuated_cs_Player_loc")))
+				PlVeh:SetRotation(Quaternion(0.017, -0.297, 0.018, 0.954))
+			end
+
+			local MCarCR = getObj("MansurControllerBuharaR4M1")
+			if MCarCR then
+				MCarCR:Remove()
+			end
+
+			local ACarCR = getObj("AivenControllerBuharaR4M1")
+			if ACarCR then
+				ACarCR:Remove()
+			end
+
+			local MCarR = getObj("MansurCar_vehicle_0")
+			if MCarR then
+				MCarR:Remove()
+			end
+
+			local ACarR = getObj("AivenCar_vehicle_0")
+			if ACarR then
+				ACarR:Remove()
+			end
+
+			local ManCarCreate = CreateVehicleEx("UralMansur", "MansurCarCS", CVector(getPos("BuharaEvacuated_cs_Mansur_loc")), 1090)
+			if ManCarCreate then
+				ManCarCreate:SetRotation(Quaternion(0.023, -0.814, -0.019, 0.580))
+				ManCarCreate:SetSkin(1)
+			end
+
+			local AivenCreate = CreateVehicleEx("BelazShot1", "AivenCarCS", CVector(getPos("BuharaEvacuated_cs_AivenJr_loc")), 1008)
+			if AivenCreate then
+				AivenCreate:SetRotation(Quaternion(-0.006, 0.922, 0.008, -0.387))
+				AivenCreate:SetSkin(3)
+			end
+			
+			AddCinematicMessage( 143, 0.5 )
+			AddCinematicMessage( 144, 0.5 )
+			AddCinematicMessage( 145, 0.5 )
+			AddCinematicMessage( 146, 0.5 )
+			AddCinematicMessage( 147, 0.5 )
+			AddCinematicMessage( 148, 0.5 )
+			AddCinematicMessage( 149, 0.5 )
+			AddCinematicMessage( 150, 0.5 )
+			AddCinematicMessage( 151, 0.5 )
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="BuharaEvacuated_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			for i=0,1 do
+				local buh = getObj("Buhara_"..i)
+				if buh then
+					buh:Remove()
+				end
+			end
+
+			local MCarR = getObj("MansurCarCS")
+			if MCarR then
+				MCarR:Remove()
+			end
+
+			local ACarR = getObj("AivenCarCS")
+			if ACarR then
+				ACarR:Remove()
+			end
+
+			TActivate("ConnectAivan_GoToZarmek")
+			TActivate("ConnectMansur_GoToZarmek")
+
+			CompleteQuest("EvacuateBuharas_quest")
+			TakeQuest("GoToZarmek_quest")
+
+			StopPlayingCustomMusic()
+			SetCameraBehindPlayerVehicle()
+			RestoreAllToleranceStatus()
+
+			local a = GetEntityByName("StartGonka_loc")
+			if a then a:SetProperty("Active", 1) end
 
 			trigger:Deactivate()
 		</script>

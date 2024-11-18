@@ -339,4 +339,36 @@
 	<Object
 		Name="urod9"
 		FullName="Дядя Фу" />
+
+	<Object
+		Name="Chujezemets"
+		FullName="Чужеземец" />
+
+	<Object
+		Name="Chujezemets1"
+		FullName="Чужеземец" />
+
+	<Object
+		Name="Chujezemets2"
+		FullName="Чужеземец" />
+
+	<Object
+		Name="Chujezemets3"
+		FullName="Чужеземец" />
+
+	<Object
+		Name="r4m1_BuharsLeader_AfterTheirSave0"
+		FullName="Староста Бухарцев" />
+
+	<Object
+		Name="r4m1_BuharsLeader_AfterTheirSave"
+		FullName="Староста Бухарцев" />
+
+	<Object
+		Name="r4m1_BuharsLeader_BeforeEvac"
+		FullName="Староста Бухарцев" />
+
+	<Object
+		Name="MansurAfterBuharaSave_talk"
+		FullName="Мансур" />
 </ObjectNames>

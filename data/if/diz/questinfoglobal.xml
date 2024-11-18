@@ -189,6 +189,12 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="EvacuateBuharas_quest"
+		briefDiz="Эвакуировать Бухарцев в порт"
+		fullDiz="Первая встреча с чужеземцем едва пошла не по плану, но обошлось. Однако мы не можем оставлять бухарцев на произвол судьбы, надо эвакуировать их отсюда!"
+		isMainQuest="0" />
+
+	<QuestInfo
 		questName="FindBen2_Quest"
 		briefDiz="Разыскать Бена"
 		fullDiz="Мне повезло: Бен Дроссель живет неподалеку. Я должен встретиться с ним и выяснить, как он связан со мной и с недавними событиями."
@@ -286,6 +292,16 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="GoToBuharaAgain_quest"
+		briefDiz="Направится к бухарцам"
+		fullDiz="Отец сказал, что чужеземец возможно тут с целями, схожими с нашими. Надо отправится к бухарцам и поговорить с чужеземцем, возможно он будет с нами."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="FirstMeetAivanJr_SaveThem_loc" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="GoToBuhara_quest"
 		briefDiz="Доехать к бухарцам"
 		fullDiz="Шараф сказал, что бухарцы могут быть где-то на побережье. Надо попытаться найти их там."
@@ -312,6 +328,16 @@
 		<Map
 			name="r4m1"
 			targetObjName="TheGadad_enter" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="GoToZarmek_quest"
+		briefDiz="Отправится дальше на восток"
+		fullDiz="Нам больше нечего здесь делать. С чужеземцем скооперировались, бухарцев мы эвакуировали. Теперь наш путь лежит только на восток..."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="ToR4M2" />
 	</QuestInfo>
 
 	<QuestInfo

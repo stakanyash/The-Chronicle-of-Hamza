@@ -1192,6 +1192,112 @@
 		value="МАНСУР|Поехали."
 		sound=""
 		time="4" />
+
+	<string
+		id="141"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Хамза, давай ускоряйся, там бойня!"
+		sound=""
+		time="4" />
+
+	<string
+		id="142"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Я так-то вижу! Скорее!"
+		sound=""
+		time="4" />
+
+	<string
+		id="143"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="135"
+		modelSlot="1"
+		value="СТАРИК|Вот мы и приехали в порт. Спасибо вам за защиту от супостата."
+		sound=""
+		time="5" />
+
+	<string
+		id="144"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Всегда пожалуйста. Удачно вам переправиться на другие земли."
+		sound=""
+		time="5" />
+
+	<string
+		id="145"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="135"
+		modelSlot="1"
+		value="СТАРИК|Чужеземец, сначала я не хотел тебе этого говорить, но тот человек, о котором ты спрашивал, действительно был в нашей деревне. Он отправился дальше на восток. Заклинаю тебя: не следуй за ним! Там тебя ждёт только смерть. Или то, что хуже смерти."
+		sound=""
+		time="12" />
+
+	<string
+		id="146"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Какие у нас дальнейшие планы?"
+		sound=""
+		time="4" />
+
+	<string
+		id="147"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Делать то, что должны. Я думаю, ты понимаешь, о чём я."
+		sound=""
+		time="5" />
+
+	<string
+		id="148"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Да, понимаю. Мансур? Ты готов?"
+		sound=""
+		time="5" />
+
+	<string
+		id="149"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Готов. В путь!"
+		sound=""
+		time="4" />
+
+	<string
+		id="150"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="135"
+		modelSlot="1"
+		value="СТАРИК|Кажется, вас не переубедить... Тогда желаю вам удачи..."
+		sound=""
+		time="6" />
+
+	<string
+		id="151"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Спасибо, и вам удачи!"
+		sound=""
+		time="4" />
 	
 	<string
 		id="8801"
@@ -1227,5 +1333,16 @@
 
 	<string
 		id="8906"
-		value="Мансур погиб." />
+		value="Мансур погиб." 
+		numButtons="1"/>
+
+	<string
+		id="8907"
+		value="Чужеземец погиб." 
+		numButtons="1"/>
+
+	<string
+		id="8908"
+		value="Один из бухарцев погиб." 
+		numButtons="1"/>
 </resource>
