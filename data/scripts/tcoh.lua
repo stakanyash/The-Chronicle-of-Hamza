@@ -196,7 +196,7 @@ end
 
 function CreateBuharaAndAivanJr()
 	CreateTeam("Buharers",1026, CVector(getPos("BuhSpawn_loc")),{"DemoUral1","DemoMolokovoz1"})
-	CreateTeam("AivanJr", 1008, CVector(getPos("BuhSpawn_loc")),{"BelazShot1"})
+	CreateTeam("AivanJr", 1095, CVector(getPos("BuhSpawn_loc")),{"BelazShot1"})
 
 	local buhara0 = getObj("Buharers_vehicle_0")
 	if buhara0 then
@@ -261,7 +261,7 @@ function BuharaEvacutedCreateCars()
 		ManCarCreate:SetSkin(1)
 	end
 
-	local AivenCreate = CreateVehicleEx("BelazShot1", "MansurCarCS", CVector(getPos("BuharaEvacuated_cs_AivenJr_loc")), 1008)
+	local AivenCreate = CreateVehicleEx("BelazShot1", "MansurCarCS", CVector(getPos("BuharaEvacuated_cs_AivenJr_loc")), 1095)
 	if AivenCreate then
 		AivenCreate:SetRotation(Quaternion(-0.006, 0.922, 0.008, -0.387))
 		AivenCreate:SetSkin(3)

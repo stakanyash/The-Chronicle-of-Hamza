@@ -1059,6 +1059,8 @@
 
 			AddCinematicMessage(45, 0.5)
 
+			SetVar("NeedToPlayMusic", 0)
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -1092,6 +1094,10 @@
 
 		TActivate("FirstDebyli_Die")
 		TActivate("MansurCar_Die")
+
+		if (GetVar("NeedToPlayMusic").AsInt==1) then
+			PlayCustomMusic("Passage03b")
+		end
 
 		local bablo = random(3)
 		    if bablo == 1 then
@@ -2339,7 +2345,7 @@
 			SetTolerance(1100,1025, RS_ENEMY)
 			SetTolerance(1026,1025, RS_ENEMY)
 			SetTolerance(1090,1025, RS_ENEMY)
-			SetTolerance(1008,1025, RS_ENEMY)
+			SetTolerance(1095,1025, RS_ENEMY)
 
 			Fly("savejrandbuhara_cam", CINEMATIC_NO_AIM, nil, 10, 1, 1)
 			StartCinematic()
@@ -2506,7 +2512,7 @@
 				ManCarCreate:SetSkin(1)
 			end
 
-			local AivenCreate = CreateVehicleEx("BelazShot1", "AivenCarCS", CVector(getPos("BuharaEvacuated_cs_AivenJr_loc")), 1008)
+			local AivenCreate = CreateVehicleEx("BelazShot1", "AivenCarCS", CVector(getPos("BuharaEvacuated_cs_AivenJr_loc")), 1095)
 			if AivenCreate then
 				AivenCreate:SetRotation(Quaternion(-0.006, 0.922, 0.008, -0.387))
 				AivenCreate:SetSkin(3)

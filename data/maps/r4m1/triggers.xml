@@ -14,6 +14,7 @@
 			SetVar("PlayerCarNameRace",0)
 			SetVar("Gonka",0)
 			SetVar("Strahovka",0)
+			SetVar("NeedToPlayMusic", 1)
 		    trigger:Deactivate()
 		</script>
 	</trigger>
@@ -2248,14 +2249,14 @@
 			StartConversation("Chujezemets")
 
 			SetTolerance(1100, 1026, RS_ALLY)
-			SetTolerance(1100, 1008, RS_ALLY)
+			SetTolerance(1100, 1095, RS_ALLY)
 			SetTolerance(1090, 1026, RS_ALLY)
-			SetTolerance(1090, 1008, RS_ALLY)
-			SetTolerance(1008, 1026, RS_ALLY)
+			SetTolerance(1090, 1095, RS_ALLY)
+			SetTolerance(1095, 1026, RS_ALLY)
 			SetTolerance(1100, 1025, RS_ALLY)
 			SetTolerance(1026, 1025, RS_ALLY)
 			SetTolerance(1090, 1025, RS_ALLY)
-			SetTolerance(1008, 1025, RS_ALLY)
+			SetTolerance(1095, 1025, RS_ALLY)
 
 		    TDeactivate("OneOfBuharaDies")
 			TDeactivate("AivanJrDies")
@@ -2271,12 +2272,12 @@
 			SetTolerance(1100,1025, RS_ENEMY)
 			SetTolerance(1026,1025, RS_ENEMY)
 			SetTolerance(1090,1025, RS_ENEMY)
-			SetTolerance(1008,1025, RS_ENEMY)
+			SetTolerance(1095,1025, RS_ENEMY)
 			SetTolerance(1100, 1026, RS_ALLY)
-			SetTolerance(1100, 1008, RS_ALLY)
+			SetTolerance(1100, 1095, RS_ALLY)
 			SetTolerance(1090, 1026, RS_ALLY)
-			SetTolerance(1090, 1008, RS_ALLY)
-			SetTolerance(1008, 1026, RS_ALLY)
+			SetTolerance(1090, 1095, RS_ALLY)
+			SetTolerance(1095, 1026, RS_ALLY)
 
 			trigger:Deactivate()
 		</script>
@@ -2345,7 +2346,7 @@
 	<trigger Name="ConnectAiven" active="0">
 		<event timeout="0.1" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("AivenCar", 1008, CVector(getPos("AivanJrDefSpawn_loc")), {"BelazShot"}, nil, nil, Quaternion(-0.022, 0.083, -0.023, 0.996))
+            TeamCreate("AivenCar", 1095, CVector(getPos("AivanJrDefSpawn_loc")), {"BelazShot"}, nil, nil, Quaternion(-0.022, 0.083, -0.023, 0.996))
 
 			local vehAiven = getObj("AivenCar_vehicle_0")
 			if vehAiven then
@@ -2431,7 +2432,7 @@
 			SetTolerance(1090, 1023, RS_ALLY)
 			SetTolerance(1090, 1025, RS_NEUTRAL)
 			SetTolerance(1090, 1060, RS_NEUTRAL)
-			SetTolerance(1090, 1008, RS_ALLY)
+			SetTolerance(1090, 1095, RS_ALLY)
 
             TeamCreate("MansurCar", 1090, CVector(getPos("BuharaEvacuated_cs_Mansur_loc")), {"UralMansur"}, nil, nil, Quaternion(0.023, -0.814, -0.019, 0.580))
 
@@ -2459,7 +2460,7 @@
 	<trigger Name="ConnectAivan_GoToZarmek" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("AivenCar", 1008, CVector(getPos("BuharaEvacuated_cs_AivenJr_loc")), {"BelazShot"}, nil, nil, Quaternion(-0.006, 0.922, 0.008, -0.387))
+            TeamCreate("AivenCar", 1095, CVector(getPos("BuharaEvacuated_cs_AivenJr_loc")), {"BelazShot"}, nil, nil, Quaternion(-0.006, 0.922, 0.008, -0.387))
 
 			local vehAiven = getObj("AivenCar_vehicle_0")
 			if vehAiven then
