@@ -1260,7 +1260,7 @@
 
 		TakeQuest("BackToHome_quest")
 
-		AddBook("r4_04062012")
+		AddBook("r4_survivorarchive")
 
 		RestoreAllToleranceStatus()
 
