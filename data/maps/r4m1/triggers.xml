@@ -14,7 +14,7 @@
 			SetVar("PlayerCarNameRace",0)
 			SetVar("Gonka",0)
 			SetVar("Strahovka",0)
-			SetVar("NeedToPlayMusic", 1)
+			SetVar("StartBattle", 1)
 		    trigger:Deactivate()
 		</script>
 	</trigger>
@@ -23,7 +23,7 @@
 ** ׁ‏זוע
 **************************************************************************************************
 -->
-	<trigger	Name="trStartMap"	active="1">
+	<trigger	Name="trStartMap"	active="0">
 		<event eventid="GE_GAME_START" ObjName="Player1" />
 		<script>
 			if QuestStatus("r4m1_FindNative")==Q_CANBEGIVEN then
@@ -1050,7 +1050,7 @@
     <!-- The Chronicle of Hamza  -->
 
 	<trigger	Name="HamzaStartGame_tr"	active="1">
-		<event	timeout="0.1"			eventid="GE_TIME_PERIOD" />
+		<event	timeout="0.01"			eventid="GE_TIME_PERIOD" />
 		<script>
 			g_ObjCont:SetGameTime( 20, 0, 2, 10, 2234 )
 
@@ -2373,7 +2373,6 @@
 		<event eventid="GE_TARGET_REACHED" ObjName="Buhara_0"/>
 		<event eventid="GE_TARGET_REACHED" ObjName="Buhara_1"/>
 		<script>
-			LOG("YA STARTUY SUKA")
 			local point = GetVar("BuhCurPoint").AsInt
 			local stat = GetVar("BuhPoint"..point).AsInt+1
 
@@ -2392,11 +2391,10 @@
                 if point>=5 then
                 	TDeactivate("BuharaReachActive")
 					TDeactivate("BuharaDiesOnWayToPort")
-					TActivate("cinBuhPortFirst")
+					TActivate("BuharaEvacuated_cs")
 				else
 					TActivate("BuharaReachActive")
                 end
-				LOG("XUILAN")
                 trigger:Deactivate() 
 			end
 		</script>
@@ -2412,13 +2410,13 @@
 	</trigger>
 
 	<trigger	Name="BuharaDiesOnWayToPort"	active="0">
-		<event	eventid="GE_OBJECT_DIE"		ObjName="Buharers_vehicle_0" />
-		<event	eventid="GE_OBJECT_DIE"		ObjName="Buharers_vehicle_1" />
+		<event	eventid="GE_OBJECT_DIE"		ObjName="Buhara_0" />
+		<event	eventid="GE_OBJECT_DIE"		ObjName="Buhara_1" />
 		<script>
-			FailQuest("r4m1_RBC_Evacuate")
-			FailQuest("r4m1_RescueBuharsCivilian")
 			SpawnMessageBox( "8901" )
+
 			ShowDeathMenu()
+
 			trigger:Deactivate()
 		</script>
 	</trigger>

@@ -958,7 +958,7 @@
 	<!-- The Chronicle of Hamza: Game start  -->
 
 	<trigger	Name="HamzaStartRolikBegin"	active="0">
-		<event	timeout="0.01"			eventid="GE_TIME_PERIOD" />
+		<event	timeout="0.5"			eventid="GE_TIME_PERIOD" />
 		<script>
 			PlayCustomMusic("Bio05")
 
@@ -966,22 +966,16 @@
 			if mancar then
 				mancar:SetExternalPathByName("MansurStartGame_1")
 				mancar:SetCruisingSpeed(15)
-			end
-
-			local mdCar = GetEntityByName("MansurCar")
-			if mdCar then
-			    mdCar:SetSkin(1)
+				mancar:SetSkin(1)
 			end
 
 			local Plf = GetPlayerVehicle()
             local PlfID = GetPlayerVehicleId()
 
-			local MCarCam = mdCar:GetId()
-
 			CreateTeam("StartDebyli",1062,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","UralStartBez","BezHunter", "UralStartBez"},CVector(2594.501, 262.854, 3906.361), nil)
 
-            Fly("startgameHamza_cam1", CINEMATIC_AIM_TO_ID, PlfID, 11, 1, 0 )
-			Fly("startgameHamza_cam2", CINEMATIC_AIM_TO_ID, PlfID, 6, 0, 0 )
+            Fly("startgameHamza_cam1", CINEMATIC_AIM_TO_ID, PlfID, 12, 1, 0 )
+			Fly("startgameHamza_cam2", CINEMATIC_AIM_TO_ID, PlfID, 5, 0, 0 )
 			Fly("startgameHamza_cam3", CINEMATIC_AIM_TO_ID, PlfID, 12, 0, 0 )
 			Fly("startgameHamza_bez", CINEMATIC_NO_AIM, 0, 6, 0, 0 )
 			Fly("stgameHamza_final", CINEMATIC_AIM_TO_ID, PlfID, 4, 0, 1 )
@@ -989,7 +983,6 @@
             StartCinematic()
 
 			TActivate("HamzaStartGameRolik_Fade")
-			TActivate("HamzaStartGameRolik_Skip")
 			TActivate("HamzaStartGameRolik_2")
 			TActivate("HamzaStartGameRolik_4")
 			TActivate("HamzaStartGameRolik_3")
@@ -1002,7 +995,6 @@
 	<trigger Name="HamzaStartGameRolik_Fade" active="0">
 		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
 		<script>
-
 			local PCar = GetPlayerVehicle()
 			if PCar then
 			    PCar:LimitMaxSpeed(16)
@@ -1012,7 +1004,7 @@
 				PCar:SetCustomControlEnabled( false )
 			end
 
-			AddCinematicMessage(40, 1)
+			AddCinematicMessage(40, 2)
 			AddCinematicMessage(41, 0.5)
 
 			trigger:Deactivate()
@@ -1045,8 +1037,6 @@
 		<script>
 			PlayCustomMusic("Passage03b")
 
-			TDeactivate("HamzaStartGameRolik_Skip")
-
 			local PCar = GetPlayerVehicle()
 			if PCar then
 			    PCar:LimitMaxSpeed(40)
@@ -1059,7 +1049,7 @@
 
 			AddCinematicMessage(45, 0.5)
 
-			SetVar("NeedToPlayMusic", 0)
+			SetVar("StartBattle", 0)
 
 			trigger:Deactivate()
 		</script>
@@ -1095,7 +1085,7 @@
 		TActivate("FirstDebyli_Die")
 		TActivate("MansurCar_Die")
 
-		if (GetVar("NeedToPlayMusic").AsInt==1) then
+		if (GetVar("StartBattle").AsInt==1) then
 			PlayCustomMusic("Passage03b")
 		end
 
@@ -1132,6 +1122,19 @@
 				mfEndCar:Remove()
 			end
 
+			local mancar = GetEntityByName("MansurCar")
+			if mancar then
+		        mancar:SetGamePositionOnGround( CVector(2512.508, 271.686, 3950.259))
+				mancar:SetRotation(Quaternion(-0.039, -0.131, -0.021, 0.990))
+			    mancar:SetSkin(1) 
+			end
+
+			local PCar = GetPlayerVehicle()
+			if PCar then
+			    PCar:SetGamePositionOnGround( CVector(2568.719, 271.686, 3976.013))
+				PCar:SetRotation(Quaternion(0.058, 0.118, 0.024, -0.991))
+			end
+
 			CreateVehicleEx("UralMansur","MansurCar",CVector(2529.488, 266.557, 3914.102), 1090)
 
             local Plf = GetPlayerVehicle()
@@ -1140,9 +1143,8 @@
 			local MCar = GetEntityByName("MansurCar")
 			local MCarID = MCar:GetId()
 
-            Fly("afterbattleHamza_cam1", CINEMATIC_NO_AIM, 0, 50.5, 1, 0 )  
-			FlyLinked( "afterbattleHamza_cam2", nil, 13, 0, 0, PlfID ) 
-			FlyLinked( "afterbattleHamza_cam3", nil, 33, 0, 0, PlfID )
+            FlyLinked( "afterbattleHamza_cam1", nil, 98, 1, 0, PlfID ) 
+			FlyLinked( "afterbattleHamza_cam3", nil, 35, 0, 0, PlfID )
 			FlyLinked( "afterbattleHamza_cam4", nil, 6, 0, 1, MCarID )  
 
 			StartCinematic()
@@ -1161,10 +1163,7 @@
 
 		    local mancar = GetEntityByName("MansurCar")
 			if mancar then
-		        mancar:SetGamePositionOnGround( CVector(2512.508, 271.686, 3950.259))
-				mancar:SetRotation(Quaternion(-0.039, -0.131, -0.021, 0.990))
-			    mancar:SetSkin(1)
-				mancar:SetCruisingSpeed(12)
+				mancar:SetCruisingSpeed(13)
 				mancar:SetExternalPathByName("MansurStartGame_2")
 				mancar:SetThrottle( 1 )
 				mancar:SetCustomLinearVelocity( 20 ) 
@@ -1172,9 +1171,7 @@
 
 			local PCar = GetPlayerVehicle()
 			if PCar then
-			    PCar:SetGamePositionOnGround( CVector(2568.719, 271.686, 3976.013))
-				PCar:SetRotation(Quaternion(0.058, 0.118, 0.024, -0.991))
-				PCar:LimitMaxSpeed(12)
+				PCar:LimitMaxSpeed(13)
 				PCar:SetCustomControlEnabled( true ) 
 				PCar:SetExternalPathByName("HamzarStartGame_2")
 				PCar:SetThrottle( 1 )                      
@@ -1191,61 +1188,23 @@
 			AddCinematicMessage(52, 0.5)
 			AddCinematicMessage(53, 0.5)
 			AddCinematicMessage(54, 0.5)
-
-			TActivate("AfterBezumBoiRolik_cam02")
-			TActivate("AfterBezumBoiRolik_SpeedUp")
-			TActivate("AfterBezumBoiRolik_SpeedDown")
-            
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="AfterBezumBoiRolik_SpeedUp" active="0">
-		<event	timeout="25"			eventid="GE_TIME_PERIOD" />
-		<script>
-		    local mancar = GetEntityByName("MansurCar")
-			if mancar then
-				mancar:SetCruisingSpeed(28)
-				mancar:SetCustomLinearVelocity( 20 ) 
-			end
-
-			local PCar = GetPlayerVehicle()
-			if PCar then
-				PCar:LimitMaxSpeed(30)                      
-				PCar:SetCustomLinearVelocity( 10 )
-			end
-            
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="AfterBezumBoiRolik_SpeedDown" active="0">
-		<event	timeout="36.5"			eventid="GE_TIME_PERIOD" />
-		<script>
-		    local mancar = GetEntityByName("MansurCar")
-			if mancar then
-				mancar:SetCruisingSpeed(18) 
-			end
-
-			local PCar = GetPlayerVehicle()
-			if PCar then
-				PCar:LimitMaxSpeed(20)                      
-			end
-            
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="AfterBezumBoiRolik_cam02" active="0">
-		<event flypath="afterbattleHamza_cam2" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
-		<script>
-			PlayCustomMusic("QuietDialogue03")
-
 			AddCinematicMessage(55, 0.5)
 			AddCinematicMessage(56, 0.5)
 			AddCinematicMessage(57, 0.5)
+			AddCinematicMessage(58, 0.5)
+			AddCinematicMessage(59, 0.5)
 
+			TActivate("AfterBezumBoiRolik_quietdialogue")
 			TActivate("AfterBezumBoiRolik_cam03")
+            
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="AfterBezumBoiRolik_quietdialogue" active="0">
+		<event msgid="55" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+			PlayCustomMusic("QuietDialogue02")
 
 			trigger:Deactivate()
 		</script>
@@ -1254,8 +1213,6 @@
 	<trigger Name="AfterBezumBoiRolik_cam03" active="0">
 		<event flypath="afterbattleHamza_cam3" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
-			AddCinematicMessage(58, 0.5)
-			AddCinematicMessage(59, 0.5)
 			AddCinematicMessage(60, 0.5)
 			AddCinematicMessage(61, 0.5)
 			AddCinematicMessage(62, 0.5)
@@ -1306,9 +1263,6 @@
 		AddBook("r4_04062012")
 
 		RestoreAllToleranceStatus()
-
-		TDeactivate("AfterBezumBoiRolik_SpeedUp")
-		TDeactivate("AfterBezumBoiRolik_SpeedDown")
 
 		SetCameraBehindPlayerVehicle()
 
@@ -1442,6 +1396,18 @@
 		if MCar then
 		    MCar:Remove()
 		end
+
+		local town1 = GetEntityByName("TheKef")
+		if town1 then town1:SetOpenGateToPlayer( true ) end
+
+		local town2 = GetEntityByName("TheGadad")
+		if town2 then town2:SetOpenGateToPlayer( true ) end
+
+		local town3 = GetEntityByName("TheKazif")
+		if town3 then town3:SetOpenGateToPlayer( true ) end
+
+		local a = GetEntityByName("StartGonka_loc")
+		if a then a:SetProperty("Active",1) end
 
 		TActivate("Kef_Sell_Add")
 		TActivate("Gadad_Sell_Add")
@@ -2115,13 +2081,15 @@
 	<trigger	Name="HamzaReturnCar_cs_fade"	active="0">
 		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
 		<script>
-			if GetPlayerVehicle() then
-				AddCinematicMessage( 119, 0.5 )
-				GetPlayerVehicle():SetThrottle( 0 )
-				GetPlayerVehicle():SetCustomLinearVelocity( 0 )
-				GetPlayerVehicle():SetGamePositionOnGround(CVector(getPos("MolokovozSpawn_loc")))
-				GetPlayerVehicle():SetRotation(Quaternion(-0.047, -0.883, 0.025, 0.467))
+			local Plf = GetPlayerVehicle()
+			if Plf then
+				Plf:SetThrottle( 0 )
+				Plf:SetCustomLinearVelocity( 0 )
+				Plf:SetGamePositionOnGround(CVector(getPos("MolokovozSpawn_loc")))
+				Plf:SetRotation(Quaternion(-0.047, -0.883, 0.025, 0.467))
 			end
+
+			AddCinematicMessage( 119, 0.5 )
 
 			trigger:Deactivate()
 		</script>
