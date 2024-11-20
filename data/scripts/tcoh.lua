@@ -267,3 +267,78 @@ function BuharaEvacutedCreateCars()
 		AivenCreate:SetSkin(3)
 	end
 end
+
+function CreateMadmanZarmek()
+	CreateTeam("Bezumtsi",1062,CVector(2572.051, 267.215, 3917.664),{"TankBez","UralShot1","TankBez"},CVector(2594.501, 262.854, 3906.361), nil)
+
+	local veh0 = getObj("Bezumtsi_vehicle_0")
+	if veh0 then
+		veh0:SetGamePositionOnGround(CVector(getPos("MadManSpawn_firstarrive0_loc")))
+		veh0:SetRotation(Quaternion(0.002, -0.665, -0.001, 0.746))
+	end
+
+	local veh1 = getObj("Bezumtsi_vehicle_1")
+	if veh1 then
+		veh1:SetGamePositionOnGround(CVector(getPos("MadManSpawn_firstarrive1_loc")))
+		veh1:SetRotation(Quaternion(0.002, -0.665, -0.001, 0.746))
+		veh1:SetRandomSkin()
+	end
+
+	local veh2 = getObj("Bezumtsi_vehicle_2")
+	if veh2 then
+		veh2:SetGamePositionOnGround(CVector(getPos("MadManSpawn_firstarrive2_loc")))
+		veh2:SetRotation(Quaternion(0.002, -0.665, -0.001, 0.746))
+	end
+end
+
+function CreateMansurandAivenDefenders()
+	CreateTeam("ManCar", 1090 ,CVector(2572.051, 267.215, 3917.664),{"UralMansur"},CVector(2594.501, 262.854, 3906.361), nil)
+	CreateTeam("AivenCar", 1095 ,CVector(2572.051, 267.215, 3917.664),{"BelazShot1"},CVector(2594.501, 262.854, 3906.361), nil)
+
+	local veh0 = getObj("ManCar_vehicle_0")
+	if veh0 then
+		veh0:SetGamePositionOnGround(CVector(getPos("MansurDefender_loc")))
+		veh0:SetRotation(Quaternion(0.029, 0.831, 0.014, 0.555))
+		veh0:SetSkin(1)
+	end
+
+	local veh1 = getObj("AivenCar_vehicle_0")
+	if veh1 then
+		veh1:SetGamePositionOnGround(CVector(getPos("AivenDefender_loc")))
+		veh1:SetRotation(Quaternion(0.003, 0.864, 0.000, 0.504))
+		veh1:SetSkin(3)
+	end
+
+	SetTolerance(1090, 1095, RS_ALLY)
+	SetTolerance(1090, 1100, RS_ALLY)
+	SetTolerance(1095, 1100, RS_ALLY)
+	SetTolerance(1100, 1062, RS_ENEMY)
+	SetTolerance(1090, 1062, RS_ENEMY)
+	SetTolerance(1095, 1062, RS_ENEMY)
+end
+
+function CreateMansurandAivenAttack()
+	CreateTeam("ManCar", 1090 ,CVector(2572.051, 267.215, 3917.664),{"UralMansur"},CVector(2594.501, 262.854, 3906.361), nil)
+	CreateTeam("AivenCar", 1095 ,CVector(2572.051, 267.215, 3917.664),{"BelazShot1"},CVector(2594.501, 262.854, 3906.361), nil)
+
+	local veh0 = getObj("ManCar_vehicle_0")
+	if veh0 then
+		veh0:SetGamePositionOnGround(CVector(getPos("MansurAttacktoBase_startfight_loc")))
+		veh0:SetRotation(Quaternion(-0.000, 0.669, -0.000, 0.744))
+		veh0:SetSkin(1)
+	end
+
+	local veh1 = getObj("AivenCar_vehicle_0")
+	if veh1 then
+		veh1:SetGamePositionOnGround(CVector(getPos("AivenAttacktoBase_startfight_loc")))
+		veh1:SetRotation(Quaternion(-0.000, 0.669, -0.000, 0.744))
+		veh1:SetSkin(3)
+	end
+
+	SetTolerance(1090, 1095, RS_ALLY)
+	SetTolerance(1090, 1100, RS_ALLY)
+	SetTolerance(1095, 1100, RS_ALLY)
+	SetTolerance(1100, 1062, RS_ENEMY)
+	SetTolerance(1090, 1062, RS_ENEMY)
+	SetTolerance(1095, 1062, RS_ENEMY)
+end
