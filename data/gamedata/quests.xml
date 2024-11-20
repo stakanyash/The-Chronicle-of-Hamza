@@ -134,6 +134,20 @@
 		ConditionToGive="all complete"
 		PrecedingQuests="r4m2_TalkWithScientific"
 		OnTake='AddHistory( "r4_AfterTarelka" ); AddFadingMsgId( "fm_history_got" );' />
+<!--Root/r4m2/The Chronicle of Hamza--><!--Root/r4m2/The Chronicle of Hamza/Путешествие в Зармек-->
+	<quest
+		Name="FindMoreMadmans_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
+
+	<quest
+		Name="DestroyMadmans_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
 <!--Root/r4m1/Сюжетные--><!--Root/r4m1/Сюжетные/Первый раз-->
 	<quest
 		Name="r4m1_FindNative"
