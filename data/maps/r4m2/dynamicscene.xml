@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="495">
+	LastId="501">
 	<TargetNamesForDestroy
 		Names="urod1 urod2 urod3 urod4 urod5 urod6 urod7 urod8 urod9" />
 
@@ -4609,5 +4609,47 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="778.884 288.002 2800.134"
+		Radius="10.000" />
+
+	<Object
+		Name="MansurAttacktoBase_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1939.186 302.616 1163.875"
+		Radius="10.000" />
+
+	<Object
+		Name="HamzaAttacktoBase_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1937.156 301.963 1120.376"
+		Radius="10.000" />
+
+	<Object
+		Name="AivanAttacktoBase_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1938.044 302.232 1078.290"
+		Radius="10.000" />
+
+	<Object
+		Name="AivenAttacktoBase_startfight_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2018.675 303.722 1076.798"
+		Radius="10.000" />
+
+	<Object
+		Name="HamzaAttacktoBase_startfight_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2038.193 301.120 1103.496"
+		Radius="10.000" />
+
+	<Object
+		Name="MansurAttacktoBase_startfight_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2035.257 299.657 1146.176"
 		Radius="10.000" />
 </DynamicScene>

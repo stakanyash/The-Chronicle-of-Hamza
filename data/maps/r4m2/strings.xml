@@ -239,6 +239,130 @@
 		time="5" />
 
 	<string
+		id="606"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Проклятые химары! Даже приехать не успели, а уже напали! Благо мы отбились."
+		sound=""
+		time="5" />
+
+	<string
+		id="607"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Зато мы теперь знаем, что они есть в этой области. Значит мы на верном пути."
+		sound=""
+		time="6" />
+
+	<string
+		id="608"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Да, но куда нам двигаться дальше?.."
+		sound=""
+		time="4" />
+
+	<string
+		id="609"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Поехали, куда глаза глядят! Я уже хочу разделаться с этими харами!"
+		sound=""
+		time="5" />
+
+	<string
+		id="610"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Дружище, спокойно, нам нужно быть предельно осторожными. Нас трое, а их потенциально в разы больше. Одна ошибка и мы останемся тут навсегда удобрять землю!"
+		sound=""
+		time="8" />
+
+	<string
+		id="611"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Ты прав, но моё предложение ехать куда глаза глядят всё равно актуально."
+		sound=""
+		time="6" />
+
+	<string
+		id="612"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Видимо у нас нет другого выбора. Поехали."
+		sound=""
+		time="5" />
+
+	<string
+		id="613"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Твою ж мать..."
+		sound=""
+		time="4" />
+
+	<string
+		id="614"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Нам некуда отступать. Придётся драться."
+		sound=""
+		time="5" />
+
+	<string
+		id="615"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Полностью согласен! Вперёд!"
+		sound=""
+		time="4" />
+
+	<string
+		id="616"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Эй, Мансур, стой! Ты куда?!"
+		sound=""
+		time="3" />
+
+	<string
+		id="617"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Здесь слишком опасно, вы как хотите, а я возвращаюсь обратно!"
+		sound=""
+		time="4" />
+
+	<string
+		id="618"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Стой, нам некуда отступа... Ахмак! Мы ещё поговорим, когда я вернусь!"
+		sound=""
+		time="5" />
+
+	<string
 		id="8801"
 		value="Вы желаете покинуть эту область?"
 		numButtons="2" />

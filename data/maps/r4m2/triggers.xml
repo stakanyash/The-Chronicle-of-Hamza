@@ -83,9 +83,11 @@
 	<trigger	Name="trNearBase"	active="0">
 		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="NearEnterBase_loc" />
 		<script>
---			println("Near Base")
-            TakeQuest("r4m2_FightWithCrazy")
-			TActivate("cinNearBase")
+            TActivate("trActivateArmyDie")
+
+			CompleteQuest("FindMoreMadmans_quest")
+			TakeQuest("DestroyMadmans_quest")
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -94,10 +96,10 @@
 	<trigger	Name="trMoveToMilitaryBase"	active="0">
 		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="MilitaryBase_loc"/>
 		<script>
---			println("Military Base")
-			if QuestStatus("r4m2_FightWithCrazy")==Q_CANBEGIVEN then
+			if QuestStatus("FindMoreMadmans_quest")==Q_TAKEN then
 				TActivate("trActivateArmyDie")
-				CompleteQuest("r4m1_FindMilitaryBase")
+				CompleteQuest("FindMoreMadmans_quest")
+				TakeQuest("DestroyMadmans_quest")
 				trigger:Deactivate()
 			end
 		</script>
@@ -247,6 +249,116 @@
 
 			TActivate("AfterMadManFight_cs_start")
 
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="ConnectMansur" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            SetTolerance(1100, 1090, RS_ALLY)
+			SetTolerance(1090, 1002, RS_ENEMY)
+			SetTolerance(1090, 1062, RS_ENEMY)
+			SetTolerance(1090, 1023, RS_ALLY)
+			SetTolerance(1090, 1025, RS_NEUTRAL)
+			SetTolerance(1090, 1060, RS_NEUTRAL)
+			SetTolerance(1090, 1095, RS_ALLY)
+
+            TeamCreate("MansurCar", 1090, CVector(getPos("MansurDefender_loc")), {"UralMansur"}, nil, nil, Quaternion(-0.002, -0.779, 0.004, 0.626))
+
+			local vehMansur = getObj("MansurCar_vehicle_0")
+			if vehMansur then
+				vehMansur:SetSkin(1)
+				vehMansur:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "MansurControllerInZarmekR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehMansur)
+				end
+			end
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="ConnectAiven" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            TeamCreate("AivenCar", 1095, CVector(getPos("AivenDefender_loc")), {"BelazShot1"}, nil, nil, Quaternion(0.003, 0.543, 0.002, 0.840))
+
+			local vehAiven = getObj("AivenCar_vehicle_0")
+			if vehAiven then
+				vehAiven:SetSkin(1)
+				vehAiven:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "AivenControllerInZarmekR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehAiven)
+				end
+			end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<!-- The Chronicle of Hamza: Base Fight -->
+
+	<trigger	Name="FindedBase"	active="0">
+		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="NearEnterBase_loc" />
+		<script>
+            TActivate("CreateMadMansOnBase")
+			TActivate("FindBase_cs_start")
+
+			CompleteQuest("FindMoreMadmans_quest")
+			TakeQuest("DestroyMadmans_quest")
+			
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MadManArmyDie"	active="0">
+		<event	eventid="GE_OBJECT_DIE"	ObjName="MBArmy01" />
+		<event	eventid="GE_OBJECT_DIE"	ObjName="MBArmy02" />
+		<event	eventid="GE_OBJECT_DIE"	ObjName="MBArmy03" />
+		<event	eventid="GE_OBJECT_DIE"	ObjName="MBArmy04" />
+		<script>
+			TActivate("trActivateArmyDie")
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="CreateMadMansOnBase"	active="0">
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+		    local count = GetVar("CountArmyKill").AsInt
+			if count>=6 then
+			   TActivate("trHelpers1")
+			   TDeactivate("MadManArmyDie")
+			else
+				for i = 1,4 do
+					if getObj("MBArmy0"..i)==nil then
+						count = count + 1
+						local vehlist={"Tank01","Hunter01","Hunter02","Cruiser01","Cruiser02"}
+						local veh1=vehlist[random(getn(vehlist))]
+						local veh2=vehlist[random(getn(vehlist))]
+						CreateTeam("MBArmy0"..i, 1062, CVector(getPos("SpawnCrazy"..random(17).."_loc")),{veh1,veh2},CVector(getPos("MilitaryBase_loc")))
+					end
+				end
+				TActivate("MadManArmyDie")
+				SetVar("CountArmyKill", count)
+			end
 			trigger:Deactivate()
 		</script>
 	</trigger>

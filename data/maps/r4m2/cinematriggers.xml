@@ -106,6 +106,8 @@
 		<script>
 			StopPlayingCustomMusic()
 			RestoreAllToleranceStatus()
+
+			TActivate("MansurLeaves_cs_start")
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -748,10 +750,12 @@
 	<trigger	Name="AfterMadManFight_cs_start"	active="0">
 		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
 		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
 			local PCar = GetPlayerVehicle()
 			if PCar then
 				PCar:SetCustomControlEnabled( true ) 
-				PCar:SetThrottle( 1 )   
+				PCar:SetThrottle( 0 )   
 				PCar:SetCustomControlEnabled( false )
 				PCar:SetCustomLinearVelocity(0)
 				PCar:SetGamePositionOnGround( CVector(766.338, 290.215, 2780.283))
@@ -780,8 +784,262 @@
 				AivenCreate:SetSkin(3)
 			end
 
+			PlayCustomMusic("IntenseDialogue01")
+
+			Fly("madmandefeated_cam01", CINEMATIC_NO_AIM, nil, 44, 1, 1)
+			StartCinematic()
+
+			TActivate("AfterMadManFight_cs_fade")
+			TActivate("AfterMadManFight_cs_end")
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
 
+	<trigger	Name="AfterMadManFight_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			AddCinematicMessage(606, 1)
+			AddCinematicMessage(607, 0.5)
+			AddCinematicMessage(608, 0.5)
+			AddCinematicMessage(609, 0.5)
+			AddCinematicMessage(610, 0.5)
+			AddCinematicMessage(611, 0.5)
+			AddCinematicMessage(612, 0.5)
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="AfterMadManFight_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			local AVeh = getObj("AivenCarCS")
+			if AVeh then
+				AVeh:Remove()
+			end
+
+			local MVeh = getObj("MCarCS")
+			if MVeh then
+				MVeh:Remove()
+			end
+
+			RestoreAllToleranceStatus()
+			SetCameraBehindPlayerVehicle()
+			StopPlayingCustomMusic()
+
+			TActivate("ConnectMansur")
+			TActivate("ConnectAiven")
+
+			CompleteQuest("GoToZarmek_quest")
+			TakeQuest("FindMoreMadmans_quest")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<!-- The Chronicle of Hamza: Finded madman base -->
+
+	<trigger	Name="FindBase_cs_start"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			PlayCustomMusic("Techno02")
+
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetCustomLinearVelocity( 0 )
+				PVeh:SetThrottle( 0 )
+				PVeh:SetGamePositionOnGround(CVector(getPos("HamzaAttacktoBase_loc")))
+				PVeh:SetRotation(Quaternion(-0.000, 0.669, -0.000, 0.744))
+			end
+
+			local TeamARem = getObj("AivenCar_vehicle_0")
+			if TeamARem then
+				TeamARem:Remove()
+			end
+
+			local TeamMRem = getObj("MansurCar_vehicle_0")
+			if TeamMRem then
+				TeamMRem:Remove()
+			end
+
+			local MContRem = getObj("MansurControllerInZarmekR4M1")
+			if MContRem then
+				MContRem:Remove()
+			end
+
+			local MContRem = getObj("AivenControllerInZarmekR4M1")
+			if MContRem then
+				MContRem:Remove()
+			end
+
+			local ManCarCreate = CreateVehicleEx("UralMansur", "MCarCS", CVector(getPos("MansurAttacktoBase_loc")), 1090)
+			if ManCarCreate then
+				ManCarCreate:SetRotation(Quaternion(-0.000, 0.669, -0.000, 0.744))
+				ManCarCreate:SetSkin(1)
+			end
+
+			local AivenCreate = CreateVehicleEx("BelazShot1", "AivenCarCS", CVector(getPos("AivanAttacktoBase_loc")), 1095)
+			if AivenCreate then
+				AivenCreate:SetRotation(Quaternion(-0.000, 0.669, -0.000, 0.744))
+				AivenCreate:SetSkin(3)
+			end
+
+			Fly("findbase_cam01", CINEMATIC_NO_AIM, nil, 15, 1, 1)
+			StartCinematic()
+
+			AddCinematicMessage( 613, 0.5 )
+			AddCinematicMessage( 614, 0.5 )
+			AddCinematicMessage( 615, 0.5 )
+
+			TActivate("FindBase_cs_SetPath")
+			TActivate("FindBase_cs_End")
+			
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="FindBase_cs_SetPath" active="0">
+		<event msgid="614" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetExternalPathByName("HamzaAttackMadmanBase_path")
+			end
+
+			local Man = getObj("MCarCS")
+			if Man then
+				Man:SetExternalPathByName("MansurAttackMadmanBase_path")
+			end
+
+			local Aivan = getObj("AivenCarCS")
+			if Aivan then
+				Aivan:SetExternalPathByName("AivanAttackMadmanBase_path")
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="FindBase_cs_End"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			PlayCustomMusic("Battle01")
+
+			RestoreAllToleranceStatus()
+
+			CreateMansurandAivenAttack()
+
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetExternalPathByName("HamzaAttackMadmanBase_path")
+				PVeh:PlaceToEndOfPath("HamzaAttackMadmanBase_path")
+			end
+
+			local Man = getObj("MCarCS")
+			if Man then
+				Man:Remove()
+			end
+
+			local Aivan = getObj("AivenCarCS")
+			if Aivan then
+				Aivan:Remove()
+			end
+
+			SetCameraBehindPlayerVehicle()
+
+			TActivate("MansurLeaves_cs_start")
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<!-- The Chronicle of Hamza: Mansur leaves Hamza and Foreigner -->
+
+	<trigger	Name="MansurLeaves_cs_start"	active="0">
+		<event	timeout="8"		eventid="GE_TIME_PERIOD" />
+		<script>
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:setGodMode(1)
+			end
+
+			local MDel = getObj("ManCar_vehicle_0")
+			if MDel then
+				MDel:Remove()
+			end
+
+			local Aiven = getObj("AivenCar_vehicle_0")
+			if Aiven then
+				Aiven:setGodMode(1)
+			end
+
+			local ManCarCreate = CreateVehicleEx("UralMansur", "MCarCS", CVector(getPos("MansurAttacktoBase_startfight_loc")), 1090)
+			if ManCarCreate then
+				ManCarCreate:SetRotation(Quaternion(-0.022, -0.677, -0.032, 0.735))
+				ManCarCreate:SetSkin(1)
+			end
+
+			local MVeh = GetEntityByName("MCarCS")
+			local MVehID = MVeh:GetId()
+
+			SetTolerance(1090, 1062, RS_ALLY)
+
+			Fly("mansurleaves_cam", CINEMATIC_AIM_TO_ID, MVehID, 14, 1, 1)
+			StartCinematic()
+
+			TActivate("MansurLeaves_cs_Fade")
+			TActivate("MansurLeaves_cs_End")
+			
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MansurLeaves_cs_Fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			local ManCarCreate = getObj("MCarCS")
+			if ManCarCreate then
+				ManCarCreate:SetExternalPathByName("MansurLeaves_path")
+				ManCarCreate:SetCruisingSpeed(28)
+				ManCarCreate:setGodMode(1)
+			end
+
+			AddCinematicMessage( 616, 0.5 )
+			AddCinematicMessage( 617, 0.5 )
+			AddCinematicMessage( 618, 0.5 )
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MansurLeaves_cs_End"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:setGodMode(0)
+			end
+
+			local Man = getObj("MCarCS")
+			if Man then
+				Man:Remove()
+			end
+
+			local Aivan = getObj("AivenCar_vehicle_0")
+			if Aivan then
+				Aivan:setGodMode(0)
+			end
+
+			SetTolerance(1090, 1062, RS_ENEMY)
+
+			SetCameraBehindPlayerVehicle()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
 </triggers>
