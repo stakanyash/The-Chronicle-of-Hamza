@@ -220,20 +220,6 @@ function CreateBuharaAndAivanJr()
 	end
 end
 
-function SaveBuharaQuestTest()
-	AddPlayerVehicle("UralDadHamza")
-
-	local PVeh = GetPlayerVehicle()
-	if PVeh then
-		PVeh:SetGamePositionOnGround(CVector(getPos("FirstMeetAivanJr_SaveThem_loc")))
-		PVeh:SetRotation(Quaternion(0.002, 0.101, 0.009, 0.995))
-		PVeh:SetSkin(7)
-	end
-
-	TActivate("ConnectMansur_GoToBuhara_Again")
-	TActivate("FirstMeetAivanJr_SaveThem_cs")
-end
-
 function BuharaEvacutedCreateCars()
 	local PlVeh = GetPlayerVehicle()
 	if PlVeh then
