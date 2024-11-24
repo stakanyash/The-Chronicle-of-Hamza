@@ -5,6 +5,8 @@
 		<script>
 			SetVar("CountArmyKill",0)
 			SetVar("PlayBattleMus", 1)
+			SetVar("ScientistTalk", 0)
+			SetVar("AivenJrTalk", 0)
 
 			SetRadarUpgrade(1)
            

@@ -4,17 +4,20 @@
 		name="Dlg_npc_001567"
 		text="Подождите... Вы не знаете, кто и откуда ему должен был доставить в Южный этот блокиратор?"
 		role="NPC"
+		scriptCondition="GetVar('AivenJrTalk').AsInt==0 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001568" />
 
 	<Reply
 		name="Dlg_pl_001568"
 		text="Да, у меня такой же вопрос."
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="SetVar('AivenJrTalk', 1); StartConversation('ScientiferVillage_Bar_Scientif')" />
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец/При диалоге с учёным/Вторая часть-->
 	<Reply
 		name="Dlg_npc_001571"
 		text="Ты прав, нам надо вернутся. Только зачем нам Мансур? Он же по-сути нас кинул на произвол судьбы!"
 		role="NPC"
+		scriptCondition="GetVar('AivenJrTalk').AsInt==1 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001572" />
 
 	<Reply
@@ -32,7 +35,8 @@
 	<Reply
 		name="Dlg_pl_001574"
 		text="Нам пора. В обратный путь."
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="SetVar('AivenJrTalk', 2); StartConversation('ScientiferVillage_Bar_Scientif')" />
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/Первая встреча-->
 	<Reply
 		name="r4m2_Bar_Scientist_1_N01"
@@ -112,6 +116,7 @@
 		name="r4m2_Bar_Scientist_2_N01"
 		text="Какая сила духа! Вы смогли противиться голосу небес!"
 		role="NPC"
+		scriptCondition="GetVar('ScientistTalk').AsInt==0 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN "
 		nextReplies="r4m2_Bar_Scientist_2_N02" />
 
 	<Reply
@@ -243,30 +248,40 @@
 	<Reply
 		name="Dlg_npc_001566"
 		text="Именно. Ему пару десятков лет назад было поручено задание доставить сюда блокиратор из города Южного, до которого можно добраться через Пустыню Смерти. По моей информации он уехал за ним, но с того момента его более никто не видел."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001577" />
+
+	<Reply
+		name="Dlg_pl_001577"
+		text="Теперь понятно, почему он тогда уехал и никому ничего не сказал... Все решили, что он поехал для очередного сеанса торговли..."
+		role="PLAYER"
+		scriptResult="SetVar('ScientistTalk', 1); StartConversation('Chujezemets_r4m2')" />
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке/Вторая часть-->
 	<Reply
 		name="Dlg_npc_001569"
 		text="Этого мне не предстояло узнать. Всё, что я знал уже рассказал вам."
 		role="NPC"
+		scriptCondition="GetVar('ScientistTalk').AsInt==1 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001570" />
 
 	<Reply
 		name="Dlg_pl_001570"
 		text="Кажется нам стоит вернутся обратно, найти Мансура и продумать дальнейший план действий, что скажешь?"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="SetVar('ScientistTalk', 2); StartConversation('Chujezemets_r4m2')" />
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке/Третья часть-->
 	<Reply
 		name="Dlg_npc_001575"
 		text="Удачи вам."
 		role="NPC"
+		scriptCondition="GetVar('ScientistTalk').AsInt==2 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001576" />
 
 	<Reply
 		name="Dlg_pl_001576"
 		text="Прощай."
 		role="PLAYER"
-		scriptResult="TActivate('trExitFromCity'); EndConversation()" />
+		scriptResult="TActivate('trExitFromCity'); SetVar('ScientistTalk', 3); TakeQuest('BackToVahat_quest'); CompleteQuest('TalkToVasilyi_quest'); EndConversation()" />
 <!--Root/r4m1/Сюжетные--><!--Root/r4m1/Опциональные--><!--Root/r4m1/Разговоры о книгах-->
 	<Reply
 		name="Gadad_Bar_CrazyBook1_1_N01"
@@ -508,18 +523,20 @@
 		name="Dlg_npc_001536"
 		text="Смерть бандитам!"
 		role="NPC"
+		scriptCondition="GetVar('ChujezemetsTalk').AsInt==0 and QuestStatus('GoToBuharaAgain_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001537" />
 
 	<Reply
 		name="Dlg_pl_001537"
 		text="Стой, стой! Мы мирные, мы вам помогли! Староста нас знает, он может это подтвердить!"
 		role="PLAYER"
-		scriptResult="StartConversation('r4m1_BuharsLeader_AfterTheirSave0')" />
+		scriptResult="SetVar('ChujezemetsTalk', 1); StartConversation('r4m1_BuharsLeader')" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча/Вторая часть диалога-->
 	<Reply
 		name="Dlg_npc_001540"
 		text="О чём ты говоришь?"
 		role="NPC"
+		scriptCondition="GetVar('ChujezemetsTalk').AsInt==1 and QuestStatus('GoToBuharaAgain_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001541" />
 
 	<Reply
@@ -562,31 +579,33 @@
 		name="Dlg_pl_001547"
 		text="Отлично! Стоп... На машинах нападавших эмблема Альфарана... Я что... Убил своих же?.."
 		role="PLAYER"
-		scriptResult="StartConversation('MansurAfterBuharaSave_talk')" />
+		scriptResult="SetVar('ChujezemetsTalk', 2); StartConversation('MansurAfterBuharaSave_talk')" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча/Третья часть диалога-->
 	<Reply
 		name="Dlg_npc_001553"
 		text="Что ещё за 'джасусы' и 'кельбы'?"
 		role="NPC"
+		scriptCondition="GetVar('ChujezemetsTalk').AsInt==2 and QuestStatus('GoToBuharaAgain_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001554" />
 
 	<Reply
 		name="Dlg_pl_001554"
 		text="Джасусы - засланцы, а кельбы - собаки."
 		role="PLAYER"
-		scriptResult="StartConversation('r4m1_BuharsLeader_AfterTheirSave')" />
+		scriptResult="SetVar('ChujezemetsTalk', 3); StartConversation('r4m1_BuharsLeader')" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча/Четвёртая часть диалога-->
 	<Reply
 		name="Dlg_npc_001560"
 		text="У меня есть устройство, с помощью которого я вызову корабль и смогу эвакуировать бухарцев туда, где живут нормальные люди."
 		role="NPC"
+		scriptCondition="GetVar('ChujezemetsTalk').AsInt==3 and QuestStatus('GoToBuharaAgain_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001561" />
 
 	<Reply
 		name="Dlg_pl_001561"
 		text="Такое возможно?!"
 		role="PLAYER"
-		scriptResult="StartConversation('r4m1_BuharsLeader_BeforeEvac')" />
+		scriptResult="SetVar('ChujezemetsTalk', 4); StartConversation('r4m1_BuharsLeader')" />
 <!--Root/r4m1/The Chronicle of Hamza/Марио/Первый диалог-->
 	<Reply
 		name="Dlg_npc_001470"
@@ -715,6 +734,7 @@
 		name="Dlg_npc_001406"
 		text="Кто вы такие и что вам нужно?"
 		role="NPC"
+		scriptCondition="QuestStatus('GoToBuhara_quest')==Q_TAKEN "
 		nextReplies="Dlg_pl_001407" />
 
 	<Reply
@@ -823,18 +843,20 @@
 		name="Dlg_npc_001538"
 		text="Да, он не врёт, мы с ним встречались не так давно."
 		role="NPC"
+		scriptCondition="GetVar('BuharaSaveTalk').AsInt==0 and QuestStatus('GoToBuharaAgain_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001539" />
 
 	<Reply
 		name="Dlg_pl_001539"
 		text="Вот! Видишь? Мы тебе не враги! Более того, мы похоже преследуем схожие цели."
 		role="PLAYER"
-		scriptResult="StartConversation('Chujezemets1')" />
+		scriptResult="SetVar('BuharaSaveTalk', 1); StartConversation('Chujezemets')" />
 <!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев/Второй диалог/Вторая часть-->
 	<Reply
 		name="Dlg_npc_001556"
 		text="Слушайте. Мы победили, но они вернутся. Это только вопрос времени. У нас не осталось больше сил сражаться.  "
 		role="NPC"
+		scriptCondition="GetVar('BuharaSaveTalk').AsInt==1 and QuestStatus('GoToBuharaAgain_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001557" />
 
 	<Reply
@@ -853,19 +875,20 @@
 		name="Dlg_pl_001559"
 		text="Ну и какой толк от этого порта, если там нет кораблей?"
 		role="PLAYER"
-		scriptResult="StartConversation('Chujezemets3')" />
+		scriptResult="SetVar('BuharaSaveTalk', 2); StartConversation('Chujezemets')" />
 <!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев/Второй диалог/Третья часть-->
 	<Reply
 		name="Dlg_npc_001562"
 		text="Мне тоже с трудом верится, но у нас сейчас нет выбора."
 		role="NPC"
+		scriptCondition="GetVar('BuharaSaveTalk').AsInt==2 and QuestStatus('GoToBuharaAgain_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001563" />
 
 	<Reply
 		name="Dlg_pl_001563"
 		text="Чего мы тогда стоим? Скорее поехали в порт!"
 		role="PLAYER"
-		scriptResult="CompleteQuest('GoToBuharaAgain_quest'); TakeQuest('EvacuateBuharas_quest'); TActivate('RemoveBuharaAndJrTeams_AfterFight'); TActivate('BuharaEvacuation'); TActivate('StopBattleMusic'); EndConversation()" />
+		scriptResult="CompleteQuest('GoToBuharaAgain_quest'); TakeQuest('EvacuateBuharas_quest'); TActivate('RemoveBuharaAndJrTeams_AfterFight'); TActivate('BuharaEvacuation'); TActivate('StopBattleMusic'); SetVar('BuharaSaveTalk', 3); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Шараф/Первый диалог-->
 	<Reply
 		name="Dlg_npc_001388"
@@ -1536,7 +1559,18 @@
 		name="Dlg_pl_001564"
 		text="А кому из нас они не надоели?!"
 		role="PLAYER"
-		scriptResult="StartConversation('Chujezemets2')" />
+		scriptResult="StartConversation('Chujezemets')" />
+<!--Root/r4m1/The Chronicle of Hamza/Мансур/После возвращения из Зармека-->
+	<Reply
+		name="Dlg_npc_001578"
+		text="Вы вернулись!"
+		role="NPC"
+		nextReplies="Dlg_pl_001579" />
+
+	<Reply
+		name="Dlg_pl_001579"
+		text="Ты... Ракшас! Как ты посмел уехать после того, как мы уже начали атаковать базу?!"
+		role="PLAYER" />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/Первый приезд (непочиненный)-->
 	<Reply
 		name="Dlg_npc_001302"

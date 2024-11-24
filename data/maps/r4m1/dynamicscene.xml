@@ -620,7 +620,7 @@
 			Prototype="NPC"
 			ModelName="r4_man"
 			cfg="135"
-			helloReplyNames="Dlg_npc_001406"
+			helloReplyNames="Dlg_npc_001406 Dlg_npc_001538 Dlg_npc_001556 Dlg_npc_001562"
 			SpokenCount="0" />
 
 		<Object
@@ -628,24 +628,7 @@
 			Belong="1100"
 			Prototype="NPC"
 			ModelName="mask_hero"
-			helloReplyNames="Dlg_npc_001536"
-			SpokenCount="0" />
-
-		<Object
-			Name="Chujezemets1"
-			Belong="1100"
-			Prototype="NPC"
-			ModelName="mask_hero"
-			helloReplyNames="Dlg_npc_001540"
-			SpokenCount="0" />
-
-		<Object
-			Name="r4m1_BuharsLeader_AfterTheirSave0"
-			Belong="1100"
-			Prototype="NPC"
-			ModelName="r4_man"
-			cfg="135"
-			helloReplyNames="Dlg_npc_001538"
+			helloReplyNames="Dlg_npc_001536 Dlg_npc_001540 Dlg_npc_001553 Dlg_npc_001560"
 			SpokenCount="0" />
 
 		<Object
@@ -655,40 +638,6 @@
 			ModelName="r4_man"
 			cfg="219"
 			helloReplyNames="Dlg_npc_001548"
-			SpokenCount="0" />
-
-		<Object
-			Name="Chujezemets2"
-			Belong="1100"
-			Prototype="NPC"
-			ModelName="mask_hero"
-			helloReplyNames="Dlg_npc_001553"
-			SpokenCount="0" />
-
-		<Object
-			Name="r4m1_BuharsLeader_AfterTheirSave"
-			Belong="1100"
-			Prototype="NPC"
-			ModelName="r4_man"
-			cfg="135"
-			helloReplyNames="Dlg_npc_001556"
-			SpokenCount="0" />
-
-		<Object
-			Name="Chujezemets3"
-			Belong="1100"
-			Prototype="NPC"
-			ModelName="mask_hero"
-			helloReplyNames="Dlg_npc_001560"
-			SpokenCount="0" />
-
-		<Object
-			Name="r4m1_BuharsLeader_BeforeEvac"
-			Belong="1100"
-			Prototype="NPC"
-			ModelName="r4_man"
-			cfg="135"
-			helloReplyNames="Dlg_npc_001562"
 			SpokenCount="0" />
 	</Object>
 

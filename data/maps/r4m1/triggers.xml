@@ -3,18 +3,17 @@
 	<trigger	Name="GlobalVar"	active="1">
 		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
---			println("Region 4 map 1: Initialised")
---			SetVar("PathNumber","6 9 11 16 18 20 22 27 37 42 45 47 49 54 56 58 60 1")
---			SetVar("CurPoint",0)
 			SetVar("MaxWalkHuman",31)
 			SetVar("MaxLap",1)
---			SetVar("PlayerCarName",0)
 			SetVar("BuhPoint",0)
 			SetVar("CountCar",4)
 			SetVar("PlayerCarNameRace",0)
 			SetVar("Gonka",0)
 			SetVar("Strahovka",0)
 			SetVar("StartBattle", 1)
+			SetVar("BuharaSaveTalk", 0)
+			SetVar("ChujezemetsTalk", 0)
+			
 		    trigger:Deactivate()
 		</script>
 	</trigger>

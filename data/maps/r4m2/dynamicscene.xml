@@ -71,7 +71,7 @@
 				ModelName="r4_man"
 				skin="2"
 				cfg="85"
-				helloReplyNames="r4m2_Bar_Scientist_1_N01 r4m2_Bar_Scientist_2_N01 r4m2_Bar_Scientist_3_N01"
+				helloReplyNames="r4m2_Bar_Scientist_1_N01 r4m2_Bar_Scientist_2_N01 Dlg_npc_001569 Dlg_npc_001575"
 				SpokenCount="0" />
 		</Object>
 
@@ -874,7 +874,15 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="2494.815 168.550 2812.253"
-		Radius="750.884" />
+		Radius="750.884">
+		<Object
+			Name="Chujezemets_r4m2"
+			Belong="1100"
+			Prototype="NPC"
+			ModelName="mask_hero"
+			helloReplyNames="Dlg_npc_001567 Dlg_npc_001571"
+			SpokenCount="0" />
+	</Object>
 
 	<Object
 		Flags="21"

@@ -148,6 +148,27 @@
 		SubQuestsCondition="and"
 		CheckAll="0"
 		ConditionToGive="all complete" />
+
+	<quest
+		Name="LookAtTarelka_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
+
+	<quest
+		Name="TalkToVasilyi_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
+
+	<quest
+		Name="BackToVahat_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
 <!--Root/r4m1/ׁ‏זועםûו--><!--Root/r4m1/ׁ‏זועםûו/ֿונגûי נאח-->
 	<quest
 		Name="r4m1_FindNative"

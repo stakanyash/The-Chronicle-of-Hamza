@@ -31,6 +31,20 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="BackToVahat_quest"
+		briefDiz="Вернуться в родные земли"
+		fullDiz="Мы узнали многое. Например то, что Серго должен был прекратить это безумие, но увы, он так и не вернулся. Надо вернутся обратно и подумать вместе, может мы сможем сделать то, чего не смог Серго..."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheGadad_enter" />
+
+		<Map
+			name="r4m2"
+			targetObjName="ExitFromMap" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="BuyKollizey_Quest"
 		briefDiz="Стать совладельцем Колизея"
 		fullDiz="У меня появилась возможность стать совладельцем Колизея. За свой взнос я получу долю акций и стабильную прибыль."
@@ -432,6 +446,16 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="LookAtTarelka_quest"
+		briefDiz="Посмотреть на место катастрофы"
+		fullDiz="Мы нашли его! Нужно осмотреть место катастрофы, даже не смотря на слова учёного о том, что мы можем зайти слишком далеко."
+		isMainQuest="1">
+		<Map
+			name="r4m2"
+			targetObjName="NearPlateRadiation_loc" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="MidgardTalkKollizey_Quest"
 		briefDiz="Сообщить в Мидгард"
 		fullDiz="Рассказать о Колизее в Мидгарде. Там наверняка будут рады узнать о появлении нового центра развлечений."
@@ -629,6 +653,16 @@
 		<Map
 			name="r4m1"
 			targetObjName="TheGadad_enter" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="TalkToVasilyi_quest"
+		briefDiz="Поговорить с учёным"
+		fullDiz="Это место максимально жуткое. Чужеземец еле унёс ноги, а мне было очень некомфортно. Может это из-за множетства людей, которые там стоят уже бог знает сколько? Не знаю, но надо вернутся к учёному и поговорить с ним об этом."
+		isMainQuest="1">
+		<Map
+			name="r4m2"
+			targetObjName="ScientiferVillage_enter" />
 	</QuestInfo>
 
 	<QuestInfo
