@@ -3,15 +3,11 @@
 	<trigger	Name="GlobalVar"	active="1">
 		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
---			println("Map Region 4 map 2: Initialised")
 			SetVar("CountArmyKill",0)
 			SetVar("PlayBattleMus", 1)
-			local test=0
-			if test==1 then
---				println("TESTING: MAP DON'T WORK CORRECT WITH ANOTHER MAPS ")
-				CompleteQuest("r4m1_RescueBuharsCivilian")
-				TakeQuest("r4m1_GotoAivenGo")
-			end             
+
+			SetRadarUpgrade(1)
+           
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -144,7 +140,7 @@
 		<event	timeout="2"		eventid="GE_TIME_PERIOD" />
 		<script>
 --			println("Helpers1")
-			TActivate("cinHelpersFirst")
+			TActivate("HelpersArrived_cs_start")
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -152,14 +148,11 @@
 	<trigger	Name="trNearPlate"	active="0">
 		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="NearPlateRadiation_loc" />
 		<script>
---			println("trNearPlate")
-
 			TActivate("cinLookToTarelkaFirst")
 
-			AddHistory( "r4_NearTarelka" )
---			AddHistory( "r4_AfterTarelka" )
-			AddFadingMsgId( "fm_history_got" )
-			CompleteQuest("r4m2_InvestigationPlate")
+			CompleteQuest("LookAtTarelka_quest")
+			TakeQuest("TalkToVasilyi_quest")
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -343,14 +336,14 @@
 		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
 		<script>
 		    local count = GetVar("CountArmyKill").AsInt
-			if count>=6 then
-			   TActivate("trHelpers1")
+			if count>=4 then
+			   TActivate("HelpersArrived")
 			   TDeactivate("MadManArmyDie")
 			else
 				for i = 1,4 do
 					if getObj("MBArmy0"..i)==nil then
 						count = count + 1
-						local vehlist={"Tank01","Hunter01","Hunter02","Cruiser01","Cruiser02"}
+						local vehlist={"Tank01", "Hunter02"}
 						local veh1=vehlist[random(getn(vehlist))]
 						local veh2=vehlist[random(getn(vehlist))]
 						CreateTeam("MBArmy0"..i, 1062, CVector(getPos("SpawnCrazy"..random(17).."_loc")),{veh1,veh2},CVector(getPos("MilitaryBase_loc")))
@@ -359,6 +352,29 @@
 				TActivate("MadManArmyDie")
 				SetVar("CountArmyKill", count)
 			end
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="AivenDiesOnBaseAttack"	active="0">
+		<event	eventid="GE_OBJECT_DIE"	ObjName="AivenCar" />
+		<script>
+			SpawnMessageBox("8803")
+
+			ShowDeathMenu()
+
+			TDeactivate("CreateMadMansOnBase")
+			TDeactivate("MadManArmyDie")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="HelpersArrived"	active="0">
+		<event	timeout="2"		eventid="GE_TIME_PERIOD" />
+		<script>
+			TActivate("cinHelpersFirst")
+
 			trigger:Deactivate()
 		</script>
 	</trigger>

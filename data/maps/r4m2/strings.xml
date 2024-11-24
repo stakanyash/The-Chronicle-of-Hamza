@@ -46,7 +46,7 @@
 		id="301"
 		modelName="mask_hero"
 		value="О боги! Что это за проклятое место?"
-		sound="data\sounds\Speech\r4m2\r4m2_301_hero.ogg"
+		sound=""
 		time="1" />
 
 	<string
@@ -359,6 +359,94 @@
 		modelCfg="141"
 		modelSlot="0"
 		value="ХАМЗА|Стой, нам некуда отступа... Ахмак! Мы ещё поговорим, когда я вернусь!"
+		sound=""
+		time="5" />
+
+	<string
+		id="619"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Чёрт, сколько же здесь этих бандитов! И всё больше и больше!"
+		sound=""
+		time="5" />
+
+	<string
+		id="620"
+		modelName="r4_man"
+		modelSkin="1"
+		modelCfg="128"
+		modelSlot="1"
+		value="ЛАБОРАНТ|Здесь очень опасно. Поехали, мы выведем вас отсюда."
+		sound=""
+		time="5" />
+
+	<string
+		id="621"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="Мы никуда не поедем! Они убийцы! Мы должны вместе сразиться с ними."
+		sound=""
+		time="5" />
+
+	<string
+		id="622"
+		modelName="r4_man"
+		modelSkin="1"
+		modelCfg="128"
+		modelSlot="1"
+		value="ЛАБОРАНТ|Вы не сможете их победить, даже с нашей помощью. Следуйте за нами, если хотите жить."
+		sound=""
+		time="6" />
+
+	<string
+		id="623"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Мы ещё вернёмся и расквитаемся с этими шайтанами!"
+		sound=""
+		time="5" />
+
+	<string
+		id="624"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|О боги! Что это за проклятое место?"
+		sound=""
+		time="5" />
+
+	<string
+		id="625"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Кто все эти люди?"
+		sound=""
+		time="4" />
+
+	<string
+		id="626"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Теперь я понимаю, о чем говорил Учёный."
+		sound=""
+		time="5" />
+
+	<string
+		id="627"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Что же манит сюда этих людей? Вдруг я ещё могу спасти их?"
+		sound=""
+		time="6" />
+
+	<string
+		id="628"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Не знаю, но нам лучше ехать обратно, пока не поздно!"
 		sound=""
 		time="5" />
 

@@ -60,9 +60,15 @@
 		<Point  coord="2913.875 224.979 2375.140" rotation="-0.003 0.966 0.010 -0.257"/>
 	</Path>
 
+	<Path Name = "NearTarelka0">
+		<Point  coord="3301.314 412.117 1393.514" rotation="-0.022 0.177 -0.004 0.984"/>
+		<Point  coord="2960.550 264.731 2309.285" rotation="-0.059 0.203 -0.012 0.977"/>
+		<Point  coord="2922.493 236.997 2504.149" rotation="0.089 0.395 0.039 0.913"/>
+	</Path>
+
 	<Path Name = "NearTarelka1">
-		<Point  coord="2983.215 227.129 2377.472" rotation="-0.103 0.188 -0.020 0.977"/>
-		<Point  coord="2983.215 227.129 2377.472" rotation="0.102 0.482 0.057 0.868"/>
+		<Point  coord="2922.493 236.997 2504.149" rotation="0.089 0.395 0.039 0.913"/>
+		<Point  coord="2922.493 236.997 2504.149" rotation="0.143 0.495 0.083 0.853"/>
 	</Path>
 
 	<Path Name = "NearTarelka2">

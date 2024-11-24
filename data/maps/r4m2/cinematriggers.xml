@@ -465,17 +465,23 @@
 			EnableGodMode()
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			TActivate( "cinLookToTarelka_FadeIn" )
-			TActivate( "cinLookToTarelka_End" )
-			TActivate( "cinLookToTarelka_cam2" )
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetCustomLinearVelocity( 0 )
+				PVeh:SetThrottle(0)
+			end
 
-			Fly("NearTarelka1", CINEMATIC_NO_AIM, nil, 7, 1,0)
-			Fly("NearTarelka2", CINEMATIC_NO_AIM, nil, 15, 0,1)
+			PlayCustomMusic("Bio01")
+
+			Fly("NearTarelka0", CINEMATIC_NO_AIM, nil, 8, 1,0)
+			Fly("NearTarelka1", CINEMATIC_NO_AIM, nil, 7, 0,0)
+			Fly("NearTarelka2", CINEMATIC_NO_AIM, nil, 23, 0,1)
 			StartCinematic()
 
-			GetPlayerVehicle():SetCustomLinearVelocity( 0 )
-			GetPlayerVehicle():SetThrottle(0)
-
+			TActivate( "cinLookToTarelka_FadeIn" )
+			TActivate( "cinLookToTarelka_cam1" )
+			TActivate( "cinLookToTarelka_cam2" )
+			TActivate( "cinLookToTarelka_End" )
 
 			trigger:Deactivate()
 		</script>
@@ -487,7 +493,14 @@
 			SetWeather(0)
 			SetGameTime(10, 0)
 
-			AddCinematicMessage( 301, 0.5 )
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="cinLookToTarelka_cam1"	active="0">
+		<event flypath="NearTarelka1" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage( 624, 0.5 )
 
 			trigger:Deactivate()
 		</script>
@@ -497,9 +510,11 @@
 	<trigger	Name="cinLookToTarelka_cam2"	active="0">
 		<event flypath="NearTarelka2" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
-			AddCinematicMessage( 302, 0.5 )
-			AddCinematicMessage( 304, 0.5 )
-			AddCinematicMessage( 303, 0.5 )
+			AddCinematicMessage( 625, 0.5 )
+			AddCinematicMessage( 626, 0.5 )
+			AddCinematicMessage( 627, 0.5 )
+			AddCinematicMessage( 628, 0.5 )
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -510,7 +525,11 @@
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
 			RestoreAllToleranceStatus()
+
 			SetCameraBehindPlayerVehicle()
+
+			StopPlayingCustomMusic()
+
 			DisableGodMode()
 			trigger:Deactivate()
 		</script>
@@ -835,6 +854,8 @@
 			CompleteQuest("GoToZarmek_quest")
 			TakeQuest("FindMoreMadmans_quest")
 
+			TActivate("FindedBase")
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -953,6 +974,8 @@
 			SetCameraBehindPlayerVehicle()
 
 			TActivate("MansurLeaves_cs_start")
+			TActivate("AivenDiesOnBaseAttack")
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -965,6 +988,8 @@
 			local PVeh = GetPlayerVehicle()
 			if PVeh then
 				PVeh:setGodMode(1)
+				PVeh:SetThrottle(0)
+				PVeh:SetCustomLinearVelocity(0)
 			end
 
 			local MDel = getObj("ManCar_vehicle_0")
@@ -986,6 +1011,7 @@
 			local MVeh = GetEntityByName("MCarCS")
 			local MVehID = MVeh:GetId()
 
+			SetTolerance(1095, 1062, RS_ALLY)
 			SetTolerance(1090, 1062, RS_ALLY)
 
 			Fly("mansurleaves_cam", CINEMATIC_AIM_TO_ID, MVehID, 14, 1, 1)
@@ -1004,7 +1030,7 @@
 			local ManCarCreate = getObj("MCarCS")
 			if ManCarCreate then
 				ManCarCreate:SetExternalPathByName("MansurLeaves_path")
-				ManCarCreate:SetCruisingSpeed(28)
+				ManCarCreate:SetCruisingSpeed(25)
 				ManCarCreate:setGodMode(1)
 			end
 
@@ -1035,10 +1061,239 @@
 				Aivan:setGodMode(0)
 			end
 
-			SetTolerance(1090, 1062, RS_ENEMY)
+			SetTolerance(1095, 1062, RS_ENEMY)
+			SetTolerance(1090, 1062, RS_ALLY)
 
 			SetCameraBehindPlayerVehicle()
 
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<!-- The Chronicle of Hamza: Helpers arrived -->
+
+	<trigger	Name="HelpersArrived_cs_start"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+			
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetCustomLinearVelocity( 0 )
+				PVeh:SetThrottle(0)
+			end
+
+			Fly("SavePlInBase1", CINEMATIC_NO_AIM, nil, 6, 1, 0)
+			Fly("SavePlInBase2", CINEMATIC_NO_AIM, nil, 10, 0, 1)
+
+			CompleteQuest("FindMoreMadmans_quest")
+
+			StartCinematic()
+
+			TActivate("HelpersArrived_cs_End")
+			TActivate("HelpersArrived_cs_FadeIn")
+			TActivate("HelpersArrived_cs_StartFly2")
+			TActivate("HelpersArrived_cs_EndFull")
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="HelpersArrived_cs_FadeIn"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetCustomControlEnabled( true )
+				vehPlayer:SetCustomLinearVelocity( 0 )
+				vehPlayer:SetThrottle( 0 )
+				vehPlayer:SetCustomControlEnabled( false )
+			end
+
+			local poslist = {CVector(2595.265, 300, 1312.742),CVector(2602.535, 300, 1307.154),CVector(2605.818, 300, 1329.525),CVector(2618.733, 300, 1332.649)}
+			local modlist = {"Hunter01","Hunter02", "Cruiser02","Cruiser01"}
+			for i=1,4 do
+				local veh = CreateVehicleEx(modlist[i],"SciefVeh"..i,poslist[i], 1061)
+				if veh then
+					veh:setGodMode(true)
+					veh:SetRotation(Quaternion(0.015, -0.881, -0.051, 0.470))
+					veh:SetExternalPathByName("HelpMens1_path"..i)
+					veh:SetCustomLinearVelocity( 20 )
+				end
+			end
+			AddCinematicMessage( 619, 0.5 )
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="HelpersArrived_cs_StartFly2" active="0">
+		<event flypath="SavePlInBase2" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage( 620, 0.25 )
+			AddCinematicMessage( 621, 0.25 )
+			AddCinematicMessage( 622, 0.25 )
+			AddCinematicMessage( 623, 0.25 )
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="HelpersArrived_cs_End"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<script>
+			PlayCustomMusic("Passage02")
+			local poslist = {CVector(2610.603, 314.646, 1336.547),CVector(2621.363, 315.150, 1337.481),CVector(2604.174, 314.649, 1320.025),CVector(2597.561, 300,  1296.187), CVector(2589.748, 300, 1296.728)}
+			local rotlist = {Quaternion(-0.001, 0.332, 0.041, 0.942), Quaternion(-0.003, 0.311, 0.020, 0.950), Quaternion(-0.018, 0.185, 0.029, 0.982), Quaternion(-0.020, 0.226, 0.029, 0.974), Quaternion(-0.016, 0.164, 0.052, 0.985)}
+			for i=1,4 do
+				local veh = getObj("SciefVeh"..i)
+				if veh then
+					veh:SetGamePositionOnGround(poslist[i])
+					veh:SetRotation(Quaternion(rotlist[i]))
+					veh:SetExternalPathByName("HelpMens1r_path"..i)
+					veh:SetCustomLinearVelocity( 45 - 5*(i-1) )
+				end
+			end
+
+			if GetPlayerVehicle() then
+				GetPlayerVehicle():SetGamePositionOnGround(poslist[5])
+				GetPlayerVehicle():SetRotation(Quaternion(rotlist[5]))
+				GetPlayerVehicle():SetExternalPathByName("HelpMens1r_path5")
+				GetPlayerVehicle():SetCustomLinearVelocity( 20 )
+			end
+
+				
+			TActivate("HelpersArrived_cs_End3")
+			Fly("SavePlInBase3", CINEMATIC_NO_AIM, nil, 4, 0,1)
+			StartCinematic()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="HelpersArrived_cs_End3"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<script>
+			local poslist = {CVector(2849.065, 307.741, 1467.948),CVector(2844.230, 306.489, 1476.384),CVector(2828.840, 311.286, 1452.682),CVector(2812.726, 314.121, 1426.893), CVector(2807.895, 313.672, 1432.705)}
+			local rotlist = {Quaternion(0.083, 0.281, -0.017, 0.956), Quaternion(0.099, 0.336, 0.012, 0.937), Quaternion(0.052, 0.345, 0.002, 0.937), Quaternion(0.034, 0.339, 0.006, 0.940), Quaternion(0.036, 0.372, 0.018, 0.928)}
+			for i=1,4 do
+				local veh = getObj("SciefVeh"..i)
+				if veh then
+					veh:SetGamePositionOnGround(poslist[i])
+					veh:SetRotation(Quaternion(rotlist[i]))
+					veh:SetExternalPathByName("HelpMens2_path"..i)
+					veh:SetCustomLinearVelocity( 20 - 3*(i-1) )
+				end
+			end
+
+			if GetPlayerVehicle() then
+				GetPlayerVehicle():SetGamePositionOnGround(poslist[5])
+				GetPlayerVehicle():SetRotation(Quaternion(rotlist[5]))
+				GetPlayerVehicle():SetExternalPathByName("HelpMens2_path5")
+				GetPlayerVehicle():SetCustomLinearVelocity( 10 )
+			end
+
+			TActivate("HelpersArrived_cs_End4")
+			Fly("SavePlInBase4", CINEMATIC_NO_AIM, nil, 4, 0,1)	StartCinematic()
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+
+	<trigger	Name="HelpersArrived_cs_End4"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<script>
+			local poslist = {CVector(2771.339, 258.815, 1763.371), CVector(2755.816, 261.769, 1760.217), CVector(2751.372, 262.652, 1739.967), CVector(2739.385, 264.343, 1724.356), CVector(2743.397, 264.972, 1707.377)}
+			local rotlist = {Quaternion(0.038, 0.517, -0.095, 0.850), Quaternion(0.021, 0.369, -0.074, 0.926), Quaternion(0.023, 0.221, -0.062, 0.973), Quaternion(0.014, 0.169, -0.031, 0.985), Quaternion(0.024, -0.034, -0.023, 0.999)}
+			for i=1,4 do
+				local veh = getObj("SciefVeh"..i)
+				if veh then
+					veh:SetGamePositionOnGround(poslist[i])
+					veh:SetRotation(Quaternion(rotlist[i]))
+					veh:SetExternalPathByName("HelpMens2a_path"..i)
+					veh:SetCustomLinearVelocity( 20  - 3*(i-1) )
+				end
+			end
+
+			if GetPlayerVehicle() then
+				GetPlayerVehicle():SetGamePositionOnGround(poslist[5])
+				GetPlayerVehicle():SetRotation(Quaternion(rotlist[5]))
+				GetPlayerVehicle():SetExternalPathByName("HelpMens2a_path5")
+				GetPlayerVehicle():SetCustomLinearVelocity( 10 )
+			end
+
+
+			TActivate("HelpersArrived_cs_End5")
+			Fly("SavePlInBase5", CINEMATIC_NO_AIM, nil, 6, 0,0)	StartCinematic()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="HelpersArrived_cs_End5"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<script>
+			local poslist = {CVector(3318.065, 300, 2001.583),CVector(3325.100, 300, 2002.163),CVector(3315.300, 300, 2017.859),CVector(3296.973, 300, 2036.113), CVector(3307.902, 300, 2038.657)}
+			local rotlist = {Quaternion(-0.011, 0.994, 0.005, 0.105), Quaternion(0.006, 0.998, 0.009, 0.063), Quaternion(-0.016, 0.963, 0.015, 0.269), Quaternion(-0.037, 0.940, 0.042, 0.337), Quaternion(-0.027, 0.971, 0.030, 0.235)}
+			for i=1,4 do
+				local veh = getObj("SciefVeh"..i)
+				if veh then
+					veh:SetGamePositionOnGround(poslist[i])
+					veh:SetRotation(Quaternion(rotlist[i]))
+					veh:SetExternalPathByName("HelpMens3_path"..i)
+					veh:SetCustomLinearVelocity( 30  - 3*(i-1) )
+				end
+			end
+			
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetGamePositionOnGround(poslist[5])
+				PVeh:SetRotation(Quaternion(rotlist[5]))
+				PVeh:SetExternalPathByName("HelpMens3_path5")
+				PVeh:SetCustomLinearVelocity( 20 )
+			end
+
+			Fly("SavePlInBase6", CINEMATIC_NO_AIM, nil, 6, 0,1)
+			StartCinematic()
+
+			local tr = getObj("HelpersArrived_cs_EndFull")
+			if tr then
+				tr:AddEvent("GE_END_CINEMATIC","Player1")
+				TActivate("HelpersArrived_cs_EndFull")
+			end
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+
+
+	<trigger	Name="HelpersArrived_cs_EndFull"	active="0">
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			for i=1,4 do
+				local veh = getObj("SciefVeh"..i)
+				if veh then
+					veh:SetExternalPathByName("HelpMens3_path"..i)
+					veh:PlaceToEndOfPath("HelpMens3_path"..i)
+				end
+			end
+
+			if GetPlayerVehicle() then
+				GetPlayerVehicle():SetExternalPathByName("HelpMens3_path5")
+				GetPlayerVehicle():PlaceToEndOfPath("HelpMens3_path5")
+			end
+			DisableGodMode()
+
+			TDeactivate("HelpersArrived_cs_start")
+			TDeactivate("HelpersArrived_cs_FadeIn")
+			TDeactivate("HelpersArrived_cs_StartFly2")
+			TDeactivate("HelpersArrived_cs_End")
+			TDeactivate("HelpersArrived_cs_End3")
+			TDeactivate("HelpersArrived_cs_End4")
+			TDeactivate("HelpersArrived_cs_End5")
+
+			StartConversation("ScientiferVillage_Bar_Scientif")
+			StopPlayingCustomMusic()
+			SetCameraBehindPlayerVehicle()
+			RestoreAllToleranceStatus()
 			trigger:Deactivate()
 		</script>
 	</trigger>
