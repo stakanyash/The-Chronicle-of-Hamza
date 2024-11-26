@@ -13,6 +13,7 @@
 			SetVar("StartBattle", 1)
 			SetVar("BuharaSaveTalk", 0)
 			SetVar("ChujezemetsTalk", 0)
+			SetVar("MansurTalk", 0)
 			
 		    trigger:Deactivate()
 		</script>
