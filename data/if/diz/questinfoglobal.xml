@@ -216,7 +216,11 @@
 		questName="EvacuateBuharas_quest"
 		briefDiz="Эвакуировать Бухарцев в порт"
 		fullDiz="Первая встреча с чужеземцем едва пошла не по плану, но обошлось. Однако мы не можем оставлять бухарцев на произвол судьбы, надо эвакуировать их отсюда!"
-		isMainQuest="0" />
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="Buhara_0" />
+	</QuestInfo>
 
 	<QuestInfo
 		questName="FindBen2_Quest"
@@ -342,6 +346,16 @@
 		<Map
 			name="r4m1"
 			targetObjName="Buhara_loc" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="GoToFatherAfterZarmek_quest"
+		briefDiz="Встретится с отцом"
+		fullDiz="Кажется решение принято единогласно: мы отправляемся в Пустыню Смерти на поиски Серго. Ну или того, что от него осталось... Надо навестить отца, чтобы он знал, что я в порядке и обсудить с ним наши дальнейшие действия."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
 	</QuestInfo>
 
 	<QuestInfo
@@ -634,7 +648,11 @@
 		questName="TalkToFatherPrepToTrip_quest"
 		briefDiz="Поговорить с отцом"
 		fullDiz="Мансур смог убедить меня поехать на восток, надо поговорить с отцом касаемо этого."
-		isMainQuest="1" />
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
+	</QuestInfo>
 
 	<QuestInfo
 		questName="TalkToMansurAfterOil_quest"
