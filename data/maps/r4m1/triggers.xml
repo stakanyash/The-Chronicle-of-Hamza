@@ -1061,6 +1061,9 @@
 
 			SetCameraBehindPlayerVehicle()
 
+			local a = GetEntityByName("StartGonka_loc")
+			if a then a:SetProperty("Active",0) end
+
 			TActivate("HamzaStartRolikBegin")
 
 			trigger:Deactivate()
@@ -1137,9 +1140,6 @@
 
 			local town3 = GetEntityByName("TheKazif")
 			if town3 then town3:SetOpenGateToPlayer( false ) end
-
-			local a = GetEntityByName("StartGonka_loc")
-			if a then a:SetProperty("Active",0) end
 
 			trigger:Deactivate()
 		</script>

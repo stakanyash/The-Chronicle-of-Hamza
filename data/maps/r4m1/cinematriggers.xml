@@ -1407,7 +1407,10 @@
 		if town3 then town3:SetOpenGateToPlayer( true ) end
 
 		local a = GetEntityByName("StartGonka_loc")
-		if a then a:SetProperty("Active",1) end
+		if a then a:SetProperty("Active", 1) end
+
+		SetVar("MaxLap", 2)
+		SetVar("CountCar", 8)
 
 		TActivate("Kef_Sell_Add")
 		TActivate("Gadad_Sell_Add")
