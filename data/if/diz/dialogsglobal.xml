@@ -2066,6 +2066,7 @@
 		name="Dlg_npc_001602"
 		text="Хамза, ты вернулся!"
 		role="NPC"
+		scriptCondition="QuestStatus('GoToFatherAfterZarmek_quest')==Q_TAKEN and QuestStatus('BackToVahat_quest')==Q_COMPLETE"
 		nextReplies="Dlg_pl_001603" />
 
 	<Reply

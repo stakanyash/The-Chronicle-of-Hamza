@@ -364,7 +364,8 @@
 		fullDiz="Я уже поговорил с отцом, теперь Мансуру нужно обсудить ситуацию со своими родителями. Поскольку он до сих пор ездит со мной в одной машине, мне предстоит довезти его до их дома."
 		isMainQuest="1">
 		<Map
-			name="r4m1" />
+			name="r4m1"
+			targetObjName="TheGadad_enter" />
 	</QuestInfo>
 
 	<QuestInfo
@@ -381,7 +382,11 @@
 		questName="GoToMansurandAivenJr_quest"
 		briefDiz="Вернуться к Мансуру и Чужеземцу"
 		fullDiz="Отец как всегда меня поддержал. Надо бы и правда возвращаться к Мансуру и Чужеземцу, чтобы вместе обсудить дальнейший план действий."
-		isMainQuest="0" />
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheGadad_enter" />
+	</QuestInfo>
 
 	<QuestInfo
 		questName="GoToZarmek_quest"
@@ -666,7 +671,8 @@
 		fullDiz="Надо обсудить наши дальнейшие действия. Либо мы сейчас прекращаем наше 'расследование', либо отправляемся дальше на восток. "
 		isMainQuest="1">
 		<Map
-			name="r4m1" />
+			name="r4m1"
+			targetObjName="TheKef_enter" />
 	</QuestInfo>
 
 	<QuestInfo
