@@ -1114,6 +1114,72 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 
 	<Prototype
 		Class			= "Vehicle"
+		Name			= "UralforRace"
+		ResourceType			= "VEHICLE"
+
+		PressingForce		= "2.0"
+
+		DiffRatio		= "4.0"
+		MaxEngineRpm		= "10000"
+		LowGearShiftLimit	= "2500"
+		HighGearShiftLimit	= "6000"
+
+		SteeringSpeed		= "2.0"
+
+		BlastWave		= "bigBlastWave"
+		
+		CameraHeight            = "5.25"
+		CameraMaxDist		= "25"
+	
+		HornSound		= "ET_S_HORN03"
+
+		DecisionMatrix		= "vehiclemain.lua"
+
+		LookRadius		= "200.0"
+		IntersectionRadius	= "7.0"
+		TakingRadius		= "30.0"
+
+		DriftCoeff		= "0.3"
+
+		MassSize		= "5 3 12"
+		MassTranslation		= "0 -2.3 0"
+		DestroyEffectPiercing	= "ET_PS_VEH_EXP1_MED"
+		DestroyEffectBlast	= "ET_PS_VEH_EXP2_MED"
+		DestroyEffectEnergy	= "ET_PS_VEH_EXP3_MED"
+		DestroyEffectWater	= "ET_PS_VEH_EXP2_MED"
+
+		Abstract 		= "true"	>
+
+		<MainPartDescription id = "CHASSIS" partResourceType = "URAL_CHASSIS">
+			<PartDescription id = "CABIN" partResourceType = "URAL_CABIN" lpName = "LP_CAB01" >
+				<PartDescription id="CABIN_BIG_GUN_1" partResourceType = "BIG_GUN" lpName = "LP_BIG01" />
+				<PartDescription id="CABIN_BIG_GUN_2" partResourceType = "BIG_GUN" lpName = "LP_BIG02" />
+				<PartDescription id="CABIN_SMALL_GUN" partResourceType = "SMALL_GUN" lpName = "LP_SML01" />
+			</PartDescription>
+			<PartDescription id = "BASKET" partResourceType="URAL_BASKET" lpName = "LP_BSK01" >
+				<PartDescription id="BASKET_GIANT_GUN" partResourceType = "GIANT_GUN" lpName = "LP_GIANT01" />
+				<PartDescription id="BASKET_BIG_GUN_0" partResourceType = "BIG_GUN" lpName = "LP_BIG01" />
+				<PartDescription id="BASKET_SIDE_GUN_0" partResourceType = "SIDE_GUN" lpName = "LP_SIDE01L,LP_SIDE01R" />
+				<PartDescription id="BASKET_SPECIAL_WEAPON" partResourceType = "SPECIAL_WEAPON"/>
+			</PartDescription>
+		</MainPartDescription>
+
+		<Parts>
+			<Part id = "CHASSIS"		Prototype = "uralChassis" />
+		</Parts>
+
+		<Wheels>
+			<Wheel Prototype = "uralWheel01l" steering = "correct" />
+			<Wheel Prototype = "uralWheel01r" steering = "correct" />
+			<Wheel Prototype = "uralWheel02l" />
+			<Wheel Prototype = "uralWheel02r" />
+			<Wheel Prototype = "uralWheel02l" />
+			<Wheel Prototype = "uralWheel02r" />
+		</Wheels>
+	</Prototype>
+
+	<Prototype
+		Class			= "Vehicle"
 		Name			= "Belaz"
 		ResourceType			= "VEHICLE"
 
@@ -1711,7 +1777,7 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 	<Prototype
 		Class			= "Vehicle"
 		Name			= "UralRace00"
-		ParentPrototype 	= "Ural">
+		ParentPrototype 	= "UralforRace">
 		<Parts>
 			<Part id = "CABIN"			Prototype = "uralCab03" />
 			<Part id = "BASKET"			Prototype = "uralCargo01" />
@@ -1721,7 +1787,7 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 	<Prototype
 		Class			= "Vehicle"
 		Name			= "UralRace01"
-		ParentPrototype 	= "Ural">
+		ParentPrototype 	= "UralforRace">
 		<Parts>
 			<Part id = "CABIN"			Prototype = "uralCab05" />
 			<Part id = "BASKET"			Prototype = "uralCargo05" />
@@ -1747,7 +1813,7 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 	<Prototype
 		Class			= "Vehicle"
 		Name			= "UralMansurRace"
-		ParentPrototype 	= "Ural">
+		ParentPrototype 	= "UralforRace">
 		<Parts>
 			<Part id = "CABIN"			Prototype = "uralCab04" />
 			<Part id = "BASKET"			Prototype = "uralCargo03" />
@@ -2518,7 +2584,7 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 	<Prototype
 		Class			= "Vehicle"
 		Name			= "UralDadHamza_Race"
-		ParentPrototype 	= "Ural">
+		ParentPrototype 	= "UralforRace">
 		<Parts>
 			<Part id = "CABIN"			Prototype = "uralCab04" />
 			<Part id = "BASKET"			Prototype = "uralCargo03" /> 
