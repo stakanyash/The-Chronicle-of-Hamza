@@ -42,7 +42,7 @@
 		name="r4m2_Bar_Scientist_1_N01"
 		text="Мои люди подоспели вовремя, ещё немного - и от вас остался бы только пепел!"
 		role="NPC"
-		scriptCondition="QuestStatus('FindMoreMadmans_quest')==Q_COMPLETED"
+		scriptCondition="GetVar('ScientistTalk').AsInt==0 and QuestStatus('FindMoreMadmans_quest')==Q_COMPLETED"
 		nextReplies="r4m2_Bar_Scientist_1_N02" />
 
 	<Reply
@@ -110,13 +110,13 @@
 		name="r4m2_Bar_Scientist_1_N12"
 		text="Хорошо."
 		role="PLAYER"
-		scriptResult="EndConversation(); TakeQuest('LookAtTarelka_quest')" />
+		scriptResult="EndConversation(); SetVar('ScientistTalk', 1); TakeQuest('LookAtTarelka_quest')" />
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке/Первая часть-->
 	<Reply
 		name="r4m2_Bar_Scientist_2_N01"
 		text="Какая сила духа! Вы смогли противиться голосу небес!"
 		role="NPC"
-		scriptCondition="GetVar('ScientistTalk').AsInt==0 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN "
+		scriptCondition="GetVar('ScientistTalk').AsInt==1 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN "
 		nextReplies="r4m2_Bar_Scientist_2_N02" />
 
 	<Reply
@@ -255,33 +255,33 @@
 		name="Dlg_pl_001577"
 		text="Теперь понятно, почему он тогда уехал и никому ничего не сказал... Все решили, что он поехал для очередного сеанса торговли..."
 		role="PLAYER"
-		scriptResult="SetVar('ScientistTalk', 1); StartConversation('Chujezemets_r4m2')" />
+		scriptResult="SetVar('ScientistTalk', 2); StartConversation('Chujezemets_r4m2')" />
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке/Вторая часть-->
 	<Reply
 		name="Dlg_npc_001569"
 		text="Этого мне не предстояло узнать. Всё, что я знал уже рассказал вам."
 		role="NPC"
-		scriptCondition="GetVar('ScientistTalk').AsInt==1 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
+		scriptCondition="GetVar('ScientistTalk').AsInt==2 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001570" />
 
 	<Reply
 		name="Dlg_pl_001570"
 		text="Кажется нам стоит вернутся обратно, найти Мансура и продумать дальнейший план действий, что скажешь?"
 		role="PLAYER"
-		scriptResult="SetVar('ScientistTalk', 2); StartConversation('Chujezemets_r4m2')" />
+		scriptResult="SetVar('ScientistTalk', 3); StartConversation('Chujezemets_r4m2')" />
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке/Третья часть-->
 	<Reply
 		name="Dlg_npc_001575"
 		text="Удачи вам."
 		role="NPC"
-		scriptCondition="GetVar('ScientistTalk').AsInt==2 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
+		scriptCondition="GetVar('ScientistTalk').AsInt==3 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001576" />
 
 	<Reply
 		name="Dlg_pl_001576"
 		text="Прощай."
 		role="PLAYER"
-		scriptResult="TActivate('trExitFromCity'); SetVar('ScientistTalk', 3); TakeQuest('BackToVahat_quest'); CompleteQuest('TalkToVasilyi_quest'); EndConversation()" />
+		scriptResult="TActivate('trExitFromCity'); SetVar('ScientistTalk', 4); TakeQuest('BackToVahat_quest'); CompleteQuest('TalkToVasilyi_quest'); EndConversation()" />
 <!--Root/r4m1/Сюжетные--><!--Root/r4m1/Опциональные--><!--Root/r4m1/Разговоры о книгах-->
 	<Reply
 		name="Gadad_Bar_CrazyBook1_1_N01"

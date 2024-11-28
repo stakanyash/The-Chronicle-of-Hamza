@@ -76,6 +76,7 @@
 				ModelName="r4_man"
 				cfg="207"
 				NpcType="BARMAN"
+				helloReplyNames="Dynamic01"
 				SpokenCount="0" />
 
 			<Object
@@ -104,7 +105,7 @@
 				ModelName="r4_man"
 				skin="1"
 				cfg="195"
-				helloReplyNames="Dlg_npc_001334 Dlg_npc_001362"
+				helloReplyNames="Dlg_npc_001334 Dlg_npc_001362 Dlg_npc_001578 Dlg_npc_001592 Dlg_npc_001598"
 				SpokenCount="0" />
 		</Object>
 
@@ -271,6 +272,7 @@
 				skin="1"
 				cfg="231"
 				NpcType="BARMAN"
+				helloReplyNames="Dynamic01"
 				SpokenCount="0" />
 
 			<Object
@@ -506,6 +508,7 @@
 				ModelName="r4_man"
 				cfg="99"
 				NpcType="BARMAN"
+				helloReplyNames="Dynamic01"
 				SpokenCount="0" />
 
 			<Object
@@ -628,7 +631,7 @@
 			Belong="1100"
 			Prototype="NPC"
 			ModelName="mask_hero"
-			helloReplyNames="Dlg_npc_001536 Dlg_npc_001540 Dlg_npc_001553 Dlg_npc_001560"
+			helloReplyNames="Dlg_npc_001536 Dlg_npc_001540 Dlg_npc_001553 Dlg_npc_001560 Dlg_npc_001588 Dlg_npc_001594"
 			SpokenCount="0" />
 
 		<Object
@@ -714,6 +717,7 @@
 				skin="1"
 				cfg="214"
 				NpcType="BARMAN"
+				helloReplyNames="Dynamic01"
 				SpokenCount="0" />
 
 			<Object
