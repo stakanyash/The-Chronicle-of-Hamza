@@ -2,112 +2,112 @@
 <RadioSamples>
 	<Sample
 		id="1"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Шабаб, мы не одни!" />
 
 	<Sample
 		id="2"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Заряжай! Пускай дрожат!" />
 
 	<Sample
 		id="3"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Сдохните, шакалы!" />
 
 	<Sample
 		id="4"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="За мной, к победе!" />
 
 	<Sample
 		id="5"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Лови!" />
 
 	<Sample
 		id="6"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="На, получай!" />
 
 	<Sample
 		id="7"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="За мои сандалии!" />
 
 	<Sample
 		id="8"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Пёс!" />
 
 	<Sample
 		id="9"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Чуть в голову не попало!" />
 
 	<Sample
 		id="10"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Шу, черт побери?!" />
 
 	<Sample
 		id="11"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Пф, просто царапина." />
 
 	<Sample
 		id="12"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Не в первый раз такое, справимся!" />
 
 	<Sample
 		id="13"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Сдохни, джахш!" />
 
 	<Sample
 		id="14"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Тут выживет только сильнейший!" />
 
 	<Sample
 		id="15"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Этот уже не встанет!" />
 
 	<Sample
 		id="16"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Кто следующий?!" />
 
 	<Sample
 		id="17"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="А ну разбежались, шакалы!" />
 
 	<Sample
 		id="18"
-		sound=""
+		ssound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Прощайте, друзья. Я ухожу..." />
 
 	<Sample
 		id="19"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Вот и всё, конец дороги..." />
 
 	<Sample
 		id="20"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Ах! Промахнулся!" />
 
 	<Sample
 		id="21"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Нееет!" />
 
 	<Sample
 		id="22"
-		sound=""
+		sound="data\sounds\radio\r_player_empty_0.ogg"
 		text="Вы пожалеете!" />
 
 	<Sample
