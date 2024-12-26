@@ -2,12 +2,12 @@
 <RadioSounds>
 	<Group name="player" belongs="1100">
 		<Neutral>
-			<Sound id="first_see_other" samples="1 2 3 4" probability="0"/>
-			<Sound id="enemy_broken" samples="5 6 7 8" probability="0"/>
-			<Sound id="self_broken" samples="9 10 11 12" probability="0"/>
-			<Sound id="enemy_died" samples="13 14 15 16 17" probability="0"/>
-			<Sound id="self_died" samples="18 19 20 21" probability="0"/>
-			<Sound id="neutral_died" samples="22" probability="0"/>
+			<Sound id="first_see_other" samples="1 2 3 4" probability="15"/>
+			<Sound id="enemy_broken" samples="5 6 7 8" probability="15"/>
+			<Sound id="self_broken" samples="9 10 11 12" probability="15"/>
+			<Sound id="enemy_died" samples="13 14 15 16 17" probability="15"/>
+			<Sound id="self_died" samples="18 19 20 21" probability="15"/>
+			<Sound id="neutral_died" samples="22" probability="15"/>
 		</Neutral>
 		<Enemy>
 		</Enemy>
