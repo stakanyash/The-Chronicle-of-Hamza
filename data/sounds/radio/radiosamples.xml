@@ -2,112 +2,112 @@
 <RadioSamples>
 	<Sample
 		id="1"
-		sound="data\sounds\radio\r_JOPA_attack_1.ogg"
+		sound=""
 		text="Похоже, мы не одни." />
 
 	<Sample
 		id="2"
-		sound="data\sounds\radio\r_JOPA_attack_2.ogg"
+		sound=""
 		text="Первое орудие, пли!" />
 
 	<Sample
 		id="3"
-		sound="data\sounds\radio\r_JOPA_attack_3.ogg"
+		sound=""
 		text="Смерть бандитам!" />
 
 	<Sample
 		id="4"
-		sound="data\sounds\radio\r_JOPA_attack_4.ogg"
+		sound=""
 		text="И снова в бой!" />
 
 	<Sample
 		id="5"
-		sound="data\sounds\radio\r_JOPA_ishit_1.ogg"
+		sound=""
 		text="Получай!" />
 
 	<Sample
 		id="6"
-		sound="data\sounds\radio\r_JOPA_ishit_2.ogg"
+		sound=""
 		text="Так тебе!" />
 
 	<Sample
 		id="7"
-		sound="data\sounds\radio\r_JOPA_ishit_3.ogg"
+		sound=""
 		text="Это тебе на первое!" />
 
 	<Sample
 		id="8"
-		sound="data\sounds\radio\r_JOPA_ishit_4.ogg"
+		sound=""
 		text="За мой радиатор!" />
 
 	<Sample
 		id="9"
-		sound="data\sounds\radio\r_JOPA_shot_1.ogg"
+		sound=""
 		text="Чуть в глаз не попал!" />
 
 	<Sample
 		id="10"
-		sound="data\sounds\radio\r_JOPA_shot_2.ogg"
+		sound=""
 		text="Проклятье!" />
 
 	<Sample
 		id="11"
-		sound="data\sounds\radio\r_JOPA_shot_3.ogg"
+		sound=""
 		text="Всего лишь царапина." />
 
 	<Sample
 		id="12"
-		sound="data\sounds\radio\r_JOPA_shot_4.ogg"
+		sound=""
 		text="Не впервой! Выживем!" />
 
 	<Sample
 		id="13"
-		sound="data\sounds\radio\r_JOPA_kill_1.ogg"
+		sound=""
 		text="Умри, пацак!" />
 
 	<Sample
 		id="14"
-		sound="data\sounds\radio\r_JOPA_kill_2.ogg"
+		sound=""
 		text="Должен остаться только один!" />
 
 	<Sample
 		id="15"
-		sound="data\sounds\radio\r_JOPA_kill_3.ogg"
+		sound=""
 		text="Этот готов!" />
 
 	<Sample
 		id="16"
-		sound="data\sounds\radio\r_JOPA_kill_4.ogg"
+		sound=""
 		text="Следующий!" />
 
 	<Sample
 		id="17"
-		sound="data\sounds\radio\r_JOPA_kill_5.ogg"
+		sound=""
 		text="Так будет с каждым!" />
 
 	<Sample
 		id="18"
-		sound="data\sounds\radio\r_JOPA_dead_1.ogg"
+		sound=""
 		text="Прощайте, братцы!" />
 
 	<Sample
 		id="19"
-		sound="data\sounds\radio\r_JOPA_dead_2.ogg"
+		sound=""
 		text="Это конец..." />
 
 	<Sample
 		id="20"
-		sound="data\sounds\radio\r_JOPA_dead_3.ogg"
+		sound=""
 		text="Я не смог увернуться!" />
 
 	<Sample
 		id="21"
-		sound="data\sounds\radio\r_JOPA_dead_4.ogg"
+		sound=""
 		text="Нееет! Нее..." />
 
 	<Sample
 		id="22"
-		sound="data\sounds\radio\r_JOPA_allydead_1.ogg"
+		sound=""
 		text="Убийцы!" />
 
 	<Sample
