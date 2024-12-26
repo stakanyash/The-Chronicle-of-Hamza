@@ -1761,15 +1761,51 @@
 
 	<Reply
 		name="Dlg_npc_001317"
-		text="Конечно правда. А как иначе? Ладно, пошли за мной, покажу зачем я просил тебя поскорее приехать. "
+		text="Конечно правда. А как иначе?"
 		role="NPC"
 		nextReplies="Dlg_pl_001318" />
 
 	<Reply
 		name="Dlg_pl_001318"
-		text="Пошли."
+		text="Ну ладно. Так... что ты хотел показать мне, отец?"
 		role="PLAYER"
-		scriptResult="CompleteQuest('BackToHome_quest'); FailQuestIfTaken('Repair_quest'); TakeQuest('GoToMansur_quest'); TActivate('NewOldCar_tr'); LeaveTown(true)" />
+		nextReplies="Dlg_npc_001634" />
+
+	<Reply
+		name="Dlg_npc_001634"
+		text="Сын, я тут так подумал и решил, что наверное лучше мою машину отдать тебе. Мне она всё равно не нужна."
+		role="NPC"
+		nextReplies="Dlg_pl_001635" />
+
+	<Reply
+		name="Dlg_pl_001635"
+		text="Отец, ты уверен в этом? А если нужно будет куда-то съездить?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001636" />
+
+	<Reply
+		name="Dlg_npc_001636"
+		text="Поверь, мне проще будет попросить кого-нибудь меня подвезти. Ну или как вариант я могу ездить на твоей. Хотя, если хочешь - можешь её продать."
+		role="NPC"
+		nextReplies="Dlg_pl_001637" />
+
+	<Reply
+		name="Dlg_pl_001637"
+		text="Нет, я свою машину продавать не буду, пусть будет на всякий случай. Отец, ты не будешь против, если я поеду встречусь с Мансуром?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001638" />
+
+	<Reply
+		name="Dlg_npc_001638"
+		text="Конечно, езжай. Только не задерживайся до поздна, пожалуйста."
+		role="NPC"
+		nextReplies="Dlg_pl_001639" />
+
+	<Reply
+		name="Dlg_pl_001639"
+		text="Хорошо, я поехал."
+		role="PLAYER"
+		scriptResult="CompleteQuest('BackToHome_quest'); TakeQuest('GoToMansur_quest'); TActivate('NewOldCar_tr'); TActivate('CarNameMilk'); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001305"
@@ -1803,15 +1839,51 @@
 
 	<Reply
 		name="Dlg_npc_001314"
-		text="Конечно правда. А как иначе? Ладно, пошли за мной, покажу зачем я просил тебя поскорее приехать. "
+		text="Конечно правда. А как иначе?"
 		role="NPC"
 		nextReplies="Dlg_pl_001315" />
 
 	<Reply
 		name="Dlg_pl_001315"
-		text="Пошли."
+		text="Ну ладно. Так... что ты хотел показать мне, отец?"
 		role="PLAYER"
-		scriptResult="CompleteQuest('BackToHome_quest'); FailQuest('Repair_quest') TakeQuest('GoToMansur_quest'); TActivate('NewOldCar_tr'); LeaveTown(true)" />
+		nextReplies="Dlg_npc_001628" />
+
+	<Reply
+		name="Dlg_npc_001628"
+		text="Сын, я тут так подумал и решил, что наверное лучше мою машину отдать тебе. Мне она всё равно не нужна."
+		role="NPC"
+		nextReplies="Dlg_pl_001629" />
+
+	<Reply
+		name="Dlg_pl_001629"
+		text="Отец, ты уверен в этом? А если нужно будет куда-то съездить?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001630" />
+
+	<Reply
+		name="Dlg_npc_001630"
+		text="Поверь, мне проще будет попросить кого-нибудь меня подвезти. Ну или как вариант я могу ездить на твоей. Хотя, если хочешь - можешь её продать."
+		role="NPC"
+		nextReplies="Dlg_pl_001631" />
+
+	<Reply
+		name="Dlg_pl_001631"
+		text="Нет, я свою машину продавать не буду, пусть будет на всякий случай. Отец, ты не будешь против, если я поеду встречусь с Мансуром?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001632" />
+
+	<Reply
+		name="Dlg_npc_001632"
+		text="Конечно, езжай. Только не задерживайся до поздна, пожалуйста."
+		role="NPC"
+		nextReplies="Dlg_pl_001633" />
+
+	<Reply
+		name="Dlg_pl_001633"
+		text="Хорошо. Я поехал."
+		role="PLAYER"
+		scriptResult="CompleteQuest('BackToHome_quest'); TakeQuest('GoToMansur_quest'); TActivate('NewOldCar_tr'); TActivate('CarNameMilk'); LeaveTown(true)" />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/Первый приезд (починенный)-->
 	<Reply
 		name="Dlg_npc_001319"
@@ -1864,15 +1936,39 @@
 
 	<Reply
 		name="Dlg_npc_001332"
-		text="Конечно. Пошли за мной."
+		text="Конечно. Сын, я тут так подумал и решил, что наверное лучше мою машину отдать тебе. Мне она всё равно не нужна."
 		role="NPC"
 		nextReplies="Dlg_pl_001333" />
 
 	<Reply
 		name="Dlg_pl_001333"
-		text="Пошли."
+		text="Отец, ты уверен в этом? А если нужно будет куда-то съездить?"
 		role="PLAYER"
-		scriptResult="CompleteQuest('BackToHome_quest'); TakeQuest('GoToMansur_quest'); TActivate('NewOldCar_tr'); LeaveTown(true)" />
+		nextReplies="Dlg_npc_001646" />
+
+	<Reply
+		name="Dlg_npc_001646"
+		text="Поверь, мне проще будет попросить кого-нибудь меня подвезти. Ну или как вариант я могу ездить на твоей. Хотя, если хочешь - можешь её продать."
+		role="NPC"
+		nextReplies="Dlg_pl_001647" />
+
+	<Reply
+		name="Dlg_pl_001647"
+		text="Нет, я свою машину продавать не буду, пусть будет на всякий случай. Отец, ты не будешь против, если я поеду встречусь с Мансуром?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001648" />
+
+	<Reply
+		name="Dlg_npc_001648"
+		text="Конечно, езжай. Только не задерживайся до поздна, пожалуйста."
+		role="NPC"
+		nextReplies="Dlg_pl_001649" />
+
+	<Reply
+		name="Dlg_pl_001649"
+		text="Хорошо, я поехал."
+		role="PLAYER"
+		scriptResult="CompleteQuest('BackToHome_quest'); TakeQuest('GoToMansur_quest'); TActivate('NewOldCar_tr'); TActivate('CarNameMilk'); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001322"
@@ -1894,15 +1990,51 @@
 
 	<Reply
 		name="Dlg_npc_001326"
-		text="Ну хорошо, я поверю тебе. Пошли за мной. Узнаешь зачем я тебя просил поскорее приехать."
+		text="Ну хорошо, я поверю тебе."
 		role="NPC"
 		nextReplies="Dlg_pl_001327" />
 
 	<Reply
 		name="Dlg_pl_001327"
-		text="Пошли."
+		text="Спасибо, отец. Так... что ты хотел показать мне?"
 		role="PLAYER"
-		scriptResult="CompleteQuest('BackToHome_quest'); TakeQuest('GoToMansur_quest'); TActivate('NewOldCar_tr'); LeaveTown(true)" />
+		nextReplies="Dlg_npc_001640" />
+
+	<Reply
+		name="Dlg_npc_001640"
+		text="Сын, я тут так подумал и решил, что наверное лучше мою машину отдать тебе. Мне она всё равно не нужна."
+		role="NPC"
+		nextReplies="Dlg_pl_001641" />
+
+	<Reply
+		name="Dlg_pl_001641"
+		text="Отец, ты уверен в этом? А если нужно будет куда-то съездить?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001642" />
+
+	<Reply
+		name="Dlg_npc_001642"
+		text="Поверь, мне проще будет попросить кого-нибудь меня подвезти. Ну или как вариант я могу ездить на твоей. Хотя, если хочешь - можешь её продать."
+		role="NPC"
+		nextReplies="Dlg_pl_001643" />
+
+	<Reply
+		name="Dlg_pl_001643"
+		text="Нет, я свою машину продавать не буду, пусть будет на всякий случай. Отец, ты не будешь против, если я поеду встречусь с Мансуром?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001644" />
+
+	<Reply
+		name="Dlg_npc_001644"
+		text="Конечно, езжай. Только не задерживайся до поздна, пожалуйста."
+		role="NPC"
+		nextReplies="Dlg_pl_001645" />
+
+	<Reply
+		name="Dlg_pl_001645"
+		text="Хорошо, я поехал."
+		role="PLAYER"
+		scriptResult="CompleteQuest('BackToHome_quest'); TakeQuest('GoToMansur_quest'); TActivate('NewOldCar_tr'); TActivate('CarNameMilk'); LeaveTown(true) " />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/После первого диалога с Шарафом-->
 	<Reply
 		name="Dlg_npc_001492"

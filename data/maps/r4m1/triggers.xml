@@ -1107,22 +1107,48 @@
 		</script>
 	</trigger>
 
+	<trigger	Name="CreateDadCar"	active="0">
+		<event	timeout="0.01"			eventid="GE_TIME_PERIOD" />
+		<script>
+			local DCar = CreateVehicleEx("UralDadHamza","DadUral",  CVector(6408.515, 251.050, 5117.623), 1100)
+
+			if DCar then
+				DCar:SetRotation(Quaternion(0.001, 0.787, -0.003, -0.616))
+			    DCar:SetSkin(7)
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="CarNameMilk"	active="0">
+		<event	timeout="0.01"			eventid="GE_TIME_PERIOD" />
+		<script>
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetNameFromScript("MyCar")
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
 	<trigger Name="NewOldCar_tr" active="0">
 		<event	timeout="0.1"			eventid="GE_TIME_PERIOD" />
 		<script>
-			local PCar = GetPlayerVehicle()
-			if PCar then
-			    PCar:SetGamePositionOnGround( CVector(6528.846, 268.334, 5645.634))
-				PCar:SetRotation(Quaternion(-0.001, 0.225, -0.003, -0.974))
+			CapturePlayerVehicle(0, "PlayerOldCar")
+
+			local plcar=GetEntityByName("DadUral")
+			local pl=g_Player
+
+			if pl and plcar then
+			   pl:AddChild(plcar)
 			end
 
-			local NC = CreateVehicleEx("UralDadHamza","NewCar", CVector(6555.777, 268.324, 5661.137))
-			if NC then
-                NC:SetRotation(Quaternion(-0.001, 0.915, -0.003, -0.404))
-				NC:SetSkin(7)
+			local explayercar = getObj("MyCar")
+			if explayercar then
+				explayercar:Remove()
 			end
-
-			TActivate("NewOldCarRolik_Start")
 
 			trigger:Deactivate()
 		</script>

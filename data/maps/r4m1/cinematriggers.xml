@@ -1319,79 +1319,13 @@
 
 		AddBook("r4_survivorarchive")
 
+		TActivate("CreateDadCar")
+
 		RestoreAllToleranceStatus()
 
 		SetCameraBehindPlayerVehicle()
 
 		StopPlayingCustomMusic()
-
-        trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<!-- The Chronicle of Hamza: Dad's Car -->
-
-	<trigger Name="NewOldCarRolik_Start" active="0">
-		<event	timeout="0.01"			eventid="GE_TIME_PERIOD" />
-		<script>
-        PlayCustomMusic("QuietDialogue01")
-
-		SaveAllToleranceStatus(RS_NEUTRAL)
-
-		local Plf = GetPlayerVehicle()
-        local PlfID = GetPlayerVehicleId()
-
-		Fly("NewOldCarRolik_cam01", CINEMATIC_AIM_TO_ID, PlfID, 35, 1, 1 )
-
-		StartCinematic()
-
-		TActivate("NewOldCarRolik_End")
-
-		AddCinematicMessage( 67, 0.25 )
-		AddCinematicMessage( 68, 0.25 )
-		AddCinematicMessage( 69, 0.25 )
-		AddCinematicMessage( 70, 0.25 )
-		AddCinematicMessage( 71, 0.25 )
-		AddCinematicMessage( 72, 0.25 )
-		AddCinematicMessage( 73, 0.25 )
-		AddCinematicMessage( 74, 0.25 )
-
-        trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="NewOldCarRolik_End" active="0">
-		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
-		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
-		<script>
-    	RestoreAllToleranceStatus()
-
-		StopPlayingCustomMusic()
-
-		local DadCar = getObj("NewCar")
-		if DadCar then
-		    DadCar:Remove()
-		end
-
-		local PVeh = GetPlayerVehicle()
-			if PVeh then
-			    PVeh:SetNameFromScript("MyCar")
-			end
-
-		CapturePlayerVehicle(0, "PlayerOldCar")
-
-		local plcar=CreateVehicleEx("UralDadHamza","DadUral",  CVector(6555.777, 268.324, 5661.137), 1100)
-		local pl=g_Player
-			if pl and plcar then 
-			   plcar:SetRotation(Quaternion(-0.001, 0.915, -0.003, -0.404))
-			   plcar:SetSkin(7)
-			   pl:AddChild(plcar)
-			end
-
-		local explayercar = getObj("MyCar")
-			if explayercar then
-				explayercar:Remove()
-			end
 
         trigger:Deactivate()
 		</script>
@@ -2068,8 +2002,6 @@
 		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
 		<script>
 			AddCinematicMessage( 117, 0.25 )
-
-			RuleConsole("mus_Volume 55")
 
 			trigger:Deactivate()
 		</script>
