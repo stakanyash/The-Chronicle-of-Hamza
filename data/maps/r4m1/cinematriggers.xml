@@ -974,13 +974,16 @@
 
 			Plf:SetRandomSkin()
 
-			CreateTeam("StartDebyli",1062,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","UralStartBez","BezHunter", "UralStartBez"},CVector(2594.501, 262.854, 3906.361), nil)
+			CreateFirstAttackersCS()
+
+			local BezVeh3 = GetEntityByName("FrstAttacker2")
+			local BezID = BezVeh3:GetId()
 
             Fly("startgameHamza_cam1", CINEMATIC_AIM_TO_ID, PlfID, 12, 0, 0 )
 			Fly("startgameHamza_cam2", CINEMATIC_AIM_TO_ID, PlfID, 5, 0, 0 )
 			Fly("startgameHamza_cam3", CINEMATIC_AIM_TO_ID, PlfID, 12, 0, 0 )
 			Fly("startgameHamza_bez", CINEMATIC_NO_AIM, 0, 6, 0, 0 )
-			Fly("stgameHamza_final", CINEMATIC_AIM_TO_ID, PlfID, 4, 0, 1 )
+			Fly("stgameHamza_final", CINEMATIC_AIM_TO_ID, BezID, 4, 0, 1 )
 
             StartCinematic()
 
@@ -1009,7 +1012,7 @@
 	<trigger	Name="HamzaStartGameRolik_Music"	active="0">
 		<event	timeout="0.1"			eventid="GE_TIME_PERIOD" />
 		<script>
-			PlayCustomMusic("Techno02")
+			PlayCustomMusic("Bio05")
 
 			trigger:Deactivate()
 		</script>
@@ -1044,18 +1047,65 @@
 			local PCar = GetPlayerVehicle()
 			if PCar then
 			    PCar:LimitMaxSpeed(40)
+				PCar:setGodMode(1)
 			end
 
 			local MCar = GetEntityByName("MansurCar")
 			if MCar then
 			    MCar:SetCruisingSpeed(40)
+				MCar:setGodMode(1)
 			end
 
 			AddCinematicMessage(45, 0.5)
 
 			SetVar("StartBattle", 0)
 
+			TActivate("HamzaStartGameRolik_Attack")
+
 			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="HamzaStartGameRolik_Attack"	active="0">
+		<event	timeout="0.1"			eventid="GE_TIME_PERIOD" />
+		<script>
+			local vehAttacker0 = GetEntityByName("FrstAttacker0")
+			local vehAttacker1 = GetEntityByName("FrstAttacker1")
+			local vehAttacker2 = GetEntityByName("FrstAttacker2")
+			local vehAttacker3 = GetEntityByName("FrstAttacker3")
+
+			local vehP = GetPlayerVehicle()
+			local vehPID = GetPlayerVehicleId()
+
+			local vehM = GetEntityByName("MansurCar")
+
+			if vehAttacker0 and vehPID then
+				vehAttacker0:SetCustomControlEnabled(1)
+				vehAttacker0:SetCustomControlWeapons(2)
+				vehAttacker0:SetCustomControlWeaponsTargetObj(vehPID)
+				vehAttacker0:FireFromWeaponCustom2(1, vehPID)
+			end
+
+			if vehAttacker1 and vehM then
+				vehAttacker1:SetCustomControlEnabled(1)
+				vehAttacker1:SetCustomControlWeapons(2)
+				vehAttacker1:SetCustomControlWeaponsTargetObj(vehM:GetId())
+				vehAttacker1:FireFromWeaponCustom2(1, vehM:GetId())
+			end
+
+			if vehAttacker2 and vehPID then
+				vehAttacker2:SetCustomControlEnabled(1)
+				vehAttacker2:SetCustomControlWeapons(2)
+				vehAttacker2:SetCustomControlWeaponsTargetObj(vehPID)
+				vehAttacker2:FireFromWeaponCustom2(1, vehPID)
+			end
+
+			if vehAttacker3 and vehM then
+				vehAttacker3:SetCustomControlEnabled(1)
+				vehAttacker3:SetCustomControlWeapons(2)
+				vehAttacker3:SetCustomControlWeaponsTargetObj(vehM:GetId())
+				vehAttacker3:FireFromWeaponCustom2(1, vehM:GetId())
+			end
 		</script>
 	</trigger>
 
@@ -1072,6 +1122,7 @@
 			if PCar then
 				PCar:UnlimitMaxSpeed()
 				PCar:PlaceToEndOfPath("XamzaStartGame_1")
+				PCar:setGodMode(0)
 			end
 
 		local mCar = getObj("MansurCar")
@@ -1085,6 +1136,10 @@
 		    if mfCar then
 		        mfCar:SetSkin(1)
 		end
+
+		TDeactivate("HamzaStartGameRolik_Attack")
+
+		CreateFirstAttackers()
 
 		TActivate("FirstDebyli_Die")
 		TActivate("MansurCar_Die")

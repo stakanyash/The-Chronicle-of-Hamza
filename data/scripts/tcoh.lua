@@ -2,8 +2,8 @@
 
 function StartMoney()
 	if GetVar("AddedStartMoney").AsInt==0 then
-		local min = 500
-		local max = 1000
+		local min = 800
+		local max = 2500
 		local randomMoney = math.random(min, max)
 		g_Player:AddMoney( randomMoney )
 
@@ -11,6 +11,108 @@ function StartMoney()
 	else
 		AddFadingMsgId( "fm_commandcantusetwice" )
     	AddImportantFadingMsgId( "fm_commandcantusetwice" )
+	end
+end
+
+function CreateFirstAttackersCS()
+	CreateVehicleEx("UralStartBez","FrstAttacker0",CVector(2572.051, 267.215, 3917.664), 1062)
+	CreateVehicleEx("UralStartBez","FrstAttacker1",CVector(2572.051, 267.215, 3917.664), 1062)
+	CreateVehicleEx("BezHunter","FrstAttacker2",CVector(2572.051, 267.215, 3917.664), 1062)
+	CreateVehicleEx("UralStartBez","FrstAttacker3",CVector(2572.051, 267.215, 3917.664), 1062)
+
+	local veh0 = getObj("FrstAttacker0")
+	if veh0 then
+		veh0:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
+		veh0:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_0")))
+		veh0:SetRandomSkin()
+	end
+
+	local veh1 = getObj("FrstAttacker1")
+	if veh1 then
+		veh1:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
+		veh1:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_1")))
+		veh1:SetRandomSkin()
+	end
+
+	local veh2 = getObj("FrstAttacker2")
+	if veh2 then
+		veh2:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
+		veh2:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_2")))
+		veh2:SetRandomSkin()
+	end
+
+	local veh3 = getObj("FrstAttacker3")
+	if veh3 then
+		veh3:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
+		veh3:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_3")))
+		veh3:SetRandomSkin()
+	end
+
+	local skin0 = GetEntityByName("FrstAttacker0"):GetSkin() 
+	local skin1 = GetEntityByName("FrstAttacker1"):GetSkin() 
+	local skin2 = GetEntityByName("FrstAttacker2"):GetSkin() 
+	local skin3 = GetEntityByName("FrstAttacker3"):GetSkin() 
+
+	SetVar("FirstAttackSkin0", tonumber(skin0))
+	SetVar("FirstAttackSkin1", tonumber(skin1))
+	SetVar("FirstAttackSkin2", tonumber(skin2))
+	SetVar("FirstAttackSkin3", tonumber(skin3))
+end
+
+function CreateFirstAttackers()
+	CreateTeam("StartDebyli",1062,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","UralStartBez","BezHunter", "UralStartBez"},CVector(2594.501, 262.854, 3906.361), nil)
+
+	local skin0 = GetVar("FirstAttackSkin0").AsInt
+	local skin1 = GetVar("FirstAttackSkin1").AsInt
+	local skin2 = GetVar("FirstAttackSkin2").AsInt
+	local skin3 = GetVar("FirstAttackSkin3").AsInt
+
+	local veh0cs = getObj("FrstAttacker0")
+	if veh0cs then
+		veh0cs:Remove()
+	end
+
+	local veh1cs = getObj("FrstAttacker1")
+	if veh1cs then
+		veh1cs:Remove()
+	end
+
+	local veh2cs = getObj("FrstAttacker2")
+	if veh2cs then
+		veh2cs:Remove()
+	end
+
+	local veh3cs = getObj("FrstAttacker3")
+	if veh3cs then
+		veh3cs:Remove()
+	end
+
+	local veh0 = getObj("StartDebyli_vehicle_0")
+	if veh0 then
+		veh0:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
+		veh0:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_0")))
+		veh0:SetSkin(skin0)
+	end
+
+	local veh1 = getObj("StartDebyli_vehicle_1")
+	if veh1 then
+		veh1:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
+		veh1:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_1")))
+		veh1:SetSkin(skin1)
+	end
+
+	local veh2 = getObj("StartDebyli_vehicle_2")
+	if veh2 then
+		veh2:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
+		veh2:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_2")))
+		veh2:SetSkin(skin2)
+	end
+
+	local veh3 = getObj("StartDebyli_vehicle_3")
+	if veh3 then
+		veh3:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
+		veh3:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_3")))
+		veh3:SetSkin(skin3)
 	end
 end
 
