@@ -5,23 +5,6 @@
 		Names="u1 u2 u3 u4 u5 u6 u7 u8 u9" />
 
 	<Object
-		Name="Player1"
-		Belong="1100"
-		Prototype="player"
-		Money="100">
-		<Object
-			Name="MyCar"
-			Belong="1100"
-			Prototype="Bug01"
-			Pos="3355.000 368.500 3308.000"
-			Rot="-0.007 1.000 -0.010 0.021">
-			<Parts />
-
-			<Repository />
-		</Object>
-	</Object>
-
-	<Object
 		Flags="21"
 		Name="loc_LisaRunOut"
 		Belong="1042"
@@ -290,6 +273,7 @@
 				ModelName="r1_woman"
 				cfg="44"
 				NpcType="BARMAN"
+				helloReplyNames="Dynamic00"
 				SpokenCount="0" />
 
 			<Object
@@ -884,6 +868,7 @@
 				skin="2"
 				cfg="152"
 				NpcType="BARMAN"
+				helloReplyNames="Dynamic00"
 				SpokenCount="0" />
 
 			<Object
@@ -1017,6 +1002,7 @@
 				ModelName="r1_woman"
 				cfg="228"
 				NpcType="BARMAN"
+				helloReplyNames="Dynamic00"
 				SpokenCount="0" />
 
 			<Object
@@ -1115,6 +1101,7 @@
 				ModelName="r1_woman"
 				cfg="44"
 				NpcType="BARMAN"
+				helloReplyNames="Dynamic00"
 				SpokenCount="0" />
 
 			<Object

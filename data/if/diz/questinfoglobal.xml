@@ -216,7 +216,11 @@
 		questName="EvacuateBuharas_quest"
 		briefDiz="Эвакуировать Бухарцев в порт"
 		fullDiz="Первая встреча с чужеземцем едва пошла не по плану, но обошлось. Однако мы не можем оставлять бухарцев на произвол судьбы, надо эвакуировать их отсюда!"
-		isMainQuest="0" />
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="Buhara_0" />
+	</QuestInfo>
 
 	<QuestInfo
 		questName="FindBen2_Quest"
@@ -345,18 +349,39 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="GoToFatherAfterZarmek_quest"
+		briefDiz="Встретится с отцом"
+		fullDiz="Кажется решение принято единогласно: мы отправляемся в Пустыню Смерти на поиски Серго. Ну или того, что от него осталось... Надо навестить отца, чтобы он знал, что я в порядке и обсудить с ним наши дальнейшие действия."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="GoToMansurParents_quest"
 		briefDiz="Довезти Мансура до Гадада"
 		fullDiz="Я уже поговорил с отцом, теперь Мансуру нужно обсудить ситуацию со своими родителями. Поскольку он до сих пор ездит со мной в одной машине, мне предстоит довезти его до их дома."
 		isMainQuest="1">
 		<Map
-			name="r4m1" />
+			name="r4m1"
+			targetObjName="TheGadad_enter" />
 	</QuestInfo>
 
 	<QuestInfo
 		questName="GoToMansur_quest"
 		briefDiz="Поехать к Мансуру"
 		fullDiz='Отец отдал мне свой старый Урал, так как ему более не нужна машина, ведь он практически никуда не ездит. Теперь у меня такая же машина, как у Мансура, надо съездить к нему показать свою "новую" машину.'
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheGadad_enter" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="GoToMansurandAivenJr_quest"
+		briefDiz="Вернуться к Мансуру и Чужеземцу"
+		fullDiz="Отец как всегда меня поддержал. Надо бы и правда возвращаться к Мансуру и Чужеземцу, чтобы вместе обсудить дальнейший план действий."
 		isMainQuest="1">
 		<Map
 			name="r4m1"
@@ -634,7 +659,11 @@
 		questName="TalkToFatherPrepToTrip_quest"
 		briefDiz="Поговорить с отцом"
 		fullDiz="Мансур смог убедить меня поехать на восток, надо поговорить с отцом касаемо этого."
-		isMainQuest="1" />
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
+	</QuestInfo>
 
 	<QuestInfo
 		questName="TalkToMansurAfterOil_quest"
@@ -642,7 +671,8 @@
 		fullDiz="Надо обсудить наши дальнейшие действия. Либо мы сейчас прекращаем наше 'расследование', либо отправляемся дальше на восток. "
 		isMainQuest="1">
 		<Map
-			name="r4m1" />
+			name="r4m1"
+			targetObjName="TheKef_enter" />
 	</QuestInfo>
 
 	<QuestInfo
