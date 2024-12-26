@@ -1,5 +1,18 @@
 -- The Chronicle of Hamza scripts --
 
+function StartMoney()
+	if GetVar("AddedStartMoney").AsInt==0 then
+		local min = 500
+		local max = 1000
+		local randomMoney = math.random(min, max)
+		g_Player:AddMoney( randomMoney )
+
+		SetVar("AddedStartMoney", 1)
+	else
+		AddFadingMsgId( "fm_commandcantusetwice" )
+    	AddImportantFadingMsgId( "fm_commandcantusetwice" )
+	end
+end
 
 function CreateGadadAttackers()
 	CreateTeam("GadadDebyli",1062,CVector(5525.333, 260.348, 6889.820),{"TankBez","UralShot","BelazShot1","TankBez","TankBez"},CVector(5587.709, 260.537, 6833.567), nil)

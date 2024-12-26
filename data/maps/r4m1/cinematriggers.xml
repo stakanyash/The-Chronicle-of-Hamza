@@ -958,9 +958,9 @@
 	<!-- The Chronicle of Hamza: Game start  -->
 
 	<trigger	Name="HamzaStartRolikBegin"	active="0">
-		<event	timeout="0.5"			eventid="GE_TIME_PERIOD" />
+		<event	timeout="0.001"			eventid="GE_TIME_PERIOD" />
 		<script>
-			PlayCustomMusic("Bio05")
+			StartMoney()
 
 			local mancar = CreateVehicleEx("UralMansur","MansurCar",CVector(2061.603, 239.088, 3658.598), 1090)
 			if mancar then
@@ -972,9 +972,11 @@
 			local Plf = GetPlayerVehicle()
             local PlfID = GetPlayerVehicleId()
 
+			Plf:SetRandomSkin()
+
 			CreateTeam("StartDebyli",1062,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","UralStartBez","BezHunter", "UralStartBez"},CVector(2594.501, 262.854, 3906.361), nil)
 
-            Fly("startgameHamza_cam1", CINEMATIC_AIM_TO_ID, PlfID, 12, 1, 0 )
+            Fly("startgameHamza_cam1", CINEMATIC_AIM_TO_ID, PlfID, 12, 0, 0 )
 			Fly("startgameHamza_cam2", CINEMATIC_AIM_TO_ID, PlfID, 5, 0, 0 )
 			Fly("startgameHamza_cam3", CINEMATIC_AIM_TO_ID, PlfID, 12, 0, 0 )
 			Fly("startgameHamza_bez", CINEMATIC_NO_AIM, 0, 6, 0, 0 )
@@ -982,19 +984,6 @@
 
             StartCinematic()
 
-			TActivate("HamzaStartGameRolik_Fade")
-			TActivate("HamzaStartGameRolik_2")
-			TActivate("HamzaStartGameRolik_4")
-			TActivate("HamzaStartGameRolik_3")
-			TActivate("HamzaStartGameRolik_End")
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="HamzaStartGameRolik_Fade" active="0">
-		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
-		<script>
 			local PCar = GetPlayerVehicle()
 			if PCar then
 			    PCar:LimitMaxSpeed(16)
@@ -1006,6 +995,21 @@
 
 			AddCinematicMessage(40, 2)
 			AddCinematicMessage(41, 0.5)
+
+			TActivate("HamzaStartGameRolik_Music")
+			TActivate("HamzaStartGameRolik_2")
+			TActivate("HamzaStartGameRolik_4")
+			TActivate("HamzaStartGameRolik_3")
+			TActivate("HamzaStartGameRolik_End")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="HamzaStartGameRolik_Music"	active="0">
+		<event	timeout="0.1"			eventid="GE_TIME_PERIOD" />
+		<script>
+			PlayCustomMusic("Techno02")
 
 			trigger:Deactivate()
 		</script>
@@ -1089,15 +1093,6 @@
 			PlayCustomMusic("Passage03b")
 		end
 
-		local bablo = random(3)
-		    if bablo == 1 then
-				AddPlayerMoney(608)
-			elseif bablo == 2 then
-				AddPlayerMoney(819)
-			elseif bablo == 3 then
-				AddPlayerMoney(726)
-			end
-
 		RestoreAllToleranceStatus()
 
 		SetCameraBehindPlayerVehicle()
@@ -1122,6 +1117,8 @@
 				mfEndCar:Remove()
 			end
 
+			CreateVehicleEx("UralMansur","MansurCar",CVector(2529.488, 266.557, 3914.102), 1090)
+
 			local mancar = GetEntityByName("MansurCar")
 			if mancar then
 		        mancar:SetGamePositionOnGround( CVector(2512.508, 271.686, 3950.259))
@@ -1133,9 +1130,11 @@
 			if PCar then
 			    PCar:SetGamePositionOnGround( CVector(2568.719, 271.686, 3976.013))
 				PCar:SetRotation(Quaternion(0.058, 0.118, 0.024, -0.991))
+				PCar:SetCustomControlEnabled( true )
+				PCar:SetCustomLinearVelocity( 0 )
+				PCar:SetThrottle( 0 )
+				PCar:SetCustomControlEnabled( false )
 			end
-
-			CreateVehicleEx("UralMansur","MansurCar",CVector(2529.488, 266.557, 3914.102), 1090)
 
             local Plf = GetPlayerVehicle()
             local PlfID = GetPlayerVehicleId()
@@ -1148,6 +1147,9 @@
 			FlyLinked( "afterbattleHamza_cam4", nil, 6, 0, 1, MCarID )  
 
 			StartCinematic()
+
+			TActivate("AfterBezumBoiRolik_quietdialogue")
+			TActivate("AfterBezumBoiRolik_cam03")
 
             TActivate("AfterBezumBoiRolik_Fade")
 			TActivate("AfterBezumBoiRolik_End")
@@ -1407,7 +1409,10 @@
 		if town3 then town3:SetOpenGateToPlayer( true ) end
 
 		local a = GetEntityByName("StartGonka_loc")
-		if a then a:SetProperty("Active",1) end
+		if a then a:SetProperty("Active", 1) end
+
+		SetVar("MaxLap", 2)
+		SetVar("CountCar", 8)
 
 		TActivate("Kef_Sell_Add")
 		TActivate("Gadad_Sell_Add")

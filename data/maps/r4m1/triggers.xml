@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <triggers>
 	<trigger	Name="GlobalVar"	active="1">
-		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
 		<script>
 			SetVar("MaxWalkHuman",31)
 			SetVar("MaxLap",1)
@@ -10,9 +10,11 @@
 			SetVar("PlayerCarNameRace",0)
 			SetVar("Gonka",0)
 			SetVar("Strahovka",0)
+			SetVar("AddedStartMoney", 0)
 			SetVar("StartBattle", 1)
 			SetVar("BuharaSaveTalk", 0)
 			SetVar("ChujezemetsTalk", 0)
+			SetVar("MansurTalk", 0)
 			
 		    trigger:Deactivate()
 		</script>
@@ -1061,6 +1063,9 @@
 
 			SetCameraBehindPlayerVehicle()
 
+			local a = GetEntityByName("StartGonka_loc")
+			if a then a:SetProperty("Active",0) end
+
 			TActivate("HamzaStartRolikBegin")
 
 			trigger:Deactivate()
@@ -1137,9 +1142,6 @@
 
 			local town3 = GetEntityByName("TheKazif")
 			if town3 then town3:SetOpenGateToPlayer( false ) end
-
-			local a = GetEntityByName("StartGonka_loc")
-			if a then a:SetProperty("Active",0) end
 
 			trigger:Deactivate()
 		</script>
