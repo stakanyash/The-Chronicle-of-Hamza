@@ -307,119 +307,7 @@
 		text="Стой, сумасшедший! Куда побежал…"
 		role="PLAYER"
 		scriptResult="AddBook('r4_book_Scarytail1'); GetCurNpc():SetSpokenCount( 1 ); EndConversation();" />
-<!--Root/r4m1/The Chronicle of Hamza--><!--Root/r4m1/The Chronicle of Hamza/Отец--><!--Root/r4m1/The Chronicle of Hamza/Мансур--><!--Root/r4m1/The Chronicle of Hamza/Гонка-->
-	<Reply
-		name="Adrenalin_NPC_dialog_1"
-		text="Приветствую, молодые люди! Не упустите свой шанс - сегодня у нас проводятся гонки на Уралах. Как я вижу, вы приехали на этих автомобилях, так что вы точно не захотите пропустить это событие!"
-		role="NPC"
-		scriptCondition="QuestStatus('GonkaUral')==Q_TAKEN"
-		nextReplies="Dlg_pl_001348" />
-
-	<Reply
-		name="Dlg_pl_001348"
-		text="Ради этого мы и приехали сюда."
-		role="PLAYER"
-		nextReplies="Dlg_npc_001349" />
-
-	<Reply
-		name="Dlg_npc_001349"
-		text="Отлично! Вам нужно внести взнос в размере 5 000 монет."
-		role="NPC"
-		nextReplies="Dlg_pl_001350 Dlg_pl_001424" />
-
-	<Reply
-		name="Dlg_pl_001424"
-		text="У меня пока что нет денег."
-		role="PLAYER"
-		scriptCondition="5000 > GetPlayerMoney()"
-		scriptResult="EndConversation()" />
-
-	<Reply
-		name="Dlg_pl_001350"
-		text="Разумеется."
-		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 5000"
-		scriptResult="AddPlayerMoney(-5000)"
-		nextReplies="Dlg_npc_001351" />
-
-	<Reply
-		name="Dlg_npc_001351"
-		text="Правила рассказать или уже ознакомлены?"
-		role="NPC"
-		nextReplies="Dlg_pl_001352 Dlg_pl_001353" />
-
-	<Reply
-		name="Dlg_pl_001353"
-		text="Расскажи нам правила."
-		role="PLAYER"
-		nextReplies="Dlg_npc_001358" />
-
-	<Reply
-		name="Dlg_npc_001358"
-		text="Правила просты: фальстарт - проиграл, разбил машину - проиграл. Приедешь первым - получишь 40 000 монет. Приедешь вторым - получишь 20 000 монет. Приедешь третьим - получишь 10 000 монет. Гонка состоит из одного круга, так как Уралы не такие быстрые, как гоночные болиды. На время гонки на вашу машину будет установлено оборудование, которое может увеличить скорость вашего автомобиля в два раза. Также на время гонки придётся снять оружие в целях безопасности, как вашей, так и других участников."
-		role="NPC"
-		nextReplies="Dlg_pl_001359" />
-
-	<Reply
-		name="Dlg_pl_001359"
-		text="Всё понятно. Когда начнётся гонка?"
-		role="PLAYER"
-		nextReplies="Dlg_npc_001360" />
-
-	<Reply
-		name="Dlg_npc_001360"
-		text="Уже совсем скоро. Можете занимать стартовые позиции."
-		role="NPC"
-		nextReplies="Dlg_pl_001361" />
-
-	<Reply
-		name="Dlg_pl_001361"
-		text="Отлично, спасибо. Мансур, поехали! Давай покажем им, где раки зимуют!"
-		role="PLAYER"
-		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
-
-	<Reply
-		name="Dlg_pl_001352"
-		text="Уже ознакомлены."
-		role="PLAYER"
-		nextReplies="Dlg_npc_001354" />
-
-	<Reply
-		name="Dlg_npc_001354"
-		text="Расскажи мне их тогда, чтобы я мог быть уверен в том, что вы их знаете."
-		role="NPC"
-		nextReplies="Dlg_pl_001355" />
-
-	<Reply
-		name="Dlg_pl_001355"
-		text="Фальстарт - проиграл, разбил машину - проиграл. Первое место - 40 000 монет, второе - 20 000, третье - 10 000. Гонка состоит из одного круга."
-		role="PLAYER"
-		nextReplies="Dlg_npc_001356" />
-
-	<Reply
-		name="Dlg_npc_001356"
-		text="Отлично, только вы кое-что забыли. На вашу машину будет установлено оборудование, которое увеличит его скорость до двух раз. Так-же оружие на время гонки придётся снять в целях безопасности, как вашей, так и других участников."
-		role="NPC"
-		nextReplies="Dlg_pl_001357" />
-
-	<Reply
-		name="Dlg_pl_001357"
-		text="Хорошо."
-		role="PLAYER"
-		nextReplies="Dlg_npc_001490" />
-
-	<Reply
-		name="Dlg_npc_001490"
-		text="Спасибо за понимание. А теперь прошу вас занять стартовые позиции, гонка уже вот-вот начнётся. "
-		role="NPC"
-		nextReplies="Dlg_pl_001491" />
-
-	<Reply
-		name="Dlg_pl_001491"
-		text="Поехали!"
-		role="PLAYER"
-		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
-<!--Root/r4m1/The Chronicle of Hamza/Идрис-->
+<!--Root/r4m1/The Chronicle of Hamza--><!--Root/r4m1/The Chronicle of Hamza/Отец--><!--Root/r4m1/The Chronicle of Hamza/Мансур--><!--Root/r4m1/The Chronicle of Hamza/Гонка--><!--Root/r4m1/The Chronicle of Hamza/Идрис-->
 	<Reply
 		name="Dlg_npc_001372"
 		text="Здравствуй, Хамза! Тебе что-то нужно?"
@@ -1322,6 +1210,910 @@
 		text="Ну ладно..."
 		role="PLAYER"
 		scriptResult="CompleteQuest('BackToSharafAfterBuhara_quest'); TakeQuest('TalkWithMario_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Гонка/Если Хамза принимает участие-->
+	<Reply
+		name="Adrenalin_NPC_dialog_1"
+		text="Приветствую, молодые люди! Не упустите свой шанс - сегодня у нас проводятся гонки на Уралах. Как я вижу, вы приехали на этих автомобилях, так что вы точно не захотите пропустить это событие!"
+		role="NPC"
+		scriptCondition="QuestStatus('GonkaUral')==Q_TAKEN"
+		nextReplies="Dlg_pl_001348" />
+
+	<Reply
+		name="Dlg_pl_001348"
+		text="Ради этого мы и приехали сюда."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001349" />
+
+	<Reply
+		name="Dlg_npc_001349"
+		text="Отлично! Вам нужно внести взнос в размере 5 000 монет."
+		role="NPC"
+		nextReplies="Dlg_pl_001350 Dlg_pl_001424" />
+
+	<Reply
+		name="Dlg_pl_001424"
+		text="У меня пока что нет денег."
+		role="PLAYER"
+		scriptCondition="5000 > GetPlayerMoney()"
+		scriptResult="EndConversation()" />
+
+	<Reply
+		name="Dlg_pl_001350"
+		text="Разумеется."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 5000"
+		scriptResult="AddPlayerMoney(-5000)"
+		nextReplies="Dlg_npc_001351" />
+
+	<Reply
+		name="Dlg_npc_001351"
+		text="Правила рассказать или уже ознакомлены?"
+		role="NPC"
+		nextReplies="Dlg_pl_001352 Dlg_pl_001353" />
+
+	<Reply
+		name="Dlg_pl_001353"
+		text="Расскажи нам правила."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001358" />
+
+	<Reply
+		name="Dlg_npc_001358"
+		text="Правила просты: фальстарт - проиграл, разбил машину - проиграл. Приедешь первым - получишь 40 000 монет. Приедешь вторым - получишь 20 000 монет. Приедешь третьим - получишь 10 000 монет. Гонка состоит из одного круга, так как Уралы не такие быстрые, как гоночные болиды. На время гонки на вашу машину будет установлено оборудование, которое может увеличить скорость вашего автомобиля в два раза. Также на время гонки придётся снять оружие в целях безопасности, как вашей, так и других участников."
+		role="NPC"
+		nextReplies="Dlg_pl_001359" />
+
+	<Reply
+		name="Dlg_pl_001359"
+		text="Всё понятно. Когда начнётся гонка?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001360" />
+
+	<Reply
+		name="Dlg_npc_001360"
+		text="Уже совсем скоро. Можете занимать стартовые позиции."
+		role="NPC"
+		nextReplies="Dlg_pl_001361" />
+
+	<Reply
+		name="Dlg_pl_001361"
+		text="Отлично, спасибо. Мансур, поехали! Давай покажем им, где раки зимуют!"
+		role="PLAYER"
+		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
+
+	<Reply
+		name="Dlg_pl_001352"
+		text="Уже ознакомлены."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001354" />
+
+	<Reply
+		name="Dlg_npc_001354"
+		text="Расскажи мне их тогда, чтобы я мог быть уверен в том, что вы их знаете."
+		role="NPC"
+		nextReplies="Dlg_pl_001355" />
+
+	<Reply
+		name="Dlg_pl_001355"
+		text="Фальстарт - проиграл, разбил машину - проиграл. Первое место - 40 000 монет, второе - 20 000, третье - 10 000. Гонка состоит из одного круга."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001356" />
+
+	<Reply
+		name="Dlg_npc_001356"
+		text="Отлично, только вы кое-что забыли. На вашу машину будет установлено оборудование, которое увеличит его скорость до двух раз. Так-же оружие на время гонки придётся снять в целях безопасности, как вашей, так и других участников."
+		role="NPC"
+		nextReplies="Dlg_pl_001357" />
+
+	<Reply
+		name="Dlg_pl_001357"
+		text="Хорошо."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001490" />
+
+	<Reply
+		name="Dlg_npc_001490"
+		text="Спасибо за понимание. А теперь прошу вас занять стартовые позиции, гонка уже вот-вот начнётся. "
+		role="NPC"
+		nextReplies="Dlg_pl_001491" />
+
+	<Reply
+		name="Dlg_pl_001491"
+		text="Поехали!"
+		role="PLAYER"
+		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
+<!--Root/r4m1/The Chronicle of Hamza/Гонка/Если Хамза - зритель-->
+	<Reply
+		name="Dlg_npc_001653"
+		text="Приветствую, молодые люди! Не упустите свой шанс - сегодня у нас проводятся гонки на Уралах. Как я вижу, вы приехали на этих автомобилях, так что вы точно не захотите пропустить это событие! "
+		role="NPC"
+		scriptCondition="QuestStatus('GonkaUralSpec')==Q_TAKEN"
+		nextReplies="Dlg_pl_001654" />
+
+	<Reply
+		name="Dlg_pl_001654"
+		text="Участвовать будет только мой друг. Я лишь буду зрителем."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001655" />
+
+	<Reply
+		name="Dlg_npc_001655"
+		text="Хорошо, вход на зрительскую трибуну для родных и друзей участников бесплатный, так что прошу занять своё место. Или возможно вы хотите сделать ставку?"
+		role="NPC"
+		nextReplies="Dlg_pl_001656 Dlg_pl_001657" />
+
+	<Reply
+		name="Dlg_pl_001657"
+		text="Нет, спасибо, я на трибуну."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001656"
+		text="Хочу сделать ставку."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		nextReplies="Dlg_npc_001658" />
+
+	<Reply
+		name="Dlg_npc_001658"
+		text="На кого будете ставить? Ваш друг имеет номер 3. Всего четыре участника. Фаворитов у нас нет, все равны по условиям, решает только их мастерство."
+		role="NPC"
+		nextReplies="Dlg_pl_001659 Dlg_pl_001660 Dlg_pl_001662 Dlg_pl_001663" />
+
+	<Reply
+		name="Dlg_pl_001663"
+		text="На четвертую машину. "
+		role="PLAYER"
+		nextReplies="Dlg_npc_001666" />
+
+	<Reply
+		name="Dlg_npc_001666"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001682 Dlg_pl_001683 Dlg_pl_001684 Dlg_pl_001685 Dlg_pl_001686" />
+
+	<Reply
+		name="Dlg_pl_001686"
+		text="Знаете, я передумал, не буду делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001706" />
+
+	<Reply
+		name="Dlg_npc_001706"
+		text="Вы уверены? Ведь в случае победы выигрыш будет в два раза вашей суммы ставки!"
+		role="NPC"
+		nextReplies="Dlg_pl_001713 Dlg_pl_001714" />
+
+	<Reply
+		name="Dlg_pl_001714"
+		text="Всё таки я сделаю ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001754" />
+
+	<Reply
+		name="Dlg_npc_001754"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001755 Dlg_pl_001756 Dlg_pl_001757 Dlg_pl_001758 Dlg_pl_001762" />
+
+	<Reply
+		name="Dlg_pl_001762"
+		text="Нет, я всё таки не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001766" />
+
+	<Reply
+		name="Dlg_npc_001766"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001770" />
+
+	<Reply
+		name="Dlg_pl_001770"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001758"
+		text="1000 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000" />
+
+	<Reply
+		name="Dlg_pl_001757"
+		text="500 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500" />
+
+	<Reply
+		name="Dlg_pl_001756"
+		text="250 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250" />
+
+	<Reply
+		name="Dlg_pl_001755"
+		text="100 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100 " />
+
+	<Reply
+		name="Dlg_pl_001713"
+		text="Да, я уверен, что не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001718" />
+
+	<Reply
+		name="Dlg_npc_001718"
+		text="Понимаю вашу решительность, но всё же не упускайте свой шанс! Вдруг вы сейчас выбрали машину победителя? Уверен, что потом будете жалеть об этом!"
+		role="NPC"
+		nextReplies="Dlg_pl_001723 Dlg_pl_001726" />
+
+	<Reply
+		name="Dlg_pl_001726"
+		text="Всё таки я сделаю ставку."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001723"
+		text="Слушай, я сюда приехал на гонку посмотреть, а не с тобой спорить! Сказал же, что не хочу делать ставку!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001730" />
+
+	<Reply
+		name="Dlg_npc_001730"
+		text="А что если я скажу, что сумма вашего выигрыша будет утроена в случае победы?"
+		role="NPC"
+		nextReplies="Dlg_pl_001737 Dlg_pl_001738" />
+
+	<Reply
+		name="Dlg_pl_001738"
+		text="Нет, моё решение не изменить. Я не буду делать ставку."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001737"
+		text="Ладно, уговорил. Я сделаю ставку."
+		role="PLAYER"
+		scriptResult="SetVar('BettingCoeff', 3) " />
+
+	<Reply
+		name="Dlg_pl_001685"
+		text="1000 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000"
+		nextReplies="Dlg_npc_001702" />
+
+	<Reply
+		name="Dlg_npc_001702"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001684"
+		text="500 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500"
+		nextReplies="Dlg_npc_001701" />
+
+	<Reply
+		name="Dlg_npc_001701"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001683"
+		text="250 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250 "
+		nextReplies="Dlg_npc_001700" />
+
+	<Reply
+		name="Dlg_npc_001700"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001682"
+		text="100 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		nextReplies="Dlg_npc_001699" />
+
+	<Reply
+		name="Dlg_npc_001699"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001662"
+		text="На третью машину."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001665" />
+
+	<Reply
+		name="Dlg_npc_001665"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001677 Dlg_pl_001678 Dlg_pl_001679 Dlg_pl_001680 Dlg_pl_001681" />
+
+	<Reply
+		name="Dlg_pl_001681"
+		text="Знаете, я передумал, не буду делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001705" />
+
+	<Reply
+		name="Dlg_npc_001705"
+		text="Вы уверены? Ведь в случае победы выигрыш будет в два раза вашей суммы ставки!"
+		role="NPC"
+		nextReplies="Dlg_pl_001711 Dlg_pl_001712" />
+
+	<Reply
+		name="Dlg_pl_001712"
+		text="Всё таки я сделаю ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001749" />
+
+	<Reply
+		name="Dlg_npc_001749"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001750 Dlg_pl_001751 Dlg_pl_001752 Dlg_pl_001753 Dlg_pl_001761" />
+
+	<Reply
+		name="Dlg_pl_001761"
+		text="Нет, я всё таки не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001763" />
+
+	<Reply
+		name="Dlg_npc_001763"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001769" />
+
+	<Reply
+		name="Dlg_pl_001769"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001753"
+		text="1000 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000 " />
+
+	<Reply
+		name="Dlg_pl_001752"
+		text="500 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500 " />
+
+	<Reply
+		name="Dlg_pl_001751"
+		text="250 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250 
+" />
+
+	<Reply
+		name="Dlg_pl_001750"
+		text="100 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100 " />
+
+	<Reply
+		name="Dlg_pl_001711"
+		text="Да, я уверен, что не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001717" />
+
+	<Reply
+		name="Dlg_npc_001717"
+		text="Понимаю вашу решительность, но всё же не упускайте свой шанс! Вдруг вы сейчас выбрали машину победителя? Уверен, что потом будете жалеть об этом!"
+		role="NPC"
+		nextReplies="Dlg_pl_001722 Dlg_pl_001725" />
+
+	<Reply
+		name="Dlg_pl_001725"
+		text="Всё таки я сделаю ставку."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001722"
+		text="Слушай, я сюда приехал на гонку посмотреть, а не с тобой спорить! Сказал же, что не хочу делать ставку!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001729" />
+
+	<Reply
+		name="Dlg_npc_001729"
+		text="А что если я скажу, что сумма вашего выигрыша будет утроена в случае победы?"
+		role="NPC"
+		nextReplies="Dlg_pl_001735 Dlg_pl_001736" />
+
+	<Reply
+		name="Dlg_pl_001736"
+		text="Нет, моё решение не изменить. Я не буду делать ставку."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001735"
+		text="Ладно, уговорил. Я сделаю ставку."
+		role="PLAYER"
+		scriptResult="SetVar('BettingCoeff', 3) " />
+
+	<Reply
+		name="Dlg_pl_001680"
+		text="1000 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000"
+		nextReplies="Dlg_npc_001698" />
+
+	<Reply
+		name="Dlg_npc_001698"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001679"
+		text="500 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500"
+		nextReplies="Dlg_npc_001697" />
+
+	<Reply
+		name="Dlg_npc_001697"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001678"
+		text="250 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250 "
+		nextReplies="Dlg_npc_001696" />
+
+	<Reply
+		name="Dlg_npc_001696"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001677"
+		text="100 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		nextReplies="Dlg_npc_001695" />
+
+	<Reply
+		name="Dlg_npc_001695"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001660"
+		text="На вторую машину."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001661" />
+
+	<Reply
+		name="Dlg_npc_001661"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001672 Dlg_pl_001673 Dlg_pl_001674 Dlg_pl_001675 Dlg_pl_001676" />
+
+	<Reply
+		name="Dlg_pl_001676"
+		text="Знаете, я передумал, не буду делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001704" />
+
+	<Reply
+		name="Dlg_npc_001704"
+		text="Вы уверены? Ведь в случае победы выигрыш будет в два раза вашей суммы ставки!"
+		role="NPC"
+		nextReplies="Dlg_pl_001709 Dlg_pl_001710" />
+
+	<Reply
+		name="Dlg_pl_001710"
+		text="Всё таки я сделаю ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001744" />
+
+	<Reply
+		name="Dlg_npc_001744"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001745 Dlg_pl_001746 Dlg_pl_001747 Dlg_pl_001748 Dlg_pl_001760" />
+
+	<Reply
+		name="Dlg_pl_001760"
+		text="Нет, я всё таки не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001765" />
+
+	<Reply
+		name="Dlg_npc_001765"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001768" />
+
+	<Reply
+		name="Dlg_pl_001768"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001748"
+		text="1000 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000" />
+
+	<Reply
+		name="Dlg_pl_001747"
+		text="500 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500" />
+
+	<Reply
+		name="Dlg_pl_001746"
+		text="250 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250" />
+
+	<Reply
+		name="Dlg_pl_001745"
+		text="100 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100 " />
+
+	<Reply
+		name="Dlg_pl_001709"
+		text="Да, я уверен, что не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001716" />
+
+	<Reply
+		name="Dlg_npc_001716"
+		text="Понимаю вашу решительность, но всё же не упускайте свой шанс! Вдруг вы сейчас выбрали машину победителя? Уверен, что потом будете жалеть об этом!"
+		role="NPC"
+		nextReplies="Dlg_pl_001721 Dlg_pl_001724" />
+
+	<Reply
+		name="Dlg_pl_001724"
+		text="Всё таки я сделаю ставку. 
+ "
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001721"
+		text="Слушай, я сюда приехал на гонку посмотреть, а не с тобой спорить! Сказал же, что не хочу делать ставку!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001728" />
+
+	<Reply
+		name="Dlg_npc_001728"
+		text="А что если я скажу, что сумма вашего выигрыша будет утроена в случае победы?"
+		role="NPC"
+		nextReplies="Dlg_pl_001733 Dlg_pl_001734" />
+
+	<Reply
+		name="Dlg_pl_001734"
+		text="Нет, моё решение не изменить. Я не буду делать ставку."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001733"
+		text="Ладно, уговорил. Я сделаю ставку."
+		role="PLAYER"
+		scriptResult="SetVar('BettingCoeff', 3) " />
+
+	<Reply
+		name="Dlg_pl_001675"
+		text="1000 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000"
+		nextReplies="Dlg_npc_001694" />
+
+	<Reply
+		name="Dlg_npc_001694"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001674"
+		text="500 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500 "
+		nextReplies="Dlg_npc_001693" />
+
+	<Reply
+		name="Dlg_npc_001693"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001673"
+		text="250 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250 "
+		nextReplies="Dlg_npc_001692" />
+
+	<Reply
+		name="Dlg_npc_001692"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001672"
+		text="100 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		nextReplies="Dlg_npc_001691" />
+
+	<Reply
+		name="Dlg_npc_001691"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001659"
+		text="На первую машину."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001664" />
+
+	<Reply
+		name="Dlg_npc_001664"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001667 Dlg_pl_001668 Dlg_pl_001669 Dlg_pl_001670 Dlg_pl_001671" />
+
+	<Reply
+		name="Dlg_pl_001671"
+		text="Знаете, я передумал, не буду делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001703" />
+
+	<Reply
+		name="Dlg_npc_001703"
+		text="Вы уверены? Ведь в случае победы выигрыш будет в два раза вашей суммы ставки!"
+		role="NPC"
+		nextReplies="Dlg_pl_001707 Dlg_pl_001708" />
+
+	<Reply
+		name="Dlg_pl_001708"
+		text="Всё таки я сделаю ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001739" />
+
+	<Reply
+		name="Dlg_npc_001739"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001740 Dlg_pl_001741 Dlg_pl_001742 Dlg_pl_001743 Dlg_pl_001759" />
+
+	<Reply
+		name="Dlg_pl_001759"
+		text="Нет, я всё таки не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001764" />
+
+	<Reply
+		name="Dlg_npc_001764"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001767" />
+
+	<Reply
+		name="Dlg_pl_001767"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER"
+		scriptResult="EndConversation()" />
+
+	<Reply
+		name="Dlg_pl_001743"
+		text="1000 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000 " />
+
+	<Reply
+		name="Dlg_pl_001742"
+		text="500 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500 " />
+
+	<Reply
+		name="Dlg_pl_001741"
+		text="250 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250 " />
+
+	<Reply
+		name="Dlg_pl_001740"
+		text="100 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100" />
+
+	<Reply
+		name="Dlg_pl_001707"
+		text="Да, я уверен, что не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001715" />
+
+	<Reply
+		name="Dlg_npc_001715"
+		text="Понимаю вашу решительность, но всё же не упускайте свой шанс! Вдруг вы сейчас выбрали машину победителя? Уверен, что потом будете жалеть об этом!"
+		role="NPC"
+		nextReplies="Dlg_pl_001719 Dlg_pl_001720" />
+
+	<Reply
+		name="Dlg_pl_001720"
+		text="Всё таки я сделаю ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001771" />
+
+	<Reply
+		name="Dlg_npc_001771"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001772 Dlg_pl_001773 Dlg_pl_001774 Dlg_pl_001775 Dlg_pl_001776" />
+
+	<Reply
+		name="Dlg_pl_001776"
+		text="Нет, я всё таки не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001777" />
+
+	<Reply
+		name="Dlg_npc_001777"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001778" />
+
+	<Reply
+		name="Dlg_pl_001778"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001775"
+		text="1000 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000 " />
+
+	<Reply
+		name="Dlg_pl_001774"
+		text="500 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500 " />
+
+	<Reply
+		name="Dlg_pl_001773"
+		text="250 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250 " />
+
+	<Reply
+		name="Dlg_pl_001772"
+		text="100 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100 " />
+
+	<Reply
+		name="Dlg_pl_001719"
+		text="Слушай, я сюда приехал на гонку посмотреть, а не с тобой спорить! Сказал же, что не хочу делать ставку!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001727" />
+
+	<Reply
+		name="Dlg_npc_001727"
+		text="А что если я скажу, что сумма вашего выигрыша будет утроена в случае победы?"
+		role="NPC"
+		nextReplies="Dlg_pl_001731 Dlg_pl_001732" />
+
+	<Reply
+		name="Dlg_pl_001732"
+		text="Нет, моё решение не изменить. Я не буду делать ставку."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001731"
+		text="Ладно, уговорил. Я сделаю ставку."
+		role="PLAYER"
+		scriptResult="SetVar('BettingCoeff', 3)"
+		nextReplies="Dlg_npc_001779" />
+
+	<Reply
+		name="Dlg_npc_001779"
+		text="Отлично! Сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001780 Dlg_pl_001781 Dlg_pl_001782 Dlg_pl_001783 Dlg_pl_001784" />
+
+	<Reply
+		name="Dlg_pl_001784"
+		text="А вот ты думаешь, что я на серьёзе после всего этого согласился ставку сделать? Нет, я по-прежнему не хочу делать ставку!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001785" />
+
+	<Reply
+		name="Dlg_npc_001785"
+		text="Ну зачем же так грубо? Понял вас, не хотите, так не хотите! Прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001786" />
+
+	<Reply
+		name="Dlg_pl_001786"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001783"
+		text="1000 монет."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001782"
+		text="500 монет."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001781"
+		text="250 монет."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001780"
+		text="100 монет."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001670"
+		text="1000 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000"
+		nextReplies="Dlg_npc_001690" />
+
+	<Reply
+		name="Dlg_npc_001690"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001669"
+		text="500 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500"
+		nextReplies="Dlg_npc_001689" />
+
+	<Reply
+		name="Dlg_npc_001689"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001668"
+		text="250 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250"
+		nextReplies="Dlg_npc_001688" />
+
+	<Reply
+		name="Dlg_npc_001688"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC" />
+
+	<Reply
+		name="Dlg_pl_001667"
+		text="100 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		nextReplies="Dlg_npc_001687" />
+
+	<Reply
+		name="Dlg_npc_001687"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки. "
+		role="NPC" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/Первый приезд на Урале-->
 	<Reply
 		name="Dlg_npc_001334"
@@ -1362,9 +2154,27 @@
 
 	<Reply
 		name="Dlg_npc_001340"
-		text="Победитель получит 40 000 монет, тот кто приедет вторым получит 20 000 монет, а третье место 10 000 монет. Но нужно будет оплатить взнос за участие 5 000 монет. И у гонки будет всего один круг."
+		text="Победитель получит 20 000 монет, тот кто приедет вторым получит 10 000 монет, а третье место 5 000 монет. Но нужно будет оплатить взнос за участие 2 500 монет. И у гонки будет всего один круг. Ну как, согласен?"
 		role="NPC"
-		nextReplies="Dlg_pl_001341 Dlg_pl_001342" />
+		nextReplies="Dlg_pl_001341 Dlg_pl_001342 Dlg_pl_001650" />
+
+	<Reply
+		name="Dlg_pl_001650"
+		text="Прости, но мне не хочется."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001651" />
+
+	<Reply
+		name="Dlg_npc_001651"
+		text="Может тогда съездишь со мной и просто побудешь зрителем?"
+		role="NPC"
+		nextReplies="Dlg_pl_001652" />
+
+	<Reply
+		name="Dlg_pl_001652"
+		text="Почему бы и нет? Поехали."
+		role="PLAYER"
+		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUralSpec'); LeaveTown()" />
 
 	<Reply
 		name="Dlg_pl_001342"
