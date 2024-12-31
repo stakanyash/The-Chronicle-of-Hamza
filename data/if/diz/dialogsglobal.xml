@@ -1417,25 +1417,121 @@
 		name="Dlg_pl_001758"
 		text="1000 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 1000" />
+		scriptCondition="GetPlayerMoney() > 1000"
+		nextReplies="Dlg_npc_002038" />
+
+	<Reply
+		name="Dlg_npc_002038"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002048" />
+
+	<Reply
+		name="Dlg_pl_002048"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002049" />
+
+	<Reply
+		name="Dlg_npc_002049"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002050" />
+
+	<Reply
+		name="Dlg_pl_002050"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001757"
 		text="500 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 500" />
+		scriptCondition="GetPlayerMoney() > 500"
+		nextReplies="Dlg_npc_002037" />
+
+	<Reply
+		name="Dlg_npc_002037"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002045" />
+
+	<Reply
+		name="Dlg_pl_002045"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002046" />
+
+	<Reply
+		name="Dlg_npc_002046"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002047" />
+
+	<Reply
+		name="Dlg_pl_002047"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001756"
 		text="250 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 250" />
+		scriptCondition="GetPlayerMoney() > 250"
+		nextReplies="Dlg_npc_002036" />
+
+	<Reply
+		name="Dlg_npc_002036"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002042" />
+
+	<Reply
+		name="Dlg_pl_002042"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002043" />
+
+	<Reply
+		name="Dlg_npc_002043"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002044" />
+
+	<Reply
+		name="Dlg_pl_002044"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001755"
 		text="100 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 100 " />
+		scriptCondition="GetPlayerMoney() > 100 "
+		nextReplies="Dlg_npc_002035" />
+
+	<Reply
+		name="Dlg_npc_002035"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002039" />
+
+	<Reply
+		name="Dlg_pl_002039"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002040" />
+
+	<Reply
+		name="Dlg_npc_002040"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002041" />
+
+	<Reply
+		name="Dlg_pl_002041"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001713"
@@ -1452,6 +1548,50 @@
 	<Reply
 		name="Dlg_pl_001726"
 		text="Всё таки я сделаю ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001818" />
+
+	<Reply
+		name="Dlg_npc_001818"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001819 Dlg_pl_001820 Dlg_pl_001821 Dlg_pl_001822 Dlg_pl_001823" />
+
+	<Reply
+		name="Dlg_pl_001823"
+		text="Нет, я всё таки не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001824" />
+
+	<Reply
+		name="Dlg_npc_001824"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001825" />
+
+	<Reply
+		name="Dlg_pl_001825"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001822"
+		text="1000 монет."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001821"
+		text="500 монет."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001820"
+		text="250 монет."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001819"
+		text="100 монет."
 		role="PLAYER" />
 
 	<Reply
@@ -1469,13 +1609,69 @@
 	<Reply
 		name="Dlg_pl_001738"
 		text="Нет, моё решение не изменить. Я не буду делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001834" />
+
+	<Reply
+		name="Dlg_npc_001834"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001835" />
+
+	<Reply
+		name="Dlg_pl_001835"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001737"
 		text="Ладно, уговорил. Я сделаю ставку."
 		role="PLAYER"
-		scriptResult="SetVar('BettingCoeff', 3) " />
+		scriptResult="SetVar('BettingCoeff', 3) "
+		nextReplies="Dlg_npc_001826" />
+
+	<Reply
+		name="Dlg_npc_001826"
+		text="Отлично! Сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001827 Dlg_pl_001828 Dlg_pl_001829 Dlg_pl_001830 Dlg_pl_001831" />
+
+	<Reply
+		name="Dlg_pl_001831"
+		text="А вот ты думаешь, что я на серьёзе после всего этого согласился ставку сделать? Нет, я по-прежнему не хочу делать ставку!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001832" />
+
+	<Reply
+		name="Dlg_npc_001832"
+		text="Ну зачем же так грубо? Понял вас, не хотите, так не хотите! Прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001833" />
+
+	<Reply
+		name="Dlg_pl_001833"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001830"
+		text="1000 монет."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001829"
+		text="500 монет."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001828"
+		text="250 монет."
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001827"
+		text="100 монет."
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001685"
@@ -1487,7 +1683,25 @@
 	<Reply
 		name="Dlg_npc_001702"
 		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_002032" />
+
+	<Reply
+		name="Dlg_pl_002032"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002033" />
+
+	<Reply
+		name="Dlg_npc_002033"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002034" />
+
+	<Reply
+		name="Dlg_pl_002034"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001684"
@@ -1499,7 +1713,25 @@
 	<Reply
 		name="Dlg_npc_001701"
 		text="Хорошо, ваша ставка размером 500 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_002029" />
+
+	<Reply
+		name="Dlg_pl_002029"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002030" />
+
+	<Reply
+		name="Dlg_npc_002030"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002031" />
+
+	<Reply
+		name="Dlg_pl_002031"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001683"
@@ -1511,7 +1743,25 @@
 	<Reply
 		name="Dlg_npc_001700"
 		text="Хорошо, ваша ставка размером 250 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_002026" />
+
+	<Reply
+		name="Dlg_pl_002026"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002027" />
+
+	<Reply
+		name="Dlg_npc_002027"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002028" />
+
+	<Reply
+		name="Dlg_pl_002028"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001682"
@@ -1523,7 +1773,25 @@
 	<Reply
 		name="Dlg_npc_001699"
 		text="Хорошо, ваша ставка размером 100 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_002023" />
+
+	<Reply
+		name="Dlg_pl_002023"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002024" />
+
+	<Reply
+		name="Dlg_npc_002024"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002025" />
+
+	<Reply
+		name="Dlg_pl_002025"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001662"
@@ -1582,26 +1850,121 @@
 		name="Dlg_pl_001753"
 		text="1000 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 1000 " />
+		scriptCondition="GetPlayerMoney() > 1000 "
+		nextReplies="Dlg_npc_001979" />
+
+	<Reply
+		name="Dlg_npc_001979"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001989" />
+
+	<Reply
+		name="Dlg_pl_001989"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001990" />
+
+	<Reply
+		name="Dlg_npc_001990"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001991" />
+
+	<Reply
+		name="Dlg_pl_001991"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001752"
 		text="500 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 500 " />
+		scriptCondition="GetPlayerMoney() > 500 "
+		nextReplies="Dlg_npc_001978" />
+
+	<Reply
+		name="Dlg_npc_001978"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001986" />
+
+	<Reply
+		name="Dlg_pl_001986"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001987" />
+
+	<Reply
+		name="Dlg_npc_001987"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001988" />
+
+	<Reply
+		name="Dlg_pl_001988"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001751"
 		text="250 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 250 
-" />
+		scriptCondition="GetPlayerMoney() > 250  "
+		nextReplies="Dlg_npc_001977" />
+
+	<Reply
+		name="Dlg_npc_001977"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001983" />
+
+	<Reply
+		name="Dlg_pl_001983"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001984" />
+
+	<Reply
+		name="Dlg_npc_001984"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001985" />
+
+	<Reply
+		name="Dlg_pl_001985"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001750"
 		text="100 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 100 " />
+		scriptCondition="GetPlayerMoney() > 100 "
+		nextReplies="Dlg_npc_001976" />
+
+	<Reply
+		name="Dlg_npc_001976"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001980" />
+
+	<Reply
+		name="Dlg_pl_001980"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001981" />
+
+	<Reply
+		name="Dlg_npc_001981"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001982" />
+
+	<Reply
+		name="Dlg_pl_001982"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001711"
@@ -1618,6 +1981,146 @@
 	<Reply
 		name="Dlg_pl_001725"
 		text="Всё таки я сделаю ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001809" />
+
+	<Reply
+		name="Dlg_npc_001809"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001810 Dlg_pl_001811 Dlg_pl_001812 Dlg_pl_001814 Dlg_pl_001815" />
+
+	<Reply
+		name="Dlg_pl_001815"
+		text="Нет, я всё таки не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001816" />
+
+	<Reply
+		name="Dlg_npc_001816"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001817" />
+
+	<Reply
+		name="Dlg_pl_001817"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001814"
+		text="1000 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001994" />
+
+	<Reply
+		name="Dlg_npc_001994"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002004" />
+
+	<Reply
+		name="Dlg_pl_002004"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002005" />
+
+	<Reply
+		name="Dlg_npc_002005"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002006" />
+
+	<Reply
+		name="Dlg_pl_002006"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001812"
+		text="500 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001813" />
+
+	<Reply
+		name="Dlg_npc_001813"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002001" />
+
+	<Reply
+		name="Dlg_pl_002001"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002002" />
+
+	<Reply
+		name="Dlg_npc_002002"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002003" />
+
+	<Reply
+		name="Dlg_pl_002003"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001811"
+		text="250 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001993" />
+
+	<Reply
+		name="Dlg_npc_001993"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001998" />
+
+	<Reply
+		name="Dlg_pl_001998"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001999" />
+
+	<Reply
+		name="Dlg_npc_001999"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002000" />
+
+	<Reply
+		name="Dlg_pl_002000"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001810"
+		text="100 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001992" />
+
+	<Reply
+		name="Dlg_npc_001992"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001995" />
+
+	<Reply
+		name="Dlg_pl_001995"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001996" />
+
+	<Reply
+		name="Dlg_npc_001996"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001997" />
+
+	<Reply
+		name="Dlg_pl_001997"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
@@ -1635,13 +2138,165 @@
 	<Reply
 		name="Dlg_pl_001736"
 		text="Нет, моё решение не изменить. Я не буду делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001807" />
+
+	<Reply
+		name="Dlg_npc_001807"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001808" />
+
+	<Reply
+		name="Dlg_pl_001808"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001735"
 		text="Ладно, уговорил. Я сделаю ставку."
 		role="PLAYER"
-		scriptResult="SetVar('BettingCoeff', 3) " />
+		scriptResult="SetVar('BettingCoeff', 3) "
+		nextReplies="Dlg_npc_001799" />
+
+	<Reply
+		name="Dlg_npc_001799"
+		text="Отлично! Сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001800 Dlg_pl_001801 Dlg_pl_001802 Dlg_pl_001803 Dlg_pl_001804" />
+
+	<Reply
+		name="Dlg_pl_001804"
+		text="А вот ты думаешь, что я на серьёзе после всего этого согласился ставку сделать? Нет, я по-прежнему не хочу делать ставку!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001805" />
+
+	<Reply
+		name="Dlg_npc_001805"
+		text="Ну зачем же так грубо? Понял вас, не хотите, так не хотите! Прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001806" />
+
+	<Reply
+		name="Dlg_pl_001806"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001803"
+		text="1000 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002012" />
+
+	<Reply
+		name="Dlg_npc_002012"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002020" />
+
+	<Reply
+		name="Dlg_pl_002020"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002021" />
+
+	<Reply
+		name="Dlg_npc_002021"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002022" />
+
+	<Reply
+		name="Dlg_pl_002022"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001802"
+		text="500 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002011" />
+
+	<Reply
+		name="Dlg_npc_002011"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002017" />
+
+	<Reply
+		name="Dlg_pl_002017"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002018" />
+
+	<Reply
+		name="Dlg_npc_002018"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002019" />
+
+	<Reply
+		name="Dlg_pl_002019"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001801"
+		text="250 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002010" />
+
+	<Reply
+		name="Dlg_npc_002010"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002014" />
+
+	<Reply
+		name="Dlg_pl_002014"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002015" />
+
+	<Reply
+		name="Dlg_npc_002015"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002016" />
+
+	<Reply
+		name="Dlg_pl_002016"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001800"
+		text="100 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002007" />
+
+	<Reply
+		name="Dlg_npc_002007"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002008" />
+
+	<Reply
+		name="Dlg_pl_002008"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002009" />
+
+	<Reply
+		name="Dlg_npc_002009"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002013" />
+
+	<Reply
+		name="Dlg_pl_002013"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001680"
@@ -1653,7 +2308,25 @@
 	<Reply
 		name="Dlg_npc_001698"
 		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001973" />
+
+	<Reply
+		name="Dlg_pl_001973"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001974" />
+
+	<Reply
+		name="Dlg_npc_001974"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001975" />
+
+	<Reply
+		name="Dlg_pl_001975"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001679"
@@ -1665,7 +2338,25 @@
 	<Reply
 		name="Dlg_npc_001697"
 		text="Хорошо, ваша ставка размером 500 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001970" />
+
+	<Reply
+		name="Dlg_pl_001970"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001971" />
+
+	<Reply
+		name="Dlg_npc_001971"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001972" />
+
+	<Reply
+		name="Dlg_pl_001972"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001678"
@@ -1677,7 +2368,25 @@
 	<Reply
 		name="Dlg_npc_001696"
 		text="Хорошо, ваша ставка размером 250 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001967" />
+
+	<Reply
+		name="Dlg_pl_001967"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001968" />
+
+	<Reply
+		name="Dlg_npc_001968"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001969" />
+
+	<Reply
+		name="Dlg_pl_001969"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001677"
@@ -1689,7 +2398,25 @@
 	<Reply
 		name="Dlg_npc_001695"
 		text="Хорошо, ваша ставка размером 100 монет на машину под номером 3 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001964" />
+
+	<Reply
+		name="Dlg_pl_001964"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001965" />
+
+	<Reply
+		name="Dlg_npc_001965"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001966" />
+
+	<Reply
+		name="Dlg_pl_001966"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001660"
@@ -1748,25 +2475,121 @@
 		name="Dlg_pl_001748"
 		text="1000 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 1000" />
+		scriptCondition="GetPlayerMoney() > 1000"
+		nextReplies="Dlg_npc_001914" />
+
+	<Reply
+		name="Dlg_npc_001914"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001921" />
+
+	<Reply
+		name="Dlg_pl_001921"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001922" />
+
+	<Reply
+		name="Dlg_npc_001922"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001923" />
+
+	<Reply
+		name="Dlg_pl_001923"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001747"
 		text="500 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 500" />
+		scriptCondition="GetPlayerMoney() > 500"
+		nextReplies="Dlg_npc_001913" />
+
+	<Reply
+		name="Dlg_npc_001913"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001918" />
+
+	<Reply
+		name="Dlg_pl_001918"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001919" />
+
+	<Reply
+		name="Dlg_npc_001919"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001920" />
+
+	<Reply
+		name="Dlg_pl_001920"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001746"
 		text="250 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 250" />
+		scriptCondition="GetPlayerMoney() > 250"
+		nextReplies="Dlg_npc_001912" />
+
+	<Reply
+		name="Dlg_npc_001912"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001915" />
+
+	<Reply
+		name="Dlg_pl_001915"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001916" />
+
+	<Reply
+		name="Dlg_npc_001916"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001917" />
+
+	<Reply
+		name="Dlg_pl_001917"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001745"
 		text="100 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 100 " />
+		scriptCondition="GetPlayerMoney() > 100 "
+		nextReplies="Dlg_npc_001908" />
+
+	<Reply
+		name="Dlg_npc_001908"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001909" />
+
+	<Reply
+		name="Dlg_pl_001909"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001910" />
+
+	<Reply
+		name="Dlg_npc_001910"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001911" />
+
+	<Reply
+		name="Dlg_pl_001911"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001709"
@@ -1782,8 +2605,147 @@
 
 	<Reply
 		name="Dlg_pl_001724"
-		text="Всё таки я сделаю ставку. 
- "
+		text="Всё таки я сделаю ставку.   "
+		role="PLAYER"
+		nextReplies="Dlg_npc_001924" />
+
+	<Reply
+		name="Dlg_npc_001924"
+		text="Хорошо, сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001925 Dlg_pl_001926 Dlg_pl_001927 Dlg_pl_001928 Dlg_pl_001929" />
+
+	<Reply
+		name="Dlg_pl_001929"
+		text="Нет, я всё таки не хочу делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001930" />
+
+	<Reply
+		name="Dlg_npc_001930"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001931" />
+
+	<Reply
+		name="Dlg_pl_001931"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001928"
+		text="1000 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001936" />
+
+	<Reply
+		name="Dlg_npc_001936"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001945" />
+
+	<Reply
+		name="Dlg_pl_001945"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001946" />
+
+	<Reply
+		name="Dlg_npc_001946"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001947" />
+
+	<Reply
+		name="Dlg_pl_001947"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001927"
+		text="500 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001935" />
+
+	<Reply
+		name="Dlg_npc_001935"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001942" />
+
+	<Reply
+		name="Dlg_pl_001942"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001943" />
+
+	<Reply
+		name="Dlg_npc_001943"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001944" />
+
+	<Reply
+		name="Dlg_pl_001944"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001926"
+		text="250 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001934" />
+
+	<Reply
+		name="Dlg_npc_001934"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001939" />
+
+	<Reply
+		name="Dlg_pl_001939"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001940" />
+
+	<Reply
+		name="Dlg_npc_001940"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001941" />
+
+	<Reply
+		name="Dlg_pl_001941"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001925"
+		text="100 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001932" />
+
+	<Reply
+		name="Dlg_npc_001932"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001933" />
+
+	<Reply
+		name="Dlg_pl_001933"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001937" />
+
+	<Reply
+		name="Dlg_npc_001937"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001938" />
+
+	<Reply
+		name="Dlg_pl_001938"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
@@ -1801,13 +2763,165 @@
 	<Reply
 		name="Dlg_pl_001734"
 		text="Нет, моё решение не изменить. Я не буду делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001797" />
+
+	<Reply
+		name="Dlg_npc_001797"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001798" />
+
+	<Reply
+		name="Dlg_pl_001798"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001733"
 		text="Ладно, уговорил. Я сделаю ставку."
 		role="PLAYER"
-		scriptResult="SetVar('BettingCoeff', 3) " />
+		scriptResult="SetVar('BettingCoeff', 3) "
+		nextReplies="Dlg_npc_001789" />
+
+	<Reply
+		name="Dlg_npc_001789"
+		text="Отлично! Сколько будете ставить?"
+		role="NPC"
+		nextReplies="Dlg_pl_001790 Dlg_pl_001791 Dlg_pl_001792 Dlg_pl_001793 Dlg_pl_001794" />
+
+	<Reply
+		name="Dlg_pl_001794"
+		text="А вот ты думаешь, что я на серьёзе после всего этого согласился ставку сделать? Нет, я по-прежнему не хочу делать ставку!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001795" />
+
+	<Reply
+		name="Dlg_npc_001795"
+		text="Ну зачем же так грубо? Понял вас, не хотите, так не хотите! Прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001796" />
+
+	<Reply
+		name="Dlg_pl_001796"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001793"
+		text="1000 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001954" />
+
+	<Reply
+		name="Dlg_npc_001954"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001961" />
+
+	<Reply
+		name="Dlg_pl_001961"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001962" />
+
+	<Reply
+		name="Dlg_npc_001962"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001963" />
+
+	<Reply
+		name="Dlg_pl_001963"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001792"
+		text="500 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001953" />
+
+	<Reply
+		name="Dlg_npc_001953"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001958" />
+
+	<Reply
+		name="Dlg_pl_001958"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001959" />
+
+	<Reply
+		name="Dlg_npc_001959"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001960" />
+
+	<Reply
+		name="Dlg_pl_001960"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001791"
+		text="250 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001952" />
+
+	<Reply
+		name="Dlg_npc_001952"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001955" />
+
+	<Reply
+		name="Dlg_pl_001955"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001956" />
+
+	<Reply
+		name="Dlg_npc_001956"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001957" />
+
+	<Reply
+		name="Dlg_pl_001957"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
+
+	<Reply
+		name="Dlg_pl_001790"
+		text="100 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001948" />
+
+	<Reply
+		name="Dlg_npc_001948"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001949" />
+
+	<Reply
+		name="Dlg_pl_001949"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001950" />
+
+	<Reply
+		name="Dlg_npc_001950"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001951" />
+
+	<Reply
+		name="Dlg_pl_001951"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001675"
@@ -1819,7 +2933,25 @@
 	<Reply
 		name="Dlg_npc_001694"
 		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001905" />
+
+	<Reply
+		name="Dlg_pl_001905"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001906" />
+
+	<Reply
+		name="Dlg_npc_001906"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001907" />
+
+	<Reply
+		name="Dlg_pl_001907"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001674"
@@ -1831,7 +2963,25 @@
 	<Reply
 		name="Dlg_npc_001693"
 		text="Хорошо, ваша ставка размером 500 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001902" />
+
+	<Reply
+		name="Dlg_pl_001902"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001903" />
+
+	<Reply
+		name="Dlg_npc_001903"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001904" />
+
+	<Reply
+		name="Dlg_pl_001904"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001673"
@@ -1843,7 +2993,25 @@
 	<Reply
 		name="Dlg_npc_001692"
 		text="Хорошо, ваша ставка размером 250 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001899" />
+
+	<Reply
+		name="Dlg_pl_001899"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001900" />
+
+	<Reply
+		name="Dlg_npc_001900"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001901" />
+
+	<Reply
+		name="Dlg_pl_001901"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001672"
@@ -1855,7 +3023,25 @@
 	<Reply
 		name="Dlg_npc_001691"
 		text="Хорошо, ваша ставка размером 100 монет на машину под номером 2 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001896" />
+
+	<Reply
+		name="Dlg_pl_001896"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001897" />
+
+	<Reply
+		name="Dlg_npc_001897"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001898" />
+
+	<Reply
+		name="Dlg_pl_001898"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001659"
@@ -1915,25 +3101,121 @@
 		name="Dlg_pl_001743"
 		text="1000 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 1000 " />
+		scriptCondition="GetPlayerMoney() > 1000 "
+		nextReplies="Dlg_npc_001839" />
+
+	<Reply
+		name="Dlg_npc_001839"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001869" />
+
+	<Reply
+		name="Dlg_pl_001869"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001870" />
+
+	<Reply
+		name="Dlg_npc_001870"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001871" />
+
+	<Reply
+		name="Dlg_pl_001871"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001742"
 		text="500 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 500 " />
+		scriptCondition="GetPlayerMoney() > 500 "
+		nextReplies="Dlg_npc_001838" />
+
+	<Reply
+		name="Dlg_npc_001838"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001866" />
+
+	<Reply
+		name="Dlg_pl_001866"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001867" />
+
+	<Reply
+		name="Dlg_npc_001867"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001868" />
+
+	<Reply
+		name="Dlg_pl_001868"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001741"
 		text="250 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 250 " />
+		scriptCondition="GetPlayerMoney() > 250 "
+		nextReplies="Dlg_npc_001837" />
+
+	<Reply
+		name="Dlg_npc_001837"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001863" />
+
+	<Reply
+		name="Dlg_pl_001863"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001864" />
+
+	<Reply
+		name="Dlg_npc_001864"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001865" />
+
+	<Reply
+		name="Dlg_pl_001865"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001740"
 		text="100 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 100" />
+		scriptCondition="GetPlayerMoney() > 100"
+		nextReplies="Dlg_npc_001836" />
+
+	<Reply
+		name="Dlg_npc_001836"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001860" />
+
+	<Reply
+		name="Dlg_pl_001860"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001861" />
+
+	<Reply
+		name="Dlg_npc_001861"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001862" />
+
+	<Reply
+		name="Dlg_pl_001862"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001707"
@@ -1980,25 +3262,121 @@
 		name="Dlg_pl_001775"
 		text="1000 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 1000 " />
+		scriptCondition="GetPlayerMoney() > 1000 "
+		nextReplies="Dlg_npc_001843" />
+
+	<Reply
+		name="Dlg_npc_001843"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001881" />
+
+	<Reply
+		name="Dlg_pl_001881"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001882" />
+
+	<Reply
+		name="Dlg_npc_001882"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001883" />
+
+	<Reply
+		name="Dlg_pl_001883"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001774"
 		text="500 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 500 " />
+		scriptCondition="GetPlayerMoney() > 500 "
+		nextReplies="Dlg_npc_001842" />
+
+	<Reply
+		name="Dlg_npc_001842"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001878" />
+
+	<Reply
+		name="Dlg_pl_001878"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001879" />
+
+	<Reply
+		name="Dlg_npc_001879"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001880" />
+
+	<Reply
+		name="Dlg_pl_001880"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001773"
 		text="250 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 250 " />
+		scriptCondition="GetPlayerMoney() > 250 "
+		nextReplies="Dlg_npc_001841" />
+
+	<Reply
+		name="Dlg_npc_001841"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001875" />
+
+	<Reply
+		name="Dlg_pl_001875"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001876" />
+
+	<Reply
+		name="Dlg_npc_001876"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001877" />
+
+	<Reply
+		name="Dlg_pl_001877"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001772"
 		text="100 монет."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 100 " />
+		scriptCondition="GetPlayerMoney() > 100 "
+		nextReplies="Dlg_npc_001840" />
+
+	<Reply
+		name="Dlg_npc_001840"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001872" />
+
+	<Reply
+		name="Dlg_pl_001872"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001873" />
+
+	<Reply
+		name="Dlg_npc_001873"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001874" />
+
+	<Reply
+		name="Dlg_pl_001874"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001719"
@@ -2015,6 +3393,18 @@
 	<Reply
 		name="Dlg_pl_001732"
 		text="Нет, моё решение не изменить. Я не буду делать ставку."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001787" />
+
+	<Reply
+		name="Dlg_npc_001787"
+		text="Хорошо, я вас понял. Тогда прошу пройти на зрительскую трибуну."
+		role="NPC"
+		nextReplies="Dlg_pl_001788" />
+
+	<Reply
+		name="Dlg_pl_001788"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
@@ -2050,21 +3440,117 @@
 	<Reply
 		name="Dlg_pl_001783"
 		text="1000 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001847" />
+
+	<Reply
+		name="Dlg_npc_001847"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001893" />
+
+	<Reply
+		name="Dlg_pl_001893"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001894" />
+
+	<Reply
+		name="Dlg_npc_001894"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001895" />
+
+	<Reply
+		name="Dlg_pl_001895"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001782"
 		text="500 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001846" />
+
+	<Reply
+		name="Dlg_npc_001846"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001890" />
+
+	<Reply
+		name="Dlg_pl_001890"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001891" />
+
+	<Reply
+		name="Dlg_npc_001891"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001892" />
+
+	<Reply
+		name="Dlg_pl_001892"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001781"
 		text="250 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001845" />
+
+	<Reply
+		name="Dlg_npc_001845"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001887" />
+
+	<Reply
+		name="Dlg_pl_001887"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001888" />
+
+	<Reply
+		name="Dlg_npc_001888"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001889" />
+
+	<Reply
+		name="Dlg_pl_001889"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001780"
 		text="100 монет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001844" />
+
+	<Reply
+		name="Dlg_npc_001844"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_001884" />
+
+	<Reply
+		name="Dlg_pl_001884"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001885" />
+
+	<Reply
+		name="Dlg_npc_001885"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001886" />
+
+	<Reply
+		name="Dlg_pl_001886"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
@@ -2077,7 +3563,25 @@
 	<Reply
 		name="Dlg_npc_001690"
 		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001857" />
+
+	<Reply
+		name="Dlg_pl_001857"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001858" />
+
+	<Reply
+		name="Dlg_npc_001858"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001859" />
+
+	<Reply
+		name="Dlg_pl_001859"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001669"
@@ -2089,7 +3593,25 @@
 	<Reply
 		name="Dlg_npc_001689"
 		text="Хорошо, ваша ставка размером 500 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001854" />
+
+	<Reply
+		name="Dlg_pl_001854"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001855" />
+
+	<Reply
+		name="Dlg_npc_001855"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001856" />
+
+	<Reply
+		name="Dlg_pl_001856"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001668"
@@ -2101,7 +3623,25 @@
 	<Reply
 		name="Dlg_npc_001688"
 		text="Хорошо, ваша ставка размером 250 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001851" />
+
+	<Reply
+		name="Dlg_pl_001851"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001852" />
+
+	<Reply
+		name="Dlg_npc_001852"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001853" />
+
+	<Reply
+		name="Dlg_pl_001853"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001667"
@@ -2113,7 +3653,25 @@
 	<Reply
 		name="Dlg_npc_001687"
 		text="Хорошо, ваша ставка размером 100 монет на машину под номером 1 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки. "
-		role="NPC" />
+		role="NPC"
+		nextReplies="Dlg_pl_001848" />
+
+	<Reply
+		name="Dlg_pl_001848"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001849" />
+
+	<Reply
+		name="Dlg_npc_001849"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_001850" />
+
+	<Reply
+		name="Dlg_pl_001850"
+		text="Спасибо. Удачи, Мансур!"
+		role="PLAYER" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/Первый приезд на Урале-->
 	<Reply
 		name="Dlg_npc_001334"
