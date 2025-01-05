@@ -116,6 +116,211 @@ function CreateFirstAttackers()
 	end
 end
 
+function CreateRacers()
+	local WinningRandom = random(4)
+	if WinningRandom == 1 then
+		SetVar("WinningNumber", 1)
+		println("Random: 1")
+
+		local F1 = CreateVehicleEx("UralRace00", "Formula1", CVector(getPos("RaceStart4_loc"))+CVector(0,1,0), 1100)
+		if F1 then 
+			F1:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F1:SetRandomSkin()
+			F1:SetForcedMaxTorque(500)
+			F1:SetMaxSpeed(83.4)
+			F1:SetCruisingSpeed(65)
+		end
+
+		local F2 = CreateVehicleEx("UralRace01", "Formula2", CVector(getPos("RaceStart1_loc"))+CVector(0,1,0), 1100)
+		if F2 then 
+			F2:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F2:SetRandomSkin()
+			F2:SetForcedMaxTorque(500)
+			F2:SetMaxSpeed(83.4)
+			F2:SetCruisingSpeed(65)
+		end
+
+		local F3 = CreateVehicleEx("UralMansurRace", "Formula3", CVector(getPos("RaceStart2_loc"))+CVector(0,1,0), 1100)
+		if F3 then 
+			F3:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F3:SetSkin(1)
+			F3:SetForcedMaxTorque(500)
+			F3:SetMaxSpeed(83.4)
+			F3:SetCruisingSpeed(65)
+		end
+
+		local F4 = CreateVehicleEx("UralRace00", "Formula4", CVector(getPos("RaceStart3_loc"))+CVector(0,1,0), 1100)
+		if F4 then 
+			F4:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F4:SetRandomSkin()
+			F4:SetForcedMaxTorque(500)
+			F4:SetMaxSpeed(83.4)
+			F4:SetCruisingSpeed(65)
+		end
+	elseif WinningRandom == 2 then
+		SetVar("WinningNumber", 2)
+		println("Random: 2")
+
+		local F1 = CreateVehicleEx("UralRace00", "Formula1", CVector(getPos("RaceStart1_loc"))+CVector(0,1,0), 1100)
+		if F1 then 
+			F1:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F1:SetRandomSkin()
+			F1:SetForcedMaxTorque(500)
+			F1:SetMaxSpeed(83.4)
+			F1:SetCruisingSpeed(65)
+		end
+
+		local F2 = CreateVehicleEx("UralRace01", "Formula2", CVector(getPos("RaceStart4_loc"))+CVector(0,1,0), 1100)
+		if F2 then 
+			F2:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F2:SetRandomSkin()
+			F2:SetForcedMaxTorque(500)
+			F2:SetMaxSpeed(83.4)
+			F2:SetCruisingSpeed(65)
+		end
+
+		local F3 = CreateVehicleEx("UralMansurRace", "Formula3", CVector(getPos("RaceStart2_loc"))+CVector(0,1,0), 1100)
+		if F3 then 
+			F3:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F3:SetSkin(1)
+			F3:SetForcedMaxTorque(500)
+			F3:SetMaxSpeed(83.4)
+			F3:SetCruisingSpeed(65)
+		end
+
+		local F4 = CreateVehicleEx("UralRace00", "Formula4", CVector(getPos("RaceStart3_loc"))+CVector(0,1,0), 1100)
+		if F4 then 
+			F4:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F4:SetRandomSkin()
+			F4:SetForcedMaxTorque(500)
+			F4:SetMaxSpeed(83.4)
+			F4:SetCruisingSpeed(65)
+		end
+	elseif WinningRandom == 3 then
+		SetVar("WinningNumber", 3)
+		println("Random: 3")
+
+		local F1 = CreateVehicleEx("UralRace00", "Formula1", CVector(getPos("RaceStart1_loc"))+CVector(0,1,0), 1100)
+		if F1 then 
+			F1:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F1:SetRandomSkin()
+			F1:SetForcedMaxTorque(500)
+			F1:SetMaxSpeed(83.4)
+			F1:SetCruisingSpeed(65)
+		end
+
+		local F2 = CreateVehicleEx("UralRace01", "Formula2", CVector(getPos("RaceStart2_loc"))+CVector(0,1,0), 1100)
+		if F2 then 
+			F2:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F2:SetRandomSkin()
+			F2:SetForcedMaxTorque(500)
+			F2:SetMaxSpeed(83.4)
+			F2:SetCruisingSpeed(65)
+		end
+
+		local F3 = CreateVehicleEx("UralMansurRace", "Formula3", CVector(getPos("RaceStart4_loc"))+CVector(0,1,0), 1100)
+		if F3 then 
+			F3:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F3:SetSkin(1)
+			F3:SetForcedMaxTorque(500)
+			F3:SetMaxSpeed(83.4)
+			F3:SetCruisingSpeed(65)
+		end
+
+		local F4 = CreateVehicleEx("UralRace00", "Formula4", CVector(getPos("RaceStart3_loc"))+CVector(0,1,0), 1100)
+		if F4 then 
+			F4:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F4:SetRandomSkin()
+			F4:SetForcedMaxTorque(500)
+			F4:SetMaxSpeed(83.4)
+			F4:SetCruisingSpeed(65)
+		end
+	elseif WinningRandom == 4 then
+		SetVar("WinningNumber", 4)
+		println("Random: 4")
+
+		local F1 = CreateVehicleEx("UralRace00", "Formula1", CVector(getPos("RaceStart1_loc"))+CVector(0,1,0), 1100)
+		if F1 then 
+			F1:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F1:SetRandomSkin()
+			F1:SetForcedMaxTorque(500)
+			F1:SetMaxSpeed(83.4)
+			F1:SetCruisingSpeed(65)
+		end
+
+		local F2 = CreateVehicleEx("UralRace01", "Formula2", CVector(getPos("RaceStart3_loc"))+CVector(0,1,0), 1100)
+		if F2 then 
+			F2:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F2:SetRandomSkin()
+			F2:SetForcedMaxTorque(500)
+			F2:SetMaxSpeed(83.4)
+			F2:SetCruisingSpeed(65)
+		end
+
+		local F3 = CreateVehicleEx("UralMansurRace", "Formula3", CVector(getPos("RaceStart2_loc"))+CVector(0,1,0), 1100)
+		if F3 then 
+			F3:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F3:SetSkin(1)
+			F3:SetForcedMaxTorque(500)
+			F3:SetMaxSpeed(83.4)
+			F3:SetCruisingSpeed(65)
+		end
+
+		local F4 = CreateVehicleEx("UralRace00", "Formula4", CVector(getPos("RaceStart4_loc"))+CVector(0,1,0), 1100)
+		if F4 then 
+			F4:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
+			F4:SetRandomSkin()
+			F4:SetForcedMaxTorque(500)
+			F4:SetMaxSpeed(83.4)
+			F4:SetCruisingSpeed(65)
+		end
+	end
+
+	TActivate("RaceStartSpec_cs")
+end
+
+function RaceCutsceneCams()
+	local winnum = GetVar("WinningNumber").AsInt
+
+	local FVeh1 = GetEntityByName("Formula1")
+	local FVeh1ID = FVeh1:GetId()
+
+	local FVeh2 = GetEntityByName("Formula2")
+	local FVeh2ID = FVeh2:GetId()
+
+	local FVeh3 = GetEntityByName("Formula3")
+	local FVeh3ID = FVeh3:GetId()
+
+	local FVeh4 = GetEntityByName("Formula4")
+    local FVeh4ID = FVeh4:GetId()
+
+	if winnum == 1 then		
+		Fly("RaceStart_cam04", CINEMATIC_AIM_TO_ID, FVeh1ID, 3, 1, 0 )
+		Fly("RaceStart_cam01", CINEMATIC_AIM_TO_ID, FVeh2ID, 3, 0, 0 )
+		Fly("RaceStart_cam02", CINEMATIC_AIM_TO_ID, FVeh3ID, 3, 0, 0 )
+		Fly("RaceStart_cam03", CINEMATIC_AIM_TO_ID, FVeh4ID, 3, 0, 0 )
+	elseif winnum == 2 then
+		Fly("RaceStart_cam01", CINEMATIC_AIM_TO_ID, FVeh1ID, 3, 1, 0 )
+		Fly("RaceStart_cam04", CINEMATIC_AIM_TO_ID, FVeh2ID, 3, 0, 0 )
+		Fly("RaceStart_cam02", CINEMATIC_AIM_TO_ID, FVeh3ID, 3, 0, 0 )
+		Fly("RaceStart_cam03", CINEMATIC_AIM_TO_ID, FVeh4ID, 3, 0, 0 )
+	elseif winnum == 3 then
+		Fly("RaceStart_cam01", CINEMATIC_AIM_TO_ID, FVeh1ID, 3, 1, 0 )
+		Fly("RaceStart_cam02", CINEMATIC_AIM_TO_ID, FVeh2ID, 3, 0, 0 )
+		Fly("RaceStart_cam04", CINEMATIC_AIM_TO_ID, FVeh3ID, 3, 0, 0 )
+		Fly("RaceStart_cam03", CINEMATIC_AIM_TO_ID, FVeh4ID, 3, 0, 0 )
+	elseif winnum == 4 then
+		Fly("RaceStart_cam01", CINEMATIC_AIM_TO_ID, FVeh1ID, 3, 1, 0 )
+		Fly("RaceStart_cam03", CINEMATIC_AIM_TO_ID, FVeh2ID, 3, 0, 0 )
+		Fly("RaceStart_cam02", CINEMATIC_AIM_TO_ID, FVeh3ID, 3, 0, 0 )
+		Fly("RaceStart_cam04", CINEMATIC_AIM_TO_ID, FVeh4ID, 3, 0, 0 )
+	end
+
+	Fly("RaceSpec_cam01", CINEMATIC_NO_AIM, nil, 3, 0, 1 )
+
+	StartCinematic()
+end
+
 function CreateGadadAttackers()
 	CreateTeam("GadadDebyli",1062,CVector(5525.333, 260.348, 6889.820),{"TankBez","UralShot","BelazShot1","TankBez","TankBez"},CVector(5587.709, 260.537, 6833.567), nil)
 

@@ -1418,6 +1418,7 @@
 		text="1000 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_002038" />
 
 	<Reply
@@ -1448,6 +1449,7 @@
 		text="500 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_002037" />
 
 	<Reply
@@ -1478,6 +1480,7 @@
 		text="250 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 250"
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_002036" />
 
 	<Reply
@@ -1508,6 +1511,7 @@
 		text="100 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 100 "
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_002035" />
 
 	<Reply
@@ -1577,21 +1581,125 @@
 	<Reply
 		name="Dlg_pl_001822"
 		text="1000 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
+		nextReplies="Dlg_npc_002063" />
+
+	<Reply
+		name="Dlg_npc_002063"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002064" />
+
+	<Reply
+		name="Dlg_pl_002064"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002065" />
+
+	<Reply
+		name="Dlg_npc_002065"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002066" />
+
+	<Reply
+		name="Dlg_pl_002066"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001821"
 		text="500 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
+		nextReplies="Dlg_npc_002059" />
+
+	<Reply
+		name="Dlg_npc_002059"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002060" />
+
+	<Reply
+		name="Dlg_pl_002060"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002061" />
+
+	<Reply
+		name="Dlg_npc_002061"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002062" />
+
+	<Reply
+		name="Dlg_pl_002062"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001820"
 		text="250 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250"
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
+		nextReplies="Dlg_npc_002055" />
+
+	<Reply
+		name="Dlg_npc_002055"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002056" />
+
+	<Reply
+		name="Dlg_pl_002056"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002057" />
+
+	<Reply
+		name="Dlg_npc_002057"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002058" />
+
+	<Reply
+		name="Dlg_pl_002058"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001819"
 		text="100 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
+		nextReplies="Dlg_npc_002051" />
+
+	<Reply
+		name="Dlg_npc_002051"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в два раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002052" />
+
+	<Reply
+		name="Dlg_pl_002052"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002053" />
+
+	<Reply
+		name="Dlg_npc_002053"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002054" />
+
+	<Reply
+		name="Dlg_pl_002054"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
@@ -1656,21 +1764,125 @@
 	<Reply
 		name="Dlg_pl_001830"
 		text="1000 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
+		nextReplies="Dlg_npc_002079" />
+
+	<Reply
+		name="Dlg_npc_002079"
+		text="Хорошо, ваша ставка размером 1000 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002080" />
+
+	<Reply
+		name="Dlg_pl_002080"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002081" />
+
+	<Reply
+		name="Dlg_npc_002081"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002082" />
+
+	<Reply
+		name="Dlg_pl_002082"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001829"
 		text="500 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
+		nextReplies="Dlg_npc_002075" />
+
+	<Reply
+		name="Dlg_npc_002075"
+		text="Хорошо, ваша ставка размером 500 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002076" />
+
+	<Reply
+		name="Dlg_pl_002076"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002077" />
+
+	<Reply
+		name="Dlg_npc_002077"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002078" />
+
+	<Reply
+		name="Dlg_pl_002078"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001828"
 		text="250 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250"
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
+		nextReplies="Dlg_npc_002071" />
+
+	<Reply
+		name="Dlg_npc_002071"
+		text="Хорошо, ваша ставка размером 250 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002072" />
+
+	<Reply
+		name="Dlg_pl_002072"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002073" />
+
+	<Reply
+		name="Dlg_npc_002073"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002074" />
+
+	<Reply
+		name="Dlg_pl_002074"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
 		name="Dlg_pl_001827"
 		text="100 монет."
+		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
+		nextReplies="Dlg_npc_002067" />
+
+	<Reply
+		name="Dlg_npc_002067"
+		text="Хорошо, ваша ставка размером 100 монет на машину под номером 4 принята. В случае победы ваш выигрыш будет в три раза выше суммы ставки."
+		role="NPC"
+		nextReplies="Dlg_pl_002068" />
+
+	<Reply
+		name="Dlg_pl_002068"
+		text="Могу идти на трибуну, верно?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002069" />
+
+	<Reply
+		name="Dlg_npc_002069"
+		text="Да, можете идти."
+		role="NPC"
+		nextReplies="Dlg_pl_002070" />
+
+	<Reply
+		name="Dlg_pl_002070"
+		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER" />
 
 	<Reply
@@ -1678,6 +1890,7 @@
 		text="1000 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001702" />
 
 	<Reply
@@ -1708,6 +1921,7 @@
 		text="500 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001701" />
 
 	<Reply
@@ -1738,6 +1952,7 @@
 		text="250 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 250 "
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001700" />
 
 	<Reply
@@ -1768,6 +1983,7 @@
 		text="100 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001699" />
 
 	<Reply
@@ -1851,6 +2067,7 @@
 		text="1000 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 1000 "
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001979" />
 
 	<Reply
@@ -1881,6 +2098,7 @@
 		text="500 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 500 "
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001978" />
 
 	<Reply
@@ -1911,6 +2129,7 @@
 		text="250 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 250  "
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001977" />
 
 	<Reply
@@ -1941,6 +2160,7 @@
 		text="100 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 100 "
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001976" />
 
 	<Reply
@@ -2011,6 +2231,8 @@
 		name="Dlg_pl_001814"
 		text="1000 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001994" />
 
 	<Reply
@@ -2040,6 +2262,8 @@
 		name="Dlg_pl_001812"
 		text="500 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001813" />
 
 	<Reply
@@ -2069,6 +2293,8 @@
 		name="Dlg_pl_001811"
 		text="250 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250"
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001993" />
 
 	<Reply
@@ -2098,6 +2324,8 @@
 		name="Dlg_pl_001810"
 		text="100 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001992" />
 
 	<Reply
@@ -2186,6 +2414,8 @@
 		name="Dlg_pl_001803"
 		text="1000 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_002012" />
 
 	<Reply
@@ -2215,6 +2445,8 @@
 		name="Dlg_pl_001802"
 		text="500 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_002011" />
 
 	<Reply
@@ -2244,6 +2476,8 @@
 		name="Dlg_pl_001801"
 		text="250 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250"
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_002010" />
 
 	<Reply
@@ -2273,6 +2507,8 @@
 		name="Dlg_pl_001800"
 		text="100 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_002007" />
 
 	<Reply
@@ -2303,6 +2539,7 @@
 		text="1000 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001698" />
 
 	<Reply
@@ -2333,6 +2570,7 @@
 		text="500 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001697" />
 
 	<Reply
@@ -2363,6 +2601,7 @@
 		text="250 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 250 "
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001696" />
 
 	<Reply
@@ -2393,6 +2632,7 @@
 		text="100 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001695" />
 
 	<Reply
@@ -2476,6 +2716,7 @@
 		text="1000 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001914" />
 
 	<Reply
@@ -2506,6 +2747,7 @@
 		text="500 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001913" />
 
 	<Reply
@@ -2536,6 +2778,7 @@
 		text="250 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 250"
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001912" />
 
 	<Reply
@@ -2566,6 +2809,7 @@
 		text="100 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 100 "
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001908" />
 
 	<Reply
@@ -2636,6 +2880,8 @@
 		name="Dlg_pl_001928"
 		text="1000 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001936" />
 
 	<Reply
@@ -2665,6 +2911,8 @@
 		name="Dlg_pl_001927"
 		text="500 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001935" />
 
 	<Reply
@@ -2694,6 +2942,8 @@
 		name="Dlg_pl_001926"
 		text="250 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250"
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001934" />
 
 	<Reply
@@ -2723,6 +2973,8 @@
 		name="Dlg_pl_001925"
 		text="100 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001932" />
 
 	<Reply
@@ -2811,6 +3063,8 @@
 		name="Dlg_pl_001793"
 		text="1000 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001954" />
 
 	<Reply
@@ -2840,6 +3094,8 @@
 		name="Dlg_pl_001792"
 		text="500 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001953" />
 
 	<Reply
@@ -2869,6 +3125,8 @@
 		name="Dlg_pl_001791"
 		text="250 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250"
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001952" />
 
 	<Reply
@@ -2898,6 +3156,8 @@
 		name="Dlg_pl_001790"
 		text="100 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001948" />
 
 	<Reply
@@ -2928,6 +3188,7 @@
 		text="1000 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001694" />
 
 	<Reply
@@ -2958,6 +3219,7 @@
 		text="500 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 500 "
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001693" />
 
 	<Reply
@@ -2988,6 +3250,7 @@
 		text="250 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 250 "
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001692" />
 
 	<Reply
@@ -3018,6 +3281,7 @@
 		text="100 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001691" />
 
 	<Reply
@@ -3102,6 +3366,7 @@
 		text="1000 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 1000 "
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001839" />
 
 	<Reply
@@ -3132,6 +3397,7 @@
 		text="500 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 500 "
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001838" />
 
 	<Reply
@@ -3162,6 +3428,7 @@
 		text="250 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 250 "
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001837" />
 
 	<Reply
@@ -3192,6 +3459,7 @@
 		text="100 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001836" />
 
 	<Reply
@@ -3263,6 +3531,7 @@
 		text="1000 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 1000 "
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001843" />
 
 	<Reply
@@ -3293,6 +3562,7 @@
 		text="500 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 500 "
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001842" />
 
 	<Reply
@@ -3323,6 +3593,7 @@
 		text="250 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 250 "
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001841" />
 
 	<Reply
@@ -3353,6 +3624,7 @@
 		text="100 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 100 "
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001840" />
 
 	<Reply
@@ -3441,6 +3713,8 @@
 		name="Dlg_pl_001783"
 		text="1000 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001847" />
 
 	<Reply
@@ -3470,6 +3744,8 @@
 		name="Dlg_pl_001782"
 		text="500 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001846" />
 
 	<Reply
@@ -3499,6 +3775,8 @@
 		name="Dlg_pl_001781"
 		text="250 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 250"
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001845" />
 
 	<Reply
@@ -3528,6 +3806,8 @@
 		name="Dlg_pl_001780"
 		text="100 монет."
 		role="PLAYER"
+		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001844" />
 
 	<Reply
@@ -3558,6 +3838,7 @@
 		text="1000 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 1000"
+		scriptResult="AddPlayerMoney(-1000); SetVar('BettingAmount', 1000)"
 		nextReplies="Dlg_npc_001690" />
 
 	<Reply
@@ -3588,6 +3869,7 @@
 		text="500 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 500"
+		scriptResult="AddPlayerMoney(-500); SetVar('BettingAmount', 500)"
 		nextReplies="Dlg_npc_001689" />
 
 	<Reply
@@ -3618,6 +3900,7 @@
 		text="250 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 250"
+		scriptResult="AddPlayerMoney(-250); SetVar('BettingAmount', 250)"
 		nextReplies="Dlg_npc_001688" />
 
 	<Reply
@@ -3648,6 +3931,7 @@
 		text="100 монет."
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() > 100"
+		scriptResult="AddPlayerMoney(-100); SetVar('BettingAmount', 100)"
 		nextReplies="Dlg_npc_001687" />
 
 	<Reply

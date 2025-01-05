@@ -517,7 +517,7 @@
 				Prototype="NPC"
 				ModelName="r4_man"
 				cfg="15"
-				helloReplyNames="Adrenalin_NPC_dialog_1"
+				helloReplyNames="Adrenalin_NPC_dialog_1 Dlg_npc_001653"
 				SpokenCount="0" />
 		</Object>
 
@@ -1370,7 +1370,7 @@
 
 	<Object
 		Flags="21"
-		Name="RaceStart2_loc"
+		Name="RaceStart9_loc"
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="4157.829 278.997 2025.274"
@@ -1378,7 +1378,7 @@
 
 	<Object
 		Flags="21"
-		Name="RaceStart3_loc"
+		Name="RaceStart7_loc"
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="4148.585 279.002 2032.221"
@@ -1386,7 +1386,7 @@
 
 	<Object
 		Flags="21"
-		Name="RaceStart4_loc"
+		Name="RaceStart2_loc"
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="4159.235 279.001 2036.864"
@@ -1410,7 +1410,7 @@
 
 	<Object
 		Flags="21"
-		Name="RaceStart7_loc"
+		Name="RaceStart3_loc"
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="4151.375 279.007 2058.296"
@@ -1418,7 +1418,7 @@
 
 	<Object
 		Flags="21"
-		Name="RaceStart8_loc"
+		Name="RaceStart4_loc"
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="4161.589 279.006 2062.483"

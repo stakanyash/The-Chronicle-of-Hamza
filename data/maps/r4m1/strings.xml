@@ -884,6 +884,16 @@
 		time="2" />
 
 	<string
+		id="1174"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="15"
+		modelSlot="1"
+		value="ÀÄÐÅÍÀËÈÍÙÈÊ|ÑÒÀÐÒ!"
+		sound=""
+		time="2" />
+
+	<string
 		id="118"
 		modelName="r4_man"
 		modelSkin="0"

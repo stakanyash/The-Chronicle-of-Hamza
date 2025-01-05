@@ -2529,4 +2529,141 @@
 			trigger:Deactivate()
 		</script>
 	</trigger>
+
+	<trigger	Name="RaceStartSpec_cs"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			RaceCutsceneCams()
+
+			PlayCustomMusic("RaceQuest")
+
+			SetVar("CarCurSide1","2")
+			SetVar("CarCurSide2","1")
+			SetVar("CarCurSide3","3")
+			SetVar("CarCurSide4","2")
+
+			TActivate("RaceStartSpec_cs_fade")
+			TActivate("RaceStartSpec_cs_cam01")
+			TActivate("RaceStartSpec_cs_cam02")
+			TActivate("RaceStartSpec_cs_cam03")
+			TActivate("RaceStartSpec_cs_cam04")
+			TActivate("RaceStartSpec_cs_camStart")
+			TActivate("RaceStartSpec_cs_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="RaceStartSpec_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			AddCinematicMessage( 117, 0.25 )
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceStartSpec_cs_cam02" active="0">
+		<event flypath="RaceStart_cam02" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			local winnum = GetVar("WinningNumber").AsInt
+			if winnum == 1 then
+				AddCinematicMessage( 1172, 0.25 )
+			elseif winnum == 2 then
+				AddCinematicMessage( 1172, 0.25 )
+			elseif winnum == 3 then
+				AddCinematicMessage( 1171, 0.25 )
+			elseif winnum == 4 then
+				AddCinematicMessage( 1172, 0.25 )
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceStartSpec_cs_cam01" active="0">
+		<event flypath="RaceStart_cam01" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			local winnum = GetVar("WinningNumber").AsInt
+			if winnum == 1 then
+				AddCinematicMessage( 1171, 0.25 )
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceStartSpec_cs_cam03" active="0">
+		<event flypath="RaceStart_cam03" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			local winnum = GetVar("WinningNumber").AsInt
+			if winnum == 1 then
+				AddCinematicMessage( 1173, 0.25 )
+			elseif winnum == 2 then
+				AddCinematicMessage( 1173, 0.25 )
+			elseif winnum == 3 then
+				AddCinematicMessage( 1173, 0.25 )
+			elseif winnum == 4 then
+				AddCinematicMessage( 1171, 0.25 )
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceStartSpec_cs_cam04" active="0">
+		<event flypath="RaceStart_cam04" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			local winnum = GetVar("WinningNumber").AsInt
+			if winnum == 2 then
+				AddCinematicMessage( 1171, 0.25 )
+			elseif winnum == 3 then
+				AddCinematicMessage( 1172, 0.25 )
+			elseif winnum == 4 then
+				AddCinematicMessage( 1173, 0.25 )
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceStartSpec_cs_camStart" active="0">
+		<event flypath="RaceSpec_cam01" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			TActivate("RaceStart")
+
+			AddCinematicMessage( 1174, 0.2 )
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="RaceStart"	active="0">
+		<event	timeout="0.3"		eventid="GE_TIME_PERIOD" />
+		<script>
+			local maxcar = GetVar("CountCar").AsInt
+			for i=1,4 do
+			    local veh1=getObj("Formula"..i)
+			    if veh1 then
+					local let = {"L","M","R"}		    	
+					local nump = GetVar("CarCurSide"..i).AsInt
+				    veh1:SetExternalPathByName("Gonka_StartPath_"..let[nump])
+			    end
+			end
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="RaceStartSpec_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+
+			SetCameraBehindPlayerVehicle()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
 </triggers>
