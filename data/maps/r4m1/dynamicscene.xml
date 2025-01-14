@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="1154">
+	LastId="1159">
 	<TargetNamesForDestroy
 		Names="urod1 urod2 urod3 urod4 urod5 urod6 urod7 urod8 urod9" />
 
@@ -20373,10 +20373,6 @@
 		Radius="10.000" />
 
 	<Object
-		Belong="1100"
-		Prototype="someRecollection" />
-
-	<Object
 		Name="FirstDeb_spawnloc_2"
 		Belong="1100"
 		Prototype="genericLocation"
@@ -20403,4 +20399,29 @@
 		Prototype="genericLocation"
 		Pos="2529.767 267.946 3958.953"
 		Radius="10.000" />
+
+	<Object
+		Belong="1100"
+		Prototype="someRecollection" />
+
+	<Object
+		Name="RaceSpec_1L_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3304.808 292.423 1628.299"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_1M_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3322.658 291.893 1627.568"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_1R_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3339.405 291.429 1627.923"
+		Radius="1.000" />
 </DynamicScene>

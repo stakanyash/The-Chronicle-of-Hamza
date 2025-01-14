@@ -1735,6 +1735,22 @@
 		</script>
 	</trigger>
 
+	<trigger	Name="RaceSpecStart"	active="0">
+		<event	timeout="0.3"		eventid="GE_TIME_PERIOD" />
+		<script>
+			local maxcar = GetVar("CountCar").AsInt
+			for i=1,4 do
+			    local veh1=getObj("Formula"..i)
+			    if veh1 then
+					local let = {"L","M","R"}		    	
+					local nump = GetVar("CarCurSide"..i).AsInt
+				    veh1:SetExternalPathByName("Gonka_StartPath_"..let[nump])
+			    end
+			end
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
 	<trigger Name="AlfaHaraAllyforBattle" active="0">
 		<event timeout="1" eventid="GE_TIME_PERIOD" />
 		<script>

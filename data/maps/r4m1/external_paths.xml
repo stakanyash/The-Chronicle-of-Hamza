@@ -1966,6 +1966,162 @@
 	</Path>
 
 	<Path
+		Name="Gonka_Spec_1_L">
+		<Point
+			coord="3313.553 1652.781" />
+
+		<Point
+			coord="3310.272 1778.530" />
+
+		<Point
+			coord="3271.669 1909.784" />
+
+		<Point
+			coord="3220.568 1998.661" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_1_M">
+		<Point
+			coord="3323.895 1656.242" />
+
+		<Point
+			coord="3317.943 1779.958" />
+
+		<Point
+			coord="3260.482 1944.773" />
+
+		<Point
+			coord="3227.449 2002.967" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_1_R">
+		<Point
+			coord="3338.088 1656.492" />
+
+		<Point
+			coord="3326.790 1788.105" />
+
+		<Point
+			coord="3278.893 1934.261" />
+
+		<Point
+			coord="3231.050 2012.146" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_2_L">
+		<Point
+			coord="3296.430 3378.059" />
+
+		<Point
+			coord="3721.248 3381.030" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_2_M">
+		<Point
+			coord="3297.193 3366.432" />
+
+		<Point
+			coord="3720.610 3372.362" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_2_R">
+		<Point
+			coord="3296.630 3356.055" />
+
+		<Point
+			coord="3721.693 3362.060" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_3_L">
+		<Point
+			coord="4072.591 2822.285" />
+
+		<Point
+			coord="4015.464 2610.716" />
+
+		<Point
+			coord="3872.200 2328.757" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_3_M">
+		<Point
+			coord="4062.554 2824.572" />
+
+		<Point
+			coord="4003.040 2615.051" />
+
+		<Point
+			coord="3859.935 2332.324" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_3_R">
+		<Point
+			coord="4033.580 2748.723" />
+
+		<Point
+			coord="3991.790 2615.797" />
+
+		<Point
+			coord="3851.545 2335.966" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_4_L">
+		<Point
+			coord="4211.450 2377.792" />
+
+		<Point
+			coord="4182.974 2177.535" />
+
+		<Point
+			coord="4191.843 2149.785" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_4_LAST">
+		<Point
+			coord="4206.087 2401.408" />
+
+		<Point
+			coord="4159.263 2113.381" />
+
+		<Point
+			coord="4181.997 2092.095" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_4_M">
+		<Point
+			coord="4201.720 2380.856" />
+
+		<Point
+			coord="4171.441 2167.763" />
+
+		<Point
+			coord="4187.067 2134.306" />
+	</Path>
+
+	<Path
+		Name="Gonka_Spec_4_R">
+		<Point
+			coord="4195.595 2383.445" />
+
+		<Point
+			coord="4159.750 2142.722" />
+
+		<Point
+			coord="4184.083 2114.370" />
+	</Path>
+
+	<Path
 		Name="Gonka_StartPath_L">
 		<Point
 			coord="4156.588 2000.877" />

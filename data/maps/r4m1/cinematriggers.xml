@@ -2550,7 +2550,7 @@
 			TActivate("RaceStartSpec_cs_cam03")
 			TActivate("RaceStartSpec_cs_cam04")
 			TActivate("RaceStartSpec_cs_camStart")
-			TActivate("RaceStartSpec_cs_end")
+			TActivate("RaceSpec_cs_end")
 
 			trigger:Deactivate()
 		</script>
@@ -2632,15 +2632,17 @@
 	<trigger Name="RaceStartSpec_cs_camStart" active="0">
 		<event flypath="RaceSpec_cam01" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
-			TActivate("RaceStart")
+			TActivate("RaceSpecStart")
 
 			AddCinematicMessage( 1174, 0.2 )
+
+			TActivate("RaceSpec_cam02tr")
 			trigger:Deactivate()
 		</script>
 	</trigger>
 
-	<trigger	Name="RaceStart"	active="0">
-		<event	timeout="0.3"		eventid="GE_TIME_PERIOD" />
+	<trigger Name="RaceSpec_cam02tr" active="0">
+		<event flypath="RaceSpec_cam02" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
 			local maxcar = GetVar("CountCar").AsInt
 			for i=1,4 do
@@ -2649,8 +2651,106 @@
 					local let = {"L","M","R"}		    	
 					local nump = GetVar("CarCurSide"..i).AsInt
 				    veh1:SetExternalPathByName("Gonka_StartPath_"..let[nump])
+					veh1:PlaceToEndOfPath("Gonka_StartPath_"..let[nump])
 			    end
 			end
+
+			local FVeh1 = GetEntityByName("Formula1")
+			if FVeh1 then
+				FVeh1:SetGamePositionOnGround(CVector(getPos("RaceSpec_1L_loc")))
+				FVeh1:SetExternalPathByName("Gonka_Spec_1_L")
+				FVeh1:SetCustomLinearVelocity(0)
+				FVeh1:SetCustomLinearVelocity(45)
+				FVeh1:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+			end
+
+			local FVeh2 = GetEntityByName("Formula2")
+			if FVeh2 then
+				FVeh2:SetGamePositionOnGround(CVector(getPos("RaceSpec_1M_loc")))
+				FVeh2:SetExternalPathByName("Gonka_Spec_1_M")
+				FVeh2:SetCustomLinearVelocity(0)
+				FVeh2:SetCustomLinearVelocity(40)
+				FVeh2:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+			end
+
+			local FVeh3 = GetEntityByName("Formula3")
+			if FVeh3 then
+				FVeh3:SetGamePositionOnGround(CVector(getPos("RaceSpec_1M_loc")))
+				FVeh3:SetExternalPathByName("Gonka_Spec_1_M")
+				FVeh3:SetCustomLinearVelocity(0)
+				FVeh3:SetCustomLinearVelocity(50)
+				FVeh3:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+			end
+
+			local FVeh4 = GetEntityByName("Formula4")
+			if FVeh4 then
+				FVeh4:SetGamePositionOnGround(CVector(getPos("RaceSpec_1M_loc"))+CVector(0,1,20))
+				FVeh4:SetExternalPathByName("Gonka_Spec_1_M")
+				FVeh4:SetCustomLinearVelocity(0)
+				FVeh4:SetCustomLinearVelocity(48)
+				FVeh4:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+			end
+
+			TActivate("RaceSpec_cam03tr")
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceSpec_cam03tr" active="0">
+		<event flypath="RaceSpec_cam03" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			local FVeh1 = GetEntityByName("Formula1")
+			if FVeh1 then
+				FVeh1:SetGamePositionOnGround(CVector(getPos("RaceSpec_2L_loc"))+CVector(0,1,20))
+				FVeh1:SetExternalPathByName("Gonka_Spec_2_L")
+				FVeh1:SetCustomLinearVelocity(45)
+				FVeh1:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+			end
+
+			local FVeh2 = GetEntityByName("Formula2")
+			if FVeh2 then
+				FVeh2:SetGamePositionOnGround(CVector(getPos("RaceSpec_2M_loc")))
+				FVeh2:SetExternalPathByName("Gonka_Spec_2_M")
+				FVeh2:SetCustomLinearVelocity(40)
+				FVeh2:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+			end
+
+			local FVeh3 = GetEntityByName("Formula3")
+			if FVeh3 then
+				FVeh3:SetGamePositionOnGround(CVector(getPos("RaceSpec_2M_loc")))
+				FVeh3:SetExternalPathByName("Gonka_Spec_2_M")
+				FVeh3:SetCustomLinearVelocity(50)
+				FVeh3:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+			end
+
+			local FVeh4 = GetEntityByName("Formula4")
+			if FVeh4 then
+				FVeh4:SetGamePositionOnGround(CVector(getPos("RaceSpec_2L_loc")))
+				FVeh4:SetExternalPathByName("Gonka_Spec_2_M")
+				FVeh4:SetCustomLinearVelocity(48)
+				FVeh4:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+			end
+
+			TActivate("RaceSpec_cam04tr")
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceSpec_cam04tr" active="0">
+		<event flypath="RaceSpec_cam04" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+
+
+			TActivate("RaceSpec_cam05tr")
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceSpec_cam05tr" active="0">
+		<event flypath="RaceSpec_cam05" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+
+
 			trigger:Deactivate()
 		</script>
 	</trigger>

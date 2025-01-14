@@ -316,7 +316,11 @@ function RaceCutsceneCams()
 		Fly("RaceStart_cam04", CINEMATIC_AIM_TO_ID, FVeh4ID, 3, 0, 0 )
 	end
 
-	Fly("RaceSpec_cam01", CINEMATIC_NO_AIM, nil, 3, 0, 1 )
+	Fly("RaceSpec_cam01", CINEMATIC_NO_AIM, nil, 3, 0, 0 )
+	Fly("RaceSpec_cam02", CINEMATIC_AIM_TO_ID, FVeh4ID, 9.5, 0, 1 )
+--	FlyLinked("RaceSpec_cam03", FVeh4ID, 5, 0, 0, FVeh3ID)
+--	Fly("RaceSpec_cam04", CINEMATIC_NO_AIM, nil, 5, 0, 0 )
+--	Fly("RaceSpec_cam05", CINEMATIC_NO_AIM, nil, 5, 0, 1 )
 
 	StartCinematic()
 end
