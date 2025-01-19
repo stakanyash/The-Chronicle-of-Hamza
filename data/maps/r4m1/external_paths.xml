@@ -661,6 +661,30 @@
 	</Path>
 
 	<Path
+		Name="GonkaSpec_1_2_4">
+		<Point
+			coord="3364.452 2475.669" />
+	</Path>
+
+	<Path
+		Name="GonkaSpec_1_2_L">
+		<Point
+			coord="3354.375 2475.419" />
+	</Path>
+
+	<Path
+		Name="GonkaSpec_1_2_M">
+		<Point
+			coord="3361.473 2484.333" />
+	</Path>
+
+	<Path
+		Name="GonkaSpec_1_2_R">
+		<Point
+			coord="3368.251 2493.816" />
+	</Path>
+
+	<Path
 		Name="Gonka_1-2_L">
 		<Point
 			coord="3463.343 1428.842" />
@@ -2022,7 +2046,7 @@
 	<Path
 		Name="Gonka_Spec_2_M">
 		<Point
-			coord="3297.193 3366.432" />
+			coord="3309.209 3366.852" />
 
 		<Point
 			coord="3720.610 3372.362" />
@@ -2064,7 +2088,7 @@
 	<Path
 		Name="Gonka_Spec_3_R">
 		<Point
-			coord="4033.580 2748.723" />
+			coord="4045.787 2806.681" />
 
 		<Point
 			coord="3991.790 2615.797" />
@@ -2074,51 +2098,51 @@
 	</Path>
 
 	<Path
-		Name="Gonka_Spec_4_L">
+		Name="Gonka_Spec_4_0_L">
 		<Point
-			coord="4211.450 2377.792" />
+			coord="4194.096 2272.014" />
 
 		<Point
-			coord="4182.974 2177.535" />
+			coord="4181.037 2178.482" />
 
 		<Point
-			coord="4191.843 2149.785" />
+			coord="4193.270 2149.024" />
 	</Path>
 
 	<Path
-		Name="Gonka_Spec_4_LAST">
+		Name="Gonka_Spec_4_0_LAST">
 		<Point
-			coord="4206.087 2401.408" />
+			coord="4183.044 2252.511" />
 
 		<Point
-			coord="4159.263 2113.381" />
+			coord="4168.026 2145.639" />
 
 		<Point
-			coord="4181.997 2092.095" />
+			coord="4187.317 2113.562" />
 	</Path>
 
 	<Path
-		Name="Gonka_Spec_4_M">
+		Name="Gonka_Spec_4_0_M">
 		<Point
-			coord="4201.720 2380.856" />
+			coord="4183.328 2253.223" />
 
 		<Point
-			coord="4171.441 2167.763" />
+			coord="4171.546 2173.845" />
 
 		<Point
-			coord="4187.067 2134.306" />
+			coord="4189.161 2134.591" />
 	</Path>
 
 	<Path
-		Name="Gonka_Spec_4_R">
+		Name="Gonka_Spec_4_0_R">
 		<Point
-			coord="4195.595 2383.445" />
+			coord="4178.355 2272.966" />
 
 		<Point
-			coord="4159.750 2142.722" />
+			coord="4163.408 2152.958" />
 
 		<Point
-			coord="4184.083 2114.370" />
+			coord="4189.115 2125.188" />
 	</Path>
 
 	<Path

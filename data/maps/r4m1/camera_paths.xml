@@ -314,9 +314,29 @@
 	</Path>
 
 	<Path Name = "RaceSpec_cam02">
-		<Point  coord="3346.624 298.834 1669.277" rotation="-0.001 0.991 -0.006 0.131"/>
-		<Point  coord="3331.887 290.972 1780.132" rotation="0.001 0.999 -0.024 -0.046"/>
-		<Point  coord="3183.187 297.934 2027.442" rotation="-0.007 -0.845 0.011 0.534"/>
+		<Point  coord="3274.673 319.235 1682.528" rotation="0.092 0.873 -0.181 -0.443"/>
+		<Point  coord="3308.622 305.371 1934.112" rotation="-0.031 0.905 -0.067 0.419"/>
+	</Path>
+
+	<Path Name = "RaceSpec_cam03">
+		<Point  coord="3392.850 301.028 2385.309" rotation="-0.008 0.641 -0.007 0.767"/>
+	</Path>
+
+	<Path Name = "RaceSpec_cam04">
+		<Point  coord="3378.151 311.457 3370.518" rotation="-0.053 0.725 -0.056 0.685"/>
+		<Point  coord="3615.932 294.913 3376.101" rotation="-0.000 0.713 -0.000 0.701"/>
+		<Point  coord="3703.712 298.801 3393.312" rotation="-0.009 0.884 -0.018 0.467"/>
+	</Path>
+
+	<Path Name = "RaceSpec_cam05">
+		<Point  coord="4074.439 290.347 2885.509" rotation="-0.002 0.995 -0.024 0.097"/>
+		<Point  coord="4017.937 287.780 2664.189" rotation="-0.001 0.987 -0.006 0.163"/>
+		<Point  coord="3923.738 286.161 2440.732" rotation="-0.002 0.971 -0.007 0.237"/>
+	</Path>
+
+	<Path Name = "RaceSpec_cam06">
+		<Point  coord="4131.515 347.135 2242.469" rotation="-0.272 -0.447 0.145 0.840"/>
+		<Point  coord="4116.526 314.953 2022.447" rotation="-0.184 -0.461 0.098 0.862"/>
 	</Path>
 
 </Paths>

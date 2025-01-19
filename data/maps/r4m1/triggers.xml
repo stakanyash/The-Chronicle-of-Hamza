@@ -10,11 +10,15 @@
 			SetVar("PlayerCarNameRace",0)
 			SetVar("Gonka",0)
 			SetVar("Strahovka",0)
+
+			-- TCoH VAR's --
+
 			SetVar("AddedStartMoney", 0)
 			SetVar("StartBattle", 1)
 			SetVar("BuharaSaveTalk", 0)
 			SetVar("ChujezemetsTalk", 0)
 			SetVar("MansurTalk", 0)
+			SetVar("EndRaceSpeed", 10)
 			
 		    trigger:Deactivate()
 		</script>
@@ -2518,6 +2522,22 @@
 				if newController then
 					newController:setVehicleUnderControl(vehAiven)
 				end
+			end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="BettingCheck" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            local BetAmount = GetVar("BettingAmount").AsInt
+			local BetNumber = GetVar("BettingNumber").AsInt
+			local BetCoeff = GetVar("BettingCoeff").AsInt
+			local WinNumber = GetVar("WinningNumber").AsInt
+
+			if WinNumber == BetNumber then
+				AddPlayerMoney(BetAmount * BetCoeff)
 			end
 
 			trigger:Deactivate()  

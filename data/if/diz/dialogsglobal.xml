@@ -1364,6 +1364,7 @@
 		name="Dlg_pl_001663"
 		text="На четвертую машину. "
 		role="PLAYER"
+		scriptResult="SetVar('BettingNumber', 4)"
 		nextReplies="Dlg_npc_001666" />
 
 	<Reply
@@ -1376,6 +1377,7 @@
 		name="Dlg_pl_001686"
 		text="Знаете, я передумал, не буду делать ставку."
 		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)"
 		nextReplies="Dlg_npc_001706" />
 
 	<Reply
@@ -1411,7 +1413,8 @@
 	<Reply
 		name="Dlg_pl_001770"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001758"
@@ -1442,7 +1445,8 @@
 	<Reply
 		name="Dlg_pl_002050"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001757"
@@ -1473,7 +1477,8 @@
 	<Reply
 		name="Dlg_pl_002047"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001756"
@@ -1504,7 +1509,8 @@
 	<Reply
 		name="Dlg_pl_002044"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001755"
@@ -1535,7 +1541,8 @@
 	<Reply
 		name="Dlg_pl_002041"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001713"
@@ -1576,7 +1583,8 @@
 	<Reply
 		name="Dlg_pl_001825"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001822"
@@ -1607,7 +1615,8 @@
 	<Reply
 		name="Dlg_pl_002066"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001821"
@@ -1638,7 +1647,8 @@
 	<Reply
 		name="Dlg_pl_002062"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001820"
@@ -1669,7 +1679,8 @@
 	<Reply
 		name="Dlg_pl_002058"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001819"
@@ -1700,7 +1711,8 @@
 	<Reply
 		name="Dlg_pl_002054"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001723"
@@ -1729,7 +1741,8 @@
 	<Reply
 		name="Dlg_pl_001835"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001737"
@@ -1759,7 +1772,8 @@
 	<Reply
 		name="Dlg_pl_001833"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001830"
@@ -1790,7 +1804,8 @@
 	<Reply
 		name="Dlg_pl_002082"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001829"
@@ -1821,7 +1836,8 @@
 	<Reply
 		name="Dlg_pl_002078"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001828"
@@ -1852,7 +1868,8 @@
 	<Reply
 		name="Dlg_pl_002074"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001827"
@@ -1883,7 +1900,8 @@
 	<Reply
 		name="Dlg_pl_002070"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001685"
@@ -1914,7 +1932,8 @@
 	<Reply
 		name="Dlg_pl_002034"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001684"
@@ -1945,7 +1964,8 @@
 	<Reply
 		name="Dlg_pl_002031"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001683"
@@ -1976,7 +1996,8 @@
 	<Reply
 		name="Dlg_pl_002028"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001682"
@@ -2007,12 +2028,14 @@
 	<Reply
 		name="Dlg_pl_002025"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001662"
 		text="На третью машину."
 		role="PLAYER"
+		scriptResult="SetVar('BettingNumber', 3)"
 		nextReplies="Dlg_npc_001665" />
 
 	<Reply
@@ -2060,7 +2083,8 @@
 	<Reply
 		name="Dlg_pl_001769"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001753"
@@ -2091,7 +2115,8 @@
 	<Reply
 		name="Dlg_pl_001991"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001752"
@@ -2122,7 +2147,8 @@
 	<Reply
 		name="Dlg_pl_001988"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001751"
@@ -2153,7 +2179,8 @@
 	<Reply
 		name="Dlg_pl_001985"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001750"
@@ -2184,7 +2211,8 @@
 	<Reply
 		name="Dlg_pl_001982"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001711"
@@ -2225,7 +2253,8 @@
 	<Reply
 		name="Dlg_pl_001817"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001814"
@@ -2256,7 +2285,8 @@
 	<Reply
 		name="Dlg_pl_002006"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001812"
@@ -2287,7 +2317,8 @@
 	<Reply
 		name="Dlg_pl_002003"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001811"
@@ -2318,7 +2349,8 @@
 	<Reply
 		name="Dlg_pl_002000"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001810"
@@ -2349,7 +2381,8 @@
 	<Reply
 		name="Dlg_pl_001997"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001722"
@@ -2378,7 +2411,8 @@
 	<Reply
 		name="Dlg_pl_001808"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001735"
@@ -2408,7 +2442,8 @@
 	<Reply
 		name="Dlg_pl_001806"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001803"
@@ -2439,7 +2474,8 @@
 	<Reply
 		name="Dlg_pl_002022"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001802"
@@ -2470,7 +2506,8 @@
 	<Reply
 		name="Dlg_pl_002019"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001801"
@@ -2501,7 +2538,8 @@
 	<Reply
 		name="Dlg_pl_002016"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001800"
@@ -2532,7 +2570,8 @@
 	<Reply
 		name="Dlg_pl_002013"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001680"
@@ -2563,7 +2602,8 @@
 	<Reply
 		name="Dlg_pl_001975"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001679"
@@ -2594,7 +2634,8 @@
 	<Reply
 		name="Dlg_pl_001972"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001678"
@@ -2625,7 +2666,8 @@
 	<Reply
 		name="Dlg_pl_001969"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001677"
@@ -2656,12 +2698,14 @@
 	<Reply
 		name="Dlg_pl_001966"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001660"
 		text="На вторую машину."
 		role="PLAYER"
+		scriptResult="SetVar('BettingNumber', 2)"
 		nextReplies="Dlg_npc_001661" />
 
 	<Reply
@@ -2709,7 +2753,8 @@
 	<Reply
 		name="Dlg_pl_001768"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001748"
@@ -2740,7 +2785,8 @@
 	<Reply
 		name="Dlg_pl_001923"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001747"
@@ -2771,7 +2817,8 @@
 	<Reply
 		name="Dlg_pl_001920"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001746"
@@ -2802,7 +2849,8 @@
 	<Reply
 		name="Dlg_pl_001917"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001745"
@@ -2833,7 +2881,8 @@
 	<Reply
 		name="Dlg_pl_001911"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001709"
@@ -2874,7 +2923,8 @@
 	<Reply
 		name="Dlg_pl_001931"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001928"
@@ -2905,7 +2955,8 @@
 	<Reply
 		name="Dlg_pl_001947"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001927"
@@ -2936,7 +2987,8 @@
 	<Reply
 		name="Dlg_pl_001944"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001926"
@@ -2967,7 +3019,8 @@
 	<Reply
 		name="Dlg_pl_001941"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001925"
@@ -2998,7 +3051,8 @@
 	<Reply
 		name="Dlg_pl_001938"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001721"
@@ -3027,7 +3081,8 @@
 	<Reply
 		name="Dlg_pl_001798"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001733"
@@ -3057,7 +3112,8 @@
 	<Reply
 		name="Dlg_pl_001796"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001793"
@@ -3088,7 +3144,8 @@
 	<Reply
 		name="Dlg_pl_001963"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001792"
@@ -3119,7 +3176,8 @@
 	<Reply
 		name="Dlg_pl_001960"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001791"
@@ -3150,7 +3208,8 @@
 	<Reply
 		name="Dlg_pl_001957"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001790"
@@ -3181,7 +3240,8 @@
 	<Reply
 		name="Dlg_pl_001951"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001675"
@@ -3212,7 +3272,8 @@
 	<Reply
 		name="Dlg_pl_001907"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001674"
@@ -3243,7 +3304,8 @@
 	<Reply
 		name="Dlg_pl_001904"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001673"
@@ -3274,7 +3336,8 @@
 	<Reply
 		name="Dlg_pl_001901"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001672"
@@ -3305,12 +3368,14 @@
 	<Reply
 		name="Dlg_pl_001898"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001659"
 		text="На первую машину."
 		role="PLAYER"
+		scriptResult="SetVar('BettingNumber', 1)"
 		nextReplies="Dlg_npc_001664" />
 
 	<Reply
@@ -3359,7 +3424,7 @@
 		name="Dlg_pl_001767"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="EndConversation()" />
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001743"
@@ -3390,7 +3455,8 @@
 	<Reply
 		name="Dlg_pl_001871"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001742"
@@ -3421,7 +3487,8 @@
 	<Reply
 		name="Dlg_pl_001868"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001741"
@@ -3452,7 +3519,8 @@
 	<Reply
 		name="Dlg_pl_001865"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001740"
@@ -3483,7 +3551,8 @@
 	<Reply
 		name="Dlg_pl_001862"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001707"
@@ -3524,7 +3593,8 @@
 	<Reply
 		name="Dlg_pl_001778"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001775"
@@ -3555,7 +3625,8 @@
 	<Reply
 		name="Dlg_pl_001883"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001774"
@@ -3586,7 +3657,8 @@
 	<Reply
 		name="Dlg_pl_001880"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001773"
@@ -3617,7 +3689,8 @@
 	<Reply
 		name="Dlg_pl_001877"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001772"
@@ -3648,7 +3721,8 @@
 	<Reply
 		name="Dlg_pl_001874"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001719"
@@ -3677,7 +3751,8 @@
 	<Reply
 		name="Dlg_pl_001788"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001731"
@@ -3707,7 +3782,8 @@
 	<Reply
 		name="Dlg_pl_001786"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001783"
@@ -3738,7 +3814,8 @@
 	<Reply
 		name="Dlg_pl_001895"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001782"
@@ -3769,7 +3846,8 @@
 	<Reply
 		name="Dlg_pl_001892"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001781"
@@ -3800,7 +3878,8 @@
 	<Reply
 		name="Dlg_pl_001889"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001780"
@@ -3831,7 +3910,8 @@
 	<Reply
 		name="Dlg_pl_001886"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001670"
@@ -3862,7 +3942,8 @@
 	<Reply
 		name="Dlg_pl_001859"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001669"
@@ -3893,7 +3974,8 @@
 	<Reply
 		name="Dlg_pl_001856"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001668"
@@ -3924,7 +4006,8 @@
 	<Reply
 		name="Dlg_pl_001853"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001667"
@@ -3955,7 +4038,8 @@
 	<Reply
 		name="Dlg_pl_001850"
 		text="Спасибо. Удачи, Мансур!"
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/Первый приезд на Урале-->
 	<Reply
 		name="Dlg_npc_001334"

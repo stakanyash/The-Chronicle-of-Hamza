@@ -894,6 +894,46 @@
 		time="2" />
 
 	<string
+		id="7771"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="15"
+		modelSlot="1"
+		value="АДРЕНАЛИНЩИК|Победила машина под номером 1!"
+		sound=""
+		time="5" />
+
+	<string
+		id="7772"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="15"
+		modelSlot="1"
+		value="АДРЕНАЛИНЩИК|Победила машина под номером 2!"
+		sound=""
+		time="5" />
+
+	<string
+		id="7773"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="15"
+		modelSlot="1"
+		value="АДРЕНАЛИНЩИК|Победила машина под номером 3!"
+		sound=""
+		time="5" />
+
+	<string
+		id="7774"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="15"
+		modelSlot="1"
+		value="АДРЕНАЛИНЩИК|Победила машина под номером 4!"
+		sound=""
+		time="5" />
+
+	<string
 		id="118"
 		modelName="r4_man"
 		modelSkin="0"
@@ -1275,6 +1315,11 @@
 		id="8908"
 		value="Один из бухарцев погиб." 
 		numButtons="1"/>
+
+	<string
+		id="9999"
+		value="Пропустить стартовую битву?" 
+		numButtons="2"/>
 
 	<string
 		id="77771"

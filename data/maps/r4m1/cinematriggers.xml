@@ -1141,6 +1141,7 @@
 
 		CreateFirstAttackers()
 
+		TActivate("DebugSkipFight")
 		TActivate("FirstDebyli_Die")
 		TActivate("MansurCar_Die")
 
@@ -1151,6 +1152,36 @@
 		RestoreAllToleranceStatus()
 
 		SetCameraBehindPlayerVehicle()
+
+		trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="DebugSkipFight"	active="0">
+		<event	timeout="0.1"			eventid="GE_TIME_PERIOD" />
+		<script>
+		local b = SpawnMessageBox( "9999" )
+		if b == 1 then
+			local v1 = getObj("StartDebyli_vehicle_0")
+			if v1 then
+				v1:AddModifier("hp", "= 0")
+			end
+
+			local v2 = getObj("StartDebyli_vehicle_1")
+			if v2 then
+				v2:AddModifier("hp", "= 0")
+			end
+
+			local v3 = getObj("StartDebyli_vehicle_2")
+			if v3 then
+				v3:AddModifier("hp", "= 0")
+			end
+
+			local v4 = getObj("StartDebyli_vehicle_3")
+			if v4 then
+				v4:AddModifier("hp", "= 0")
+			end
+		end
 
 		trigger:Deactivate()
 		</script>
@@ -2645,50 +2676,54 @@
 		<event flypath="RaceSpec_cam02" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
 			local maxcar = GetVar("CountCar").AsInt
-			for i=1,4 do
-			    local veh1=getObj("Formula"..i)
-			    if veh1 then
-					local let = {"L","M","R"}		    	
+			local winnum = GetVar("WinningNumber").AsInt
+			
+			local myArray = {1,2,3,4}
+			table.remove(myArray, winnum)
+
+			for i=1,3 do
+  				local side = {"M","R","LAST"}
+  				local veh1=getObj("Formula"..myArray[i])
+  				if veh1 then
+					local let = {"L","M","R"}
 					local nump = GetVar("CarCurSide"..i).AsInt
-				    veh1:SetExternalPathByName("Gonka_StartPath_"..let[nump])
 					veh1:PlaceToEndOfPath("Gonka_StartPath_"..let[nump])
-			    end
+    				veh1:SetGamePositionOnGround(getPos("RaceSpec_4"..side[i].."_loc"))
+					veh1:SetRotation(Quaternion(0.000, -0.998, 0.009, 0.057))
+  				end
 			end
 
-			local FVeh1 = GetEntityByName("Formula1")
+			local vehWiener = getObj("Formula"..winnum)
+			if vehWiener then
+				local let = {"L","M","R"}
+				local nump = GetVar("CarCurSide3").AsInt
+				vehWiener:PlaceToEndOfPath("Gonka_StartPath_"..let[nump])
+  				vehWiener:SetGamePositionOnGround(getPos("RaceSpec_4L_loc"))
+				vehWiener:SetRotation(Quaternion(0.000, -0.998, 0.009, 0.057))
+			end
+
+			local FVeh1 = getObj("Formula1_1")
 			if FVeh1 then
-				FVeh1:SetGamePositionOnGround(CVector(getPos("RaceSpec_1L_loc")))
 				FVeh1:SetExternalPathByName("Gonka_Spec_1_L")
-				FVeh1:SetCustomLinearVelocity(0)
 				FVeh1:SetCustomLinearVelocity(45)
-				FVeh1:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
 			end
 
-			local FVeh2 = GetEntityByName("Formula2")
+			local FVeh2 = getObj("Formula2_1")
 			if FVeh2 then
-				FVeh2:SetGamePositionOnGround(CVector(getPos("RaceSpec_1M_loc")))
 				FVeh2:SetExternalPathByName("Gonka_Spec_1_M")
-				FVeh2:SetCustomLinearVelocity(0)
 				FVeh2:SetCustomLinearVelocity(40)
-				FVeh2:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
 			end
 
-			local FVeh3 = GetEntityByName("Formula3")
+			local FVeh3 = getObj("Formula3_1")
 			if FVeh3 then
-				FVeh3:SetGamePositionOnGround(CVector(getPos("RaceSpec_1M_loc")))
-				FVeh3:SetExternalPathByName("Gonka_Spec_1_M")
-				FVeh3:SetCustomLinearVelocity(0)
+				FVeh3:SetExternalPathByName("Gonka_Spec_1_R")
 				FVeh3:SetCustomLinearVelocity(50)
-				FVeh3:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
 			end
 
-			local FVeh4 = GetEntityByName("Formula4")
+			local FVeh4 = getObj("Formula4_1")
 			if FVeh4 then
-				FVeh4:SetGamePositionOnGround(CVector(getPos("RaceSpec_1M_loc"))+CVector(0,1,20))
 				FVeh4:SetExternalPathByName("Gonka_Spec_1_M")
-				FVeh4:SetCustomLinearVelocity(0)
 				FVeh4:SetCustomLinearVelocity(48)
-				FVeh4:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
 			end
 
 			TActivate("RaceSpec_cam03tr")
@@ -2699,36 +2734,60 @@
 	<trigger Name="RaceSpec_cam03tr" active="0">
 		<event flypath="RaceSpec_cam03" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
-			local FVeh1 = GetEntityByName("Formula1")
+			local skin0 = GetVar("FormulaSkin0").AsInt
+			local skin1 = GetVar("FormulaSkin1").AsInt
+			local skin2 = GetVar("FormulaSkin2").AsInt
+			local skin3 = GetVar("FormulaSkin3").AsInt
+
+			for i=1,4 do
+			    local veh1=getObj("Formula"..i.."_1")
+			    if veh1 then
+					veh1:Remove()
+			    end
+			end
+
+			local FVeh1 = CreateVehicleEx("UralRace00", "Formula1_2", CVector(3375.157, 298.695, 2280.094), 1100)
 			if FVeh1 then
-				FVeh1:SetGamePositionOnGround(CVector(getPos("RaceSpec_2L_loc"))+CVector(0,1,20))
-				FVeh1:SetExternalPathByName("Gonka_Spec_2_L")
-				FVeh1:SetCustomLinearVelocity(45)
-				FVeh1:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+				FVeh1:SetCustomLinearVelocity(95)
+				FVeh1:SetExternalPathByName("GonkaSpec_1_2_R")
+				FVeh1:SetRotation(Quaternion(-0.012, 0.057, 0.010, 0.998))
+				FVeh1:SetForcedMaxTorque(800)
+				FVeh1:SetMaxSpeed(100)
+				FVeh1:SetCruisingSpeed(100)
+				FVeh1:SetSkin(skin0)
 			end
 
-			local FVeh2 = GetEntityByName("Formula2")
+			local FVeh2 = CreateVehicleEx("UralRace01", "Formula2_2", CVector(3365.223, 298.775, 2286.419), 1100)
 			if FVeh2 then
-				FVeh2:SetGamePositionOnGround(CVector(getPos("RaceSpec_2M_loc")))
-				FVeh2:SetExternalPathByName("Gonka_Spec_2_M")
-				FVeh2:SetCustomLinearVelocity(40)
-				FVeh2:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+				FVeh2:SetCustomLinearVelocity(90)
+				FVeh2:SetExternalPathByName("GonkaSpec_1_2_M")
+				FVeh2:SetRotation(Quaternion(-0.012, 0.057, 0.010, 0.998))
+				FVeh2:SetForcedMaxTorque(800)
+				FVeh2:SetMaxSpeed(100.4)
+				FVeh2:SetCruisingSpeed(65)
+				FVeh2:SetSkin(skin1)
 			end
 
-			local FVeh3 = GetEntityByName("Formula3")
+			local FVeh3 = CreateVehicleEx("UralMansurRace", "Formula3_2", CVector(3366.088, 298.401, 2273.316), 1100)
 			if FVeh3 then
-				FVeh3:SetGamePositionOnGround(CVector(getPos("RaceSpec_2M_loc")))
-				FVeh3:SetExternalPathByName("Gonka_Spec_2_M")
-				FVeh3:SetCustomLinearVelocity(50)
-				FVeh3:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+				FVeh3:SetCustomLinearVelocity(87)
+				FVeh3:SetExternalPathByName("GonkaSpec_1_2_L")
+				FVeh3:SetRotation(Quaternion(-0.012, 0.057, 0.010, 0.998))
+				FVeh3:SetForcedMaxTorque(800)
+				FVeh3:SetMaxSpeed(100.4)
+				FVeh3:SetCruisingSpeed(65)
+				FVeh3:SetSkin(skin2)
 			end
 
-			local FVeh4 = GetEntityByName("Formula4")
+			local FVeh4 = CreateVehicleEx("UralRace00", "Formula4_2", CVector(3351.098, 298.031, 2261.550), 1100)
 			if FVeh4 then
-				FVeh4:SetGamePositionOnGround(CVector(getPos("RaceSpec_2L_loc")))
-				FVeh4:SetExternalPathByName("Gonka_Spec_2_M")
-				FVeh4:SetCustomLinearVelocity(48)
-				FVeh4:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
+				FVeh4:SetCustomLinearVelocity(86)
+				FVeh4:SetExternalPathByName("GonkaSpec_1_2_4")
+				FVeh4:SetRotation(Quaternion(-0.012, 0.057, 0.010, 0.998))
+				FVeh4:SetForcedMaxTorque(800)
+				FVeh4:SetMaxSpeed(100.4)
+				FVeh4:SetCruisingSpeed(65)
+				FVeh4:SetSkin(skin3)
 			end
 
 			TActivate("RaceSpec_cam04tr")
@@ -2739,7 +2798,66 @@
 	<trigger Name="RaceSpec_cam04tr" active="0">
 		<event flypath="RaceSpec_cam04" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
+			local skin0 = GetVar("FormulaSkin0").AsInt
+			local skin1 = GetVar("FormulaSkin1").AsInt
+			local skin2 = GetVar("FormulaSkin2").AsInt
+			local skin3 = GetVar("FormulaSkin3").AsInt
 
+			for i=1,4 do
+			    local veh1=getObj("Formula"..i.."_2")
+			    if veh1 then
+					veh1:Remove()
+			    end
+			end
+
+			local FVeh1 = CreateVehicleEx("UralRace00", "Formula1_3", CVector(getPos("RaceSpec_2L_loc")), 1100)
+			if FVeh1 then
+				FVeh1:SetExternalPathByName("Gonka_Spec_2_L")
+				FVeh1:SetRotation(Quaternion(0.005, 0.706, -0.001, 0.708))
+				FVeh1:SetCustomLinearVelocity(53)
+				FVeh1:SetForcedMaxTorque(800)
+				FVeh1:SetMaxSpeed(100)
+				FVeh1:SetCruisingSpeed(100)
+				FVeh1:SetSkin(skin0)
+			end
+
+			local FVeh2 = CreateVehicleEx("UralRace01", "Formula2_3", CVector(getPos("RaceSpec_2R_loc")), 1100)
+			if FVeh2 then
+				FVeh2:SetExternalPathByName("Gonka_Spec_2_R")
+				FVeh2:SetRotation(Quaternion(0.005, 0.706, -0.001, 0.708))
+				FVeh2:SetCustomLinearVelocity(61)
+				FVeh2:SetForcedMaxTorque(800)
+				FVeh2:SetMaxSpeed(100.4)
+				FVeh2:SetCruisingSpeed(65)
+				FVeh2:SetSkin(skin1)
+			end
+
+			local FVeh3 = CreateVehicleEx("UralMansurRace", "Formula3_3", CVector(getPos("RaceSpec_2M_loc"))+CVector(0,1,0), 1100)
+			if FVeh3 then
+				FVeh3:SetForcedMaxTorque(800)
+				FVeh3:SetExternalPathByName("Gonka_Spec_2_M")
+				FVeh3:SetRotation(Quaternion(0.005, 0.706, -0.001, 0.708))
+				FVeh3:SetCustomLinearVelocity(64)
+				FVeh3:SetMaxSpeed(100.4)
+				FVeh3:SetCruisingSpeed(65)
+				FVeh3:SetSkin(skin2)
+			end
+
+			local FVeh4 = CreateVehicleEx("UralRace00", "Formula4_3", CVector(getPos("RaceSpec_2_4_loc")), 1100)
+			if FVeh4 then
+				FVeh4:SetExternalPathByName("Gonka_Spec_2_M")
+				FVeh4:SetRotation(Quaternion(0.005, 0.706, -0.001, 0.708))
+				FVeh4:SetCustomLinearVelocity(57)
+				FVeh4:SetForcedMaxTorque(800)
+				FVeh4:SetMaxSpeed(100.4)
+				FVeh4:SetCruisingSpeed(65)
+				FVeh4:SetSkin(skin3)
+			end
+
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetGamePositionOnGround(CVector(3439.506, 262.658, 3105.028))
+			end
 
 			TActivate("RaceSpec_cam05tr")
 			trigger:Deactivate()
@@ -2749,9 +2867,141 @@
 	<trigger Name="RaceSpec_cam05tr" active="0">
 		<event flypath="RaceSpec_cam05" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
+			local skin0 = GetVar("FormulaSkin0").AsInt
+			local skin1 = GetVar("FormulaSkin1").AsInt
+			local skin2 = GetVar("FormulaSkin2").AsInt
+			local skin3 = GetVar("FormulaSkin3").AsInt
 
+			for i=1,4 do
+			    local veh1=getObj("Formula"..i.."_3")
+			    if veh1 then
+					veh1:Remove()
+			    end
+			end
+
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetGamePositionOnGround(CVector(3768.964, 302.745, 2723.464))
+				PVeh:SetRotation(Quaternion(0.003, 0.905, 0.071, 0.420))
+			end
+
+			local FVeh1 = CreateVehicleEx("UralRace00", "Formula1_4", CVector(getPos("RaceSpec_3R_loc"))+CVector(0,1,0), 1100)
+			if FVeh1 then
+				FVeh1:SetExternalPathByName("Gonka_Spec_3_R")
+				FVeh1:SetRotation(Quaternion(0.003, 0.994, -0.003, -0.105))
+				FVeh1:SetCustomLinearVelocity(63)
+				FVeh1:SetForcedMaxTorque(800)
+				FVeh1:SetMaxSpeed(97)
+				FVeh1:SetCruisingSpeed(97)
+				FVeh1:SetSkin(skin0)
+			end
+
+			local FVeh2 = CreateVehicleEx("UralRace01", "Formula2_4", CVector(getPos("RaceSpec_3M_loc"))+CVector(0,1,0), 1100)
+			if FVeh2 then
+				FVeh2:SetExternalPathByName("Gonka_Spec_3_M")
+				FVeh2:SetRotation(Quaternion(0.003, 0.994, -0.003, -0.105))
+				FVeh2:SetCustomLinearVelocity(55)
+				FVeh2:SetForcedMaxTorque(800)
+				FVeh2:SetMaxSpeed(87)
+				FVeh2:SetCruisingSpeed(87)
+				FVeh2:SetSkin(skin1)
+			end
+
+			local FVeh3 = CreateVehicleEx("UralMansurRace", "Formula3_4", CVector(getPos("RaceSpec_3L_loc"))+CVector(0,1,0), 1100)
+			if FVeh3 then
+				FVeh3:SetForcedMaxTorque(800)
+				FVeh3:SetExternalPathByName("Gonka_Spec_3_L")
+				FVeh3:SetRotation(Quaternion(0.003, 0.994, -0.003, -0.105))
+				FVeh3:SetCustomLinearVelocity(60)
+				FVeh3:SetMaxSpeed(88)
+				FVeh3:SetCruisingSpeed(88)
+				FVeh3:SetSkin(skin2)
+			end
+
+			local FVeh4 = CreateVehicleEx("UralRace00", "Formula4_4", CVector(getPos("RaceSpec_3_4_loc"))+CVector(0,1,0), 1100)
+			if FVeh4 then
+				FVeh4:SetExternalPathByName("Gonka_Spec_3_L")
+				FVeh4:SetRotation(Quaternion(0.003, 0.994, -0.003, -0.105))
+				FVeh4:SetCustomLinearVelocity(52)
+				FVeh4:SetForcedMaxTorque(800)
+				FVeh4:SetMaxSpeed(76)
+				FVeh4:SetCruisingSpeed(76)
+				FVeh4:SetSkin(skin3)
+			end
+
+			TActivate("RaceSpec_cam06tr")
 
 			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RaceSpec_cam06tr" active="0">
+		<event flypath="RaceSpec_cam06" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			for i=1,4 do
+			    local veh1=getObj("Formula"..i.."_4")
+			    if veh1 then
+					veh1:Remove()
+			    end
+			end
+
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetGamePositionOnGround(CVector(4030.250, 280.113, 2165.785))
+				PVeh:SetRotation(Quaternion(0.005, -0.998, -0.000, 0.056))
+			end
+
+			local myArray = {1,2,3,4}
+			local winnum = GetVar("WinningNumber").AsInt
+			table.remove(myArray, winnum)
+
+			for i=1,3 do
+  				local side = {"LAST","M","R"}
+				local speed = {"43", "37", "49"}
+  				local veh1=getObj("Formula"..myArray[i])
+  				if veh1 then
+    				veh1:SetExternalPathByName("Gonka_Spec_4_0_"..side[i])
+					veh1:SetCustomLinearVelocity(speed[i])
+  				end
+			end
+
+			local vehWiener = getObj("Formula"..winnum)
+			if vehWiener then
+  				vehWiener:SetExternalPathByName("Gonka_Spec_4_0_L")
+				vehWiener:SetCustomLinearVelocity(59)
+			end
+
+			TActivate("CinematicMSGWinner")
+			TActivate("RaceSpec_FinishPaths")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="CinematicMSGWinner" active="0">
+		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="CheckPoint1_loc" />
+		<script>
+        local winnum = GetVar("WinningNumber").AsInt
+
+		AddCinematicMessage(7770+winnum, 0.2)
+
+        trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="RaceSpec_FinishPaths"	active="0">
+	<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="CheckPoint1_loc" />
+		<script>
+			local amount = trigger:GetTriggeredObjectAmount()
+			local car = {}
+
+			for i=0,amount do
+			car[i] = GetEntityByID(trigger:GetTriggeredObjectID(i))
+				if car[i] then
+					car[i]:SetCruisingSpeed(GetVar("EndRaceSpeed").AsInt)
+					SetVar("EndRaceSpeed", GetVar("EndRaceSpeed").AsInt-1)
+				end
+			end
 		</script>
 	</trigger>
 
@@ -2762,6 +3012,16 @@
 			RestoreAllToleranceStatus()
 
 			SetCameraBehindPlayerVehicle()
+
+			TDeactivate("RaceSpec_FinishPaths")
+			TActivate("BettingCheck")
+
+			for i=1,4 do
+			    local veh1=getObj("Formula"..i)
+			    if veh1 then
+					veh1:Remove()
+			    end
+			end
 
 			trigger:Deactivate()
 		</script>

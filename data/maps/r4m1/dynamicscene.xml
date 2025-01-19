@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="1159">
+	LastId="1172">
 	<TargetNamesForDestroy
 		Names="urod1 urod2 urod3 urod4 urod5 urod6 urod7 urod8 urod9" />
 
@@ -20401,10 +20401,6 @@
 		Radius="10.000" />
 
 	<Object
-		Belong="1100"
-		Prototype="someRecollection" />
-
-	<Object
 		Name="RaceSpec_1L_loc"
 		Belong="1100"
 		Prototype="genericLocation"
@@ -20423,5 +20419,100 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="3339.405 291.429 1627.923"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_1_1M_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3323.152 290.904 1647.305"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_2L_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3289.599 294.991 3382.849"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_2M_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3290.365 294.887 3365.217"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_2R_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3290.684 294.756 3350.879"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_2_4_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3267.257 295.161 3359.453"
+		Radius="1.000" />
+
+	<Object
+		Belong="1100"
+		Prototype="someRecollection" />
+
+    <Object
+		Name="RaceSpec_3L_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="4079.874 281.099 2836.137"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_3M_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="4064.294 281.191 2835.825"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_3R_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="4048.829 280.819 2834.919"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_3_4_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="4074.148 281.373 2854.002"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_4L_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="4201.696 280.433 2376.793"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_4M_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="4218.396 281.932 2394.766"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_4R_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="4197.059 281.643 2408.049"
+		Radius="1.000" />
+
+	<Object
+		Name="RaceSpec_4LAST_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="4208.708 283.670 2426.465"
 		Radius="1.000" />
 </DynamicScene>
