@@ -430,7 +430,7 @@
 		name="Dlg_pl_001591"
 		text="Даже если ты доставил Серго блокиратор - то, что он его не довёз, это уже не твоя вина."
 		role="PLAYER"
-		scriptResult="SetVar('ChujezemetsTalk', 5);" />
+		scriptResult="SetVar('ChujezemetsTalk', 5); StartConversation('Gadad_Mansur')" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека/Вторая часть-->
 	<Reply
 		name="Dlg_npc_001594"
@@ -455,7 +455,7 @@
 		name="Dlg_pl_001597"
 		text="Я тебя понял. Мансур, после того, что сотворил, ты всё ещё хочешь в Пустыню Смерти? Опять убежишь в самый неподходящий момент?"
 		role="PLAYER"
-		scriptResult="SetVar('ChujezemetsTalk', 6);" />
+		scriptResult="SetVar('ChujezemetsTalk', 6); StartConversation('Gadad_Mansur')" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча/Первая часть диалога-->
 	<Reply
 		name="Dlg_npc_001536"
@@ -1345,7 +1345,20 @@
 	<Reply
 		name="Dlg_pl_001657"
 		text="Нет, спасибо, я на трибуну."
-		role="PLAYER" />
+		role="PLAYER"
+		nextReplies="Dlg_npc_002083" />
+
+	<Reply
+		name="Dlg_npc_002083"
+		text="Тогда прошу пройти на ваше место."
+		role="NPC"
+		nextReplies="Dlg_pl_002084" />
+
+	<Reply
+		name="Dlg_pl_002084"
+		text="Спасибо! Удачи, Мансур!"
+		role="PLAYER"
+		scriptResult="CreateRacers(); LeaveTown(true)" />
 
 	<Reply
 		name="Dlg_pl_001656"
@@ -4406,7 +4419,7 @@
 		name="Dlg_pl_001587"
 		text="Мансур, не перебивай! Я из-за тебя ход мыслей потерял! А, точно. Оттуда он так и не вернулся. Самое главное, что его, кажется, Серго знаком не только нам с тобой. Так ведь?"
 		role="PLAYER"
-		scriptResult="SetVar('MansurTalk', 1); StartConversation('AivenJrGadad')" />
+		scriptResult="SetVar('MansurTalk', 1); StartConversation('Chujezemets')" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/После возвращения из Зармека/Вторая часть-->
 	<Reply
 		name="Dlg_npc_001592"
@@ -4419,7 +4432,7 @@
 		name="Dlg_pl_001593"
 		text="Надо обдумать и подготовиться к возможной поездке в Пустыню Смерти. Чужеземец, ты же прибыл к нам через Пустыню Смерти, да?"
 		role="PLAYER"
-		scriptResult="SetVar('MansurTalk', 2); StartConversation('AivenJrGadad')" />
+		scriptResult="SetVar('MansurTalk', 2); StartConversation('Chujezemets')" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/После возвращения из Зармека/Третья часть-->
 	<Reply
 		name="Dlg_npc_001598"
@@ -5059,7 +5072,7 @@
 
 	<Reply
 		name="Dlg_pl_001623"
-		text="Чужеземец приехал к нам как раз через Пустыню Смерти. Говорит там примерно так-же."
+		text="Чужеземец приехал к нам как раз через Пустыню Смерти. Говорит там примерно так-же, как в тех краях. Уж точно не опаснее."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001624" />
 
