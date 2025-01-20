@@ -1381,10 +1381,24 @@
 
 		TActivate("AfterRaceRolik_cam02")
 		TActivate("AfterRaceRolik_End")
+		
+		if QuestStatus("GonkaUral")==Q_COMPLETED then
+			AddCinematicMessage( 75, 0.25 )
+			AddCinematicMessage( 76, 0.25 )
+			AddCinematicMessage( 77, 0.25 )
+		elseif QuestStatus("GonkaUralSpec")==Q_COMPLETED then
+			local WinNumber = GetVar("WinningNumber").AsInt
+			if WinNumber == 3 then
+				AddCinematicMessage( 752, 0.25 )
+				AddCinematicMessage( 762, 0.25 )
+				AddCinematicMessage( 772, 0.25 )
+			else
+				AddCinematicMessage( 753, 0.25 )
+				AddCinematicMessage( 763, 0.25 )
+				AddCinematicMessage( 773, 0.25 )
+			end
+		end
 
-		AddCinematicMessage( 75, 0.25 )
-		AddCinematicMessage( 76, 0.25 )
-		AddCinematicMessage( 77, 0.25 )
 		AddCinematicMessage( 78, 0.25 )
 		AddCinematicMessage( 79, 0.25 )
 
@@ -2566,6 +2580,12 @@
 		<script>
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetGamePositionOnGround(CVector(3648.640, 263.625, 1836.151))
+				PVeh:SetRotation(Quaternion(0.003, 1.000, -0.001, 0.029))
+			end
+
 			RaceCutsceneCams()
 
 			PlayCustomMusic("RaceQuest")
@@ -2985,6 +3005,8 @@
 
 		AddCinematicMessage(7770+winnum, 0.2)
 
+		TActivate("BettingCheck")
+
         trigger:Deactivate()
 		</script>
 	</trigger>
@@ -3005,7 +3027,7 @@
 		</script>
 	</trigger>
 
-	<trigger	Name="RaceStartSpec_cs_end"	active="0">
+	<trigger	Name="RaceSpec_cs_end"	active="0">
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
@@ -3013,8 +3035,22 @@
 
 			SetCameraBehindPlayerVehicle()
 
+			StopPlayingCustomMusic()
+
 			TDeactivate("RaceSpec_FinishPaths")
-			TActivate("BettingCheck")
+			TActivate("AfterRaceRolik_begin")
+
+			local ManCar = CreateVehicleEx("UralMansur","MansurCar",CVector(4615.387, 280.066, 2194.772), 1090)
+			if ManCar then
+			    ManCar:SetRotation(Quaternion(0.000, 0.993, 0.001, -0.118))
+				ManCar:SetSkin(1)
+			end
+
+			local PlCar = GetPlayerVehicle() 
+			if PlCar then
+				PlCar:SetGamePositionOnGround(CVector(4609.427, 280.077, 2162.831))
+				PlCar:SetRotation(Quaternion(0.001, 0.157, 0.000, -0.988))
+			end
 
 			for i=1,4 do
 			    local veh1=getObj("Formula"..i)
@@ -3022,6 +3058,8 @@
 					veh1:Remove()
 			    end
 			end
+
+			CompleteQuest("GonkaUralSpec")
 
 			trigger:Deactivate()
 		</script>

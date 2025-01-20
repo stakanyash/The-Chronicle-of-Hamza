@@ -282,7 +282,7 @@
 				Prototype="NPC"
 				ModelName="r4_man"
 				cfg="171"
-				helloReplyNames="Dlg_npc_001319 Dlg_npc_001302 Dlg_npc_001492 Dlg_npc_001522"
+				helloReplyNames="Dlg_npc_001319 Dlg_npc_001302 Dlg_npc_001492 Dlg_npc_001522 Dlg_npc_001602"
 				SpokenCount="1" />
 
 			<Object

@@ -499,6 +499,66 @@
 		time="5" />
 
 	<string
+		id="752"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="ÌÀÍÑÓÐ|ßõà-à-à! Âîò ýòî ãîíêà âûäàëàñü! Òàê ÿ åù¸ è ïîáåäèë â íåé! Âàó!"
+		sound=""
+		time="5" />
+
+	<string
+		id="762"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ÕÀÌÇÀ|Ìîëîäåö, Ìàíñóð! Ïðèðîæä¸ííûé ãîíùèê!"
+		sound=""
+		time="4" />
+
+	<string
+		id="772"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="ÌÀÍÑÓÐ|Íó ÷òî? Êóäà äàëüøå ïîåäåì?"
+		sound=""
+		time="3" />
+
+	<string
+		id="753"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="ÌÀÍÑÓÐ|Âîò øàéòàí! Ïðÿì íåìíîãî íå óñïåë!"
+		sound=""
+		time="5" />
+
+	<string
+		id="763"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ÕÀÌÇÀ|Íå îãîð÷àéñÿ, Ìàíñóð, â ñëåäóþùèé ðàç ïîáåäà áóäåò çà òîáîé!"
+		sound=""
+		time="4" />
+
+	<string
+		id="773"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="ÌÀÍÑÓÐ|Ýõ, ëàäíî, íå âñåãäà æå ïîáåæäàòü. Êóäà äàëüøå ïîåäåì?"
+		sound=""
+		time="5" />
+
+	<string
 		id="82"
 		modelName="r4_man"
 		modelSkin="0"
@@ -1376,9 +1436,9 @@
 		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
 		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
 		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
-		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Íèêèòà «ñòàêàí» Êàøëåâ||@ffffffffñþæåò, êâåñòû, ñêðèïòû| | |@ffffa600Ñåðàôèì «Varisane» Øàãèí||@ffffffffòåêñòîâûå ïðàâêè, òåñòèðîâàíèå| | |@ffffa600Êàðåí Ãåâîíäÿí||@ffffffffòåêñòîâûå ïðàâêè| | |@ffffa600Åâãåíèé «E Jet» Êîë÷èí||@ffffffffïîìîùü â ðàçðàáîòêå| | |@ffffa600Ãåîðãèé «Ýìåð» Æóêîâ||@ffffffffîçâó÷êà ðàññêàç÷èêà| | |@ffffa600Çàèìñòâîâàíèÿ||@ffffffffÏîëíîðàçìåðíàÿ ìîäåëü Ñåðãî||@ffffa600Àâòîð:|@ffffffffÌàêñèì «Spok» Áåðäíèêîâ| | |@ffffffffÝôôåêòû óõóäøàþùåãîñÿ ñîñòîÿíèÿ âçÿòû èç|@ffffffffìîäèôèêàöèè @ffffa600«possesed»||@ffffa600Àâòîðû:|@ffffffffÀëåêñåé «__nEmPoBu4__» Ñìèðíîâ|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffa600Îãðîìíàÿ @ffffffffáëàãîäàðíîñòü ñîîáùåñòâó @ffffa600Deus Ex Machina|@ffffffffçà îêàçàííóþ ïîìîùü ïðè ðàçðàáîòêå| | |@ffffa600Ñïàñèáî çà èãðó!"
+		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Íèêèòà «ñòàêàí» Êàøëåâ||@ffffffffñþæåò, êâåñòû, ñêðèïòû| | |@ffffa600Ñåðàôèì «Varisane» Øàãèí||@ffffffffòåêñòîâûå ïðàâêè, òåñòèðîâàíèå, ïîìîùü â ðàçðàáîòêå| | |@ffffa600Êàðåí Ãåâîíäÿí||@ffffffffòåêñòîâûå ïðàâêè| | |@ffffa600Åâãåíèé «E Jet» Êîë÷èí||@ffffffffïîìîùü â ðàçðàáîòêå| | |@ffffa600Ãåîðãèé «Ýìåð» Æóêîâ||@ffffffffîçâó÷êà ðàññêàç÷èêà| | |@ffffa600Èâàí «Carsen» Áóðÿøêèí||@ffffffffïîìîùü â ðàçðàáîòêå| | |@ffffa600Àíàñòàñèÿ «k0waidesu»||@ffffffffïîìîùü ñ äèàëîãàìè| | |@ffffa600Çàèìñòâîâàíèÿ||@ffffffffÏîëíîðàçìåðíàÿ ìîäåëü Ñåðãî||@ffffa600Àâòîð:|@ffffffffÌàêñèì «Spok» Áåðäíèêîâ| | |@ffffffffÝôôåêòû óõóäøàþùåãîñÿ ñîñòîÿíèÿ âçÿòû èç|@ffffffffìîäèôèêàöèè @ffffa600«possesed»||@ffffa600Àâòîðû:|@ffffffffÀëåêñåé «__nEmPoBu4__» Ñìèðíîâ|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffa600Îãðîìíàÿ @ffffffffáëàãîäàðíîñòü ñîîáùåñòâó @ffffa600Deus Ex Machina|@ffffffffçà îêàçàííóþ ïîìîùü ïðè ðàçðàáîòêå| | |@ffffa600Ñïàñèáî çà èãðó!"
 		sound=""
 		fontSize="18"
 		scrollSpeed="2.5"
-		time="36" />
+		time="47" />
 </resource>

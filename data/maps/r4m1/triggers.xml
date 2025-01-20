@@ -18,6 +18,7 @@
 			SetVar("BuharaSaveTalk", 0)
 			SetVar("ChujezemetsTalk", 0)
 			SetVar("MansurTalk", 0)
+			SetVar("BettingCoeff", 2)
 			SetVar("EndRaceSpeed", 10)
 			
 		    trigger:Deactivate()
@@ -2538,6 +2539,20 @@
 
 			if WinNumber == BetNumber then
 				AddPlayerMoney(BetAmount * BetCoeff)
+			else
+				println("Your bet "..BetNumber.." is lost!")
+			end
+
+			-- Debug --
+
+			println("Betting amount is: "..BetAmount)
+			println("Betting number is: "..BetNumber)
+			println("Winning number is: "..WinNumber)
+
+			if WinNumber == BetNumber then
+				println("Winning amount is: "..BetAmount*BetCoeff)
+			else
+				println("Winning amount is: 0")
 			end
 
 			trigger:Deactivate()  
