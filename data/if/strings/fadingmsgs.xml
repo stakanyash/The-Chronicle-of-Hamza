@@ -177,6 +177,26 @@
 		value="Теперь вам доступна покупка нового авто, кабины или кузова." />
 
 	<string
+		id="fm_repel_timer_180sec"
+		value="У вас осталось 3 минуты." />
+
+	<string
+		id="fm_repel_timer_120sec"
+		value="У вас осталось 2 минуты." />
+
+	<string
+		id="fm_repel_timer_60sec"
+		value="У вас осталось 1 минута." />
+
+	<string
+		id="fm_repel_timer_30sec"
+		value="У вас осталось 30 секунд." />
+
+	<string
+		id="fm_repel_timer_15sec"
+		value="У вас осталось 15 секунд." />
+
+	<string
 		id="fm_sick_1ststage"
 		value="Вы слишком далеко отъехали от пустыни. Ваше состояние ухудшается." />
 

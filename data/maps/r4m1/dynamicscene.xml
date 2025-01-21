@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="1172">
+	LastId="1176">
 	<TargetNamesForDestroy
 		Names="urod1 urod2 urod3 urod4 urod5 urod6 urod7 urod8 urod9" />
 
@@ -20457,10 +20457,6 @@
 		Radius="1.000" />
 
 	<Object
-		Belong="1100"
-		Prototype="someRecollection" />
-
-    <Object
 		Name="RaceSpec_3L_loc"
 		Belong="1100"
 		Prototype="genericLocation"
@@ -20515,4 +20511,36 @@
 		Prototype="genericLocation"
 		Pos="4208.708 283.670 2426.465"
 		Radius="1.000" />
+
+	<Object
+		Belong="1100"
+		Prototype="someRecollection" />
+
+	<Object
+		Name="Madman_invasion_loc_0"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="8018.006 278.108 3600.117"
+		Radius="10.000" />
+
+	<Object
+		Name="Madman_invasion_loc_1"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="7965.903 282.554 3611.994"
+		Radius="10.000" />
+
+	<Object
+		Name="Madman_invasion_loc_2"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="7903.702 289.771 3628.410"
+		Radius="10.000" />
+
+	<Object
+		Name="Madman_invasion_loc_3"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="7859.735 292.609 3642.084"
+		Radius="10.000" />
 </DynamicScene>

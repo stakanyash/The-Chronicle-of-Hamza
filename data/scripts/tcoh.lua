@@ -590,3 +590,22 @@ function CreateMansurandAivenAttack()
 	SetTolerance(1090, 1062, RS_ENEMY)
 	SetTolerance(1095, 1062, RS_ENEMY)
 end
+
+function MadmanCutsceneSpawn()
+	local Madman1 = CreateVehicleEx("TankBez","MadmanInvaders0",CVector(getPos("Madman_invasion_loc_0")), 1062)
+	local Madman2 = CreateVehicleEx("TankBez","MadmanInvaders1",CVector(getPos("Madman_invasion_loc_1")), 1062)
+	local Madman3 = CreateVehicleEx("TankBez","MadmanInvaders2",CVector(getPos("Madman_invasion_loc_2")), 1062)
+	local Madman4 = CreateVehicleEx("TankBez","MadmanInvaders3",CVector(getPos("Madman_invasion_loc_3")), 1062)
+
+	for i=0,3 do
+		local MadmanCar = getObj("MadmanInvaders"..i)
+		if MadmanCar then
+			MadmanCar:SetRandomSkin()
+			MadmanCar:SetRotation(Quaternion(-0.049, -0.545, -0.008, 0.837))
+			MadmanCar:SetExternalPathByName("Madman_Invasion_Path")
+			MadmanCar:SetCruisingSpeed(25)
+			MadmanCar:SetMaxSpeed(25)
+			MadmanCar:setGodMode(1)
+		end
+	end	
+end

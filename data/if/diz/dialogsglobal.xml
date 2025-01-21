@@ -406,7 +406,44 @@
 		text="[Шараф может знать, где находятся бухарцы???]"
 		role="PLAYER"
 		scriptResult="CompleteQuest('TalkWithAkil_quest'); TakeQuest('SpeakToSharaf_quest'); EndConversation()" />
-<!--Root/r4m1/The Chronicle of Hamza/Шараф--><!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев--><!--Root/r4m1/The Chronicle of Hamza/Марио--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека/Первая часть-->
+<!--Root/r4m1/The Chronicle of Hamza/Шараф--><!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев--><!--Root/r4m1/The Chronicle of Hamza/Марио--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Вернулись от отца-->
+	<Reply
+		name="Dlg_npc_002085"
+		text="Ну что? Как съездил?"
+		role="NPC"
+		scriptCondition="GetVar('ChujezemetsTalk').AsInt==6 and QuestStatus('GoToMansurandAivenJr_quest')==Q_TAKEN "
+		nextReplies="Dlg_pl_002086" />
+
+	<Reply
+		name="Dlg_pl_002086"
+		text="Рассказал отцу что было с нами на востоке и о наших дальнейших планах. Он меня без всяких сомнений поддержал. А где Мансур?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002087" />
+
+	<Reply
+		name="Dlg_npc_002087"
+		text="Его отец прямо перед твоим приездом куда-то увёл. Весь какой-то взволнованный был."
+		role="NPC"
+		nextReplies="Dlg_pl_002088" />
+
+	<Reply
+		name="Dlg_pl_002088"
+		text="А куда он его увёл?!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002089" />
+
+	<Reply
+		name="Dlg_npc_002089"
+		text="Куда-то в ту сторону. А ты чего взволновался?"
+		role="NPC"
+		nextReplies="Dlg_pl_002090" />
+
+	<Reply
+		name="Dlg_pl_002090"
+		text="Его отец один из тех, кто следит за безопасностью в регионе! Если что-то случилось, то неудивительно, что он взво..."
+		role="PLAYER"
+		scriptResult="SetVar('ChujezemetsTalk', 7); StartConversation('Gadad_Mansur')" />
+<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека/Первая часть-->
 	<Reply
 		name="Dlg_npc_001588"
 		text="Да, я сравнительно недавно отвозил Серго посылку. Он тогда сказал, что это его последняя поездка в наши края."
@@ -4359,7 +4396,44 @@
 		text="А кому из нас они не надоели?!"
 		role="PLAYER"
 		scriptResult="StartConversation('Chujezemets')" />
-<!--Root/r4m1/The Chronicle of Hamza/Мансур/После возвращения из Зармека--><!--Root/r4m1/The Chronicle of Hamza/Мансур/После возвращения из Зармека/Первая часть-->
+<!--Root/r4m1/The Chronicle of Hamza/Мансур/После возвращения из Зармека--><!--Root/r4m1/The Chronicle of Hamza/Мансур/Вернулись от отца-->
+	<Reply
+		name="Dlg_npc_002091"
+		text="ХАМЗА!!! Кажется мы наворотили делов..."
+		role="NPC"
+		scriptCondition="GetVar('MansurTalk').AsInt==3 and QuestStatus('GoToMansurandAivenJr_quest')==Q_TAKEN "
+		nextReplies="Dlg_pl_002092" />
+
+	<Reply
+		name="Dlg_pl_002092"
+		text="Что? Ты о чём?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002093" />
+
+	<Reply
+		name="Dlg_npc_002093"
+		text="С востока на нас движется массированная колонна машин, похоже на то, что безумцы настроены серьёзно! Не поверю, что это простое совпадение, мне кажется, что они хотят отомстить за наш визит."
+		role="NPC"
+		nextReplies="Dlg_pl_002094" />
+
+	<Reply
+		name="Dlg_pl_002094"
+		text="Безумцы и организованность это конечно на первый взгляд несовместимые вещи, но учитывая их переодические организованные набеги на города, то это уже не кажется бредовым. Что будем делать?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002095" />
+
+	<Reply
+		name="Dlg_npc_002095"
+		text="Пока не знаю, мне отец не сказал сколько их вообще движется. Может их там столько, что даже если все в регионе пойдут против них, у нас нет и шанса!"
+		role="NPC"
+		nextReplies="Dlg_pl_002096" />
+
+	<Reply
+		name="Dlg_pl_002096"
+		text="Плохо дело..."
+		role="PLAYER"
+		scriptResult="SetVar('MansurTalk', 4); TActivate('Madman_invasion_cs'); LeaveTown(true)" />
+<!--Root/r4m1/The Chronicle of Hamza/Мансур/После возвращения из Зармека/Первая часть-->
 	<Reply
 		name="Dlg_npc_001578"
 		text="Вы вернулись!"

@@ -24,6 +24,21 @@
 		    trigger:Deactivate()
 		</script>
 	</trigger>
+
+	<trigger	Name="TimersCheck"	active="1">
+		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if QuestStatus("RepelMadmanInvasionAliham_quest")==Q_TAKEN then
+				local AlihamTimer = GetVar("AlihamTimerIsOn").AsInt
+
+				if AlihamTimer > 0 then
+					TActivate("RepelAliham_timer")
+				end
+			end
+			
+		    trigger:Deactivate()
+		</script>
+	</trigger>
 <!--
 **************************************************************************************************
 ** ׁ‏זוע
@@ -2554,6 +2569,99 @@
 			else
 				println("Winning amount is: 0")
 			end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelAliham_timer" active="0">
+		<event timeout="2" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_180sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_180sec" )
+
+			SetVar("AlihamTimerIsOn", 1)
+
+			TActivate("RepelAliham_timer_120sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelAliham_timer_120sec" active="0">
+		<event timeout="60" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_120sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_120sec" )
+
+			TActivate("RepelAliham_timer_60sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelAliham_timer_60sec" active="0">
+		<event timeout="60" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_60sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_60sec" )
+
+			TActivate("RepelAliham_timer_30sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelAliham_timer_30sec" active="0">
+		<event timeout="30" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_30sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_30sec" )
+
+			TActivate("RepelAliham_timer_15sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelAliham_timer_15sec" active="0">
+		<event timeout="15" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_15sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_15sec" )
+
+			TActivate("RepelAliham_timerexpires")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelAliham_timerexpires" active="0">
+		<event timeout="15" eventid="GE_TIME_PERIOD" />
+		<script>
+			TActivate("RepelAlihamFailed_cs")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	-- Test --
+
+	<trigger Name="ExitOff" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			local a = GetEntityByName("ExitFromMapToR4M2_loc")
+			if a then a:SetProperty("Active",0) end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="ExitOn" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			local a = GetEntityByName("ExitFromMapToR4M2_loc")
+			if a then a:SetProperty("Active",1) end
 
 			trigger:Deactivate()  
 		</script>

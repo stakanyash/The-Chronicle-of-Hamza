@@ -540,6 +540,20 @@
 		SubQuestsCondition="and"
 		CheckAll="0"
 		ConditionToGive="all complete" />
+<!--Root/r4m1/Сюжетные/The Chronicle of Hamza/Вторжение безумцев-->
+	<quest
+		Name="RepelMadmanInvasion_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete">
+		<quest
+			Name="RepelMadmanInvasionAliham_quest"
+			Automatic="0"
+			SubQuestsCondition="and"
+			CheckAll="0"
+			ConditionToGive="all complete" />
+	</quest>
 <!--Root/r3m2/Сюжетные--><!--Root/r3m2/Опциональнае--><!--Root/r3m2/Опциональнае/Поле со знаками-->
 	<quest
 		Name="q_PlaceWithSign"

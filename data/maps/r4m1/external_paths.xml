@@ -4360,6 +4360,27 @@
 	</Path>
 
 	<Path
+		Name="Madman_Invasion_Path">
+		<Point
+			coord="7792.468 3666.351" />
+
+		<Point
+			coord="7685.958 3719.733" />
+
+		<Point
+			coord="7611.687 3733.459" />
+
+		<Point
+			coord="7543.360 3715.644" />
+
+		<Point
+			coord="7464.378 3695.988" />
+
+		<Point
+			coord="7315.470 3676.023" />
+	</Path>
+
+	<Path
 		Name="MansurStartGame_1">
 		<Point
 			coord="2073.508 3744.864" />

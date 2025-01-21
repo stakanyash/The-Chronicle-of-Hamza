@@ -1328,7 +1328,100 @@
 		value="ХАМЗА|Спасибо, и вам удачи!"
 		sound=""
 		time="4" />
+
+	<string
+		id="152"
+		modelAutosized="true"
+		modelName="gadget_12"
+		modelSlot="1"
+		value="РАЦИЯ|Внимание всем! С востока произошло вторжение большого количества вооруженной техники!"
+		sound=""
+		time="7" />
 	
+	<string
+		id="153"
+		modelAutosized="true"
+		modelName="gadget_12"
+		modelSlot="1"
+		value="РАЦИЯ|Атаковано несколько населённых пунктов, такие как:"
+		sound=""
+		time="4" />
+
+	<string
+		id="154"
+		modelAutosized="true"
+		modelName="gadget_12"
+		modelSlot="1"
+		value="РАЦИЯ|Нефтеград."
+		sound=""
+		time="3" />
+
+	<string
+		id="155"
+		modelAutosized="true"
+		modelName="gadget_12"
+		modelSlot="1"
+		value="РАЦИЯ|Кеф."
+		sound=""
+		time="3" />
+
+	<string
+		id="156"
+		modelAutosized="true"
+		modelName="gadget_12"
+		modelSlot="1"
+		value="РАЦИЯ|Алихам."
+		sound=""
+		time="3" />
+
+	<string
+		id="157"
+		modelAutosized="true"
+		modelName="gadget_12"
+		modelSlot="1"
+		value="РАЦИЯ|А так-же известно о движении колонны атакующих в сторону Гадада!"
+		sound=""
+		time="5" />
+
+	<string
+		id="158"
+		modelAutosized="true"
+		modelName="gadget_12"
+		modelSlot="1"
+		value="РАЦИЯ|Всех просим проявлять максимальную бдительность, а тех, кто может сражаться призываем встать на защиту!"
+		sound=""
+		time="6" />
+
+	<string
+		id="159"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Что будем делать?"
+		sound=""
+		time="5" />
+
+	<string
+		id="160"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Конечно сражаться! Что нам ещё остаётся? Смотреть как эти проклятые кельбы будут убивать наших близких?!"
+		sound=""
+		time="7" />
+
+	<string
+		id="161"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Убедил, поехали сначала в Алихам, а там встретим тех, кто идёт на Гадад!"
+		sound=""
+		time="5" />
+
 	<string
 		id="8801"
 		value="Вы желаете покинуть эту область?"
@@ -1374,6 +1467,16 @@
 	<string
 		id="8908"
 		value="Один из бухарцев погиб." 
+		numButtons="1"/>
+
+	<string
+		id="8909"
+		value="Обратите внимание!||Ручное сохранение на время данного квеста отключено." 
+		numButtons="1"/>
+
+	<string
+		id="8910"
+		value="Обратите внимание!||На отбитие каждого города/деревни у вас есть не более трёх минут!" 
 		numButtons="1"/>
 
 	<string

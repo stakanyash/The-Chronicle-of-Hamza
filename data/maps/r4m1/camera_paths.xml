@@ -339,4 +339,40 @@
 		<Point  coord="4116.526 314.953 2022.447" rotation="-0.184 -0.461 0.098 0.862"/>
 	</Path>
 
+	<Path Name = "madmaninvasion_cam01">
+		<Point  coord="5458.194 263.455 5257.804" rotation="-0.000 0.975 0.000 -0.223"/>
+		<Point  coord="6177.364 271.499 4102.187" rotation="0.009 -0.842 -0.015 0.539"/>
+		<Point  coord="7310.247 301.714 3698.250" rotation="-0.026 -0.703 0.026 0.710"/>
+	</Path>
+
+	<Path Name = "madmaninvasion_cam01_1">
+		<Point  coord="7310.247 301.714 3698.250" rotation="-0.026 -0.703 0.026 0.710"/>
+		<Point  coord="7399.420 296.881 3648.188" rotation="-0.058 -0.503 0.034 0.861"/>
+	</Path>
+
+	<Path Name = "madmaninvasion_cam02">
+		<Point  coord="6531.243 346.151 3712.458" rotation="0.018 0.977 -0.190 -0.092"/>
+		<Point  coord="6385.931 346.151 3640.168" rotation="0.069 0.905 -0.160 -0.389"/>
+	</Path>
+
+	<Path Name = "madmaninvasion_cam03">
+		<Point  coord="5818.321 348.624 5036.750" rotation="-0.055 -0.599 0.041 0.798"/>
+		<Point  coord="5988.266 348.624 4762.961" rotation="-0.055 -0.370 0.022 0.927"/>
+	</Path>
+
+	<Path Name = "madmaninvasion_cam04">
+		<Point  coord="5110.568 332.812 5428.808" rotation="-0.123 0.386 -0.052 0.913"/>
+		<Point  coord="5190.461 332.812 5601.368" rotation="-0.097 0.677 -0.090 0.724"/>
+	</Path>
+
+	<Path Name = "madmaninvasion_cam05">
+		<Point  coord="5361.517 275.200 6333.612" rotation="0.013 -0.165 -0.002 0.986"/>
+		<Point  coord="5808.040 304.807 6763.097" rotation="0.017 0.115 0.002 0.993"/>
+	</Path>
+
+	<Path Name = "madmaninvasion_cam06">
+		<Point  coord="5757.889 256.976 7125.502" rotation="-0.091 0.194 -0.018 0.977"/>
+		<Point  coord="5727.601 255.015 7135.667" rotation="-0.057 -0.186 0.011 0.981"/>
+	</Path>
+
 </Paths>
