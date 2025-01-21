@@ -1388,7 +1388,7 @@
 		modelAutosized="true"
 		modelName="gadget_12"
 		modelSlot="1"
-		value="РАЦИЯ|Всех просим проявлять максимальную бдительность, а тех, кто может сражаться призываем встать на защиту!"
+		value="РАЦИЯ|Всех тех, кто может сражаться призываем встать на защиту нашего региона!"
 		sound=""
 		time="6" />
 
@@ -1421,6 +1421,109 @@
 		value="МАНСУР|Убедил, поехали сначала в Алихам, а там встретим тех, кто идёт на Гадад!"
 		sound=""
 		time="5" />
+
+	<string
+		id="162"
+		sound="data\sounds\Speech\rolik\deadend_aliham.ogg"
+		value="|Вы не смогли защитить Алихам и были убиты вместе с другими, кто стоял на защите региона. Теперь вам уже никогда не достигнуть своей цели." 
+		time="1"/>
+
+	<string
+		id="163"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Алихам отбит. Быстрее в Гадад!"
+		sound=""
+		time="4" />
+
+	<string
+		id="164"
+		sound="data\sounds\Speech\rolik\deadend_gadad.ogg"
+		value="|Гадад не был защищён, и вы, как и другие, кто боролся за этот регион, погибли. Ваша цель теперь недостижима." 
+		time="1"/>
+
+	<string
+		id="165"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Пошли прочь от моего дома, шайтаны!"
+		sound=""
+		time="5" />
+
+	<string
+		id="166"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Быстрее в Кеф!"
+		sound=""
+		time="4" />
+
+	<string
+		id="167"
+		sound="data\sounds\Speech\rolik\deadend_kef.ogg"
+		value="|Вы не смогли уберечь Кеф и погибли вместе с другими защитниками региона, включая отца Хамзы. Ваша цель теперь неосуществима." 
+		time="1"/>
+
+	<string
+		id="168"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Отец! Ты как?"
+		sound=""
+		time="4" />
+
+	<string
+		id="169"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="0"
+		value="ОТЕЦ|Нормально, почти не пострадал. Где ты так долго был?!"
+		sound=""
+		time="5" />
+
+	<string
+		id="170"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Мы отбивали Алихам и Гадад. Приехали сюда как только смогли!"
+		sound=""
+		time="4" />
+
+	<string
+		id="171"
+		modelAutosized="true"
+		modelName="gadget_12"
+		modelSlot="1"
+		value="РАЦИЯ|Внимание! Внимание! Нефтеграду требуется срочная огневая поддержка, он близок к падению под напором атакующих! Все, кто может сражаться - срочно направляйтесь туда!"
+		sound=""
+		time="8" />
+
+	<string
+		id="172"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="0"
+		value="ОТЕЦ|Некогда нам разговаривать, все едем в Нефтеград!"
+		sound=""
+		time="5" />
+
+	<string
+		id="173"
+		sound="data\sounds\Speech\rolik\deadend_neftegrad.ogg"
+		value="|Нефтеград не удалось спасти. Взрыв, произошедший в ходе боя, уничтожил всех, кто находился поблизости. Ваша цель теперь невыполнима." 
+		time="1"/>
 
 	<string
 		id="8801"

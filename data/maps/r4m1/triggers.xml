@@ -2580,8 +2580,6 @@
 			AddFadingMsgId( "fm_repel_timer_180sec" )
 			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_180sec" )
 
-			SetVar("AlihamTimerIsOn", 1)
-
 			TActivate("RepelAliham_timer_120sec")
 
 			trigger:Deactivate()  
@@ -2642,6 +2640,22 @@
 			TActivate("RepelAlihamFailed_cs")
 
 			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger	Name="DestroyAliham"	active="0">
+		<event	timeout="1.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE01", -1, -1, CVector(4873.668, 252.000, 5706.798), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE02", -1, -1, CVector(4942.770, 252.000, 5666.800), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE03", -1, -1, CVector(4938.091, 252.000, 5627.208), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE04", -1, -1, CVector(4941.399, 252.908, 5589.747), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE05", -1, -1, CVector(4921.849, 252.175, 5573.271), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE06", -1, -1, CVector(4841.961, 252.555, 5604.830), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE07", -1, -1, CVector(4841.510, 250.771, 5633.459), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE08", -1, -1, CVector(4873.031, 258.205, 5686.577), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 

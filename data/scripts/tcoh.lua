@@ -592,10 +592,10 @@ function CreateMansurandAivenAttack()
 end
 
 function MadmanCutsceneSpawn()
-	local Madman1 = CreateVehicleEx("TankBez","MadmanInvaders0",CVector(getPos("Madman_invasion_loc_0")), 1062)
-	local Madman2 = CreateVehicleEx("TankBez","MadmanInvaders1",CVector(getPos("Madman_invasion_loc_1")), 1062)
-	local Madman3 = CreateVehicleEx("TankBez","MadmanInvaders2",CVector(getPos("Madman_invasion_loc_2")), 1062)
-	local Madman4 = CreateVehicleEx("TankBez","MadmanInvaders3",CVector(getPos("Madman_invasion_loc_3")), 1062)
+	local Madman1 = CreateVehicleEx("UralShot","MadmanInvaders0",CVector(getPos("Madman_invasion_loc_0")), 1062)
+	local Madman2 = CreateVehicleEx("BelazShot","MadmanInvaders1",CVector(getPos("Madman_invasion_loc_1")), 1062)
+	local Madman3 = CreateVehicleEx("UralShot","MadmanInvaders2",CVector(getPos("Madman_invasion_loc_2")), 1062)
+	local Madman4 = CreateVehicleEx("BelazShot","MadmanInvaders3",CVector(getPos("Madman_invasion_loc_3")), 1062)
 
 	for i=0,3 do
 		local MadmanCar = getObj("MadmanInvaders"..i)

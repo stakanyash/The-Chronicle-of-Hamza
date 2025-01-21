@@ -3074,7 +3074,7 @@
 
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			Fly("madmaninvasion_cam01", CINEMATIC_NO_AIM, nil, 13, 1,0)
+			Fly("madmaninvasion_cam01", CINEMATIC_NO_AIM, nil, 13, 0,0)
 			Fly("madmaninvasion_cam01_1", CINEMATIC_NO_AIM, nil, 4, 0,0)
 			Fly("madmaninvasion_cam02", CINEMATIC_NO_AIM, nil, 5, 0,0)
 			Fly("madmaninvasion_cam03", CINEMATIC_NO_AIM, nil, 5, 0,0)
@@ -3086,22 +3086,6 @@
 
 			PlayCustomMusic("Passage04")
 
-			TActivate("Madman_invasion_fade")
-			TActivate("Madman_invasion_cam01_1")
-			TActivate("Madman_invasion_cam02")
-			TActivate("Madman_invasion_cam03")
-			TActivate("Madman_invasion_cam04")
-			TActivate("Madman_invasion_cam05")
-			TActivate("Madman_invasion_cam06")
-			TActivate("Madman_invasion_cs_end")
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger	Name="Madman_invasion_fade"	active="0">
-		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
-		<script>
 			AddCinematicMessage( 152, 3 )
 
 			local PVeh = GetPlayerVehicle()
@@ -3117,16 +3101,57 @@
 				MCar:SetRotation(Quaternion(-0.000, 0.939, -0.000, 0.343))
 			end
 
+			local CCar = CreateVehicleEx("BelazShot","AivenCar",CVector(5749.218, 251.050, 7186.484), 1095)
+			if CCar then
+				CCar:SetSkin(1)
+				CCar:SetRotation(Quaternion(-0.003, -0.996, 0.002, 0.091))
+			end
+
 			MadmanCutsceneSpawn()
+
+			TActivate("Madman_invasion_cam01_1")
+			TActivate("Madman_invasion_cam02")
+			TActivate("Madman_invasion_cam03")
+			TActivate("Madman_invasion_cam04")
+			TActivate("Madman_invasion_cam05")
+			TActivate("Madman_invasion_cam06")
+			TActivate("Madman_invasion_cs_end")
 
 			trigger:Deactivate()
 		</script>
 	</trigger>
 
+	--TODO: add vehicles on cam03-cam04--
+
 	<trigger Name="Madman_invasion_cam01_1" active="0">
 		<event flypath="madmaninvasion_cam01_1" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
 			AddCinematicMessage( 153, 0.25 )
+
+			local Attackers = CreateTeam("Neftegrad_attackers",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+			local Defenders = CreateTeam("Neftegrad_defend",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+
+			for i=0,1 do
+				local DVehs = getObj("Neftegrad_defend_vehicle_"..i)
+				if DVehs then
+					DVehs:SetGamePositionOnGround(getPos("Neftegrad_defend_loc_"..i))
+					DVehs:SetRandomSkin()
+					DVehs:SetRotation(Quaternion(-0.000, -0.181, -0.005, 0.984))
+					DVehs:setGodMode(1)
+				end
+			end
+
+			for i=0,2 do
+				local AVehs = getObj("Neftegrad_attackers_vehicle_"..i)
+				if AVehs then
+					AVehs:SetGamePositionOnGround(getPos("Neftegrad_attack_loc_"..i))
+					AVehs:SetRandomSkin()
+					AVehs:SetRotation(Quaternion(0.014, -0.996, -0.056, 0.066))
+					AVehs:setGodMode(1)
+				end
+			end
+
+			SetTolerance(1060, 1062, RS_NEUTRAL)	 
 
 			trigger:Deactivate()
 		</script>
@@ -3142,6 +3167,8 @@
 				PVeh:setGodMode(0)
 				SetVar("PlayerTP", 1)
 			end
+
+			SetTolerance(1060, 1062, RS_ENEMY)	 
 
 			AddCinematicMessage( 154, 0.25 )
 
@@ -3224,6 +3251,30 @@
 				end
 			end
 
+			local MCar = getObj("MansurCar")
+			local CCar = getObj("AivenCar")
+			if MCar and CCar then
+				MCar:Remove()
+				CCar:Remove()
+			end
+
+			local town1 = GetEntityByName("TheKef")
+			if town1 then town1:SetOpenGateToPlayer( false ) end
+
+			local town2 = GetEntityByName("TheGadad")
+			if town2 then town2:SetOpenGateToPlayer( false ) end
+
+			local town3 = GetEntityByName("TheKazif")
+			if town3 then town3:SetOpenGateToPlayer( false ) end
+
+			local town4 = GetEntityByName("r4_AlihamVil")
+			if town4 then town4:SetOpenGateToPlayer( false ) end
+
+			--TODO: Close Neftegrad--
+
+			local a = GetEntityByName("StartGonka_loc")
+			if a then a:SetProperty("Active",0) end
+
 			AllowSave(false)
 
 			PlayCustomMusic("Passage02a")
@@ -3231,6 +3282,46 @@
 			trigger:Deactivate()
 		</script>
 	</trigger>
+
+	<trigger	Name="RepelAlihamFailed_cs"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			Fly("madmaninvasion_cam04", CINEMATIC_NO_AIM, nil, 12, 1,1)
+
+			StartCinematic()
+
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetCustomControlEnabled( true )
+				vehPlayer:SetCustomLinearVelocity( 0 )
+				vehPlayer:SetThrottle( 0 )
+				vehPlayer:SetCustomControlEnabled( false )
+			end
+			
+			TActivate("DestroyAliham")
+			TActivate("RepelAlihamFailed_cs_end")
+
+			AddCinematicMessage(162, 1.5)
+
+			PlayCustomMusic("Death01")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="RepelAlihamFailed_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			ShowDeathMenu()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	--TODO: Make cutscenes for failed repel in other villages--
 
 	-- Test --
 
