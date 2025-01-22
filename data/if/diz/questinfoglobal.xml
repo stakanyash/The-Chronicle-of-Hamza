@@ -529,6 +529,33 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="RepelMadmanInvasionGadad_quest"
+		briefDiz="Отбить Гадад"
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheGadad_enter" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="RepelMadmanInvasionKef_quest"
+		briefDiz="Отбить Кеф"
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="RepelMadmanInvasionNeftegrad_quest"
+		briefDiz="Отбить Нефтеград"
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="Oil_loc" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="RepelMadmanInvasion_quest"
 		briefDiz="Отбить вторжение безумцев"
 		fullDiz="На нас напали с востока. Навряд ли это учёные, это наверняка безумцы решили таким образом попытаться отомстить за наш визит!"

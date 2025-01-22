@@ -609,3 +609,293 @@ function MadmanCutsceneSpawn()
 		end
 	end	
 end
+
+function MadmanCutsceneNeftegradSpawn()
+	local Attackers = CreateTeam("Neftegrad_attackers",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local Defenders = CreateTeam("Neftegrad_defend",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+
+	for i=0,1 do
+		local DVehs = getObj("Neftegrad_defend_vehicle_"..i)
+		if DVehs then
+			DVehs:SetGamePositionOnGround(getPos("Neftegrad_defend_loc_"..i))
+			DVehs:SetRandomSkin()
+			DVehs:SetRotation(Quaternion(-0.000, -0.181, -0.005, 0.984))
+			DVehs:setGodMode(1)
+		end
+	end
+
+	for i=0,2 do
+		local AVehs = getObj("Neftegrad_attackers_vehicle_"..i)
+		if AVehs then
+			AVehs:SetGamePositionOnGround(getPos("Neftegrad_attack_loc_"..i))
+			AVehs:SetRandomSkin()
+			AVehs:SetRotation(Quaternion(0.014, -0.996, -0.056, 0.066))
+			AVehs:setGodMode(1)
+		end
+	end
+
+	local Dskin0 = GetEntityByName("Neftegrad_defend_vehicle_0"):GetSkin()
+	local Dskin1 = GetEntityByName("Neftegrad_defend_vehicle_1"):GetSkin() 
+
+	local Askin0 = GetEntityByName("Neftegrad_attackers_vehicle_0"):GetSkin()
+	local Askin1 = GetEntityByName("Neftegrad_attackers_vehicle_1"):GetSkin() 
+	local Askin2 = GetEntityByName("Neftegrad_attackers_vehicle_2"):GetSkin() 
+
+	SetVar("NeftegradDSkin0", tonumber(Dskin0))
+	SetVar("NeftegradDSkin1", tonumber(Dskin1))
+
+	SetVar("NeftegradASkin1", tonumber(Askin0))
+	SetVar("NeftegradASkin1", tonumber(Askin1))
+	SetVar("NeftegradASkin1", tonumber(Askin2))
+end
+
+function MadmanCutsceneNeftegradRemove()
+	for i=0,1 do
+		local DVehs = getObj("Neftegrad_defend_vehicle_"..i)
+		if DVehs then
+			DVehs:Remove()
+		end
+	end
+
+	for i=0,2 do
+		local AVehs = getObj("Neftegrad_attackers_vehicle_"..i)
+		if AVehs then
+			AVehs:Remove()
+		end
+	end
+end
+
+function MadmanCutsceneKefSpawn()
+	local Attackers = CreateTeam("Kef_Attack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot","BelazShot","TankBez"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local Defenders = CreateTeam("Kef_Defend",1025,CVector(getPos("BuharAttack_loc")),{"BelazShot","UralShot","PlayerStartCar","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+
+	for i=0,4 do
+		local AVehs = getObj("Kef_Attack_vehicle_"..i)
+		if AVehs then
+			AVehs:SetGamePositionOnGround(getPos("Kef_Attack_loc_"..i))
+			AVehs:setGodMode(1)
+			AVehs:SetRandomSkin()
+			AVehs:SetRotation(Quaternion(-0.001, 0.417, 0.000, 0.909))
+		end
+	end
+
+	for i=0,3 do
+		local DVehs = getObj("Kef_Defend_vehicle_"..i)
+		if DVehs then
+			DVehs:setGodMode(1)
+			DVehs:SetGamePositionOnGround(getPos("Kef_Defend_loc_"..i))
+			if i==2 then
+				local PSkin = GetVar("PlayerMilkSkin").AsInt
+				DVehs:SetSkin(PSkin)
+			else
+				DVehs:SetRandomSkin()
+			end
+			DVehs:SetRotation(Quaternion(0.004, 0.909, -0.001, -0.417))
+		end
+	end
+
+	local Dskin0 = GetEntityByName("Kef_Defend_vehicle_0"):GetSkin()
+	local Dskin1 = GetEntityByName("Kef_Defend_vehicle_1"):GetSkin() 
+	local Dskin2 = GetEntityByName("Kef_Defend_vehicle_2"):GetSkin()
+	local Dskin3 = GetEntityByName("Kef_Defend_vehicle_3"):GetSkin() 
+
+	local Askin0 = GetEntityByName("Kef_Attack_vehicle_0"):GetSkin()
+	local Askin1 = GetEntityByName("Kef_Attack_vehicle_1"):GetSkin() 
+	local Askin2 = GetEntityByName("Kef_Attack_vehicle_2"):GetSkin()
+	local Askin3 = GetEntityByName("Kef_Attack_vehicle_3"):GetSkin() 
+	local Askin4 = GetEntityByName("Kef_Attack_vehicle_4"):GetSkin() 
+
+	SetVar("KefDSkin0", tonumber(Dskin0))
+	SetVar("KefDSkin1", tonumber(Dskin1))
+	SetVar("KefDSkin2", tonumber(Dskin2))
+	SetVar("KefDSkin3", tonumber(Dskin3))
+
+	SetVar("KefASkin0", tonumber(Askin0))
+	SetVar("KefASkin1", tonumber(Askin1))
+	SetVar("KefASkin2", tonumber(Askin2))
+	SetVar("KefASkin3", tonumber(Askin3))
+	SetVar("KefASkin3", tonumber(Askin4))
+end
+
+function MadmanCutsceneKefRemove()
+	for i=0,4 do
+		local AVehs = getObj("Kef_Attack_vehicle_"..i)
+		if AVehs then
+			AVehs:Remove()
+		end
+	end
+
+	for i=0,3 do
+		local DVehs = getObj("Kef_Defend_vehicle_"..i)
+		if DVehs then
+			DVehs:Remove()
+		end
+	end
+end
+
+function MadmanCutsceneAlihamSpawn()
+	local Attackers = CreateTeam("Aliham_Attack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local Defenders = CreateTeam("Aliham_Defend",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+
+	for i=0,3 do
+		local AVehs = getObj("Aliham_Attack_vehicle_"..i)
+		if AVehs then
+			AVehs:SetGamePositionOnGround(getPos("Aliham_attack_loc_"..i))
+			AVehs:SetRandomSkin()
+			AVehs:SetRotation(Quaternion(0.010, 0.810, -0.002, -0.586))
+			AVehs:setGodMode(1)
+		end
+	end
+
+	for i=0,2 do
+		local DVehs = getObj("Aliham_Defend_vehicle_"..i)
+		if DVehs then
+			DVehs:SetGamePositionOnGround(getPos("Aliham_defend_loc_"..i))
+			DVehs:SetRandomSkin()
+			DVehs:SetRotation(Quaternion(-0.001, 0.483, 0.001, 0.875))
+			DVehs:setGodMode(1)
+		end
+	end
+
+	local Dskin0 = GetEntityByName("Aliham_Defend_vehicle_0"):GetSkin()
+	local Dskin1 = GetEntityByName("Aliham_Defend_vehicle_1"):GetSkin()
+	local Dskin2 = GetEntityByName("Aliham_Defend_vehicle_2"):GetSkin()
+
+	local Askin0 = GetEntityByName("Aliham_Attack_vehicle_0"):GetSkin()
+	local Askin1 = GetEntityByName("Aliham_Attack_vehicle_1"):GetSkin()
+	local Askin2 = GetEntityByName("Aliham_Attack_vehicle_2"):GetSkin()
+	local Askin3 = GetEntityByName("Aliham_Attack_vehicle_3"):GetSkin()
+
+	SetVar("AlihamDskin0", tonumber(Dskin0))
+	SetVar("AlihamDskin1", tonumber(Dskin1))
+	SetVar("AlihamDskin2", tonumber(Dskin2))
+
+	SetVar("AlihamAskin0", tonumber(Askin0))
+	SetVar("AlihamAskin1", tonumber(Askin1))
+	SetVar("AlihamAskin2", tonumber(Askin2))
+	SetVar("AlihamAskin3", tonumber(Askin3))
+end
+
+function MadmanCutsceneAlihamRemove()
+	for i=0,3 do
+		local AVehs = getObj("Aliham_Attack_vehicle_"..i)
+		if AVehs then
+			AVehs:Remove()
+		end
+	end
+
+	for i=0,2 do
+		local DVehs = getObj("Aliham_Defend_vehicle_"..i)
+		if DVehs then
+			DVehs:Remove()
+		end
+	end
+end
+
+function SpawnBotsAliham()
+	local Madman1 = CreateVehicleEx("UralShot","MadmanInvadersAliham0",CVector(getPos("Aliham_attack_loc_0")), 1062)
+	local Madman2 = CreateVehicleEx("TankBez","MadmanInvadersAliham1",CVector(getPos("Aliham_attack_loc_1")), 1062)
+	local Madman3 = CreateVehicleEx("UralShot","MadmanInvadersAliham2",CVector(getPos("Aliham_attack_loc_2")), 1062)
+	local Madman4 = CreateVehicleEx("Hunter01","MadmanInvadersAliham3",CVector(getPos("Aliham_attack_loc_3")), 1062)
+
+	local Defender1 = CreateVehicleEx("UralShot","MadmanDefendAliham0",CVector(getPos("Aliham_defend_loc_0")), 1060)
+	local Defender2 = CreateVehicleEx("DemoMolokovoz1","MadmanDefendAliham1",CVector(getPos("Aliham_defend_loc_1")), 1060)
+	local Defender3 = CreateVehicleEx("Hunter01","MadmanDefendAliham2",CVector(getPos("Aliham_defend_loc_2")), 1060)
+
+	local Dskin0 = GetVar("AlihamDskin0").AsInt
+	local Dskin1 = GetVar("AlihamDskin1").AsInt
+	local Dskin2 = GetVar("AlihamDskin2").AsInt
+
+	local Askin0 = GetVar("AlihamAskin0").AsInt
+	local Askin1 = GetVar("AlihamAskin1").AsInt
+	local Askin2 = GetVar("AlihamAskin2").AsInt
+	local Askin3 = GetVar("AlihamAskin3").AsInt
+
+	for i=0,2 do
+		local DefendCar = getObj("MadmanDefendAliham"..i)
+		if DefendCar then
+			if i==0 then
+				DefendCar:SetSkin(Dskin0)
+			elseif i==1 then
+				DefendCar:SetSkin(Dskin1)
+			elseif i==2 then
+				DefendCar:SetSkin(Dskin2)
+			end
+			DefendCar:SetRotation(Quaternion(-0.001, 0.483, 0.001, 0.875))
+			DefendCar:setGodMode(1)
+		end
+	end	
+
+	for i=0,3 do
+		local MadmanCar = getObj("MadmanInvadersAliham"..i)
+		if MadmanCar then
+			if i==0 then
+				MadmanCar:SetSkin(Askin0)
+			elseif i==1 then
+				MadmanCar:SetSkin(Askin1)
+			elseif i==2 then
+				MadmanCar:SetSkin(Askin2)
+			elseif i==3 then
+				MadmanCar:SetSkin(Askin3)
+			end
+			MadmanCar:SetRotation(Quaternion(0.010, 0.810, -0.002, -0.586))
+			MadmanCar:setGodMode(1)
+		end
+	end	
+end
+
+function DespawnBotsSpawnFightersAliham()
+	local Attackers = CreateTeam("MadmanInvadersAliham",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local Defenders = CreateTeam("MadmanDefendAliham",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+
+	local Dskin0 = GetVar("AlihamDskin0").AsInt
+	local Dskin1 = GetVar("AlihamDskin1").AsInt
+	local Dskin2 = GetVar("AlihamDskin2").AsInt
+
+	local Askin0 = GetVar("AlihamAskin0").AsInt
+	local Askin1 = GetVar("AlihamAskin1").AsInt
+	local Askin2 = GetVar("AlihamAskin2").AsInt
+	local Askin3 = GetVar("AlihamAskin3").AsInt
+
+	for i=0,2 do
+		local dBots = getObj("MadmanDefendAliham"..i)
+		if dBots then
+			dBots:Remove()
+		end
+
+		local DefendCar = getObj("MadmanDefendAliham_vehicle_"..i)
+		if DefendCar then
+			if i==0 then
+				DefendCar:SetSkin(Dskin0)
+			elseif i==1 then
+				DefendCar:SetSkin(Dskin1)
+			elseif i==2 then
+				DefendCar:SetSkin(Dskin2)
+			end
+			DefendCar:SetRotation(Quaternion(-0.001, 0.483, 0.001, 0.875))
+			DefendCar:SetGamePositionOnGround(getPos("Aliham_defend_loc_"..i))
+		end
+	end	
+
+	for i=0,3 do
+		local ABots = getObj("MadmanInvadersAliham"..i)
+		if ABots then
+			ABots:Remove()
+		end
+
+		local MadmanCar = getObj("MadmanInvadersAliham_vehicle_"..i)
+		if MadmanCar then
+			if i==0 then
+				MadmanCar:SetSkin(Askin0)
+			elseif i==1 then
+				MadmanCar:SetSkin(Askin1)
+			elseif i==2 then
+				MadmanCar:SetSkin(Askin2)
+			elseif i==3 then
+				MadmanCar:SetSkin(Askin3)
+			end
+			MadmanCar:SetRotation(Quaternion(0.010, 0.810, -0.002, -0.586))
+			MadmanCar:SetGamePositionOnGround(getPos("Aliham_attack_loc_"..i))
+		end
+	end	
+end

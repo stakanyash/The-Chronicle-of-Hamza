@@ -2574,6 +2574,25 @@
 		</script>
 	</trigger>
 
+	<trigger	Name="RepelAliham_enter"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="Aliham_defender_loc" />
+		<script>
+			DespawnBotsSpawnFightersAliham()
+
+			SetTolerance(1060,1100,RS_ALLY)
+			SetTolerance(1060,1090,RS_ALLY)
+			SetTolerance(1060,1095,RS_ALLY)
+			SetTolerance(1060,1062,RS_ENEMY)
+			SetTolerance(1100,1062,RS_ENEMY)
+			SetTolerance(1090,1062,RS_ENEMY)
+			SetTolerance(1095,1062,RS_ENEMY)
+
+			TActivate("AlihamDefended")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
 	<trigger Name="RepelAliham_timer" active="0">
 		<event timeout="2" eventid="GE_TIME_PERIOD" />
 		<script>
@@ -2640,6 +2659,15 @@
 			TActivate("RepelAlihamFailed_cs")
 
 			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger	Name="AlihamDefended"	active="0">
+		<event	eventid="GE_OBJECT_DIE"		ObjName="MadmanInvadersAliham" />
+		<script>
+			TActivate("AlihamDefended_cs_start")	
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 

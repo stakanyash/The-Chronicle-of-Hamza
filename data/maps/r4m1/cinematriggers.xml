@@ -996,6 +996,9 @@
 				PCar:SetCustomControlEnabled( false )
 			end
 
+			local PSkin = GetPlayerVehicle():GetSkin()
+			SetVar("PlayerMilkSkin", tonumber(PSkin))
+
 			AddCinematicMessage(40, 2)
 			AddCinematicMessage(41, 0.5)
 
@@ -3101,7 +3104,7 @@
 				MCar:SetRotation(Quaternion(-0.000, 0.939, -0.000, 0.343))
 			end
 
-			local CCar = CreateVehicleEx("BelazShot","AivenCar",CVector(5749.218, 251.050, 7186.484), 1095)
+			local CCar = CreateVehicleEx("BelazShot1","AivenCar",CVector(5749.218, 251.050, 7186.484), 1095)
 			if CCar then
 				CCar:SetSkin(1)
 				CCar:SetRotation(Quaternion(-0.003, -0.996, 0.002, 0.091))
@@ -3121,35 +3124,12 @@
 		</script>
 	</trigger>
 
-	--TODO: add vehicles on cam03-cam04--
-
 	<trigger Name="Madman_invasion_cam01_1" active="0">
 		<event flypath="madmaninvasion_cam01_1" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
 			AddCinematicMessage( 153, 0.25 )
 
-			local Attackers = CreateTeam("Neftegrad_attackers",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
-			local Defenders = CreateTeam("Neftegrad_defend",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
-
-			for i=0,1 do
-				local DVehs = getObj("Neftegrad_defend_vehicle_"..i)
-				if DVehs then
-					DVehs:SetGamePositionOnGround(getPos("Neftegrad_defend_loc_"..i))
-					DVehs:SetRandomSkin()
-					DVehs:SetRotation(Quaternion(-0.000, -0.181, -0.005, 0.984))
-					DVehs:setGodMode(1)
-				end
-			end
-
-			for i=0,2 do
-				local AVehs = getObj("Neftegrad_attackers_vehicle_"..i)
-				if AVehs then
-					AVehs:SetGamePositionOnGround(getPos("Neftegrad_attack_loc_"..i))
-					AVehs:SetRandomSkin()
-					AVehs:SetRotation(Quaternion(0.014, -0.996, -0.056, 0.066))
-					AVehs:setGodMode(1)
-				end
-			end
+			MadmanCutsceneNeftegradSpawn()
 
 			SetTolerance(1060, 1062, RS_NEUTRAL)	 
 
@@ -3162,10 +3142,8 @@
 		<script>
 			local PVeh = GetPlayerVehicle()
 			if PVeh then
-				PVeh:SetGamePositionOnGround(CVector(5750.906, 250.112, 7154.888))
+				PVeh:SetGamePositionOnGround(CVector(6609.482, 271.095, 4019.137))
 				PVeh:SetRotation(Quaternion(-0.000, -0.689, -0.000, 0.725))
-				PVeh:setGodMode(0)
-				SetVar("PlayerTP", 1)
 			end
 
 			SetTolerance(1060, 1062, RS_ENEMY)	 
@@ -3179,6 +3157,18 @@
 	<trigger Name="Madman_invasion_cam03" active="0">
 		<event flypath="madmaninvasion_cam03" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetGamePositionOnGround(CVector(6578.675, 249.913, 5319.239))
+				PVeh:SetRotation(Quaternion(0.000, -0.926, 0.000, 0.378))
+			end
+
+			MadmanCutsceneNeftegradRemove()
+
+			MadmanCutsceneKefSpawn()
+
+			SetTolerance(1025, 1062, RS_ENEMY)
+
 			AddCinematicMessage( 155, 0.25 )
 
 			trigger:Deactivate()
@@ -3188,6 +3178,16 @@
 	<trigger Name="Madman_invasion_cam04" active="0">
 		<event flypath="madmaninvasion_cam04" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetGamePositionOnGround(CVector(5397.795, 246.086, 5968.970))
+				PVeh:SetRotation(Quaternion(0.001, -0.231, -0.000, -0.973))
+			end
+
+			MadmanCutsceneKefRemove()
+
+			MadmanCutsceneAlihamSpawn()
+
 			AddCinematicMessage( 156, 0.25 )
 
 			trigger:Deactivate()
@@ -3198,6 +3198,16 @@
 		<event flypath="madmaninvasion_cam05" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
 			AddCinematicMessage( 157, 0.25 )
+
+			MadmanCutsceneAlihamRemove()
+
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetGamePositionOnGround(CVector(5750.906, 250.112, 7154.888))
+				PVeh:SetRotation(Quaternion(-0.000, -0.689, -0.000, 0.725))
+				PVeh:setGodMode(0)
+				SetVar("PlayerTP", 1)
+			end
 
 			trigger:Deactivate()
 		</script>
@@ -3244,6 +3254,12 @@
 				end
 			end
 
+			SpawnBotsAliham()
+--			SpawnBotsNeftegrad()
+--			SpawnBotsKef()
+
+			TActivate("RepelAliham_enter")
+
 			for i=0,3 do
 				local MadmanCar = getObj("MadmanInvaders"..i)
 				if MadmanCar then
@@ -3270,7 +3286,8 @@
 			local town4 = GetEntityByName("r4_AlihamVil")
 			if town4 then town4:SetOpenGateToPlayer( false ) end
 
-			--TODO: Close Neftegrad--
+			local town5 = GetEntityByName("TheOilCity")
+			if town5 then town5:SetOpenGateToPlayer( false ) end
 
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active",0) end
@@ -3278,6 +3295,60 @@
 			AllowSave(false)
 
 			PlayCustomMusic("Passage02a")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="AlihamDefended_cs_start"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			local Plf = GetPlayerVehicle()
+			local PlfID = GetPlayerVehicleId()
+			local PlfCoor = Plf:GetPosition()
+			PlfCoor.y = PlfCoor.y + 25*0.74
+			PlfCoor.z = PlfCoor.z + 25*0.74
+
+			FlyAround(6, 0, 25, 7, PlfCoor, PlfID, 1, 1 )
+			StartCinematic()
+
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetCustomControlEnabled( true )
+				vehPlayer:SetCustomLinearVelocity( 0 )
+				vehPlayer:SetThrottle( 0 )
+				vehPlayer:SetCustomControlEnabled( false )
+			end
+			
+			TDeactivate("RepelAliham_timer")
+			TDeactivate("RepelAliham_timer_120sec")
+			TDeactivate("RepelAliham_timer_60sec")
+			TDeactivate("RepelAliham_timer_30sec")
+			TDeactivate("RepelAliham_timer_15sec")
+			TDeactivate("RepelAliham_timerexpires")
+
+			TActivate("AlihamDefended_cs_end")
+
+			AddCinematicMessage(163, 1.5)
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="AlihamDefended_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+--			TActivate("RepelGadad_timer")
+
+			CompleteQuest("RepelMadmanInvasionAliham_quest")
+			TakeQuest("RepelMadmanInvasionGadad_quest")
+
+			RestoreAllToleranceStatus()
+
+			SetCameraBehindPlayerVehicle()
 
 			trigger:Deactivate()
 		</script>
