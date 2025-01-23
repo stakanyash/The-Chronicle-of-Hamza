@@ -1485,7 +1485,7 @@
 		modelName="r4_man"
 		modelSkin="0"
 		modelCfg="171"
-		modelSlot="0"
+		modelSlot="1"
 		value="ОТЕЦ|Нормально, почти не пострадал. Где ты так долго был?!"
 		sound=""
 		time="5" />
@@ -1514,15 +1514,15 @@
 		modelName="r4_man"
 		modelSkin="0"
 		modelCfg="171"
-		modelSlot="0"
-		value="ОТЕЦ|Некогда нам разговаривать, все едем в Нефтеград!"
+		modelSlot="1"
+		value="ОТЕЦ|Некогда нам разговаривать, все едем в Нефтеград! Сделаем финальный шаг к нашей победе!"
 		sound=""
-		time="5" />
+		time="6" />
 
 	<string
 		id="173"
 		sound="data\sounds\Speech\rolik\deadend_neftegrad.ogg"
-		value="|Нефтеград не удалось спасти. Взрыв, произошедший в ходе боя, уничтожил всех, кто находился поблизости. Ваша цель теперь невыполнима." 
+		value="|Нефтеград не удалось спасти. Взрыв, произошедший в ходе боя, уничтожил всех, кто находился поблизости, включая Хамзу. Ваша цель теперь невыполнима." 
 		time="1"/>
 
 	<string
@@ -1588,19 +1588,6 @@
 		numButtons="2"/>
 
 	<string
-		id="77771"
-		msgType="SCROLL"
-		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
-		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
-		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
-		value="@ffffffff|Разрушение источника излучения, отравлявшего воздух, привело к непредвиденным последствиям. Ядерный удар, нанесённый суперкомпьютером при помощи орбитального вооружения, должен был принести освобождение от многолетних проблем всего мира. Однако мощь взрыва была столь разрушительной, что Вахат даже находясь за многие километры от эпицентра оказался практически полностью стёрт с лица Земли. Хамза оказался в эпицентре катастрофы и чудом выжил в этом апокалипсисе. Все его знакомые и близкие погибли. Он, как и другие немногочисленные выжившие были вынуждены бежать из родного региона, оставив позади себя лишь руины.||Хамзе удалось без труда пересечь Пустыню Смерти и оказаться в регионе, который, как и все остальные части мира, пострадал от взрыва. Люди, оставшиеся в живых, были потрясены и дезориентированы. Многие из них не могли смириться с новыми реалиями. Они пытались найти утешение в привычных ритуалах и обычаях.||Несмотря на все усилия по восстановлению и поддержке выживших, мир оставался разрушенным и раздробленным. Хамза, оказавшись в новом регионе, столкнулся с новыми вызовами и трудностями, которые ему только предстояло преодолеть..."
-		sound="data\sounds\Speech\rolik\tcoh_ending1_test.ogg"
-		fontSize="18"
-		scrollSpeed="0.8"
-		time="75" />
-
-
-	<string
 		id="5968"
 		msgType="SCROLL"
 		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
@@ -1642,7 +1629,7 @@
 		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
 		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
 		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
-		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Никита «стакан» Кашлев||@ffffffffсюжет, квесты, скрипты| | |@ffffa600Серафим «Varisane» Шагин||@ffffffffтекстовые правки, тестирование, помощь в разработке| | |@ffffa600Карен Гевондян||@ffffffffтекстовые правки| | |@ffffa600Евгений «E Jet» Колчин||@ffffffffпомощь в разработке| | |@ffffa600Георгий «Эмер» Жуков||@ffffffffозвучка рассказчика| | |@ffffa600Иван «Carsen» Буряшкин||@ffffffffпомощь в разработке| | |@ffffa600Анастасия «k0waidesu»||@ffffffffпомощь с диалогами| | |@ffffa600Заимствования||@ffffffffПолноразмерная модель Серго||@ffffa600Автор:|@ffffffffМаксим «Spok» Бердников| | |@ffffffffЭффекты ухудшающегося состояния взяты из|@ffffffffмодификации @ffffa600«possesed»||@ffffa600Авторы:|@ffffffffАлексей «__nEmPoBu4__» Смирнов|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffa600Огромная @ffffffffблагодарность сообществу @ffffa600Deus Ex Machina|@ffffffffза оказанную помощь при разработке| | |@ffffa600Спасибо за игру!"
+		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Никита «стакан» Кашлев||@ffffffffсюжет, квесты, скрипты| | |@ffffa600Серафим «Varisane» Шагин||@ffffffffтекстовые правки, тестирование, помощь в разработке| | |@ffffa600Карен Гевондян||@ffffffffтекстовые правки| | |@ffffa600Евгений «E Jet» Колчин||@ffffffffпомощь в разработке| | |@ffffa600Георгий «Эмер» Жуков||@ffffffffозвучка рассказчика| | |@ffffa600Иван «Carsen» Буряшкин||@ffffffffпомощь в разработке| | |@ffffa600Анастасия «k0waidesu»||@ffffffffпомощь с диалогами| | |@ffffa600Заимствования||@ffffffffПолноразмерная модель Серго||@ffffa600Автор:|@ffffffffМаксим «Spok» Бердников| | |@ffffffffЭффекты ухудшающегося состояния взяты из|@ffffffffмодификации @ffffa600«possesed»||@ffffa600Авторы:|@ffffffffАлексей «__nEmPoBu4__» Смирнов|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffИдея со слайдами в концовках взята из|@ffffffffмодификации @ffffa600«Improved Storyline»||@ffffa600Автор:|@ffffffffПавел «pavlikRPG» Иванов| | |@ffffa600Огромная @ffffffffблагодарность сообществу @ffffa600Deus Ex Machina|@ffffffffза оказанную помощь при разработке| | |@ffffa600Спасибо за игру!"
 		sound=""
 		fontSize="18"
 		scrollSpeed="2.5"

@@ -2574,22 +2574,107 @@
 		</script>
 	</trigger>
 
-	<trigger	Name="RepelAliham_enter"	active="0">
-		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="Aliham_defender_loc" />
+	-- Invasion connect --
+
+	<trigger Name="ConnectMansur_madmaninvasion" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			DespawnBotsSpawnFightersAliham()
+            SetTolerance(1100, 1090, RS_ALLY)
+			SetTolerance(1090, 1002, RS_ENEMY)
+			SetTolerance(1090, 1062, RS_ENEMY)
+			SetTolerance(1090, 1023, RS_ALLY)
+			SetTolerance(1090, 1025, RS_NEUTRAL)
+			SetTolerance(1090, 1060, RS_NEUTRAL)
+			SetTolerance(1090, 1095, RS_ALLY)
 
-			SetTolerance(1060,1100,RS_ALLY)
-			SetTolerance(1060,1090,RS_ALLY)
-			SetTolerance(1060,1095,RS_ALLY)
-			SetTolerance(1060,1062,RS_ENEMY)
-			SetTolerance(1100,1062,RS_ENEMY)
-			SetTolerance(1090,1062,RS_ENEMY)
-			SetTolerance(1095,1062,RS_ENEMY)
+            TeamCreate("MansurCar", 1090, CVector(5727.807, 250.116, 7176.776), {"UralMansur"}, nil, nil, Quaternion(-0.000, 0.939, -0.000, 0.343))
 
-			TActivate("AlihamDefended")
+			local vehMansur = getObj("MansurCar_vehicle_0")
+			if vehMansur then
+				vehMansur:SetSkin(1)
+				vehMansur:setImmortalMode(1)
 
-			trigger:Deactivate()
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "MansurControllerInvasionR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehMansur)
+				end
+			end
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="ConnectAivan_madmaninvasion" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            TeamCreate("AivenCar", 1095, CVector(5749.218, 251.050, 7186.484), {"BelazShot1"}, nil, nil, Quaternion(-0.003, -0.996, 0.002, 0.091))
+
+			local vehAiven = getObj("AivenCar_vehicle_0")
+			if vehAiven then
+				vehAiven:SetSkin(1)
+				vehAiven:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "AivenControllerInvasionR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehAiven)
+				end
+			end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	-- Aliham invasion --
+
+	<trigger Name="RepelAliham_enter_time" active="0">
+		<event timeout="1" eventid="GE_TIME_PERIOD" />
+		<script>
+			local run = GetEntityByName("Aliham_defender_loc")
+			local pl = GetPlayerVehicle()
+			local len
+
+			if run then
+				len = Dist(pl, run)
+				if (650 >= len) then
+					DespawnBotsSpawnFightersAliham()
+
+					SetTolerance(1060,1100,RS_ALLY)
+					SetTolerance(1060,1090,RS_ALLY)
+					SetTolerance(1060,1095,RS_ALLY)
+					SetTolerance(1060,1062,RS_ENEMY)
+					SetTolerance(1100,1062,RS_ENEMY)
+					SetTolerance(1090,1062,RS_ENEMY)
+					SetTolerance(1095,1062,RS_ENEMY)
+
+					local MCar = getObj("MansurCar_vehicle_0")
+					if MCar then
+						MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
+						MCar:SetRotation(GetPlayerVehicle():GetRotation())
+					end
+
+					local ACar = getObj("AivenCar_vehicle_0")
+					if ACar then
+						ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
+						ACar:SetRotation(GetPlayerVehicle():GetRotation())
+					end
+
+					TActivate("AlihamDefended")
+
+					trigger:Deactivate()
+				end
+			end
 		</script>
 	</trigger>
 
@@ -2687,25 +2772,478 @@
 		</script>
 	</trigger>
 
-	-- Test --
+	-- Gadad invasion --
 
-	<trigger Name="ExitOff" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
+	<trigger	Name="RepelGadad_enter"	active="0">
+		<event timeout="1" eventid="GE_TIME_PERIOD" />
 		<script>
-			local a = GetEntityByName("ExitFromMapToR4M2_loc")
-			if a then a:SetProperty("Active",0) end
+		local run = GetEntityByName("GMadmanInvaders0")
+		local pl = GetPlayerVehicle()
+		local len
+
+		if run then
+			len = Dist(pl, run)
+			if (650 >= len) then
+				DespawnBotsSpawnFightersGadad()
+
+				SetTolerance(1023,1100,RS_ALLY)
+				SetTolerance(1023,1090,RS_ALLY)
+				SetTolerance(1023,1095,RS_ALLY)
+				SetTolerance(1023,1062,RS_ENEMY)
+				SetTolerance(1100,1062,RS_ENEMY)
+				SetTolerance(1090,1062,RS_ENEMY)
+				SetTolerance(1095,1062,RS_ENEMY)
+
+				local MCar = getObj("MansurCar_vehicle_0")
+				if MCar then
+					MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
+					MCar:SetRotation(GetPlayerVehicle():GetRotation())
+				end
+
+				local ACar = getObj("AivenCar_vehicle_0")
+				if ACar then
+					ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
+					ACar:SetRotation(GetPlayerVehicle():GetRotation())
+				end
+
+				TActivate("GadadDefended")
+
+				trigger:Deactivate()
+			end
+		end
+		</script>
+	</trigger>
+
+	<trigger	Name="GadadDefended"	active="0">
+		<event	eventid="GE_OBJECT_DIE"		ObjName="MadmanInvadersGadad" />
+		<script>
+			TActivate("GadadDefended_cs_start")	
+
+			SetTolerance(1023,1100,RS_NEUTRAL)
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RepelGadad_timer" active="0">
+		<event timeout="2" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_180sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_180sec" )
+
+			TActivate("RepelGadad_timer_120sec")
 
 			trigger:Deactivate()  
 		</script>
 	</trigger>
 
-	<trigger Name="ExitOn" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
+	<trigger Name="RepelGadad_timer_120sec" active="0">
+		<event timeout="60" eventid="GE_TIME_PERIOD" />
 		<script>
-			local a = GetEntityByName("ExitFromMapToR4M2_loc")
-			if a then a:SetProperty("Active",1) end
+			AddFadingMsgId( "fm_repel_timer_120sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_120sec" )
+
+			TActivate("RepelGadad_timer_60sec")
 
 			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelGadad_timer_60sec" active="0">
+		<event timeout="60" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_60sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_60sec" )
+
+			TActivate("RepelGadad_timer_30sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelGadad_timer_30sec" active="0">
+		<event timeout="30" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_30sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_30sec" )
+
+			TActivate("RepelGadad_timer_15sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelGadad_timer_15sec" active="0">
+		<event timeout="15" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_15sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_15sec" )
+
+			TActivate("RepelGadad_timerexpires")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelGadad_timerexpires" active="0">
+		<event timeout="15" eventid="GE_TIME_PERIOD" />
+		<script>
+			TActivate("RepelGadadFailed_cs")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger	Name="DestroyGadad"	active="0">
+		<event	timeout="1.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE01", -1, -1, CVector(5569.596, 297.915, 7235.454), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE02", -1, -1, CVector(5609.851, 251.982, 7225.595), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE03", -1, -1, CVector(5647.563, 308.542, 7262.631), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE04", -1, -1, CVector(5716.747, 289.305, 7232.723), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE05", -1, -1, CVector(5634.143, 252.582, 6897.362), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE06", -1, -1, CVector(5500.640, 256.628, 6856.295), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE07", -1, -1, CVector(5714.388, 259.870, 6854.787), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE08", -1, -1, CVector(5575.749, 254.131, 6798.950), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE09", -1, -1, CVector(5504.091, 250.264, 6741.547), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	-- Kef invasion --
+
+	<trigger	Name="RepelKef_enter"	active="0">
+		<event timeout="1" eventid="GE_TIME_PERIOD" />
+		<script>
+		local run = GetEntityByName("KMadmanInvaders0")
+		local pl = GetPlayerVehicle()
+		local len
+
+		if run then
+			len = Dist(pl, run)
+			if (650 >= len) then
+				DespawnBotsSpawnFightersKef()
+
+				SetTolerance(1025,1100,RS_ALLY)
+				SetTolerance(1025,1090,RS_ALLY)
+				SetTolerance(1025,1095,RS_ALLY)
+				SetTolerance(1025,1062,RS_ENEMY)
+				SetTolerance(1100,1062,RS_ENEMY)
+				SetTolerance(1090,1062,RS_ENEMY)
+				SetTolerance(1095,1062,RS_ENEMY)
+
+				local MCar = getObj("MansurCar_vehicle_0")
+				if MCar then
+					MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
+					MCar:SetRotation(GetPlayerVehicle():GetRotation())
+				end
+
+				local ACar = getObj("AivenCar_vehicle_0")
+				if ACar then
+					ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
+					ACar:SetRotation(GetPlayerVehicle():GetRotation())
+				end
+
+				TActivate("KefDefended")
+
+				trigger:Deactivate()
+			end
+		end
+		</script>
+	</trigger>
+
+	<trigger Name="RepelKef_timer" active="0">
+		<event timeout="2" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_180sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_180sec" )
+
+			TActivate("RepelKef_timer_120sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelKef_timer_120sec" active="0">
+		<event timeout="60" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_120sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_120sec" )
+
+			TActivate("RepelKef_timer_60sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelKef_timer_60sec" active="0">
+		<event timeout="60" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_60sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_60sec" )
+
+			TActivate("RepelKef_timer_30sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelKef_timer_30sec" active="0">
+		<event timeout="30" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_30sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_30sec" )
+
+			TActivate("RepelKef_timer_15sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelKef_timer_15sec" active="0">
+		<event timeout="15" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_15sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_15sec" )
+
+			TActivate("RepelKef_timerexpires")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelKef_timerexpires" active="0">
+		<event timeout="15" eventid="GE_TIME_PERIOD" />
+		<script>
+			TActivate("RepelKefFailed_cs")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger	Name="DestroyKef"	active="0">
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE01", -1, -1, CVector(6040.391, 269.481, 5058.382), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE02", -1, -1, CVector(6010.234, 256.368, 5208.539), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE03", -1, -1, CVector(6113.816, 259.479, 5147.182), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE04", -1, -1, CVector(6132.553, 263.956, 5146.330), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE05", -1, -1, CVector(6365.704, 287.330, 5275.518), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE06", -1, -1, CVector(6376.649, 250.186, 5167.866), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE07", -1, -1, CVector(6423.297, 258.430, 5139.449), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE08", -1, -1, CVector(6383.232, 307.414, 5173.023), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE09", -1, -1, CVector(6182.589, 254.318, 4956.778), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="KefDefended"	active="0">
+		<event	eventid="GE_OBJECT_DIE"		ObjName="KefInvasionAttack" />
+		<script>
+			TActivate("KefDefended_cs_start")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="ConnectAiven_defendNG" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            TeamCreate("AivenCar", 1095, CVector(6378.719, 251.062, 5047.619), {"BelazShot1"}, nil, nil, Quaternion(-0.003, -0.590, -0.002, -0.807))
+
+			local vehAiven = getObj("AivenCar_vehicle_0")
+			if vehAiven then
+				vehAiven:SetSkin(1)
+				vehAiven:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "AivenControllerNeftegradR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehAiven)
+				end
+			end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="ConnectMansur_defendNG" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            TeamCreate("MansurCar", 1090, CVector(6389.877, 251.753, 5064.563), {"UralMansur"}, nil, nil, Quaternion(0.038, -0.803, -0.029, -0.594))
+
+			local vehM = getObj("MansurCar_vehicle_0")
+			if vehM then
+				vehM:SetSkin(1)
+				vehM:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "MansurControllerNeftegradR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehM)
+				end
+			end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="ConnectFather_defendNG" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            TeamCreate("FatherCar", 1090, CVector(6423.190, 251.053, 5060.235), {"PlayerStartCar"}, nil, nil, Quaternion(-0.001, -0.708, 0.003, 0.707))
+
+			local vehF = getObj("FatherCar_vehicle_0")
+			if vehF then
+				vehF:SetSkin(1)
+				vehF:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "MansurControllerNeftegradR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehF)
+				end
+			end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelNG_timer" active="0">
+		<event timeout="2" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_180sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_180sec" )
+
+			TActivate("RepelNG_timer_120sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelNG_timer_120sec" active="0">
+		<event timeout="60" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_120sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_120sec" )
+
+			TActivate("RepelNG_timer_60sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelNG_timer_60sec" active="0">
+		<event timeout="60" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_60sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_60sec" )
+
+			TActivate("RepelNG_timer_30sec")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelNG_timer_30sec" active="0">
+		<event timeout="30" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_30sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_30sec" )
+
+			TActivate("RepelNG_timer_15sec")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="RepelNG_timer_15sec" active="0">
+		<event timeout="15" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_repel_timer_15sec" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_15sec" )
+
+			TActivate("RepelNG_timerexpires")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelNG_timerexpires" active="0">
+		<event timeout="15" eventid="GE_TIME_PERIOD" />
+		<script>
+			TActivate("RepelNGFailed_cs")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="RepelNG_enter" active="0">
+		<event timeout="1" eventid="GE_TIME_PERIOD" />
+		<script>
+			local run = GetEntityByName("NMadmanInvaders0")
+			local pl = GetPlayerVehicle()
+			local len
+
+			if run then
+				len = Dist(pl, run)
+				if (650 >= len) then
+					DespawnBotsSpawnFightersNG()
+
+					SetTolerance(1060,1100,RS_ALLY)
+					SetTolerance(1060,1090,RS_ALLY)
+					SetTolerance(1060,1095,RS_ALLY)
+					SetTolerance(1060,1062,RS_ENEMY)
+					SetTolerance(1100,1062,RS_ENEMY)
+					SetTolerance(1090,1062,RS_ENEMY)
+					SetTolerance(1095,1062,RS_ENEMY)
+
+					SetTolerance(1025,1100,RS_ALLY)
+					SetTolerance(1025,1090,RS_ALLY)
+					SetTolerance(1025,1095,RS_ALLY)
+					SetTolerance(1025,1062,RS_ENEMY)
+
+					local fCar = getObj("FatherCar_vehicle_0")
+					if fCar then
+						fCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
+						fCar:SetRotation(GetPlayerVehicle():GetRotation())
+						fCar:setGodMode(1)
+					end
+
+					local MCar = getObj("MansurCar_vehicle_0")
+					if MCar then
+						MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
+						MCar:SetRotation(GetPlayerVehicle():GetRotation())
+					end
+
+					local ACar = getObj("AivenCar_vehicle_0")
+					if ACar then
+						ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(30,0,0))
+						ACar:SetRotation(GetPlayerVehicle():GetRotation())
+					end
+
+					TActivate("NeftegradDefended")
+
+					trigger:Deactivate()
+				end
+			end
 		</script>
 	</trigger>
 </triggers>

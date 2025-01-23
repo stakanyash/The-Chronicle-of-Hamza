@@ -3255,10 +3255,11 @@
 			end
 
 			SpawnBotsAliham()
---			SpawnBotsNeftegrad()
---			SpawnBotsKef()
+			SpawnBotsKef()
 
-			TActivate("RepelAliham_enter")
+			TActivate("RepelAliham_enter_time")
+			TActivate("ConnectMansur_madmaninvasion")
+			TActivate("ConnectAivan_madmaninvasion")
 
 			for i=0,3 do
 				local MadmanCar = getObj("MadmanInvaders"..i)
@@ -3299,6 +3300,8 @@
 			trigger:Deactivate()
 		</script>
 	</trigger>
+
+	-- Aliham invasion --
 
 	<trigger	Name="AlihamDefended_cs_start"	active="0">
 		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
@@ -3341,7 +3344,10 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
---			TActivate("RepelGadad_timer")
+			TActivate("RepelGadad_timer")
+			TActivate("RepelGadad_enter")
+
+			GadadBotSpawn()
 
 			CompleteQuest("RepelMadmanInvasionAliham_quest")
 			TakeQuest("RepelMadmanInvasionGadad_quest")
@@ -3392,37 +3398,299 @@
 		</script>
 	</trigger>
 
-	--TODO: Make cutscenes for failed repel in other villages--
-
-	-- Test --
-
-	<trigger	Name="Test1"	active="0">
+	<trigger	Name="RepelGadadFailed_cs"	active="0">
 		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			Fly("molokovozExit", CINEMATIC_NO_AIM, nil, 10, 1,1)
+			Fly("DestroyGadad_cam", CINEMATIC_NO_AIM, nil, 12, 1,1)
+
 			StartCinematic()
 
-			PlayCustomMusic("EndGame")
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetCustomControlEnabled( true )
+				vehPlayer:SetCustomLinearVelocity( 0 )
+				vehPlayer:SetThrottle( 0 )
+				vehPlayer:SetCustomControlEnabled( false )
+			end
+			
+			TActivate("DestroyGadad")
+			TActivate("RepelGadadFailed_cs_end")
 
-			AddCinematicMessage(5971, 0.2)
+			AddCinematicMessage(164, 1.5)
 
-			TActivate("Test1_end")
+			PlayCustomMusic("Death02")
 
 			trigger:Deactivate()
 		</script>
 	</trigger>
 
-	<trigger	Name="Test1_end"	active="0">
+	<trigger	Name="RepelGadadFailed_cs_end"	active="0">
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-			RestoreAllToleranceStatus()
-
 			ShowDeathMenu()
 
 			trigger:Deactivate()
 		</script>
 	</trigger>
+
+	<trigger	Name="GadadDefended_cs_start"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			local Plf = GetPlayerVehicle()
+			local PlfID = GetPlayerVehicleId()
+			local PlfCoor = Plf:GetPosition()
+			PlfCoor.y = PlfCoor.y + 25*0.74
+			PlfCoor.z = PlfCoor.z + 25*0.74
+
+			FlyAround(6, 0, 25, 12, PlfCoor, PlfID, 1, 1 )
+			StartCinematic()
+
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetCustomControlEnabled( true )
+				vehPlayer:SetCustomLinearVelocity( 0 )
+				vehPlayer:SetThrottle( 0 )
+				vehPlayer:SetCustomControlEnabled( false )
+			end
+			
+			TDeactivate("RepelGadad_timer")
+			TDeactivate("RepelGadad_timer_120sec")
+			TDeactivate("RepelGadad_timer_60sec")
+			TDeactivate("RepelGadad_timer_30sec")
+			TDeactivate("RepelGadad_timer_15sec")
+			TDeactivate("RepelGadad_timerexpires")
+
+			TActivate("GadadDefended_cs_end")
+
+			AddCinematicMessage(165, 1.5)
+			AddCinematicMessage(166, 0.25)
+
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="GadadDefended_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			TActivate("RepelKef_timer")
+			TActivate("RepelKef_enter")
+
+			CompleteQuest("RepelMadmanInvasionGadad_quest")
+			TakeQuest("RepelMadmanInvasionKef_quest")
+
+			RestoreAllToleranceStatus()
+
+			SetCameraBehindPlayerVehicle()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	-- Kef invasion --
+
+	<trigger	Name="RepelKefFailed_cs"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			Fly("DestroyKef_cam", CINEMATIC_NO_AIM, nil, 12, 1,1)
+
+			StartCinematic()
+
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetCustomControlEnabled( true )
+				vehPlayer:SetCustomLinearVelocity( 0 )
+				vehPlayer:SetThrottle( 0 )
+				vehPlayer:SetCustomControlEnabled( false )
+			end
+			
+			TActivate("DestroyKef")
+			TActivate("RepelKefFailed_cs_end")
+
+			AddCinematicMessage(167, 1.5)
+
+			PlayCustomMusic("Death02")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="RepelKefFailed_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			ShowDeathMenu()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="KefDefended_cs_start"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			Fly("KefDefended_cam", CINEMATIC_NO_AIM, nil, 16, 1,0)
+			Fly("KefDefended_cam02", CINEMATIC_NO_AIM, nil, 19, 0,1)
+
+			StartCinematic()
+
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetCustomControlEnabled( true )
+				vehPlayer:SetCustomLinearVelocity( 0 )
+				vehPlayer:SetThrottle( 0 )
+				vehPlayer:SetCustomControlEnabled( false )
+				vehPlayer:SetGamePositionOnGround(CVector(6410.656, 251.064, 5035.400))
+				vehPlayer:SetRotation(Quaternion(0.001, 0.199, 0.003, 0.980))
+			end
+
+			for i=0,3 do
+				local dBots = getObj("KefInvasionDefend_vehicle_"..i)
+				if dBots then
+					dBots:Remove()
+				end
+			end
+
+			local aCar = getObj("AivenCar_vehicle_0")
+			if aCar then
+				aCar:Remove()
+			end
+
+			local mCar = getObj("MansurCar_vehicle_0")
+			if mCar then
+				mCar:Remove()
+			end
+
+			local mCCar = CreateVehicleEx("UralMansur","MansurCar",CVector(6389.877, 251.753, 5064.563), 1090)
+			if mCCar then
+				mCCar:SetSkin(1)
+				mCCar:SetRotation(Quaternion(0.038, -0.803, -0.029, -0.594))
+			end
+
+			local aCCar = CreateVehicleEx("BelazShot1","AivanCar",CVector(6378.719, 251.062, 5047.619), 1095)
+			if aCCar then
+				aCCar:SetRotation(Quaternion(-0.003, -0.590, -0.002, -0.807))
+			end
+
+			local Father = CreateVehicleEx("PlayerStartCar","FatherCar",CVector(6423.190, 251.053, 5060.235), 1025)
+			if Father then
+				Father:SetRotation(Quaternion(-0.001, -0.708, 0.003, 0.707))
+				local Fskin = GetVar("PlayerMilkSkin").AsInt
+				Father:SetSkin(Fskin)
+			end
+
+			TDeactivate("RepelKef_timer")
+			TDeactivate("RepelKef_timer_120sec")
+			TDeactivate("RepelKef_timer_60sec")
+			TDeactivate("RepelKef_timer_30sec")
+			TDeactivate("RepelKef_timer_15sec")
+			TDeactivate("RepelKef_timerexpires")
+			
+			TActivate("KefDefended_cs_171msg")
+			TActivate("KefDefended_cs_end")
+
+			AddCinematicMessage(168, 1.5)
+			AddCinematicMessage(169, 0.5)
+			AddCinematicMessage(170, 0.5)
+
+			PlayCustomMusic("IntenseDialogue03")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="KefDefended_cs_171msg" active="0">
+		<event flypath="KefDefended_cam02" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			PlayCustomMusic("Passage04")
+
+			MadmanCutsceneNeftegradSpawn()
+
+			SetTolerance(1062, 1060, RS_ENEMY)
+
+			TActivate("PlayerTP_KefDefended")
+
+			AddCinematicMessage(171, 2)
+			AddCinematicMessage(172, 0.5)
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="PlayerTP_KefDefended" active="0">
+		<event timeout="3" eventid="GE_TIME_PERIOD" />
+		<script>
+			SetTolerance(1062, 1060, RS_ENEMY)
+
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetGamePositionOnGround(CVector(6460.870, 264.200, 4215.955))
+				PVeh:SetRotation(Quaternion(-0.064, 0.372, -0.261, 0.888))
+				PVeh:setGodMode(1)
+			end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger	Name="KefDefended_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+
+			CompleteQuest("RepelMadmanInvasionKef_quest")
+			TakeQuest("RepelMadmanInvasionNeftegrad_quest")
+
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetGamePositionOnGround(CVector(6410.656, 251.064, 5035.400))
+				vehPlayer:SetRotation(Quaternion(0.001, 0.199, 0.003, 0.980))
+				SetCameraBehindPlayerVehicle()
+			end
+
+			local mcar = getObj("MansurCar")
+			if mcar then
+				mcar:Remove()
+			end
+
+			local acar = getObj("AivanCar")
+			if acar then
+				acar:Remove()
+			end
+
+			local fcar = getObj("FatherCar")
+			if fcar then
+				fcar:Remove()
+			end
+
+			MadmanCutsceneNeftegradRemove()
+			NeftegradBotSpawn()
+
+			SetTolerance(1025,1100,RS_ALLY)
+			SetTolerance(1025,1090,RS_ALLY)
+			SetTolerance(1025,1095,RS_ALLY)
+
+			TActivate("RepelNG_enter")
+			TActivate("RepelNG_timer")
+			TActivate("ConnectAiven_defendNG")
+			TActivate("ConnectMansur_defendNG")
+			TActivate("ConnectFather_defendNG")
+
+			PlayCustomMusic("Battle01")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	--TODO: Make cutscenes for failed repel in Neftegrad--
 </triggers>
