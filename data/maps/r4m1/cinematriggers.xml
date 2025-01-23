@@ -3692,5 +3692,202 @@
 		</script>
 	</trigger>
 
-	--TODO: Make cutscenes for failed repel in Neftegrad--
+	<trigger	Name="RepelNGFailed_cs"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			Fly("madmaninvasion_cam02", CINEMATIC_NO_AIM, nil, 14, 1,1)
+
+			StartCinematic()
+
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetCustomControlEnabled( true )
+				vehPlayer:SetCustomLinearVelocity( 0 )
+				vehPlayer:SetThrottle( 0 )
+				vehPlayer:SetCustomControlEnabled( false )
+			end
+			
+			TActivate("DestroyNG")
+			TActivate("RepelNGFailed_cs_end")
+
+			AddCinematicMessage(173, 2.5)
+
+			PlayCustomMusic("Death02")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="RepelNGFailed_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			ShowDeathMenu()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="NGDefended_cs_start" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus()
+
+			Fly("MadmanDefeated_cam", CINEMATIC_NO_AIM, nil, 125, 1,1)
+			StartCinematic()
+
+			local S1 = CreateVehicleEx("Cruiser01","Scient0",CVector(6403.864, 272.048, 3587.096), 1061)
+			local S2 = CreateVehicleEx("Cruiser01","Scient1",CVector(6392.156, 272.053, 3600.808), 1061)
+
+			local SC0 = GetVar("ScSkin0").AsInt
+			local SC1 = GetVar("ScSkin1").AsInt
+
+			for i=0,1 do
+				local DVehs = getObj("NGDefenders_vehicle_"..i)
+				if DVehs then
+					DVehs:Remove()
+				end
+		
+				local SDVehs = getObj("NGSDefenders_vehicle_"..i)
+				if SDVehs then
+					SDVehs:Remove()
+				end
+
+				local S = getObj("Scient"..i)
+				if S then
+					S:SetRotation(Quaternion(-0.003, -0.468, -0.002, -0.884))
+					if i==0 then
+						S:SetSkin(SC0)
+					else
+						S:SetSkin(SC1)
+					end
+				end
+			end
+
+			local M = CreateVehicleEx("UralMansur","MansurCar",CVector(6434.021, 271.331, 3596.112), 1090)
+			if M then
+				M:SetSkin(1)
+				M:SetRotation(Quaternion(-0.012, -0.837, -0.014, 0.547))
+			end
+
+			local F = CreateVehicleEx("PlayerStartCar","Father",CVector(6430.854, 270.962, 3613.272), 1090)
+			if F then
+				local Fskin = GetVar("PlayerMilkSkin").AsInt
+				F:SetSkin(Fskin)
+				F:SetRotation(Quaternion(-0.009, -0.851, -0.035, 0.525))
+			end
+
+			local A = CreateVehicleEx("BelazShot1","Aiven",CVector(6422.613, 270.421, 3623.675), 1095)
+			if A then
+				A:SetRotation(Quaternion(-0.015, -0.963, -0.051, 0.264))
+			end
+		
+			local fCar = getObj("FatherCar_vehicle_0")
+			if fCar then
+				fCar:Remove()
+			end
+		
+			local MCar = getObj("MansurCar_vehicle_0")
+			if MCar then
+				MCar:Remove()
+			end
+		
+			local ACar = getObj("AivenCar_vehicle_0")
+			if ACar then
+				ACar:Remove()
+			end
+
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetCustomControlEnabled( true )
+				PVeh:SetCustomLinearVelocity( 0 )
+				PVeh:SetThrottle( 0 )
+				PVeh:SetCustomControlEnabled( false )
+				PVeh:SetGamePositionOnGround(CVector(6441.761, 271.352, 3583.622))
+				PVeh:SetRotation(Quaternion(-0.002, -0.678, -0.012, 0.735))
+			end
+
+			PlayCustomMusic("QuietDialogue03")
+
+			TActivate("NGDefended_cs_fade")
+			TActivate("NGDefended_cs_end")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger	Name="NGDefended_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			AddCinematicMessage( 174, 0.25 )
+			AddCinematicMessage( 175, 0.25 )
+			AddCinematicMessage( 176, 0.25 )
+			AddCinematicMessage( 177, 0.25 )
+			AddCinematicMessage( 178, 0.25 )
+			AddCinematicMessage( 179, 0.25 )
+			AddCinematicMessage( 180, 0.25 )
+			AddCinematicMessage( 181, 0.25 )
+			AddCinematicMessage( 182, 0.25 )
+			AddCinematicMessage( 183, 0.25 )
+			AddCinematicMessage( 184, 0.25 )
+			AddCinematicMessage( 185, 0.25 )
+			AddCinematicMessage( 186, 0.25 )
+			AddCinematicMessage( 187, 0.25 )
+			AddCinematicMessage( 188, 0.25 )
+			AddCinematicMessage( 189, 0.25 )
+			AddCinematicMessage( 190, 0.25 )
+			AddCinematicMessage( 191, 0.25 )
+			AddCinematicMessage( 192, 0.25 )
+			AddCinematicMessage( 193, 0.25 )
+		
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="NGDefended_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			CompleteQuest("RepelMadmanInvasionNeftegrad_quest")
+			CompleteQuest("RepelMadmanInvasion_quest")
+
+			TakeQuest("BackToKef_afterinvasion_quest")
+
+			RestoreAllToleranceStatus()
+
+			SetCameraBehindPlayerVehicle()
+
+			StopPlayingCustomMusic()
+
+			for i=0,1 do
+				local DVehs = getObj("Scient"..i)
+				if DVehs then
+					DVehs:Remove()
+				end
+			end
+
+			local M = getObj("MansurCar")
+			if M then
+				M:Remove()
+			end
+
+			local F = getObj("Father")
+			if F then
+				F:Remove()
+			end
+
+			local A = getObj("Aiven")
+			if A then
+				A:Remove()
+			end
+
+--			TActivate("AC_AI_tr")
+--			TActivate("MC_AI_tr")
+--			TActivate("FC_AI_tr")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
 </triggers>

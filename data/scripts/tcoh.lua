@@ -1138,3 +1138,121 @@ function NeftegradBotSpawn()
 		end
 	end
 end
+
+function DespawnBotsSpawnFightersNG()
+	local Attackers = CreateTeam("NGMadmanInvaders",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local Defenders = CreateTeam("NGDefenders",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local SDefenders = CreateTeam("NGSDefenders",1061,CVector(getPos("BuharAttack_loc")),{"Cruiser01","Cruiser01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+
+	local Dskin0 = GetVar("NeftegradDSkin0").AsInt
+	local Dskin1 = GetVar("NeftegradDSkin1").AsInt
+
+	local Askin0 = GetVar("NeftegradASkin1").AsInt
+	local Askin1 = GetVar("NeftegradASkin2").AsInt
+	local Askin2 = GetVar("NeftegradASkin3").AsInt
+
+	for i=0,1 do
+		local d = getObj("NMadmanDefend"..i)
+		if d then
+			d:Remove()
+		end
+
+		local DVehs = getObj("NGDefenders_vehicle_"..i)
+		if DVehs then
+			if i==0 then
+				DVehs:SetSkin(Dskin0)
+				DVehs:AddModifier("hp", "= 0")
+			else
+				DVehs:SetSkin(Dskin1)
+			end
+			DVehs:SetGamePositionOnGround(getPos("Neftegrad_defend_loc_"..i))
+			DVehs:SetRotation(Quaternion(-0.000, -0.181, -0.005, 0.984))
+		end
+
+		local SDVehs = getObj("NGSDefenders_vehicle_"..i)
+		if SDVehs then
+			if i==0 then
+				SDVehs:SetGamePositionOnGround(getPos("Neftegrad_defend_loc_0")+CVector(10,0,0))
+			else
+				SDVehs:SetGamePositionOnGround(getPos("Neftegrad_defend_loc_1")+CVector(10,0,0))
+			end
+			SDVehs:SetRotation(Quaternion(-0.000, -0.181, -0.005, 0.984))
+			SDVehs:SetRandomSkin()
+			SDVehs:setGodMode(1)
+		end
+	end
+
+	for i=0,2 do
+		local a = getObj("NMadmanInvaders"..i)
+		if a then
+			a:Remove()
+		end
+
+		local AVehs = getObj("NGMadmanInvaders_vehicle_"..i)
+		if AVehs then
+			if i==0 then
+				AVehs:SetSkin(Askin0)
+			elseif i==1 then
+				AVehs:SetSkin(Askin1)
+				AVehs:AddModifier("hp", "= 0")
+			elseif i==2 then
+				AVehs:SetSkin(Askin2)
+			end
+			AVehs:SetGamePositionOnGround(getPos("Neftegrad_attack_loc_"..i))
+			AVehs:SetRotation(Quaternion(0.014, -0.996, -0.056, 0.066))
+		end
+	end
+
+	local S0 = GetEntityByName("NGSDefenders_vehicle_0"):GetSkin()
+	local S1 = GetEntityByName("NGSDefenders_vehicle_1"):GetSkin()
+
+	SetVar("ScSkin0", tonumber(S0))
+	SetVar("ScSkin1", tonumber(S1))
+end
+
+function NGRepelFailed()
+	local P = GetPlayerVehicle()
+	if P then
+		CreateEffectInsertedInRemove( "ET_PS_VEH_EXP1_MED1", CVector(getPos(P)), Quaternion(0.0000, 0.0000, 0.0000, 1.0000), true )
+		P:SetSkin(16)
+	end
+
+	for i=0,2 do
+		local a = getObj("NGMadmanInvaders_vehicle_"..i)
+		if a then
+			a:AddModifier("hp", "= 0")
+		end
+	end
+
+	for i=0,1 do
+		local DVehs = getObj("NGDefenders_vehicle_"..i)
+		if DVehs then
+			DVehs:AddModifier("hp", "= 0")
+		end
+
+		local SDVehs = getObj("NGSDefenders_vehicle_"..i)
+		if SDVehs then
+			SDVehs:setGodMode(0)
+			SDVehs:AddModifier("hp", "= 0")
+		end
+	end
+
+	local fCar = getObj("FatherCar_vehicle_0")
+	if fCar then
+		fCar:setGodMode(0)
+		fCar:setImmortalMode(0)
+		fCar:AddModifier("hp", "= 0")
+	end
+
+	local MCar = getObj("MansurCar_vehicle_0")
+	if MCar then
+		MCar:setImmortalMode(0)
+		MCar:AddModifier("hp", "= 0")
+	end
+
+	local ACar = getObj("AivenCar_vehicle_0")
+	if ACar then
+		ACar:setImmortalMode(0)
+		ACar:AddModifier("hp", "= 0")
+	end
+end

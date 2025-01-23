@@ -575,6 +575,13 @@
 			CheckAll="0"
 			ConditionToGive="all complete" />
 	</quest>
+<!--Root/r4m1/Сюжетные/The Chronicle of Hamza/Подготовка к Пустыне Смерти-->
+	<quest
+		Name="BackToKef_afterinvasion_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
 <!--Root/r3m2/Сюжетные--><!--Root/r3m2/Опциональнае--><!--Root/r3m2/Опциональнае/Поле со знаками-->
 	<quest
 		Name="q_PlaceWithSign"

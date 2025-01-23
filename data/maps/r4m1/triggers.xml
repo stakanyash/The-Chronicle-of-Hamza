@@ -3103,11 +3103,12 @@
 	<trigger Name="ConnectFather_defendNG" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("FatherCar", 1090, CVector(6423.190, 251.053, 5060.235), {"PlayerStartCar"}, nil, nil, Quaternion(-0.001, -0.708, 0.003, 0.707))
+            TeamCreate("FatherCar", 1025, CVector(6423.190, 251.053, 5060.235), {"PlayerStartCar"}, nil, nil, Quaternion(-0.001, -0.708, 0.003, 0.707))
 
 			local vehF = getObj("FatherCar_vehicle_0")
 			if vehF then
-				vehF:SetSkin(1)
+				local Fskin = GetVar("PlayerMilkSkin").AsInt
+				vehF:SetSkin(Fskin)
 				vehF:setImmortalMode(1)
 
 				local newControllerId = CreateNewObject {
@@ -3195,6 +3196,30 @@
 		</script>
 	</trigger>
 
+	<trigger	Name="DestroyNG"	active="0">
+		<event	timeout="2"		eventid="GE_TIME_PERIOD" />
+		<script>
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE01", -1, -1, CVector(6561.852, 274.561, 3528.563), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE02", -1, -1, CVector(6352.657, 273.680, 3630.539), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE03", -1, -1, CVector(6560.305, 269.342, 3492.771), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE04", -1, -1, CVector(6524.299, 268.956, 3451.540), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE05", -1, -1, CVector(6583.313, 275.362, 3490.637), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE06", -1, -1, CVector(6499.228, 275.485, 3461.671), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE07", -1, -1, CVector(6462.195, 269.990, 3516.732), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE08", -1, -1, CVector(6606.588, 269.910, 3626.271), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE09", -1, -1, CVector(6648.509, 275.134, 3578.252), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+
+			CreateEffectInsertedInRemove( "ET_PS_VEH_EXP1_MED1", CVector(6561.562, 282.571, 3528.091), Quaternion(0.0000, 0.0000, 0.0000, 1.0000), true )
+			CreateEffectInsertedInRemove( "ET_PS_VEH_EXP1_MED1", CVector(6462.195, 269.990, 3516.732), Quaternion(0.0000, 0.0000, 0.0000, 1.0000), true )
+
+			NGRepelFailed()
+
+			RuleConsole("snd_3dVolume 10")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
 	<trigger Name="RepelNG_enter" active="0">
 		<event timeout="1" eventid="GE_TIME_PERIOD" />
 		<script>
@@ -3220,6 +3245,12 @@
 					SetTolerance(1025,1095,RS_ALLY)
 					SetTolerance(1025,1062,RS_ENEMY)
 
+					SetTolerance(1061,1100,RS_ALLY)
+					SetTolerance(1061,1060,RS_ALLY)
+					SetTolerance(1061,1090,RS_ALLY)
+					SetTolerance(1061,1095,RS_ALLY)
+					SetTolerance(1061,1062,RS_ENEMY)
+
 					local fCar = getObj("FatherCar_vehicle_0")
 					if fCar then
 						fCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
@@ -3244,6 +3275,15 @@
 					trigger:Deactivate()
 				end
 			end
+		</script>
+	</trigger>
+
+	<trigger	Name="NeftegradDefended"	active="0">
+		<event	eventid="GE_OBJECT_DIE"		ObjName="NGMadmanInvaders" />
+		<script>
+			TActivate("NGDefended_cs_start")
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 </triggers>

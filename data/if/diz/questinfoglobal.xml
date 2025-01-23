@@ -11,6 +11,16 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="BackToKef_afterinvasion_quest"
+		briefDiz="Вернутся в Кеф"
+		fullDiz="Мы справились с вторжением безумцев! Это было невероятно тяжело. Но пора возвращаться к нашей основной задаче. Сначала надо вернутся в Кеф, где мы и будем обсуждать наши дальнейшие действия."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="BackToSharafAfterBuhara_quest"
 		briefDiz="Вернуться к Шарафу"
 		fullDiz="От бухарцев мы узнали много новой и полезной информации. Пора возвращаться обратно, однако я не уверен стоит ли говорить Шарафу нашли мы там бухарцев или нет..."

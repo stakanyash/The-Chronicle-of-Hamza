@@ -1526,6 +1526,201 @@
 		time="1"/>
 
 	<string
+		id="174"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Стоп, вы? Что вы тут делаете?"
+		sound=""
+		time="5" />
+
+	<string
+		id="175"
+		modelName="r4_man"
+		modelSkin="1"
+		modelCfg="128"
+		modelSlot="1"
+		value="ЛАБОРАНТ|Василий сказал помочь вам."
+		sound=""
+		time="5" />
+
+	<string
+		id="176"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Разве вы можете покидать место катастрофы? Василий говорил, что не может!"
+		sound=""
+		time="6" />
+
+	<string
+		id="177"
+		modelName="r4_man"
+		modelSkin="1"
+		modelCfg="128"
+		modelSlot="1"
+		value="ЛАБОРАНТ|На нас влияние тарелки не так велико и мы на некоторое время можем покинуть место катастрофы."
+		sound=""
+		time="7" />
+
+	<string
+		id="178"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Откуда вы вообще узнали о том, что нам нужна помощь?"
+		sound=""
+		time="5" />
+
+	<string
+		id="179"
+		modelName="r4_man"
+		modelSkin="1"
+		modelCfg="128"
+		modelSlot="1"
+		value="ЛАБОРАНТ|Мы услышали об этом по рации. Каким-то образом до нас смог дойти сигнал и Василий сразу же послал нас помогать вам."
+		sound=""
+		time="7" />
+
+	<string
+		id="180"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Вы очень вовремя, Нефтеград был в большой опасности, даже нашей помощи могло бы не хватить. Я понимаю, что вам уже и так задали достаточно вопросов, но позволите ещё один?"
+		sound=""
+		time="10" />
+
+	<string
+		id="181"
+		modelName="r4_man"
+		modelSkin="1"
+		modelCfg="128"
+		modelSlot="1"
+		value="ЛАБОРАНТ|Разумеется. Спрашивайте."
+		sound=""
+		time="4" />
+
+	<string
+		id="182"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Кто вы и каким образом вы знакомы с Хамзой?"
+		sound=""
+		time="5" />
+
+	<string
+		id="183"
+		modelName="r4_man"
+		modelSkin="1"
+		modelCfg="128"
+		modelSlot="1"
+		value="ЛАБОРАНТ|Мы учёные из соседнего региона. Мы познакомились с Хамзой, когда он со своим другом сражался на базе безумцев в нашем регионе."
+		sound=""
+		time="8" />
+
+	<string
+		id="184"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Да уж, мы столько пережили за столь короткое время, что нас теперь нельзя называть иначе как друзья."
+		sound=""
+		time="7" />
+
+	<string
+		id="185"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Получается о вас Хамза и рассказывал. Я его отец, можете называть меня Раджа, будем знакомы. Спасибо за помощь."
+		sound=""
+		time="7" />
+
+	<string
+		id="186"
+		modelName="r4_man"
+		modelSkin="1"
+		modelCfg="128"
+		modelSlot="1"
+		value="ЛАБОРАНТ|Да не за что. Я так полагаю, что это были последние безумцы, которые вторглись к вам?"
+		sound=""
+		time="6" />
+
+	<string
+		id="187"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Хочется верить, что это так."
+		sound=""
+		time="4" />
+
+	<string
+		id="188"
+		modelAutosized="true"
+		modelName="gadget_12"
+		modelSlot="1"
+		value="РАЦИЯ|Внимание! Все наши поселения, на которые были совершены нападения были успешно отбиты. Вторжение полностью отбито! Слава нашим воинам! Вечная память павшим."
+		sound=""
+		time="9" />
+
+	<string
+		id="189"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Ну вот и всё. Теперь точно. Это всё. Мансур, Чужеземец. Настало время продолжить обсуждение дальнейших планов, не так ли?"
+		sound=""
+		time="7" />
+
+	<string
+		id="190"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Согласен."
+		sound=""
+		time="3" />
+
+	<string
+		id="191"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Полностью согласен."
+		sound=""
+		time="3" />
+
+	<string
+		id="192"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="171"
+		modelSlot="1"
+		value="ОТЕЦ|Ну тогда давайте не будем тянуть и поехали обратно в Кеф. Как минимум вам нужно передохнуть после таких сражений."
+		sound=""
+		time="7" />
+
+	<string
+		id="193"
+		modelName="r4_man"
+		modelSkin="1"
+		modelCfg="128"
+		modelSlot="1"
+		value="ЛАБОРАНТ|Желаем вам удачи."
+		sound=""
+		time="4" />
+
+	<string
 		id="8801"
 		value="Вы желаете покинуть эту область?"
 		numButtons="2" />
