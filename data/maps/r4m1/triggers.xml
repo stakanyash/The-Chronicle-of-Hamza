@@ -2752,6 +2752,13 @@
 		<script>
 			TActivate("AlihamDefended_cs_start")	
 
+			for i=0,2 do
+				local dBots = getObj("MadmanDefendAliham_vehicle_"..i)
+				if dBots then
+					dBots:Remove()
+				end
+			end	
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -3044,6 +3051,13 @@
 		<script>
 			TActivate("KefDefended_cs_start")
 
+			for i=0,3 do
+				local dBots = getObj("KefInvasionDefend_vehicle_"..i)
+				if dBots then
+					dBots:Remove()
+				end
+			end	
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -3283,7 +3297,92 @@
 		<script>
 			TActivate("NGDefended_cs_start")
 
+			TDeactivate("RepelNG_timer")
+			TDeactivate("RepelNG_timer_120sec")
+			TDeactivate("RepelNG_timer_60sec")
+			TDeactivate("RepelNG_timer_30sec")
+			TDeactivate("RepelNG_timer_15sec")
+			TDeactivate("RepelNG_timerexpires")
+
 			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="FC_AI_tr" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            TeamCreate("FatherCar", 1025, CVector(6430.854, 270.962, 3613.272), {"PlayerStartCar"}, nil, nil, Quaternion(-0.009, -0.851, -0.035, 0.525))
+
+			local vehF = getObj("FatherCar_vehicle_0")
+			if vehF then
+				local Fskin = GetVar("PlayerMilkSkin").AsInt
+				vehF:SetSkin(Fskin)
+				vehF:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "MansurControllerBackToKefR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehF)
+				end
+			end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="MC_AI_tr" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            TeamCreate("MansurCar", 1090, CVector(6434.021, 271.331, 3596.112), {"UralMansur"}, nil, nil, Quaternion(-0.012, -0.837, -0.014, 0.547))
+
+			local vehM = getObj("MansurCar_vehicle_0")
+			if vehM then
+				vehM:SetSkin(1)
+				vehM:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "MansurControllerBackToKefR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehM)
+				end
+			end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="AC_AI_tr" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            TeamCreate("AivenCar", 1095, CVector(6422.613, 270.421, 3623.675), {"BelazShot1"}, nil, nil, Quaternion(-0.015, -0.963, -0.051, 0.264))
+
+			local vehAiven = getObj("AivenCar_vehicle_0")
+			if vehAiven then
+				vehAiven:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "AivenControllerNeftegradR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehAiven)
+				end
+			end
+
+			trigger:Deactivate()  
 		</script>
 	</trigger>
 </triggers>

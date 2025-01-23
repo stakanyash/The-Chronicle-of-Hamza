@@ -3759,9 +3759,17 @@
 				if S then
 					S:SetRotation(Quaternion(-0.003, -0.468, -0.002, -0.884))
 					if i==0 then
-						S:SetSkin(SC0)
+						if 0 > SC0 then
+							S:SetRandomSkin()
+						else
+							S:SetSkin(SC0)
+						end
 					else
-						S:SetSkin(SC1)
+						if 0 > SC1 then
+							S:SetRandomSkin()
+						else
+							S:SetSkin(SC1)
+						end
 					end
 				end
 			end
@@ -3883,9 +3891,9 @@
 				A:Remove()
 			end
 
---			TActivate("AC_AI_tr")
---			TActivate("MC_AI_tr")
---			TActivate("FC_AI_tr")
+			TActivate("AC_AI_tr")
+			TActivate("MC_AI_tr")
+			TActivate("FC_AI_tr")
 
 			trigger:Deactivate()
 		</script>

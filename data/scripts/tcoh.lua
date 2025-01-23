@@ -823,11 +823,23 @@ function SpawnBotsAliham()
 		local DefendCar = getObj("MadmanDefendAliham"..i)
 		if DefendCar then
 			if i==0 then
-				DefendCar:SetSkin(Dskin0)
+				if 0 > Dskin0 then
+					DefendCar:SetRandomSkin()
+				else
+					DefendCar:SetSkin(Dskin0)
+				end
 			elseif i==1 then
-				DefendCar:SetSkin(Dskin1)
+				if 0 > Dskin1 then
+					DefendCar:SetRandomSkin()
+				else
+					DefendCar:SetSkin(Dskin1)
+				end
 			elseif i==2 then
-				DefendCar:SetSkin(Dskin2)
+				if 0 > Dskin2 then
+					DefendCar:SetRandomSkin()
+				else
+					DefendCar:SetSkin(Dskin02)
+				end
 			end
 			DefendCar:SetRotation(Quaternion(-0.001, 0.483, 0.001, 0.875))
 			DefendCar:setGodMode(1)
@@ -838,13 +850,29 @@ function SpawnBotsAliham()
 		local MadmanCar = getObj("MadmanInvadersAliham"..i)
 		if MadmanCar then
 			if i==0 then
-				MadmanCar:SetSkin(Askin0)
+				if 0 > Askin0 then
+					MadmanCar:SetRandomSkin()
+				else
+					MadmanCar:SetSkin(Askin0)
+				end
 			elseif i==1 then
-				MadmanCar:SetSkin(Askin1)
+				if 0 > Askin1 then
+					MadmanCar:SetRandomSkin()
+				else
+					MadmanCar:SetSkin(Askin1)
+				end
 			elseif i==2 then
-				MadmanCar:SetSkin(Askin2)
+				if 0 > Askin2 then
+					MadmanCar:SetRandomSkin()
+				else
+					MadmanCar:SetSkin(Askin2)
+				end
 			elseif i==3 then
-				MadmanCar:SetSkin(Askin3)
+				if 0 > Askin3 then
+					MadmanCar:SetRandomSkin()
+				else
+					MadmanCar:SetSkin(Askin3)
+				end
 			end
 			MadmanCar:SetRotation(Quaternion(0.010, 0.810, -0.002, -0.586))
 			MadmanCar:setGodMode(1)
@@ -874,11 +902,23 @@ function DespawnBotsSpawnFightersAliham()
 		local DefendCar = getObj("MadmanDefendAliham_vehicle_"..i)
 		if DefendCar then
 			if i==0 then
-				DefendCar:SetSkin(Dskin0)
+				if 0 > Dskin0 then
+					DefendCar:SetRandomSkin()
+				else
+					DefendCar:SetSkin(Dskin0)
+				end
 			elseif i==1 then
-				DefendCar:SetSkin(Dskin1)
+				if 0 > Dskin1 then
+					DefendCar:SetRandomSkin()
+				else
+					DefendCar:SetSkin(Dskin1)
+				end
 			elseif i==2 then
-				DefendCar:SetSkin(Dskin2)
+				if 0 > Dskin2 then
+					DefendCar:SetRandomSkin()
+				else
+					DefendCar:SetSkin(Dskin02)
+				end
 			end
 			DefendCar:SetRotation(Quaternion(-0.001, 0.483, 0.001, 0.875))
 			DefendCar:SetGamePositionOnGround(getPos("Aliham_defend_loc_"..i))
@@ -894,13 +934,29 @@ function DespawnBotsSpawnFightersAliham()
 		local MadmanCar = getObj("MadmanInvadersAliham_vehicle_"..i)
 		if MadmanCar then
 			if i==0 then
-				MadmanCar:SetSkin(Askin0)
+				if 0 > Askin0 then
+					MadmanCar:SetRandomSkin()
+				else
+					MadmanCar:SetSkin(Askin0)
+				end
 			elseif i==1 then
-				MadmanCar:SetSkin(Askin1)
+				if 0 > Askin1 then
+					MadmanCar:SetRandomSkin()
+				else
+					MadmanCar:SetSkin(Askin1)
+				end
 			elseif i==2 then
-				MadmanCar:SetSkin(Askin2)
+				if 0 > Askin2 then
+					MadmanCar:SetRandomSkin()
+				else
+					MadmanCar:SetSkin(Askin2)
+				end
 			elseif i==3 then
-				MadmanCar:SetSkin(Askin3)
+				if 0 > Askin3 then
+					MadmanCar:SetRandomSkin()
+				else
+					MadmanCar:SetSkin(Askin3)
+				end
 			end
 			MadmanCar:SetRotation(Quaternion(0.010, 0.810, -0.002, -0.586))
 			MadmanCar:SetGamePositionOnGround(getPos("Aliham_attack_loc_"..i))
@@ -919,24 +975,40 @@ function GadadBotSpawn()
 	local skin2 = GetVar("GadadASkin3").AsInt
 	local skin3 = GetVar("GadadASkin4").AsInt
 
+	SetTolerance(1023, 1062, RS_NEUTRAL)
+
 	for i=0,3 do
 		local A = getObj("GMadmanInvaders"..i)
 		if A then
 			A:setGodMode(1)
 			A:SetRotation(Quaternion(-0.001, 0.145, 0.000, 0.989))
 			if i==0 then
-				A:SetSkin(skin0)
+				if 0 > skin0 then
+					A:SetRandomSkin()
+				else
+					A:SetSkin(skin0)
+				end
 			elseif i==1 then
-				A:SetSkin(skin1)
+				if 0 > skin1 then
+					A:SetRandomSkin()
+				else
+					A:SetSkin(skin1)
+				end
 			elseif i==2 then
-				A:SetSkin(skin2)
+				if 0 > skin2 then
+					A:SetRandomSkin()
+				else
+					A:SetSkin(skin2)
+				end
 			elseif i==3 then
-				A:SetSkin(skin3)
+				if 0 > skin3 then
+					A:SetRandomSkin()
+				else
+					A:SetSkin(skin3)
+				end
 			end
 		end
 	end
-
-	SetTolerance(1023, 1062, RS_NEUTRAL)
 end
 
 function DespawnBotsSpawnFightersGadad()
@@ -956,13 +1028,29 @@ function DespawnBotsSpawnFightersGadad()
 		local MadmanCar = getObj("MadmanInvadersGadad_vehicle_"..i)
 		if MadmanCar then
 			if i==0 then
-				MadmanCar:SetSkin(Askin0)
+				if 0 > skin0 then
+					A:SetRandomSkin()
+				else
+					A:SetSkin(skin0)
+				end
 			elseif i==1 then
-				MadmanCar:SetSkin(Askin1)
+				if 0 > skin1 then
+					A:SetRandomSkin()
+				else
+					A:SetSkin(skin1)
+				end
 			elseif i==2 then
-				MadmanCar:SetSkin(Askin2)
+				if 0 > skin2 then
+					A:SetRandomSkin()
+				else
+					A:SetSkin(skin2)
+				end
 			elseif i==3 then
-				MadmanCar:SetSkin(Askin3)
+				if 0 > skin3 then
+					A:SetRandomSkin()
+				else
+					A:SetSkin(skin3)
+				end
 			end
 			MadmanCar:SetRotation(Quaternion(-0.001, 0.145, 0.000, 0.989))
 			MadmanCar:SetGamePositionOnGround(getPos("Gadad_attack_loc_"..i))
@@ -999,15 +1087,35 @@ function SpawnBotsKef()
 			AVehs:setGodMode(1)
 			AVehs:SetRotation(Quaternion(-0.001, 0.417, 0.000, 0.909))
 			if i==0 then
-				AVehs:SetSkin(Askin0)
+				if 0 > Askin0 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin0)
+				end
 			elseif i==1 then
-				AVehs:SetSkin(Askin1)
+				if 0 > Askin1 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin1)
+				end
 			elseif i==2 then
-				AVehs:SetSkin(Askin2)
+				if 0 > Askin2 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin2)
+				end
 			elseif i==3 then
-				AVehs:SetSkin(Askin3)
+				if 0 > Askin3 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin3)
+				end
 			elseif i==4 then
-				AVehs:SetSkin(Askin4)
+				if 0 > Askin4 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin4)
+				end
 			end
 		end
 	end
@@ -1017,13 +1125,29 @@ function SpawnBotsKef()
 		if DVehs then
 			DVehs:setGodMode(1)
 			if i==0 then
-				DVehs:SetSkin(Dskin0)
+				if 0 > Dskin0 then
+					DVehs:SetRandomSkin()
+				else
+					DVehs:SetSkin(Dskin0)
+				end
 			elseif i==1 then
-				DVehs:SetSkin(Dskin1)
+				if 0 > Dskin1 then
+					DVehs:SetRandomSkin()
+				else
+					DVehs:SetSkin(Dskin1)
+				end
 			elseif i==2 then
-				DVehs:SetSkin(Dskin2)
+				if 0 > Dskin2 then
+					DVehs:SetRandomSkin()
+				else
+					DVehs:SetSkin(Dskin2)
+				end
 			elseif i==3 then
-				DVehs:SetSkin(Dskin3)
+				if 0 > Dskin3 then
+					DVehs:SetRandomSkin()
+				else
+					DVehs:SetSkin(Dskin3)
+				end
 			end
 			DVehs:SetRotation(Quaternion(0.004, 0.909, -0.001, -0.417))
 		end
@@ -1056,14 +1180,31 @@ function DespawnBotsSpawnFightersKef()
 		local Defend = getObj("KefInvasionDefend_vehicle_"..i)
 		if Defend then
 			if i==0 then
-				Defend:SetSkin(Dskin0)
+				if 0 > Dskin0 then
+					DVehs:SetRandomSkin()
+				else
+					DVehs:SetSkin(Dskin0)
+				end
 			elseif i==1 then
-				Defend:SetSkin(Dskin1)
+				if 0 > Dskin1 then
+					DVehs:SetRandomSkin()
+				else
+					DVehs:SetSkin(Dskin1)
+				end
 			elseif i==2 then
-				Defend:SetSkin(Dskin2)
-				Defend:setGodMode(1)
+				if 0 > Dskin2 then
+					DVehs:SetRandomSkin()
+					DVehs:setGodMode(1)
+				else
+					DVehs:SetSkin(Dskin2)
+					DVehs:setGodMode(1)
+				end
 			elseif i==3 then
-				Defend:SetSkin(Dskin3)
+				if 0 > Dskin3 then
+					DVehs:SetRandomSkin()
+				else
+					DVehs:SetSkin(Dskin3)
+				end
 			end
 			Defend:SetRotation(Quaternion(0.004, 0.909, -0.001, -0.417))
 			Defend:SetGamePositionOnGround(getPos("Kef_Defend_loc_"..i))
@@ -1081,15 +1222,35 @@ function DespawnBotsSpawnFightersKef()
 			AVehs:SetGamePositionOnGround(getPos("Kef_Attack_loc_"..i))
 			AVehs:SetRotation(Quaternion(-0.001, 0.417, 0.000, 0.909))
 			if i==0 then
-				AVehs:SetSkin(Askin0)
+				if 0 > Askin0 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin0)
+				end
 			elseif i==1 then
-				AVehs:SetSkin(Askin1)
+				if 0 > Askin1 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin1)
+				end
 			elseif i==2 then
-				AVehs:SetSkin(Askin2)
+				if 0 > Askin2 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin2)
+				end
 			elseif i==3 then
-				AVehs:SetSkin(Askin3)
+				if 0 > Askin3 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin3)
+				end
 			elseif i==4 then
-				AVehs:SetSkin(Askin4)
+				if 0 > Askin4 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin4)
+				end
 			end
 		end
 	end
@@ -1114,9 +1275,17 @@ function NeftegradBotSpawn()
 		local DVehs = getObj("Neftegrad_defend_vehicle_"..i)
 		if DVehs then
 			if i==0 then
-				DVehs:SetSkin(Dskin0)
+				if 0 > Dskin0 then
+					DVehs:SetRandomSkin()
+				else
+					DVehs:SetSkin(Dskin0)
+				end
 			else
-				DVehs:SetSkin(Dskin1)
+				if 0 > Dskin1 then
+					DVehs:SetRandomSkin()
+				else
+					DVehs:SetSkin(Dskin1)
+				end
 			end
 			DVehs:SetRotation(Quaternion(-0.000, -0.181, -0.005, 0.984))
 			DVehs:setGodMode(1)
@@ -1127,11 +1296,23 @@ function NeftegradBotSpawn()
 		local AVehs = getObj("NMadmanInvaders"..i)
 		if AVehs then
 			if i==0 then
-				AVehs:SetSkin(Askin0)
+				if 0 > Askin0 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin0)
+				end
 			elseif i==1 then
-				AVehs:SetSkin(Askin1)
+				if 0 > Askin1 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin1)
+				end
 			elseif i==2 then
-				AVehs:SetSkin(Askin2)
+				if 0 > Askin2 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin2)
+				end
 			end
 			AVehs:SetRotation(Quaternion(0.014, -0.996, -0.056, 0.066))
 			AVehs:setGodMode(1)
@@ -1144,11 +1325,9 @@ function DespawnBotsSpawnFightersNG()
 	local Defenders = CreateTeam("NGDefenders",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local SDefenders = CreateTeam("NGSDefenders",1061,CVector(getPos("BuharAttack_loc")),{"Cruiser01","Cruiser01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
-	local Dskin0 = GetVar("NeftegradDSkin0").AsInt
 	local Dskin1 = GetVar("NeftegradDSkin1").AsInt
 
 	local Askin0 = GetVar("NeftegradASkin1").AsInt
-	local Askin1 = GetVar("NeftegradASkin2").AsInt
 	local Askin2 = GetVar("NeftegradASkin3").AsInt
 
 	for i=0,1 do
@@ -1160,10 +1339,13 @@ function DespawnBotsSpawnFightersNG()
 		local DVehs = getObj("NGDefenders_vehicle_"..i)
 		if DVehs then
 			if i==0 then
-				DVehs:SetSkin(Dskin0)
 				DVehs:AddModifier("hp", "= 0")
 			else
-				DVehs:SetSkin(Dskin1)
+				if 0 > Dskin1 then
+					DVehs:SetRandomSkin()
+				else
+					DVehs:SetSkin(Dskin1)
+				end
 			end
 			DVehs:SetGamePositionOnGround(getPos("Neftegrad_defend_loc_"..i))
 			DVehs:SetRotation(Quaternion(-0.000, -0.181, -0.005, 0.984))
@@ -1191,12 +1373,19 @@ function DespawnBotsSpawnFightersNG()
 		local AVehs = getObj("NGMadmanInvaders_vehicle_"..i)
 		if AVehs then
 			if i==0 then
-				AVehs:SetSkin(Askin0)
+				if 0 > Askin0 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin0)
+				end
 			elseif i==1 then
-				AVehs:SetSkin(Askin1)
 				AVehs:AddModifier("hp", "= 0")
 			elseif i==2 then
-				AVehs:SetSkin(Askin2)
+				if 0 > Askin2 then
+					AVehs:SetRandomSkin()
+				else
+					AVehs:SetSkin(Askin2)
+				end
 			end
 			AVehs:SetGamePositionOnGround(getPos("Neftegrad_attack_loc_"..i))
 			AVehs:SetRotation(Quaternion(0.014, -0.996, -0.056, 0.066))
