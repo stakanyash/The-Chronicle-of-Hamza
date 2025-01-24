@@ -96,7 +96,15 @@
 				ModelName="r4_man"
 				skin="1"
 				cfg="195"
-				helloReplyNames="Dlg_npc_001334 Dlg_npc_001362 Dlg_npc_001578 Dlg_npc_001592 Dlg_npc_001598"
+				helloReplyNames="Dlg_npc_001334 Dlg_npc_001362 Dlg_npc_001578 Dlg_npc_001592 Dlg_npc_001598 Dlg_npc_002091"
+				SpokenCount="0" />
+
+			<Object
+				Name="Gadad_Aiven"
+				Belong="1023"
+				Prototype="NPC"
+				ModelName="mask_hero"
+				helloReplyNames="Dlg_npc_002085"
 				SpokenCount="0" />
 		</Object>
 
@@ -318,7 +326,15 @@
 				Prototype="NPC"
 				ModelName="r4_man"
 				cfg="219"
-				helloReplyNames="Dlg_npc_001478 Dlg_npc_001512"
+				helloReplyNames="Dlg_npc_001478 Dlg_npc_001512 Dlg_npc_002113"
+				SpokenCount="0" />
+
+			<Object
+				Name="Kef_Aiven"
+				Belong="1025"
+				Prototype="NPC"
+				ModelName="mask_hero"
+				helloReplyNames="Dlg_npc_002097 Dlg_npc_002119"
 				SpokenCount="0" />
 		</Object>
 

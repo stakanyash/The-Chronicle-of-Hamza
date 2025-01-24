@@ -3895,6 +3895,24 @@
 			TActivate("MC_AI_tr")
 			TActivate("FC_AI_tr")
 
+			local town1 = GetEntityByName("TheKef")
+			if town1 then town1:SetOpenGateToPlayer( true ) end
+
+			local town2 = GetEntityByName("TheGadad")
+			if town2 then town2:SetOpenGateToPlayer( true ) end
+
+			local town3 = GetEntityByName("TheKazif")
+			if town3 then town3:SetOpenGateToPlayer( true ) end
+
+			local town4 = GetEntityByName("r4_AlihamVil")
+			if town4 then town4:SetOpenGateToPlayer( true ) end
+
+			local town5 = GetEntityByName("TheOilCity")
+			if town5 then town5:SetOpenGateToPlayer( true ) end
+
+			local a = GetEntityByName("StartGonka_loc")
+			if a then a:SetProperty("Active",1) end
+
 			trigger:Deactivate()
 		</script>
 	</trigger>

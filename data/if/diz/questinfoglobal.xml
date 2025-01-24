@@ -359,6 +359,19 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="GoToDesertOfDeath_quest"
+		briefDiz="Отправится в Пустыню Смерти"
+		fullDiz="Настал ключевой момент. Пора отправится в Пустыню Смерти..."
+		isMainQuest="1">
+		<Map
+			name="r4m0" />
+
+		<Map
+			name="r4m1"
+			targetObjName="ExitFromMapToR4M0_loc" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="GoToFatherAfterZarmek_quest"
 		briefDiz="Встретится с отцом"
 		fullDiz="Кажется решение принято единогласно: мы отправляемся в Пустыню Смерти на поиски Серго. Ну или того, что от него осталось... Надо навестить отца, чтобы он знал, что я в порядке и обсудить с ним наши дальнейшие действия."

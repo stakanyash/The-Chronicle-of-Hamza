@@ -443,6 +443,116 @@
 		text="Его отец один из тех, кто следит за безопасностью в регионе! Если что-то случилось, то неудивительно, что он взво..."
 		role="PLAYER"
 		scriptResult="SetVar('ChujezemetsTalk', 7); StartConversation('Gadad_Mansur')" />
+<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После вторжения-->
+	<Reply
+		name="Dlg_npc_002097"
+		text="Каковы наши дальнейшие планы?"
+		role="NPC"
+		scriptCondition="GetVar('ChujezemetsTalk').AsInt==7 and QuestStatus('BackToKef_afterinvasion_quest')==Q_TAKEN  "
+		nextReplies="Dlg_pl_002098" />
+
+	<Reply
+		name="Dlg_pl_002098"
+		text="Составить план действий в Пустыне Смерти, а затем отправится туда, чтобы найти Серго. "
+		role="PLAYER"
+		nextReplies="Dlg_npc_002099" />
+
+	<Reply
+		name="Dlg_npc_002099"
+		text="А ради чего мы хотим найти Серго? Я уже и забыл с этими приключениями..."
+		role="NPC"
+		nextReplies="Dlg_pl_002100" />
+
+	<Reply
+		name="Dlg_pl_002100"
+		text="Он должен был доставить блокиратор, но не смог пересечь пустыню. По-крайней мере логически всё должно было быть именно так."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002101" />
+
+	<Reply
+		name="Dlg_npc_002101"
+		text="То есть, ты хочешь сказать, что мы можем там и не найти Серго?"
+		role="NPC"
+		nextReplies="Dlg_pl_002102" />
+
+	<Reply
+		name="Dlg_pl_002102"
+		text="Ничего исключать нельзя, но у нас нет вариантов, мы должны хотя-бы попытаться. Что-то мне подсказывает, что это вторжение безумцев не будет единоразовым."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002103" />
+
+	<Reply
+		name="Dlg_npc_002103"
+		text="Хорошо, мы попробуем. Но в пустыне очень плохая видимость, я кое как нашёл выезд в этот регион. Как нам понять, где именно его искать?"
+		role="NPC"
+		nextReplies="Dlg_pl_002104" />
+
+	<Reply
+		name="Dlg_pl_002104"
+		text="Будем искать столько, сколько придётся. Я же правильно понимаю, что безумцы это единственное, что может нам помешать?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002105" />
+
+	<Reply
+		name="Dlg_npc_002105"
+		text="Именно так."
+		role="NPC"
+		nextReplies="Dlg_pl_002106" />
+
+	<Reply
+		name="Dlg_pl_002106"
+		text="Ну вот. Тогда ты был один, а теперь нас будет трое. Шансы на то, что безумцы смогут что-то противопоставить против нас из-за этого сильно меньше. "
+		role="PLAYER"
+		nextReplies="Dlg_npc_002107" />
+
+	<Reply
+		name="Dlg_npc_002107"
+		text="Пожалуй... Ты прав. Но мы так и не придумали, как мы будем действовать, когда окажемся в пустыне."
+		role="NPC"
+		nextReplies="Dlg_pl_002108" />
+
+	<Reply
+		name="Dlg_pl_002108"
+		text="Ты местность пустыни я так понимаю не успел изучить?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002109" />
+
+	<Reply
+		name="Dlg_npc_002109"
+		text="К сожалению, да. Повторю: там маленькая видимость, я едва дальше своей машины что-то видел. Там ещё очень много разбитых кораблей, я пару раз чуть не наехал на них, пока искал путь сюда!"
+		role="NPC"
+		nextReplies="Dlg_pl_002110" />
+
+	<Reply
+		name="Dlg_pl_002110"
+		text="Что-ж, видимо придётся действовать как тогда по ситуации. Исходя из той информации о пустыне, которую ты рассказал у нас видимо нет других вариантов."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002111" />
+
+	<Reply
+		name="Dlg_npc_002111"
+		text='Эх, план конечно "не фонтан", но видимо у нас и в правду нет другого выбора.'
+		role="NPC"
+		nextReplies="Dlg_pl_002112" />
+
+	<Reply
+		name="Dlg_pl_002112"
+		text="Мансур, что скажешь?"
+		role="PLAYER"
+		scriptResult="SetVar('ChujezemetsTalk', 8); StartConversation('Kef_Mansur')" />
+<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После вторжения (2)-->
+	<Reply
+		name="Dlg_npc_002119"
+		text="Согласен."
+		role="NPC"
+		scriptCondition="GetVar('ChujezemetsTalk').AsInt==8 and QuestStatus('BackToKef_afterinvasion_quest')==Q_TAKEN  "
+		nextReplies="Dlg_pl_002120" />
+
+	<Reply
+		name="Dlg_pl_002120"
+		text="Ну тогда вперёд!"
+		role="PLAYER"
+		scriptResult="SetVar('ChujezemetsTalk', 9); CompleteQuest('BackToKef_afterinvasion_quest'); TakeQuest('GoToDesertOfDeath_quest'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека/Первая часть-->
 	<Reply
 		name="Dlg_npc_001588"
@@ -4433,6 +4543,43 @@
 		text="Плохо дело..."
 		role="PLAYER"
 		scriptResult="SetVar('MansurTalk', 4); TActivate('Madman_invasion_cs'); LeaveTown(true)" />
+<!--Root/r4m1/The Chronicle of Hamza/Мансур/После вторжения-->
+	<Reply
+		name="Dlg_npc_002113"
+		text="Я готов к любому плану."
+		role="NPC"
+		scriptCondition="GetVar('MansurTalk').AsInt==4 and QuestStatus('BackToKef_afterinvasion_quest')==Q_TAKEN  "
+		nextReplies="Dlg_pl_002114" />
+
+	<Reply
+		name="Dlg_pl_002114"
+		text="Точно? Поверь, меня то, что ты исполнил на базе безумцев до сих пор напрягает и я боюсь, что ты сделаешь тоже самое."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002115" />
+
+	<Reply
+		name="Dlg_npc_002115"
+		text="Точно. Такого больше не повторится, я же говорил. Теперь я готов идти до конца."
+		role="NPC"
+		nextReplies="Dlg_pl_002116" />
+
+	<Reply
+		name="Dlg_pl_002116"
+		text="Ну тогда поехали?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002117" />
+
+	<Reply
+		name="Dlg_npc_002117"
+		text="Поехали."
+		role="NPC"
+		nextReplies="Dlg_pl_002118" />
+
+	<Reply
+		name="Dlg_pl_002118"
+		text="Все согласны?"
+		role="PLAYER"
+		scriptResult="SetVar('MansurTalk', 5); Start" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/После возвращения из Зармека/Первая часть-->
 	<Reply
 		name="Dlg_npc_001578"
