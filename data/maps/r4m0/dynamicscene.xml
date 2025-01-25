@@ -51,9 +51,9 @@
 		Name="Bezumtsi1"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -112,9 +112,9 @@
 		Name="Bezumtsi2"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -189,9 +189,9 @@
 		Name="Bezumtsi3"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -250,9 +250,9 @@
 		Name="Bezumtsi4"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -339,9 +339,9 @@
 		Name="Bezumtsi5"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -388,9 +388,9 @@
 		Name="Bezumtsi6"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -437,9 +437,9 @@
 		Name="Bezumtsi7"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -490,9 +490,9 @@
 		Name="Bezumtsi8"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -551,9 +551,9 @@
 		Name="Bezumtsi9"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -620,9 +620,9 @@
 		Name="Bezumtsi10"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -720,9 +720,9 @@
 		Name="Bezumtsi11"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -765,9 +765,9 @@
 		Name="Bezumtsi12"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -814,9 +814,9 @@
 		Name="Bezumtsi13"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -859,9 +859,9 @@
 		Name="Bezumtsi14"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -912,9 +912,9 @@
 		Name="Bezumtsi15"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
@@ -957,9 +957,9 @@
 		Name="Bezumtsi16"
 		Belong="1062"
 		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1BezumtsiTeam"
+		InfectionTeamPrototypeName="r4_BanditesTeam"
 		DropOutTimeOut="30.000"
-		InfectionLair="r4m1BezumtsiTeam"
+		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point

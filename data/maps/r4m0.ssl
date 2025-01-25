@@ -126,7 +126,7 @@
 			name="PLAYERPASSMAP">player_passmap.bin</Key>
 
 		<Key
-			name="SERVERS">data\models\servers.xml</Key>
+			name="SERVERS">data\maps\r4m0\servers.xml</Key>
 
 		<Key
 			name="STATICSERVERS">data\models\commonservers.xml</Key>
@@ -213,19 +213,19 @@
 	<Section
 		name="CAMERA">
 		<Key
-			name="X">3082.386</Key>
+			name="X">1771.870</Key>
 
 		<Key
-			name="Y">455.860</Key>
+			name="Y">304.234</Key>
 
 		<Key
-			name="Z">2670.888</Key>
+			name="Z">3560.109</Key>
 
 		<Key
-			name="A">-86.597</Key>
+			name="A">-116.135</Key>
 
 		<Key
-			name="B">-0.704</Key>
+			name="B">-0.171</Key>
 
 		<Key
 			name="G">0.000</Key>

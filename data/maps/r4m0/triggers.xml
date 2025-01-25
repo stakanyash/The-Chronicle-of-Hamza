@@ -10,21 +10,17 @@
 		</script>
 	</trigger>
 
-<!-- Триггер для теста карты -->
+<!-- Первый приезд в Пустыню Смерти -->
 
-    <trigger Name="TestCar" active="0">
+	<trigger Name="ArrivedToDD" active="1">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-            AddPlayerVehicle("MirotvorecShot")
+        if QuestStatus("GoToDesertOfDeath_quest")==Q_TAKEN then
+			TActivate("ArrivedToDD_cs_start")
+			TActivate("PlaceSergo")
+		end
 
-			local Pl = GetPlayerVehicle()
-
-			if Pl then
-			    Pl:SetGamePositionOnGround(CVector(getPos("FromR4M1")))
-				Pl:SetRotation(Quaternion(-0.081, -0.019, -0.007, -0.997))
-			end
-
-			trigger:Deactivate()
+		trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -72,38 +68,6 @@
 				end
 			end
  		</script>
-	</trigger>
-
-<!-- Триггер "радиоактивности" -->
-
-    <trigger Name="RadioActiveSlowKill" active="1">
-		<event timeout="5" eventid="GE_TIME_PERIOD" />
-		<script>
-            local Pl = GetPlayerVehicle()
-
-            if Pl then
-                Pl:AddModifier("hp", tostring(random(-5, -0))) 
-            end
-
-			TActivate("RadioActiveSlowKill2")
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="RadioActiveSlowKill2" active="0">
-		<event timeout="5" eventid="GE_TIME_PERIOD" />
-		<script>
-            local Pl = GetPlayerVehicle()
-
-            if Pl then
-                Pl:AddModifier("hp", tostring(random(-5, -0))) 
-            end
-
-			TActivate("RadioActiveSlowKill")
-
-			trigger:Deactivate()
-		</script>
 	</trigger>
 
 <!-- Лут-боксы -->
