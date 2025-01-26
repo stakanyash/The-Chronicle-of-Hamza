@@ -2138,6 +2138,8 @@
 
 	<ParticlesServer />
 
+	<Item id="PS_GROUNDSPLASH" />
+
 	<SoundsServer>
 		<Item id="S_CRASH_METAL01" />
 		<Item id="S_CRASH_METAL02" />
