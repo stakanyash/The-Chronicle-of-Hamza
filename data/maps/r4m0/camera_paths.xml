@@ -10,4 +10,22 @@
 		<Point  coord="2040.921 270.386 3571.402" rotation="-0.135 0.201 -0.028 0.970"/>
 	</Path>
 
+	<Path Name = "FirstArrive_cam0">                         
+		<Point  coord="1973.774 323.571 3561.109" rotation="-0.040 0.845 -0.064 0.530"/>
+		<Point  coord="1973.774 323.571 3561.109" rotation="-0.097 0.140 -0.014 0.985"/>
+	</Path>
+
+	<Path Name = "FirstArrive_cam1"> 
+		<Point  coord="1802.259 350.391 2835.997" rotation="0.019 0.980 0.151 0.126"/> 
+		<Point  coord="1802.259 350.391 2835.997" rotation="0.002 0.998 -0.034 -0.050"/>   
+		<Point  coord="1802.259 350.391 2835.997" rotation="-0.030 -0.771 0.036 0.635"/>                    
+		<Point  coord="1802.259 350.391 2835.997" rotation="-0.036 -0.227 0.008 0.973"/>
+	</Path>
+
+	<Path Name = "FirstArrive_cam2">                         
+		<Point  coord="993.516 326.514 1614.063" rotation="0.003 0.988 -0.023 -0.150"/>
+		<Point  coord="993.516 326.514 1614.063" rotation="-0.010 0.684 -0.010 0.729"/>
+		<Point  coord="993.516 326.514 1614.063" rotation="-0.022 0.061 -0.001 0.998"/>
+	</Path>
+
 </Paths>

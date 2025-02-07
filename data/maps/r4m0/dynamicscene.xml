@@ -699,7 +699,7 @@
 		Name="SecretPlace3_loc"
 		Belong="1100"
 		Prototype="genericLocation"
-		Pos="454.384 266.619 1837.025"
+		Pos="454.384 266.001 1837.025"
 		Radius="10.000" />
 
 	<Object

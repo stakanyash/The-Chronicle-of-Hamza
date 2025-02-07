@@ -2,7 +2,7 @@
 <World
 	name="Object612"
 	class="SgNode"
-	LastId="301331130">
+	LastId="301331179">
 	<Node
 		name="Object301330842"
 		class="SgAnimatedModelNode"
@@ -218,7 +218,7 @@
 	<Node
 		name="Object301330871"
 		class="SgAnimatedModelNode"
-		org="1981.934 0.000 2344.101"
+		org="1972.216 0.000 2325.167"
 		orgRel="1"
 		id="esmin"
 		ndmAction="0" />
@@ -840,16 +840,6 @@
 		ndmAction="0" />
 
 	<Node
-		name="Object301330965"
-		class="SgAnimatedModelNode"
-		org="1696.623 -3.993 2338.806"
-		orgRel="1"
-		rot="-0.0209 -0.8185 -0.0378 0.5729"
-		scale="2.400 2.400 2.400"
-		id="mayak"
-		ndmAction="0" />
-
-	<Node
 		name="Object301330981"
 		class="SgAnimatedModelNode"
 		org="1367.967 0.000 208.482"
@@ -1080,5 +1070,55 @@
 		org="2281.571 0.000 3753.246"
 		orgRel="1"
 		id="crag_desert_1"
+		ndmAction="0" />
+
+	<Node
+		name="Object301331153"
+		class="SgAnimatedModelNode"
+		org="529.168 -0.500 939.079"
+		orgRel="1"
+		rot="-0.0526 0.0073 -0.0644 0.9965"
+		scale="1.600 1.600 1.600"
+		id="r4m0_sign3"
+		ndmAction="0" />
+
+	<Node
+		name="Object301331165"
+		class="SgAnimatedModelNode"
+		org="529.918 0.000 937.154"
+		orgRel="1"
+		rot="0.0000 0.0000 0.0349 0.9994"
+		scale="2.400 2.400 2.400"
+		id="r4m0_sign4"
+		ndmAction="0" />
+
+	<Node
+		name="Object301331166"
+		class="SgAnimatedModelNode"
+		org="540.732 0.000 2563.763"
+		orgRel="1"
+		rot="0.0000 0.9205 0.0000 0.3907"
+		scale="2.000 2.000 2.000"
+		id="r4m0_sign4"
+		ndmAction="0" />
+
+	<Node
+		name="Object301331167"
+		class="SgAnimatedModelNode"
+		org="544.645 0.000 2566.194"
+		orgRel="1"
+		rot="0.0000 0.9397 0.0000 0.3420"
+		scale="2.400 2.400 2.400"
+		id="r4m0_sign3"
+		ndmAction="0" />
+
+	<Node
+		name="Object301331178"
+		class="SgAnimatedModelNode"
+		org="1686.280 -13.000 2317.867"
+		orgRel="1"
+		rot="-0.0335 0.5884 -0.0191 0.8076"
+		scale="4.200 4.200 4.200"
+		id="mayak"
 		ndmAction="0" />
 </World>
