@@ -643,7 +643,9 @@
 		<Item id="r3_2_alarm" />
 		<Item id="r3_2_battle" />
 		
-
+		<Item id="r4_0_driving" />
+		<Item id="r4_0_alarm" />
+		<Item id="r4_0_battle" />
 
 		<Item id="r4_1_driving" />
 		<Item id="r4_1_alarm" />
@@ -691,6 +693,8 @@
 		<Item id="Techno03" />
 		<Item id="Techno04" />
 		<Item id="RaceQuest" />
+		<Item id="EndGame" />
+		<Item id="EndGameGood" />
 
 			
 	</MusicServer>

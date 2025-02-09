@@ -144,7 +144,20 @@
 		file="data\music\blocks\Region3\Jungle_2\battle5.ogg"
 		/>
 		
+	<model
+		id="r4_0_driving"
+		file="data\music\blocks\Region4\Desert_0\driving0.ogg"
+		/>
+		
+	<model
+		id="r4_0_alarm"
+		file="data\music\blocks\Region4\Desert_0\alarm0.ogg"
+		/>
 
+	<model
+		id="r4_0_battle"
+		file="data\music\blocks\Region4\Desert_0\battle0.ogg"
+		/>
 
 	<model
 		id="r4_1_driving"
@@ -287,4 +300,10 @@
 	<model
 		id="RaceQuest"
 		file="data\music\cinematics\racequest.ogg" />
+	<model
+		id="EndGame"
+		file="data\music\cinematics\endgame.ogg" />
+	<model
+		id="EndGameGood"
+		file="data\music\cinematics\endgame_good.ogg" />
 </Music>
