@@ -2,7 +2,7 @@
 <World
 	name="Object612"
 	class="SgNode"
-	LastId="301331189">
+	LastId="301331214">
 	<Node
 		name="Object301330842"
 		class="SgAnimatedModelNode"
@@ -842,9 +842,9 @@
 	<Node
 		name="Object301330981"
 		class="SgAnimatedModelNode"
-		org="1367.967 0.000 208.482"
+		org="1367.967 -18.000 208.482"
 		orgRel="1"
-		rot="0.0000 0.9412 0.0000 -0.3379"
+		rot="0.0000 -0.9412 0.0000 0.3379"
 		id="torgovy"
 		ndmAction="0" />
 
@@ -865,26 +865,6 @@
 		rot="0.0000 0.9980 0.0000 -0.0632"
 		scale="1.400 1.400 1.400"
 		id="exit"
-		ndmAction="0" />
-
-	<Node
-		name="Object301330996"
-		class="SgAnimatedModelNode"
-		org="1998.822 0.000 3753.419"
-		orgRel="1"
-		rot="0.0000 0.6788 0.0000 0.7343"
-		scale="2.200 2.200 2.200"
-		id="boevoy"
-		ndmAction="0" />
-
-	<Node
-		name="Object301331000"
-		class="SgAnimatedModelNode"
-		org="2172.549 0.000 3670.120"
-		orgRel="1"
-		rot="-0.0525 0.9616 -0.0147 0.2689"
-		scale="0.600 0.600 0.600"
-		id="torgovy"
 		ndmAction="0" />
 
 	<Node
@@ -1120,5 +1100,43 @@
 		rot="0.0652 0.6484 0.0224 0.7582"
 		scale="5.400 5.400 5.400"
 		id="mayak"
+		ndmAction="0" />
+
+	<Node
+		name="Object301331210"
+		class="SgAnimatedModelNode"
+		org="2152.710 0.000 3662.392"
+		orgRel="1"
+		rot="0.0000 0.9859 0.0000 0.1672"
+		scale="1.600 1.600 1.600"
+		id="boevoy"
+		ndmAction="0" />
+
+	<Node
+		name="Object301331211"
+		class="SgAnimatedModelNode"
+		org="2019.556 0.000 3731.901"
+		orgRel="1"
+		rot="0.0168 0.7146 0.0172 0.6992"
+		scale="1.600 1.600 1.600"
+		id="boevoy"
+		ndmAction="0" />
+
+	<Node
+		name="Object301331212"
+		class="SgAnimatedModelNode"
+		org="2039.907 0.000 3804.785"
+		orgRel="1"
+		id="minonos"
+		ndmAction="0" />
+
+	<Node
+		name="Object301331213"
+		class="SgAnimatedModelNode"
+		org="2234.885 0.000 3673.972"
+		orgRel="1"
+		rot="0.1788 0.7520 0.1468 0.6172"
+		scale="3.200 3.200 3.200"
+		id="kater"
 		ndmAction="0" />
 </World>

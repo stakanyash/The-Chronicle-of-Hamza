@@ -21,7 +21,7 @@
 		Name="FromR1M1"
 		Belong="1100"
 		Prototype="genericLocation"
-		Pos="2018.894 257.542 3522.749"
+		Pos="2021.992 258.985 3553.064"
 		Radius="10.000"
 		ExitLocation="ExitToR1M1" />
 
@@ -692,7 +692,7 @@
 		Name="SecretPlace2_loc"
 		Belong="1100"
 		Prototype="genericLocation"
-		Pos="3819.196 255.000 1885.280"
+		Pos="3819.196 272.122 1885.280"
 		Radius="10.000" />
 
 	<Object
@@ -1002,6 +1002,6 @@
 		Name="SecretPlace5_loc"
 		Belong="1100"
 		Prototype="genericLocation"
-		Pos="691.666 265.881 3850.454"
+		Pos="691.666 267.423 3850.454"
 		Radius="10.000" />
 </DynamicScene>
