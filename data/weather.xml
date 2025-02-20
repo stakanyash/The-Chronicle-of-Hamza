@@ -2941,9 +2941,9 @@
 		waterCourseAngle="0.000"
 		waterSpecularM="200.000"
 		waterSpecularS="0.005"
-		reduceDistFactor="0.222">
+		reduceDistFactor="0.395">
 		<Sky
-			sunriseColor="128.000 128.000 128.000"
+			sunriseColor="203.000 211.000 44.000"
 			dayColor="255.000 255.000 132.000"
 			sunsetColor="255.000 163.000 9.000"
 			nightColor="50.000 48.000 48.000" />
@@ -2955,10 +2955,10 @@
 			nightColor="50.000 48.000 48.000" />
 
 		<Ambient
-			sunriseColor="128.000 128.000 128.000"
-			dayColor="255.000 255.000 255.000"
-			sunsetColor="128.000 128.000 128.000"
-			nightColor="64.000 64.000 64.000" />
+			sunriseColor="254.000 215.000 133.000"
+			dayColor="255.000 255.000 132.000"
+			sunsetColor="215.000 134.000 0.000"
+			nightColor="50.000 48.000 48.000" />
 
 		<Diffuse
 			sunriseColor="128.000 128.000 128.000"
@@ -2981,7 +2981,7 @@
 		<Specular
 			sunriseColor="128.000 128.000 128.000"
 			dayColor="255.000 255.000 255.000"
-			sunsetColor="128.000 128.000 128.000"
+			sunsetColor="124.950 128.000 128.000"
 			nightColor="64.000 64.000 64.000" />
 
 		<PostEffect

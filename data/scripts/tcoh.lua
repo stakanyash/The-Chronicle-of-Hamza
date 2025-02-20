@@ -1445,3 +1445,67 @@ function NGRepelFailed()
 		ACar:AddModifier("hp", "= 0")
 	end
 end
+
+function CreateSergo()
+	local Sergo = random(3)
+
+	-- Debug --
+	println("Sergo place is: "..Sergo)
+	-- End debug --
+	
+	if Sergo==1 then
+		CreateNewDummyObject( "mirotvorecCab05", "Mirca0", -1, -1, CVector(2679.231, 255.022, 3850.615), Quaternion(0.0000, 0.0000, 0.0000, 0.0000), 0)
+		CreateNewDummyObject( "mirotvorecCargo05", "Mirca1", -1, -1, CVector(2679.296, 255.022, 3846.946), Quaternion(0.0000, 0.0000, 0.0000, 0.0000), 0)
+
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca2", -1, -1, CVector(2675.757, 255.022, 3852.448), Quaternion(0.0000, 0.0000, -0.2861, 0.9582), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca3", -1, -1, CVector(2675.653, 255.022, 3848.893), Quaternion(0.0000, 0.0000, -0.2588, 0.9659), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca4", -1, -1, CVector(2675.850, 255.022, 3845.192), Quaternion(0.0000, 0.0000, -0.2462, 0.9692), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca5", -1, -1, CVector(2682.811, 255.022, 3845.152), Quaternion(-0.2984, 0.9536, 0.0117, -0.0375), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca6", -1, -1, CVector(2683.131, 255.022, 3848.754), Quaternion(-0.3194, 0.9476, 0.0035, -0.0103), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca7", -1, -1, CVector(2682.690, 255.022, 3852.646), Quaternion(0.3213, -0.9465, 0.0098, -0.0289), 0)
+
+		CreateNewDummyObject( "SergoFull", "sergodead", -1, -1, CVector(2692.606, 255.022, 3840.900), Quaternion(-0.6939, -0.0345, -0.0333, 0.7185), 0)
+
+		TActivate("SergoPOS_1_tr")
+	elseif Sergo==2 then
+		CreateNewDummyObject( "mirotvorecCab05", "Mirca0", -1, -1, CVector(3582.408, 255.028, 2232.645), Quaternion(0.0000, 0.0000, 0.0000, 0.0000), 0)
+		CreateNewDummyObject( "mirotvorecCargo05", "Mirca1", -1, -1, CVector(3582.515, 255.028, 2229.046), Quaternion(0.0000, 0.0000, 0.0000, 0.0000), 0)
+
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca2", -1, -1, CVector(3585.784, 255.028, 2227.389), Quaternion(-0.1994, 0.9799, 0.0003, -0.0022), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca3", -1, -1, CVector(3585.946, 255.028, 2230.912), Quaternion(-0.2462, 0.9692, 0.0011, -0.0042), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca4", -1, -1, CVector(3585.691, 255.028, 2234.462), Quaternion(-0.2986, 0.9544, 0.0013, -0.0042), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca5", -1, -1, CVector(3579.119, 255.028, 2227.285), Quaternion(0.0000, 0.0000, -0.2672, 0.9636), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca6", -1, -1, CVector(3579.033, 255.028, 2230.883), Quaternion(0.0000, 0.0000, -0.3194, 0.9476), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca7", -1, -1, CVector(3579.257, 255.028, 2234.549), Quaternion(0.0000, 0.0000, -0.3482, 0.9374), 0)
+
+		CreateNewDummyObject( "SergoFull", "sergodead", -1, -1, CVector(3576.900, 255.028, 2232.832), Quaternion(-0.6511, 0.0000, 0.0000, 0.7590), 0)
+
+		TActivate("SergoPOS_2_tr")
+	elseif Sergo==3 then
+		CreateNewDummyObject( "mirotvorecCab05", "Mirca0", -1, -1, CVector(297.951, 255.369, 3824.779), Quaternion(0.0000, 0.0000, 0.0000, 0.0000), 0)
+		CreateNewDummyObject( "mirotvorecCargo05", "Mirca1", -1, -1, CVector(298.029, 255.369, 3821.169), Quaternion(0.0000, 0.0000, 0.0000, 0.0000), 0)
+
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca2", -1, -1, CVector(294.519, 255.369, 3826.488), Quaternion(0.0112, 0.0667, -0.1647, 0.9840), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca3", -1, -1, CVector(294.395, 255.369, 3822.856), Quaternion(0.0000, 0.0000, -0.2015, 0.9795), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca4", -1, -1, CVector(294.550, 255.369, 3819.384), Quaternion(-0.0163, -0.0856, -0.1858, 0.9787), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca5", -1, -1, CVector(301.149, 255.369, 3819.281), Quaternion(-0.1801, 0.9795, -0.0031, -0.0900), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca6", -1, -1, CVector(301.370, 255.369, 3823.116), Quaternion(-0.2052, 0.9786, -0.0152, 0.0085), 0)
+		CreateNewDummyObject( "mirotvorecWheel01", "Mirca7", -1, -1, CVector(301.250, 255.369, 3826.754), Quaternion(0.2116, -0.9747, 0.0153, -0.0703), 0)
+
+		CreateNewDummyObject( "SergoFull", "sergodead", -1, -1, CVector(305.398, 255.369, 3819.719), Quaternion(-0.0855, 0.7299, 0.6718, 0.0929), 0)
+
+		TActivate("SergoPOS_3_tr")
+	end
+
+	for i=0,7 do
+		local Mirca = getObj("Mirca"..i)
+		if Mirca then
+			Mirca:SetSkin(8)
+		end
+	end
+
+	local sergod = getObj("sergodead")
+	if sergod then
+		sergod:SetNodeAction(AT_RESERVED1)
+	end
+end

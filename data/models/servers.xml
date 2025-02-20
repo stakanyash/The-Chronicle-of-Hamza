@@ -15,6 +15,10 @@
 			file="data\models\AnimModels.xml" />
 
 		<Item
+			id="SergoFull"
+			file="data\models\AnimModels.xml" />
+
+		<Item
 			id="conteiner"
 			file="data\models\AnimModels.xml" />
 

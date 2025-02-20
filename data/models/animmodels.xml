@@ -18951,4 +18951,11 @@
 		windwavy="0"
 		trans="0" />
 
+	<model
+		id="SergoFull"
+		file="data\models\objects\sergo\sergo01.gam"
+		shadow="1"
+		windwavy="0"
+		trans="0" />
+
 </AnimatedModels>

@@ -306,4 +306,7 @@
 	<model
 		id="EndGameGood"
 		file="data\music\cinematics\endgame_good.ogg" />
+	<model
+		id="R4M0Ambient"
+		file="data\music\cinematics\r4m0_ambient.ogg" />
 </Music>
