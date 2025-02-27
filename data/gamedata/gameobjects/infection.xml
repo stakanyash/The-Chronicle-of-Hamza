@@ -1222,18 +1222,18 @@ $Id: Infection.xml,v 1.48 2005/11/28 07:43:57 anton Exp $
 	<Prototype
 		Class 		= "VehiclesGenerator"
 		Name		= "r4m0_BanditesGenerator"
-                DesiredCount 				= "2-3"
+        DesiredCount 				= "3-4"
 		partOfSchwartzForCabin 			= "0.15"  
 		partOfSchwartzForBasket 		= "0.15"
 		partOfSchwartzForGuns 			= "0.54"
 		partOfSchwartzForWares 			= "0.20" >
 		<Description 
-			VehiclesPrototypes	="FighterEnemySpawn CruiserEnemySpawn"		
+			VehiclesPrototypes	="FighterEnemySpawn UralForSale"		
 			WaresPrototypes="electronics book"
 			GunAffixGeneratorPrototype="townaffixGenerator"
 			PartOfSchwartz="0.35" />
 		<Description 
-			VehiclesPrototypes	="CruiserEnemySpawn HunterEnemySpawn" 	
+			VehiclesPrototypes	="BelazForSale HunterEnemySpawn" 	
 			WaresPrototypes="electronics book"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />

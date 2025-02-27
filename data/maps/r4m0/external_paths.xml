@@ -1,2 +1,20 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
-<Paths />
+<Paths>
+	<Path
+		Name="StartPath_L">
+		<Point
+			coord="1182.917 645.343" />
+	</Path>
+
+	<Path
+		Name="StartPath_M">
+		<Point
+			coord="1205.629 641.456" />
+	</Path>
+
+	<Path
+		Name="StartPath_R">
+		<Point
+			coord="1227.790 642.224" />
+	</Path>
+</Paths>

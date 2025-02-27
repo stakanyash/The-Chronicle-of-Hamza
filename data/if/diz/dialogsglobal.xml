@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
-<DialogsResource><!--Root--><!--Root/r1m1--><!--Root/r1m2--><!--Root/r1m3--><!--Root/r1m4--><!--Root/r2m1--><!--Root/r2m2--><!--Root/r3m1--><!--Root/r3m2--><!--Root/r4m1--><!--Root/r4m2--><!--Root/r4m2/Сюжетные--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец/При диалоге с учёным--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец/При диалоге с учёным/Первая часть-->
+<DialogsResource><!--Root--><!--Root/r1m1--><!--Root/r1m2--><!--Root/r1m3--><!--Root/r1m4--><!--Root/r2m1--><!--Root/r2m2--><!--Root/r3m1--><!--Root/r3m2--><!--Root/r4m1--><!--Root/r4m2--><!--Root/TCoH--><!--Root/TCoH/SergoQuest-->
+	<Reply
+		name="Dlg_npc_002121"
+		text="Что сделать с блокиратором?"
+		role="NPC"
+		nextReplies="Dlg_pl_002122 Dlg_pl_002123" />
+
+	<Reply
+		name="Dlg_pl_002123"
+		text="Оставить его на месте"
+		role="PLAYER"
+		scriptResult="CompleteQuest('FindSergoBody_quest'); TakeQuest('GE_activated'); TActivate('LeaveBlock_cs')" />
+
+	<Reply
+		name="Dlg_pl_002122"
+		text="Взять его и отдать Чужеземцу"
+		role="PLAYER"
+		scriptResult="CompleteQuest('FindSergoBody_quest'); TakeQuest('BE_activated'); TActivate('TakeBlock_cs')" />
+<!--Root/r4m2/Сюжетные--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец/При диалоге с учёным--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец/При диалоге с учёным/Первая часть-->
 	<Reply
 		name="Dlg_npc_001567"
 		text="Подождите... Вы не знаете, кто и откуда ему должен был доставить в Южный этот блокиратор?"
@@ -110,7 +128,7 @@
 		name="r4m2_Bar_Scientist_1_N12"
 		text="Хорошо."
 		role="PLAYER"
-		scriptResult="EndConversation(); SetVar('ScientistTalk', 1); TakeQuest('LookAtTarelka_quest')" />
+		scriptResult="EndConversation(); SetVar('ScientistTalk', 1); TakeQuest('LookAtTarelka_quest'); TActivate('AivenTPtoBase')" />
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке/Первая часть-->
 	<Reply
 		name="r4m2_Bar_Scientist_2_N01"

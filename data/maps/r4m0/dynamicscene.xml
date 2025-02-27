@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="24">
+	LastId="36">
 	<TargetNamesForDestroy
 		Names="" />
 
@@ -13,7 +13,7 @@
 		Name="FromR4M1"
 		Belong="1100"
 		Prototype="genericLocation"
-		Pos="1164.747 268.672 416.754"
+		Pos="1164.747 268.745 416.754"
 		Radius="10.000"
 		ExitLocation="ExitToR4M1" />
 
@@ -1003,5 +1003,89 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="691.666 267.423 3850.454"
+		Radius="10.000" />
+
+	<Object
+		Name="StartSpawn_1"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1170.920 260.623 503.217"
+		Radius="10.000" />
+
+	<Object
+		Name="StartSpawn_2"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1136.401 259.646 515.415"
+		Radius="10.000" />
+
+	<Object
+		Name="StartSpawn_3"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1202.620 259.873 509.306"
+		Radius="10.000" />
+
+	<Object
+		Name="SergoPlace_1"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2754.440 256.703 3890.046"
+		Radius="50.000" />
+
+	<Object
+		Name="SergoPlace_2"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="554.499 270.595 3810.907"
+		Radius="60.000" />
+
+	<Object
+		Name="SergoPlace_3"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3663.513 255.000 1574.287"
+		Radius="50.000" />
+
+	<Object
+		Name="StartEndSpawn_1"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1182.737 269.892 646.706"
+		Radius="10.000" />
+
+	<Object
+		Name="StartEndSpawn_2"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1206.918 269.137 643.508"
+		Radius="10.000" />
+
+	<Object
+		Name="StartEndSpawn_3"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1229.987 268.594 642.680"
+		Radius="10.000" />
+
+	<Object
+		Name="SergoFinded1_M"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2710.871 255.002 3868.294"
+		Radius="10.000" />
+
+	<Object
+		Name="SergoFinded1_L"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2717.824 255.004 3844.065"
+		Radius="10.000" />
+
+	<Object
+		Name="SergoFinded1_R"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2701.374 255.118 3891.065"
 		Radius="10.000" />
 </DynamicScene>

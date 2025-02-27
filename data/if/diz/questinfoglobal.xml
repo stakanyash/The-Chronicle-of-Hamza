@@ -275,6 +275,19 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="FindSergoBody_quest"
+		briefDiz="Найти Серго"
+		fullDiz="Нам нужно найти Серго или то, что от него осталось."
+		isMainQuest="1">
+		<Map
+			name="r4m0" />
+
+		<Map
+			name="r4m1"
+			targetObjName="ExitFromMapToR4M0_loc" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="FreeExtremistLeader_Quest1"
 		briefDiz="Освободить лидера экстремистов"
 		fullDiz="Склад заняли экстремисты. Если я освобожу их лидера из плена, они уйдут и позволят торговцам спокойно работать. "

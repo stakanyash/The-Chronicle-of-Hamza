@@ -4,4 +4,42 @@
 		id="8801"
 		value="Вы желаете покинуть эту область?"
 		numButtons="2" />
+
+	<string
+		id="1"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Жуткое место..."
+		sound=""
+		time="3" />
+
+	<string
+		id="2"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|И где нам здесь искать Серго?"
+		sound=""
+		time="4" />
+
+	<string
+		id="3"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Он может быть где угодно. Я ехал практически по прямой и ничего похожего на него не видел. Либо просто не заметил. Слишком сложно что-то заметить, когда борешься с кучей безумцев!"
+		sound=""
+		time="11" />
+
+	<string
+		id="4"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Легко нам здесь явно не будет. Но отступать некуда. Вперёд."
+		sound=""
+		time="6" />
 </resource>

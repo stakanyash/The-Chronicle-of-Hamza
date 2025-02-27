@@ -64,13 +64,19 @@
 		<script>
             SaveAllToleranceStatus(RS_NEUTRAL)
 
-
-            Fly("FirstArrive_cam0", CINEMATIC_NO_AIM, nil, 15, 1, 0 )
-			Fly("FirstArrive_cam1", CINEMATIC_NO_AIM, nil, 15, 0, 0 )
-			Fly("FirstArrive_cam2", CINEMATIC_NO_AIM, nil, 15, 0, 1 )
+            Fly("FirstArrive_cam0", CINEMATIC_NO_AIM, nil, 13, 1, 0 )
+			Fly("FirstArrive_cam1", CINEMATIC_NO_AIM, nil, 12, 0, 0 )
+			Fly("FirstArrive_cam4", CINEMATIC_NO_AIM, nil, 12, 0, 0 )
+			Fly("FirstArrive_cam2", CINEMATIC_NO_AIM, nil, 12, 0, 0 )
+			Fly("FirstArrive_cam5", CINEMATIC_NO_AIM, nil, 15, 0, 0 )
+			Fly("FirstArrive_cam6", CINEMATIC_NO_AIM, nil, 8, 0, 1 )
             StartCinematic()
 
+			SetVar("AmbientPlayed", 0)
+
 			TActivate("FirstArrive_cs_music")
+			TActivate("FirstArrive_cs_cam5")
+			TActivate("FirstArrive_cs_cam6")
             TActivate("FirstArrive_cs_end")
 
 			trigger:Deactivate()
@@ -81,6 +87,50 @@
 		<event	timeout="0.1"			eventid="GE_TIME_PERIOD" />
 		<script>
 			PlayCustomMusic("R4M0Ambient")
+
+			TActivate("HeroesPlace")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="FirstArrive_cs_cam5" active="0">
+		<event flypath="FirstArrive_cam5" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			StopPlayingCustomMusic()
+
+			SetVar("AmbientPlayed", 1)
+
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetExternalPathByName("StartPath_M")
+				P:LimitMaxSpeed(10)
+			end
+
+			local A = getObj("AivenCarCS")
+			if A then
+				A:SetExternalPathByName("StartPath_L")
+				A:SetCruisingSpeed(10)
+			end
+
+			local M = getObj("MansurCar")
+			if M then
+				M:SetExternalPathByName("StartPath_R")
+				M:SetCruisingSpeed(10)
+			end
+
+			AddCinematicMessage( 1, 0.5 )
+			AddCinematicMessage( 2, 0.2 )
+			AddCinematicMessage( 3, 0.2 )
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="FirstArrive_cs_cam6" active="0">
+		<event flypath="FirstArrive_cam6" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage( 4, 0.5 )
 
 			trigger:Deactivate()
 		</script>
@@ -94,7 +144,32 @@
 
             SetCameraBehindPlayerVehicle()
 
-			StopPlayingCustomMusic()
+			if GetVar("AmbientPlayed").AsInt==0 then
+				StopPlayingCustomMusic()
+			end
+
+			CompleteQuest("GoToDesertOfDeath_quest")
+			TakeQuest("FindSergoBody_quest")
+
+			local A = getObj("AivenCarCS")
+			if A then
+				A:Remove()
+			end
+
+			local M = getObj("MansurCar")
+			if M then
+				M:Remove()
+			end
+
+			local P = GetPlayerVehicle()
+			if P then
+				P:UnlimitMaxSpeed()
+			end
+
+			TActivate("Co_M_DDA")
+			TActivate("Co_A_DDA")
+
+			CreateSergo()
 
 			trigger:Deactivate()
 		</script>

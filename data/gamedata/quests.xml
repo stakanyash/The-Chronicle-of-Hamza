@@ -88,6 +88,13 @@
 			ConditionToGive="all complete"
 			PrecedingQuests="Human1_Quest1_1" />
 	</quest>
+<!--Root/r4m0-->
+	<quest
+		Name="FindSergoBody_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
 <!--Root/r4m2/ׁ‏זועםûו-->
 	<quest
 		Name="r4m2_FightWithCrazy"

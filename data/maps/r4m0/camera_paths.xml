@@ -26,4 +26,20 @@
 		<Point  coord="533.052 262.904 959.950" rotation="-0.003 0.996 -0.080 0.033"/>
 	</Path>
 
+	<Path Name = "FirstArrive_cam4">                         
+		<Point  coord="1781.958 270.132 3847.283" rotation="-0.000 1.000 -0.018 0.012"/>
+		<Point  coord="1842.239 278.625 3768.102" rotation="-0.070 0.793 -0.093 0.598"/>
+		<Point  coord="1844.134 297.582 3718.233" rotation="-0.172 0.556 -0.118 0.805"/>
+	</Path>
+
+	<Path Name = "FirstArrive_cam5">                         
+		<Point  coord="1154.536 280.132 565.792" rotation="0.018 0.982 -0.129 -0.137"/>
+		<Point  coord="1162.416 282.622 679.279" rotation="0.041 0.898 -0.086 -0.429"/>
+	</Path>
+
+	<Path Name = "FirstArrive_cam6">
+		<Point  coord="1162.416 282.622 679.279" rotation="0.041 0.898 -0.086 -0.429"/>
+		<Point  coord="1236.959 277.864 724.521" rotation="0.021 -0.413 -0.010 0.911"/>
+	</Path>
+
 </Paths>
