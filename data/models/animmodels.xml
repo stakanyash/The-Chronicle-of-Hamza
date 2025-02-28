@@ -15955,16 +15955,8 @@
 		trans="0" />
 
 	<model
-		id="r4m0_sign3"
-		file="data\models\buildings\region1\r4m0_sign3.gam"
-		shadowVolume="1"
-		shadow="1"
-		windwavy="0"
-		trans="0" />
-
-	<model
-		id="r4m0_sign4"
-		file="data\models\buildings\region1\r4m0_sign4.gam"
+		id="r4m0_sign"
+		file="data\models\buildings\region4\sign\stolb1.gam"
 		shadowVolume="1"
 		shadow="1"
 		windwavy="0"
@@ -18954,6 +18946,13 @@
 	<model
 		id="SergoFull"
 		file="data\models\objects\sergo\sergo01.gam"
+		shadow="1"
+		windwavy="0"
+		trans="0" />
+
+	<model
+		id="blockirator"
+		file="data\models\objects\block\block1.gam"
 		shadow="1"
 		windwavy="0"
 		trans="0" />

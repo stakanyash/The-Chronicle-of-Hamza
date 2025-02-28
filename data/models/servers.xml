@@ -2736,11 +2736,7 @@
 			file="data\models\AnimModels.xml" />
 
 		<Item
-			id="r4m0_sign3"
-			file="data\models\AnimModels.xml" />
-
-		<Item
-			id="r4m0_sign4"
+			id="r4m0_sign"
 			file="data\models\AnimModels.xml" />
 
 		<Item
@@ -3965,6 +3961,10 @@
 
 		<Item
 			id="quest_cd2"
+			file="data\models\AnimModels.xml" />
+
+		<Item
+			id="blockirator"
 			file="data\models\AnimModels.xml" />
 
 		<Item

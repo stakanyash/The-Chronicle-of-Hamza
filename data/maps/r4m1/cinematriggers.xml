@@ -642,7 +642,7 @@
 	</trigger>
 
 
-	<!-- Игрок впервые приезжает на карту -->
+	<!-- пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ -->
 	<trigger	Name="cinPriezdFirst"	active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
 		<script>
@@ -725,7 +725,7 @@
 		</script>
 	</trigger>
 
-	<!-- Вломили Лисе, когда она начала агрессировать -->
+	<!-- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ -->
 	<trigger Name="trENEMYLISA_DEAD" active="0">
 		<event eventid="GE_VEHICLE_WITHOUT_HEALTH" ObjName="ENEMYLISA_vehicle_0" />
 		<event	timeout="60"		eventid="GE_TIME_PERIOD" />
@@ -846,7 +846,7 @@
 		</script>
 	</trigger>
 
-	<!-- Отплытие на подлодке в Аржан -->
+	<!-- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ -->
 
 	<trigger Name="cinMovePlToR2M2_begin" active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
@@ -3231,8 +3231,6 @@
 		<script>
 			RestoreAllToleranceStatus()
 
-			SetCameraBehindPlayerVehicle()
-
 			CompleteQuest("GoToMansurandAivenJr_quest")
 			TakeQuest("RepelMadmanInvasion_quest")
 			TakeQuest("RepelMadmanInvasionAliham_quest")
@@ -3250,8 +3248,9 @@
 					PVeh:SetGamePositionOnGround(CVector(5750.906, 250.112, 7154.888))
 					PVeh:SetRotation(Quaternion(-0.000, -0.689, -0.000, 0.725))
 					PVeh:setGodMode(0)
-					SetCameraBehindPlayerVehicle()
 				end
+
+				SetCameraBehindPlayerVehicle()
 			end
 
 			SpawnBotsAliham()
@@ -3269,9 +3268,12 @@
 			end
 
 			local MCar = getObj("MansurCar")
-			local CCar = getObj("AivenCar")
-			if MCar and CCar then
+			if MCar then
 				MCar:Remove()
+			end
+
+			local CCar = getObj("AivenCar")
+			if CCar then
 				CCar:Remove()
 			end
 
@@ -3570,7 +3572,7 @@
 				mCar:Remove()
 			end
 
-			local mCCar = CreateVehicleEx("UralMansur","MansurCar",CVector(6389.877, 251.753, 5064.563), 1090)
+			local mCCar = CreateVehicleEx("UralMansur","MansurCarCS",CVector(6389.877, 251.753, 5064.563), 1090)
 			if mCCar then
 				mCCar:SetSkin(1)
 				mCCar:SetRotation(Quaternion(0.038, -0.803, -0.029, -0.594))
@@ -3658,7 +3660,7 @@
 				SetCameraBehindPlayerVehicle()
 			end
 
-			local mcar = getObj("MansurCar")
+			local mcar = getObj("MansurCarCS")
 			if mcar then
 				mcar:Remove()
 			end
@@ -3774,7 +3776,7 @@
 				end
 			end
 
-			local M = CreateVehicleEx("UralMansur","MansurCar",CVector(6434.021, 271.331, 3596.112), 1090)
+			local M = CreateVehicleEx("UralMansur","MansurCarCS",CVector(6434.021, 271.331, 3596.112), 1090)
 			if M then
 				M:SetSkin(1)
 				M:SetRotation(Quaternion(-0.012, -0.837, -0.014, 0.547))
@@ -3876,7 +3878,7 @@
 				end
 			end
 
-			local M = getObj("MansurCar")
+			local M = getObj("MansurCarCS")
 			if M then
 				M:Remove()
 			end

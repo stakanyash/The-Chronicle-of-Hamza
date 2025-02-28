@@ -331,6 +331,11 @@
 		value="Робот-настройщик" />
 
 	<Item
+		id="quest_blockirator"
+		locForm="0"
+		value="Блокиратор" />
+
+	<Item
 		id="quest_repair_robot1"
 		locForm="0"
 		value="Робот-помощник" />
