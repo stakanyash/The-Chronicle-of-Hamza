@@ -376,19 +376,19 @@
 	<trigger Name="trExitToR4M0" active="1">
 		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="ExitFromMapToR4M0_loc" />
 		<script>
-			GetPlayerVehicle():SetThrottle( 0 )
-			GetPlayerVehicle():SetCustomLinearVelocity( 0 )
-			if QuestStatus("r4m1_RescueBuharsCivilian")~=Q_TAKEN and QuestStatus("r4m1_KNO_GotoOiler")~=Q_TAKEN and QuestStatus("r4m1_KNO_BringOil")~=Q_TAKEN then
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetThrottle( 0 )
+				P:SetCustomLinearVelocity( 0 )
+			end
+
+			if QuestStatus("GoToDesertOfDeath_quest")==Q_TAKEN then
 				local b = SpawnMessageBox( "8801" )
 
 				if b == 1 then
-	--				println ( "Yes" )
-	--				TActivate("cinExit11OkFirst")
 					PassToMap("r4m0", "FromR4M1", -1 )
 				else
-	--				println ( "No" )
 					TActivate("cinExit11ReturnFirst")
-	--				GetPlayerVehicle():SetExternalPathByName("ReturnPathR1M1")
 				end
 			else
 				TActivate("cinExit11ReturnFirst")

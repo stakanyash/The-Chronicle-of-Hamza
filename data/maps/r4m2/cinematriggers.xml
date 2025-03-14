@@ -631,13 +631,36 @@
 				local Plf = GetPlayerVehicle()
 				local PlfID = GetPlayerVehicleId()
 
-				Fly("firstarrive_cam01", CINEMATIC_NO_AIM, nil, 17, 1, 0)
+				Fly("firstarrive_cam01", CINEMATIC_NO_AIM, nil, 19, 0, 0)
 				Fly("firstarrive_cam02", CINEMATIC_AIM_TO_ID, PlfID, 15, 0, 0)
 				Fly("firstarrive_cam03", CINEMATIC_NO_AIM, nil, 8, 0, 1)
 
 				StartCinematic()
 
-				TActivate("FirstArrive_cs_fade")
+				local PVeh = GetPlayerVehicle()
+				if PVeh then
+					PVeh:SetGamePositionOnGround(CVector(getPos("HamzaSpawn_firstarrive_loc")))
+					PVeh:SetRotation(Quaternion(0.009, 0.950, 0.002, 0.312))
+				end
+
+				local ManCarCreate = CreateVehicleEx("UralMansur", "MCarCS", CVector(getPos("MansurSpawn_firstarrive_loc")), 1090)
+				if ManCarCreate then
+					ManCarCreate:SetRotation(Quaternion(0.009, 0.950, 0.002, 0.312))
+					ManCarCreate:SetSkin(1)
+				end
+
+				local AivenCreate = CreateVehicleEx("BelazShot1", "AivenCarCS", CVector(getPos("AivenSpawn_firstarrive_loc")), 1095)
+				if AivenCreate then
+					AivenCreate:SetRotation(Quaternion(0.009, 0.950, 0.002, 0.312))
+					AivenCreate:SetSkin(3)
+				end
+
+				CreateMadmanZarmek()
+
+				AddCinematicMessage(600, 5)
+				AddCinematicMessage(601, 0.5)
+
+				TActivate("FirstArrive_cs_music")
 				TActivate("FirstArrive_cs_cam02")
 				TActivate("FirstArrive_cs_cam03")
 				TActivate("FirstArrive_cs_end")
@@ -647,33 +670,10 @@
 		</script>
 	</trigger>
 
-	<trigger	Name="FirstArrive_cs_fade"	active="0">
-		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+	<trigger	Name="FirstArrive_cs_music"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
 			PlayCustomMusic("Techno04")
-
-			local PVeh = GetPlayerVehicle()
-			if PVeh then
-				PVeh:SetGamePositionOnGround(CVector(getPos("HamzaSpawn_firstarrive_loc")))
-				PVeh:SetRotation(Quaternion(0.009, 0.950, 0.002, 0.312))
-			end
-
-			local ManCarCreate = CreateVehicleEx("UralMansur", "MCarCS", CVector(getPos("MansurSpawn_firstarrive_loc")), 1090)
-			if ManCarCreate then
-				ManCarCreate:SetRotation(Quaternion(0.009, 0.950, 0.002, 0.312))
-				ManCarCreate:SetSkin(1)
-			end
-
-			local AivenCreate = CreateVehicleEx("BelazShot1", "AivenCarCS", CVector(getPos("AivenSpawn_firstarrive_loc")), 1095)
-			if AivenCreate then
-				AivenCreate:SetRotation(Quaternion(0.009, 0.950, 0.002, 0.312))
-				AivenCreate:SetSkin(3)
-			end
-
-			CreateMadmanZarmek()
-
-			AddCinematicMessage(600, 5)
-			AddCinematicMessage(601, 0.5)
 
 			trigger:Deactivate()
 		</script>

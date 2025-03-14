@@ -9,4 +9,8 @@
 		Name="ExitToR1M1"
 		FullName="Дорога в Край" />
 
+	<Object
+		Name="HamzaChoose"
+		FullName="Хамза" />
+
 </ObjectNames>

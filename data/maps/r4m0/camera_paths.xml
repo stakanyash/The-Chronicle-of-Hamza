@@ -42,4 +42,49 @@
 		<Point  coord="1236.959 277.864 724.521" rotation="0.021 -0.413 -0.010 0.911"/>
 	</Path>
 
+	<Path Name = "SergoFinded1_cam">
+		<Point  coord="2716.514 296.335 3910.303" rotation="-0.075 0.925 -0.275 0.252"/>
+		<Point  coord="2700.014 266.729 3862.993" rotation="-0.091 0.902 -0.233 0.351"/>
+	</Path>
+
+	<Path Name = "SergoFinded2_cam">
+		<Point  coord="3574.412 267.864 2243.544" rotation="0.100 0.889 -0.380 -0.235"/>
+		<Point  coord="3518.690 292.700 2318.919" rotation="0.075 0.917 -0.209 -0.331"/>
+	</Path>
+
+	<Path Name = "SergoFinded3_cam">
+		<Point  coord="345.141 293.814 3702.323" rotation="-0.143 0.184 -0.027 0.972"/>
+		<Point  coord="278.547 286.692 3716.418" rotation="-0.141 -0.091 0.013 0.986"/>
+	</Path>
+
+	<Path Name = "Decision_1_cam">
+		<Point  coord="2700.014 266.729 3862.993" rotation="-0.091 0.902 -0.233 0.351"/>
+	</Path>
+
+	<Path Name = "Decision_2_cam">
+		<Point  coord="3518.690 292.700 2318.919" rotation="0.075 0.917 -0.209 -0.331"/>
+	</Path>
+
+	<Path Name = "Decision_3_cam">
+		<Point  coord="278.547 286.692 3716.418" rotation="-0.141 -0.091 0.013 0.986"/>
+	</Path>
+
+	<Path Name = "Hint_1_cam">
+		<Point  coord="3187.004 324.156 3690.010" rotation="0.003 0.489 0.002 0.872"/>
+		<Point  coord="2928.408 329.692 3907.247" rotation="-0.042 0.732 -0.045 0.679"/>
+		<Point  coord="2707.452 265.423 3851.454" rotation="-0.104 0.807 -0.149 0.562"/>
+	</Path>
+
+	<Path Name = "Hint_2_cam">
+		<Point  coord="3566.836 468.222 2631.354" rotation="-0.053 0.925 -0.139 0.350"/>
+		<Point  coord="3515.695 339.091 2358.882" rotation="0.051 0.946 -0.262 -0.186"/>
+		<Point  coord="3568.486 271.048 2254.070" rotation="0.066 0.934 -0.247 -0.251"/>
+	</Path>
+
+	<Path Name = "Hint_3_cam">
+		<Point  coord="1364.903 439.605 3423.313" rotation="-0.039 0.503 -0.023 0.863"/>
+		<Point  coord="848.882 378.401 3802.300" rotation="-0.043 0.680 -0.040 0.731"/>
+		<Point  coord="318.738 262.758 3820.968" rotation="-0.131 0.683 -0.127 0.707"/>
+	</Path>
+
 </Paths>

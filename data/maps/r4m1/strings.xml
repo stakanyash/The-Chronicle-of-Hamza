@@ -1781,4 +1781,52 @@
 		id="9999"
 		value="Ïðîïóñòèòü ñòàðòîâóþ áèòâó?" 
 		numButtons="2"/>
+
+    <string
+		id="5968"
+		msgType="SCROLL"
+		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
+		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
+		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
+		value="@ffffa600Êîìïàíèÿ «Targem Games»| | | |@ffffa600Ïðîäþñåð||@ffffffffÑòàíèñëàâ «scorp» Ñêîðá| | |@ffffa600Òåõíè÷åñêèé äèðåêòîð ïðîåêòà||@ffffffffÀëåêñåé Ñêðÿáèí| | |@ffffa600Ìåíåäæåð ïðîåêòà||@ffffffffÅâãåíèé «Hrrr» Õðóíîâ| | |@ffffa600Ñöåíàðèé||@ffffffffÀëåêñåé «Alex TG» ×åñòíûõ| | |@ffffa600Âåäóùèé ïðîãðàììèñò ïðîåêòà||@ffffffffÀíòîí «anger» Ñàâèí| | |@ffffa600Ãëàâíûé äèçàéíåð ïðîåêòà||@ffffffffÀëåêñåé «Alex TG» ×åñòíûõ| | |@ffffa600Âåäóùèé õóäîæíèê ïðîåêòà||@ffffffffÀëåêñàíäð «Alex ML» Ìàðãóøèí| | |@ffffa600Äèçàéí èãðû||@ffffffffÄåíèñ «mif2000» Ãàëàíèí|@ffffffffÑåðãåé «JSinx» Óäþðìèíñêèé|@ffffffffÀëåêñåé «Razaz» Àíóôðèåâ|@ffffffffÑòàíèñëàâ «scorp» Ñêîðá|@ffffffffÁîðèñ «borg» Ñìèðíîâ| | |@ffffa600Ïðîãðàììèðîâàíèå||@ffffffffÅëåíà «SoftKitty» Åâäîêèìîâà|@ffffffffÈâàí «Vano» Âëàñîâ|@ffffffffÈëüÿ «phosgen» Ðóçàêîâ|@ffffffffÌàêñèì «Shadow» Ñàðìàíîâ|@ffffffffÑåðãåé «Ice Cat» Êëþ÷êîâñêèé|@ffffffffÈãîðü «Goryh» Äåãòÿðåâ| | |@ffffa600Ãðàôèêà||@ffffffffÀëåêñàíäð «Alex ML» Ìàðãóøèí|@ffffffffÈâàí Ñíèãèðåâ|@ffffffffÅâãåíèé «Dzhin» Ãîëüöîâ|@ffffffffÂëàäèìèð «Price» Ñåëåçíåâ|@ffffffffÑòàíèñëàâ «Staz» ×åðâà|@ffffffffÐóñòàì «Rychi» Òóðåé|@ffffffffÅâãåíèé Òîêàðåâ|@ffffffffÑåðãåé «Sega» Ìèòðÿåâ|@ffffffffÂèêòîð «isymbosi» Êîðüÿêèí|@ffffffffÐîìàí Ëàòûíîâ| | |@ffffa600Äèçàéí ìèññèé||@ffffffffÄåíèñ «mif2000» Ãàëàíèí|@ffffffffÑåðãåé «JSinx» Óäþðìèíñêèé|@ffffffffÀðòåì «solo» Ñîëîâüåâ|@ffffffffÊîíäðàòüåâ «HiKiller» Äàíèèë|@ffffffffÑòàíèñëàâ «Staz» ×åðâà| | |@ffffa600Ðàçðàáîòêà èíòåðôåéñîâ||@ffffffffÌèõàèë «Rai» Ìàòâèåíêî| | |@ffffa600Ñïåöýôôåêòû||@ffffffffÀëåêñåé «Hal» Ëîáàíîâ| | |@ffffa600Ìóçûêà/çâóêè||@ffffffffÀíòîí Ïîïîâ|@ffffffffÅêàòåðèíà Øâåììåð| | |@ffffa600Òåñòèðîâàíèå||@ffffffffÂÿ÷åñëàâ «ls» Àâäååâ| | |@ffffa600PR-ìåíåäæåð||@ffffffffÑâåòëàíà «Ñrystal» ×åñòíûõ| | |@ffffa600Â èãðå èñïîëüçîâàëèñü êîìïîçèöèè ïîáåäèòåëåé ìóçûêàëüíîãî|@ffffa600êîíêóðñà||@ffffffffÀëåêñàíäð ×åêñòåð|@ffffffffÁîðèñ Âåäåíñêèé|@ffffffffÀëåêñàíäð Òðåãåð|@ffffffffÌèõàèë Ñèäîðîâ|@ffffffffÀëåêñàíäð Ëèñåíêîâ|@ffffffffParalaxeen|@ffffffffÈãîðü Áåëîóñîâ| | |@ffffa600Òàêæå ïðèíèìàëè ó÷àñòèå íà ðàçíûõ ýòàïàõ||@ffffffffÊîíñòàíòèí Ñîõàðåâ - ïðîãðàììèðîâàíèå|@ffffffffÑâÿòîñëàâ Ïàòàøíèêîâ - ðóêîâîäñòâî|@ffffffffÀëåêñåé Àíäðóùåíêî - Âåá-äèçàéí"
+		sound=""
+		fontSize="19"
+		scrollSpeed="2.48"
+		time="67" />
+
+    <string
+		id="5969"
+		msgType="SCROLL"
+		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
+		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
+		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
+		value="@ffffa600Êîìïàíèÿ «Áóêà»| | | |@ffffa600Ïðîäþñåð||@ffffffffÈâàí Áóíàêîâ| | |@ffffa600Ñòàðøèé ïðîäþñåð||@ffffffffÈâàí Ìîðîç| | |@ffffa600Ìåíåäæåðû ïî ïðîäâèæåíèþ ïðîäóêòîâ||@ffffffffÞðèé Âèðè÷|@ffffffffÀëåêñåé Ïèñêëþêîâ| | |@ffffa600Òåõíè÷åñêèé ýêñïåðò||@ffffffffÊèðèëë Áåñòåìüÿíîâ| | |@ffffa600Ýêñïåðò ïî çâóêó||@ffffffffÐóñëàí Äìèòðèåâ| | |@ffffa600Äèçàéíåðû-ïîëèãðàôèñòû||@ffffffffÑàíàí Óøàíîâ|@ffffffffÄàíèåëëà Êëèìàøåâñêàÿ| | |@ffffa600PR-ìåíåäæåð||@ffffffffÀëåêñåé Ïàñòóøåíêî| | |@ffffa600Àññèñòåíò PR-ìåíåäæåðà||@ffffffffÎëåã Ìîðîçîâ| | |@ffffa600Àññèñòåíò ïðîäþñåðà||@ffffffffÀëåêñåé Ïåøåõîíîâ|@ffffffffÍèêîëàé Ñàôðîíîâ| | |@ffffa600Ìåíåäæåð ïî íîâûì êîìàíäàì||@ffffffffÍèêîëàé Ñàôðîíîâ| | |@ffffa600Âûïóñêàþùèé ïðîäþñåð||@ffffffffÀëåêñàíäð Ïàê| | |@ffffa600Ñòàðøèé òåñòèðîâùèê||@ffffffffÅâãåíèé Ïîïîâ|@ffffffffÈâàí Ðèä| | |@ffffa600Ñëóæáà òåñòèðîâàíèÿ||@ffffffffÀíòîí Åïèøèí|@ffffffffÀëåêñåé Ïåòðîâ|@ffffffffÀëåêñàíäð Ïîëîñèí|@ffffffffÅâãåíèé Ïîïîâ|@ffffffffÈâàí Ðàéíîâ|@ffffffffÈâàí Ðèä|@ffffffffÀëåêñåé ×åáîòàðåâ| | |@ffffa600Âíåøíåå òåñòèðîâàíèå||@ffffffffÏåòð Áåëÿåâ|@ffffffffÀëåêñåé Áóíàê|@ffffffffÈãîðü Äìèòðèåâ|@ffffffffÌèõàèë Ìàòþøîâ|@ffffffffÄåíèñ Ñîêîëîâ|@ffffffffÈãîðü Ïåøåõîíöåâ|@ffffffffÄìèòðèé ×è÷êîâ|@ffffffffÀëåêñåé Øåõîâöîâ|@ffffffffÈëüÿ Þñèïîâ|@ffffffffÒèìóð Þñèïîâ| | |@ffffa600Ñëóæáà ïðîäàæ||@ffffffffÌàêñèì Î. Àëåêñååâ|@ffffffffÌàêñèì Þ. Àëåêñååâ|@ffffffffÌàêñèì À. Àëåêñååâ|@ffffffffÍàòàëüÿ Àíêóíäèíîâà|@ffffffffÅëåíà Àíòîíîâà|@ffffffffÈëüÿ Áðîâ÷åíêî|@ffffffffÏàâåë Ãðèãîðüåâ|@ffffffffÂèêòîðèÿ Êèñåëåâà|@ffffffffÀëåêñàíäð Êî÷åòêîâ|@ffffffffÏàâåë Êðóãëîâ|@ffffffffÀíäðåé Îñèïîâ|@ffffffffÀëåêñàíäð Ïåòðèíñêèé|@ffffffffÎëüãà Ïîëêîâíèêîâà|@ffffffffËàðèñà Ñàâåëüåâà|@ffffffffÅâãåíèé Ñàìñîíîâ|@ffffffffÑâåòëàíà Ñàìñîíîâà|@ffffffffÂàëåðèé Òèõâèíñêèé|@ffffffffÑåðãåé Ôåäîñîâ| | |@ffffa600Òîðãîâûé ìàðêåòèíã||@ffffffffÒàòüÿíà Âàñåêèíà| | |@ffffa600Êîìüþíèòè ìåíåäæåð||@ffffffffÀëåêñàíäð Êîâàëåâ| | |@ffffa600Ýêñïåðòíûé ñîâåò||@ffffffffÂëàäèìèð Ìèíÿåâ|@ffffffffÌàêñèì Í. Ìèõàëåâ|@ffffffffÈâàí Ìîðîç|@ffffffffÑåðãåé Ðóäåíêî|@ffffffffÂèòàëèé Õàðèòîíåíêî| | |@ffffa600Þðèäè÷åñêàÿ ïîääåðæêà||@ffffffffÃåîðãèé Âèòàëèåâ| | |@ffffa600Òåõíè÷åñêàÿ ïîääåðæêà||@ffffffffÅâãåíèé Äìèòðèåâ| | |@ffffa600Ãåíåðàëüíûé äèðåêòîð||@ffffffffÀëåêñàíäð Ìèõàéëîâ| | |@ffffa600Ôèíàíñîâûé äèðåêòîð||@ffffffffÌàðèíà Ðàâóí| | |@ffffa600Ðóêîâîäèòåëü îòäåëà ìàðêåòèíãà||@ffffffffÌàêñèì Í. Ìèõàëåâ| | |@ffffa600Ðóêîâîäèòåëü êîììåð÷åñêîãî îòäåëà||@ffffffffÒàòüÿíà Óñòèíîâà| | |@ffffa600Ðóêîâîäèòåëü îòäåëà ðàçðàáîòîê||@ffffffffÈâàí Áóíàêîâ| | |@ffffa600Îòäåëüíîå ñïàñèáî||@ffffffffÞëèÿ Áåëîâà|@ffffffffÑåðãåé Áîáêîâ|@ffffffffÈëüÿ Áðîâ÷åíêî|@ffffffffÄìèòðèé Çàõàðîâ|@ffffffffÄìèòðèé Êóëåøîâ|@ffffffffÄìèòðèé Ëåñèí|@ffffffffÂëàäèìèð Ìèíÿåâ|@ffffffffÈâàí Ìîðîç|@ffffffffÌàðèíà Ðàâóí|@ffffffffÈâàí Ðèä|@ffffffffÈííà Ñóöåïèíà|@ffffffffÈãîðü Óñòèíîâ|@ffffffffÈðèíà Öàðåâà|@ffffffffÂèêòîðèÿ Ýííñ| | |@ffffa600Ñïàñèáî çà èãðó!"
+		sound=""
+		fontSize="19"
+		scrollSpeed="2.31"
+		time="97" />
+
+    <string
+		id="5970"
+		msgType="SCROLL"
+		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
+		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
+		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
+		value="@ffffa600Community Patch / Remaster| | | |@ffffa600Àëåêñàíäð «Seel» Ïàðôåíåíêîâ||@ffffffffìåíåäæåð ïðîåêòà, èíñòðóìåíòàðèé, äèçàéí| | |@ffffa600Àëåêñàíäð «ThePlain» Ôàòååâ||@ffffffffèíñòðóìåíòàðèé, ãðàôèêà, 3D ìîäåëèðîâàíèå| | |@ffffa600Àëåêñåé «__nEmPoBu4__» Ñìèðíîâ||@ffffffff3D ìîäåëèðîâàíèå, ñêðèïòû, êâåñòû| | |@ffffa600Àííà Æóêîâà||@ffffffffãðàôè÷åñêèé äèçàéí| | |@ffffa600Àíòîí Ïîïîâ||@ffffffffìóçûêà| | |@ffffa600Âëàäèñëàâ «OverLine» Êóðî÷êèí||@ffffffffêîíòåíò-äèçàéí, êàðòîñòðîåíèå| | |@ffffa600Äìèòðèé «Ãíîì» Ñàùåíêî||@ffffffffñêðèïòû, êâåñòû, 3D ìîäåëèðîâàíèå| | |@ffffa600Èâàí «ICAS-14» ×åðåïàíîâ||@ffffffff3D ìîäåëèðîâàíèå| | |@ffffa600Ëåîíèä «KoYoT» Êî÷åòîâ||@ffffffffèñïðàâëåíèå îøèáîê| | |@ffffa600Ìàêñèì «Spok» Áåðäíèêîâ||@ffffffff3D ìîäåëèðîâàíèå| | |@ffffa600Ìàðê «Apocalypse007» Ìàëûãèí||@ffffffffòåêñòîâûå ïðàâêè| | |@ffffa600Íèê «BIBIKUZ» Êîíîíåíêî||@ffffffff3D ìîäåëèðîâàíèå| | |@ffffa600Ïàâåë «pavlikrpg» Èâàíîâ||@ffffffffñêðèïòû, êâåñòû| | |@ffffa600Ñåðàôèì «Varisane» Øàãèí||@ffffffffêîíòåíò-äèçàéí, òåêñòîâûå ïðàâêè| | |@ffffa600Ýêñïåðòíûé ñîâåò||@ffffffffBuba|@ffffffffOracle|@ffffffffRusya_27|@ffffffffTraygen|@ffffffffÑåìèìàõîâ| | |@ffffa600Òåñòèðîâàíèå||@ffffffffSuslo Red|@ffffffffÈâàí «MrKarfen» Àòàìàíîâ|@ffffffffÑåì¸í «Omezera» Îçåðèöêèé|@ffffffffPushistik_7977|@ffffffffAnarxolis|@ffffffffScorpyX|@ffffffffÀëåêñàíäð192|@ffffffffTerorchat| | |@ffffa600Îòäåëüíîå ñïàñèáî||@ffffffffÑîîáùåñòâó Deus Ex Machina|@ffffffffdiscord.gg/qKK2Efx||@ffffffffÑîîáùåñòâó EM2ch|@ffffffffvk.com/em2ch||@ffffffffÏàáëèêó Ex Machina Âêîíòàêòå|@ffffffffvk.com/exmachina2||@ffffffffÇðèòåëÿì êàíàëà «Ïàâëèê RPG»||@ffffffffÍàøèì æ¸íàì, äåâóøêàì, ðîäñòâåííèêàì è êîøêàì,|@ffffffffêîòîðûå òåðïåëè íàñ âî âðåìÿ ðàçðàáîòêè||@ffffffffÂñåì òåì, êòî æäàë è ïîääåðæèâàë ýòîò ïðîåêò"
+		sound=""
+		fontSize="19"
+		scrollSpeed="2.5"
+		time="62" />
+
+    <string
+		id="5971"
+		msgType="SCROLL"
+		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
+		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
+		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
+		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Íèêèòà «ñòàêàí» Êàøëåâ||@ffffffffñþæåò, êâåñòû, ñêðèïòû| | |@ffffa600Ñåðàôèì «Varisane» Øàãèí||@ffffffffòåêñòîâûå ïðàâêè, òåñòèðîâàíèå, ïîìîùü â ðàçðàáîòêå| | |@ffffa600Êàðåí Ãåâîíäÿí||@ffffffffòåêñòîâûå ïðàâêè| | |@ffffa600Åâãåíèé «E Jet» Êîë÷èí||@ffffffffïîìîùü â ðàçðàáîòêå| | |@ffffa600Ãåîðãèé «Ýìåð» Æóêîâ||@ffffffffîçâó÷êà ðàññêàç÷èêà| | |@ffffa600Èâàí «Carsen» Áóðÿøêèí||@ffffffffïîìîùü â ðàçðàáîòêå| | |@ffffa600Àíàñòàñèÿ «k0waidesu»||@ffffffffòåêñò êîíöîâîê| | |@ffffa600Çàèìñòâîâàíèÿ||@ffffffffÏîëíîðàçìåðíàÿ ìîäåëü Ñåðãî||@ffffa600Àâòîð:|@ffffffffÌàêñèì «Spok» Áåðäíèêîâ| | |@ffffffffÝôôåêòû óõóäøàþùåãîñÿ ñîñòîÿíèÿ âçÿòû èç|@ffffffffìîäèôèêàöèè @ffffa600«possesed»||@ffffa600Àâòîðû:|@ffffffffÀëåêñåé «__nEmPoBu4__» Ñìèðíîâ|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffÈäåÿ ñî ñëàéäàìè â êîíöîâêàõ âçÿòà èç|@ffffffffìîäèôèêàöèè @ffffa600«Improved Storyline»||@ffffa600Àâòîð:|@ffffffffÏàâåë «pavlikRPG» Èâàíîâ| | |@ffffa600Ìóçûêà â òèòðàõ||@ffffffffÀíòîí Ïîïîâ - Dramatic Theme (Full Version)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)| | |@ffffa600Îãðîìíàÿ @ffffffffáëàãîäàðíîñòü ñîîáùåñòâó @ffffa600Deus Ex Machina|@ffffffffçà îêàçàííóþ ïîìîùü ïðè ðàçðàáîòêå| | |@ffffa600Ñïàñèáî çà èãðó!"
+		sound=""
+		fontSize="20"
+		scrollSpeed="2.5"
+		time="53.5" />
 </resource>

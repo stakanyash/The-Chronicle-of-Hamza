@@ -114,9 +114,9 @@
 		diz1=""
 		north="0 0 1"
 		image0="data\if\map\r4m0.dds"
-		image1="data\if\ico\GlobalMap\r4m1.dds"
+		image1="data\if\ico\GlobalMap\r4m0.dds"
 		splashes="data\if\ico_hd\Splashes\dd.dds"
-		musicBlocks="r4_1 r4_2" />
+		musicBlocks="r4_0" />
 
 	<LevelInfo
 		name="r4m1"

@@ -10,13 +10,13 @@
 		name="Dlg_pl_002123"
 		text="Оставить его на месте"
 		role="PLAYER"
-		scriptResult="CompleteQuest('FindSergoBody_quest'); TakeQuest('BE_activated'); SetVar('Ending', 2); TActivate('EndingSelected_cs'); EndConversation()" />
+		scriptResult="CompleteQuest('FindSergoBody_quest'); TakeQuest('BE_activated'); SetVar('Ending', 2); TActivate('Decision_cs'); EndConversation()" />
 
 	<Reply
 		name="Dlg_pl_002122"
 		text="Забрать блокиратор"
 		role="PLAYER"
-		scriptResult="CompleteQuest('FindSergoBody_quest'); TakeQuest('GE_activated'); SetVar('Ending', 1); TActivate('EndingSelected_cs'); EndConversation()" />
+		scriptResult="CompleteQuest('FindSergoBody_quest'); TakeQuest('GE_activated'); SetVar('Ending', 1); TActivate('Decision_cs'); AddQuestItem('quest_blockirator'); EndConversation()" />
 <!--Root/r4m2/Сюжетные--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец/При диалоге с учёным--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец/При диалоге с учёным/Первая часть-->
 	<Reply
 		name="Dlg_npc_001567"

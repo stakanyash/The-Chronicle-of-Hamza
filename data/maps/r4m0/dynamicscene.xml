@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="36">
+	LastId="47">
 	<TargetNamesForDestroy
 		Names="" />
 
@@ -1037,15 +1037,15 @@
 		Name="SergoPlace_2"
 		Belong="1100"
 		Prototype="genericLocation"
-		Pos="554.499 270.595 3810.907"
+		Pos="3573.797 254.730 2269.570"
 		Radius="60.000" />
 
 	<Object
 		Name="SergoPlace_3"
 		Belong="1100"
 		Prototype="genericLocation"
-		Pos="3663.513 255.000 1574.287"
-		Radius="50.000" />
+		Pos="475.182 260.844 3793.350"
+		Radius="100.000" />
 
 	<Object
 		Name="StartEndSpawn_1"
@@ -1088,4 +1088,84 @@
 		Prototype="genericLocation"
 		Pos="2701.374 255.118 3891.065"
 		Radius="10.000" />
+
+	<Object
+		Flags="21"
+		Name="Choose_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="42.467 255.000 2172.963"
+		Radius="10.000">
+		<Object
+			Name="HamzaChoose"
+			Belong="1100"
+			Prototype="NPC"
+			ModelName="r4_man"
+			cfg="141"
+			helloReplyNames="Dlg_npc_002121"
+			SpokenCount="0" />
+	</Object>
+
+	<Object
+		Name="r4m0_sign37"
+		Belong="1100"
+		Prototype="r4m0_sign"
+		Pos="547.807 264.057 2553.835"
+		Rot="0.032 0.977 0.041 0.206" />
+
+	<Object
+		Name="r4m0_sign38"
+		Belong="1100"
+		Prototype="r4m0_sign"
+		Pos="524.861 255.000 912.888"
+		Rot="-0.063 0.195 -0.058 0.977" />
+
+	<Object
+		Name="SergoFinded2_L"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3609.086 254.805 2278.469"
+		Radius="10.000" />
+
+	<Object
+		Name="SergoFinded2_M"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3573.797 254.730 2269.570"
+		Radius="10.000" />
+
+	<Object
+		Name="SergoFinded2_R"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3543.758 254.991 2247.765"
+		Radius="10.000" />
+
+	<Object
+		Name="SergoFinded3_L"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="283.509 255.472 3769.969"
+		Radius="10.000" />
+
+	<Object
+		Name="SergoFinded3_M"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="315.113 256.073 3782.157"
+		Radius="10.000" />
+
+	<Object
+		Name="SergoFinded3_R"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="333.030 255.831 3822.561"
+		Radius="10.000" />
+
+	<Object
+		Name="TimerHint_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2167.700 255.000 4095.566"
+		Radius="3500.000" />
 </DynamicScene>

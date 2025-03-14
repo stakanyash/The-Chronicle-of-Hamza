@@ -1467,6 +1467,7 @@ function CreateSergo()
 		CreateNewDummyObject( "SergoFull", "sergodead", -1, -1, CVector(2692.606, 255.022, 3840.900), Quaternion(-0.6939, -0.0345, -0.0333, 0.7185), 0)
 
 		TActivate("SergoPOS_1_tr")
+		SetVar("SergoPlace", 1)
 	elseif Sergo==2 then
 		CreateNewDummyObject( "mirotvorecCab05", "Mirca0", -1, -1, CVector(3582.408, 255.028, 2232.645), Quaternion(0.0000, 0.0000, 0.0000, 0.0000), 0)
 		CreateNewDummyObject( "mirotvorecCargo05", "Mirca1", -1, -1, CVector(3582.515, 255.028, 2229.046), Quaternion(0.0000, 0.0000, 0.0000, 0.0000), 0)
@@ -1481,6 +1482,7 @@ function CreateSergo()
 		CreateNewDummyObject( "SergoFull", "sergodead", -1, -1, CVector(3576.900, 255.028, 2232.832), Quaternion(-0.6511, 0.0000, 0.0000, 0.7590), 0)
 
 		TActivate("SergoPOS_2_tr")
+		SetVar("SergoPlace", 2)
 	elseif Sergo==3 then
 		CreateNewDummyObject( "mirotvorecCab05", "Mirca0", -1, -1, CVector(297.951, 255.369, 3824.779), Quaternion(0.0000, 0.0000, 0.0000, 0.0000), 0)
 		CreateNewDummyObject( "mirotvorecCargo05", "Mirca1", -1, -1, CVector(298.029, 255.369, 3821.169), Quaternion(0.0000, 0.0000, 0.0000, 0.0000), 0)
@@ -1495,6 +1497,7 @@ function CreateSergo()
 		CreateNewDummyObject( "SergoFull", "sergodead", -1, -1, CVector(305.398, 255.369, 3819.719), Quaternion(-0.0855, 0.7299, 0.6718, 0.0929), 0)
 
 		TActivate("SergoPOS_3_tr")
+		SetVar("SergoPlace", 3)
 	end
 
 	for i=0,7 do
@@ -1507,5 +1510,61 @@ function CreateSergo()
 	local sergod = getObj("sergodead")
 	if sergod then
 		sergod:SetNodeAction(AT_RESERVED1)
+	end
+end
+
+function ConnectAivenDD()
+	local Place = GetVar("SergoPlace").AsInt
+	if Place==1 then
+		TeamCreate("AivenCarDD", 1095, CVector(getPos("SergoFinded1_L")), {"BelazShot1"}, nil, nil, Quaternion(-0.004, -0.816, 0.016, 0.578))
+	elseif Place==2 then
+		TeamCreate("AivenCarDD", 1095, CVector(getPos("SergoFinded2_L")), {"BelazShot1"}, nil, nil, Quaternion(-0.001, 0.981, 0.015, 0.191))
+	elseif Place==3 then
+		TeamCreate("AivenCarDD", 1095, CVector(getPos("SergoFinded3_L")), {"BelazShot1"}, nil, nil, Quaternion(0.008, 0.035, 0.018, 0.999))
+	end
+
+	local vehAiven = getObj("AivenCarDD_vehicle_0")
+	if vehAiven then
+		vehAiven:SetSkin(3)
+		vehAiven:setImmortalMode(1)
+
+		local newControllerId = CreateNewObject {
+			prototypeName	= "someNPCMotionController",
+			objName	= "AivenControllerDDLR4M1"
+		}
+		
+		local newController = GetEntityByID(newControllerId)
+		
+		if newController then
+			newController:setVehicleUnderControl(vehAiven)
+		end
+	end
+end
+
+function ConnectMansurDD()
+	local Place = GetVar("SergoPlace").AsInt
+	if Place==1 then
+		TeamCreate("MansurCarDD", 1090, CVector(getPos("SergoFinded1_R")), {"UralMansur"}, nil, nil, Quaternion(-0.004, -0.816, 0.016, 0.578))
+	elseif Place==2 then
+		TeamCreate("MansurCarDD", 1090, CVector(getPos("SergoFinded2_R")), {"UralMansur"}, nil, nil, Quaternion(-0.001, 0.981, 0.015, 0.191))
+	elseif Place==3 then
+		TeamCreate("MansurCarDD", 1090, CVector(getPos("SergoFinded3_R")), {"UralMansur"}, nil, nil, Quaternion(-0.001, 0.981, 0.015, 0.191))
+	end
+
+	local M = getObj("MansurCarDD_vehicle_0")
+	if M then
+		M:SetSkin(1)
+		M:setImmortalMode(1)
+
+		local newControllerId = CreateNewObject {
+			prototypeName	= "someNPCMotionController",
+			objName	= "MansurControllerDDLR4M1"
+		}
+		
+		local newController = GetEntityByID(newControllerId)
+		
+		if newController then
+			newController:setVehicleUnderControl(M)
+		end
 	end
 end

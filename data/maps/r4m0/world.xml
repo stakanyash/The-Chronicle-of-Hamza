@@ -2,7 +2,7 @@
 <World
 	name="Object612"
 	class="SgNode"
-	LastId="301331348">
+	LastId="301331580">
 	<Node
 		name="Object301330842"
 		class="SgAnimatedModelNode"
@@ -14,10 +14,10 @@
 	<Node
 		name="Object301330843"
 		class="SgAnimatedModelNode"
-		org="1703.691 -28.000 1024.284"
+		org="1703.691 -8.000 1024.284"
 		orgRel="1"
 		rot="0.1197 0.2550 0.0248 0.9592"
-		id="torgovy"
+		id="boevoy"
 		ndmAction="0" />
 
 	<Node
@@ -333,11 +333,11 @@
 	<Node
 		name="Object301330888"
 		class="SgAnimatedModelNode"
-		org="1991.597 -63.953 1601.055"
+		org="1991.597 -3.953 1601.055"
 		orgRel="1"
 		rot="-0.0586 0.1590 0.0584 0.9838"
 		scale="1.600 1.600 1.600"
-		id="torgovy"
+		id="boevoy"
 		ndmAction="0" />
 
 	<Node
@@ -550,10 +550,10 @@
 	<Node
 		name="Object301330931"
 		class="SgAnimatedModelNode"
-		org="2830.323 -50.000 3018.622"
+		org="2830.323 -3.000 3018.622"
 		orgRel="1"
 		rot="0.0000 0.0000 -0.1327 0.9912"
-		id="torgovy"
+		id="boevoy"
 		ndmAction="0" />
 
 	<Node
@@ -591,10 +591,10 @@
 	<Node
 		name="Object301330936"
 		class="SgAnimatedModelNode"
-		org="3191.624 -54.000 1602.175"
+		org="3191.624 -4.000 1602.175"
 		orgRel="1"
 		rot="-0.0989 -0.0244 0.0207 0.9946"
-		id="torgovy"
+		id="boevoy"
 		ndmAction="0" />
 
 	<Node
@@ -708,7 +708,7 @@
 		orgRel="1"
 		rot="0.0000 0.1822 0.0000 0.9833"
 		scale="0.920 0.920 0.920"
-		id="torgovy"
+		id="boevoy"
 		ndmAction="0" />
 
 	<Node
@@ -757,7 +757,7 @@
 		orgRel="1"
 		rot="0.0000 0.0000 -0.0349 0.9994"
 		scale="0.600 0.600 0.600"
-		id="torgovy"
+		id="boevoy"
 		ndmAction="0" />
 
 	<Node
@@ -842,10 +842,10 @@
 	<Node
 		name="Object301330981"
 		class="SgAnimatedModelNode"
-		org="1367.967 -18.000 208.482"
+		org="1367.967 -8.000 208.482"
 		orgRel="1"
 		rot="0.0000 -0.9412 0.0000 0.3379"
-		id="torgovy"
+		id="boevoy"
 		ndmAction="0" />
 
 	<Node
@@ -854,7 +854,7 @@
 		org="950.109 0.000 233.586"
 		orgRel="1"
 		rot="0.0000 0.9648 0.0000 0.2630"
-		id="torgovy"
+		id="boevoy"
 		ndmAction="0" />
 
 	<Node
@@ -1050,46 +1050,6 @@
 		org="2281.571 0.000 3753.246"
 		orgRel="1"
 		id="crag_desert_1"
-		ndmAction="0" />
-
-	<Node
-		name="Object301331153"
-		class="SgAnimatedModelNode"
-		org="529.168 -0.500 939.079"
-		orgRel="1"
-		rot="-0.0526 0.0073 -0.0644 0.9965"
-		scale="1.600 1.600 1.600"
-		id="r4m0_sign3"
-		ndmAction="0" />
-
-	<Node
-		name="Object301331165"
-		class="SgAnimatedModelNode"
-		org="529.918 0.000 937.154"
-		orgRel="1"
-		rot="0.0000 0.0000 0.0349 0.9994"
-		scale="2.400 2.400 2.400"
-		id="r4m0_sign4"
-		ndmAction="0" />
-
-	<Node
-		name="Object301331166"
-		class="SgAnimatedModelNode"
-		org="540.732 0.000 2563.763"
-		orgRel="1"
-		rot="0.0000 0.9205 0.0000 0.3907"
-		scale="2.000 2.000 2.000"
-		id="r4m0_sign4"
-		ndmAction="0" />
-
-	<Node
-		name="Object301331167"
-		class="SgAnimatedModelNode"
-		org="544.645 0.000 2566.194"
-		orgRel="1"
-		rot="0.0000 0.9397 0.0000 0.3420"
-		scale="2.400 2.400 2.400"
-		id="r4m0_sign3"
 		ndmAction="0" />
 
 	<Node

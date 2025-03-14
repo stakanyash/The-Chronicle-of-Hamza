@@ -42,4 +42,80 @@
 		value="ХАМЗА|Легко нам здесь явно не будет. Но отступать некуда. Вперёд."
 		sound=""
 		time="6" />
+
+	<string
+		id="5"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|А вот и Серго..."
+		sound=""
+		time="4" />
+
+	<string
+		id="6"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|И мой пакет при нём..."
+		sound=""
+		time="5" />
+
+	<string
+		id="7"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Посмотрим что в этом пакете?"
+		sound=""
+		time="5" />
+
+	<string
+		id="8"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Конечно."
+		sound=""
+		time="3" />
+
+	<string
+		id="9"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Какой-то странный прибор... Кажется это и есть тот самый блокиратор..."
+		sound=""
+		time="7" />
+
+	<string
+		id="10"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Знаете что? Оставим его здесь, если это действительно блокиратор, то должен быть другой путь решения проблемы. Не верю я, что этот прибор нам может помочь..."
+		sound=""
+		time="11" />
+
+	<string
+		id="101"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Возьмём его с собой. Вернёмся обратно и решим, что делать дальше."
+		sound=""
+		time="7" />
+
+	<string
+		id="8000"
+		value="Включить подсказку?||Она сработает через 10 минут, если не завершите квест быстрее." 
+		numButtons="2"/>
+
+	<string
+		id="8001"
+		value="Подсказка активирована!||Обратите внимание, что в таком случае ручное сохранение на время поиска - отключено!" 
+		numButtons="1"/>
 </resource>

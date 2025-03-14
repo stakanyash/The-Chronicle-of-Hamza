@@ -7,6 +7,126 @@
 		</script>
 	</trigger>
 
+	<trigger Name="TestBadFeel" active="0">
+		<event timeout="1" eventid="GE_TIME_PERIOD" />
+		<script>
+			local run = GetEntityByName("LisaRolik_loc")
+			local pl = GetPlayerVehicle()
+			local len
+
+			if run then
+				len = Dist(pl, run)
+				if (600 >= len) then
+					pl:AddModifier("hp","- 4.6")
+					RuleConsole("g_postEffect wHamza_feelbad02")
+				elseif (1100 >= len) then
+					pl:AddModifier("hp","- 3.1")
+					RuleConsole("g_postEffect wHamza_feelbad01")
+				elseif (1500 >= len) then
+					pl:AddModifier("hp","- 0.5")
+					RuleConsole("g_postEffect wHamza_feelbad00")
+				else
+					RuleConsole("g_postEffect cinematicEnd")
+				end
+			end
+		</script>
+	</trigger>
+
+	<trigger Name="tr_sick_3rdstage" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			RuleConsole("g_postEffect wHamza_feelbad02")
+			TActivate("tr_sick_3rdstage")
+			TActivate("tr_sick_3rdstage_hpdown")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="tr_sick_2ndstage" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			RuleConsole("g_postEffect wHamza_feelbad01")
+			TActivate("tr_sick_2ndstage")
+			TActivate("tr_sick_2ndstage_hpdown")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="tr_sick_1ststage" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			RuleConsole("g_postEffect wHamza_feelbad00")
+			TActivate("tr_sick_1ststage")
+			TActivate("tr_sick_1ststage_hpdown")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="tr_sick_3rdstage_msg" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_sick_3rdstage" )
+			AddImportantFadingMsgByStrIdFormatted("fm_sick_3rdstage")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="tr_sick_2ndstage_msg" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_sick_2ndstage" )
+			AddImportantFadingMsgByStrIdFormatted("fm_sick_2ndstage")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="tr_sick_1ststage_msg" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_sick_1ststage" )
+			AddImportantFadingMsgByStrIdFormatted("fm_sick_1ststage")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="tr_sick_3rdstage_hpdown" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			local pl = GetPlayerVehicle()
+
+			if pl then
+				pl:AddModifier("hp","- 4.6")
+			end
+		</script>
+	</trigger>
+
+	<trigger Name="tr_sick_2ndstage_hpdown" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			local pl = GetPlayerVehicle()
+
+			if pl then
+				pl:AddModifier("hp","- 3")
+			end
+		</script>
+	</trigger>
+
+	<trigger Name="tr_sick_1ststage_hpdown" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			local pl = GetPlayerVehicle()
+
+			if pl then
+				pl:AddModifier("hp","- 1.3")
+			end
+		</script>
+	</trigger>
 
 	<trigger	Name="trKraiPlaceSecret"	active="0">
 		<event	timeout="0.1"			eventid="GE_TIME_PERIOD" />
@@ -359,7 +479,7 @@
 	</trigger>
 
 
-	<trigger Name="LISA1" active="1">
+	<trigger Name="LISA1" active="0">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TheOilVillageQ" />
 		<script>
 			if  IsQuestTaken("d_Village1_Quest") and not(IsQuestComplete("d_Village1_Quest") or IsQuestFailed("d_Village1_Quest")) then
@@ -372,7 +492,7 @@
 		</script>
 	</trigger>
 
-	<trigger Name="LISA2" active="1">
+	<trigger Name="LISA2" active="0">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TheContraQ" />
 		<script>
 			if  IsQuestTaken( "d_Village2_Quest" ) and not(IsQuestComplete("d_Village2_Quest") or IsQuestFailed("d_Village2_Quest")) then
@@ -385,7 +505,7 @@
 		</script>
 	</trigger>
 
-	<trigger Name="LISA3" active="1">
+	<trigger Name="LISA3" active="0">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TheFreedomQ" />
 		<script>
 			if  IsQuestTaken( "d_Village3_Quest" ) and not(IsQuestComplete("d_Village3_Quest") or IsQuestFailed("d_Village3_Quest")) then
@@ -682,7 +802,7 @@
 
 
 
-	<trigger Name="ZASADA_2" active="1">
+	<trigger Name="ZASADA_2" active="0">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="VeryBigFun1_Loc" />
 		<script>
 			local terr = TeamCreate("SecondB",1002,CVector(2099,339,2343),{"Sml101","Sml101"},CVector(2429,334,2354), 1)
@@ -693,7 +813,7 @@
 		</script>
 	</trigger>
 
-	<trigger Name="ZASADA_3" active="1">
+	<trigger Name="ZASADA_3" active="0">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="VeryBigFun2_Loc" />
 		<script>
 			local terr = TeamCreate("ThirdB",1002,CVector(1136,289,2257),{"r1m1_scout03"},CVector(1260,287,2650), 1)

@@ -377,6 +377,28 @@
 		<script>
 			TActivate("cinHelpersFirst")
 
+			local A = getObj("AivenCar_vehicle_0")
+			if A then
+				A:setGodMode(1)
+			end
+
+			TDeactivate("CreateMadMansOnBase")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="AivenTPtoBase"	active="0">
+		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
+		<script>
+			local A = getObj("AivenCar_vehicle_0")
+			if A then
+				A:SetGamePositionOnGround(CVector(3316.547, 256.854, 1949.939))
+				A:SetRotation(Quaternion(-0.001, -0.931, 0.004, 0.365))
+			end
+
+			SetTolerance(1095, 1061, RS_ALLY)
+
 			trigger:Deactivate()
 		</script>
 	</trigger>

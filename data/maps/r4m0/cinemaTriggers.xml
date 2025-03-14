@@ -113,7 +113,7 @@
 				A:SetCruisingSpeed(10)
 			end
 
-			local M = getObj("MansurCar")
+			local M = getObj("MansurCarCS")
 			if M then
 				M:SetExternalPathByName("StartPath_R")
 				M:SetCruisingSpeed(10)
@@ -140,36 +140,380 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-            RestoreAllToleranceStatus()
+			if GL_Trigger == true then
+				RestoreAllToleranceStatus()
 
-            SetCameraBehindPlayerVehicle()
+				SetCameraBehindPlayerVehicle()
 
-			if GetVar("AmbientPlayed").AsInt==0 then
-				StopPlayingCustomMusic()
+				if GetVar("AmbientPlayed").AsInt==0 then
+					StopPlayingCustomMusic()
+				end
+
+				CompleteQuest("GoToDesertOfDeath_quest")
+				TakeQuest("FindSergoBody_quest")
+
+				local A = getObj("AivenCarCS")
+				if A then
+					A:Remove()
+				end
+
+				local M = getObj("MansurCarCS")
+				if M then
+					M:Remove()
+				end
+
+				local P = GetPlayerVehicle()
+				if P then
+					P:UnlimitMaxSpeed()
+					P:SetExternalPathByName("StartPath_M")
+					P:PlaceToEndOfPath("StartPath_M")
+				end
+
+				TActivate("Co_M_DDA")
+				TActivate("Co_A_DDA")
+
+				local b = SpawnMessageBox("8000")
+				if b==1 then
+					TActivate("HintTimer_start")
+					local c = SpawnMessageBox("8001")
+					if c==1 then
+						AutoSave()
+						AllowSave(false)
+					end
+					GL_Trigger = false
+				else
+					CreateSergo()
+				end
 			end
 
-			CompleteQuest("GoToDesertOfDeath_quest")
-			TakeQuest("FindSergoBody_quest")
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	-- Hint after 10 minutes --
+
+	<trigger Name="SergoHint_cs" active="0">
+		<event timeout="10" eventid="GE_TIME_PERIOD" />
+		<script>
+            SaveAllToleranceStatus(RS_NEUTRAL)
+
+			local Place = GetVar("SergoPlace").AsInt
+			if Place==1 then
+				Fly("Hint_1_cam", CINEMATIC_NO_AIM, nil, 7, 1, 1 )
+			elseif Place==2 then
+				Fly("Hint_2_cam", CINEMATIC_NO_AIM, nil, 7, 1, 1 )
+			elseif Place==3 then
+				Fly("Hint_3_cam", CINEMATIC_NO_AIM, nil, 7, 1, 1 )
+			end
+
+            StartCinematic()
+
+            TActivate("SergoHint_cs_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="SergoHint_cs_end" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+            RestoreAllToleranceStatus()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	-- Sergo finded on 1st place --
+
+	<trigger Name="SergoFinded_1_cs" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            SaveAllToleranceStatus(RS_NEUTRAL)
+
+            Fly("SergoFinded1_cam", CINEMATIC_NO_AIM, nil, 25, 1, 0 )
+            StartCinematic()
+
+			TActivate("SergoFinded_cs_music")
+			TActivate("SergoFinded_1_cs_place")
+			TActivate("SergoFinded_cs_fade")
+            TActivate("SergoFinded_cs_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="SergoFinded_cs_music" active="0">
+		<event timeout="0.01" eventid="GE_TIME_PERIOD" />
+		<script>
+            PlayCustomMusic("Techno02")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="SergoFinded_1_cs_place" active="0">
+		<event timeout="0.01" eventid="GE_TIME_PERIOD" />
+		<script>
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetCustomControlEnabled( true )
+				P:SetCustomLinearVelocity( 0 )
+				P:SetThrottle( 0 )
+				P:SetCustomControlEnabled( false )
+				P:SetGamePositionOnGround(getPos("SergoFinded1_M"))
+				P:SetRotation(Quaternion(-0.004, -0.816, 0.016, 0.578))
+			end
+
+			local ARem = getObj("AivenCar_vehicle_0")
+			if ARem then
+				ARem:Remove()
+			end
+
+			local MRem = getObj("MansurCar_vehicle_0")
+			if MRem then
+				MRem:Remove()
+			end
+
+			local A = CreateVehicleEx("BelazShot1", "AivenCarCS", CVector(getPos("SergoFinded1_L")), 1095)
+			if A then
+				A:SetRotation(Quaternion(-0.004, -0.816, 0.016, 0.578))
+				A:SetSkin(3)
+			end
+
+			local M = CreateVehicleEx("UralMansur","MansurCarCS",CVector(getPos("SergoFinded1_R")), 1090)
+			if M then
+				M:SetRotation(Quaternion(-0.004, -0.816, 0.016, 0.578))
+				M:SetSkin(1)
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="SergoFinded_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			AddCinematicMessage( 5, 0.2 )
+			AddCinematicMessage( 6, 0.2 )
+			AddCinematicMessage( 7, 0.2 )
+			AddCinematicMessage( 8, 0.2 )
+			AddCinematicMessage( 9, 1 )
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="SergoFinded_cs_end" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			StartConversation("HamzaChoose")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	-- Sergo finded on 2nd place --
+
+	<trigger Name="SergoFinded_2_cs" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            SaveAllToleranceStatus(RS_NEUTRAL)
+
+            Fly("SergoFinded2_cam", CINEMATIC_NO_AIM, nil, 25, 1, 0 )
+            StartCinematic()
+
+			TActivate("SergoFinded_cs_music")
+			TActivate("SergoFinded_2_cs_place")
+			TActivate("SergoFinded_cs_fade")
+            TActivate("SergoFinded_cs_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="SergoFinded_2_cs_place" active="0">
+		<event timeout="0.01" eventid="GE_TIME_PERIOD" />
+		<script>
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetCustomControlEnabled( true )
+				P:SetCustomLinearVelocity( 0 )
+				P:SetThrottle( 0 )
+				P:SetCustomControlEnabled( false )
+				P:SetGamePositionOnGround(getPos("SergoFinded2_M"))
+				P:SetRotation(Quaternion(-0.001, 0.981, 0.015, 0.191))
+			end
+
+			local ARem = getObj("AivenCar_vehicle_0")
+			if ARem then
+				ARem:Remove()
+			end
+
+			local MRem = getObj("MansurCar_vehicle_0")
+			if MRem then
+				MRem:Remove()
+			end
+
+			local A = CreateVehicleEx("BelazShot1", "AivenCarCS", CVector(getPos("SergoFinded2_L")), 1095)
+			if A then
+				A:SetRotation(Quaternion(-0.001, 0.981, 0.015, 0.191))
+				A:SetSkin(3)
+			end
+
+			local M = CreateVehicleEx("UralMansur","MansurCarCS",CVector(getPos("SergoFinded2_R")), 1090)
+			if M then
+				M:SetRotation(Quaternion(-0.001, 0.981, 0.015, 0.191))
+				M:SetSkin(1)
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	-- Sergo finded on 3rd place --
+
+	<trigger Name="SergoFinded_3_cs" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            SaveAllToleranceStatus(RS_NEUTRAL)
+
+            Fly("SergoFinded3_cam", CINEMATIC_NO_AIM, nil, 25, 1, 0 )
+            StartCinematic()
+
+			TActivate("SergoFinded_cs_music")
+			TActivate("SergoFinded_3_cs_place")
+			TActivate("SergoFinded_cs_fade")
+            TActivate("SergoFinded_cs_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="SergoFinded_3_cs_place" active="0">
+		<event timeout="0.01" eventid="GE_TIME_PERIOD" />
+		<script>
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetCustomControlEnabled( true )
+				P:SetCustomLinearVelocity( 0 )
+				P:SetThrottle( 0 )
+				P:SetCustomControlEnabled( false )
+				P:SetGamePositionOnGround(getPos("SergoFinded3_M"))
+				P:SetRotation(Quaternion(-0.013, -0.289, 0.002, 0.957))
+			end
+
+			local ARem = getObj("AivenCar_vehicle_0")
+			if ARem then
+				ARem:Remove()
+			end
+
+			local MRem = getObj("MansurCar_vehicle_0")
+			if MRem then
+				MRem:Remove()
+			end
+
+			local A = CreateVehicleEx("BelazShot1", "AivenCarCS", CVector(getPos("SergoFinded3_L")), 1095)
+			if A then
+				A:SetRotation(Quaternion(0.008, 0.035, 0.018, 0.999))
+				A:SetSkin(3)
+			end
+
+			local M = CreateVehicleEx("UralMansur","MansurCarCS",CVector(getPos("SergoFinded3_R")), 1090)
+			if M then
+				M:SetRotation(Quaternion(0.017, -0.583, 0.003, 0.812))
+				M:SetSkin(1)
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	-- Decision --
+
+	<trigger Name="Decision_cs" active="0">
+		<event timeout="0.01" eventid="GE_TIME_PERIOD" />
+		<script>
+			local Place = GetVar("SergoPlace").AsInt
+			local Decision = GetVar("Ending").AsInt
+			if Decision==1 and 3>=Place then
+				Fly("Decision_"..Place.."_cam", CINEMATIC_NO_AIM, nil, 8, 0, 1) 
+		  	elseif Decision==2 and 3>=Place then
+				Fly("Decision_"..Place.."_cam", CINEMATIC_NO_AIM, nil, 12, 0, 1) 
+		  	end
+
+			StartCinematic()
+
+			TActivate("Decision_cs_msg")
+			TActivate("Decision_cs_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Decision_cs_msg" active="0">
+		<event timeout="0.01" eventid="GE_TIME_PERIOD" />
+		<script>
+			local Decision = GetVar("Ending").AsInt
+			if Decision==1 then
+				AddCinematicMessage( 101, 0.2 )
+			else
+				AddCinematicMessage( 10, 0.2 )
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Decision_cs_end" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+            RestoreAllToleranceStatus()
+
+			SetCameraBehindPlayerVehicle()
+
+			StopPlayingCustomMusic()
 
 			local A = getObj("AivenCarCS")
 			if A then
 				A:Remove()
 			end
 
-			local M = getObj("MansurCar")
+			local M = getObj("MansurCarCS")
 			if M then
 				M:Remove()
 			end
 
-			local P = GetPlayerVehicle()
-			if P then
-				P:UnlimitMaxSpeed()
-			end
+			ConnectAivenDD()
+			ConnectMansurDD()
 
-			TActivate("Co_M_DDA")
-			TActivate("Co_A_DDA")
+			trigger:Deactivate()
+		</script>
+	</trigger>
 
-			CreateSergo()
+	-- Test --
+
+	<trigger Name="Test" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            SaveAllToleranceStatus(RS_NEUTRAL)
+
+            Fly("testcam", CINEMATIC_NO_AIM, nil, 7, 1, 1 )
+            StartCinematic()
+
+            TActivate("Testend")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Testend" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+            RestoreAllToleranceStatus()
 
 			trigger:Deactivate()
 		</script>

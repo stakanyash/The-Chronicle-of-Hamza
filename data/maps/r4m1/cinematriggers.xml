@@ -3230,17 +3230,23 @@
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
 			RestoreAllToleranceStatus()
+			LOG("1")
 
 			CompleteQuest("GoToMansurandAivenJr_quest")
+			LOG("1")
 			TakeQuest("RepelMadmanInvasion_quest")
+			LOG("1")
 			TakeQuest("RepelMadmanInvasionAliham_quest")
+			LOG("1")
 
 			SpawnMessageBox("8909")
+			LOG("1")
 
 			local b = SpawnMessageBox("8910")
 			if b == 1 then
 				TActivate("RepelAliham_timer")
 			end
+			LOG("1")
 
 			if GetVar("PlayerTP").AsInt == 0 then
 				local PVeh = GetPlayerVehicle()
@@ -3252,13 +3258,19 @@
 
 				SetCameraBehindPlayerVehicle()
 			end
+			LOG("1")
 
 			SpawnBotsAliham()
+			LOG("1")
 			SpawnBotsKef()
+			LOG("1")
 
 			TActivate("RepelAliham_enter_time")
+			LOG("1")
 			TActivate("ConnectMansur_madmaninvasion")
+			LOG("1")
 			TActivate("ConnectAivan_madmaninvasion")
+			LOG("1")
 
 			for i=0,3 do
 				local MadmanCar = getObj("MadmanInvaders"..i)
@@ -3266,38 +3278,49 @@
 					MadmanCar:Remove()
 				end
 			end
+			LOG("1")
 
 			local MCar = getObj("MansurCar")
 			if MCar then
 				MCar:Remove()
 			end
+			LOG("1")
 
 			local CCar = getObj("AivenCar")
 			if CCar then
 				CCar:Remove()
 			end
+			LOG("1")
 
 			local town1 = GetEntityByName("TheKef")
 			if town1 then town1:SetOpenGateToPlayer( false ) end
+			LOG("1")
 
 			local town2 = GetEntityByName("TheGadad")
 			if town2 then town2:SetOpenGateToPlayer( false ) end
+			LOG("1")
 
 			local town3 = GetEntityByName("TheKazif")
 			if town3 then town3:SetOpenGateToPlayer( false ) end
+			LOG("1")
 
 			local town4 = GetEntityByName("r4_AlihamVil")
 			if town4 then town4:SetOpenGateToPlayer( false ) end
+			LOG("1")
 
 			local town5 = GetEntityByName("TheOilCity")
 			if town5 then town5:SetOpenGateToPlayer( false ) end
+			LOG("1")
 
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active",0) end
+			LOG("1")
 
 			AllowSave(false)
+			LOG("1")
 
 			PlayCustomMusic("Passage02a")
+			LOG("1")
 
 			trigger:Deactivate()
 		</script>
@@ -3914,6 +3937,111 @@
 
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active",1) end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	-- Test --
+
+	<trigger	Name="Test1"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			Fly("t1_cam", CINEMATIC_NO_AIM, nil, 70, 1,1)
+			StartCinematic()
+
+			PlayCustomMusic("Bio08")
+
+			CreateNewDummyObject("end_plane", "ending", -1, -1, CVector(2671.585, 350.571, 515.247), Quaternion(0.000, 0.998, -0.005, -0.065), 0)
+
+			TActivate("Test1_fade")
+			TActivate("Test1_77772")
+			TActivate("Test1_77774")
+			TActivate("Test1_77775")
+			TActivate("Test1_titles")
+			TActivate("Test1_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="Test1_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			AddCinematicMessage(77770, 0)
+			AddCinematicMessage(77772, 0.5)
+			AddCinematicMessage(77773, 0.5)
+			AddCinematicMessage(77774, 0.5)
+			AddCinematicMessage(77775, 0.5)
+			AddCinematicMessage(77776, 0.5)
+			AddCinematicMessage(77770, 0)
+			AddCinematicMessage(5968, 0.2)
+			AddCinematicMessage(5969, 0.2)
+			AddCinematicMessage(5970, 0.2)
+			AddCinematicMessage(5971, 0.2)
+		
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Test1_77772" active="0">
+		<event msgid="77772" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+			local P = getObj("ending")
+			if P then
+				P:SetSkin(0)
+			end
+
+			RuleConsole("g_postEffect BWFadeIn")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Test1_77774" active="0">
+		<event msgid="77774" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+			local P = getObj("ending")
+			if P then
+				P:SetSkin(1)
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Test1_77775" active="0">
+		<event msgid="77775" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+			local P = getObj("ending")
+			if P then
+				P:SetSkin(2)
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Test1_titles" active="0">
+		<event msgid="5968" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+        	PlayCustomMusic("EndGame_good")
+
+			RuleConsole("g_postEffect BWFadeOut")
+
+        	trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="Test1_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+
+			ShowDeathMenu()
 
 			trigger:Deactivate()
 		</script>

@@ -6,6 +6,9 @@
 		<script>
         SetRadarUpgrade(1)
 
+		SetVar("SergoPlace", 0)
+		GL_Trigger = true
+
 		trigger:Deactivate()
 		</script>
 	</trigger>
@@ -56,6 +59,10 @@
 		<script>
 		local P = GetPlayerVehicle()
 		if P then
+			P:SetCustomControlEnabled( true )
+			P:SetCustomLinearVelocity( 0 )
+			P:SetThrottle( 0 )
+			P:SetCustomControlEnabled( false )
 			P:SetGamePositionOnGround(getPos("StartSpawn_1"))
 			P:SetRotation(Quaternion(-0.046, 0.094, 0.009, 0.994))
 		end
@@ -66,7 +73,7 @@
 			A:SetSkin(3)
 		end
 
-		local M = CreateVehicleEx("UralMansur","MansurCar",CVector(getPos("StartSpawn_3")), 1090)
+		local M = CreateVehicleEx("UralMansur","MansurCarCS",CVector(getPos("StartSpawn_3")), 1090)
 		if M then
 			M:SetRotation(Quaternion(-0.046, 0.094, 0.009, 0.994))
 			M:SetSkin(1)
@@ -134,6 +141,17 @@
 			end
 
 			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger	Name="HintTimer_start"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TimerHint_loc" />
+		<script>
+			CreateSergo()
+
+			TActivate("SergoHint_cs")
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 

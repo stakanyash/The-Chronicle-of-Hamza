@@ -9,7 +9,7 @@
 			name="WEATHERTYPE">r4m0_clear</Key>
 
 		<Key
-			name="CURRENTDAYTIME">1</Key>
+			name="CURRENTDAYTIME">2</Key>
 
 		<Key
 			name="PATH">data\maps\r4m0</Key>
@@ -126,7 +126,7 @@
 			name="PLAYERPASSMAP">player_passmap.bin</Key>
 
 		<Key
-			name="SERVERS">data\maps\r4m0\servers.xml</Key>
+			name="SERVERS">data\models\servers.xml</Key>
 
 		<Key
 			name="STATICSERVERS">data\models\commonservers.xml</Key>
@@ -213,19 +213,19 @@
 	<Section
 		name="CAMERA">
 		<Key
-			name="X">1771.870</Key>
+			name="X">2019.675</Key>
 
 		<Key
-			name="Y">304.234</Key>
+			name="Y">329.620</Key>
 
 		<Key
-			name="Z">3560.109</Key>
+			name="Z">3998.967</Key>
 
 		<Key
-			name="A">-116.135</Key>
+			name="A">-158.491</Key>
 
 		<Key
-			name="B">-0.171</Key>
+			name="B">-0.374</Key>
 
 		<Key
 			name="G">0.000</Key>
