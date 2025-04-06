@@ -1257,7 +1257,7 @@
 				   veh:SetCruisingSpeed(65)
 				end
 
-			local veh2 = CreateVehicleEx("UralRace01","FormulaCar2",  CVector(getPos("RaceStart4_loc"))+CVector(0,1,0), 1100)
+			local veh2 = CreateVehicleEx("UralRace01","FormulaCar2",  CVector(getPos("RaceStart2_loc"))+CVector(0,1,0), 1100)
 				if veh2 then 
 				   veh2:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
 				   veh2:SetRandomSkin()
@@ -1266,7 +1266,7 @@
 				   veh2:SetCruisingSpeed(65)
 				end
 
-			local veh3 = CreateVehicleEx("UralMansurRace","FormulaCar3",  CVector(getPos("RaceStart7_loc"))+CVector(0,1,0), 1100)
+			local veh3 = CreateVehicleEx("UralMansurRace","FormulaCar3",  CVector(getPos("RaceStart3_loc"))+CVector(0,1,0), 1100)
 				if veh3 then 
 				   veh3:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
 				   veh3:SetSkin(1)
@@ -1276,7 +1276,7 @@
 				end
 
 
-			local plcar=CreateVehicleEx("UralDadHamza_Race","PlayerFormula",  CVector(getPos("RaceStart8_loc"))+CVector(0,1,0), 1100)
+			local plcar=CreateVehicleEx("UralDadHamza_Race","PlayerFormula",  CVector(getPos("RaceStart4_loc"))+CVector(0,1,0), 1100)
 			local pl=g_Player
 			if pl and plcar then 
 			   plcar:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
