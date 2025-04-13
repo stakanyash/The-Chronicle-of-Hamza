@@ -10,13 +10,13 @@
 		name="Dlg_pl_002123"
 		text="Оставить его на месте"
 		role="PLAYER"
-		scriptResult="CompleteQuest('FindSergoBody_quest'); TakeQuest('BE_activated'); SetVar('Ending', 2); TActivate('Decision_cs'); EndConversation()" />
+		scriptResult="CompleteQuest('FindSergoBody_quest'); TakeQuest('blockleaved_quest'); SetVar('Ending', 2); TActivate('Decision_cs'); EndConversation()" />
 
 	<Reply
 		name="Dlg_pl_002122"
 		text="Забрать блокиратор"
 		role="PLAYER"
-		scriptResult="CompleteQuest('FindSergoBody_quest'); TakeQuest('GE_activated'); SetVar('Ending', 1); TActivate('Decision_cs'); AddQuestItem('quest_blockirator'); EndConversation()" />
+		scriptResult="CompleteQuest('FindSergoBody_quest'); TakeQuest('blocktaken_quest'); SetVar('Ending', 1); TActivate('Decision_cs'); AddQuestItem('quest_blockirator'); EndConversation()" />
 <!--Root/r4m2/Сюжетные--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец/При диалоге с учёным--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец/При диалоге с учёным/Первая часть-->
 	<Reply
 		name="Dlg_npc_001567"
@@ -571,6 +571,110 @@
 		text="Ну тогда вперёд!"
 		role="PLAYER"
 		scriptResult="SetVar('ChujezemetsTalk', 9); CompleteQuest('BackToKef_afterinvasion_quest'); TakeQuest('GoToDesertOfDeath_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Возвращение из Пустыни Смерти--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Возвращение из Пустыни Смерти/Если блокиратор взят-->
+	<Reply
+		name="Dlg_npc_002124"
+		text="Ну что будем делать дальше?"
+		role="NPC"
+		scriptCondition="GetVar('ChujezemetsTalk').AsInt==8 and QuestStatus('blocktaken_quest')==Q_TAKEN   "
+		nextReplies="Dlg_pl_002125" />
+
+	<Reply
+		name="Dlg_pl_002125"
+		text="Как что? У нас есть блокиратор, нужно просто теперь узнать, как его применить. Надо встретится с Василием и разузнать всё о его плане."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002126" />
+
+	<Reply
+		name="Dlg_npc_002126"
+		text="Предлагаешь снова ехать туда? У меня есть идея получше."
+		role="NPC"
+		nextReplies="Dlg_pl_002127" />
+
+	<Reply
+		name="Dlg_pl_002127"
+		text="Рассказывай."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002128" />
+
+	<Reply
+		name="Dlg_npc_002128"
+		text="В другом регионе есть создание именуемое Оракулом. Думаю он может нам помочь."
+		role="NPC"
+		nextReplies="Dlg_pl_002129" />
+
+	<Reply
+		name="Dlg_pl_002129"
+		text="Ты уверен? Может всё таки стоит поговорить непосредственно с тем, кто знает что нужно делать с этим блокиратором. "
+		role="PLAYER"
+		nextReplies="Dlg_npc_002130" />
+
+	<Reply
+		name="Dlg_npc_002130"
+		text="Уверен. Оракул наверняка знает лучший выход из этой ситуации."
+		role="NPC"
+		nextReplies="Dlg_pl_002131 Dlg_pl_002132" />
+
+	<Reply
+		name="Dlg_pl_002132"
+		text="Ладно. Поехали к этому Оракулу."
+		role="PLAYER"
+		scriptResult="CompleteQuest('blocktaken_quest'); TakeQuest('GoToOracle_quest'); TActivate('MA_Rem_DD'); TActivate('A_C_GTO'); EndConversation()" />
+
+	<Reply
+		name="Dlg_pl_002131"
+		text="Езжай к своему Оракулу сам, я поеду к Василию."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002139" />
+
+	<Reply
+		name="Dlg_npc_002139"
+		text="Как скажешь, приятель. Езжай тогда, а я подожду."
+		role="NPC"
+		nextReplies="Dlg_pl_002140" />
+
+	<Reply
+		name="Dlg_pl_002140"
+		text="Хорошо."
+		role="PLAYER"
+		scriptResult="CompleteQuest('blocktaken_quest'); TakeQuest('GoToVasiliy_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Возвращение из Пустыни Смерти/Если не брали блокиратор-->
+	<Reply
+		name="Dlg_npc_002133"
+		text="Что будем делать дальше? Блокиратора у нас нет, чётких идей как решать проблему - тоже. У меня есть одна мысль, но я не уверен, что это может сработать. "
+		role="NPC"
+		scriptCondition="GetVar('ChujezemetsTalk').AsInt==8 and QuestStatus('blockleaved_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_002134" />
+
+	<Reply
+		name="Dlg_pl_002134"
+		text="Рассказывай."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002135" />
+
+	<Reply
+		name="Dlg_npc_002135"
+		text="В другом регионе есть создание именуемое Оракулом. Думаю он может нам помочь."
+		role="NPC"
+		nextReplies="Dlg_pl_002136" />
+
+	<Reply
+		name="Dlg_pl_002136"
+		text="И как же?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002137" />
+
+	<Reply
+		name="Dlg_npc_002137"
+		text="Не знаю. Потому что я не уверен в своей идее, но на данный момент это наверное единственная надежда."
+		role="NPC"
+		nextReplies="Dlg_pl_002138" />
+
+	<Reply
+		name="Dlg_pl_002138"
+		text="Ладно, поехали к этому Оракулу."
+		role="PLAYER"
+		scriptResult="CompleteQuest('blocktaken_quest'); TakeQuest('GoToOracle_quest'); TActivate('MA_Rem_DD'); TActivate('A_C_GTO'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека/Первая часть-->
 	<Reply
 		name="Dlg_npc_001588"
@@ -5186,7 +5290,7 @@
 		name="Dlg_npc_001602"
 		text="Хамза, ты вернулся!"
 		role="NPC"
-		scriptCondition="QuestStatus('GoToFatherAfterZarmek_quest')==Q_TAKEN and QuestStatus('BackToVahat_quest')==Q_COMPLETE"
+		scriptCondition="QuestStatus('GoToFatherAfterZarmek_quest')==Q_TAKEN) and (QuestStatus('BackToVahat_quest')==Q_COMPLETE"
 		nextReplies="Dlg_pl_001603" />
 
 	<Reply

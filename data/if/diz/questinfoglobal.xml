@@ -425,6 +425,34 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="GoToOracle_quest"
+		briefDiz="Отправиться к Оракулу"
+		fullDiz="Чужеземец говорит, что знает, как можно решить нашу проблему, но для этого нужно отправиться к некому Оракулу."
+		isMainQuest="1">
+		<Map
+			name="r1m1"
+			targetObjName="ToR1M3" />
+
+		<Map
+			name="r4m0"
+			targetObjName="ExitToR1M1" />
+
+		<Map
+			name="r4m1"
+			targetObjName="ExitFromMapToR4M0_loc" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="GoToVasiliy_quest"
+		briefDiz="Отправиться к Василию"
+		fullDiz="Кажется мы немного поспорили с Чужеземцем, ведь он хотел отправиться к какому-то Оракулу, а я настаивал на том, чтобы поехать к Василию. Но моя взяла, я пусть и один, но еду к Василию."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="ToR4M2" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="GoToZarmek_quest"
 		briefDiz="Отправится дальше на восток"
 		fullDiz="Нам больше нечего здесь делать. С чужеземцем скооперировались, бухарцев мы эвакуировали. Теперь наш путь лежит только на восток..."
@@ -850,6 +878,34 @@
 		<Map
 			name="r1m1"
 			targetObjName="TheOilVillageQ2" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="blockleaved_quest"
+		briefDiz="Вернуться обратно домой"
+		fullDiz="Мы нашли Серго и блокиратор вместе с ним. Блокиратор мы решили не трогать, должен быть другой выход... Да и кажется у Чужеземца есть план."
+		isMainQuest="1">
+		<Map
+			name="r4m0"
+			targetObjName="ExitToR4M1" />
+
+		<Map
+			name="r4m1"
+			targetObjName="TheGadad_enter" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="blocktaken_quest"
+		briefDiz="Вернуться обратно домой"
+		fullDiz="Мы нашли Серго и блокиратор вместе с ним. Блокиратор мы решили забрать, вернёмся и решим, как быть дальше."
+		isMainQuest="1">
+		<Map
+			name="r4m0"
+			targetObjName="ExitToR4M1" />
+
+		<Map
+			name="r4m1"
+			targetObjName="TheGadad_enter" />
 	</QuestInfo>
 
 	<QuestInfo

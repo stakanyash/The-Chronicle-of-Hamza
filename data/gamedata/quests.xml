@@ -95,6 +95,20 @@
 		SubQuestsCondition="and"
 		CheckAll="0"
 		ConditionToGive="all complete" />
+
+	<quest
+		Name="blocktaken_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
+
+	<quest
+		Name="blockleaved_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
 <!--Root/r4m2/Сюжетные-->
 	<quest
 		Name="r4m2_FightWithCrazy"
@@ -592,6 +606,20 @@
 
 	<quest
 		Name="GoToDesertOfDeath_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
+<!--Root/r4m1/Сюжетные/The Chronicle of Hamza/После возвращения из Пустыни Смерти-->
+	<quest
+		Name="GoToOracle_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
+
+	<quest
+		Name="GoToVasiliy_quest"
 		Automatic="0"
 		SubQuestsCondition="and"
 		CheckAll="0"

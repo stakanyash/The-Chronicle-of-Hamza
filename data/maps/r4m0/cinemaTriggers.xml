@@ -193,7 +193,7 @@
 	-- Hint after 10 minutes --
 
 	<trigger Name="SergoHint_cs" active="0">
-		<event timeout="10" eventid="GE_TIME_PERIOD" />
+		<event timeout="600" eventid="GE_TIME_PERIOD" />
 		<script>
             SaveAllToleranceStatus(RS_NEUTRAL)
 

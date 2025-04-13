@@ -104,7 +104,7 @@
 				Belong="1023"
 				Prototype="NPC"
 				ModelName="mask_hero"
-				helloReplyNames="Dlg_npc_002085"
+				helloReplyNames="Dlg_npc_002085 Dlg_npc_002124 Dlg_npc_002133"
 				SpokenCount="0" />
 		</Object>
 
