@@ -1568,3 +1568,21 @@ function ConnectMansurDD()
 		end
 	end
 end
+
+function GetConfigMusVol()
+    local mus_Volume = 0
+    local scanFile = io.open("data\\config.cfg", "r+")
+    if scanFile then
+        for line in scanFile:lines() do
+            local musVolumeLine = string.find(line, 'mus_Volume="')
+            if musVolumeLine then
+                local strlen = string.len(line)
+                mus_Volume = string.sub(line, musVolumeLine + 12, strlen - 1)
+                mus_Volume = tonumber(mus_Volume)
+            end
+        end
+        scanFile:close()
+    end
+    return mus_Volume
+end
+

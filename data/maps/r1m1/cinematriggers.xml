@@ -1,6 +1,134 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <triggers>
 
+-- TCoH: Rollback Cutscene --
+	<trigger Name="RotateBack_cs_start" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			local Plf = GetPlayerVehicle()
+			local PlfID = GetPlayerVehicleId()
+
+			Fly("rotateback_cam01", CINEMATIC_AIM_TO_ID, PlfID, 15, 1, 0 )
+			Fly("rotateback_cam02", CINEMATIC_AIM_TO_ID, PlfID, 22, 0, 1 )
+			StartCinematic()
+
+			TActivate("RotateBack_cs_fade")
+			TActivate("RotateBack_cs_cam02")
+			TActivate("RotateBack_cs_end")
+
+			local ACCS = CreateVehicleEx("BelazShot1", "AivenCarCSRT", CVector(1373.994, 290.124, 2964.269), 1095)
+			if ACCS then
+				ACCS:SetRotation(Quaternion(0.001, 0.142, -0.007, 0.990))
+			end
+
+			if Plf then
+				Plf:SetGamePositionOnGround(CVector(1389.125, 289.835, 2955.046))
+				Plf:SetRotation(Quaternion(0.004, 0.075, -0.009, 0.997))
+				Plf:setGodMode(1)
+				Plf:LimitMaxSpeed(10)
+			end
+
+			PlayCustomMusic("Bio01")
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger	Name="RotateBack_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			AddCinematicMessage(907, 1)
+			AddCinematicMessage(908, 0.25)
+
+			local Plf = GetPlayerVehicle()
+			if Plf then
+				Plf:SetExternalPathByName("hamzapath_rb")
+			end
+
+			local Alf = getObj("AivenCarCSRT")
+			if Alf then
+				Alf:SetCruisingSpeed(10)
+				Alf:SetExternalPathByName("aivenpath_rb")
+			end
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger Name="RotateBack_cs_cam02" active="0">
+		<event flypath="rotateback_cam02" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage(909, 0.25)
+			AddCinematicMessage(910, 0.25)
+			AddCinematicMessage(911, 0.25)
+			AddCinematicMessage(912, 0.25)
+
+			TActivate("AivenLeaves_tr")
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger Name="AivenLeaves_tr" active="0">
+		<event msgid="912" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+        	TActivate("AivenLeaves_tr_start")
+
+        	trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="AivenLeaves_tr_start" active="0">
+		<event timeout="1" eventid="GE_TIME_PERIOD" />
+		<script>
+			local Alf = getObj("AivenCarCSRT")
+			if Alf then
+				Alf:SetExternalPathByName("aivenrunout_path")
+				Alf:SetCruisingSpeed(90)
+			end
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger Name="RotateBack_cs_end" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+			PlayCustomMusic("Passage05")
+			SetCameraBehindPlayerVehicle()
+
+			TActivate("Hurryup_msg")
+			TActivate("AivenReached")
+
+			local Plf = GetPlayerVehicle()
+			if Plf then
+				Plf:setGodMode(0)
+				Plf:UnlimitMaxSpeed()
+			end
+
+			FailQuestIfTaken("GoToOracle_quest")
+			TakeQuest("HurryBackToHome_quest")
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="AivenReached" active="0">
+		<event eventid="GE_TARGET_REACHED" ObjName="AivenCarCSRT" />
+		<script>
+			local Alf = getObj("AivenCarCSRT")
+			if Alf then
+				Alf:Remove()
+			end
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
 <!-- Начальный ролик. -->
 	<trigger Name="StartRolikGame" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
@@ -132,8 +260,6 @@
 			Plf:SetExternalPathByName("start_rolik_mycar")
 			Plf:PlaceToEndOfPath()
 			Plf:SetRotation(Quaternion(-0.007, 1.000, -0.010, 0.021))
-
-			TActivate ("tr_Tutotial_Start")
 
 			StopPlayingCustomMusic()
 

@@ -3,11 +3,17 @@
 	<trigger Name="GlobalVar" active="1">
 		<event timeout="0.1" eventid="GE_TIME_PERIOD" />
 		<script>
+			GL_BadFeel1 = true
+			GL_BadFeel2 = true
+			GL_BadFeel3 = true
+
 		    trigger:Deactivate()
 		</script>
 	</trigger>
 
-	<trigger Name="TestBadFeel" active="0">
+	-- TCoH: Bad Feel --
+
+	<trigger Name="BadFeel" active="0">
 		<event timeout="1" eventid="GE_TIME_PERIOD" />
 		<script>
 			local run = GetEntityByName("LisaRolik_loc")
@@ -17,59 +23,33 @@
 			if run then
 				len = Dist(pl, run)
 				if (600 >= len) then
-					pl:AddModifier("hp","- 4.6")
+					pl:AddModifier("hp","- 10.2")
 					RuleConsole("g_postEffect wHamza_feelbad02")
+					TActivate("tr_sick_3rdstage_msg")
 				elseif (1100 >= len) then
-					pl:AddModifier("hp","- 3.1")
+					pl:AddModifier("hp","- 5.8")
 					RuleConsole("g_postEffect wHamza_feelbad01")
+					TActivate("tr_sick_2ndstage_msg")
 				elseif (1500 >= len) then
-					pl:AddModifier("hp","- 0.5")
+					pl:AddModifier("hp","- 1.0")
 					RuleConsole("g_postEffect wHamza_feelbad00")
+					TActivate("tr_sick_1ststage_msg")
 				else
 					RuleConsole("g_postEffect cinematicEnd")
+					UpdateWeather()
 				end
 			end
-		</script>
-	</trigger>
-
-	<trigger Name="tr_sick_3rdstage" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-			RuleConsole("g_postEffect wHamza_feelbad02")
-			TActivate("tr_sick_3rdstage")
-			TActivate("tr_sick_3rdstage_hpdown")
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="tr_sick_2ndstage" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-			RuleConsole("g_postEffect wHamza_feelbad01")
-			TActivate("tr_sick_2ndstage")
-			TActivate("tr_sick_2ndstage_hpdown")
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="tr_sick_1ststage" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-			RuleConsole("g_postEffect wHamza_feelbad00")
-			TActivate("tr_sick_1ststage")
-			TActivate("tr_sick_1ststage_hpdown")
-
-			trigger:Deactivate()
 		</script>
 	</trigger>
 
 	<trigger Name="tr_sick_3rdstage_msg" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			AddFadingMsgId( "fm_sick_3rdstage" )
-			AddImportantFadingMsgByStrIdFormatted("fm_sick_3rdstage")
+			if GL_BadFeel3 == true then
+				AddFadingMsgId( "fm_sick_3rdstage" )
+				AddImportantFadingMsgByStrIdFormatted("fm_sick_3rdstage")
+				GL_BadFeel3 = false
+			end
 
 			trigger:Deactivate()
 		</script>
@@ -78,8 +58,11 @@
 	<trigger Name="tr_sick_2ndstage_msg" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			AddFadingMsgId( "fm_sick_2ndstage" )
-			AddImportantFadingMsgByStrIdFormatted("fm_sick_2ndstage")
+			if GL_BadFeel2 == true then
+				AddFadingMsgId( "fm_sick_2ndstage" )
+				AddImportantFadingMsgByStrIdFormatted("fm_sick_2ndstage")
+				GL_BadFeel2 = false
+			end
 
 			trigger:Deactivate()
 		</script>
@@ -88,45 +71,301 @@
 	<trigger Name="tr_sick_1ststage_msg" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			AddFadingMsgId( "fm_sick_1ststage" )
-			AddImportantFadingMsgByStrIdFormatted("fm_sick_1ststage")
+			if GL_BadFeel1 == true then
+				AddFadingMsgId( "fm_sick_1ststage" )
+				AddImportantFadingMsgByStrIdFormatted("fm_sick_1ststage")
+				GL_BadFeel1 = false
+			end
 
 			trigger:Deactivate()
 		</script>
 	</trigger>
 
-	<trigger Name="tr_sick_3rdstage_hpdown" active="0">
+	-- TCoH: Start r1m1 chapter --
+
+	<trigger Name="FirstArriveToKrai_tr" active="1">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			local pl = GetPlayerVehicle()
+			if QuestStatus("GoToOracle_quest")==Q_TAKEN then
+				random = math.random(627,636)
+				if random == 627 then
+					TActivate("tr627Lucky")
+				else
+					TActivate("FirstArriveToKrai_cs_start")
+				end
 
-			if pl then
-				pl:AddModifier("hp","- 4.6")
+				local Plp = GetPlayerVehicle()
+				if Plp then
+					Plp:SetGamePositionOnGround(CVector(3717.630, 343.964, 2841.896))
+					Plp:SetRotation(Quaternion(-0.023, 0.088, -0.010, -0.996))
+				end
+
+				local ACCS = CreateVehicleEx("BelazShot1", "AivenCarCS", CVector(3733.740, 343.858, 2840.466), 1095)
+				if ACCS then
+					ACCS:SetRotation(Quaternion(-0.004, 0.259, 0.033, -0.965))
+				end
+
+				TActivate("BadFeel")
 			end
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
-	<trigger Name="tr_sick_2ndstage_hpdown" active="0">
+	<trigger Name="FirstArriveToKrai_cs_start" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			local pl = GetPlayerVehicle()
+			SetRadarUpgrade(1)
 
-			if pl then
-				pl:AddModifier("hp","- 3")
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			local Plf = GetPlayerVehicle()
+			local PlfID = GetPlayerVehicleId()
+
+			Fly("fatk_cam01", CINEMATIC_AIM_TO_ID, PlfID, 20, 1, 0 )
+			Fly("fatk_cam02", CINEMATIC_NO_AIM, 0, 16, 0, 1 )
+			StartCinematic()
+
+			AddCinematicMessage(901, 1)
+			AddCinematicMessage(902, 0.25)
+			AddCinematicMessage(903, 0.25)
+			AddCinematicMessage(904, 0.25)
+
+			PlayCustomMusic("Bio07unloop")
+
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetExternalPathByName("hamzapath_fatk")
+				P:LimitMaxSpeed(25)
 			end
+
+			local A = getObj("AivenCarCS")
+			if A then
+				A:SetExternalPathByName("aivenpath_fatk")
+				A:SetCruisingSpeed(30)
+			end
+
+			TActivate( "FirstArriveToKrai_cam02" )
+			TActivate( "FirstArriveToKrai_End" )
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
-	<trigger Name="tr_sick_1ststage_hpdown" active="0">
+	<trigger Name="tr627Lucky" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			local pl = GetPlayerVehicle()
+			SetRadarUpgrade(1)
 
-			if pl then
-				pl:AddModifier("hp","- 1.3")
-			end
+			Fly("start_game", CINEMATIC_NO_AIM, 0, 68, 1, 1 )
+			StartCinematic()
+			UpdateCinematic( 1 )
+
+			TActivate("trFirstRolikMusic")
+			TActivate("StartGame627")
+
+			ShowFirstNarratorText()
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
+
+	<trigger Name="StartGame627" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			SetWeather(0)
+
+			GameFiltersUse()
+			PlayCustomMusic("QuietDialogue01")
+
+			CreateNewDummyObject( "dweller_player", "hero1Dw", -1, -1, CVector(3343.495, 368.166, 3304.762), Quaternion(0.0000, -0.9610, 0.0000, -0.2760), 0)
+			CreateNewDummyObject( "dweller_father", "fatherDw", -1, -1, CVector(3342.860, 368.167, 3303.460), Quaternion(0.0000, 0.4320, 0.000, 0.9020), 2)
+			CreateVehicleEx("Bug01","AivenSimBug",CVector(3355.000, 368.500, 3308.000), 1095)
+
+			local ASBV = getObj("AivenSimBug")
+			if ASBV then
+				ASBV:SetRotation(Quaternion(-0.007, 1.000, -0.010, 0.021))
+				ASBV:SetSkin(0)
+			end
+
+			local Plf = GetPlayerVehicle()
+			local PlfID = GetPlayerVehicleId()
+
+			Fly("start_rolik1", CINEMATIC_NO_AIM, 0, 35, 0, 0 )
+			Fly("start_rolik11", CINEMATIC_NO_AIM, 0, 1.5, 0, 0 )
+			Fly("start_rolik5", CINEMATIC_NO_AIM, 0, 13, 0, 0 )
+			Fly("start_rolik6", CINEMATIC_NO_AIM, 0, 14, 0, 0 )
+			Fly("start_rolik2", CINEMATIC_NO_AIM, 0, 6, 0, 0 )
+			Fly("start_rolik3", CINEMATIC_NO_AIM, 0, 6, 0, 0 )
+			Fly("start_rolik8", CINEMATIC_NO_AIM, 0, 13, 0, 0 )
+			Fly("start_rolik4", CINEMATIC_NO_AIM, 0, 5, 0, 0 )
+			Fly("simbug_cam01", CINEMATIC_NO_AIM, 0, 16, 0, 0 )
+			Fly("fatk_cam01", CINEMATIC_AIM_TO_ID, PlfID, 20, 0, 0 )
+			Fly("fatk_cam02", CINEMATIC_NO_AIM, 0, 16, 0, 1 )
+			StartCinematic()
+			UpdateCinematic(1)
+
+			TActivate( "ROLIK15" )
+			TActivate( "ROLIK16" )
+			TActivate( "ROLIK12" )
+			TActivate( "ROLIK13" )
+			TActivate( "ROLIK18" )
+			TActivate( "ROLIK627" )
+			TActivate( "FirstArriveToKrai_afterSimBug" )
+			TActivate( "FirstArriveToKrai_cam01" )
+			TActivate( "FirstArriveToKrai_cam02" )
+			TActivate( "FirstArriveToKrai_End" )
+
+			getObj("fatherDw"):SetNodeAction(AT_RESERVED1) 
+			getObj("fatherDw"):SetNextForAnimation(AT_RESERVED1, AT_STAND1) 
+
+			AddCinematicMessage( 1, 2.5 )
+			AddCinematicMessage( 2, 0.25 )
+			AddCinematicMessage( 3, 0.25  )
+
+			TActivate("StartRolikGame")
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger Name="ROLIK627" active="0">
+		<event flypath="start_rolik4" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			local rrr = GetEntityByName ("hero2Dw")
+			if rrr then rrr:Remove() end
+
+			local rrr = GetEntityByName ("fatherDw")
+			if rrr then rrr:Remove() end
+
+			AddCinematicMessage( 8, 0.25 ) 
+
+			local Plf = getObj("AivenSimBug")
+			Plf:SetCustomControlEnabled( true )
+			Plf:SetExternalPathByName("start_rolik_mycar")
+			Plf:SetCustomControlEnabled( false )
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger	Name="FirstArriveToKrai_afterSimBug"	active="0">
+		<event flypath="simbug_cam01" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			musvalue = GetConfigMusVol()
+
+			local Plf = getObj("AivenSimBug")
+			if Plf then
+				Plf:Remove()
+			end
+
+			SetVar("FATKAE", 1)
+
+			RuleConsole("mus_Volume 0")
+
+			PlayCustomMusic("Bio07unloop")
+
+			AddCinematicMessage(9000, 0.1)
+			AddCinematicMessage(9001, 0.1)
+			AddCinematicMessage(9002, 0.1)
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="FirstArriveToKrai_cam01"	active="0">
+		<event flypath="fatk_cam01" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			local AE = GetVar("FATKAE").AsInt
+			if AE == 1 then
+				RuleConsole("mus_Volume "..musvalue)
+			end
+
+			AddCinematicMessage(901, 0.25)
+			AddCinematicMessage(902, 0.25)
+			AddCinematicMessage(903, 0.25)
+			AddCinematicMessage(904, 0.25)
+
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetExternalPathByName("hamzapath_fatk")
+				P:LimitMaxSpeed(25)
+			end
+
+			local A = getObj("AivenCarCS")
+			if A then
+				A:SetExternalPathByName("aivenpath_fatk")
+				A:SetCruisingSpeed(30)
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="FirstArriveToKrai_cam02"	active="0">
+		<event flypath="fatk_cam02" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage(905, 0.25)
+			AddCinematicMessage(906, 0.25)
+
+			PlayCustomMusic("quietdialogue01")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="FirstArriveToKrai_End" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+			SetCameraBehindPlayerVehicle()
+
+			StopPlayingCustomMusic()
+
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetExternalPathByName("hamzapath_fatk")
+				P:PlaceToEndOfPath("hamzapath_fatk")
+				P:UnlimitMaxSpeed()
+			end
+
+			local A = getObj("AivenCarCS")
+			if A then
+				A:Remove()
+			end
+
+			TActivate("RotateBack_tr")
+
+			AllowSave(false)
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	-- TCoH: Rotate back --
+
+	<trigger Name="RotateBack_tr" active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="RotateBack_loc" />
+		<script>
+			TActivate( "RotateBack_cs_start" )
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="Hurryup_msg" active="0">
+		<event timeout="1" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId( "fm_hurryup" )
+			AddImportantFadingMsgByStrIdFormatted("fm_hurryup")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	-- Regular Triggers --
 
 	<trigger	Name="trKraiPlaceSecret"	active="0">
 		<event	timeout="0.1"			eventid="GE_TIME_PERIOD" />
@@ -463,7 +702,7 @@
 		</script>
 	</trigger>
 
-	<!-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
+	<!-- ˜˜˜˜ ˜˜˜˜˜ ˜˜˜˜˜˜˜˜ ˜˜˜˜˜ ˜ ˜˜˜˜˜˜˜˜˜˜˜˜˜˜ ˜˜˜˜ -->
 	<trigger Name="REVOLUTIONFAIL" active="0">
 		<event timeout="0.1" eventid="GE_TIME_PERIOD" />
 		<script>
@@ -1013,10 +1252,6 @@
 		</script>
 	</trigger>
 
-
-
-
-
 	<trigger Name="triggerExitToMap41" active="1">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="ToR4M0" />
 		<script>
@@ -1028,6 +1263,9 @@
 			local b = SpawnMessageBox( "8801" )
 			if b == 1 then
 				PassToMap("r4m0", "FromR1M1", -1 )
+				GL_BadFeel1 = true
+				GL_BadFeel2 = true
+				GL_BadFeel3 = true
 			else
 				SaveAllToleranceStatus(RS_NEUTRAL)
 

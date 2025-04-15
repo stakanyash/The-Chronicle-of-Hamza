@@ -2618,7 +2618,14 @@
 		SubQuestsCondition="and"
 		CheckAll="0"
 		ConditionToGive="all complete" />
-<!--Root/r1m1/Сюжетные--><!--Root/r1m1/Опциональные--><!--Root/r1m1/Опциональные/Квест работодателя-->
+<!--Root/r1m1/Сюжетные--><!--Root/r1m1/Опциональные--><!--Root/r1m1/The Chronicle of Hamza-->
+	<quest
+		Name="HurryBackToHome_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
+<!--Root/r1m1/Опциональные/Квест работодателя-->
 	<quest
 		Name="WorkGiver_Quest1"
 		Automatic="0"

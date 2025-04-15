@@ -431,7 +431,7 @@
 		isMainQuest="1">
 		<Map
 			name="r1m1"
-			targetObjName="ToR1M3" />
+			targetObjName="RotateBack_loc" />
 
 		<Map
 			name="r4m0"
@@ -493,6 +493,24 @@
 		<Map
 			name="r1m2"
 			targetObjName="CarOfAntiSiencer" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="HurryBackToHome_quest"
+		briefDiz="Скорее вернуться домой"
+		fullDiz="Я чувствую себя не очень хорошо. Видимо мне нельзя далеко отъезжать от пустыни. Надо быстрее возвращаться, пока не стало слишком поздно."
+		isMainQuest="1">
+		<Map
+			name="r1m1"
+			targetObjName="ToR4M0" />
+
+		<Map
+			name="r4m0"
+			targetObjName="ExitToR4M1" />
+
+		<Map
+			name="r4m1"
+			targetObjName="TheGadad_enter" />
 	</QuestInfo>
 
 	<QuestInfo
