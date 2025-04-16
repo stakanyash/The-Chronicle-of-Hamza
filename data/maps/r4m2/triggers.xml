@@ -383,6 +383,7 @@
 			end
 
 			TDeactivate("CreateMadMansOnBase")
+			TDeactivate("AivenDiesOnBaseAttack")
 
 			trigger:Deactivate()
 		</script>
