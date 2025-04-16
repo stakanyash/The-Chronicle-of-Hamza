@@ -493,6 +493,66 @@
 		</script>
 	</trigger>
 
+	<trigger Name="BackFromR1M1_cs_start" active="1">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			if QuestStatus("HurryBackToHome_quest")==Q_TAKEN then
+				SaveAllToleranceStatus(RS_NEUTRAL)
+
+				local Plf = GetPlayerVehicle()
+				local PlfID = GetPlayerVehicleId()
+
+				Fly("BackFromR1M1_cam", CINEMATIC_AIM_TO_ID, PlfID, 18, 1, 1 )
+				StartCinematic()
+
+				if Plf then
+					Plf:SetGamePositionOnGround(getPos("FromR1M1"))
+					Plf:SetRotation(Quaternion(-0.006, 0.987, -0.009, -0.161))
+				end
+
+				TActivate("BackFromR1M1_cs_fade")
+				TActivate("BackFromR1M1_cs_end")
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="BackFromR1M1_cs_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			local Plf = GetPlayerVehicle()
+			if Plf then
+				Plf:SetCustomLinearVelocity(10)
+				Plf:LimitMaxSpeed(20)
+				Plf:SetExternalPathByName("backfromr1m1_path")
+			end
+
+			AddCinematicMessage( 200, 0.2 )
+			AddCinematicMessage( 201, 0.5 )
+		
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="BackFromR1M1_cs_end" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+            RestoreAllToleranceStatus()
+			SetCameraBehindPlayerVehicle()
+
+			local Plf = GetPlayerVehicle()
+			if Plf then
+				Plf:UnlimitMaxSpeed()
+				Plf:SetExternalPathByName("backfromr1m1_path")
+				Plf:PlaceToEndOfPath("backfromr1m1_path")
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
 	-- Test --
 
 	<trigger Name="Test" active="0">

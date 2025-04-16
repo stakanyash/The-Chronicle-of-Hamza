@@ -1479,7 +1479,7 @@
 		text="Ну ладно..."
 		role="PLAYER"
 		scriptResult="CompleteQuest('BackToSharafAfterBuhara_quest'); TakeQuest('TalkWithMario_quest'); EndConversation()" />
-<!--Root/r4m1/The Chronicle of Hamza/Гонка/Если Хамза принимает участие-->
+<!--Root/r4m1/The Chronicle of Hamza/Шараф/После возвращения из Края--><!--Root/r4m1/The Chronicle of Hamza/Гонка/Если Хамза принимает участие-->
 	<Reply
 		name="Adrenalin_NPC_dialog_1"
 		text="Приветствую, молодые люди! Не упустите свой шанс - сегодня у нас проводятся гонки на Уралах. Как я вижу, вы приехали на этих автомобилях, так что вы точно не захотите пропустить это событие!"
@@ -4702,6 +4702,115 @@
 		text="Все согласны?"
 		role="PLAYER"
 		scriptResult="SetVar('MansurTalk', 5); Start" />
+<!--Root/r4m1/The Chronicle of Hamza/Мансур/После возвращения из Края-->
+	<Reply
+		name="Dlg_npc_002141"
+		text="Хамза! Вы куда пропали? Я всего-то отошёл поговорить с отцом, вернулся, а вас уже след простыл! Так... А где собственно сам Чужеземец?"
+		role="NPC"
+		scriptCondition="GetVar('MansurTalk').AsInt==5 and QuestStatus('HurryBackToHome_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_002142" />
+
+	<Reply
+		name="Dlg_pl_002142"
+		text='Долгая история, но попробую кратко. Чужеземец предложил поехать к некоему "Оракулу". Он говорил, что Оракул может знать как решить нашу проблему...'
+		role="PLAYER"
+		nextReplies="Dlg_npc_002143" />
+
+	<Reply
+		name="Dlg_npc_002143"
+		text="И как, помог ваш Оракул?"
+		role="NPC"
+		nextReplies="Dlg_pl_002144" />
+
+	<Reply
+		name="Dlg_pl_002144"
+		text="Подожди, я ещё не закончил. Мы пересекли Пустыню Смерти и оказались в регионе, где жил Чужеземец. Но стоило нам только отъехать чуть дальше, как моё состояние стало ухудшаться. В какой-то момент стало совсем плохо и мы решили, что Чужеземец едет дальше, а я еду обратно."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002145" />
+
+	<Reply
+		name="Dlg_npc_002145"
+		text="И он позволил тебе уехать одному? Он совсем с ума сошёл?"
+		role="NPC"
+		nextReplies="Dlg_pl_002146" />
+
+	<Reply
+		name="Dlg_pl_002146"
+		text="Я сам его заверил, что смогу доехать сюда. Как видишь - смог."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002147" />
+
+	<Reply
+		name="Dlg_npc_002147"
+		text="И что по итогу? Он поехал дальше к Оракулу?"
+		role="NPC"
+		nextReplies="Dlg_pl_002148" />
+
+	<Reply
+		name="Dlg_pl_002148"
+		text="Да, он поехал к нему."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002149" />
+
+	<Reply
+		name="Dlg_npc_002149"
+		text="Что это вообще за Оракул такой?"
+		role="NPC"
+		nextReplies="Dlg_pl_002150" />
+
+	<Reply
+		name="Dlg_pl_002150"
+		text="Чужеземец только сказал, что это механическое создание."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002151" />
+
+	<Reply
+		name="Dlg_npc_002151"
+		text="Механическое создание, которое может решить нашу проблему? Звучит как какая-то сказка, честно говоря!"
+		role="NPC"
+		nextReplies="Dlg_pl_002152" />
+
+	<Reply
+		name="Dlg_pl_002152"
+		text='Не знаю, он был не очень уверен в своей идее, но как он сказал "это может быть наша единственная надежда". Тем более за время проведённое с ним думаю, что ему можно верить.'
+		role="PLAYER"
+		nextReplies="Dlg_npc_002153" />
+
+	<Reply
+		name="Dlg_npc_002153"
+		text="Как скажешь. А нам что делать? Просто ждать?"
+		role="NPC"
+		nextReplies="Dlg_pl_002154" />
+
+	<Reply
+		name="Dlg_pl_002154"
+		text="Думаю, что да."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002155" />
+
+	<Reply
+		name="Dlg_npc_002155"
+		text="Что будешь делать дальше?"
+		role="NPC"
+		nextReplies="Dlg_pl_002156" />
+
+	<Reply
+		name="Dlg_pl_002156"
+		text="Пока съезжу к отцу, расскажу, что было, пока он меня не видел. А там буду ждать вестей."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002157" />
+
+	<Reply
+		name="Dlg_npc_002157"
+		text="Хорошо. До встречи."
+		role="NPC"
+		nextReplies="Dlg_pl_002158" />
+
+	<Reply
+		name="Dlg_pl_002158"
+		text="До встречи."
+		role="PLAYER"
+		scriptResult="CompleteQuest('HurryBackToHome_quest'); TakeQuest('TalkWithFather_AfterKrai_quest'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/После возвращения из Зармека/Первая часть-->
 	<Reply
 		name="Dlg_npc_001578"
@@ -5442,6 +5551,103 @@
 		text="Хорошо. До встречи, отец."
 		role="PLAYER"
 		scriptResult="CompleteQuest('GoToFatherAfterZarmek_quest'); TakeQuest('GoToMansurandAivenJr_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Отец/Концовка 1 (после Края)--><!--Root/r4m1/The Chronicle of Hamza/Отец/Концовка 1 (после Края)/Часть 1-->
+	<Reply
+		name="Dlg_npc_002159"
+		text="Хамза! Где ты пропал? Мансур сказал, что вы вернулись с Пустыни, он отошёл поговорить с отцом, а вернувшись вас уже не увидел! Что я тебе говорил? Связаться со мной как найдёте Серго! Вы его нашли? И куда это вы уехали после того, как вернулись с Пустыни Смерти?"
+		role="NPC"
+		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_002160" />
+
+	<Reply
+		name="Dlg_pl_002160"
+		text="Прости, отец, я совсем об этом забыл. Правда. Давай я тебе расскажу, что было."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002161" />
+
+	<Reply
+		name="Dlg_npc_002161"
+		text="Ну попробуй расскажи."
+		role="NPC"
+		nextReplies="Dlg_pl_002162" />
+
+	<Reply
+		name="Dlg_pl_002162"
+		text="Мы нашли Серго и его блокиратор. А дальше..."
+		role="PLAYER"
+		scriptResult="SetVar('FatherTalk', 1); TActivate('FewMinutesLater_tr'); LeaveTown(false)" />
+<!--Root/r4m1/The Chronicle of Hamza/Отец/Концовка 1 (после Края)/Часть 2-->
+	<Reply
+		name="Dlg_npc_002163"
+		text="И как ты себя чувствуешь после такого?"
+		role="NPC"
+		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_002164" />
+
+	<Reply
+		name="Dlg_pl_002164"
+		text="Моё состояние уже в Пустыне Смерти было нормальным, так что всё в порядке."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002165" />
+
+	<Reply
+		name="Dlg_npc_002165"
+		text="И что вам сейчас нужно сделать?"
+		role="NPC"
+		nextReplies="Dlg_pl_002166" />
+
+	<Reply
+		name="Dlg_pl_002166"
+		text="Как я понял - только ждать вестей от Чужеземца."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002167" />
+
+	<Reply
+		name="Dlg_npc_002167"
+		text="А если вестей от него не будет?"
+		role="NPC"
+		nextReplies="Dlg_pl_002168" />
+
+	<Reply
+		name="Dlg_pl_002168"
+		text="Мы всегда можем вернуться обратно и забрать блокиратор."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002169" />
+
+	<Reply
+		name="Dlg_npc_002169"
+		text="Ну допустим, вы заберёте блокиратор, а дальше то что?"
+		role="NPC"
+		nextReplies="Dlg_pl_002170" />
+
+	<Reply
+		name="Dlg_pl_002170"
+		text="Поедем к учёным, они наверняка должны знать, что делать."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002171" />
+
+	<Reply
+		name="Dlg_npc_002171"
+		text="Ну что-же. Будем надеяться на лучшее. Останешься тут или поедешь к Мансуру?"
+		role="NPC"
+		nextReplies="Dlg_pl_002172" />
+
+	<Reply
+		name="Dlg_pl_002172"
+		text="Останусь тут. Всё таки я довольно давно не был дома."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002173" />
+
+	<Reply
+		name="Dlg_npc_002173"
+		text="Вот и правильно, проходи, сейчас принесу чего-нибудь."
+		role="NPC"
+		nextReplies="Dlg_pl_002174" />
+
+	<Reply
+		name="Dlg_pl_002174"
+		text="Спасибо, отец."
+		role="PLAYER" />
 <!--Root/r4m1/Опциональные/Гонки-->
 	<Reply
 		name="r4_Racers_Men_1_N01"

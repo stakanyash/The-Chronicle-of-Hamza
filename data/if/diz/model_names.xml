@@ -871,9 +871,19 @@
 		value="Молоковоз" />
 
 	<Item
+		id="r1m1_molokovoz02s"
+		locForm="0"
+		value="Мf7L9k!2Z" />
+
+	<Item
 		id="r1m1_molokovoz03"
 		locForm="0"
 		value="Молоковоз" />
+
+	<Item
+		id="r1m1_molokovoz03s"
+		locForm="0"
+		value="Мf7L9k!2Z" />
 
 	<Item
 		id="r1m1_bug01"

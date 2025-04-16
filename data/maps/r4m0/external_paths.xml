@@ -17,4 +17,28 @@
 		<Point
 			coord="1227.790 642.224" />
 	</Path>
+
+	<Path
+		Name="backfromr1m1_path">
+		<Point
+			coord="2015.433 3494.588" />
+
+		<Point
+			coord="2008.991 3439.406" />
+
+		<Point
+			coord="1991.337 3371.521" />
+
+		<Point
+			coord="1958.204 3323.300" />
+
+		<Point
+			coord="1919.390 3307.469" />
+
+		<Point
+			coord="1872.634 3306.760" />
+
+		<Point
+			coord="1832.340 3327.482" />
+	</Path>
 </Paths>

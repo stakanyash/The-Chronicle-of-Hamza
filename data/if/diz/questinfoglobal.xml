@@ -840,6 +840,16 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="TalkWithFather_AfterKrai_quest"
+		briefDiz="Поговорить с отцом"
+		fullDiz="Давно я не видел отца, надо бы рассказать ему, что с нами происходило за последнее время."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheKef_enter" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="TalkWithFather_Quest"
 		briefDiz="Вернуться домой"
 		fullDiz="Самое время вернуться домой после успешной сделки."

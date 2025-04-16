@@ -24,6 +24,10 @@
 			end
 
 			if Plf then
+				Plf:SetCustomControlEnabled( true )
+				Plf:SetCustomLinearVelocity( 0 )
+				Plf:SetThrottle( 0 )
+				Plf:SetCustomControlEnabled( false )
 				Plf:SetGamePositionOnGround(CVector(1389.125, 289.835, 2955.046))
 				Plf:SetRotation(Quaternion(0.004, 0.075, -0.009, 0.997))
 				Plf:setGodMode(1)
@@ -108,6 +112,8 @@
 			if Plf then
 				Plf:setGodMode(0)
 				Plf:UnlimitMaxSpeed()
+				Plf:SetExternalPathByName("hamzapath_rb")
+				Plf:PlaceToEndOfPath("hamzapath_rb")
 			end
 
 			FailQuestIfTaken("GoToOracle_quest")

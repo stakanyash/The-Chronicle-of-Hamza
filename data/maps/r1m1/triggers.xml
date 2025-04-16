@@ -3,9 +3,10 @@
 	<trigger Name="GlobalVar" active="1">
 		<event timeout="0.1" eventid="GE_TIME_PERIOD" />
 		<script>
-			GL_BadFeel1 = true
-			GL_BadFeel2 = true
-			GL_BadFeel3 = true
+			SetVar("GL_BadFeel1", 1)
+			SetVar("GL_BadFeel2", 1)
+			SetVar("GL_BadFeel3", 1)
+			SetVar("GL_Update", 1)
 
 		    trigger:Deactivate()
 		</script>
@@ -36,7 +37,10 @@
 					TActivate("tr_sick_1ststage_msg")
 				else
 					RuleConsole("g_postEffect cinematicEnd")
-					UpdateWeather()
+					if QuestStatus("HurryBackToHome_quest")==Q_TAKEN and GetVar("GL_Update").AsInt == 1 then
+						UpdateWeather()
+						SetVar("GL_Update", 0)
+					end
 				end
 			end
 		</script>
@@ -45,10 +49,10 @@
 	<trigger Name="tr_sick_3rdstage_msg" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			if GL_BadFeel3 == true then
+			if GetVar("GL_BadFeel3").AsInt == 1 then
 				AddFadingMsgId( "fm_sick_3rdstage" )
 				AddImportantFadingMsgByStrIdFormatted("fm_sick_3rdstage")
-				GL_BadFeel3 = false
+				SetVar("GL_BadFeel3", 0)
 			end
 
 			trigger:Deactivate()
@@ -58,10 +62,10 @@
 	<trigger Name="tr_sick_2ndstage_msg" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			if GL_BadFeel2 == true then
+			if GetVar("GL_BadFeel2").AsInt == 1 then
 				AddFadingMsgId( "fm_sick_2ndstage" )
 				AddImportantFadingMsgByStrIdFormatted("fm_sick_2ndstage")
-				GL_BadFeel2 = false
+				SetVar("GL_BadFeel2", 0)
 			end
 
 			trigger:Deactivate()
@@ -71,10 +75,10 @@
 	<trigger Name="tr_sick_1ststage_msg" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			if GL_BadFeel1 == true then
+			if GetVar("GL_BadFeel1").AsInt == 1 then
 				AddFadingMsgId( "fm_sick_1ststage" )
 				AddImportantFadingMsgByStrIdFormatted("fm_sick_1ststage")
-				GL_BadFeel1 = false
+				SetVar("GL_BadFeel1", 0)
 			end
 
 			trigger:Deactivate()
@@ -87,8 +91,8 @@
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
 			if QuestStatus("GoToOracle_quest")==Q_TAKEN then
-				random = math.random(627,636)
-				if random == 627 then
+				local random1 = math.random(627,636)
+				if random1 == 627 then
 					TActivate("tr627Lucky")
 				else
 					TActivate("FirstArriveToKrai_cs_start")
@@ -104,8 +108,6 @@
 				if ACCS then
 					ACCS:SetRotation(Quaternion(-0.004, 0.259, 0.033, -0.965))
 				end
-
-				TActivate("BadFeel")
 			end
 
 			trigger:Deactivate()
@@ -337,10 +339,76 @@
 			end
 
 			TActivate("RotateBack_tr")
+			TActivate("AC_GTO")
+			TActivate("BadFeel_activate_tr")
+			TActivate("AutoSave_GTO_tr")
+			TActivate("Shiza_tr")
 
 			AllowSave(false)
 
+			AddFadingMsgId( "fm_manualsavedis" )
+			AddImportantFadingMsgByStrIdFormatted("fm_manualsavedis")
+
 			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="AutoSave_GTO_tr" active="0">
+		<event timeout="0.5" eventid="GE_TIME_PERIOD" />
+		<script>
+			AutoSave()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="AC_GTO" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			TeamCreate("AivenCar", 1095, CVector(getPos("AivenSpawn_loc")), {"BelazShot"}, nil, nil, Quaternion(0.018, -0.847, 0.041, 0.529))
+
+			local vehAiven = getObj("AivenCar_vehicle_0")
+			if vehAiven then
+				vehAiven:SetSkin(0)
+				vehAiven:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "AivenControllerGTOR1M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehAiven)
+				end
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="BadFeel_activate_tr" active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_activate_loc" />
+		<script>
+			TActivate( "BadFeel" )
+
+			AddFadingMsgId( "fm_sick" )
+			AddImportantFadingMsgByStrIdFormatted("fm_sick")
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="Shiza_tr" active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="VeryBigFun1_Loc" />
+		<script>
+			local terr = TeamCreate("SecondB",1000,CVector(2099,339,2343),{"r1m1_molokovoz03s","r1m1_molokovoz02s"},CVector(2429,334,2354), 1)
+			terr:SetProperty ("TeamTacticPrototype", "TeamTacticTerroristsR1M1")
+			terr:_AdjustBehaviour ()
+
+			AddFadingMsgId( "fm_die" )
+			trigger:Deactivate()    
 		</script>
 	</trigger>
 
@@ -350,6 +418,11 @@
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="RotateBack_loc" />
 		<script>
 			TActivate( "RotateBack_cs_start" )
+
+			local Alf = getObj("AivenCar_vehicle_0")
+			if Alf then
+				Alf:Remove()
+			end
 
 			trigger:Deactivate() 
 		</script>

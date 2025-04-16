@@ -197,6 +197,10 @@
 		value="У вас осталось 15 секунд." />
 
 	<string
+		id="fm_sick"
+		value="Что-то не так..." />
+
+	<string
 		id="fm_sick_1ststage"
 		value="Вы слишком далеко отъехали от пустыни. Ваше состояние ухудшается." />
 
@@ -211,4 +215,12 @@
 	<string
 		id="fm_hurryup"
 		value="Вам стоит поторопиться. @ffFF1500Или умереть..." />
+
+	<string
+		id="fm_manualsavedis"
+		value="Обратите внимание!||Ручное сохранение @ffFF1500ОТКЛЮЧЕНО!" />
+
+	<string
+		id="fm_die"
+		value="@ffFF1500Умри..." />
 </resource>

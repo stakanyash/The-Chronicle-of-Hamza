@@ -1403,6 +1403,28 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 
 	<Prototype
 		Class			= "Vehicle"
+		Name			= "r1m1_molokovoz02s"
+		ParentPrototype 	= "Molokovoz">
+		<Parts>
+			<Part id = "CABIN"			Prototype = "molokovozCab02" />
+			<Part id = "BASKET"			Prototype = "molokovozCargo01" />
+			<Part id = "BASKET_SMALL_GUN_0"	Prototype = "specter01" />
+		</Parts>
+	</Prototype>
+
+	<Prototype
+		Class			= "Vehicle"
+		Name			= "r1m1_molokovoz03s"
+		ParentPrototype 	= "Molokovoz">
+		<Parts>
+			<Part id = "CABIN"			Prototype = "molokovozCab01" />
+			<Part id = "BASKET"			Prototype = "molokovozCargo02" />
+			<Part id = "BASKET_SMALL_GUN_0"	Prototype = "hornet01" />
+		</Parts>
+	</Prototype>
+
+	<Prototype
+		Class			= "Vehicle"
 		Name			= "r1m1_bug01"
 		ParentPrototype 	= "Bug">
 		<Parts>

@@ -17,6 +17,14 @@
 		value="Мансур" />
 
 	<string
+		id="Belong_1000"
+		value="" />
+
+	<string
+		id="Belong_1000_abb"
+		value="" />
+
+	<string
 		id="Belong_1095"
 		value="Чужеземец" />
 
