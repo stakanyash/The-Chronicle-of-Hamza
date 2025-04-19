@@ -4618,6 +4618,42 @@
 	</Path>
 
 	<Path
+		Name="end1_path">
+		<Point
+			coord="5980.447 4370.387" />
+
+		<Point
+			coord="5743.422 4759.167" />
+
+		<Point
+			coord="5614.377 4984.708" />
+
+		<Point
+			coord="5510.647 5172.406" />
+
+		<Point
+			coord="5470.497 5279.800" />
+
+		<Point
+			coord="5452.867 5407.178" />
+
+		<Point
+			coord="5460.056 5622.936" />
+
+		<Point
+			coord="5410.321 5709.320" />
+
+		<Point
+			coord="5300.700 5776.918" />
+
+		<Point
+			coord="5218.671 5822.257" />
+
+		<Point
+			coord="5155.903 5839.057" />
+	</Path>
+
+	<Path
 		Name="engineerGoAwayPath">
 		<Point
 			coord="4040.827 6182.649" />

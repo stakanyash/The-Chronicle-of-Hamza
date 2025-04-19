@@ -3942,34 +3942,198 @@
 		</script>
 	</trigger>
 
-	-- Test --
-
-	<trigger	Name="Test1"	active="0">
+	<trigger	Name="FewMinutesLater_tr"	active="0">
 		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			Fly("t1_cam", CINEMATIC_NO_AIM, nil, 70, 1,1)
+			Fly("FML_cam", CINEMATIC_NO_AIM, nil, 5, 0,1)
+			StartCinematic()
+
+			PlayCustomMusic("Bio07unloop")
+			AddCinematicMessage(8805, 0.1)
+
+			TActivate("FewMinutesLater_tr_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="FewMinutesLater_tr_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+
+			StartConversation("dad_end1")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="Ending1_tr"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)			
+
+			local Plf = GetPlayerVehicle()
+			
+			if Plf then
+				Plf:SetGamePositionOnGround(getPos("End1_loc"))			
+				Plf:SetRotation(Quaternion(0.002, 0.138, 0.008, -0.990))
+				Plf:SetCustomLinearVelocity(14)			
+				Plf:LimitMaxSpeed(14)				
+				Plf:SetExternalPathByName("end1_path")
+			end
+
+			local PlfID = GetPlayerVehicleId()
+			RuleConsole("cinematic_spring_coeff 0.99")		
+
+			FlyLinked("ENEMYLISADEAD_cam01", PlfID, 128, 0, 0, PlfID)			
+			Fly("e1_cam2", CINEMATIC_NO_AIM, nil, 9.5, 0, 0)
+			Fly("e1_cam3", CINEMATIC_NO_AIM, nil, 5.5, 0, 0)	
+			Fly("e1_cam4", CINEMATIC_NO_AIM, nil, 5.5, 0, 1)		
+			StartCinematic()			
+
+			PlayCustomMusic("Techno01")			
+
+			AddCinematicMessage(8806, 0.1)
+			AddCinematicMessage(194, 1)			
+			AddCinematicMessage(195, 0.25)			
+			AddCinematicMessage(196, 0.25)			
+			AddCinematicMessage(197, 0.25)			
+			AddCinematicMessage(198, 0.25)			
+			AddCinematicMessage(199, 0.25)			
+			AddCinematicMessage(200, 0.25)			
+			AddCinematicMessage(201, 0.25)			
+			AddCinematicMessage(202, 0.25)			
+			AddCinematicMessage(203, 0.25)			
+			AddCinematicMessage(204, 0.25)			
+			AddCinematicMessage(205, 0.25)			
+			AddCinematicMessage(206, 0.25)			
+			AddCinematicMessage(207, 0.25)			
+			AddCinematicMessage(208, 0.25)			
+			AddCinematicMessage(209, 0.25)			
+			AddCinematicMessage(210, 0.25)			
+			AddCinematicMessage(211, 0.25)
+
+			TActivate("Ending1_tr_babah")	
+			TActivate("Ending1_tr_shake")	
+			TActivate("Ending1_tr_shake2")		
+			TActivate("Ending1_tr_end")			
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="Ending1_tr_babah"	active="0">
+		<event flypath="e1_cam2" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			RuleConsole("g_postEffect wNuclearExp")
+
+			PlayCustomMusic("passage04end1")
+
+			local Plf = GetPlayerVehicle()
+			if Plf then
+				Plf:SetExternalPathByName("end1_path")
+				Plf:PlaceToEndOfPath("end1_path")
+				Plf:UnlimitMaxSpeed()
+			end
+
+			AddCinematicMessage(212, 0.25)
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="Ending1_tr_shake"	active="0">
+		<event flypath="e1_cam3" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			--Kef--
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE01", -1, -1, CVector(6040.391, 269.481, 5058.382), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE02", -1, -1, CVector(6010.234, 256.368, 5208.539), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE03", -1, -1, CVector(6113.816, 259.479, 5147.182), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE04", -1, -1, CVector(6132.553, 263.956, 5146.330), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE05", -1, -1, CVector(6365.704, 287.330, 5275.518), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE06", -1, -1, CVector(6376.649, 250.186, 5167.866), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE07", -1, -1, CVector(6423.297, 258.430, 5139.449), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE08", -1, -1, CVector(6383.232, 307.414, 5173.023), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE09", -1, -1, CVector(6182.589, 254.318, 4956.778), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+
+			--Aliham--
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE01", -1, -1, CVector(4873.668, 252.000, 5706.798), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE02", -1, -1, CVector(4942.770, 252.000, 5666.800), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE03", -1, -1, CVector(4938.091, 252.000, 5627.208), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE04", -1, -1, CVector(4941.399, 252.908, 5589.747), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE05", -1, -1, CVector(4921.849, 252.175, 5573.271), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE06", -1, -1, CVector(4841.961, 252.555, 5604.830), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE07", -1, -1, CVector(4841.510, 250.771, 5633.459), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE08", -1, -1, CVector(4873.031, 258.205, 5686.577), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+
+			--Gadad--
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE01", -1, -1, CVector(5569.596, 297.915, 7235.454), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE02", -1, -1, CVector(5609.851, 251.982, 7225.595), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE03", -1, -1, CVector(5647.563, 308.542, 7262.631), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE04", -1, -1, CVector(5716.747, 289.305, 7232.723), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE05", -1, -1, CVector(5634.143, 252.582, 6897.362), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE06", -1, -1, CVector(5500.640, 256.628, 6856.295), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE07", -1, -1, CVector(5714.388, 259.870, 6854.787), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE08", -1, -1, CVector(5575.749, 254.131, 6798.950), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE09", -1, -1, CVector(5504.091, 250.264, 6741.547), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+
+			--Neftegrad--
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE01", -1, -1, CVector(6561.852, 274.561, 3528.563), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE02", -1, -1, CVector(6352.657, 273.680, 3630.539), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE03", -1, -1, CVector(6560.305, 269.342, 3492.771), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE04", -1, -1, CVector(6524.299, 268.956, 3451.540), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE05", -1, -1, CVector(6583.313, 275.362, 3490.637), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE06", -1, -1, CVector(6499.228, 275.485, 3461.671), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE07", -1, -1, CVector(6462.195, 269.990, 3516.732), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE08", -1, -1, CVector(6606.588, 269.910, 3626.271), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+			CreateNewSgNodeObject("ET_PS_HOUSE_MED_FIRE", "FIRE09", -1, -1, CVector(6648.509, 275.134, 3578.252), Quaternion(0.0000, 0.0000, 0.0000, 1.0000))
+
+			AddCinematicMessage(213, 0.25)
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="Ending1_tr_shake2"	active="0">
+		<event flypath="e1_cam4" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage(214, 0.25)
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+
+	<trigger	Name="Ending1_tr_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+
+			TActivate("BadEnd_tr")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	-- End and titles --
+
+	<trigger	Name="BadEnd_tr"	active="0">
+		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			Fly("t1_cam", CINEMATIC_NO_AIM, nil, 70, 0,1)
 			StartCinematic()
 
 			PlayCustomMusic("Bio08")
 
 			CreateNewDummyObject("end_plane", "ending", -1, -1, CVector(2671.585, 350.571, 515.247), Quaternion(0.000, 0.998, -0.005, -0.065), 0)
 
-			TActivate("Test1_fade")
-			TActivate("Test1_77772")
-			TActivate("Test1_77774")
-			TActivate("Test1_77775")
-			TActivate("Test1_titles")
-			TActivate("Test1_end")
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger	Name="Test1_fade"	active="0">
-		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
-		<script>
 			AddCinematicMessage(77770, 0)
 			AddCinematicMessage(77772, 0.5)
 			AddCinematicMessage(77773, 0.5)
@@ -3981,12 +4145,18 @@
 			AddCinematicMessage(5969, 0.2)
 			AddCinematicMessage(5970, 0.2)
 			AddCinematicMessage(5971, 0.2)
-		
+
+			TActivate("BadEnd_tr_77772")
+			TActivate("BadEnd_tr_77773")
+			TActivate("BadEnd_tr_77774")
+			TActivate("BadEnd_tr_titles")
+			TActivate("BadEnd_tr_end")
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
 
-	<trigger Name="Test1_77772" active="0">
+	<trigger Name="BadEnd_tr_77772" active="0">
 		<event msgid="77772" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
 		<script>
 			local P = getObj("ending")
@@ -4000,8 +4170,8 @@
 		</script>
 	</trigger>
 
-	<trigger Name="Test1_77774" active="0">
-		<event msgid="77774" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+	<trigger Name="BadEnd_tr_77773" active="0">
+		<event msgid="77773" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
 		<script>
 			local P = getObj("ending")
 			if P then
@@ -4012,8 +4182,8 @@
 		</script>
 	</trigger>
 
-	<trigger Name="Test1_77775" active="0">
-		<event msgid="77775" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+	<trigger Name="BadEnd_tr_77774" active="0">
+		<event msgid="77774" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
 		<script>
 			local P = getObj("ending")
 			if P then
@@ -4024,18 +4194,22 @@
 		</script>
 	</trigger>
 
-	<trigger Name="Test1_titles" active="0">
+	<trigger Name="BadEnd_tr_titles" active="0">
 		<event msgid="5968" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
 		<script>
-        	PlayCustomMusic("EndGame_good")
+        	PlayCustomMusic("EndGame")
 
 			RuleConsole("g_postEffect BWFadeOut")
+
+			RuleConsole("snd_2dVolume 0")
+			RuleConsole("snd_3dVolume 0")
+			RuleConsole("mus_Volume 70")
 
         	trigger:Deactivate()
 		</script>
 	</trigger>
 
-	<trigger	Name="Test1_end"	active="0">
+	<trigger	Name="BadEnd_tr_end"	active="0">
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>

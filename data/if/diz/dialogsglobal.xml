@@ -5575,7 +5575,7 @@
 		name="Dlg_pl_002162"
 		text="Мы нашли Серго и его блокиратор. А дальше..."
 		role="PLAYER"
-		scriptResult="SetVar('FatherTalk', 1); TActivate('FewMinutesLater_tr'); LeaveTown(false)" />
+		scriptResult="TActivate('FewMinutesLater_tr'); LeaveTown(false)" />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/Концовка 1 (после Края)/Часть 2-->
 	<Reply
 		name="Dlg_npc_002163"
@@ -5647,7 +5647,8 @@
 	<Reply
 		name="Dlg_pl_002174"
 		text="Спасибо, отец."
-		role="PLAYER" />
+		role="PLAYER"
+		scriptResult="TActivate('Ending1_tr'); EndConversation()" />
 <!--Root/r4m1/Опциональные/Гонки-->
 	<Reply
 		name="r4_Racers_Men_1_N01"

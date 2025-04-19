@@ -1721,6 +1721,258 @@
 		time="4" />
 
 	<string
+		id="194"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Хамза, приём?"
+		sound=""
+		time="5" />
+
+	<string
+		id="195"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Да, приём. Слушаю."
+		sound=""
+		time="5" />
+
+	<string
+		id="196"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Как там по новостям? Чужеземец на связь не выходил?"
+		sound=""
+		time="6" />
+
+	<string
+		id="197"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Нет, пока связи от него никакой не было."
+		sound=""
+		time="6" />
+
+	<string
+		id="198"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Ты уверен, что он доехал куда нужно?"
+		sound=""
+		time="6" />
+
+	<string
+		id="199"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|По правде говоря, уже не уверен... Не хочется верить, что с ним могло что-то случи..."
+		sound=""
+		time="10" />
+
+	<string
+		id="200"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|П..и..м.. М..н.. с..ы..н..?.."
+		sound="data\sounds\Speech\r4m1\r4m1_noise_8sec.ogg"
+		time="1" />
+
+	<string
+		id="201"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Что за?"
+		sound=""
+		time="4" />
+
+	<string
+		id="202"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Кажется вспомнишь солнце, вот и лучик."
+		sound=""
+		time="5" />
+
+	<string
+		id="203"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|При..м.. Мен.. слы..но?.."
+		sound="data\sounds\Speech\r4m1\r4m1_noise_8sec.ogg"
+		time="1" />
+
+	<string
+		id="204"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Очень плохо, но слышно. Как успехи?"
+		sound=""
+		time="6" />
+
+	<string
+		id="205"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|В ск..ро.. вре..ен.. Ора..ул нан..сё.. у..ар по ис..очн..ку за..аже..ия, ..удь..е ост..ро..ны!"
+		sound="data\sounds\Speech\r4m1\r4m1_noise_8sec.ogg"
+		time="10" />
+
+	<string
+		id="206"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|В скором времени Оракул нанесёт удар по источнику заражения? Я правильно понял?"
+		sound=""
+		time="8" />
+
+	<string
+		id="207"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Да..Всё..рав..льн..!"
+		sound="data\sounds\Speech\r4m1\r4m1_noise_8sec.ogg"
+		time="1" />
+
+	<string
+		id="208"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Ну что-же, всё близится к концу."
+		sound=""
+		time="5" />
+
+	<string
+		id="209"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Бер..гит.. себ..! Ещ.. ..вид..мся!"
+		sound="data\sounds\Speech\r4m1\r4m1_noise_8sec.ogg"
+		time="1" />
+
+	<string
+		id="210"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Понял, услышимся, конец связи."
+		sound=""
+		time="5" />
+
+	<string
+		id="211"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Получается, нам реально остаётся только ждать."
+		sound=""
+		time="7" />
+
+	<string
+		id="212"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|ЧТО ЗА?"
+		sound=""
+		time="4" />
+
+	<string
+		id="213"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|ЧТ.. ПР..ИС..ОД..Т?.. [Связь обрывается...]"
+		sound="data\sounds\Speech\r4m1\r4m1_noise_4sec.ogg"
+		time="4" />
+
+	<string
+		id="214"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Мансур? Мансур?"
+		sound=""
+		time="5" />
+
+	<string
+		id="77770"
+		msgType="SCROLL"
+		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
+		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
+		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
+		value=""
+		sound=""
+		fontSize="19"
+		scrollSpeed="2.48"
+		time="1" />
+
+	<string
+		id="77772"
+		value="После уничтожения источника заразы жизнь в Вахате и во всём мире, казалось, должна была наладиться. Однако вспышка в небе и последующий мощный взрыв оказались слишком разрушительными. Вахат был практически полностью уничтожен, и лишь немногие смогли выжить в этом хаосе."
+		sound=""
+		time="10" />
+
+	<string
+		id="77773"
+		value="Хамза, вместе с немногими оставшимися в живых, решил покинуть разрушенный город и пересечь Пустыню Смерти в надежде найти убежище в соседнем регионе. Путь через пустыню оказался невероятно трудным. Стресс и ужас от пережитого лишили многих концентрации, и некоторые из группы потерялись в бескрайних песках. Другие стали жертвами немногочисленных безумцев, которые всё ещё бродили по пустыне."
+		sound=""
+		time="10" />
+
+	<string
+		id="77774"
+		value="Когда Хамза и оставшиеся выжившие наконец добрались до соседнего региона, их ждал новый шок. Взрыв имел гораздо более глобальные последствия, чем они могли предположить. Соседний регион оказался в полуразрушенном состоянии, а люди были в отчаянии. Разрушения и хаос охватили всё вокруг, и надежда на лучшее будущее начала таять."
+		sound=""
+		time="10" />
+
+	<string
+		id="77775"
+		value="Хамза осознал, что его миссия по уничтожению источника заразы привела к непредвиденным и катастрофическим последствиям. Он понял, что его действия, хотя и были направлены на спасение мира, в конечном итоге привели к ещё большим разрушениям и страданиям."
+		sound=""
+		time="10" />
+
+	<string
+		id="77776"
+		value="В этом новом, разрушенном мире Хамза и выжившие столкнулись с трудным выбором: продолжать бороться за выживание или смириться с тем, что их усилия были напрасны. Хамза, оглядывая разрушенный мир вокруг себя, понял, что их путь к спасению только начинается."
+		sound=""
+		time="10" />
+
+	<string
+		id="214"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Мансур? Мансур?"
+		sound=""
+		time="5" />
+
+	<string
 		id="8801"
 		value="Вы желаете покинуть эту область?"
 		numButtons="2" />
@@ -1737,6 +1989,16 @@
 		modelName="mask_hero"
 		sound="data\sounds\Speech\r3m1\r3m1_8803_hero.ogg"
 		value="Что-то там непонятное. Не буду туда соваться." />
+
+	<string
+		id="8805"
+		value="|@00ffffffАААААААААААAAAАААAAAAAAA@ffffffffСпустя несколько часов..." 
+		time="5" />
+
+	<string
+		id="8806"
+		value="|@00ffffffАААААААААААAAAАААAAAAAAA@ffffffffСпустя несколько дней..." 
+		time="5" />
 
 	<string
 		id="8804"
@@ -1824,7 +2086,7 @@
 		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
 		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
 		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
-		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Разработка| | |@ffffffffНикита «стакан» Кашлев||@ffffa600сюжет, квесты, скрипты, 3D моделирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffa600текстовые правки, помощь в разработке| | |@ffffffffКарен Гевондян||@ffffa600текстовые правки| | |@ffffffffЕвгений «E Jet» Колчин||@ffffa600помощь в разработке| | |@ffffffffГеоргий «Эмер» Жуков||@ffffa600озвучка рассказчика| | |@ffffffffИван «Carsen» Буряшкин||@ffffa600помощь в разработке| | |@ffffffffАнастасия «k0waidesu»||@ffffa600текст концовок| | | |@ffffa600Тестирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffffffЕвгений «E Jet» Колчин||@ffffffffАлексей «__nEmPoBu4__» Смирнов| | | |@ffffa600Заимствования||@ffffffffПолноразмерная модель Серго||@ffffa600Автор:|@ffffffffМаксим «Spok» Бердников| | |@ffffffffЭффекты ухудшающегося состояния взяты из|@ffffffffмодификации @ffffa600«possesed»||@ffffa600Авторы:|@ffffffffАлексей «__nEmPoBu4__» Смирнов|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffСлайды в концовках взяты из|@ffffffffмодификации @ffffa600«Improved Storyline»||@ffffa600Автор:|@ffffffffПавел «pavlikRPG» Иванов| | |@ffffa600Музыка в титрах||@ffffffffАнтон Попов - Dramatic Theme (Full Version)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)| | |@ffffa600Огромная @ffffffffблагодарность сообществу @ffffa600Deus Ex Machina|@ffffffffза оказанную помощь при разработке| | |@ffffa600Спасибо за игру!"
+		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Разработка| | |@ffffffffНикита «стакан» Кашлев||@ffffa600сюжет, квесты, скрипты, 3D моделирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffa600текстовые правки, помощь в разработке| | |@ffffffffКарен Гевондян||@ffffa600текстовые правки| | |@ffffffffЕвгений «E Jet» Колчин||@ffffa600помощь в разработке| | |@ffffffffГеоргий «Эмер» Жуков||@ffffa600озвучка рассказчика| | |@ffffffffИван «Carsen» Буряшкин||@ffffa600помощь в разработке| | | |@ffffa600Тестирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffffffЕвгений «E Jet» Колчин||@ffffffffАлексей «__nEmPoBu4__» Смирнов| | | |@ffffa600Заимствования||@ffffffffПолноразмерная модель Серго||@ffffa600Автор:|@ffffffffМаксим «Spok» Бердников| | |@ffffffffЭффекты ухудшающегося состояния взяты из|@ffffffffмодификации @ffffa600«possesed»||@ffffa600Авторы:|@ffffffffАлексей «__nEmPoBu4__» Смирнов|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffСлайды в концовках взяты из|@ffffffffмодификации @ffffa600«Improved Storyline»||@ffffa600Автор:|@ffffffffПавел «pavlikRPG» Иванов| | |@ffffa600Музыка в титрах||@ffffffffEx Machina OST - Passage04 (AI extended)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)| | |@ffffa600Огромная @ffffffffблагодарность сообществу @ffffa600Deus Ex Machina|@ffffffffза оказанную помощь при разработке| | |@ffffa600Спасибо за игру!"
 		sound=""
 		fontSize="20"
 		scrollSpeed="2.0"
@@ -1840,5 +2102,5 @@
 		sound=""
 		fontSize="20"
 		scrollSpeed="2.0"
-		time="54" />
+		time="57" />
 </resource>

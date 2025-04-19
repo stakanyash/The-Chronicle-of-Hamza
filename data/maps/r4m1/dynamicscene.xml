@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="1202">
+	LastId="1205">
 	<TargetNamesForDestroy
 		Names="urod1 urod2 urod3 urod4 urod5 urod6 urod7 urod8 urod9" />
 
@@ -20711,10 +20711,6 @@
 		Radius="10.000" />
 
 	<Object
-		Belong="1100"
-		Prototype="someRecollection" />
-
-	<Object
 		Name="Gadad_attack_loc_0"
 		Belong="1100"
 		Prototype="genericLocation"
@@ -20740,5 +20736,33 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="5536.004 249.002 6791.934"
+		Radius="10.000" />
+
+	<Object
+		Flags="21"
+		Name="endings_conv_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1224.725 200.000 7861.633"
+		Radius="10.000">
+		<Object
+			Name="dad_end1"
+			Belong="1100"
+			Prototype="NPC"
+			ModelName="r4_man"
+			cfg="171"
+			helloReplyNames="Dlg_npc_002163"
+			SpokenCount="0" />
+	</Object>
+
+	<Object
+		Belong="1100"
+		Prototype="someRecollection" />
+
+	<Object
+		Name="End1_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="6012.906 248.775 4309.329"
 		Radius="10.000" />
 </DynamicScene>

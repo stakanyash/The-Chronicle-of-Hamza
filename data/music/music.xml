@@ -309,4 +309,7 @@
 	<model
 		id="R4M0Ambient"
 		file="data\music\cinematics\r4m0_ambient.ogg" />
+	<model
+		id="passage04end1"
+		file="data\music\cinematics\passage04_end1.ogg" />
 </Music>
