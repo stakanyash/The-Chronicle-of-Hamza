@@ -1424,7 +1424,7 @@
 
 	<string
 		id="162"
-		sound="data\sounds\Speech\rolik\deadend_aliham.ogg"
+		sound="data\sounds\Speech\rolik\dead_end_1.ogg"
 		value="|Вы не смогли защитить Алихам и были убиты вместе с другими, кто стоял на защите региона. Теперь вам уже никогда не достигнуть своей цели." 
 		time="1"/>
 
@@ -1440,7 +1440,7 @@
 
 	<string
 		id="164"
-		sound="data\sounds\Speech\rolik\deadend_gadad.ogg"
+		sound="data\sounds\Speech\rolik\dead_end_2.ogg"
 		value="|Гадад не был защищён, и вы, как и другие, кто боролся за этот регион, погибли. Ваша цель теперь недостижима." 
 		time="1"/>
 
@@ -1466,7 +1466,7 @@
 
 	<string
 		id="167"
-		sound="data\sounds\Speech\rolik\deadend_kef.ogg"
+		sound="data\sounds\Speech\rolik\dead_end_3.ogg"
 		value="|Вы не смогли уберечь Кеф и погибли вместе с другими защитниками региона, включая отца Хамзы. Ваша цель теперь неосуществима." 
 		time="1"/>
 
@@ -1521,7 +1521,7 @@
 
 	<string
 		id="173"
-		sound="data\sounds\Speech\rolik\deadend_neftegrad.ogg"
+		sound="data\sounds\Speech\rolik\dead_end_4.ogg"
 		value="|Нефтеград не удалось спасти. Взрыв, произошедший в ходе боя, уничтожил всех, кто находился поблизости, включая Хамзу. Ваша цель теперь невыполнима." 
 		time="1"/>
 
