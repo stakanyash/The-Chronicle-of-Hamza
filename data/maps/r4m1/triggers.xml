@@ -125,17 +125,17 @@
 		</script>
 	</trigger>
 
-	<trigger	Name="trSetTolNeutral"	active="1">
+	<trigger	Name="trSetTolNeutral"	active="0">
 		<event	timeout="0"			eventid="GE_TIME_PERIOD" />
 		<script>
-		    SetTolerance(1100, 1023,RS_NEUTRAL)
-		    SetTolerance(1042, 1023,RS_NEUTRAL)
+		    SetTolerance(1100, 1023,RS_ALLY)
+		    SetTolerance(1042, 1023,RS_ALLY)
 
---			trigger:Deactivate()
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
-	<trigger	Name="trSetTolEnemy"	active="1">
+	<trigger	Name="trSetTolEnemy"	active="0">
 		<event	eventid="GE_OBJECT_LEAVES_LOCATION"	ObjName="NearKef_loc" />
 		<event	eventid="GE_OBJECT_LEAVES_LOCATION"	ObjName="NearGadad_loc" />
 		<event	eventid="GE_OBJECT_LEAVES_LOCATION"	ObjName="NearAliham_loc" />
@@ -377,6 +377,18 @@
 
 				if b == 1 then
 					PassToMap("r4m0", "FromR4M1", -1 )
+
+					if QuestStatus("GoToDesertOfDeath_quest")==Q_TAKEN then
+						local Alf = getObj("AivenCarGTK_vehicle_0")
+						if Alf then
+							Alf:Remove()
+						end
+
+						local Mlf = getObj("MansurCarBTK_vehicle_0")
+						if Mlf then
+							Mlf:Remove()
+						end
+					end
 				else
 					TActivate("cinExit11ReturnFirst")
 				end
@@ -1722,16 +1734,16 @@
 			SetTolerance(1090, 1025, RS_NEUTRAL)
 			SetTolerance(1090, 1060, RS_NEUTRAL)
 
-            TeamCreate("MansurCar", 1090, CVector(4615.387, 280.066, 2194.772), {"UralMansur"}, nil, nil, Quaternion(0.000, 0.993, 0.001, -0.118))
+            TeamCreate("MansurCarAR", 1090, CVector(4615.387, 280.066, 2194.772), {"UralMansur"}, nil, nil, Quaternion(0.000, 0.993, 0.001, -0.118))
 
-			local vehMansur = getObj("MansurCar_vehicle_0")
+			local vehMansur = getObj("MansurCarAR_vehicle_0")
 			if vehMansur then
 				vehMansur:SetSkin(1)
 				vehMansur:setImmortalMode(1)
 
 				local newControllerId = CreateNewObject {
 					prototypeName	= "someNPCMotionController",
-					objName	= "MansurControllerR4M1"
+					objName	= "MansurControllerAfterRaceR4M1"
 				}
 				
 				local newController = GetEntityByID(newControllerId)
@@ -1969,7 +1981,7 @@
 
 				local newControllerId = CreateNewObject {
 					prototypeName	= "someNPCMotionController",
-					objName	= "MansurControllerR4M1"
+					objName	= "MansurControllerHamzaCarR4M1"
 				}
 				
 				local newController = GetEntityByID(newControllerId)
@@ -2212,9 +2224,9 @@
 			SetTolerance(1090, 1025, RS_NEUTRAL)
 			SetTolerance(1090, 1060, RS_NEUTRAL)
 
-            TeamCreate("MansurCar", 1090, CVector(5432.852, 251.100, 7027.151), {"UralMansur"}, nil, nil, Quaternion(0.002, -0.932, -0.003, -0.362))
+            TeamCreate("MansurCarSB", 1090, CVector(5432.852, 251.100, 7027.151), {"UralMansur"}, nil, nil, Quaternion(0.002, -0.932, -0.003, -0.362))
 
-			local vehMansur = getObj("MansurCar_vehicle_0")
+			local vehMansur = getObj("MansurCarSB_vehicle_0")
 			if vehMansur then
 				vehMansur:SetSkin(1)
 				vehMansur:setImmortalMode(1)
@@ -2399,9 +2411,9 @@
 	<trigger Name="ConnectAiven" active="0">
 		<event timeout="0.1" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("AivenCar", 1095, CVector(getPos("AivanJrDefSpawn_loc")), {"BelazShot"}, nil, nil, Quaternion(-0.022, 0.083, -0.023, 0.996))
+            TeamCreate("AivenCarSB", 1095, CVector(getPos("AivanJrDefSpawn_loc")), {"BelazShot"}, nil, nil, Quaternion(-0.022, 0.083, -0.023, 0.996))
 
-			local vehAiven = getObj("AivenCar_vehicle_0")
+			local vehAiven = getObj("AivenCarSB_vehicle_0")
 			if vehAiven then
 				vehAiven:SetSkin(1)
 				vehAiven:setImmortalMode(1)
@@ -2485,9 +2497,9 @@
 			SetTolerance(1090, 1060, RS_NEUTRAL)
 			SetTolerance(1090, 1095, RS_ALLY)
 
-            TeamCreate("MansurCar", 1090, CVector(getPos("BuharaEvacuated_cs_Mansur_loc")), {"UralMansur"}, nil, nil, Quaternion(0.023, -0.814, -0.019, 0.580))
+            TeamCreate("MansurCarGTZ", 1090, CVector(getPos("BuharaEvacuated_cs_Mansur_loc")), {"UralMansur"}, nil, nil, Quaternion(0.023, -0.814, -0.019, 0.580))
 
-			local vehMansur = getObj("MansurCar_vehicle_0")
+			local vehMansur = getObj("MansurCarGTZ_vehicle_0")
 			if vehMansur then
 				vehMansur:SetSkin(1)
 				vehMansur:setImmortalMode(1)
@@ -2511,9 +2523,9 @@
 	<trigger Name="ConnectAivan_GoToZarmek" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("AivenCar", 1095, CVector(getPos("BuharaEvacuated_cs_AivenJr_loc")), {"BelazShot"}, nil, nil, Quaternion(-0.006, 0.922, 0.008, -0.387))
+            TeamCreate("AivenCarGTZ", 1095, CVector(getPos("BuharaEvacuated_cs_AivenJr_loc")), {"BelazShot"}, nil, nil, Quaternion(-0.006, 0.922, 0.008, -0.387))
 
-			local vehAiven = getObj("AivenCar_vehicle_0")
+			local vehAiven = getObj("AivenCarGTZ_vehicle_0")
 			if vehAiven then
 				vehAiven:SetSkin(1)
 				vehAiven:setImmortalMode(1)
@@ -2577,9 +2589,9 @@
 			SetTolerance(1090, 1060, RS_NEUTRAL)
 			SetTolerance(1090, 1095, RS_ALLY)
 
-            TeamCreate("MansurCar", 1090, CVector(5727.807, 250.116, 7176.776), {"UralMansur"}, nil, nil, Quaternion(-0.000, 0.939, -0.000, 0.343))
+            TeamCreate("MansurCarMD", 1090, CVector(5727.807, 250.116, 7176.776), {"UralMansur"}, nil, nil, Quaternion(-0.000, 0.939, -0.000, 0.343))
 
-			local vehMansur = getObj("MansurCar_vehicle_0")
+			local vehMansur = getObj("MansurCarMD_vehicle_0")
 			if vehMansur then
 				vehMansur:SetSkin(1)
 				vehMansur:setImmortalMode(1)
@@ -2603,9 +2615,9 @@
 	<trigger Name="ConnectAivan_madmaninvasion" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("AivenCar", 1095, CVector(5749.218, 251.050, 7186.484), {"BelazShot1"}, nil, nil, Quaternion(-0.003, -0.996, 0.002, 0.091))
+            TeamCreate("AivenCarMD", 1095, CVector(5749.218, 251.050, 7186.484), {"BelazShot1"}, nil, nil, Quaternion(-0.003, -0.996, 0.002, 0.091))
 
-			local vehAiven = getObj("AivenCar_vehicle_0")
+			local vehAiven = getObj("AivenCarMD_vehicle_0")
 			if vehAiven then
 				vehAiven:SetSkin(1)
 				vehAiven:setImmortalMode(1)
@@ -2648,13 +2660,13 @@
 					SetTolerance(1090,1062,RS_ENEMY)
 					SetTolerance(1095,1062,RS_ENEMY)
 
-					local MCar = getObj("MansurCar_vehicle_0")
+					local MCar = getObj("MansurCarMD_vehicle_0")
 					if MCar then
 						MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
 						MCar:SetRotation(GetPlayerVehicle():GetRotation())
 					end
 
-					local ACar = getObj("AivenCar_vehicle_0")
+					local ACar = getObj("AivenCarMD_vehicle_0")
 					if ACar then
 						ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
 						ACar:SetRotation(GetPlayerVehicle():GetRotation())
@@ -2791,13 +2803,13 @@
 				SetTolerance(1090,1062,RS_ENEMY)
 				SetTolerance(1095,1062,RS_ENEMY)
 
-				local MCar = getObj("MansurCar_vehicle_0")
+				local MCar = getObj("MansurCarMD_vehicle_0")
 				if MCar then
 					MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
 					MCar:SetRotation(GetPlayerVehicle():GetRotation())
 				end
 
-				local ACar = getObj("AivenCar_vehicle_0")
+				local ACar = getObj("AivenCarMD_vehicle_0")
 				if ACar then
 					ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
 					ACar:SetRotation(GetPlayerVehicle():GetRotation())
@@ -2930,13 +2942,13 @@
 				SetTolerance(1090,1062,RS_ENEMY)
 				SetTolerance(1095,1062,RS_ENEMY)
 
-				local MCar = getObj("MansurCar_vehicle_0")
+				local MCar = getObj("MansurCarMD_vehicle_0")
 				if MCar then
 					MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
 					MCar:SetRotation(GetPlayerVehicle():GetRotation())
 				end
 
-				local ACar = getObj("AivenCar_vehicle_0")
+				local ACar = getObj("AivenCarMD_vehicle_0")
 				if ACar then
 					ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
 					ACar:SetRotation(GetPlayerVehicle():GetRotation())
@@ -3055,9 +3067,9 @@
 	<trigger Name="ConnectAiven_defendNG" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("AivenCar", 1095, CVector(6378.719, 251.062, 5047.619), {"BelazShot1"}, nil, nil, Quaternion(-0.003, -0.590, -0.002, -0.807))
+            TeamCreate("AivenCarNGD", 1095, CVector(6378.719, 251.062, 5047.619), {"BelazShot1"}, nil, nil, Quaternion(-0.003, -0.590, -0.002, -0.807))
 
-			local vehAiven = getObj("AivenCar_vehicle_0")
+			local vehAiven = getObj("AivenCarNGD_vehicle_0")
 			if vehAiven then
 				vehAiven:SetSkin(1)
 				vehAiven:setImmortalMode(1)
@@ -3081,9 +3093,9 @@
 	<trigger Name="ConnectMansur_defendNG" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("MansurCar", 1090, CVector(6389.877, 251.753, 5064.563), {"UralMansur"}, nil, nil, Quaternion(0.038, -0.803, -0.029, -0.594))
+            TeamCreate("MansurCarNG", 1090, CVector(6389.877, 251.753, 5064.563), {"UralMansur"}, nil, nil, Quaternion(0.038, -0.803, -0.029, -0.594))
 
-			local vehM = getObj("MansurCar_vehicle_0")
+			local vehM = getObj("MansurCarNG_vehicle_0")
 			if vehM then
 				vehM:SetSkin(1)
 				vehM:setImmortalMode(1)
@@ -3107,9 +3119,9 @@
 	<trigger Name="ConnectFather_defendNG" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("FatherCar", 1025, CVector(6423.190, 251.053, 5060.235), {"PlayerStartCar"}, nil, nil, Quaternion(-0.001, -0.708, 0.003, 0.707))
+            TeamCreate("FatherCarNG", 1025, CVector(6423.190, 251.053, 5060.235), {"PlayerStartCar"}, nil, nil, Quaternion(-0.001, -0.708, 0.003, 0.707))
 
-			local vehF = getObj("FatherCar_vehicle_0")
+			local vehF = getObj("FatherCarNG_vehicle_0")
 			if vehF then
 				local Fskin = GetVar("PlayerMilkSkin").AsInt
 				vehF:SetSkin(Fskin)
@@ -3255,20 +3267,20 @@
 					SetTolerance(1061,1095,RS_ALLY)
 					SetTolerance(1061,1062,RS_ENEMY)
 
-					local fCar = getObj("FatherCar_vehicle_0")
+					local fCar = getObj("FatherCarNG_vehicle_0")
 					if fCar then
 						fCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
 						fCar:SetRotation(GetPlayerVehicle():GetRotation())
 						fCar:setGodMode(1)
 					end
 
-					local MCar = getObj("MansurCar_vehicle_0")
+					local MCar = getObj("MansurCarNG_vehicle_0")
 					if MCar then
 						MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
 						MCar:SetRotation(GetPlayerVehicle():GetRotation())
 					end
 
-					local ACar = getObj("AivenCar_vehicle_0")
+					local ACar = getObj("AivenCarNGD_vehicle_0")
 					if ACar then
 						ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(30,0,0))
 						ACar:SetRotation(GetPlayerVehicle():GetRotation())
@@ -3328,9 +3340,9 @@
 	<trigger Name="MC_AI_tr" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("MansurCar", 1090, CVector(6434.021, 271.331, 3596.112), {"UralMansur"}, nil, nil, Quaternion(-0.012, -0.837, -0.014, 0.547))
+            TeamCreate("MansurCarBTK", 1090, CVector(6434.021, 271.331, 3596.112), {"UralMansur"}, nil, nil, Quaternion(-0.012, -0.837, -0.014, 0.547))
 
-			local vehM = getObj("MansurCar_vehicle_0")
+			local vehM = getObj("MansurCarBTK_vehicle_0")
 			if vehM then
 				vehM:SetSkin(1)
 				vehM:setImmortalMode(1)
@@ -3354,15 +3366,15 @@
 	<trigger Name="AC_AI_tr" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("AivenCar", 1095, CVector(6422.613, 270.421, 3623.675), {"BelazShot1"}, nil, nil, Quaternion(-0.015, -0.963, -0.051, 0.264))
+            TeamCreate("AivenCarGTK", 1095, CVector(6422.613, 270.421, 3623.675), {"BelazShot1"}, nil, nil, Quaternion(-0.015, -0.963, -0.051, 0.264))
 
-			local vehAiven = getObj("AivenCar_vehicle_0")
+			local vehAiven = getObj("AivenCarGTK_vehicle_0")
 			if vehAiven then
 				vehAiven:setImmortalMode(1)
 
 				local newControllerId = CreateNewObject {
 					prototypeName	= "someNPCMotionController",
-					objName	= "AivenControllerNeftegradR4M1"
+					objName	= "AivenControllerBackToKefR4M1"
 				}
 				
 				local newController = GetEntityByID(newControllerId)
@@ -3376,17 +3388,38 @@
 		</script>
 	</trigger>
 
+	<trigger Name="AM_Move_after_DD" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			if QuestStatus("blocktaken_quest")==Q_TAKEN or QuestStatus("blockleaved_quest")==Q_TAKEN then
+				local Alf = getObj("AivenCarDD_vehicle_0")
+				if Alf then
+					Alf:SetGamePositionOnGround(CVector(3167.120, 272.174, 7456.269))
+					Alf:SetRotation(Quaternion(0.019, 0.846, -0.030, 0.533))
+				end
+
+				local Mlf = getObj("MansurCarDD_vehicle_0")
+				if Mlf then
+					Mlf:SetGamePositionOnGround(CVector(3152.506, 273.339, 7445.637))
+					Mlf:SetRotation(Quaternion(0.020, 0.939, -0.017, 0.344))
+				end
+
+				trigger:Deactivate()
+			end
+		</script>
+	</trigger>
+
 	-- TCoH: Go To Oracle --
 
 	<trigger Name="MA_Rem_DD" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			local vehAiven = getObj("AivenCar_vehicle_0")
+			local vehAiven = getObj("AivenCarDD_vehicle_0")
 			if vehAiven then
 				vehAiven:Remove()
 			end
 
-			local M = getObj("MansurCar_vehicle_0")
+			local M = getObj("MansurCarDD_vehicle_0")
 			if M then
 				M:Remove()
 			end
@@ -3398,9 +3431,9 @@
 	<trigger Name="A_C_GTO" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			TeamCreate("AivenCar", 1095, CVector(5623.750, 250.032, 7175.120), {"BelazShot1"}, nil, nil, Quaternion(-0.000, -0.999, -0.001, 0.052))
+			TeamCreate("AivenCarGTO", 1095, CVector(5623.750, 250.032, 7175.120), {"BelazShot1"}, nil, nil, Quaternion(-0.000, -0.999, -0.001, 0.052))
 
-			local vehAiven = getObj("AivenCar_vehicle_0")
+			local vehAiven = getObj("AivenCarGTO_vehicle_0")
 			if vehAiven then
 				vehAiven:setImmortalMode(1)
 

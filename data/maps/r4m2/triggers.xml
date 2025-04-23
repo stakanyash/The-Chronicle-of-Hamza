@@ -17,22 +17,16 @@
 	<trigger	Name="trStartMap"	active="1">
 		<event eventid="GE_GAME_START" ObjName="Player1" />
 		<script>
-			if QuestStatus("r4m2_FightWithCrazy")==Q_CANBEGIVEN then
-				TActivate("trMoveToFatherCar")
-				TActivate("trMoveToMilitaryBase")
-				TActivate("trNearBase")
+			CreateNewDummyObject( "mirotvorecCargo05", "mirCargo", -1, -1, CVector(1554.298, 329.958, 338.369), Quaternion(-0.0383, 0.7107, 0.0388, 0.7014), 8)
+			CreateNewDummyObject( "mirotvorecCab05", "mirCab", -1, -1, CVector(1559.402, 329.696, 338.649), Quaternion(0.0278, 0.7066, -0.0278, 0.7066), 8)
 
-				CreateNewDummyObject( "mirotvorecCargo05", "mirCargo", -1, -1, CVector(1554.298, 329.958, 338.369), Quaternion(-0.0383, 0.7107, 0.0388, 0.7014), 8)
-				CreateNewDummyObject( "mirotvorecCab05", "mirCab", -1, -1, CVector(1559.402, 329.696, 338.649), Quaternion(0.0278, 0.7066, -0.0278, 0.7066), 8)
+			local Acab = GetEntityByName("mirCab")
+			if Acab then Acab:SetBelong(1042) end
 
-				local Acab = GetEntityByName("mirCab")
-				if Acab then Acab:SetBelong(1042) end
+			local Acargo = GetEntityByName("mirCargo")
+			if Acargo then Acargo:SetBelong(1042) end
 
-				local Acargo = GetEntityByName("mirCargo")
-				if Acargo then Acargo:SetBelong(1042) end
-
-				trigger:Deactivate()
-			end
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -159,7 +153,7 @@
 		</script>
 	</trigger>
 
-	<trigger	Name="trMoveToPlate"	active="1">
+	<trigger	Name="trMoveToPlate"	active="0">
 		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="PlateRadiation_loc" />
 		<script>
 --			println("PLATE")
@@ -259,9 +253,9 @@
 			SetTolerance(1090, 1060, RS_NEUTRAL)
 			SetTolerance(1090, 1095, RS_ALLY)
 
-            TeamCreate("MansurCar", 1090, CVector(getPos("MansurDefender_loc")), {"UralMansur"}, nil, nil, Quaternion(-0.002, -0.779, 0.004, 0.626))
+            TeamCreate("MansurCarZR", 1090, CVector(getPos("MansurDefender_loc")), {"UralMansur"}, nil, nil, Quaternion(-0.002, -0.779, 0.004, 0.626))
 
-			local vehMansur = getObj("MansurCar_vehicle_0")
+			local vehMansur = getObj("MansurCarZR_vehicle_0")
 			if vehMansur then
 				vehMansur:SetSkin(1)
 				vehMansur:setImmortalMode(1)
@@ -285,9 +279,9 @@
 	<trigger Name="ConnectAiven" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-            TeamCreate("AivenCar", 1095, CVector(getPos("AivenDefender_loc")), {"BelazShot1"}, nil, nil, Quaternion(0.003, 0.543, 0.002, 0.840))
+            TeamCreate("AivenCarZR", 1095, CVector(getPos("AivenDefender_loc")), {"BelazShot1"}, nil, nil, Quaternion(0.003, 0.543, 0.002, 0.840))
 
-			local vehAiven = getObj("AivenCar_vehicle_0")
+			local vehAiven = getObj("AivenCarZR_vehicle_0")
 			if vehAiven then
 				vehAiven:SetSkin(1)
 				vehAiven:setImmortalMode(1)
@@ -358,20 +352,6 @@
 		</script>
 	</trigger>
 
-	<trigger	Name="AivenDiesOnBaseAttack"	active="0">
-		<event	eventid="GE_OBJECT_DIE"	ObjName="AivenCar" />
-		<script>
-			SpawnMessageBox("8803")
-
-			ShowDeathMenu()
-
-			TDeactivate("CreateMadMansOnBase")
-			TDeactivate("MadManArmyDie")
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
 	<trigger	Name="HelpersArrived"	active="0">
 		<event	timeout="2"		eventid="GE_TIME_PERIOD" />
 		<script>
@@ -394,9 +374,36 @@
 		<script>
 			local A = getObj("AivenCar_vehicle_0")
 			if A then
-				A:SetGamePositionOnGround(CVector(3316.547, 256.854, 1949.939))
-				A:SetRotation(Quaternion(-0.001, -0.931, 0.004, 0.365))
+				A:Remove()
 			end
+
+			local A1 = getObj("AivenCarGTZ_vehicle_0")
+			if A1 then
+				A1:Remove()
+			end
+
+			TDeactivate("AivenDiesOnBaseAttack")
+
+			TeamCreate("AivenCarZRS", 1095, CVector(3316.547, 256.854, 1949.939), {"BelazShot1"}, nil, nil, Quaternion(-0.001, -0.931, 0.004, 0.365))
+
+			local vehAiven = getObj("AivenCarZRS_vehicle_0")
+			if vehAiven then
+				vehAiven:SetSkin(1)
+				vehAiven:setImmortalMode(1)
+
+				local newControllerId = CreateNewObject {
+					prototypeName	= "someNPCMotionController",
+					objName	= "AivenControllerInZarmekScienceR4M1"
+				}
+				
+				local newController = GetEntityByID(newControllerId)
+				
+				if newController then
+					newController:setVehicleUnderControl(vehAiven)
+				end
+			end
+
+			trigger:Deactivate()  
 
 			SetTolerance(1095, 1061, RS_ALLY)
 

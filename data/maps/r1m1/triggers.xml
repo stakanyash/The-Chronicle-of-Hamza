@@ -108,6 +108,11 @@
 				if ACCS then
 					ACCS:SetRotation(Quaternion(-0.004, 0.259, 0.033, -0.965))
 				end
+
+				local Alf = getObj("AivenCarGTO_vehicle_0")
+				if Alf then
+					Alf:Remove()
+				end
 			end
 
 			trigger:Deactivate()

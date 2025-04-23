@@ -8,6 +8,39 @@
 		<Point  coord="619.276 302.075 3211.128" rotation="-0.052 0.273 -0.015 0.960"/>
 	</Path>
 
+	<Path Name = "humcam">
+		<Point  coord="-10 5 -15" />
+	</Path>
+
+	<Path Name = "end2_cam01">
+		<Point  coord="3453.447 367.487 1701.529" rotation="-0.039 0.355 -0.015 0.934"/>
+		<Point  coord="3019.077 283.258 2082.667" rotation="-0.087 0.143 -0.013 0.986"/>
+	</Path>
+
+	<Path Name = "end2_cam02">
+		<Point  coord="2959.058 229.094 2328.162" rotation="-0.006 0.975 0.027 -0.220"/>
+	</Path>
+
+	<Path Name = "end2_cam03">
+		<Point  coord="2952.622 228.723 2319.249" rotation="-0.004 0.996 0.047 -0.079"/>
+	</Path>
+
+	<Path Name = "end2_cam04">
+		<Point  coord="2943.029 227.888 2350.276" rotation="0.001 0.997 -0.020 -0.071"/>
+	</Path>
+
+	<Path Name = "end2_cam05">
+		<Point  coord="2930.985 228.237 2342.977" rotation="-0.005 0.992 0.041 -0.120"/>
+	</Path>
+
+	<Path Name = "end2_cam06">
+		<Point  coord="2925.162 229.762 2381.516" rotation="0.010 0.983 -0.056 -0.177"/>
+		<Point  coord="2958.102 229.786 2304.642" rotation="0.001 0.990 -0.006 -0.144"/>
+	</Path>
+
+	<Path Name = "end2_cam_plane">
+		<Point  coord="1233.918 389.860 3670.014" rotation="-0.003 0.836 -0.004 0.548"/>
+	</Path>
 
 	<Path Name = "NearBase">
 		<Point  coord="1916.104 327.118 1115.399" rotation="-0.030 -0.722 0.031 0.690"/>

@@ -1586,3 +1586,44 @@ function GetConfigMusVol()
     return mus_Volume
 end
 
+function GetWalkers()
+	local hum1 = getObj("Human517")
+	if hum1 == nil then
+		hum1 = CreateHuman("Human", 1001, CVector(2961.945, 228.022, 2322.317), "")
+	end
+
+	local hum2 = getObj("Human516")
+	if hum2 == nil then
+		hum2 = CreateHuman("Human", 1001, CVector(2953.504, 227.431, 2314.889), "")
+	end
+
+	local hum3 = getObj("Human3493")
+	if hum3 == nil then
+		hum3 = CreateHuman("Human3", 1001, CVector(2943.511, 226.274, 2347.507), "")
+	end
+
+	local hum4 = getObj("Human514")
+	if hum4 == nil then
+		hum4 = CreateHuman("Human", 1001, CVector(2931.955, 226.906, 2339.359), "")
+	end
+
+	local hum5 = getObj("Human491")
+	if hum5 == nil then
+		hum5 = CreateHuman("Human", 1001, CVector(2942.255, 227.331, 2330.157), "")
+	end
+
+	local hum6 = getObj("Human492")
+	if hum6 == nil then
+		hum6 = CreateHuman("Human", 1001, CVector(2953.030, 226.643, 2344.396), "")
+	end
+
+	local hum7 = getObj("Human487")
+	if hum7 == nil then
+		hum7 = CreateHuman("Human", 1001, CVector(2938.669, 226.457, 2345.319), "")
+	end
+
+	local hum8 = getObj("Human3494")
+	if hum8 == nil then
+		hum8 = CreateHuman("Human3", 1001, CVector(2936.213, 224.973, 2360.407), "")
+	end
+end

@@ -1144,7 +1144,6 @@
 
 		CreateFirstAttackers()
 
-		TActivate("DebugSkipFight")
 		TActivate("FirstDebyli_Die")
 		TActivate("MansurCar_Die")
 
@@ -1155,36 +1154,6 @@
 		RestoreAllToleranceStatus()
 
 		SetCameraBehindPlayerVehicle()
-
-		trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger	Name="DebugSkipFight"	active="0">
-		<event	timeout="0.1"			eventid="GE_TIME_PERIOD" />
-		<script>
-		local b = SpawnMessageBox( "9999" )
-		if b == 1 then
-			local v1 = getObj("StartDebyli_vehicle_0")
-			if v1 then
-				v1:AddModifier("hp", "= 0")
-			end
-
-			local v2 = getObj("StartDebyli_vehicle_1")
-			if v2 then
-				v2:AddModifier("hp", "= 0")
-			end
-
-			local v3 = getObj("StartDebyli_vehicle_2")
-			if v3 then
-				v3:AddModifier("hp", "= 0")
-			end
-
-			local v4 = getObj("StartDebyli_vehicle_3")
-			if v4 then
-				v4:AddModifier("hp", "= 0")
-			end
-		end
 
 		trigger:Deactivate()
 		</script>
@@ -1493,7 +1462,7 @@
 			PVeh:LimitMaxSpeed(25)
 		end
 
-		local vehMansur = getObj("MansurCar_vehicle_0")
+		local vehMansur = getObj("MansurCarAR_vehicle_0")
 		if vehMansur then
 			vehMansur:SetGamePositionOnGround( CVector(5462.912, 250.988, 6480.071))
 			vehMansur:SetRotation(Quaternion(0.001, -0.134, 0.011, -0.991))
@@ -1590,7 +1559,7 @@
 			PVeh:SetCustomLinearVelocity( 0 )
 		end
 
-		local MVeh = getObj("MansurCar_vehicle_0")
+		local MVeh = getObj("MansurCarAR_vehicle_0")
 		if MVeh then
 		    MVeh:Remove()
 		end
@@ -1833,17 +1802,16 @@
 		local PVeh = GetPlayerVehicle()
 		if PVeh then
 		    PVeh:UnlimitMaxSpeed()
+			PVeh:SetExternalPathByName("RobSpy_Path")
 			PVeh:PlaceToEndOfPath("RobSpy_Path")
 		end
 
 		CompleteQuest("KillTheRob_quest")
-
 		TakeQuest("KillTheRobfinal_quest")
 
 		TActivate("TheThiefHasBeenKilled")
 
-		StopPlayingCustomMusic()
-        
+		StopPlayingCustomMusic()      
         SetCameraBehindPlayerVehicle()
 
         trigger:Deactivate()
@@ -2309,7 +2277,7 @@
 				PVeh:SetCustomLinearVelocity( 0 )
 			end
 
-			local vehMansur = getObj("MansurCar_vehicle_0")
+			local vehMansur = getObj("MansurCarSB_vehicle_0")
 			if vehMansur then
 				vehMansur:SetGamePositionOnGround(CVector(getPos("MansurPos_SaveBhrnJr_loc")))
 				vehMansur:SetRotation(Quaternion(-0.015, -0.844, 0.014, 0.536))
@@ -2390,7 +2358,7 @@
 				PVeh:SetRotation(Quaternion(-0.015, -0.844, 0.014, 0.536))
 			end
 
-			local vehMansur = getObj("MansurCar_vehicle_0")
+			local vehMansur = getObj("MansurCarSB_vehicle_0")
 			if vehMansur then
 				vehMansur:SetGamePositionOnGround( CVector(1854.443, 231.509, 6617.965))
 				vehMansur:SetRotation(Quaternion(-0.038, -0.794, 0.041, 0.605))
@@ -2504,12 +2472,12 @@
 				ACarCR:Remove()
 			end
 
-			local MCarR = getObj("MansurCar_vehicle_0")
+			local MCarR = getObj("MansurCarSB_vehicle_0")
 			if MCarR then
 				MCarR:Remove()
 			end
 
-			local ACarR = getObj("AivenCar_vehicle_0")
+			local ACarR = getObj("AivenCarSB_vehicle_0")
 			if ACarR then
 				ACarR:Remove()
 			end
@@ -2597,6 +2565,15 @@
 			SetVar("CarCurSide2","1")
 			SetVar("CarCurSide3","3")
 			SetVar("CarCurSide4","2")
+
+			if getObj("MansurControllerR4M1") then
+		        getObj("MansurControllerR4M1"):Remove()
+		    end
+
+		    local ManVehicle = getObj("MansurCar_vehicle_0")
+			if ManVehicle then
+			    ManVehicle:Remove()
+			end
 
 			TActivate("RaceStartSpec_cs_fade")
 			TActivate("RaceStartSpec_cs_cam01")
@@ -3008,7 +2985,7 @@
 
 			AddCinematicMessage(7770+winnum, 0.2)
 
-			TActivate("BettingCheck")
+--			TActivate("BettingCheck")
 
         	trigger:Deactivate()
 		</script>
@@ -3039,6 +3016,8 @@
 			SetCameraBehindPlayerVehicle()
 
 			StopPlayingCustomMusic()
+
+			TActivate("BettingCheck")
 
 			TDeactivate("RaceSpec_FinishPaths")
 			TActivate("AfterRaceRolik_begin")
@@ -3108,6 +3087,11 @@
 			if CCar then
 				CCar:SetSkin(1)
 				CCar:SetRotation(Quaternion(-0.003, -0.996, 0.002, 0.091))
+			end
+
+			local Alf = getObj("AivenCarZRS_vehicle_0")
+			if Alf then
+				Alf:Remove()
 			end
 
 			MadmanCutsceneSpawn()
@@ -3230,23 +3214,17 @@
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
 			RestoreAllToleranceStatus()
-			LOG("1")
 
 			CompleteQuest("GoToMansurandAivenJr_quest")
-			LOG("1")
 			TakeQuest("RepelMadmanInvasion_quest")
-			LOG("1")
 			TakeQuest("RepelMadmanInvasionAliham_quest")
-			LOG("1")
 
 			SpawnMessageBox("8909")
-			LOG("1")
 
 			local b = SpawnMessageBox("8910")
 			if b == 1 then
 				TActivate("RepelAliham_timer")
 			end
-			LOG("1")
 
 			if GetVar("PlayerTP").AsInt == 0 then
 				local PVeh = GetPlayerVehicle()
@@ -3258,19 +3236,13 @@
 
 				SetCameraBehindPlayerVehicle()
 			end
-			LOG("1")
 
 			SpawnBotsAliham()
-			LOG("1")
 			SpawnBotsKef()
-			LOG("1")
 
 			TActivate("RepelAliham_enter_time")
-			LOG("1")
 			TActivate("ConnectMansur_madmaninvasion")
-			LOG("1")
 			TActivate("ConnectAivan_madmaninvasion")
-			LOG("1")
 
 			for i=0,3 do
 				local MadmanCar = getObj("MadmanInvaders"..i)
@@ -3278,49 +3250,38 @@
 					MadmanCar:Remove()
 				end
 			end
-			LOG("1")
 
 			local MCar = getObj("MansurCar")
 			if MCar then
 				MCar:Remove()
 			end
-			LOG("1")
 
 			local CCar = getObj("AivenCar")
 			if CCar then
 				CCar:Remove()
 			end
-			LOG("1")
 
 			local town1 = GetEntityByName("TheKef")
 			if town1 then town1:SetOpenGateToPlayer( false ) end
-			LOG("1")
 
 			local town2 = GetEntityByName("TheGadad")
 			if town2 then town2:SetOpenGateToPlayer( false ) end
-			LOG("1")
 
 			local town3 = GetEntityByName("TheKazif")
 			if town3 then town3:SetOpenGateToPlayer( false ) end
-			LOG("1")
 
 			local town4 = GetEntityByName("r4_AlihamVil")
 			if town4 then town4:SetOpenGateToPlayer( false ) end
-			LOG("1")
 
 			local town5 = GetEntityByName("TheOilCity")
 			if town5 then town5:SetOpenGateToPlayer( false ) end
-			LOG("1")
 
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active",0) end
-			LOG("1")
 
 			AllowSave(false)
-			LOG("1")
 
 			PlayCustomMusic("Passage02a")
-			LOG("1")
 
 			trigger:Deactivate()
 		</script>
@@ -3585,12 +3546,12 @@
 				end
 			end
 
-			local aCar = getObj("AivenCar_vehicle_0")
+			local aCar = getObj("AivenCarMD_vehicle_0")
 			if aCar then
 				aCar:Remove()
 			end
 
-			local mCar = getObj("MansurCar_vehicle_0")
+			local mCar = getObj("MansurCarMD_vehicle_0")
 			if mCar then
 				mCar:Remove()
 			end
@@ -3817,17 +3778,17 @@
 				A:SetRotation(Quaternion(-0.015, -0.963, -0.051, 0.264))
 			end
 		
-			local fCar = getObj("FatherCar_vehicle_0")
+			local fCar = getObj("FatherCarNG_vehicle_0")
 			if fCar then
 				fCar:Remove()
 			end
 		
-			local MCar = getObj("MansurCar_vehicle_0")
+			local MCar = getObj("MansurCarNG_vehicle_0")
 			if MCar then
 				MCar:Remove()
 			end
 		
-			local ACar = getObj("AivenCar_vehicle_0")
+			local ACar = getObj("AivenCarNGD_vehicle_0")
 			if ACar then
 				ACar:Remove()
 			end
@@ -3919,6 +3880,8 @@
 			TActivate("AC_AI_tr")
 			TActivate("MC_AI_tr")
 			TActivate("FC_AI_tr")
+
+			AllowSave(true)
 
 			local town1 = GetEntityByName("TheKef")
 			if town1 then town1:SetOpenGateToPlayer( true ) end

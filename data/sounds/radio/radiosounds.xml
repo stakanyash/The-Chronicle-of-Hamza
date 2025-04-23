@@ -12,7 +12,7 @@
 		<Enemy>
 		</Enemy>
 	</Group>
-	<Group name="bandits" belongs="1002 1005 1013">
+	<Group name="bandits" belongs="1002 1005 1013 1024">
 		<Neutral>
 		</Neutral>
 		<Enemy>
@@ -121,7 +121,7 @@
 			<Sound id="neutral_died" 		samples="145" 			probability="20"/>
 		</Enemy>
 	</Group>
-	<Group name="Arabs" belongs="1023 1024 1025">
+	<Group name="Arabs" belongs="1023 1025">
 		<Neutral>
 			<Sound id="first_see_other" 		samples="146 147"			probability="50"/>
 			<Sound id="player_hit_me" 		samples="148 149"			probability="100"/>

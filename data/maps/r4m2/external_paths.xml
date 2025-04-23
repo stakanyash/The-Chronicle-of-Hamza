@@ -503,4 +503,79 @@
 		<Point
 			coord="2928.118 2362.586" />
 	</Path>
+
+	<Path
+		Name="human_path1">
+		<Point
+			coord="2972.394 2281.823" />
+
+		<Point
+			coord="2977.554 2197.427" />
+
+		<Point
+			coord="3023.205 2147.677" />
+
+		<Point
+			coord="3131.131 2121.964" />
+
+		<Point
+			coord="3247.872 2089.750" />
+
+		<Point
+			coord="3311.529 2023.184" />
+
+		<Point
+			coord="3320.983 1963.685" />
+	</Path>
+
+	<Path
+		Name="human_path2">
+		<Point
+			coord="2980.405 2211.882" />
+
+		<Point
+			coord="2990.771 2135.768" />
+
+		<Point
+			coord="3101.386 2090.553" />
+
+		<Point
+			coord="3228.992 2082.914" />
+
+		<Point
+			coord="3308.627 2009.455" />
+	</Path>
+
+	<Path
+		Name="human_path3">
+		<Point
+			coord="2971.027 2217.672" />
+
+		<Point
+			coord="3028.151 2156.285" />
+
+		<Point
+			coord="3195.316 2118.605" />
+
+		<Point
+			coord="3293.544 2064.565" />
+
+		<Point
+			coord="3335.896 2003.579" />
+	</Path>
+
+	<Path
+		Name="human_path4">
+		<Point
+			coord="2969.044 2272.343" />
+
+		<Point
+			coord="2999.042 2148.466" />
+
+		<Point
+			coord="3093.254 2131.303" />
+
+		<Point
+			coord="3289.890 2051.885" />
+	</Path>
 </Paths>

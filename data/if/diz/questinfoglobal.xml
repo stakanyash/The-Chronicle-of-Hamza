@@ -233,6 +233,20 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="Failed2ndEnd_quest"
+		briefDiz="Вернуться к Чужеземцу"
+		fullDiz="Василий выглядел слишком неуверенно при объяснении своего плана. У меня нет уверенности, что всё пойдёт по плану, поэтому всё таки соглашусь на план Чужеземца. Надеюсь он ещё никуда не уехал."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="TheGadad_enter" />
+
+		<Map
+			name="r4m2"
+			targetObjName="ExitFromMap" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="FindBen2_Quest"
 		briefDiz="Разыскать Бена"
 		fullDiz="Мне повезло: Бен Дроссель живет неподалеку. Я должен встретиться с ним и выяснить, как он связан со мной и с недавними событиями."
@@ -450,6 +464,10 @@
 		<Map
 			name="r4m1"
 			targetObjName="ToR4M2" />
+
+		<Map
+			name="r4m2"
+			targetObjName="ScientiferVillage_enter" />
 	</QuestInfo>
 
 	<QuestInfo

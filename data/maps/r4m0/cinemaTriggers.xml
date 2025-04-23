@@ -208,6 +208,14 @@
 
             StartCinematic()
 
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetCustomControlEnabled( true )
+				vehPlayer:SetCustomLinearVelocity( 0 )
+				vehPlayer:SetThrottle( 0 )
+				vehPlayer:SetCustomControlEnabled( false )
+			end
+
             TActivate("SergoHint_cs_end")
 
 			trigger:Deactivate()
@@ -239,6 +247,8 @@
 			TActivate("SergoFinded_cs_fade")
             TActivate("SergoFinded_cs_end")
 
+			TDeactivate("SergoHint_cs")
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -265,12 +275,12 @@
 				P:SetRotation(Quaternion(-0.004, -0.816, 0.016, 0.578))
 			end
 
-			local ARem = getObj("AivenCar_vehicle_0")
+			local ARem = getObj("AivenCarDD1_vehicle_0")
 			if ARem then
 				ARem:Remove()
 			end
 
-			local MRem = getObj("MansurCar_vehicle_0")
+			local MRem = getObj("MansurCarDD1_vehicle_0")
 			if MRem then
 				MRem:Remove()
 			end
@@ -310,6 +320,8 @@
 		<script>
 			StartConversation("HamzaChoose")
 
+			AllowSave(true)
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -328,6 +340,8 @@
 			TActivate("SergoFinded_2_cs_place")
 			TActivate("SergoFinded_cs_fade")
             TActivate("SergoFinded_cs_end")
+
+			TDeactivate("SergoHint_cs")
 
 			trigger:Deactivate()
 		</script>
@@ -386,6 +400,8 @@
 			TActivate("SergoFinded_3_cs_place")
 			TActivate("SergoFinded_cs_fade")
             TActivate("SergoFinded_cs_end")
+
+			TDeactivate("SergoHint_cs")
 
 			trigger:Deactivate()
 		</script>
@@ -493,6 +509,8 @@
 		</script>
 	</trigger>
 
+	-- Back from Krai --
+
 	<trigger Name="BackFromR1M1_cs_start" active="1">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
@@ -512,9 +530,9 @@
 
 				TActivate("BackFromR1M1_cs_fade")
 				TActivate("BackFromR1M1_cs_end")
-			end
 
-			trigger:Deactivate()
+				trigger:Deactivate()
+			end
 		</script>
 	</trigger>
 
@@ -549,34 +567,9 @@
 				Plf:PlaceToEndOfPath("backfromr1m1_path")
 			end
 
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	-- Test --
-
-	<trigger Name="Test" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-            SaveAllToleranceStatus(RS_NEUTRAL)
-
-            Fly("testcam", CINEMATIC_NO_AIM, nil, 7, 1, 1 )
-            StartCinematic()
-
-            TActivate("Testend")
+			AllowSave(true)
 
 			trigger:Deactivate()
 		</script>
 	</trigger>
-
-	<trigger Name="Testend" active="0">
-		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
-		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
-		<script>
-            RestoreAllToleranceStatus()
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
 </triggers>

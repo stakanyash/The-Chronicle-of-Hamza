@@ -96,7 +96,7 @@
 				ModelName="r4_man"
 				skin="1"
 				cfg="195"
-				helloReplyNames="Dlg_npc_001334 Dlg_npc_001362 Dlg_npc_001578 Dlg_npc_001592 Dlg_npc_001598 Dlg_npc_002091"
+				helloReplyNames="Dlg_npc_001334 Dlg_npc_001362 Dlg_npc_001578 Dlg_npc_001592 Dlg_npc_001598 Dlg_npc_002091 Dlg_npc_002141"
 				SpokenCount="0" />
 
 			<Object
@@ -104,7 +104,7 @@
 				Belong="1023"
 				Prototype="NPC"
 				ModelName="mask_hero"
-				helloReplyNames="Dlg_npc_002085 Dlg_npc_002124 Dlg_npc_002133"
+				helloReplyNames="Dlg_npc_002085 Dlg_npc_002124 Dlg_npc_002133 Dlg_npc_002124 Dlg_npc_002133 Dlg_npc_002190"
 				SpokenCount="0" />
 		</Object>
 
@@ -290,7 +290,7 @@
 				Prototype="NPC"
 				ModelName="r4_man"
 				cfg="171"
-				helloReplyNames="Dlg_npc_001319 Dlg_npc_001302 Dlg_npc_001492 Dlg_npc_001522 Dlg_npc_001602"
+				helloReplyNames="Dlg_npc_001319 Dlg_npc_001302 Dlg_npc_001492 Dlg_npc_001522 Dlg_npc_001602 Dlg_npc_002159"
 				SpokenCount="1" />
 
 			<Object
@@ -1530,10 +1530,10 @@
 
 	<Object
 		Name="GadadZone1"
-		Belong="1023"
+		Belong="1002"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_GadadTeam"
-		DropOutTimeOut="20.000"
+		DropOutTimeOut="30.000"
 		InfectionLair="r4m1_GadadTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -1616,28 +1616,12 @@
 				y="6314.063" />
 
 			<Point
-				x="5712.832"
-				y="6486.683" />
-
-			<Point
 				x="5598.129"
 				y="6230.967" />
 
 			<Point
 				x="5303.522"
 				y="6572.016" />
-
-			<Point
-				x="5967.280"
-				y="7083.490" />
-
-			<Point
-				x="5772.249"
-				y="7151.488" />
-
-			<Point
-				x="5697.139"
-				y="6751.645" />
 
 			<Point
 				x="5265.696"
@@ -1728,10 +1712,6 @@
 				y="6818.014" />
 
 			<Point
-				x="5545.476"
-				y="6476.312" />
-
-			<Point
 				x="5518.177"
 				y="6336.816" />
 
@@ -1742,27 +1722,15 @@
 			<Point
 				x="5592.934"
 				y="6344.522" />
-
-			<Point
-				x="5642.957"
-				y="6441.957" />
-
-			<Point
-				x="5565.174"
-				y="6626.188" />
-
-			<Point
-				x="5665.708"
-				y="6570.605" />
 		</DropOut>
 	</Object>
 
 	<Object
 		Name="GadadZone2"
-		Belong="1023"
+		Belong="1062"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_GadadTeam"
-		DropOutTimeOut="20.000"
+		DropOutTimeOut="30.000"
 		InfectionLair="r4m1_GadadTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -1963,7 +1931,7 @@
 		Belong="1002"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4_BanditesTeam"
-		DropOutTimeOut="20.000"
+		DropOutTimeOut="30.000"
 		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -2261,10 +2229,10 @@
 
 	<Object
 		Name="KefZone2"
-		Belong="1025"
+		Belong="1062"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_KazifTeam"
-		DropOutTimeOut="20.000"
+		DropOutTimeOut="30.000"
 		InfectionLair="r4m1_KazifTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -2521,176 +2489,11 @@
 	</Object>
 
 	<Object
-		Name="KefZone1"
-		Belong="1025"
-		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1_KazifTeam"
-		DropOutTimeOut="20.000"
-		InfectionLair="r4m1_KazifTeam"
-		HadPlayerInside="0">
-		<Polygon>
-			<Point
-				x="5877.991"
-				y="5556.671" />
-
-			<Point
-				x="6276.930"
-				y="5672.584" />
-
-			<Point
-				x="6610.416"
-				y="5853.159" />
-
-			<Point
-				x="7050.428"
-				y="5360.815" />
-
-			<Point
-				x="7028.440"
-				y="5055.561" />
-
-			<Point
-				x="6826.576"
-				y="4887.288" />
-
-			<Point
-				x="6459.721"
-				y="4689.454" />
-
-			<Point
-				x="6178.774"
-				y="4636.916" />
-
-			<Point
-				x="5994.372"
-				y="4627.050" />
-
-			<Point
-				x="5853.868"
-				y="4815.935" />
-
-			<Point
-				x="5692.497"
-				y="5334.717" />
-		</Polygon>
-
-		<DropOut>
-			<Point
-				x="6202.686"
-				y="5412.196" />
-
-			<Point
-				x="6912.925"
-				y="5093.700" />
-
-			<Point
-				x="6450.658"
-				y="5040.776" />
-
-			<Point
-				x="5949.438"
-				y="5187.834" />
-
-			<Point
-				x="6094.271"
-				y="4659.463" />
-
-			<Point
-				x="5786.311"
-				y="5339.478" />
-
-			<Point
-				x="5954.707"
-				y="4841.713" />
-
-			<Point
-				x="6520.109"
-				y="4849.347" />
-
-			<Point
-				x="6017.545"
-				y="5518.898" />
-
-			<Point
-				x="6444.763"
-				y="5722.510" />
-
-			<Point
-				x="6223.034"
-				y="5155.507" />
-
-			<Point
-				x="6451.250"
-				y="5495.559" />
-
-			<Point
-				x="6665.048"
-				y="5631.170" />
-
-			<Point
-				x="6852.748"
-				y="5512.878" />
-
-			<Point
-				x="6811.192"
-				y="5049.854" />
-
-			<Point
-				x="6762.781"
-				y="5187.035" />
-
-			<Point
-				x="5849.980"
-				y="4996.254" />
-
-			<Point
-				x="5897.978"
-				y="4866.226" />
-
-			<Point
-				x="5801.627"
-				y="5170.688" />
-
-			<Point
-				x="5762.572"
-				y="5256.880" />
-
-			<Point
-				x="5832.593"
-				y="5084.938" />
-
-			<Point
-				x="6032.779"
-				y="4792.309" />
-
-			<Point
-				x="6117.840"
-				y="4740.676" />
-
-			<Point
-				x="6227.636"
-				y="4707.913" />
-
-			<Point
-				x="6446.850"
-				y="4757.225" />
-
-			<Point
-				x="6353.056"
-				y="5024.290" />
-
-			<Point
-				x="6593.536"
-				y="5137.284" />
-		</DropOut>
-	</Object>
-
-	<Object
 		Name="OilCityZone1"
-		Belong="1060"
+		Belong="1002"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_KazifTeam"
-		DropOutTimeOut="20.000"
+		DropOutTimeOut="30.000"
 		InfectionLair="r4m1_KazifTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -2765,20 +2568,12 @@
 				y="3871.942" />
 
 			<Point
-				x="6351.949"
-				y="3489.221" />
-
-			<Point
 				x="6187.466"
 				y="4479.386" />
 
 			<Point
 				x="5897.410"
 				y="4044.292" />
-
-			<Point
-				x="6665.489"
-				y="3763.294" />
 
 			<Point
 				x="6793.521"
@@ -2807,10 +2602,6 @@
 			<Point
 				x="6983.128"
 				y="3887.917" />
-
-			<Point
-				x="6901.897"
-				y="3543.741" />
 
 			<Point
 				x="6050.084"
@@ -2845,20 +2636,12 @@
 				y="3953.097" />
 
 			<Point
-				x="6734.441"
-				y="3813.662" />
-
-			<Point
 				x="6852.774"
 				y="3868.809" />
 
 			<Point
 				x="6346.255"
 				y="3911.527" />
-
-			<Point
-				x="6282.118"
-				y="3811.558" />
 
 			<Point
 				x="6255.697"
@@ -2893,10 +2676,6 @@
 				y="4055.909" />
 
 			<Point
-				x="6391.183"
-				y="3865.238" />
-
-			<Point
 				x="6427.683"
 				y="4055.130" />
 
@@ -2924,10 +2703,10 @@
 
 	<Object
 		Name="AlihamZone1"
-		Belong="1025"
+		Belong="1002"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_KefTeam"
-		DropOutTimeOut="20.000"
+		DropOutTimeOut="30.000"
 		InfectionLair="r4m1_KefTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -2986,14 +2765,6 @@
 				y="5462.478" />
 
 			<Point
-				x="5186.901"
-				y="5948.678" />
-
-			<Point
-				x="4788.989"
-				y="5710.555" />
-
-			<Point
 				x="4820.064"
 				y="6031.526" />
 
@@ -3002,16 +2773,8 @@
 				y="6423.235" />
 
 			<Point
-				x="4791.969"
-				y="5401.413" />
-
-			<Point
 				x="4459.975"
 				y="5836.811" />
-
-			<Point
-				x="5109.813"
-				y="5716.989" />
 
 			<Point
 				x="4562.707"
@@ -3028,10 +2791,6 @@
 			<Point
 				x="4535.703"
 				y="5558.146" />
-
-			<Point
-				x="4658.135"
-				y="5575.188" />
 
 			<Point
 				x="4660.889"
@@ -3058,10 +2817,6 @@
 				y="5905.669" />
 
 			<Point
-				x="4809.871"
-				y="5801.457" />
-
-			<Point
 				x="4624.272"
 				y="5805.698" />
 
@@ -3082,22 +2837,6 @@
 				y="5944.589" />
 
 			<Point
-				x="4929.335"
-				y="5890.241" />
-
-			<Point
-				x="4874.677"
-				y="5812.478" />
-
-			<Point
-				x="5140.083"
-				y="5789.874" />
-
-			<Point
-				x="5175.099"
-				y="5871.877" />
-
-			<Point
 				x="4730.970"
 				y="5863.245" />
 
@@ -3113,10 +2852,10 @@
 
 	<Object
 		Name="ZuhelZone1"
-		Belong="1023"
+		Belong="1062"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_GadadTeam"
-		DropOutTimeOut="20.000"
+		DropOutTimeOut="30.000"
 		InfectionLair="r4m1_GadadTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -3151,10 +2890,6 @@
 
 		<DropOut>
 			<Point
-				x="2939.851"
-				y="4571.468" />
-
-			<Point
 				x="3414.506"
 				y="4348.504" />
 
@@ -3163,24 +2898,12 @@
 				y="3969.521" />
 
 			<Point
-				x="2898.787"
-				y="4335.271" />
-
-			<Point
 				x="3527.597"
 				y="4170.476" />
 
 			<Point
 				x="3222.772"
 				y="4607.066" />
-
-			<Point
-				x="3070.720"
-				y="4223.042" />
-
-			<Point
-				x="3008.385"
-				y="4073.641" />
 
 			<Point
 				x="3302.064"
@@ -3195,26 +2918,6 @@
 				y="3868.166" />
 
 			<Point
-				x="2903.879"
-				y="4184.188" />
-
-			<Point
-				x="2973.864"
-				y="4169.445" />
-
-			<Point
-				x="3047.215"
-				y="4275.059" />
-
-			<Point
-				x="2952.563"
-				y="4269.532" />
-
-			<Point
-				x="2971.339"
-				y="4058.655" />
-
-			<Point
 				x="2786.418"
 				y="3930.398" />
 
@@ -3227,26 +2930,6 @@
 				y="3889.770" />
 
 			<Point
-				x="2826.409"
-				y="4075.133" />
-
-			<Point
-				x="2924.117"
-				y="4040.962" />
-
-			<Point
-				x="2906.531"
-				y="4111.945" />
-
-			<Point
-				x="3060.567"
-				y="4122.804" />
-
-			<Point
-				x="3114.257"
-				y="4159.609" />
-
-			<Point
 				x="3244.494"
 				y="4150.305" />
 
@@ -3257,227 +2940,6 @@
 			<Point
 				x="3384.456"
 				y="4221.899" />
-		</DropOut>
-	</Object>
-
-	<Object
-		Name="KazifZone1"
-		Belong="1060"
-		Prototype="InfectionZone"
-		InfectionTeamPrototypeName="r4m1_KazifTeam"
-		DropOutTimeOut="20.000"
-		InfectionLair="r4m1_KazifTeam"
-		HadPlayerInside="0">
-		<Polygon>
-			<Point
-				x="4589.772"
-				y="1697.211" />
-
-			<Point
-				x="4738.182"
-				y="1730.354" />
-
-			<Point
-				x="4892.406"
-				y="1852.428" />
-
-			<Point
-				x="4993.178"
-				y="2175.978" />
-
-			<Point
-				x="4856.285"
-				y="2588.882" />
-
-			<Point
-				x="4707.210"
-				y="2765.409" />
-
-			<Point
-				x="4502.591"
-				y="2878.028" />
-
-			<Point
-				x="4416.742"
-				y="2900.406" />
-
-			<Point
-				x="4374.481"
-				y="2821.579" />
-
-			<Point
-				x="4438.305"
-				y="2522.688" />
-
-			<Point
-				x="4280.847"
-				y="2347.182" />
-
-			<Point
-				x="4297.085"
-				y="1896.147" />
-
-			<Point
-				x="4316.739"
-				y="1591.705" />
-
-			<Point
-				x="4175.496"
-				y="1302.815" />
-
-			<Point
-				x="3887.627"
-				y="1190.364" />
-
-			<Point
-				x="3717.143"
-				y="1239.926" />
-
-			<Point
-				x="3636.690"
-				y="1307.623" />
-
-			<Point
-				x="3500.690"
-				y="1264.421" />
-
-			<Point
-				x="3295.783"
-				y="1264.147" />
-
-			<Point
-				x="3224.739"
-				y="1198.807" />
-
-			<Point
-				x="3448.132"
-				y="1120.241" />
-
-			<Point
-				x="3449.566"
-				y="1041.242" />
-
-			<Point
-				x="4174.262"
-				y="1050.005" />
-
-			<Point
-				x="4391.833"
-				y="1032.192" />
-
-			<Point
-				x="4419.028"
-				y="1335.640" />
-
-			<Point
-				x="4457.802"
-				y="1540.758" />
-
-			<Point
-				x="4520.580"
-				y="1657.918" />
-		</Polygon>
-
-		<DropOut>
-			<Point
-				x="4641.506"
-				y="1882.516" />
-
-			<Point
-				x="4479.729"
-				y="2420.822" />
-
-			<Point
-				x="4252.864"
-				y="1259.705" />
-
-			<Point
-				x="4380.979"
-				y="1945.806" />
-
-			<Point
-				x="4385.267"
-				y="2262.444" />
-
-			<Point
-				x="4658.768"
-				y="2693.158" />
-
-			<Point
-				x="4913.298"
-				y="2066.083" />
-
-			<Point
-				x="4811.319"
-				y="2398.845" />
-
-			<Point
-				x="4395.696"
-				y="1572.651" />
-
-			<Point
-				x="4362.297"
-				y="1117.089" />
-
-			<Point
-				x="3507.140"
-				y="1125.540" />
-
-			<Point
-				x="4580.206"
-				y="2121.038" />
-
-			<Point
-				x="4429.383"
-				y="2844.584" />
-
-			<Point
-				x="4743.221"
-				y="2427.824" />
-
-			<Point
-				x="4681.691"
-				y="2277.045" />
-
-			<Point
-				x="4647.531"
-				y="2393.560" />
-
-			<Point
-				x="4698.868"
-				y="2580.087" />
-
-			<Point
-				x="4731.146"
-				y="2500.600" />
-
-			<Point
-				x="4814.389"
-				y="2297.055" />
-
-			<Point
-				x="4746.633"
-				y="2354.677" />
-
-			<Point
-				x="4547.184"
-				y="2202.264" />
-
-			<Point
-				x="4518.241"
-				y="2117.718" />
-
-			<Point
-				x="4471.949"
-				y="2343.705" />
-
-			<Point
-				x="4584.798"
-				y="2708.602" />
-
-			<Point
-				x="4520.851"
-				y="2832.788" />
 		</DropOut>
 	</Object>
 
@@ -20756,13 +20218,194 @@
 	</Object>
 
 	<Object
-		Belong="1100"
-		Prototype="someRecollection" />
-
-	<Object
 		Name="End1_loc"
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="6012.906 248.775 4309.329"
 		Radius="10.000" />
+
+	<Object
+		Belong="1100"
+		Prototype="someRecollection" />
+
+	<Object
+		Name="GadadMadmanZone"
+		Belong="1062"
+		Prototype="InfectionZone"
+		InfectionTeamPrototypeName="r4m1_GadadTeam"
+		DropOutTimeOut="30.000"
+		InfectionLair="r4m1_GadadTeam"
+		HadPlayerInside="0">
+		<Polygon>
+			<Point
+				x="5614.300"
+				y="6505.820" />
+
+			<Point
+				x="5545.875"
+				y="5790.426" />
+
+			<Point
+				x="4476.723"
+				y="5884.298" />
+
+			<Point
+				x="4710.319"
+				y="6963.327" />
+		</Polygon>
+
+		<DropOut>
+			<Point
+				x="4782.204"
+				y="5937.450" />
+
+			<Point
+				x="4706.868"
+				y="6178.397" />
+
+			<Point
+				x="5037.007"
+				y="5989.866" />
+
+			<Point
+				x="4884.873"
+				y="6222.513" />
+
+			<Point
+				x="5116.612"
+				y="6114.645" />
+
+			<Point
+				x="5171.521"
+				y="6004.871" />
+
+			<Point
+				x="4980.610"
+				y="6324.602" />
+
+			<Point
+				x="4958.829"
+				y="6663.222" />
+
+			<Point
+				x="5061.741"
+				y="6649.859" />
+
+			<Point
+				x="5165.358"
+				y="6532.326" />
+
+			<Point
+				x="5532.043"
+				y="6239.841" />
+
+			<Point
+				x="5533.989"
+				y="5966.119" />
+
+			<Point
+				x="5525.334"
+				y="5850.405" />
+
+			<Point
+				x="5354.988"
+				y="5846.786" />
+
+			<Point
+				x="5332.926"
+				y="5933.408" />
+
+			<Point
+				x="5188.110"
+				y="5878.592" />
+
+			<Point
+				x="5330.116"
+				y="6088.144" />
+
+			<Point
+				x="5262.411"
+				y="6128.263" />
+
+			<Point
+				x="5197.872"
+				y="6117.776" />
+
+			<Point
+				x="5288.657"
+				y="6247.446" />
+
+			<Point
+				x="5386.633"
+				y="6095.107" />
+
+			<Point
+				x="5334.955"
+				y="6240.835" />
+
+			<Point
+				x="5108.558"
+				y="6366.780" />
+
+			<Point
+				x="4976.803"
+				y="6338.448" />
+
+			<Point
+				x="4828.390"
+				y="6345.170" />
+
+			<Point
+				x="4706.933"
+				y="6103.891" />
+
+			<Point
+				x="5025.512"
+				y="5940.480" />
+
+			<Point
+				x="4882.894"
+				y="6125.498" />
+
+			<Point
+				x="4940.894"
+				y="5989.800" />
+
+			<Point
+				x="4910.595"
+				y="6560.575" />
+
+			<Point
+				x="5025.926"
+				y="6507.802" />
+
+			<Point
+				x="4640.728"
+				y="6381.362" />
+
+			<Point
+				x="4763.284"
+				y="6567.310" />
+
+			<Point
+				x="5412.330"
+				y="6406.854" />
+
+			<Point
+				x="5123.285"
+				y="6658.990" />
+
+			<Point
+				x="5017.551"
+				y="6587.118" />
+
+			<Point
+				x="4914.162"
+				y="6398.049" />
+
+			<Point
+				x="4725.716"
+				y="6445.164" />
+		</DropOut>
+	</Object>
 </DynamicScene>

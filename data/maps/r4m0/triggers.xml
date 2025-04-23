@@ -13,34 +13,6 @@
 		</script>
 	</trigger>
 
-<!-- Тестовый триггер -->
-
-	<trigger Name="Testspawn" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-		AddPlayerVehicle("UralDadHamza")
-		local P = GetPlayerVehicle()
-		if P then
-			P:SetGamePositionOnGround(getPos("StartSpawn_1"))
-			P:SetRotation(Quaternion(-0.046, 0.094, 0.009, 0.994))
-		end
-
-		local A = CreateVehicleEx("BelazShot1", "AivenCarCS", CVector(getPos("StartSpawn_2")), 1095)
-		if A then
-			A:SetRotation(Quaternion(-0.046, 0.094, 0.009, 0.994))
-			A:SetSkin(3)
-		end
-
-		local M = CreateVehicleEx("UralMansur","MansurCar",CVector(getPos("StartSpawn_3")), 1090)
-		if M then
-			M:SetRotation(Quaternion(-0.046, 0.094, 0.009, 0.994))
-			M:SetSkin(1)
-		end
-
-		trigger:Deactivate()
-		</script>
-	</trigger>
-
 <!-- Первый приезд в Пустыню Смерти -->
 
 	<trigger Name="ArrivedToDD" active="1">
@@ -95,9 +67,9 @@
 		SetTolerance(1090, 1025, RS_NEUTRAL)
 		SetTolerance(1090, 1060, RS_NEUTRAL)
 
-		TeamCreate("MansurCar", 1090, CVector(getPos("StartEndSpawn_3")), {"UralMansur"}, nil, nil, Quaternion(-0.046, 0.094, 0.009, 0.994))
+		TeamCreate("MansurCarDD1", 1090, CVector(getPos("StartEndSpawn_3")), {"UralMansur"}, nil, nil, Quaternion(-0.046, 0.094, 0.009, 0.994))
 
-		local M = getObj("MansurCar_vehicle_0")
+		local M = getObj("MansurCarDD1_vehicle_0")
 		if M then
 			M:SetSkin(1)
 			M:setImmortalMode(1)
@@ -121,9 +93,9 @@
 	<trigger Name="Co_A_DDA" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			TeamCreate("AivenCar", 1095, CVector(getPos("StartEndSpawn_1")), {"BelazShot1"}, nil, nil, Quaternion(-0.046, 0.094, 0.009, 0.994))
+			TeamCreate("AivenCarDD1", 1095, CVector(getPos("StartEndSpawn_1")), {"BelazShot1"}, nil, nil, Quaternion(-0.046, 0.094, 0.009, 0.994))
 
-			local vehAiven = getObj("AivenCar_vehicle_0")
+			local vehAiven = getObj("AivenCarDD1_vehicle_0")
 			if vehAiven then
 				vehAiven:SetSkin(3)
 				vehAiven:setImmortalMode(1)

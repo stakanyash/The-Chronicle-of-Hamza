@@ -61,6 +61,7 @@
 		text="Мои люди подоспели вовремя, ещё немного - и от вас остался бы только пепел!"
 		role="NPC"
 		scriptCondition="GetVar('ScientistTalk').AsInt==0 and QuestStatus('FindMoreMadmans_quest')==Q_COMPLETED"
+		scriptResult="CompleteQuest('DestroyMadmans_quest')"
 		nextReplies="r4m2_Bar_Scientist_1_N02" />
 
 	<Reply
@@ -129,7 +130,98 @@
 		text="Хорошо."
 		role="PLAYER"
 		scriptResult="EndConversation(); SetVar('ScientistTalk', 1); TakeQuest('LookAtTarelka_quest'); TActivate('AivenTPtoBase')" />
-<!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке/Первая часть-->
+<!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/Концовка 2-->
+	<Reply
+		name="Dlg_npc_002175"
+		text="И снова ты здесь. На этот раз один, как я погляжу."
+		role="NPC"
+		scriptCondition="QuestStatus('GoToVasiliy_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_002176" />
+
+	<Reply
+		name="Dlg_pl_002176"
+		text="Всё так. Мы нашли блокиратор, что с ним делать дальше?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002177" />
+
+	<Reply
+		name="Dlg_npc_002177"
+		text="Он у тебя?"
+		role="NPC"
+		nextReplies="Dlg_pl_002178" />
+
+	<Reply
+		name="Dlg_pl_002178"
+		text="Да, он у меня."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002179" />
+
+	<Reply
+		name="Dlg_npc_002179"
+		text="Дай взглянуть... Ага... Блокиратор имеет некоторые повреждения, но они не критичны."
+		role="NPC"
+		nextReplies="Dlg_pl_002180" />
+
+	<Reply
+		name="Dlg_pl_002180"
+		text="То есть всё должно пройти нормально?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002181" />
+
+	<Reply
+		name="Dlg_npc_002181"
+		text="Если мои догадки верны - да."
+		role="NPC"
+		nextReplies="Dlg_pl_002182" />
+
+	<Reply
+		name="Dlg_pl_002182"
+		text="А если догадки не верны?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002183" />
+
+	<Reply
+		name="Dlg_npc_002183"
+		text="Тогда нужно быть готовым ко всему. Может как ничего не произойти, а может стать хуже... Жизнь скучна без риска."
+		role="NPC"
+		nextReplies="Dlg_pl_002184 Dlg_pl_002185" />
+
+	<Reply
+		name="Dlg_pl_002185"
+		text="Нет, так дело не пойдёт, Чужеземец предлагал свой вариант решения проблемы и мне кажется, что его вариант будет поуверенее твоего!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002187" />
+
+	<Reply
+		name="Dlg_npc_002187"
+		text="Ну что-же, как скажешь. Ты не хочешь рисковать в такой момент, я понимаю. Раз есть альтернатива, то и правда. Почему бы не дать тебе шанс ей воспользоваться."
+		role="NPC"
+		nextReplies="Dlg_pl_002188" />
+
+	<Reply
+		name="Dlg_pl_002188"
+		text="Прощай, не думаю, что мы ещё увидимся."
+		role="PLAYER"
+		scriptResult="FailQuest('GoToVasiliy_quest'); TakeQuest('Failed2ndEnd_quest'); EndConversation()" />
+
+	<Reply
+		name="Dlg_pl_002184"
+		text="Хорошо, давай пробовать."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002186" />
+
+	<Reply
+		name="Dlg_npc_002186"
+		text="Тогда подойди к тарелке. Однако не близко, иначе не дойдёшь и станешь одним из них. Включи блокиратор, когда будешь позади них всех нажав на эту кнопку. После этого оставь его там и уходи. Эффект будет не мгновенный, придётся подождать."
+		role="NPC"
+		nextReplies="Dlg_pl_002189" />
+
+	<Reply
+		name="Dlg_pl_002189"
+		text="Хорошо..."
+		role="PLAYER"
+		scriptResult="TActivate('Ending2_tr'); LeaveTown(false)" />
+<!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке/Первая часть-->
 	<Reply
 		name="r4m2_Bar_Scientist_2_N01"
 		text="Какая сила духа! Вы смогли противиться голосу небес!"
@@ -299,7 +391,7 @@
 		name="Dlg_pl_001576"
 		text="Прощай."
 		role="PLAYER"
-		scriptResult="TActivate('trExitFromCity'); SetVar('ScientistTalk', 4); TakeQuest('BackToVahat_quest'); CompleteQuest('TalkToVasilyi_quest'); EndConversation()" />
+		scriptResult="SetVar('ScientistTalk', 4); TakeQuest('BackToVahat_quest'); CompleteQuest('TalkToVasilyi_quest'); EndConversation()" />
 <!--Root/r4m1/Сюжетные--><!--Root/r4m1/Опциональные--><!--Root/r4m1/Разговоры о книгах-->
 	<Reply
 		name="Gadad_Bar_CrazyBook1_1_N01"
@@ -448,6 +540,7 @@
 		name="Dlg_pl_002088"
 		text="А куда он его увёл?!"
 		role="PLAYER"
+		scriptResult="SetVar('MansurTalk', 3)"
 		nextReplies="Dlg_npc_002089" />
 
 	<Reply
@@ -515,6 +608,7 @@
 		name="Dlg_npc_002105"
 		text="Именно так."
 		role="NPC"
+		scriptResult="SetVar('MansurTalk', 5)"
 		nextReplies="Dlg_pl_002106" />
 
 	<Reply
@@ -570,13 +664,50 @@
 		name="Dlg_pl_002120"
 		text="Ну тогда вперёд!"
 		role="PLAYER"
-		scriptResult="SetVar('ChujezemetsTalk', 9); CompleteQuest('BackToKef_afterinvasion_quest'); TakeQuest('GoToDesertOfDeath_quest'); EndConversation()" />
-<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Возвращение из Пустыни Смерти--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Возвращение из Пустыни Смерти/Если блокиратор взят-->
+		scriptResult="SetVar('ChujezemetsTalk', 9); CompleteQuest('BackToKef_afterinvasion_quest'); TakeQuest('GoToDesertOfDeath_quest'); getObj('FatherCar_vehicle_0'):Remove(); TActivate('AM_Move_after_DD'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Возвращение из Пустыни Смерти--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Провал второй концовки-->
+	<Reply
+		name="Dlg_npc_002190"
+		text="Ну что? Как всё прошло?"
+		role="NPC"
+		scriptCondition="QuestStatus('Failed2ndEnd_quest')==Q_TAKEN  "
+		nextReplies="Dlg_pl_002191" />
+
+	<Reply
+		name="Dlg_pl_002191"
+		text="Никак, он вообще не уверен в своём плане. Поехали к твоему Оракулу лучше."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002192" />
+
+	<Reply
+		name="Dlg_npc_002192"
+		text="А в чём заключалась его неуверенность?"
+		role="NPC"
+		nextReplies="Dlg_pl_002193" />
+
+	<Reply
+		name="Dlg_pl_002193"
+		text="Он заявил, что на блокираторе есть некритичные повреждения, но при этом из-за этого может как ничего не поменяться, так и вовсе стать хуже!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002194" />
+
+	<Reply
+		name="Dlg_npc_002194"
+		text="И правда. Если повреждения некритичные. Почему же он так волнуется? Впрочем, ладно. Раз ты решил ехать к Оракулу, то поехали."
+		role="NPC"
+		nextReplies="Dlg_pl_002195" />
+
+	<Reply
+		name="Dlg_pl_002195"
+		text="Поехали."
+		role="PLAYER"
+		scriptResult="CompleteQuest('Failed2ndEnd_quest'); TakeQuest('GoToOracle_quest'); TActivate('MA_Rem_DD'); TActivate('A_C_GTO'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Возвращение из Пустыни Смерти/Если блокиратор взят-->
 	<Reply
 		name="Dlg_npc_002124"
 		text="Ну что будем делать дальше?"
 		role="NPC"
-		scriptCondition="GetVar('ChujezemetsTalk').AsInt==8 and QuestStatus('blocktaken_quest')==Q_TAKEN   "
+		scriptCondition="GetVar('ChujezemetsTalk').AsInt==9 and QuestStatus('blocktaken_quest')==Q_TAKEN   "
 		nextReplies="Dlg_pl_002125" />
 
 	<Reply
@@ -637,13 +768,13 @@
 		name="Dlg_pl_002140"
 		text="Хорошо."
 		role="PLAYER"
-		scriptResult="CompleteQuest('blocktaken_quest'); TakeQuest('GoToVasiliy_quest'); EndConversation()" />
+		scriptResult="CompleteQuest('blocktaken_quest'); TakeQuest('GoToVasiliy_quest'); getObj('MansurCarDD_vehicle_0'):Remove(); getObj('AivenCarDD_vehicle_0'):Remove(); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Возвращение из Пустыни Смерти/Если не брали блокиратор-->
 	<Reply
 		name="Dlg_npc_002133"
 		text="Что будем делать дальше? Блокиратора у нас нет, чётких идей как решать проблему - тоже. У меня есть одна мысль, но я не уверен, что это может сработать. "
 		role="NPC"
-		scriptCondition="GetVar('ChujezemetsTalk').AsInt==8 and QuestStatus('blockleaved_quest')==Q_TAKEN"
+		scriptCondition="GetVar('ChujezemetsTalk').AsInt==9 and QuestStatus('blockleaved_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_002134" />
 
 	<Reply
@@ -4364,7 +4495,7 @@
 		name="Dlg_npc_001340"
 		text="Победитель получит 20 000 монет, тот кто приедет вторым получит 10 000 монет, а третье место 5 000 монет. Но нужно будет оплатить взнос за участие 2 500 монет. И у гонки будет всего один круг. Ну как, согласен?"
 		role="NPC"
-		nextReplies="Dlg_pl_001341 Dlg_pl_001342 Dlg_pl_001650" />
+		nextReplies="Dlg_pl_001341 Dlg_pl_001650" />
 
 	<Reply
 		name="Dlg_pl_001650"
@@ -4383,37 +4514,6 @@
 		text="Почему бы и нет? Поехали."
 		role="PLAYER"
 		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUralSpec'); LeaveTown()" />
-
-	<Reply
-		name="Dlg_pl_001342"
-		text="Мансур, у меня пока нет таких денег."
-		role="PLAYER"
-		scriptCondition="5000 > GetPlayerMoney()"
-		nextReplies="Dlg_npc_001343" />
-
-	<Reply
-		name="Dlg_npc_001343"
-		text="Я могу тебе дать в долг, если хочешь. Как сможешь - так и отдашь, торопить не буду. Ты мне друг в конце концов, а друзья должны друг друга выручать, не так ли?"
-		role="NPC"
-		nextReplies="Dlg_pl_001344" />
-
-	<Reply
-		name="Dlg_pl_001344"
-		text="Ну хорошо. Когда выдвигаемся?"
-		role="PLAYER"
-		nextReplies="Dlg_npc_001345" />
-
-	<Reply
-		name="Dlg_npc_001345"
-		text="Если мы хотим успеть, то надо выдвигаться прямо сейчас."
-		role="NPC"
-		nextReplies="Dlg_pl_001346" />
-
-	<Reply
-		name="Dlg_pl_001346"
-		text="Отлично, поехали!"
-		role="PLAYER"
-		scriptResult="AddPlayerMoney(5000); CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUral'); LeaveTown()" />
 
 	<Reply
 		name="Dlg_pl_001341"
@@ -4670,7 +4770,7 @@
 		name="Dlg_npc_002113"
 		text="Я готов к любому плану."
 		role="NPC"
-		scriptCondition="GetVar('MansurTalk').AsInt==4 and QuestStatus('BackToKef_afterinvasion_quest')==Q_TAKEN  "
+		scriptCondition="GetVar('MansurTalk').AsInt==5 and QuestStatus('BackToKef_afterinvasion_quest')==Q_TAKEN  "
 		nextReplies="Dlg_pl_002114" />
 
 	<Reply
@@ -4701,13 +4801,13 @@
 		name="Dlg_pl_002118"
 		text="Все согласны?"
 		role="PLAYER"
-		scriptResult="SetVar('MansurTalk', 5); Start" />
+		scriptResult="SetVar('MansurTalk', 6); StartConversation('Kef_Aiven')" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/После возвращения из Края-->
 	<Reply
 		name="Dlg_npc_002141"
 		text="Хамза! Вы куда пропали? Я всего-то отошёл поговорить с отцом, вернулся, а вас уже след простыл! Так... А где собственно сам Чужеземец?"
 		role="NPC"
-		scriptCondition="GetVar('MansurTalk').AsInt==5 and QuestStatus('HurryBackToHome_quest')==Q_TAKEN"
+		scriptCondition="GetVar('MansurTalk').AsInt==6 and QuestStatus('HurryBackToHome_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_002142" />
 
 	<Reply
@@ -4909,7 +5009,7 @@
 		name="Dlg_pl_001601"
 		text='Мансур, спокойнее, надо всё продумать, чтобы не упасть "лицом в песок". Всё, я уехал, скоро вернусь.'
 		role="PLAYER"
-		scriptResult="SetVar('MansurTalk', 3); CompleteQuest('BackToVahat_quest'); TakeQuest('GoToFatherAfterZarmek_quest'); EndConversation()" />
+		scriptResult="CompleteQuest('BackToVahat_quest'); TakeQuest('GoToFatherAfterZarmek_quest'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/Первый приезд (непочиненный)-->
 	<Reply
 		name="Dlg_npc_001302"
@@ -5399,7 +5499,7 @@
 		name="Dlg_npc_001602"
 		text="Хамза, ты вернулся!"
 		role="NPC"
-		scriptCondition="QuestStatus('GoToFatherAfterZarmek_quest')==Q_TAKEN) and (QuestStatus('BackToVahat_quest')==Q_COMPLETE"
+		scriptCondition="QuestStatus('GoToFatherAfterZarmek_quest')==Q_TAKEN and QuestStatus('BackToVahat_quest')==Q_COMPLETED"
 		nextReplies="Dlg_pl_001603" />
 
 	<Reply
@@ -5575,7 +5675,7 @@
 		name="Dlg_pl_002162"
 		text="Мы нашли Серго и его блокиратор. А дальше..."
 		role="PLAYER"
-		scriptResult="TActivate('FewMinutesLater_tr'); LeaveTown(false)" />
+		scriptResult="TActivate('FewMinutesLater_tr'); LeaveTown(true)" />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/Концовка 1 (после Края)/Часть 2-->
 	<Reply
 		name="Dlg_npc_002163"

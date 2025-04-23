@@ -21,6 +21,14 @@
 		FullName="Мастерская" />
 
 	<Object
+		Name="Kef_Aiven"
+		FullName="Чужеземец" />
+
+	<Object
+		Name="Gadad_Aiven"
+		FullName="Чужеземец" />
+
+	<Object
 		Name="Gadad_Bar_Customer1"
 		FullName="Дядька" />
 
@@ -42,6 +50,10 @@
 
 	<Object
 		Name="Kef_Dad"
+		FullName="Отец" />
+
+	<Object
+		Name="dad_end1"
 		FullName="Отец" />
 
 	<Object
@@ -342,18 +354,6 @@
 
 	<Object
 		Name="Chujezemets"
-		FullName="Чужеземец" />
-
-	<Object
-		Name="Chujezemets1"
-		FullName="Чужеземец" />
-
-	<Object
-		Name="Chujezemets2"
-		FullName="Чужеземец" />
-
-	<Object
-		Name="Chujezemets3"
 		FullName="Чужеземец" />
 
 	<Object
