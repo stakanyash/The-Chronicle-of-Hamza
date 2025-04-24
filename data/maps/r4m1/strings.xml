@@ -1507,7 +1507,7 @@
 		modelSlot="1"
 		value="РАЦИЯ|Внимание! Внимание! Нефтеграду требуется срочная огневая поддержка, он близок к падению под напором атакующих! Просим помощи у защитников Гадада, Алихама и Кефа как можно скорее!"
 		sound=""
-		time="120" />
+		time="12" />
 
 	<string
 		id="172"
@@ -1522,7 +1522,7 @@
 	<string
 		id="173"
 		sound="data\sounds\Speech\rolik\dead_end_4.ogg"
-		value="|Нефтеград не удалось спасти. Взрыв, произошедший в ходе боя, уничтожил всех, кто находился поблизости, включая Хамзу. Ваша цель теперь невыполнима." 
+		value="|Нефтеград не удалось спасти. Взрыв, произошедший в ходе боя, уничтожил всех, кто находился поблизости. Ваша цель теперь невыполнима." 
 		time="1"/>
 
 	<string
@@ -1940,9 +1940,15 @@
 
 	<string
 		id="77773"
-		value="Хамза, вместе с немногими оставшимися в живых, решил покинуть разрушенный город и пересечь Пустыню Смерти в надежде найти убежище в соседнем регионе. Путь через пустыню оказался невероятно трудным. Стресс и ужас от пережитого лишили многих концентрации, и некоторые из группы потерялись в бескрайних песках. Другие стали жертвами немногочисленных безумцев, которые всё ещё бродили по пустыне."
+		value="Хамза, вместе с немногими оставшимися в живых, решил покинуть разрушенный город и пересечь Пустыню Смерти в надежде найти убежище в соседнем регионе. Путь через пустыню оказался невероятно трудным. Стресс и ужас от пережитого лишили многих концентрации, и некоторые из группы потерялись в бескрайних песках."
 		sound=""
 		time="20" />
+
+	<string
+		id="777731"
+		value="Другие стали жертвами немногочисленных безумцев, которые всё ещё бродили по пустыне."
+		sound=""
+		time="8" />
 
 	<string
 		id="77774"
@@ -2071,21 +2077,9 @@
 		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
 		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
 		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
-		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Разработка| | |@ffffffffНикита «стакан» Кашлев||@ffffa600сюжет, квесты, скрипты, 3D моделирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffa600текстовые правки, скрипты, сюжет, помощь в разработке| | |@ffffffffКарен Гевондян||@ffffa600текстовые правки, сюжет| | |@ffffffffЕвгений «E Jet» Колчин||@ffffa600помощь в разработке| | |@ffffffffГеоргий «Эмер» Жуков||@ffffa600озвучка рассказчика| | |@ffffffffИван «Carsen» Буряшкин||@ffffa600помощь в разработке| | | |@ffffa600Тестирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffffffЕвгений «E Jet» Колчин||@ffffffffАлексей «__nEmPoBu4__» Смирнов| | | |@ffffa600Заимствования||@ffffffffПолноразмерная модель Серго||@ffffa600Автор:|@ffffffffМаксим «Spok» Бердников| | |@ffffffffЭффекты ухудшающегося состояния взяты из|@ffffffffмодификации @ffffa600«possesed»||@ffffa600Авторы:|@ffffffffАлексей «__nEmPoBu4__» Смирнов|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffСлайды в концовках взяты из|@ffffffffмодификации @ffffa600«Improved Storyline»||@ffffa600Автор:|@ffffffffПавел «pavlikRPG» Иванов| | |@ffffa600Музыка в титрах||@ffffffffEx Machina OST - Passage04 (AI extended)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)| | |@ffffa600Огромная @ffffffffблагодарность сообществу @ffffa600Deus Ex Machina|@ffffffffза оказанную помощь при разработке| | |@ffffa600Спасибо за игру!"
+		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Разработка| | |@ffffffffНикита «стакан» Кашлев||@ffffa600сюжет, квесты, скрипты, 3D моделирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffa600текстовые правки, скрипты, сюжет| | |@ffffffffКарен Гевондян||@ffffa600текстовые правки, сюжет| | |@ffffffffЕвгений «E Jet» Колчин||@ffffa600помощь в разработке| | |@ffffffffГеоргий «Эмер» Жуков||@ffffa600озвучка рассказчика| | |@ffffffffИван «Carsen» Буряшкин||@ffffa600помощь в разработке| | | |@ffffa600Тестирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffffffЕвгений «E Jet» Колчин||@ffffffffАлексей «__nEmPoBu4__» Смирнов| | | |@ffffa600Заимствования||@ffffffffПолноразмерная модель Серго||@ffffa600Автор:|@ffffffffМаксим «Spok» Бердников| | |@ffffffffЭффекты ухудшающегося состояния взяты из|@ffffffffмодификации @ffffa600«possesed»||@ffffa600Авторы:|@ffffffffАлексей «__nEmPoBu4__» Смирнов|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffСлайды в концовках взяты из|@ffffffffмодификации @ffffa600«Improved Storyline»||@ffffa600Автор:|@ffffffffПавел «pavlikRPG» Иванов| | |@ffffa600Музыка в титрах||@ffffffffEx Machina OST - Passage04 (AI extended)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)| | |@ffffa600Огромная @ffffffffблагодарность сообществам @ffffa600Deus Ex Machina|@ffffffffи @ffFF0000EM2Ch @ffffffffза оказанную помощь при разработке| | |@ffffa600Спасибо за игру!"
 		sound=""
 		fontSize="20"
 		scrollSpeed="2.0"
-		time="54" />
-
-	<string
-		id="597122"
-		msgType="SCROLL"
-		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
-		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
-		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
-		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Development| | |@ffffffffNikita «stakan» Kashlev||@ffffa600plot, quests, scripts, 3D modeling| | |@ffffffffSerafim «Varisane» Shagin||@ffffa600text edits, development assistance| | |@ffffffffKaren Gevondyan||@ffffa600text edits| | |@ffffffffEvgeny «E Jet» Kolchin||@ffffa600development assistance| | |@ffffffffGeorgy «EmerEh» Zhukov||@ffffa600narrator voiceover| | |@ffffffffIvan «Carsen» Buryashkin||@ffffa600development assistance| | |@ffffffffAnastasia «k0waidesu»||@ffffa600ending texts| | | |@ffffa600Testing| | |@ffffffffSerafim «Varisane» Shagin||@ffffffffEvgeny «E Jet» Kolchin||@ffffffffAlexey «__nEmPoBu4__» Smirnov| | | |@ffffa600Borrowings||@ffffffffFull-size model of Sergo||@ffffa600Author:|@ffffffffMaxim «Spok» Berdnikov| | |@ffffffffDeteriorating condition effects taken from the|@ffffa600«possesed» @ffffffffmodification||@ffffa600Authors:|@ffffffffAlexey «__nEmPoBu4__» Smirnov|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffEnding slides taken from the|@ffffa600«Improved Storyline» @ffffffffmodification||@ffffa600Author:|@ffffffffPavel «pavlikRPG» Ivanov| | |@ffffa600Credits music||@ffffffffAnton Popov - Dramatic Theme (Full Version)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)| | |@ffffa600Huge @ffffffffthanks to the @ffffa600Deus Ex Machina @ffffffffcommunity|@fffffffffor the help provided during development| | |@ffffa600Thank you for playing!"
-		sound=""
-		fontSize="20"
-		scrollSpeed="2.0"
-		time="57" />
+		time="58" />
 </resource>

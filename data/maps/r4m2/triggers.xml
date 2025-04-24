@@ -171,6 +171,7 @@
 			if b == 1 then
 --				println ("Yes")
 				PassToMap("r4m1", "FromR4M2", -1)
+				GL_PassToMap = true
 			else
 --				println ("No")
 				TActivate("cinExit41ReturnFirst")				

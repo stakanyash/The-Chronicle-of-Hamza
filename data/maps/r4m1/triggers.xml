@@ -3452,4 +3452,15 @@
 			trigger:Deactivate()  
 		</script>
 	</trigger>
+
+	<trigger	Name="PassToMap_Repo_add"	active="1">
+		<event eventid="GE_GAME_START" ObjName="Player1" />
+		<script>
+			if GL_PassToMap == true then
+			   AddSaleItems()
+			   println("Map change detected! Sale items added.")
+			   GL_PassToMap = false
+			end
+		</script>
+	</trigger>
 </triggers>

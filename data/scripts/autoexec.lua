@@ -7,8 +7,7 @@
 --
 ------------------------------------------------------------------------------
 
-version = "0.9.0"
-build = "250421a"
-releaseType = "TST"
+version = "0.9.5"
+build = "250424a"
 
-LOG("The Chronicle of Hamza " .. version .. "")
+LOG("The Chronicle of Hamza " .. version .. " " .. build)

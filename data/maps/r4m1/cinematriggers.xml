@@ -965,7 +965,7 @@
 			local mancar = CreateVehicleEx("UralMansur","MansurCar",CVector(2061.603, 239.088, 3658.598), 1090)
 			if mancar then
 				mancar:SetExternalPathByName("MansurStartGame_1")
-				mancar:SetCruisingSpeed(15)
+				mancar:SetCruisingSpeed(12.6)
 				mancar:SetSkin(1)
 			end
 
@@ -979,17 +979,17 @@
 			local BezVeh3 = GetEntityByName("FrstAttacker2")
 			local BezID = BezVeh3:GetId()
 
-            Fly("startgameHamza_cam1", CINEMATIC_AIM_TO_ID, PlfID, 12, 0, 0 )
-			Fly("startgameHamza_cam2", CINEMATIC_AIM_TO_ID, PlfID, 5, 0, 0 )
-			Fly("startgameHamza_cam3", CINEMATIC_AIM_TO_ID, PlfID, 12, 0, 0 )
-			Fly("startgameHamza_bez", CINEMATIC_NO_AIM, 0, 6, 0, 0 )
+            Fly("startgameHamza_cam1", CINEMATIC_AIM_TO_ID, PlfID, 15, 0, 0 )
+			Fly("startgameHamza_cam2", CINEMATIC_AIM_TO_ID, PlfID, 6, 0, 0 )
+			Fly("startgameHamza_cam3", CINEMATIC_AIM_TO_ID, PlfID, 13.5, 0, 0 )
+			Fly("startgameHamza_bez", CINEMATIC_NO_AIM, 0, 7, 0, 0 )
 			Fly("stgameHamza_final", CINEMATIC_AIM_TO_ID, BezID, 4, 0, 1 )
 
             StartCinematic()
 
 			local PCar = GetPlayerVehicle()
 			if PCar then
-			    PCar:LimitMaxSpeed(16)
+			    PCar:LimitMaxSpeed(13.4)
 				PCar:SetCustomControlEnabled( true ) 
 			    PCar:SetExternalPathByName("XamzaStartGame_1")
 				PCar:SetThrottle( 1 )    
@@ -1200,8 +1200,8 @@
 			local MCar = GetEntityByName("MansurCar")
 			local MCarID = MCar:GetId()
 
-            FlyLinked( "afterbattleHamza_cam1", nil, 98, 1, 0, PlfID ) 
-			FlyLinked( "afterbattleHamza_cam3", nil, 35, 0, 0, PlfID )
+            FlyLinked( "afterbattleHamza_cam1", nil, 110, 1, 0, PlfID ) 
+			FlyLinked( "afterbattleHamza_cam3", nil, 37, 0, 0, PlfID )
 			FlyLinked( "afterbattleHamza_cam4", nil, 6, 0, 1, MCarID )  
 
 			StartCinematic()
@@ -1223,7 +1223,7 @@
 
 		    local mancar = GetEntityByName("MansurCar")
 			if mancar then
-				mancar:SetCruisingSpeed(13)
+				mancar:SetCruisingSpeed(11.5)
 				mancar:SetExternalPathByName("MansurStartGame_2")
 				mancar:SetThrottle( 1 )
 				mancar:SetCustomLinearVelocity( 20 ) 
@@ -1231,7 +1231,7 @@
 
 			local PCar = GetPlayerVehicle()
 			if PCar then
-				PCar:LimitMaxSpeed(13)
+				PCar:LimitMaxSpeed(11.5)
 				PCar:SetCustomControlEnabled( true ) 
 				PCar:SetExternalPathByName("HamzarStartGame_2")
 				PCar:SetThrottle( 1 )                      
@@ -1586,9 +1586,9 @@
 			DzhaVeh:SetRotation(Quaternion(0.001, 0.884, -0.005, -0.467))
 		end
 
-		Fly("AfterGadadDefend_cam01", CINEMATIC_NO_AIM, 0, 34, 1, 0 )
-		Fly("AfterGadadDefend_cam02", CINEMATIC_NO_AIM, 0, 40, 0, 0 )
-		Fly("AfterGadadDefend_cam03", CINEMATIC_AIM_TO_ID, PlfID, 31, 0, 1 )
+		Fly("AfterGadadDefend_cam01", CINEMATIC_NO_AIM, 0, 43, 1, 0 )
+		Fly("AfterGadadDefend_cam02", CINEMATIC_NO_AIM, 0, 41, 0, 0 )
+		Fly("AfterGadadDefend_cam03", CINEMATIC_AIM_TO_ID, PlfID, 34, 0, 1 )
 
 		StartCinematic()
 
@@ -1712,10 +1712,10 @@
 		local Plf = GetPlayerVehicle()
         local PlfID = GetPlayerVehicleId()
 
-		Fly("MansurSeeRob_cam01", CINEMATIC_AIM_TO_ID, RobVehID, 5, 1, 0 )
-		Fly("MansurSeeRob_cam02", CINEMATIC_AIM_TO_ID, RobVehID, 6, 0, 0 )
+		Fly("MansurSeeRob_cam01", CINEMATIC_AIM_TO_ID, RobVehID, 6, 1, 0 )
+		Fly("MansurSeeRob_cam02", CINEMATIC_AIM_TO_ID, RobVehID, 7, 0, 0 )
 		Fly("MansurSeeRob_cam03", CINEMATIC_AIM_TO_ID, RobVehID, 11, 0, 0 )
-		Fly("MansurSeeRob_cam04", CINEMATIC_AIM_TO_ID, PlfID, 26.5, 0, 1 )
+		Fly("MansurSeeRob_cam04", CINEMATIC_AIM_TO_ID, PlfID, 34, 0, 1 )
 
 		StartCinematic()
 
@@ -1831,7 +1831,7 @@
 				veh:SetExternalPathByName("molokovozStartPath")
 			end
 
-			Fly("molokovozExit", CINEMATIC_NO_AIM, nil, 10, 1,1)
+			Fly("molokovozExit", CINEMATIC_NO_AIM, nil, 7, 1,1)
 			StartCinematic()
 
 			trigger:Deactivate()
@@ -1921,7 +1921,7 @@
 			TActivate("HamzaReachOil_cs_fly")
 			TActivate("HamzaReachOil_cs_end")
 
-			Fly("OilPath1", CINEMATIC_AIM_TO_ID, PCarID, 6, 1, 0)
+			Fly("OilPath1", CINEMATIC_AIM_TO_ID, PCarID, 6.5, 1, 0)
 			Fly("OilPath2", CINEMATIC_AIM_TO_ID, PCarID, 4, 0, 1)
 			StartCinematic()
 
@@ -2179,7 +2179,7 @@
 				PVeh:SetCustomLinearVelocity( 0 )
 			end
 
-			Fly("mswp_cam", CINEMATIC_NO_AIM, nil, 101, 1, 0)
+			Fly("mswp_cam", CINEMATIC_NO_AIM, nil, 110, 1, 0)
 			Fly("mswp_cam01", CINEMATIC_NO_AIM, nil, 37, 0, 1)
 			StartCinematic()
 
@@ -2196,7 +2196,21 @@
 	<trigger	Name="MansurSpeakWithParents_cs_fade"	active="0">
 		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
 		<script>
-			CinematicMessageMSWP()
+			AddCinematicMessage( 120, 0.5 )
+			AddCinematicMessage( 121, 0.2 )
+			AddCinematicMessage( 122, 0.2 )
+			AddCinematicMessage( 123, 0.2 )
+			AddCinematicMessage( 124, 0.2 )
+			AddCinematicMessage( 125, 0.2 )
+			AddCinematicMessage( 126, 0.2 )
+			AddCinematicMessage( 127, 0.2 )
+			AddCinematicMessage( 128, 0.2 )
+			AddCinematicMessage( 129, 0.2 )
+			AddCinematicMessage( 130, 0.2 )
+			AddCinematicMessage( 131, 0.2 )
+			AddCinematicMessage( 132, 0.2 )
+			AddCinematicMessage( 133, 0.2 )
+			AddCinematicMessage( 134, 0.2 )
 
 			trigger:Deactivate()
 		</script>
@@ -2205,7 +2219,12 @@
 	<trigger Name="MansurSpeakWithParents_cs_cam01" active="0">
 		<event flypath="mswp_cam01" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
-			CinematicMessageMSWPCam01()
+			AddCinematicMessage( 135, 0.2 )
+			AddCinematicMessage( 136, 0.2 )
+			AddCinematicMessage( 137, 0.2 )
+			AddCinematicMessage( 138, 0.2 )
+			AddCinematicMessage( 139, 0.2 )
+			AddCinematicMessage( 140, 0.2 )
 
 			trigger:Deactivate()
 		</script>
@@ -2298,24 +2317,11 @@
 				aivanjrgod:setGodMode(1)
 			end
 
-			local vehA0 = getObj("BuharaAttack_vehicle_0")
-			if vehA0 then
-				vehA0:setGodMode(1)
-			end
-
-			local vehA1 = getObj("BuharaAttack_vehicle_1")
-			if vehA1 then
-				vehA1:setGodMode(1)
-			end
-
-			local vehA2 = getObj("BuharaAttack_vehicle_2")
-			if vehA2 then
-				vehA2:setGodMode(1)
-			end
-
-			local vehA3 = getObj("BuharaAttack_vehicle_3")
-			if vehA3 then
-				vehA3:setGodMode(1)
+			for i=0,3 do
+				local vehA = getObj("BuharaAttack_vehicle_"..i)
+				if vehA then
+					vehA:setGodMode(1)
+				end
 			end
 
 			SetTolerance(1100,1025, RS_ENEMY)
@@ -2379,24 +2385,11 @@
 				aivanjrgod:setGodMode(0)
 			end
 
-			local vehA0 = getObj("BuharaAttack_vehicle_0")
-			if vehA0 then
-				vehA0:setGodMode(0)
-			end
-
-			local vehA1 = getObj("BuharaAttack_vehicle_1")
-			if vehA1 then
-				vehA1:setGodMode(0)
-			end
-
-			local vehA2 = getObj("BuharaAttack_vehicle_2")
-			if vehA2 then
-				vehA2:setGodMode(0)
-			end
-
-			local vehA3 = getObj("BuharaAttack_vehicle_3")
-			if vehA3 then
-				vehA3:setGodMode(0)
+			for i=0,3 do
+				local vehA = getObj("BuharaAttack_vehicle_"..i)
+				if vehA then
+					vehA:setGodMode(0)
+				end
 			end
 
 			TActivate("AivanJrDies")
@@ -2985,8 +2978,6 @@
 
 			AddCinematicMessage(7770+winnum, 0.2)
 
---			TActivate("BettingCheck")
-
         	trigger:Deactivate()
 		</script>
 	</trigger>
@@ -3057,12 +3048,12 @@
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
 			Fly("madmaninvasion_cam01", CINEMATIC_NO_AIM, nil, 13, 0,0)
-			Fly("madmaninvasion_cam01_1", CINEMATIC_NO_AIM, nil, 4, 0,0)
+			Fly("madmaninvasion_cam01_1", CINEMATIC_NO_AIM, nil, 5, 0,0)
 			Fly("madmaninvasion_cam02", CINEMATIC_NO_AIM, nil, 5, 0,0)
 			Fly("madmaninvasion_cam03", CINEMATIC_NO_AIM, nil, 5, 0,0)
 			Fly("madmaninvasion_cam04", CINEMATIC_NO_AIM, nil, 5, 0,0)
-			Fly("madmaninvasion_cam05", CINEMATIC_NO_AIM, nil, 5, 0,0)
-			Fly("madmaninvasion_cam06", CINEMATIC_NO_AIM, nil, 24, 0,1)
+			Fly("madmaninvasion_cam05", CINEMATIC_NO_AIM, nil, 6, 0,0)
+			Fly("madmaninvasion_cam06", CINEMATIC_NO_AIM, nil, 25, 0,1)
 
 			StartCinematic()
 
@@ -3351,7 +3342,7 @@
 		<script>
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			Fly("madmaninvasion_cam04", CINEMATIC_NO_AIM, nil, 12, 1,1)
+			Fly("madmaninvasion_cam04", CINEMATIC_NO_AIM, nil, 16, 1,1)
 
 			StartCinematic()
 
@@ -3389,7 +3380,7 @@
 		<script>
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			Fly("DestroyGadad_cam", CINEMATIC_NO_AIM, nil, 12, 1,1)
+			Fly("DestroyGadad_cam", CINEMATIC_NO_AIM, nil, 14, 1,1)
 
 			StartCinematic()
 
@@ -3486,7 +3477,7 @@
 		<script>
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			Fly("DestroyKef_cam", CINEMATIC_NO_AIM, nil, 12, 1,1)
+			Fly("DestroyKef_cam", CINEMATIC_NO_AIM, nil, 15, 1,1)
 
 			StartCinematic()
 
@@ -3524,8 +3515,8 @@
 		<script>
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			Fly("KefDefended_cam", CINEMATIC_NO_AIM, nil, 16, 1,0)
-			Fly("KefDefended_cam02", CINEMATIC_NO_AIM, nil, 19, 0,1)
+			Fly("KefDefended_cam", CINEMATIC_NO_AIM, nil, 18, 1,0)
+			Fly("KefDefended_cam02", CINEMATIC_NO_AIM, nil, 22, 0,1)
 
 			StartCinematic()
 
@@ -3683,7 +3674,7 @@
 		<script>
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			Fly("madmaninvasion_cam02", CINEMATIC_NO_AIM, nil, 14, 1,1)
+			Fly("madmaninvasion_cam02", CINEMATIC_NO_AIM, nil, 17, 1,1)
 
 			StartCinematic()
 
@@ -3719,9 +3710,9 @@
 	<trigger Name="NGDefended_cs_start" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			SaveAllToleranceStatus()
+			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			Fly("MadmanDefeated_cam", CINEMATIC_NO_AIM, nil, 125, 1,1)
+			Fly("MadmanDefeated_cam", CINEMATIC_NO_AIM, nil, 126, 1,1)
 			StartCinematic()
 
 			local S1 = CreateVehicleEx("Cruiser01","Scient0",CVector(6403.864, 272.048, 3587.096), 1061)
@@ -4100,6 +4091,7 @@
 			AddCinematicMessage(77770, 0)
 			AddCinematicMessage(77772, 0.5)
 			AddCinematicMessage(77773, 0.5)
+			AddCinematicMessage(777731, 0.5)
 			AddCinematicMessage(77774, 0.5)
 			AddCinematicMessage(77775, 0.5)
 			AddCinematicMessage(77776, 0.5)
