@@ -1641,8 +1641,8 @@
 		name="Dlg_pl_001350"
 		text="Разумеется."
 		role="PLAYER"
-		scriptCondition="GetPlayerMoney() > 5000"
-		scriptResult="AddPlayerMoney(-5000)"
+		scriptCondition="GetPlayerMoney() > 2500"
+		scriptResult="AddPlayerMoney(-2500)"
 		nextReplies="Dlg_npc_001351" />
 
 	<Reply
