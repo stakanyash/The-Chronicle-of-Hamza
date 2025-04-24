@@ -805,7 +805,7 @@
 		name="Dlg_pl_002138"
 		text="Ладно, поехали к этому Оракулу."
 		role="PLAYER"
-		scriptResult="CompleteQuest('blocktaken_quest'); TakeQuest('GoToOracle_quest'); TActivate('MA_Rem_DD'); TActivate('A_C_GTO'); EndConversation()" />
+		scriptResult="CompleteQuest('blockleaved_quest'); TakeQuest('GoToOracle_quest'); TActivate('MA_Rem_DD'); TActivate('A_C_GTO'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека/Первая часть-->
 	<Reply
 		name="Dlg_npc_001588"
@@ -4697,6 +4697,7 @@
 		name="Dlg_npc_001548"
 		text="Хамза, это похоже джасусы какие-то! Среди них нет ни одного знакомого лица!"
 		role="NPC"
+		scriptCondition="QuestStatus('GoToBuharaAgain_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001549" />
 
 	<Reply
