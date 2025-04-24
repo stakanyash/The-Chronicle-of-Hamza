@@ -4170,7 +4170,10 @@
 		<script>
 			RestoreAllToleranceStatus()
 
-			ShowDeathMenu()
+			local b = SpawnMessageBox("8911")
+			if b == 1 then
+				ShowDeathMenu()
+			end
 
 			trigger:Deactivate()
 		</script>

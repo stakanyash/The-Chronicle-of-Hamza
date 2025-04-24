@@ -364,7 +364,6 @@
 			end
 
 			TDeactivate("CreateMadMansOnBase")
-			TDeactivate("AivenDiesOnBaseAttack")
 
 			trigger:Deactivate()
 		</script>
@@ -382,8 +381,6 @@
 			if A1 then
 				A1:Remove()
 			end
-
-			TDeactivate("AivenDiesOnBaseAttack")
 
 			TeamCreate("AivenCarZRS", 1095, CVector(3316.547, 256.854, 1949.939), {"BelazShot1"}, nil, nil, Quaternion(-0.001, -0.931, 0.004, 0.365))
 

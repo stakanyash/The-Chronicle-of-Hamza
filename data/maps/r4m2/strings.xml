@@ -540,16 +540,21 @@
 		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
 		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
 		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
-		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Ðàçðàáîòêà| | |@ffffffffÍèêèòà «ñòàêàí» Êàøëåâ||@ffffa600ñþæåò, êâåñòû, ñêðèïòû, 3D ìîäåëèðîâàíèå| | |@ffffffffÑåðàôèì «Varisane» Øàãèí||@ffffa600òåêñòîâûå ïðàâêè, ïîìîùü â ðàçðàáîòêå| | |@ffffffffÊàðåí Ãåâîíäÿí||@ffffa600òåêñòîâûå ïðàâêè| | |@ffffffffÅâãåíèé «E Jet» Êîë÷èí||@ffffa600ïîìîùü â ðàçðàáîòêå| | |@ffffffffÃåîðãèé «Ýìåð» Æóêîâ||@ffffa600îçâó÷êà ðàññêàç÷èêà| | |@ffffffffÈâàí «Carsen» Áóðÿøêèí||@ffffa600ïîìîùü â ðàçðàáîòêå| | | |@ffffa600Òåñòèðîâàíèå| | |@ffffffffÑåðàôèì «Varisane» Øàãèí||@ffffffffÅâãåíèé «E Jet» Êîë÷èí||@ffffffffÀëåêñåé «__nEmPoBu4__» Ñìèðíîâ| | | |@ffffa600Çàèìñòâîâàíèÿ||@ffffffffÏîëíîðàçìåðíàÿ ìîäåëü Ñåðãî||@ffffa600Àâòîð:|@ffffffffÌàêñèì «Spok» Áåðäíèêîâ| | |@ffffffffÝôôåêòû óõóäøàþùåãîñÿ ñîñòîÿíèÿ âçÿòû èç|@ffffffffìîäèôèêàöèè @ffffa600«possesed»||@ffffa600Àâòîðû:|@ffffffffÀëåêñåé «__nEmPoBu4__» Ñìèðíîâ|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffÑëàéäû â êîíöîâêàõ âçÿòû èç|@ffffffffìîäèôèêàöèè @ffffa600«Improved Storyline»||@ffffa600Àâòîð:|@ffffffffÏàâåë «pavlikRPG» Èâàíîâ| | |@ffffa600Ìóçûêà â òèòðàõ||@ffffffffEx Machina OST - Passage04 (AI extended)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)| | |@ffffa600Îãðîìíàÿ @ffffffffáëàãîäàðíîñòü ñîîáùåñòâó @ffffa600Deus Ex Machina|@ffffffffçà îêàçàííóþ ïîìîùü ïðè ðàçðàáîòêå| | |@ffffa600Ñïàñèáî çà èãðó!"
+		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Ðàçðàáîòêà| | |@ffffffffÍèêèòà «ñòàêàí» Êàøëåâ||@ffffa600ñþæåò, êâåñòû, ñêðèïòû, 3D ìîäåëèðîâàíèå| | |@ffffffffÑåðàôèì «Varisane» Øàãèí||@ffffa600òåêñòîâûå ïðàâêè, ñêðèïòû, ñþæåò| | |@ffffffffÊàðåí Ãåâîíäÿí||@ffffa600òåêñòîâûå ïðàâêè, ñþæåò| | |@ffffffffÅâãåíèé «E Jet» Êîë÷èí||@ffffa600ïîìîùü â ðàçðàáîòêå| | |@ffffffffÃåîðãèé «Ýìåð» Æóêîâ||@ffffa600îçâó÷êà ðàññêàç÷èêà| | |@ffffffffÈâàí «Carsen» Áóðÿøêèí||@ffffa600ïîìîùü â ðàçðàáîòêå| | | |@ffffa600Òåñòèðîâàíèå| | |@ffffffffÑåðàôèì «Varisane» Øàãèí||@ffffffffÅâãåíèé «E Jet» Êîë÷èí||@ffffffffÀëåêñåé «__nEmPoBu4__» Ñìèðíîâ||@ffffffffÈâàí «Carsen» Áóðÿøêèí| | | |@ffffa600Çàèìñòâîâàíèÿ||@ffffffffÏîëíîðàçìåðíàÿ ìîäåëü Ñåðãî||@ffffa600Àâòîð:|@ffffffffÌàêñèì «Spok» Áåðäíèêîâ| | |@ffffffffÝôôåêòû óõóäøàþùåãîñÿ ñîñòîÿíèÿ âçÿòû èç|@ffffffffìîäèôèêàöèè @ffffa600«possesed»||@ffffa600Àâòîðû:|@ffffffffÀëåêñåé «__nEmPoBu4__» Ñìèðíîâ|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffÑëàéäû â êîíöîâêàõ âçÿòû èç|@ffffffffìîäèôèêàöèè @ffffa600«Improved Storyline»||@ffffa600Àâòîð:|@ffffffffÏàâåë «pavlikRPG» Èâàíîâ| | |@ffffa600Ìóçûêà â òèòðàõ||@ffffffffEx Machina OST - Passage04 (AI extended)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)| | |@ffffa600Îãðîìíàÿ @ffffffffáëàãîäàðíîñòü ñîîáùåñòâàì @ffffa600Deus Ex Machina|@ffffffffè @ffFF0000EM2Ch @ffffffffçà îêàçàííóþ ïîìîùü ïðè ðàçðàáîòêå| | |@ffffa600Ñïàñèáî çà èãðó!"
 		sound=""
 		fontSize="20"
 		scrollSpeed="2.0"
-		time="54" />
+		time="58" />
 
 	<string
 		id="8801"
 		value="Âû æåëàåòå ïîêèíóòü ýòó îáëàñòü?"
 		numButtons="2" />
+
+	<string
+		id="8911"
+		value="Îáðàòèòå âíèìàíèå!||Íàñòðîéêè ãðîìêîñòè áûëè èçìåíåíû! Åñëè íåîáõîäèìî - ïðîâåðüòå íàñòðîéêè ãðîìêîñòè â ãëàâíîì ìåíþ èãðû." 
+		numButtons="1"/>
 
 	<string
 		id="8802"
