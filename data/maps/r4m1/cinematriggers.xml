@@ -1531,7 +1531,6 @@
         
         SetCameraBehindPlayerVehicle()
 
-		TActivate("AlfaHaraAllyforBattle")
 		TActivate("AfterGadadDefendRolik_Start")
 		TActivate("MansurCar_DieOnGadadDefend")
 
@@ -1648,8 +1647,6 @@
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
 		RestoreAllToleranceStatus()
-
-		TActivate("AlfaHaraBackToNorRel")
 
 		local MVeh = getObj("MansurCar1")
 		if MVeh then

@@ -141,8 +141,8 @@
 		<event	eventid="GE_OBJECT_LEAVES_LOCATION"	ObjName="NearAliham_loc" />
 		<event	eventid="GE_OBJECT_LEAVES_LOCATION"	ObjName="NearZuhel_loc" />
 		<script>
-		    SetTolerance(1100, 1023,RS_NEUTRAL)
-		    SetTolerance(1042, 1023,RS_NEUTRAL)
+		    SetTolerance(1100, 1023,RS_ALLY)
+		    SetTolerance(1042, 1023,RS_ALLY)
 
 --			trigger:Deactivate()
 		</script>
@@ -1780,25 +1780,6 @@
 			TDeactivate("trSetTolEnemy")
 
 			SetTolerance(1100, 1023,RS_ALLY)
-		    SetTolerance(1100, 1025,RS_ALLY)
-			SetTolerance(1090, 1023,RS_ALLY)
-		    SetTolerance(1090, 1025,RS_ALLY)
-			SetTolerance(1091, 1023,RS_ALLY)
-		    SetTolerance(1091, 1025,RS_ALLY)
-			SetTolerance(1092, 1023,RS_ALLY)
-		    SetTolerance(1092, 1025,RS_ALLY)
-
-			trigger:Deactivate() 
-		</script>
-	</trigger>
-
-	<trigger Name="AlfaHaraBackToNorRel" active="0">
-		<event timeout="1" eventid="GE_TIME_PERIOD" />
-		<script>
-            TActivate("trSetTolNeutral")
-			TActivate("trSetTolEnemy")
-
-			SetTolerance(1100, 1023,RS_NEUTRAL)
 		    SetTolerance(1100, 1025,RS_ALLY)
 			SetTolerance(1090, 1023,RS_ALLY)
 		    SetTolerance(1090, 1025,RS_ALLY)
