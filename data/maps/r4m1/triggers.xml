@@ -1953,11 +1953,11 @@
 			SetTolerance(1090, 1025, RS_NEUTRAL)
 			SetTolerance(1090, 1060, RS_NEUTRAL)
 
-            TeamCreate("MansurHamzaCar", 1090, CVector(6907.314, 302.515, 5295.529), {"UralDadHamza"}, nil, nil, Quaternion(0.009, 0.988, 0.009, 0.155))
+            TeamCreate("MansurHamzaCar", 1090, CVector(6907.314, 302.515, 5295.529), {"MirotvorecDefender"}, nil, nil, Quaternion(0.009, 0.988, 0.009, 0.155))
 
 			local vehMansur = getObj("MansurHamzaCar_vehicle_0")
 			if vehMansur then
-				vehMansur:SetSkin(7)
+				vehMansur:SetRandomSkin()
 				vehMansur:setImmortalMode(1)
 
 				local newControllerId = CreateNewObject {
@@ -3369,27 +3369,6 @@
 		</script>
 	</trigger>
 
-	<trigger Name="AM_Move_after_DD" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-			if QuestStatus("blocktaken_quest")==Q_TAKEN or QuestStatus("blockleaved_quest")==Q_TAKEN then
-				local Alf = getObj("AivenCarDD_vehicle_0")
-				if Alf then
-					Alf:SetGamePositionOnGround(CVector(3167.120, 272.174, 7456.269))
-					Alf:SetRotation(Quaternion(0.019, 0.846, -0.030, 0.533))
-				end
-
-				local Mlf = getObj("MansurCarDD_vehicle_0")
-				if Mlf then
-					Mlf:SetGamePositionOnGround(CVector(3152.506, 273.339, 7445.637))
-					Mlf:SetRotation(Quaternion(0.020, 0.939, -0.017, 0.344))
-				end
-
-				trigger:Deactivate()
-			end
-		</script>
-	</trigger>
-
 	-- TCoH: Go To Oracle --
 
 	<trigger Name="MA_Rem_DD" active="0">
@@ -3439,9 +3418,31 @@
 		<script>
 			if GL_PassToMap == true then
 			   AddSaleItems()
+				if QuestStatus("blocktaken_quest")==Q_TAKEN or QuestStatus("blockleaved_quest")==Q_TAKEN then
+					local Alf = getObj("AivenCarDD_vehicle_0")
+					if Alf then
+						Alf:SetGamePositionOnGround(CVector(3167.120, 272.174, 7456.269))
+						Alf:SetRotation(Quaternion(0.019, 0.846, -0.030, 0.533))
+					end
+
+					local Mlf = getObj("MansurCarDD_vehicle_0")
+					if Mlf then
+						Mlf:SetGamePositionOnGround(CVector(3152.506, 273.339, 7445.637))
+						Mlf:SetRotation(Quaternion(0.020, 0.939, -0.017, 0.344))
+					end
+				end				
 			   println("Map change detected! Sale items added.")
 			   GL_PassToMap = false
+
+			   GetPlayerVehicle():SetCustomControlEnabled(false)
 			end
+		</script>
+	</trigger>
+
+	<trigger	Name="RaceClosedMsg"	active="1">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="StartGonka_loc" />
+		<script>
+			SpawnMessageBox("8912")
 		</script>
 	</trigger>
 </triggers>

@@ -173,6 +173,7 @@
 					if b == 1 then
 						PassToMap("r4m1", "FromR4M0", -1 )
 						GL_PassToMap = true
+						GetPlayerVehicle():SetCustomControlEnabled( true )
 					else
 						Pl:SetGamePositionOnGround(CVector(getPos("FromR4M1")))
 						Pl:SetRotation(Quaternion(-0.081, -0.019, -0.007, -0.997))

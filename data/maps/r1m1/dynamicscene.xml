@@ -41,25 +41,6 @@
 
 	<Object
 		Flags="21"
-		Name="BotanicHouse"
-		Belong="1100"
-		Prototype="genericLocation"
-		Pos="2141.081 361.055 2742.875"
-		Radius="20.000"
-		LookingTimeOut="15.000">
-		<Object
-			Name="Botanik"
-			Belong="1100"
-			Prototype="NPC"
-			ModelName="r1_man"
-			skin="2"
-			cfg="23"
-			helloReplyNames="Botanik_hellodlg0 Botanik_hellodlg1"
-			SpokenCount="0" />
-	</Object>
-
-	<Object
-		Flags="21"
 		Name="LisaRolik_loc"
 		Belong="1100"
 		Prototype="genericLocation"
@@ -274,35 +255,6 @@
 				cfg="44"
 				helloReplyNames="Dynamic00"
 				NpcType="BARMAN"
-				SpokenCount="0" />
-
-			<Object
-				Name="Buyer"
-				Belong="1008"
-				Prototype="NPC"
-				ModelName="r4_man"
-				skin="1"
-				cfg="111"
-				helloReplyNames="Buyer_hellodlg0 Buyer_hellodlg1"
-				SpokenCount="0" />
-
-			<Object
-				Name="WorkGiver"
-				Belong="1008"
-				Prototype="NPC"
-				ModelName="r1_man"
-				skin="2"
-				cfg="92"
-				helloReplyNames="WorkGiver_hellodlg0 WorkGiver_hellodlg1"
-				SpokenCount="0" />
-
-			<Object
-				Name="HurdTrucker"
-				Belong="1008"
-				Prototype="NPC"
-				ModelName="r2_man"
-				cfg="42"
-				helloReplyNames="HurdTrucker_hellodlg0 HurdTrucker_hellodlg1 HurdTrucker_hellodlg2"
 				SpokenCount="0" />
 		</Object>
 
@@ -885,25 +837,6 @@
 				helloReplyNames="Dynamic00"
 				NpcType="BARMAN"
 				SpokenCount="0" />
-
-			<Object
-				Name="Medik"
-				Belong="1008"
-				Prototype="NPC"
-				ModelName="r1_man"
-				cfg="92"
-				helloReplyNames="Medik_hellodlg0"
-				SpokenCount="0" />
-
-			<Object
-				Name="HaveBigBoom"
-				Belong="1008"
-				Prototype="NPC"
-				ModelName="r2_man"
-				skin="1"
-				cfg="158"
-				helloReplyNames="HaveBigBoom_hellodlg0"
-				SpokenCount="0" />
 		</Object>
 
 		<Object
@@ -1019,16 +952,6 @@
 				helloReplyNames="Dynamic00"
 				NpcType="BARMAN"
 				SpokenCount="0" />
-
-			<Object
-				Name="Oldsolder"
-				Belong="1008"
-				Prototype="NPC"
-				ModelName="r1_man"
-				skin="2"
-				cfg="68"
-				helloReplyNames="Oldsolder_hellodlg0 Oldsolder_hellodlg1 Oldsolder_hellodlg2 Oldsolder_hellodlg3 Oldsolder_hellodlg4"
-				SpokenCount="0" />
 		</Object>
 
 		<Object
@@ -1117,15 +1040,6 @@
 				cfg="44"
 				helloReplyNames="Dynamic00"
 				NpcType="BARMAN"
-				SpokenCount="0" />
-
-			<Object
-				Name="CS"
-				Belong="1008"
-				Prototype="NPC"
-				ModelName="r1_man"
-				cfg="70"
-				helloReplyNames="CS_hellodlg0"
 				SpokenCount="0" />
 		</Object>
 

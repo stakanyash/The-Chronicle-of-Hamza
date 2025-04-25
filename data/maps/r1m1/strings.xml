@@ -545,17 +545,17 @@
 
 	<string
 		id="8802"
-		modelName="mask_hero"
-		sound="data\sounds\Speech\r3m1\r3m1_8802_hero.ogg"
+		modelName=""
+		sound=""
 		value="Я не знаю, куда ведёт эта дорога, поэтому останусь здесь."
 		time="5" />
 
 	<string
 		id="8803"
-		modelName="mask_hero"
-		sound="data\sounds\Speech\r3m1\r3m1_8803_hero.ogg"
+		modelName=""
+		sound=""
 		value="Какое-то странное место. Лучше держаться отсюда подальше."
-		time="3" />
+		time="5" />
 
 	<!-- First narrator's text for ComPatch -->
 	<string
