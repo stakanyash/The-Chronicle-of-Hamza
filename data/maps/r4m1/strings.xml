@@ -1975,15 +1975,15 @@
 
 	<string
 		id="8802"
-		modelName="mask_hero"
-		sound="data\sounds\Speech\r3m1\r3m1_8802_hero.ogg"
-		value="Я не знаю, куда ведёт эта дорога, поэтому останусь здесь."
+		modelName=""
+		sound=""
+		value="Мне пока незачем туда соваться, поэтому останусь здесь."
 		time="5" />
 
 	<string
 		id="8803"
-		modelName="mask_hero"
-		sound="data\sounds\Speech\r3m1\r3m1_8803_hero.ogg"
+		modelName=""
+		sound=""
 		value="Что-то там непонятное. Не буду туда соваться." />
 
 	<string
@@ -2038,6 +2038,11 @@
 	<string
 		id="8911"
 		value="Обратите внимание!||Настройки громкости были изменены! Если необходимо - проверьте настройки громкости в главном меню игры." 
+		numButtons="1"/>
+
+	<string
+		id="8912"
+		value="Сегодня гонок нет! Попробуйте вернутся позднее." 
 		numButtons="1"/>
 
     <string

@@ -1012,22 +1012,22 @@ $Id: Infection.xml,v 1.48 2005/11/28 07:43:57 anton Exp $
 		partOfSchwartzForGuns 			= "0.54"
 		partOfSchwartzForWares 			= "0.20" >
 		<Description 
-			VehiclesPrototypes	="DozerEnemySpawn CruiserEnemySpawn"		
+			VehiclesPrototypes	="UralForSale HunterEnemySpawn"		
 			WaresPrototypes="electronics book"
 			GunAffixGeneratorPrototype="townaffixGenerator"
 			PartOfSchwartz="0.35" />
 		<Description 
-			VehiclesPrototypes	="CruiserEnemySpawn HunterEnemySpawn" 	
+			VehiclesPrototypes	="BelazForSale HunterEnemySpawn" 	
 			WaresPrototypes="electronics book"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
-			VehiclesPrototypes	="ScoutEnemySpawn HunterEnemySpawn DozerEnemySpawn" 	
+			VehiclesPrototypes	="ScoutEnemySpawn HunterEnemySpawn BelazForSale" 	
 			WaresPrototypes="electronics book"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
-			VehiclesPrototypes	="ScoutEnemySpawn HunterEnemySpawn CruiserEnemySpawn" 	
+			VehiclesPrototypes	="ScoutEnemySpawn HunterEnemySpawn UralForSale" 	
 			WaresPrototypes="electronics book"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
@@ -1076,7 +1076,7 @@ $Id: Infection.xml,v 1.48 2005/11/28 07:43:57 anton Exp $
 			GunAffixGeneratorPrototype="townaffixGenerator"
 			PartOfSchwartz="0.35" />
 		<Description 
-			VehiclesPrototypes	="HunterEnemySpawn CruiserEnemySpawn" 	
+			VehiclesPrototypes	="HunterEnemySpawn UralForSale" 	
 			WaresPrototypes="electronics book"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
@@ -1122,7 +1122,7 @@ $Id: Infection.xml,v 1.48 2005/11/28 07:43:57 anton Exp $
 		partOfSchwartzForGuns 			= "0.54"
 		partOfSchwartzForWares 			= "0.20" >
 		<Description 
-			VehiclesPrototypes	="FighterEnemySpawn CruiserEnemySpawn"		
+			VehiclesPrototypes	="FighterEnemySpawn UralForSale"		
 			WaresPrototypes="electronics book"
 			GunAffixGeneratorPrototype="townaffixGenerator"
 			PartOfSchwartz="0.35" />

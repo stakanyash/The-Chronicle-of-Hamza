@@ -2809,8 +2809,6 @@
 		<script>
 			TActivate("GadadDefended_cs_start")	
 
-			SetTolerance(1023,1100,RS_NEUTRAL)
-
 			trigger:Deactivate()
 		</script>
 	</trigger>

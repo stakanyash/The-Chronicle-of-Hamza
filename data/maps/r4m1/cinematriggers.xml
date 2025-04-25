@@ -1876,8 +1876,7 @@
 
 			local explayercar = getObj("OilHamzaCar")
 			if explayercar then
-				explayercar:SetGamePositionOnGround(CVector(7089.932, 321.672, 1223.257))
-				explayercar:SetRotation(Quaternion(0.001, 0.418, 0.000, -0.908))
+				explayercar:setGodMode(1)
 			end
 
 			TActivate("trHamzaOiler")
@@ -2436,8 +2435,8 @@
 
 			local veh1 = getObj("Buhara_0")
 			if veh1 then
-				veh1:SetGamePositionOnGround(CVector(getPos("BuharaEvacuated_cs_Buhara0_loc")))
-				veh1:SetRotation(Quaternion(0.020, 0.672, -0.008, 0.740))
+				veh1:SetGamePositionOnGround(CVector(1460.511, 220.437, 3150.398))
+				veh1:SetRotation(Quaternion(0.015, 0.872, 0.002, 0.489))
 			end
 
 			local veh2 = getObj("Buhara_1")

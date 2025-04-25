@@ -1883,6 +1883,20 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 
 	<Prototype
 		Class			= "Vehicle"
+		Name			= "MirotvorecDefender"
+		ParentPrototype 	= "Mirotvorec">
+		<Parts>
+			<Part id = "CABIN"			Prototype = "mirotvorecCab03" />
+			<Part id = "BASKET" 			Prototype = "mirotvorecCargo03" />
+			<Part id = "CABIN_BIG_GUN_1"		Prototype = "vulcan01" /> 
+			<Part id = "CABIN_BIG_GUN_2"		Prototype = "rainmetal01" /> 
+			<Part id = "BASKET_BIG_GUN_0"		Prototype = "kpvt01" /> 
+			<Part id = "BASKET_GIANT_GUN"		Prototype = "octopus01" /> 
+		</Parts>
+	</Prototype>
+
+	<Prototype
+		Class			= "Vehicle"
 		Name			= "CoolBelaz_2"
 		ParentPrototype		= "Belaz">
 		<Parts>
