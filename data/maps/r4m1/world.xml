@@ -2,7 +2,7 @@
 <World
 	name="Object307"
 	class="SgNode"
-	LastId="76480196">
+	LastId="76480483">
 	<Node
 		name="Object1"
 		class="SgAnimatedModelNode"
@@ -13156,9 +13156,9 @@
 	<Node
 		name="Object5060"
 		class="SgAnimatedModelNode"
-		org="6558.651 2.995 3494.504"
+		org="6558.651 0.895 3494.504"
 		orgRel="1"
-		rot="0.0077 0.7086 -0.0077 0.7056"
+		rot="0.0075 0.7086 0.0075 0.7055"
 		id="oilmine2"
 		ndmAction="0">
 		<Node

@@ -18695,8 +18695,7 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="4306.524 278.999 2032.484"
-		Radius="93.380">
-	</Object>
+		Radius="93.380" />
 
 	<Object
 		Name="lamppost11060"
