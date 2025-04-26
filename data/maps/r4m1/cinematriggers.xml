@@ -2175,8 +2175,8 @@
 				PVeh:SetCustomLinearVelocity( 0 )
 			end
 
-			Fly("mswp_cam", CINEMATIC_NO_AIM, nil, 110, 1, 0)
-			Fly("mswp_cam01", CINEMATIC_NO_AIM, nil, 37, 0, 1)
+			Fly("mswp_cam", CINEMATIC_NO_AIM, nil, 138, 1, 0)
+			Fly("mswp_cam01", CINEMATIC_NO_AIM, nil, 43, 0, 1)
 			StartCinematic()
 
 			TActivate("MansurSpeakWithParents_cs_fade")
@@ -3708,7 +3708,7 @@
 		<script>
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			Fly("MadmanDefeated_cam", CINEMATIC_NO_AIM, nil, 126, 1,1)
+			Fly("MadmanDefeated_cam", CINEMATIC_NO_AIM, nil, 151, 1,1)
 			StartCinematic()
 
 			local S1 = CreateVehicleEx("Cruiser01","Scient0",CVector(6403.864, 272.048, 3587.096), 1061)
