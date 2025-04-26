@@ -1355,6 +1355,10 @@
 			Plf:SetThrottle( 0 )
 			Plf:SetCustomLinearVelocity( 0 )
 
+			local PlfID = GetPlayerVehicleId()
+			local PlfCoor = Plf:GetPosition()
+			PlfCoor.y = PlfCoor.y + 25*0.74
+			PlfCoor.z = PlfCoor.z + 25*0.74
 
 			local b = SpawnMessageBox( "8801" )
 			if b == 1 then
@@ -1365,7 +1369,7 @@
 			else
 				SaveAllToleranceStatus(RS_NEUTRAL)
 
-				FlyAround(1, 0, 25, 2, PlfCoor, PlfID, 1, 1 )
+				FlyAround(1, 0, 25, 5, PlfCoor, PlfID, 1, 1 )
 				StartCinematic()
 
 				TActivate ("RolikExitToMap41")
@@ -1378,8 +1382,11 @@
 		<script>
 			CinemaFiltersUse()
 
-			RotationPlayerByPoints(CVector(getPos("ToR4M0")), CVector(getPos("FromR4M0")))
-			GetPlayerVehicle():SetGamePositionOnGround(CVector(getPos("FromR4M0")))
+			local Plf = GetPlayerVehicle()
+			if Plf then
+				Plf:SetGamePositionOnGround(CVector(getPos("FromR4M0")))
+				Plf:SetRotation(Quaternion(-0.006, -0.041, -0.017, 0.999))
+			end
 
 			trigger:Deactivate()    
 		</script>
@@ -1392,7 +1399,11 @@
 
 			RestoreAllToleranceStatus()
 
-			GetPlayerVehicle():SetGamePositionOnGround(CVector(getPos("FromR4M0")))
+			local Plf = GetPlayerVehicle()
+			if Plf then
+				Plf:SetGamePositionOnGround(CVector(getPos("FromR4M0")))
+				Plf:SetRotation(Quaternion(-0.006, -0.041, -0.017, 0.999))
+			end
 
 			TDeactivate( "RolikExitToMap41" )
 
