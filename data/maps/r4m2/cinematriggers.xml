@@ -307,6 +307,7 @@
 			AddCinematicMessage(77770, 0)
 			AddCinematicMessage(77772, 0.5)
 			AddCinematicMessage(77773, 0.5)
+			AddCinematicMessage(77771, 0.5)
 			AddCinematicMessage(77774, 0.5)
 			AddCinematicMessage(77775, 0.5)
 			AddCinematicMessage(77776, 0.5)

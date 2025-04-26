@@ -465,38 +465,44 @@
 	<string
 		id="77772"
 		value="После активации блокиратора и нейтрализации источника заразы жизнь в Вахате и во всём мире начала постепенно налаживаться. Сила тарелки, которая удерживала возле себя многих людей десятилетиями стала ослабевать. Это послужило началом конца эпохи безумия и началом новой эры надежды и исцеления."
-		sound=""
-		time="10" />
+		sound="data\sounds\Speech\rolik\good_end_1.ogg"
+		time="1" />
 
 	<string
 		id="77773"
 		value="Люди, которые раньше были безумцами, начали возвращаться к нормальной жизни. Их глаза больше не горели безумием, а лица стали спокойными и осмысленными. Те, кто помнил ужасы прошлого, старались забыть о них, как о страшном сне. Бывшие безумцы не помнили, что творили под влиянием безумия, и не хотели вспоминать об этом."
-		sound=""
-		time="10" />
+		sound="data\sounds\Speech\rolik\good_end_2.ogg"
+		time="1" />
+
+	<string
+		id="77771"
+		value="Хамза и Мансур стали настоящими героями в глазах своих соотечественников. Их имена были увековечены в истории, как символы мужества и решимости. Отец Хамзы гордился своим сыном и его другом, зная, что их усилия привели к спасению мира."
+		sound="data\sounds\Speech\rolik\good_end_3.ogg"
+		time="1" />
 
 	<string
 		id="77774"
 		value="Чужеземец, который помог Хамзе и Мансуру в их миссии, также стал легендой. Его имя упоминалось с уважением и благодарностью. Он вернулся в Вахат, чтобы увидеть результаты своих усилий и поделиться радостью с новыми друзьями."
-		sound=""
-		time="10" />
+		sound="data\sounds\Speech\rolik\good_end_4.ogg"
+		time="1" />
 
 	<string
 		id="77775"
 		value="Хамза и Мансур продолжали поддерживать друг друга, помогая другим жителям восстановиться после потрясений. Они знали, что впереди их ждёт много работы, но теперь у них была уверенность, что они смогут преодолеть любые трудности."
-		sound=""
-		time="10" />
+		sound="data\sounds\Speech\rolik\good_end_5.ogg"
+		time="1" />
 
 	<string
 		id="77776"
 		value="Чужеземец, хотя и вернулся в свои родные земли, всегда оставался на связи с Хамзой и Мансуром, поддерживая их и делясь своими знаниями. Его помощь была неоценимой для восстановления мира."
-		sound=""
-		time="10" />
+		sound="data\sounds\Speech\rolik\good_end_6.ogg"
+		time="1" />
 
 	<string
 		id="77777"
 		value="Благодаря мужеству и решимости Хамзы, Мансура и Чужеземца, мир начал исцеляться и процветать. Их имена стали символами надежды и вдохновения для всех, кто верил в лучшее будущее. И хотя путь к полному восстановлению был долгим и трудным, они знали, что вместе смогут преодолеть любые преграды и построить лучшее будущее для всех."
-		sound=""
-		time="10" />
+		sound="data\sounds\Speech\rolik\good_end_7.ogg"
+		time="1" />
 
 	<string
 		id="5968"
@@ -540,7 +546,7 @@
 		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
 		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
 		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
-		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Разработка| | |@ffffffffНикита «стакан» Кашлев||@ffffa600сюжет, квесты, скрипты, 3D моделирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffa600текстовые правки, скрипты, сюжет| | |@ffffffffКарен Гевондян||@ffffa600текстовые правки, сюжет| | |@ffffffffЕвгений «E Jet» Колчин||@ffffa600помощь в разработке| | |@ffffffffГеоргий «Эмер» Жуков||@ffffa600озвучка рассказчика| | |@ffffffffИван «Carsen» Буряшкин||@ffffa600помощь в разработке| | | |@ffffa600Тестирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffffffЕвгений «E Jet» Колчин||@ffffffffАлексей «__nEmPoBu4__» Смирнов||@ffffffffИван «Carsen» Буряшкин| | | |@ffffa600Заимствования||@ffffffffПолноразмерная модель Серго||@ffffa600Автор:|@ffffffffМаксим «Spok» Бердников| | |@ffffffffЭффекты ухудшающегося состояния взяты из|@ffffffffмодификации @ffffa600«possesed»||@ffffa600Авторы:|@ffffffffАлексей «__nEmPoBu4__» Смирнов|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffСлайды в концовках взяты из|@ffffffffмодификации @ffffa600«Improved Storyline»||@ffffa600Автор:|@ffffffffПавел «pavlikRPG» Иванов| | |@ffffa600Музыка в титрах||@ffffffffEx Machina OST - Passage04 (AI extended)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)| | |@ffffa600Огромная @ffffffffблагодарность сообществам @ffffa600Deus Ex Machina|@ffffffffи @ffFF0000EM2ch @ffffffffза оказанную помощь при разработке| | |@ffffa600Спасибо за игру!"
+		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Разработка| | |@ffffffffНикита «стакан» Кашлев||@ffffa600сюжет, квесты, скрипты, 3D моделирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffa600текстовые правки, скрипты, сюжет| | |@ffffffffКарен Гевондян||@ffffa600текстовые правки, сюжет| | |@ffffffffЕвгений «E Jet» Колчин||@ffffa600помощь в разработке| | |@ffffffffГеоргий «Эмер» Жуков||@ffffa600озвучка рассказчика| | |@ffffffffИван «Carsen» Буряшкин||@ffffa600помощь в разработке| | | |@ffffa600Тестирование| | |@ffffffffСерафим «Varisane» Шагин||@ffffffffЕвгений «E Jet» Колчин||@ffffffffАлексей «__nEmPoBu4__» Смирнов||@ffffffffИван «Carsen» Буряшкин| | | |@ffffa600Заимствования||@ffffffffПолноразмерная модель Серго||@ffffa600Автор:|@ffffffffМаксим «Spok» Бердников| | |@ffffffffЭффекты ухудшающегося состояния взяты из|@ffffffffмодификации @ffffa600«possesed»||@ffffa600Авторы:|@ffffffffАлексей «__nEmPoBu4__» Смирнов|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffСлайды в концовках взяты из|@ffffffffмодификации @ffffa600«Improved Storyline»||@ffffa600Автор:|@ffffffffПавел «pavlikRPG» Иванов| | |@ffffa600Музыка в титрах||@ffffffffEx Machina OST - Passage04 (AI extended)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)| | |@ffffa600Огромная @ffffffffблагодарность сообществам @ffffa600Deus Ex Machina|@ffffffffи @ffFF0000EM2Ch @ffffffffза оказанную помощь при разработке| | |@ffffa600Спасибо за игру!"
 		sound=""
 		fontSize="20"
 		scrollSpeed="2.0"
