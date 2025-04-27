@@ -1554,8 +1554,8 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<script>
 			PlayCustomMusic("Passage02")
-			local poslist = {CVector(2610.603, 314.646, 1336.547),CVector(2621.363, 315.150, 1337.481),CVector(2604.174, 314.649, 1320.025),CVector(2597.561, 300,  1296.187), CVector(2589.748, 300, 1296.728)}
-			local rotlist = {Quaternion(-0.001, 0.332, 0.041, 0.942), Quaternion(-0.003, 0.311, 0.020, 0.950), Quaternion(-0.018, 0.185, 0.029, 0.982), Quaternion(-0.020, 0.226, 0.029, 0.974), Quaternion(-0.016, 0.164, 0.052, 0.985)}
+			local poslist = {CVector(2610.603, 314.646, 1336.547),CVector(2621.363, 315.150, 1337.481),CVector(2604.174, 314.649, 1320.025),CVector(2597.561, 300,  1296.187), CVector(2589.748, 300, 1296.728), CVector(2592.176, 315.387, 1273.725)}
+			local rotlist = {Quaternion(-0.001, 0.332, 0.041, 0.942), Quaternion(-0.003, 0.311, 0.020, 0.950), Quaternion(-0.018, 0.185, 0.029, 0.982), Quaternion(-0.020, 0.226, 0.029, 0.974), Quaternion(-0.016, 0.164, 0.052, 0.985), Quaternion(-0.027, 0.339, 0.017, 0.940)}
 			for i=1,4 do
 				local veh = getObj("SciefVeh"..i)
 				if veh then
@@ -1565,12 +1565,21 @@
 					veh:SetCustomLinearVelocity( 45 - 5*(i-1) )
 				end
 			end
+			
+			local PLP = GetPlayerVehicle()
+			if PLP then
+				PLP:SetGamePositionOnGround(poslist[5])
+				PLP:SetRotation(Quaternion(rotlist[5]))
+				PLP:SetExternalPathByName("HelpMens1r_path5")
+				PLP:SetCustomLinearVelocity( 20 )
+			end
 
-			if GetPlayerVehicle() then
-				GetPlayerVehicle():SetGamePositionOnGround(poslist[5])
-				GetPlayerVehicle():SetRotation(Quaternion(rotlist[5]))
-				GetPlayerVehicle():SetExternalPathByName("HelpMens1r_path5")
-				GetPlayerVehicle():SetCustomLinearVelocity( 20 )
+			local AVeh = getObj("AivenStand")
+			if AVeh then
+				AVeh:SetGamePositionOnGround(poslist[6])
+				AVeh:SetRotation(Quaternion(rotlist[6]))
+				AVeh:SetExternalPathByName("HelpMens1r_path5")
+				AVeh:SetCustomLinearVelocity( 20 )
 			end
 
 				
@@ -1585,8 +1594,8 @@
 	<trigger	Name="HelpersArrived_cs_End3"	active="0">
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<script>
-			local poslist = {CVector(2849.065, 307.741, 1467.948),CVector(2844.230, 306.489, 1476.384),CVector(2828.840, 311.286, 1452.682),CVector(2812.726, 314.121, 1426.893), CVector(2807.895, 313.672, 1432.705)}
-			local rotlist = {Quaternion(0.083, 0.281, -0.017, 0.956), Quaternion(0.099, 0.336, 0.012, 0.937), Quaternion(0.052, 0.345, 0.002, 0.937), Quaternion(0.034, 0.339, 0.006, 0.940), Quaternion(0.036, 0.372, 0.018, 0.928)}
+			local poslist = {CVector(2849.065, 307.741, 1467.948),CVector(2844.230, 306.489, 1476.384),CVector(2828.840, 311.286, 1452.682),CVector(2812.726, 314.121, 1426.893), CVector(2807.895, 313.672, 1432.705), CVector(2796.783, 317.970, 1406.814)}
+			local rotlist = {Quaternion(0.083, 0.281, -0.017, 0.956), Quaternion(0.099, 0.336, 0.012, 0.937), Quaternion(0.052, 0.345, 0.002, 0.937), Quaternion(0.034, 0.339, 0.006, 0.940), Quaternion(0.036, 0.372, 0.018, 0.928), Quaternion(0.039, 0.369, 0.000, 0.929)}
 			for i=1,4 do
 				local veh = getObj("SciefVeh"..i)
 				if veh then
@@ -1597,11 +1606,20 @@
 				end
 			end
 
-			if GetPlayerVehicle() then
-				GetPlayerVehicle():SetGamePositionOnGround(poslist[5])
-				GetPlayerVehicle():SetRotation(Quaternion(rotlist[5]))
-				GetPlayerVehicle():SetExternalPathByName("HelpMens2_path5")
-				GetPlayerVehicle():SetCustomLinearVelocity( 10 )
+			local PLP = GetPlayerVehicle()
+			if PLP then
+				PLP:SetGamePositionOnGround(poslist[5])
+				PLP:SetRotation(Quaternion(rotlist[5]))
+				PLP:SetExternalPathByName("HelpMens2_path5")
+				PLP:SetCustomLinearVelocity( 10 )
+			end
+
+			local AVeh = getObj("AivenStand")
+			if AVeh then
+				AVeh:SetGamePositionOnGround(poslist[6])
+				AVeh:SetRotation(Quaternion(rotlist[6]))
+				AVeh:SetExternalPathByName("HelpMens2_path5")
+				AVeh:SetCustomLinearVelocity( 10 )
 			end
 
 			TActivate("HelpersArrived_cs_End4")
@@ -1614,8 +1632,8 @@
 	<trigger	Name="HelpersArrived_cs_End4"	active="0">
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<script>
-			local poslist = {CVector(2771.339, 258.815, 1763.371), CVector(2755.816, 261.769, 1760.217), CVector(2751.372, 262.652, 1739.967), CVector(2739.385, 264.343, 1724.356), CVector(2743.397, 264.972, 1707.377)}
-			local rotlist = {Quaternion(0.038, 0.517, -0.095, 0.850), Quaternion(0.021, 0.369, -0.074, 0.926), Quaternion(0.023, 0.221, -0.062, 0.973), Quaternion(0.014, 0.169, -0.031, 0.985), Quaternion(0.024, -0.034, -0.023, 0.999)}
+			local poslist = {CVector(2771.339, 258.815, 1763.371), CVector(2755.816, 261.769, 1760.217), CVector(2751.372, 262.652, 1739.967), CVector(2739.385, 264.343, 1724.356), CVector(2743.397, 264.972, 1707.377), CVector(2730.188, 268.051, 1689.927)}
+			local rotlist = {Quaternion(0.038, 0.517, -0.095, 0.850), Quaternion(0.021, 0.369, -0.074, 0.926), Quaternion(0.023, 0.221, -0.062, 0.973), Quaternion(0.014, 0.169, -0.031, 0.985), Quaternion(0.024, -0.034, -0.023, 0.999), Quaternion(0.032, -0.106, -0.005, 0.994)}
 			for i=1,4 do
 				local veh = getObj("SciefVeh"..i)
 				if veh then
@@ -1626,11 +1644,20 @@
 				end
 			end
 
-			if GetPlayerVehicle() then
-				GetPlayerVehicle():SetGamePositionOnGround(poslist[5])
-				GetPlayerVehicle():SetRotation(Quaternion(rotlist[5]))
-				GetPlayerVehicle():SetExternalPathByName("HelpMens2a_path5")
-				GetPlayerVehicle():SetCustomLinearVelocity( 10 )
+			local PLP = GetPlayerVehicle()
+			if PLP then
+				PLP:SetGamePositionOnGround(poslist[5])
+				PLP:SetRotation(Quaternion(rotlist[5]))
+				PLP:SetExternalPathByName("HelpMens2a_path5")
+				PLP:SetCustomLinearVelocity( 10 )
+			end
+
+			local AVeh = getObj("AivenStand")
+			if AVeh then
+				AVeh:SetGamePositionOnGround(poslist[6])
+				AVeh:SetRotation(Quaternion(rotlist[6]))
+				AVeh:SetExternalPathByName("HelpMens2a_path5")
+				AVeh:SetCustomLinearVelocity( 10 )
 			end
 
 
@@ -1644,24 +1671,31 @@
 	<trigger	Name="HelpersArrived_cs_End5"	active="0">
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<script>
-			local poslist = {CVector(3318.065, 300, 2001.583),CVector(3325.100, 300, 2002.163),CVector(3315.300, 300, 2017.859),CVector(3296.973, 300, 2036.113), CVector(3307.902, 300, 2038.657)}
-			local rotlist = {Quaternion(-0.011, 0.994, 0.005, 0.105), Quaternion(0.006, 0.998, 0.009, 0.063), Quaternion(-0.016, 0.963, 0.015, 0.269), Quaternion(-0.037, 0.940, 0.042, 0.337), Quaternion(-0.027, 0.971, 0.030, 0.235)}
+			local poslist = {CVector(3318.065, 300, 2001.583),CVector(3325.100, 300, 2002.163),CVector(3315.300, 300, 2017.859),CVector(3296.973, 300, 2036.113), CVector(3307.902, 300, 2038.657), CVector(3328.054, 256.977, 2044.362)}
+			local rotlist = {Quaternion(-0.011, 0.994, 0.005, 0.105), Quaternion(0.006, 0.998, 0.009, 0.063), Quaternion(-0.016, 0.963, 0.015, 0.269), Quaternion(-0.037, 0.940, 0.042, 0.337), Quaternion(-0.027, 0.971, 0.030, 0.235), Quaternion(0.004, -0.989, -0.001, -0.148)}
 			for i=1,4 do
 				local veh = getObj("SciefVeh"..i)
 				if veh then
 					veh:SetGamePositionOnGround(poslist[i])
 					veh:SetRotation(Quaternion(rotlist[i]))
+	--					veh:SetRotation(Quaternion(0.019, 0.510, 0.036, 0.859))
 					veh:SetExternalPathByName("HelpMens3_path"..i)
 					veh:SetCustomLinearVelocity( 30  - 3*(i-1) )
 				end
 			end
-			
-			local PVeh = GetPlayerVehicle()
-			if PVeh then
-				PVeh:SetGamePositionOnGround(poslist[5])
-				PVeh:SetRotation(Quaternion(rotlist[5]))
-				PVeh:SetExternalPathByName("HelpMens3_path5")
-				PVeh:SetCustomLinearVelocity( 20 )
+
+			local PLP = GetPlayerVehicle()
+			if PLP then
+				PLP:SetGamePositionOnGround(poslist[5])
+				PLP:SetRotation(Quaternion(rotlist[5]))
+				PLP:SetExternalPathByName("HelpMens3_path5")
+				PLP:SetCustomLinearVelocity( 20 )
+			end
+
+			local AVeh = getObj("AivenStand")
+			if AVeh then
+				AVeh:SetGamePositionOnGround(poslist[6])
+				AVeh:SetRotation(Quaternion(rotlist[6]))
 			end
 
 			Fly("SavePlInBase6", CINEMATIC_NO_AIM, nil, 6, 0,1)
@@ -1689,9 +1723,10 @@
 				end
 			end
 
-			if GetPlayerVehicle() then
-				GetPlayerVehicle():SetExternalPathByName("HelpMens3_path5")
-				GetPlayerVehicle():PlaceToEndOfPath("HelpMens3_path5")
+			local PLP = GetPlayerVehicle()
+			if PLP then
+				PLP:SetExternalPathByName("HelpMens3_path5")
+				PLP:PlaceToEndOfPath("HelpMens3_path5")
 			end
 			DisableGodMode()
 
@@ -1702,6 +1737,8 @@
 			TDeactivate("HelpersArrived_cs_End3")
 			TDeactivate("HelpersArrived_cs_End4")
 			TDeactivate("HelpersArrived_cs_End5")
+
+			SetTolerance(1095, 1061, RS_ALLY)
 
 			StartConversation("ScientiferVillage_Bar_Scientif")
 			StopPlayingCustomMusic()

@@ -129,7 +129,7 @@
 		name="r4m2_Bar_Scientist_1_N12"
 		text='Хорошо. [Он сказал "если"?]'
 		role="PLAYER"
-		scriptResult="EndConversation(); SetVar('ScientistTalk', 1); TakeQuest('LookAtTarelka_quest'); TActivate('AivenTPtoBase')" />
+		scriptResult="EndConversation(); SetVar('ScientistTalk', 1); TakeQuest('LookAtTarelka_quest')" />
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке--><!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/Концовка 2-->
 	<Reply
 		name="Dlg_npc_002175"
