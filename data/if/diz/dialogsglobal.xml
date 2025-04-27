@@ -1323,7 +1323,7 @@
 		name="Dlg_pl_001401"
 		text="Хорошо, скоро увидимся! [Отец?! Что ему нужно?]"
 		role="PLAYER"
-		scriptResult="TakeQuest('TalkToFatherAfterSharaf_quest'); CompleteQuest('SpeakToSharaf_quest'); TActivate("historyadd_aftersharaftalk"); EndConversation()" />
+		scriptResult="TakeQuest('TalkToFatherAfterSharaf_quest'); CompleteQuest('SpeakToSharaf_quest'); TActivate('historyadd_aftersharaftalk'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Шараф/После убийства вора-->
 	<Reply
 		name="Dlg_npc_001402"
@@ -5486,7 +5486,7 @@
 
 	<Reply
 		name="Dlg_npc_001530"
-		text="Я недавно с Марио разговаривал. Нашёлся какой-то человек, который согласился нам помочь. Он как раз сейчас уехал за нефтью, пока дожидался вашего возвращения. Причём он не наш житель, он с других земель."
+		text="Я только что с Марио разговаривал. Нашёлся какой-то человек, который согласился нам помочь. Он как раз сейчас уехал за нефтью, пока дожидался вашего возвращения. Причём он не наш житель, он с других земель."
 		role="NPC"
 		nextReplies="Dlg_pl_001531" />
 
