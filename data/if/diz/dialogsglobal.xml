@@ -5034,7 +5034,7 @@
 		name="Dlg_pl_001601"
 		text='Мансур, спокойнее, надо всё продумать, чтобы не упасть "лицом в песок". Всё, я уехал, скоро вернусь.'
 		role="PLAYER"
-		scriptResult="CompleteQuest('BackToVahat_quest'); TakeQuest('GoToFatherAfterZarmek_quest'); EndConversation()" />
+		scriptResult="CompleteQuest('BackToVahat_quest'); TakeQuest('GoToFatherAfterZarmek_quest'); getObj('AivenCarZRS_vehicle_0'):Remove(); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/Первый приезд (непочиненный)-->
 	<Reply
 		name="Dlg_npc_001302"
