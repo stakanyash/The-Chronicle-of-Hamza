@@ -502,6 +502,9 @@
 				M:Remove()
 			end
 
+			AddHistory("tcoh_aboutdesert")
+			AddFadingMsgId("fm_history_got")
+
 			ConnectAivenDD()
 			ConnectMansurDD()
 

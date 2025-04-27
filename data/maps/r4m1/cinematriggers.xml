@@ -1322,6 +1322,9 @@
 
 		AddBook("r4_survivorarchive")
 
+		AddHistory( "tcoh_firststory" )
+		AddFadingMsgId( "fm_history_got" )
+
 		TActivate("CreateDadCar")
 
 		RestoreAllToleranceStatus()
@@ -1672,6 +1675,9 @@
 
         CompleteQuest("DefendGadad_quest")
 		TakeQuest("TalkToMansur_quest")
+
+		AddHistory( "tcoh_firststory" )
+		AddFadingMsgId( "fm_history_got" )
 
 		StopPlayingCustomMusic()
         
@@ -2263,6 +2269,9 @@
 				Mansur:Remove()
 			end
 
+			AddHistory("tcoh_aftermswp")
+			AddFadingMsgId("fm_history_got")
+
 			TActivate("ConnectMansur_GoToBuhara_Again")
 			TActivate("FirstMeetAivanJr_SaveThem_cs")
 
@@ -2523,6 +2532,9 @@
 
 			CompleteQuest("EvacuateBuharas_quest")
 			TakeQuest("GoToZarmek_quest")
+
+			AddHistory("tcoh_buharaevacuated")
+			AddFadingMsgId("fm_history_got")
 
 			StopPlayingCustomMusic()
 			SetCameraBehindPlayerVehicle()
@@ -3864,6 +3876,9 @@
 				A:Remove()
 			end
 
+			AddHistory("tcoh_afterinvasion")
+			AddFadingMsgId("fm_history_got")
+
 			TActivate("AC_AI_tr")
 			TActivate("MC_AI_tr")
 			TActivate("FC_AI_tr")
@@ -4170,6 +4185,16 @@
 			if b == 1 then
 				ShowDeathMenu()
 			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="historyadd_aftersharaftalk"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			AddHistory("tcoh_aftersharaftalk")
+			AddFadingMsgId("fm_history_got")
 
 			trigger:Deactivate()
 		</script>

@@ -1323,7 +1323,7 @@
 		name="Dlg_pl_001401"
 		text="Хорошо, скоро увидимся! [Отец?! Что ему нужно?]"
 		role="PLAYER"
-		scriptResult="TakeQuest('TalkToFatherAfterSharaf_quest'); CompleteQuest('SpeakToSharaf_quest'); EndConversation()" />
+		scriptResult="TakeQuest('TalkToFatherAfterSharaf_quest'); CompleteQuest('SpeakToSharaf_quest'); TActivate("historyadd_aftersharaftalk"); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Шараф/После убийства вора-->
 	<Reply
 		name="Dlg_npc_001402"
