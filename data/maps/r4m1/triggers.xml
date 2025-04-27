@@ -2319,7 +2319,7 @@
 	<trigger Name="AttackersDies" active="0">
 		<event eventid="GE_OBJECT_DIE" ObjName="BuharaAttack" />
 		<script>
-			StartConversation("Chujezemets")
+			TActivate("AfterCoastFight_cs_start")
 
 			SetTolerance(1100, 1026, RS_ALLY)
 			SetTolerance(1100, 1095, RS_ALLY)

@@ -1760,17 +1760,10 @@
 		Name="ToR4M1"
 		Belong="1100"
 		Prototype="genericLocation"
-		Pos="171.635 368.000 3653.167"
-		Radius="169.755"
-		PassageAddress="r4m1 FromR4M2" />
-
-	<Object
-		Flags="21"
-		Name="ExitFromMap"
-		Belong="1100"
-		Prototype="genericLocation"
 		Pos="484.258 285.518 3421.758"
-		Radius="176.613" />
+		Radius="176.613"
+		PassageAddress="r4m1 FromR4M2"
+		PassageActive="0" />
 
 	<Object
 		Name="PetrolStationTown61"

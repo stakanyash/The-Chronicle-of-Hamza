@@ -1714,7 +1714,7 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 		Class			= "Vehicle"
 		Name			= "TankBez"
 		ParentPrototype 	= "Tank"
-		VisibleInEncyclopedia	= "true">
+		VisibleInEncyclopedia	= "false">
 		<Parts>
 			<Part id = "CABIN"			Prototype = "tankCab01" />
 			<Part id = "TANK_GUN"	Prototype = "tank01" />

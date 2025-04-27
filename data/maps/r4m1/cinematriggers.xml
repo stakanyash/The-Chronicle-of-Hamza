@@ -4199,4 +4199,42 @@
 			trigger:Deactivate()
 		</script>
 	</trigger>
+
+	<trigger	Name="AfterCoastFight_cs_start"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			local AID = getObj("AivanJr_vehicle_0"):GetId()
+
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetCustomControlEnabled( true )
+				vehPlayer:SetCustomLinearVelocity( 0 )
+				vehPlayer:SetThrottle( 0 )
+				vehPlayer:SetCustomControlEnabled( false )
+			end
+
+			Fly("AfterCoastFight_cam", CINEMATIC_AIM_TO_ID, AID, 5, 1, 1)
+			StartCinematic()
+
+			PlayCustomMusic("IntenseDialogue01")
+
+			TActivate("AfterCoastFight_cs_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="AfterCoastFight_cs_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+
+			StartConversation("Chujezemets")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
 </triggers>

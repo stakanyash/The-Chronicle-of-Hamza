@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
+<triggers>
+	<trigger	Name="maimmenutr"	active="1">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)			
+
+			local Plf = GetPlayerVehicle()
+			
+			if Plf then			
+				Plf:LimitMaxSpeed(35)				
+				Plf:SetExternalPathByName("mm_path1")
+				Plf:SetSkin(7)
+			end
+
+			local PlfID = GetPlayerVehicleId()
+			RuleConsole("cinematic_spring_coeff 4")	
+
+			FlyLinked("mm_campath", PlfID, 68, 0, 0, PlfID)		
+			StartCinematic()			
+
+			PlayCustomMusic("mainmenu")			
+
+			TActivate("maimmenutr_rail_0")
+			TActivate("maimmenutr_rail_1")
+			TActivate("maimmenutr_rail_2")
+			TActivate("maimmenutr_rail_3")
+			TActivate("maimmenutr_rail_4")
+			TActivate("maimmenutr_rail_5")
+			TActivate("maimmenutr_endway")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="maimmenutr_rail_0"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TrainRales_0_loc" />
+		<script>		
+			local Plf = GetPlayerVehicle()
+			
+			if Plf then			
+				Plf:LimitMaxSpeed(15)				
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="maimmenutr_rail_1"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TrainRales_1_loc" />
+		<script>		
+			local Plf = GetPlayerVehicle()
+			
+			if Plf then			
+				Plf:LimitMaxSpeed(35)				
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="maimmenutr_rail_2"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TrainRales_2_loc" />
+		<script>		
+			local Plf = GetPlayerVehicle()
+			
+			if Plf then			
+				Plf:LimitMaxSpeed(15)				
+			end
+
+			local PlfID = GetPlayerVehicleId()	
+
+			FlyLinked("mm_campath1", PlfID, 62, 0, 0, PlfID)
+			StartCinematic()
+
+			RuleConsole("cinematic_spring_coeff 1")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="maimmenutr_rail_3"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TrainRales_3_loc" />
+		<script>		
+			local Plf = GetPlayerVehicle()
+			
+			if Plf then			
+				Plf:LimitMaxSpeed(35)				
+			end
+
+			TActivate("SwitchCam_2_tr")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="SwitchCam_2_tr"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="SwitchCam_loc" />
+		<script>		
+			local Plf = GetPlayerVehicle()
+			local PlfID = GetPlayerVehicleId()	
+
+			FlyLinked("mm_campath2", PlfID, 92, 0, 0, PlfID)
+			StartCinematic()
+
+			RuleConsole("cinematic_spring_coeff 4")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="maimmenutr_rail_4"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TrainRales_4_loc" />
+		<script>		
+			local Plf = GetPlayerVehicle()
+			
+			if Plf then			
+				Plf:LimitMaxSpeed(15)				
+			end
+
+			local PlfID = GetPlayerVehicleId()	
+
+			FlyLinked("mm_campath3", PlfID, 332, 0, 0, PlfID)
+			StartCinematic()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="maimmenutr_rail_5"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TrainRales_5_loc" />
+		<script>		
+			local Plf = GetPlayerVehicle()
+			
+			if Plf then			
+				Plf:LimitMaxSpeed(35)				
+			end
+
+			TActivate("maimmenutr_rail_prelast")
+			TActivate("maimmenutr_rail_last")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="maimmenutr_rail_prelast"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TrainRales_1_loc" />
+		<script>		
+			local Plf = GetPlayerVehicle()
+			
+			if Plf then			
+				Plf:LimitMaxSpeed(15)				
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="maimmenutr_rail_last"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="TrainRales_0_loc" />
+		<script>		
+			local Plf = GetPlayerVehicle()
+			
+			if Plf then			
+				Plf:LimitMaxSpeed(35)				
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="maimmenutr_endway"	active="0">
+		<event eventid="GE_TARGET_REACHED" ObjName="MyCar" />
+		<script>		
+			local Plf = GetPlayerVehicle()	
+			if Plf then							
+				Plf:SetExternalPathByName("mm_path")
+			end
+
+			local PlfID = GetPlayerVehicleId()
+			RuleConsole("cinematic_spring_coeff 4")	
+
+			FlyLinked("mm_campath", PlfID, 68, 0, 0, PlfID)		
+			StartCinematic()
+
+			TActivate("maimmenutr_rail_0")
+			TActivate("maimmenutr_rail_1")
+			TActivate("maimmenutr_rail_2")
+			TActivate("maimmenutr_rail_3")
+			TActivate("maimmenutr_rail_4")
+			TActivate("maimmenutr_rail_5")
+			TActivate("maimmenutr_endway")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+</triggers>

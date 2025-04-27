@@ -187,7 +187,7 @@
 	</trigger>
 
 	<trigger Name="trExitToR4M1" active="1">
-		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="ExitFromMap" />
+		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="ToR4M1" />
 		<script>
 			GetPlayerVehicle():SetCustomLinearVelocity( 0 )
 			local b = SpawnMessageBox( "8801" )

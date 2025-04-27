@@ -21,6 +21,9 @@
 		<script>
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
+			SetGameTime(12,00)
+			SetWeather(0)
+
 			GetWalkers()
 
 			local Plp = GetPlayerVehicle()

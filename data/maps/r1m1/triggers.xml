@@ -88,7 +88,7 @@
 	-- TCoH: Start r1m1 chapter --
 
 	<trigger Name="FirstArriveToKrai_tr" active="1">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<event eventid="GE_GAME_START" ObjName="Player1" />
 		<script>
 			if QuestStatus("GoToOracle_quest")==Q_TAKEN then
 				local random1 = math.random(627,636)
@@ -121,9 +121,9 @@
 					end
 					GL_PassToMap = false
 				end
-			end
 
-			trigger:Deactivate()
+				trigger:Deactivate()
+			end
 		</script>
 	</trigger>
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1251" standalone="yes"?>
+<Paths>
+	<Path Name="mm_campath">
+		<Point coord="-10 5 40" />
+	</Path>
+
+	<Path Name="mm_campath1">
+    	<Point coord="40 5 10" />
+	</Path>
+
+	<Path Name="mm_campath2">
+    	<Point coord="-10 5 -15" />
+		<Point coord="40 5 10" />
+		<Point coord="-10 5 40" />
+	</Path>
+
+	<Path Name="mm_campath3">
+		<Point coord="-10 5 40" />
+		<Point coord="40 5 10" />
+		<Point coord="-10 5 -15" />
+		<Point coord="10 8 -20" />
+		<Point coord="20 20 -40" />
+		<Point coord="-10 5 40" />
+		<Point coord="40 5 10" />
+		<Point coord="-10 5 -15" />
+		<Point coord="10 8 -20" />
+		<Point coord="20 20 -40" />
+	</Path>
+</Paths>
