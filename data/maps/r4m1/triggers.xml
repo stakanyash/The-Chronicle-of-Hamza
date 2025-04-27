@@ -350,7 +350,7 @@
 				P:SetCustomLinearVelocity( 0 )
 			end
 
-			if QuestStatus("EvacuateBuharas_quest")==Q_COMPLETED then
+			if QuestStatus("EvacuateBuharas_quest")==Q_COMPLETED and not (QuestStatus("GoToOracle_quest")==Q_TAKEN) then
 				local b = SpawnMessageBox( "8801" )
 				if b == 1 then
 					PassToMap("r4m2", "FromR4M1", -1 )
