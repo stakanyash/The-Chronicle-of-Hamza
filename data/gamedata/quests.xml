@@ -539,7 +539,8 @@
 		Automatic="0"
 		SubQuestsCondition="and"
 		CheckAll="0"
-		ConditionToGive="all complete" />
+		ConditionToGive="all complete"
+		OnTake='ShowCircleOnMinimapByName("Buhara_0")' />
 <!--Root/r4m1/Сюжетные/The Chronicle of Hamza/Путешествие в Зармек-->
 	<quest
 		Name="GoToZarmek_quest"
