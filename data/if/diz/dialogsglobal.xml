@@ -5731,12 +5731,56 @@
 		name="Dlg_npc_002167"
 		text="А если вестей от него не будет?"
 		role="NPC"
-		nextReplies="Dlg_pl_002168" />
+		nextReplies="Dlg_pl_002168 Dlg_pl_002200" />
+
+	<Reply
+		name="Dlg_pl_002200"
+		text="Я всегда могу вернуться к Василию и активировать блокиратор."
+		role="PLAYER"
+		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN and QuestStatus('Failed2ndEnd_quest')==Q_COMPLETED "
+		nextReplies="Dlg_npc_002201" />
+
+	<Reply
+		name="Dlg_npc_002201"
+		text="Ты же только что говорил, что Василий не уверен в своём плане."
+		role="NPC"
+		nextReplies="Dlg_pl_002202" />
+
+	<Reply
+		name="Dlg_pl_002202"
+		text="Если активация блокиратора останется единственным вариантом, то уже не важно, уверен он или нет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002203" />
+
+	<Reply
+		name="Dlg_npc_002203"
+		text="Тоже верно. Будем надеяться на лучшее. Останешься тут или поедешь к Мансуру?"
+		role="NPC"
+		nextReplies="Dlg_pl_002204" />
+
+	<Reply
+		name="Dlg_pl_002204"
+		text="Останусь тут. Всё-таки я довольно давно не был дома."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002205" />
+
+	<Reply
+		name="Dlg_npc_002205"
+		text="Вот и правильно, проходи, сейчас принесу чего-нибудь."
+		role="NPC"
+		nextReplies="Dlg_pl_002206" />
+
+	<Reply
+		name="Dlg_pl_002206"
+		text="Спасибо, отец."
+		role="PLAYER"
+		scriptResult="TActivate('Ending1_tr'); EndConversation()" />
 
 	<Reply
 		name="Dlg_pl_002168"
 		text="Мы всегда можем вернуться обратно и забрать блокиратор."
 		role="PLAYER"
+		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN and not (QuestStatus('Failed2ndEnd_quest')==Q_COMPLETED)"
 		nextReplies="Dlg_npc_002169" />
 
 	<Reply
