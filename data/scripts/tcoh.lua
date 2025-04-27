@@ -451,7 +451,7 @@ function CreateBuharaAndAivanJr()
 	if aivanjr then
 		aivanjr:SetGamePositionOnGround(CVector(getPos("AivanJrDefSpawn_loc")))
 		aivanjr:SetRotation(Quaternion(-0.022, 0.083, -0.023, 0.996))
-		aivanjr:SetSkin(3)
+		aivanjr:SetSkin(0)
 	end
 end
 
@@ -527,7 +527,7 @@ function CreateMansurandAivenDefenders()
 	if veh1 then
 		veh1:SetGamePositionOnGround(CVector(getPos("AivenDefender_loc")))
 		veh1:SetRotation(Quaternion(0.003, 0.864, 0.000, 0.504))
-		veh1:SetSkin(3)
+		veh1:SetSkin(0)
 	end
 
 	SetTolerance(1090, 1095, RS_ALLY)
@@ -553,7 +553,12 @@ function CreateMansurandAivenAttack()
 	if veh1 then
 		veh1:SetGamePositionOnGround(CVector(getPos("AivenAttacktoBase_startfight_loc")))
 		veh1:SetRotation(Quaternion(-0.000, 0.669, -0.000, 0.744))
-		veh1:SetSkin(3)
+		veh1:SetSkin(0)
+	end
+
+	local AR = getObj("AivenCarGTZ_vehicle_0")
+	if AR then
+		AR:Remove()
 	end
 
 	SetTolerance(1090, 1095, RS_ALLY)
@@ -1498,7 +1503,7 @@ function ConnectAivenDD()
 
 	local vehAiven = getObj("AivenCarDD_vehicle_0")
 	if vehAiven then
-		vehAiven:SetSkin(3)
+		vehAiven:SetSkin(0)
 		vehAiven:setImmortalMode(1)
 
 		local newControllerId = CreateNewObject {

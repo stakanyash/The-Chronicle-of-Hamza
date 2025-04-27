@@ -1807,6 +1807,11 @@
 		value="Молоковоз" />
 
 	<Item
+		id="MirotvorecDefender"
+		locForm="0"
+		value="Миротворец" />
+
+	<Item
 		id="Scout"
 		locForm="0"
 		value="Скаут" />

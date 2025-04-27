@@ -875,6 +875,14 @@
 			if PVeh then
 				PVeh:SetCustomLinearVelocity( 0 )
 				PVeh:SetThrottle(0)
+				PVeh:SetGamePositionOnGround(CVector(2981.734, 229.482, 2238.954))
+				PVeh:SetRotation(Quaternion(0.001, -0.195, 0.003, 0.981))
+			end
+
+			local AVeh = getObj("AivenStand")
+			if AVeh then
+				AVeh:SetGamePositionOnGround(CVector(2958.213, 229.796, 2257.992))
+				AVeh:SetRotation(Quaternion(-0.000, -0.069, -0.000, 0.998))
 			end
 
 			PlayCustomMusic("Bio01")
@@ -922,6 +930,13 @@
 			RestoreAllToleranceStatus()
 
 			SetCameraBehindPlayerVehicle()
+
+			local AVeh = getObj("AivenStand")
+			if AVeh then
+				AVeh:Remove()
+			end
+
+			TActivate("AVeh_connect_afterplate")
 
 			StopPlayingCustomMusic()
 

@@ -386,7 +386,7 @@
 	<trigger Name="AC_GTO" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			TeamCreate("AivenCar", 1095, CVector(getPos("AivenSpawn_loc")), {"BelazShot"}, nil, nil, Quaternion(0.018, -0.847, 0.041, 0.529))
+			TeamCreate("AivenCar", 1095, CVector(getPos("AivenSpawn_loc")), {"BelazShot1"}, nil, nil, Quaternion(0.018, -0.847, 0.041, 0.529))
 
 			local vehAiven = getObj("AivenCar_vehicle_0")
 			if vehAiven then
@@ -429,6 +429,8 @@
 			local terr = TeamCreate("SecondB",1000,CVector(2099,339,2343),{"r1m1_molokovoz03s","r1m1_molokovoz02s"},CVector(2429,334,2354), 1)
 			terr:SetProperty ("TeamTacticPrototype", "TeamTacticTerroristsR1M1")
 			terr:_AdjustBehaviour ()
+
+			SetTolerance(1095, 1000, RS_ALLY)
 
 			AddFadingMsgId( "fm_die" )
 			trigger:Deactivate()    

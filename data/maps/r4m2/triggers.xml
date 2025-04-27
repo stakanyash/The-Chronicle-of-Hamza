@@ -137,6 +137,30 @@
 		<script>
 --			println("Helpers1")
 			TActivate("HelpersArrived_cs_start")
+
+			AivPos = getObj("AivenCar_vehicle_0"):GetPosition()
+			AivRot = getObj("AivenCar_vehicle_0"):GetRotation()
+
+			TActivate("AivenStandOnBase")
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="AivenStandOnBase"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			local AR = getObj("AivenCar_vehicle_0")
+			if AR then
+				AR:Remove()
+			end
+
+			local AC = CreateVehicleEx("BelazShot1","AivenStand",CVector(AivPos), 1095)
+			if AC then
+				AC:SetSkin(0)
+				AC:SetRotation(AivRot)
+				AC:setGodMode(1)
+			end
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -284,7 +308,7 @@
 
 			local vehAiven = getObj("AivenCarZR_vehicle_0")
 			if vehAiven then
-				vehAiven:SetSkin(1)
+				vehAiven:SetSkin(0)
 				vehAiven:setImmortalMode(1)
 
 				local newControllerId = CreateNewObject {
@@ -372,21 +396,26 @@
 	<trigger	Name="AivenTPtoBase"	active="0">
 		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
 		<script>
-			local A = getObj("AivenCar_vehicle_0")
+			local A = getObj("AivenStand")
 			if A then
-				A:Remove()
-			end
+				A:SetGamePositionOnGround(CVector(3316.547, 256.854, 1949.939))
+				A:SetRotation(Quaternion(-0.001, -0.931, 0.004, 0.365))
+			end 
 
-			local A1 = getObj("AivenCarGTZ_vehicle_0")
-			if A1 then
-				A1:Remove()
-			end
+			SetTolerance(1095, 1061, RS_ALLY)
 
-			TeamCreate("AivenCarZRS", 1095, CVector(3316.547, 256.854, 1949.939), {"BelazShot1"}, nil, nil, Quaternion(-0.001, -0.931, 0.004, 0.365))
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="AVeh_connect_afterplate"	active="0">
+		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
+		<script>
+			TeamCreate("AivenCarZRS", 1095, CVector(2958.213, 229.796, 2257.992), {"BelazShot1"}, nil, nil, Quaternion(-0.000, -0.069, -0.000, 0.998))
 
 			local vehAiven = getObj("AivenCarZRS_vehicle_0")
 			if vehAiven then
-				vehAiven:SetSkin(1)
+				vehAiven:SetSkin(0)
 				vehAiven:setImmortalMode(1)
 
 				local newControllerId = CreateNewObject {
@@ -400,8 +429,6 @@
 					newController:setVehicleUnderControl(vehAiven)
 				end
 			end
-
-			trigger:Deactivate()  
 
 			SetTolerance(1095, 1061, RS_ALLY)
 

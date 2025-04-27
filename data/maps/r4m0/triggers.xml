@@ -97,7 +97,7 @@
 
 			local vehAiven = getObj("AivenCarDD1_vehicle_0")
 			if vehAiven then
-				vehAiven:SetSkin(3)
+				vehAiven:SetSkin(0)
 				vehAiven:setImmortalMode(1)
 
 				local newControllerId = CreateNewObject {
