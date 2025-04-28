@@ -1,5 +1,5 @@
 # The Chronicle of Hamza
-![tcoh_banner](https://github.com/user-attachments/assets/7fa7de5e-c459-46ac-b26e-4d4af801bc0a)
+![tcoh_banner](TCoH/assets/tcoh_banner.png)
 
 **The Chronicle of Hamza** – a story-driven mod set in fourth region. The events of the mod begin around the time when the original game's protagonist is upgrading their truck to head to Vahat. The main character, Hamza, along with his friend Mansur and the original protagonist, must uncover the causes of the 2011 catastrophe and solve the problem of the constant emergence of madmen in the region.
 
