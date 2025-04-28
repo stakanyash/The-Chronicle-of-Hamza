@@ -12,7 +12,7 @@
 ---
 <div align="center">
   
-![RU Readme](gitassets/ru_banner_sel.png)   [![EN Readme](gitassets/en_banner.png)](https://github.com/ksh1vn/The-Chronicle-of-Hamza/blob/main/README_en.md)
+![RU Readme](gitassets/ru_banner_sel.png)   [![EN Readme](gitassets/en_banner.png)](https://github.com/stakanyash/The-Chronicle-of-Hamza/blob/main/README_en.md)
 
 </div>
 
