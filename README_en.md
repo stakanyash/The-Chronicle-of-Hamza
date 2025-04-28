@@ -53,17 +53,17 @@ The mod lacks voice acting, except for the narrator.
 **Special thanks to the communities [Deus Ex Machina](https://github.com/DeusExMachinaTeam) and [EM2ch](https://vk.com/em2ch) for their support in development.**  
 
 ---  
-### **Assets Used:**  
+### **Borrowings:**  
 
-Fullsize Sergo model by **Spok**  
+- Fullsize Sergo model by **Spok**  
 
-Deteriorating condition scripts from the **"Possessed" mod** by **[nEmPoBu4](https://github.com/lyokhatankist)**  
+- Deteriorating condition scripts from the **"Possessed" mod** by **[nEmPoBu4](https://github.com/lyokhatankist)**  
 
-Ending credits music (one of the endings): **Gnome627 – [Quiet Dialogue (extended, remixed)](https://youtu.be/bhsTFClFSjo)**  
+- Ending credits music (one of the endings): **Gnome627 – [Quiet Dialogue (extended, remixed)](https://youtu.be/bhsTFClFSjo)**  
 
-Some scripts by **[E Jet](https://github.com/ejetaxeblevich)**  
+- Some scripts by **[E Jet](https://github.com/ejetaxeblevich)**  
 
-Ending slides from **[Improved Storyline](https://github.com/zatinu322/ImprovedStoryline)** by **[pavlikRPG](https://github.com/zatinu322/)**
+- Ending slides from **[Improved Storyline](https://github.com/zatinu322/ImprovedStoryline)** by **[pavlikRPG](https://github.com/zatinu322/)**
 
 ---
 **If you have found a bug, a flaw or just want to leave feedback about the modification, you can do it on my [Discord server](https://discord.gg/5UAjrrsM5B) in the "bugreports" channel, or on the [Deus Ex Machina](https://discord.gg/PVW57kr) server in the channel "The Chronicle of Hamza" of the section "витрина-модов"**.

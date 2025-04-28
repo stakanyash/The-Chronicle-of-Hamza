@@ -44,15 +44,15 @@
 ---
 ### Заимствования:
 
-Полноценная модель Серго, автор: **Spok**
+- Полноценная модель Серго, автор: **Spok**
 
-Скрипты ухудшающегося состояния: **модификация "possesed", автор: [nEmPoBu4](https://github.com/lyokhatankist)**
+- Скрипты ухудшающегося состояния: **модификация "possesed", автор: [nEmPoBu4](https://github.com/lyokhatankist)**
 
-Музыка в титрах по одной из концовок: **Gnome627 - [Quiet Dialogue (extended, remixed)](https://youtu.be/bhsTFClFSjo)**
+- Музыка в титрах по одной из концовок: **Gnome627 - [Quiet Dialogue (extended, remixed)](https://youtu.be/bhsTFClFSjo)**
 
-Некоторые скрипты, автор: **[E Jet](https://github.com/ejetaxeblevich)**
+- Некоторые скрипты, автор: **[E Jet](https://github.com/ejetaxeblevich)**
 
-Слайды в концовках: **[Impoved Storyline](https://github.com/zatinu322/ImprovedStoryline)**, автор: **[pavlikRPG](https://github.com/zatinu322/)**
+- Слайды в концовках: **[Impoved Storyline](https://github.com/zatinu322/ImprovedStoryline)**, автор: **[pavlikRPG](https://github.com/zatinu322/)**
 
 ---
 
