@@ -6,10 +6,6 @@
 			file="data\models\AnimModels.xml" />
 
 		<Item
-			id="end_plane"
-			file="data\models\AnimModels.xml" />
-
-		<Item
 			id="cargo"
 			file="data\models\AnimModels.xml" />
 
@@ -23,27 +19,6 @@
 
 		<Item
 			id="BrokenCable_1"
-			file="data\models\AnimModels.xml" />
-
-		<!-- masks -->
-		<Item
-			id="mask_lisa"
-			file="data\models\AnimModels.xml" />
-
-		<Item
-			id="mask_hero"
-			file="data\models\AnimModels.xml" />
-
-		<Item
-			id="r2_man"
-			file="data\models\AnimModels.xml" />
-
-		<Item
-			id="r1_woman"
-			file="data\models\AnimModels.xml" />
-
-		<Item
-			id="r4_man"
 			file="data\models\AnimModels.xml" />
 
 		<!-- dweller ragdoll -->
@@ -1390,84 +1365,6 @@
 			id="robot2suspension08_R" 
 			file="data\models\AnimModels.xml"/>
 
-		<!-- quest items -->
-		<Item 
-			id="artefact1" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="artefact2" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="monster_head" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="mol_stone" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="parsel" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="quest_bomb" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="quest_drags" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="quest_head1" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="quest_head2" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="quest_letter" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="quest_medicine_box" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 	
-			id="quest_komp_splav" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item
-			id="quest_wine_barrels" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="quest_cd1" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="quest_cd2" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="boss_barrel" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="repair_robot" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="quest_key_for_submarine" 
-			file="data\models\AnimModels.xml"/>
-
-		<Item 
-			id="quest_key_for_tunnel" 
-			file="data\models\AnimModels.xml"/>
-
-
 		<Item
 			id="stolb1"
 			file="data\models\AnimModels.xml" />
@@ -2139,8 +2036,6 @@
 	<ParticlesServer />
 
 	<SoundsServer>
-		
-
 	</SoundsServer>
 
 	<MusicServer />

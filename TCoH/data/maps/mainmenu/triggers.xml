@@ -174,7 +174,7 @@
 		<script>		
 			local Plf = GetPlayerVehicle()	
 			if Plf then							
-				Plf:SetExternalPathByName("mm_path")
+				Plf:SetExternalPathByName("mm_path1")
 			end
 
 			local PlfID = GetPlayerVehicleId()
