@@ -10,16 +10,24 @@
 **Озвучка рассказчика:** [Эмер](https://www.youtube.com/@emerehhhhh)
 
 ---
+<div align="center">
+  
+![RU Readme](gitassets/ru_banner_sel.png)   [![EN Readme](gitassets/en_banner.png)](https://github.com/ksh1vn/The-Chronicle-of-Hamza/blob/main/README_en.md)
+
+</div>
+
+---
 ### Список изменений:
 
 - Альтернативный сюжет четвёртого региона от лица жителя Вахата
 - Две основные концовки и четыре тупиковых
 - Новая карта "Пустыня Смерти", соединяющая Край и Вахат
 - Удалена сложность "Мастер" и произведён нёрф сложности "Профессионал"
+- Три главных героя, которые постоянно участвуют в событиях сюжета
 
----
-
+--- 
 ### Спасибо:
+
 
 **[Эмер](https://www.youtube.com/@emerehhhhh)** - озвучка рассказчика
 
@@ -42,6 +50,10 @@
 
 Музыка в титрах по одной из концовок: **Gnome627 - [Quiet Dialogue (extended, remixed)](https://youtu.be/bhsTFClFSjo)**
 
-Скрипт выясняющий текущую громкость музыки, автор: **[E Jet](https://github.com/ejetaxeblevich)**
+Некоторые скрипты, автор: **[E Jet](https://github.com/ejetaxeblevich)**
 
 Слайды в концовках: **[Impoved Storyline](https://github.com/zatinu322/ImprovedStoryline)**, автор: **[pavlikRPG](https://github.com/zatinu322/)**
+
+---
+
+**Если вы нашли какой-то баг, недоработку или просто хотите оставить отзыв о модификации, то сделать вы это можете на моём [Discord-сервере](https://discord.gg/5UAjrrsM5B), либо же на сервере [Deus Ex Machina](https://discord.gg/PVW57kr) в канале "The Chronicle of Hamza" разделa "витрина-модов"**
