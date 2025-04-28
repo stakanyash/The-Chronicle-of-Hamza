@@ -11,7 +11,7 @@ The mod lacks voice acting, except for the narrator.
 
 <div align="center">
   
-[![EN Readme](gitassets/en_banner_sel.png)]   ![RU Readme](gitassets/ru_banner.png)(https://github.com/stakanyash/The-Chronicle-of-Hamza/blob/main/README.md)
+![EN Readme](gitassets/en_banner_sel.png)   [![RU Readme](gitassets/ru_banner.png)](https://github.com/stakanyash/The-Chronicle-of-Hamza/blob/main/README.md)
 
 </div>
 
