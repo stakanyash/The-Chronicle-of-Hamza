@@ -1,0 +1,68 @@
+# unique service name
+name: tcoh
+
+# required human readable info
+display_name: The Chronicle of Hamza
+version: "1.0"
+build: "250428b"
+description: |
+  Сюжетная модификация, действие которой разворачивается в четвёртом регионе. События мода начинаются примерно в то время, когда главный герой оригинальной игры будет укреплять свой грузовик, чтобы отправиться в Вахат. Главному герою Хамзе предстоит вместе со своим другом Мансуром и главным героем оригинала выяснить причины катастрофы 2011 года, а так-же решить проблему постоянного появления безумцев в регионе.
+
+  События модификации по временному отрезку пересекаются с оригиналом, но являются художественным вымыслом автора и не претендуют на совпадения с событиями оригинальной игры!
+
+  Спасибо за помощь в разработке: Varisane, E Jet, Carsen, nEmPoBu4, Deus Ex Machina и EM2ch
+  
+authors: стакан
+
+# optional human readable info
+release_date: "28.04.2025"
+language: ru
+link: https://github.com/stakanyash/The-Chronicle-of-Hamza
+trailer_url: https://www.youtube.com/watch?v=4J572zPNDqs
+logo: assets/tcoh_logo.png
+install_banner: assets/tcoh_banner.png
+tags: [story]
+screenshots:
+  - img: assets/scr0.jpg
+    text: |
+      Главное меню The Chronicle of Hamza
+  - img: assets/scr1.jpg
+    text: |
+      Начальная катсцена
+  - img: assets/scr2.jpg
+    text: |
+      Сюжетная гонка
+  - img: assets/scr4.jpg
+    text: |
+      Карта Пустыня Смерти
+  - img: assets/scr5.jpg
+    text: |
+      Карта Пустыня Смерти
+  - img: assets/scr6.jpg
+    text: |
+      Катсцена одного из сюжетных квестов
+  - img: assets/scr7.jpg
+    text: |
+      Эффект плохого самочувствия (по одной из двух веток)
+  - img: assets/scr8.jpg
+    text: |
+      Катсцена одной из концовок
+data_dirs:
+  - data
+
+compatible_minor_versions: false
+compatible_patch_versions: true
+
+config_options:
+  firstLevel: "r4m1"
+
+# installation confguration
+patcher_version_requirement: "2.2.1"
+prerequisites:
+  - name: community_remaster
+    versions:
+      - ">=1.14.1"
+    optional_content:
+     - hd_gun_models
+     - hd_vehicle_models
+     - ost_remaster
