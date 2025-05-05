@@ -43,6 +43,10 @@
 			file="data\models\AnimModels.xml" />
 
 		<Item
+			id="r2_woman"
+			file="data\models\AnimModels.xml" />
+
+		<Item
 			id="r1_woman"
 			file="data\models\AnimModels.xml" />
 

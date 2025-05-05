@@ -3,8 +3,8 @@ name: tcoh
 
 # required human readable info
 display_name: The Chronicle of Hamza
-version: "1.0"
-build: "250430a"
+version: "1.0.1"
+build: "250505a"
 description: |
   Сюжетная модификация, действие которой разворачивается в четвёртом регионе. События мода начинаются примерно в то время, когда главный герой оригинальной игры будет укреплять свой грузовик, чтобы отправиться в Вахат. Главному герою Хамзе предстоит вместе со своим другом Мансуром и главным героем оригинала выяснить причины катастрофы 2011 года, а так-же решить проблему постоянного появления безумцев в регионе.
 
@@ -21,6 +21,7 @@ link: https://github.com/stakanyash/The-Chronicle-of-Hamza
 trailer_url: https://www.youtube.com/watch?v=4J572zPNDqs
 logo: assets/tcoh_logo.png
 install_banner: assets/tcoh_banner.png
+change_log: assets/changelog_ru.md
 tags: [story]
 screenshots:
   - img: assets/scr0.jpg
@@ -51,7 +52,7 @@ data_dirs:
   - data
 
 compatible_minor_versions: false
-compatible_patch_versions: true
+compatible_patch_versions: false
 
 config_options:
   firstLevel: "r4m1"

@@ -1324,6 +1324,7 @@
 
 		AddHistory( "tcoh_firststory" )
 		AddFadingMsgId( "fm_history_got" )
+		AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 
 		TActivate("CreateDadCar")
 
@@ -1678,6 +1679,7 @@
 
 		AddHistory( "tcoh_firststory" )
 		AddFadingMsgId( "fm_history_got" )
+		AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 
 		StopPlayingCustomMusic()
         
@@ -1702,7 +1704,7 @@
 			PVeh:SetRotation(Quaternion(0.000, 0.962, -0.002, -0.273))
 		end
 
-		local RobVeh = CreateVehicleEx("UralShot","RobCar",CVector(5621.561, 251.949, 4983.046), 1024)
+		local RobVeh = CreateVehicleEx("UralShot1","RobCar",CVector(5621.561, 251.949, 4983.046), 1024)
 		if RobVeh then
 		    RobVeh:SetRotation(Quaternion(0.011, 0.968, 0.004, 0.250))
 			RobVeh:SetExternalPathByName("Rob_Path")
@@ -2271,6 +2273,7 @@
 
 			AddHistory("tcoh_aftermswp")
 			AddFadingMsgId("fm_history_got")
+			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 
 			TActivate("ConnectMansur_GoToBuhara_Again")
 			TActivate("FirstMeetAivanJr_SaveThem_cs")
@@ -2396,6 +2399,8 @@
 					vehA:setGodMode(0)
 				end
 			end
+
+			AutoSave()
 
 			TActivate("AivanJrDies")
 			TActivate("OneOfBuharaDies")
@@ -2535,6 +2540,7 @@
 
 			AddHistory("tcoh_buharaevacuated")
 			AddFadingMsgId("fm_history_got")
+			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 
 			StopPlayingCustomMusic()
 			SetCameraBehindPlayerVehicle()
@@ -3218,13 +3224,6 @@
 			TakeQuest("RepelMadmanInvasion_quest")
 			TakeQuest("RepelMadmanInvasionAliham_quest")
 
-			SpawnMessageBox("8909")
-
-			local b = SpawnMessageBox("8910")
-			if b == 1 then
-				TActivate("RepelAliham_timer")
-			end
-
 			if GetVar("PlayerTP").AsInt == 0 then
 				local PVeh = GetPlayerVehicle()
 				if PVeh then
@@ -3236,10 +3235,17 @@
 				SetCameraBehindPlayerVehicle()
 			end
 
+			SpawnMessageBox("8909")
+
+			local b = SpawnMessageBox("8910")
+			if b == 1 then
+				TActivate("PlayerLeaveAndActiveTimer")
+				TActivate("MadmanInvasionAutoSave")
+			end
+
 			SpawnBotsAliham()
 			SpawnBotsKef()
 
-			TActivate("RepelAliham_enter_time")
 			TActivate("ConnectMansur_madmaninvasion")
 			TActivate("ConnectAivan_madmaninvasion")
 
@@ -3278,9 +3284,27 @@
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active",0) end
 
-			AllowSave(false)
-
 			PlayCustomMusic("Passage02a")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MadmanInvasionAutoSave"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			AllowSave(false)
+			AutoSave()
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="PlayerLeaveAndActiveTimer"	active="0">
+		<event	eventid="GE_OBJECT_LEAVES_LOCATION"	ObjName="InvasionActivate_loc" />
+		<script>
+			TActivate("RepelAliham_enter_time")
+			TActivate("RepelAliham_timer")
 
 			trigger:Deactivate()
 		</script>
@@ -3878,6 +3902,7 @@
 
 			AddHistory("tcoh_afterinvasion")
 			AddFadingMsgId("fm_history_got")
+			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 
 			TActivate("AC_AI_tr")
 			TActivate("MC_AI_tr")
@@ -4195,6 +4220,7 @@
 		<script>
 			AddHistory("tcoh_aftersharaftalk")
 			AddFadingMsgId("fm_history_got")
+			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 
 			trigger:Deactivate()
 		</script>

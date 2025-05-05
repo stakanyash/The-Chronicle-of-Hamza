@@ -466,57 +466,7 @@
 		text="Спасибо. Счастливо!"
 		role="PLAYER"
 		scriptResult="CompleteQuest('GoTalkWithIdris_quest'); TakeQuest('TalkWithAkil_quest'); EndConversation()" />
-<!--Root/r4m1/The Chronicle of Hamza/Акиль-->
-	<Reply
-		name="Dlg_npc_001380"
-		text="Какие люди! Здравствуй, Хамза. Здравствуй, Мансур."
-		role="NPC"
-		scriptCondition="QuestStatus('TalkWithAkil_quest')==Q_TAKEN"
-		nextReplies="Dlg_pl_001381" />
-
-	<Reply
-		name="Dlg_pl_001381"
-		text="Привет, Акиль. Идрис сказал, ты занимаешься поиском бухарцев. Мы бы тоже хотели их найти. У тебя есть какая нибудь информация?"
-		role="PLAYER"
-		nextReplies="Dlg_npc_001382" />
-
-	<Reply
-		name="Dlg_npc_001382"
-		text="Увы, увы. Ничего конкретного сказать не могу. В последнее время мы возобновили отправку экспедиций для их поиска, но они постоянно возвращаются ни с чем! Надежда угасает с каждым днём..."
-		role="NPC"
-		nextReplies="Dlg_pl_001383" />
-
-	<Reply
-		name="Dlg_pl_001383"
-		text="Идрис вроде бы говорил, что ты сам занимаешься их поиском."
-		role="PLAYER"
-		nextReplies="Dlg_npc_001384" />
-
-	<Reply
-		name="Dlg_npc_001384"
-		text="Нет, я занимаюсь организацией экспедиций. Даже сам в паре экспедиций участие принял. Никаких результатов. Даже зацепок нет!"
-		role="NPC"
-		nextReplies="Dlg_pl_001385" />
-
-	<Reply
-		name="Dlg_pl_001385"
-		text="Эх. Плохо..."
-		role="PLAYER"
-		nextReplies="Dlg_npc_001386" />
-
-	<Reply
-		name="Dlg_npc_001386"
-		text="Вот, чёрт. Опять этот аферист Шараф идёт, снова будет затирать, что знает где находятся бухарцы! Вот, пока не забыл, возвращаю тебе свой долг! Я пойду, извините, что не смог помочь!"
-		role="NPC"
-		scriptResult="AddPlayerMoney(6000)"
-		nextReplies="Dlg_pl_001387" />
-
-	<Reply
-		name="Dlg_pl_001387"
-		text="[Шараф может знать, где находятся бухарцы?!]"
-		role="PLAYER"
-		scriptResult="CompleteQuest('TalkWithAkil_quest'); TakeQuest('SpeakToSharaf_quest'); StartConversation('Kef_Sharaf')" />
-<!--Root/r4m1/The Chronicle of Hamza/Шараф--><!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев--><!--Root/r4m1/The Chronicle of Hamza/Марио--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Вернулись от отца-->
+<!--Root/r4m1/The Chronicle of Hamza/Акиль--><!--Root/r4m1/The Chronicle of Hamza/Шараф--><!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев--><!--Root/r4m1/The Chronicle of Hamza/Марио--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Вернулись от отца-->
 	<Reply
 		name="Dlg_npc_002085"
 		text="Ну что? Как съездил?"
@@ -1541,7 +1491,7 @@
 
 	<Reply
 		name="Dlg_pl_001465"
-		text="Подожди, с того момента, как мы, уехали здесь явно что-то случилось. Все в суматохе какой-то бегают. Что произошло?!"
+		text="Подожди, с того момента, как мы уехали, здесь явно что-то случилось. Все в суматохе какой-то бегают. Что произошло?!"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001466" />
 
@@ -1622,6 +1572,105 @@
 		text="Ну ладно..."
 		role="PLAYER"
 		scriptResult="CompleteQuest('BackToSharafAfterBuhara_quest'); TakeQuest('TalkWithMario_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Акиль/Первый диалог-->
+	<Reply
+		name="Dlg_npc_001380"
+		text="Какие люди! Здравствуй, Хамза. Здравствуй, Мансур."
+		role="NPC"
+		scriptCondition="QuestStatus('TalkWithAkil_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_001381" />
+
+	<Reply
+		name="Dlg_pl_001381"
+		text="Привет, Акиль. Идрис сказал, ты занимаешься поиском бухарцев. Мы бы тоже хотели их найти. У тебя есть какая нибудь информация?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_001382" />
+
+	<Reply
+		name="Dlg_npc_001382"
+		text="Увы, увы. Ничего конкретного сказать не могу. В последнее время мы возобновили отправку экспедиций для их поиска, но они постоянно возвращаются ни с чем! Надежда угасает с каждым днём..."
+		role="NPC"
+		nextReplies="Dlg_pl_001383" />
+
+	<Reply
+		name="Dlg_pl_001383"
+		text="Идрис вроде бы говорил, что ты сам занимаешься их поиском."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001384" />
+
+	<Reply
+		name="Dlg_npc_001384"
+		text="Нет, я занимаюсь организацией экспедиций. Даже сам в паре экспедиций участие принял. Никаких результатов. Даже зацепок нет!"
+		role="NPC"
+		nextReplies="Dlg_pl_001385" />
+
+	<Reply
+		name="Dlg_pl_001385"
+		text="Эх. Плохо..."
+		role="PLAYER"
+		nextReplies="Dlg_npc_001386" />
+
+	<Reply
+		name="Dlg_npc_001386"
+		text="Вот, чёрт. Опять этот аферист Шараф идёт, снова будет затирать, что знает где находятся бухарцы! Вот, пока не забыл, возвращаю тебе свой долг! Я пойду, извините, что не смог помочь!"
+		role="NPC"
+		scriptResult="AddPlayerMoney(6000)"
+		nextReplies="Dlg_pl_001387" />
+
+	<Reply
+		name="Dlg_pl_001387"
+		text="[Шараф может знать, где находятся бухарцы?!]"
+		role="PLAYER"
+		scriptResult="CompleteQuest('TalkWithAkil_quest'); TakeQuest('SpeakToSharaf_quest'); StartConversation('Kef_Sharaf')" />
+<!--Root/r4m1/The Chronicle of Hamza/Акиль/Второй диалог-->
+	<Reply
+		name="Dlg_npc_002212"
+		text="Хамза, дорогой! У меня хорошие новости! Мы нашли бухарцев!"
+		role="NPC"
+		scriptCondition="GetVar('AkilExplains').AsInt == 0"
+		nextReplies="Dlg_pl_002213" />
+
+	<Reply
+		name="Dlg_pl_002213"
+		text="Я и сам их уже нашёл. Шараф сказал, что ты согласился его послушать."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002214" />
+
+	<Reply
+		name="Dlg_npc_002214"
+		text="Нашёл? А чего же ты раньше не сказал? Да, я согласился послушать его и понял, что на побережье мы и правда не пробовали искать!"
+		role="NPC"
+		nextReplies="Dlg_pl_002215" />
+
+	<Reply
+		name="Dlg_pl_002215"
+		text="Не рассказал, потому что ты вроде как и сам в тот момент всё знал. Когда мы вернулись Шараф рассказал нам о том, что ты его выслушал."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002216" />
+
+	<Reply
+		name="Dlg_npc_002216"
+		text="А, вот оно как. В общем: раз уж мы нашли их, думаю настало время вернуть их туда, где они должны быть!"
+		role="NPC"
+		nextReplies="Dlg_pl_002217" />
+
+	<Reply
+		name="Dlg_pl_002217"
+		text="Акиль, не думаю, что они будут на это согласны."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002218" />
+
+	<Reply
+		name="Dlg_npc_002218"
+		text="Это не им решать согласны они или нет! Есть чёткая задача: вернуть их домой или избавиться от них... Так! Ты ничего не слышал! Всё, уходи давай!"
+		role="NPC"
+		nextReplies="Dlg_pl_002219" />
+
+	<Reply
+		name="Dlg_pl_002219"
+		text="[Избавиться?! Задача?! Как это понимать?! Ну уж нет. Я не позволю тебе это сделать...]"
+		role="PLAYER"
+		scriptResult="SetVar('AkilExplains', 1); TakeQuest('TalkToFatherPrepToTrip_quest'); TActivate('AkilSus_tr'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Гонка/Если Хамза принимает участие-->
 	<Reply
 		name="Adrenalin_NPC_dialog_1"
@@ -1703,7 +1752,37 @@
 		name="Dlg_npc_001354"
 		text="Расскажи мне их тогда, чтобы я мог быть уверен в том, что вы их знаете."
 		role="NPC"
-		nextReplies="Dlg_pl_001355" />
+		nextReplies="Dlg_pl_001355 Dlg_pl_002207" />
+
+	<Reply
+		name="Dlg_pl_002207"
+		text="Э-э-э... Фальстарт - 20 000 монет... Третье место - проиграл..."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002208" />
+
+	<Reply
+		name="Dlg_npc_002208"
+		text="Можешь не продолжать, я уже вижу, что не знаешь. Правила просты: фальстарт - проиграл, разбил машину - проиграл. Приедешь первым - получишь 20 000 монет. Приедешь вторым - получишь 10 000 монет. Приедешь третьим - получишь 5 000 монет. Гонка состоит из одного круга, так как Уралы не такие быстрые, как гоночные болиды. На время гонки на вашу машину будет установлено оборудование, которое может увеличить номинальную скорость вашего автомобиля в два раза. Также на время гонки придётся снять оружие в целях безопасности как вашей, так и других участников. "
+		role="NPC"
+		nextReplies="Dlg_pl_002209" />
+
+	<Reply
+		name="Dlg_pl_002209"
+		text="Всё понятно... Когда начнётся гонка?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002210" />
+
+	<Reply
+		name="Dlg_npc_002210"
+		text="Уже совсем скоро, можете занимать стартовые позиции."
+		role="NPC"
+		nextReplies="Dlg_pl_002211" />
+
+	<Reply
+		name="Dlg_pl_002211"
+		text="Отлично. Спасибо!"
+		role="PLAYER"
+		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
 
 	<Reply
 		name="Dlg_pl_001355"
@@ -4701,8 +4780,9 @@
 
 	<Reply
 		name="Dlg_pl_001519"
-		text="Ну... Ой, ладно, поедем. Но не прямо сейчас же."
+		text="Ну... Ладно, мы поедем. Но не прямо сейчас же."
 		role="PLAYER"
+		scriptResult="SetVar('AkilExplains', 0)"
 		nextReplies="Dlg_npc_001520" />
 
 	<Reply
@@ -4715,7 +4795,7 @@
 		name="Dlg_pl_001521"
 		text="Да, ты прав. Так и сделаю."
 		role="PLAYER"
-		scriptResult="CompleteQuest('TalkToMansurAfterOil_quest'); TakeQuest('TalkToFatherPrepToTrip_quest'); EndConversation()" />
+		scriptResult="CompleteQuest('TalkToMansurAfterOil_quest'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/Посреди первого диалога с чужеземцем-->
 	<Reply
 		name="Dlg_npc_001548"
@@ -5238,7 +5318,7 @@
 
 	<Reply
 		name="Dlg_npc_001328"
-		text="Рад, что вы смогли с ними справиться. И, конечно, рад, что ты со мной честен. Однако в следующий раз постарайся позвать на помощь. Кто знает, вдруг нас вас нападёт столько безумцев, что вы с ними не сможете справиться самостоятельно? Я бы очень не хотел, чтобы вы геройствовали зазря."
+		text="Рад, что вы смогли с ними справиться. И, конечно, рад, что ты со мной честен. Однако в следующий раз постарайся позвать на помощь. Кто знает, вдруг на вас нападёт столько безумцев, что вы с ними не сможете справиться самостоятельно? Я бы очень не хотел, чтобы вы геройствовали зазря."
 		role="NPC"
 		nextReplies="Dlg_pl_001329" />
 

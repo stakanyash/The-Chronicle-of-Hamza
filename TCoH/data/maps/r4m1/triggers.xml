@@ -3472,4 +3472,15 @@
 			SpawnMessageBox("8912")
 		</script>
 	</trigger>
+
+	<trigger Name="AkilSus_tr" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddHistory("tcoh_akilsus")
+			AddFadingMsgId("fm_history_got")
+			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
 </triggers>
