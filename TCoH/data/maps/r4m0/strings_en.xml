@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
+<resource>
+    <string
+		id="8801"
+		value="Do you wish to travel to another region?"
+		numButtons="2" />
+
+	<string
+		id="1"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|Creepy place..."
+		sound=""
+		time="3" />
+
+	<string
+		id="2"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="MANSUR|Where do we begin the search for Sergo?"
+		sound=""
+		time="4" />
+
+	<string
+		id="3"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="FOREIGNER|He could be anywhere. I was driving almost straight through and didn't see anything like him. Maybe I just missed it. It's damn hard to notice anything when you're fighting off a bunch of madmans!"
+		sound=""
+		time="11" />
+
+	<string
+		id="4"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|Hell won't be easier than this. No way out but through. Let's go."
+		sound=""
+		time="6" />
+
+	<string
+		id="5"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|There's Sergo..."
+		sound=""
+		time="4" />
+
+	<string
+		id="6"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="FOREIGNER|Looks like my pack's still with him…"
+		sound=""
+		time="5" />
+
+	<string
+		id="7"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="MANSUR|Wanna check what's inside the pack?"
+		sound=""
+		time="5" />
+
+	<string
+		id="8"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="FOREIGNER|Of course."
+		sound=""
+		time="3" />
+
+	<string
+		id="9"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|What the hell is this thing… Wait. This might actually be the blocker!"
+		sound=""
+		time="7" />
+
+	<string
+		id="10"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|You know what? Let's leave it here. If it really is the blocker, there has to be another way to fix this mess. I just don't believe this thing can actually help us."
+		sound=""
+		time="11" />
+
+	<string
+		id="101"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|Let's take it with us. We'll head back and figure out what to do next."
+		sound=""
+		time="7" />
+
+	<string
+		id="200"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|Well then. Looks like I'll have to cross the Desert of Death alone."
+		sound=""
+		time="6" />
+
+	<string
+		id="201"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|Ugh... Kalba... My head's still pounding like crazy. But I can see fine - think I'll manage to cross the desert. Unless those madmen show up again…"
+		sound=""
+		time="10" />
+
+
+	<string
+		id="8000"
+		value="Enable a hint?||It will trigger in 10 minutes if you don't complete the quest sooner.||Recommended to enable on first playthrough." 
+		numButtons="2"/>
+
+	<string
+		id="8001"
+		value="Hint activated!||Please note that manual saving will be disabled!" 
+		numButtons="1"/>
+
+	
+	<string
+		id="8002"
+		value="Warning!||Leaving for Vahat is unavailable during the &quot;Find Sergo&quot; quest!"
+		numButtons="1"/>
+</resource>
