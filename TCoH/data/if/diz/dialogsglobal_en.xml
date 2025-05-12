@@ -20,7 +20,7 @@
 <!--Root/r4m2/Story--><!--Root/r4m2/Story/The Chronicle of Hamza--><!--Root/r4m2/Story/The Chronicle of Hamza/Scientist--><!--Root/r4m2/Story/The Chronicle of Hamza/Foreigner--><!--Root/r4m2/Story/The Chronicle of Hamza/Foreigner/While talking with scientist--><!--Root/r4m2/Story/The Chronicle of Hamza/Foreigner/While talking with scientist/1st part-->
 	<Reply
 		name="Dlg_npc_001567"
-		text="Wait a second… You don't know who was supposed to bring him the blocker to the South?"
+		text="Wait a second… You don't know who was supposed to bring him the blocker to the Sowth?"
 		role="NPC"
 		scriptCondition="GetVar('AivenJrTalk').AsInt==0 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001568" />
@@ -357,7 +357,7 @@
 
 	<Reply
 		name="Dlg_npc_001566"
-		text="Exactly. About two decades ago, he was given a mission — to bring a blocker here from the South, which can only be reached through the Desert of Death. According to what I know, he left to get it… and no one's seen him after this."
+		text="Exactly. About two decades ago, he was given a mission — to bring a blocker here from the Sowth, which can only be reached through the Desert of Death. According to what I know, he left to get it… and no one's seen him after this."
 		role="NPC"
 		nextReplies="Dlg_pl_001577" />
 
@@ -451,7 +451,7 @@
 
 	<Reply
 		name="Dlg_pl_001377"
-		text="They hit Gadad. Mansur's sister… didn't make it."
+		text="They hit Ghadad. Mansur's sister… didn't make it."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001378" />
 
@@ -910,7 +910,7 @@
 
 	<Reply
 		name="Dlg_npc_001472"
-		text="Because of what happened with the attack on Gadad, nobody dares to go to Kazif for oil anymore! “Too risky!” Our reserves are running dry — the local well's been dead for years! No one knows what to do! Everyone's trying to find a driver in Aliham or even Gadad itself, but so far? All we get are rejections!"
+		text="Because of what happened with the attack on Ghadad, nobody dares to go to Khazif for oil anymore! “Too risky!” Our reserves are running dry — the local well's been dead for years! No one knows what to do! Everyone's trying to find a driver in Alikham or even Ghadad itself, but so far? All we get are rejections!"
 		role="NPC"
 		nextReplies="Dlg_pl_001473" />
 
@@ -5492,7 +5492,7 @@
 
 	<Reply
 		name="Dlg_npc_001500"
-		text="Secrets? You're talking about secrets? We don't have room for secrets, Hamza! You have to understand — your actions could put all of us in danger! Do you really think I can't connect the recent attack on Gadad with your conversation with Akil, who's been searching for the old residents who vanished long ago? And Sharaf! He's shouting every day that he knows where they are! And we both know what kind of man Sharaf is!"
+		text="Secrets? You're talking about secrets? We don't have room for secrets, Hamza! You have to understand — your actions could put all of us in danger! Do you really think I can't connect the recent attack on Ghadad with your conversation with Akil, who's been searching for the old residents who vanished long ago? And Sharaf! He's shouting every day that he knows where they are! And we both know what kind of man Sharaf is!"
 		role="NPC"
 		nextReplies="Dlg_pl_001501" />
 
@@ -5535,7 +5535,7 @@
 
 	<Reply
 		name="Dlg_pl_001525"
-		text="Father, I'm ready to tell you what's going on. The truth is, after what happened in Gadad, Mansur and I decided to find out where the madmans are coming from — and how to destroy them. Right now, we're close to figuring out their origin. Obviously, the two of us alone won't be able to wipe them all out. But it's worth confirming our suspicions."
+		text="Father, I'm ready to tell you what's going on. The truth is, after what happened in Ghadad, Mansur and I decided to find out where the madmans are coming from — and how to destroy them. Right now, we're close to figuring out their origin. Obviously, the two of us alone won't be able to wipe them all out. But it's worth confirming our suspicions."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001526" />
 
@@ -5547,7 +5547,7 @@
 
 	<Reply
 		name="Dlg_pl_001527"
-		text="We need to go to Gadad. Mansur needs to talk to his parents. We'll figure out the rest once we're there."
+		text="We need to go to Ghadad. Mansur needs to talk to his parents. We'll figure out the rest once we're there."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001528" />
 
