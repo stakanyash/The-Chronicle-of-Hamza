@@ -423,7 +423,7 @@
 		id="9002"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="FOREIGNER|Don’t ask. Just drive. I didn’t get any of that either."
+		value="FOREIGNER|Don't ask. Just drive. I didn't get any of that either."
 		sound=""
 		time="7" />
 
@@ -433,7 +433,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Whoa… There’s no sand here. Not even a bit."
+		value="HAMZA|Whoa… There's no sand here. Not even a bit."
 		sound=""
 		time="5" />
 
@@ -475,7 +475,7 @@
 		id="906"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="FOREIGNER|Let’s just keep moving. We’ve got something bigger to focus on than my past."
+		value="FOREIGNER|Let's just keep moving. We've got something bigger to focus on than my past."
 		sound=""
 		time="7" />
 
@@ -493,7 +493,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Something’s wrong… I don’t feel right. Now I understand what Vasiliy meant… Oh God… Is it happening to me too?"
+		value="HAMZA|Something's wrong… I don't feel right. Now I understand what Vasiliy meant… Oh God… Is it happening to me too?"
 		sound=""
 		time="10" />
 
@@ -501,7 +501,7 @@
 		id="909"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="FOREIGNER|I think you’re right… Maybe it’s better if you go back before it gets worse."
+		value="FOREIGNER|I think you're right… Maybe it's better if you go back before it gets worse."
 		sound=""
 		time="6" />
 
@@ -529,7 +529,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Absolutely. Don’t even think about arguing — I’ve got this."
+		value="HAMZA|Absolutely. Don't even think about arguing — I've got this."
 		sound=""
 		time="5" />
 
