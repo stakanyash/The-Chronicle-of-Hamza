@@ -165,7 +165,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Чёртовы безумцы. Откуда они берутся-то?"
+		value="MANSUR|Crazy bastards… Where the hell do they even come from?!"
 		sound=""
 		time="5" />
 
@@ -175,7 +175,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Понятия не имею. Они просто появляются из ниоткуда и пытаются уничтожить всё, что видят на своём пути!"
+		value="HAMZA|No idea. They just show up outta nowhere and try to destroy everything in their path!"
 		sound=""
 		time="7" />
 
@@ -185,7 +185,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Они не могут появляться из пустоты. Может, они из чужих земель приезжают?"
+		value="MANSUR|They don't just come outta nowhere. Maybe they're coming from foreign lands?"
 		sound=""
 		time="5" />
 
@@ -195,7 +195,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Нет, они слишком похожи на местных. Может, здесь было что-то такое, что заставило их обезуметь?"
+		value="HAMZA|They're not strangers here — they were one of us. Maybe something here… drove them mad?"
 		sound=""
 		time="7" />
 
@@ -205,7 +205,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Я что-то про это слышал. Но я не уверен в том, насколько это свя..."
+		value="MANSUR|I've heard something about that… but I'm not sure how connected it rea..."
 		sound=""
 		time="5" />
 
@@ -215,7 +215,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Будьте вы прокляты, снова они! Атакуем их с двух сторон, иначе нам не выжить!"
+		value="MANSUR|Damn it… not them again! We have to flank ‘em now or we die here!"
 		sound=""
 		time="6" />
 
@@ -225,7 +225,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Злобные шайтаны! Да сколько можно-то уже? Мы еле уцелели!"
+		value="HAMZA|Shaitans! How much longer are we gonna keep barely surviving their attacks?!"
 		sound=""
 		time="5" />
 
@@ -235,7 +235,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Успокойся, Хамза. Злоба ничего хорошего сейчас не принесёт. Нам нужно побыстрее найти место, где можно починиться, пока не наткнулись на ещё одну колонну безумцев."
+		value="MANSUR|Calm down, Hamza. Anger won't help us now. We need to find a place to fix up before we run into another madmans."
 		sound=""
 		time="11" />
 
@@ -245,7 +245,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Ты прав. Так что ты там говорил до этого?"
+		value="HAMZA|You're right. So what were you saying before?"
 		sound=""
 		time="5" />
 
@@ -255,7 +255,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Ах, да. Я не уверен, насколько это связано, но в мире очень давно произошла катастрофа, из-за которой погибло много людей. Как я читал в старых книгах, произошла она не то чтобы очень далеко отсюда. Возможно, они оттуда и лезут, кто знает..."
+		value="MANSUR|Oh right… I'm not sure if it's connected, but there was this huge disaster a long time ago — wiped out a lot of people. From what I read in old books, it wasn't even that far from here. Maybe they came from there… who knows."
 		sound=""
 		time="14" />
 
@@ -265,7 +265,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Это интересно. Неужели за это время не было никого, кто бы решился устранить последствия катастрофы?"
+		value="HAMZA|That's interesting. Not one person tried to fix what went wrong after that crash?"
 		sound=""
 		time="8" />
 
@@ -275,7 +275,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Этого я сказать увы не могу. Либо об этом нигде не написано, либо никто не отваживался на такой рискованный шаг. В любом случае, я замечал, что безумцы такие же молодые как и мы. Неужели это какая-то болезнь?.."
+		value="MANSUR|I can't say that, I'm afraid. Either it's not written anywhere, or no one dared to take such a risky step. Either way, I've noticed — those madmens are about our age. Could it be some kind of sickness…?"
 		sound=""
 		time="15" />
 
@@ -285,7 +285,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Нашёл, конечно, кого спросить! Знать бы, откуда они лезут, для начала, а потом уже разбираться, как и почему."
+		value="HAMZA|Oh great, you found the perfect one to ask! Maybe next time we find out where they're coming from first — then we can wonder how and why."
 		sound=""
 		time="8" />
 
@@ -295,7 +295,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Этот вопрос был адресован не тебе, успокойся, пожалуйста. Это был общий вопрос, на который ответа у нас нет, увы."
+		value="MANSUR|That question wasn't directed at you, calm down please. It was a general question — one we don't have an answer to, unfortunately."
 		sound=""
 		time="8" />
 
@@ -305,7 +305,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Да я и не нервничал, не волнуйся."
+		value="HAMZA|Nah, I was chill the whole time. Don't sweat it."
 		sound=""
 		time="5" />
 
@@ -315,7 +315,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|К слову, у меня тут лежит книга о той катастрофе. Я её уже прочёл, и мне она не нужна. Если хочешь - могу отдать."
+		value="MANSUR|By the way, I've got a book here about that disaster. Already read it — don't need it anymore. If you want, I can give it to you."
 		sound=""
 		time="8" />
 
@@ -325,7 +325,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|А почему бы и нет? Почитаю на досуге."
+		value="HAMZA|Why not? I'll give it a read when I've got time."
 		sound=""
 		time="5" />
 
@@ -335,7 +335,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|О, тут-то мы и починимся."
+		value="HAMZA|Right here… this is where we get ourselves back in shape."
 		sound=""
 		time="4" />
 
@@ -345,7 +345,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Давай я первым починюсь, если ты не против."
+		value="MANSUR|Let me go first, if that's okay with you."
 		sound=""
 		time="5" />
 
@@ -355,7 +355,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Да, конечно. Так, кажется, по рации на связь выходят..."
+		value="HAMZA|Yeah, of course. Hmm… sounds like someone's trying to reach us on the radio."
 		sound=""
 		time="5" />
 
@@ -365,7 +365,7 @@
 		modelSkin="0"
 		modelCfg="171"
 		modelSlot="1"
-		value="FATHER|Хамза, это отец. Ты где?"
+		value="FATHER|Hamza, it's your father. Where are you?"
 		sound=""
 		time="4" />
 
@@ -375,7 +375,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Неподалёку с Мансуром езжу, а что?"
+		value="HAMZA|I'm just driving around nearby with Mansur. What's the deal?"
 		sound=""
 		time="4" />
 
@@ -385,7 +385,7 @@
 		modelSkin="0"
 		modelCfg="171"
 		modelSlot="1"
-		value="FATHER|Давай прекращай свои покатушки и езжай домой. Дело есть. Да и безумцы всё-таки тут в округе, мало ли нарвёшься."
+		value="FATHER|Cut the joyride and head home. Got something important to talk about. And with madmens running around out there — last thing I need is you running into trouble."
 		sound=""
 		time="7" />
 
@@ -395,7 +395,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Хорошо, отец. Скоро буду."
+		value="HAMZA|Alright, father. I'm on my way."
 		sound=""
 		time="4" />
 
@@ -405,7 +405,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Ты, я смотрю, уже починился. Теперь бы и мне починиться надо, а то, думаю, отец не обрадуется, если увидит повреждённую машину."
+		value="HAMZA|Looks like you're all fixed up. Guess it's my turn to get fixed now — wouldn't want father seeing this beat-up ride, would I?"
 		sound=""
 		time="8" />
 
@@ -415,7 +415,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Да, я уже починился. Хамза, мне нужно домой, поэтому я поеду. Счастливо. И береги себя."
+		value="MANSUR|Yeah, I'm good now. Hamza, I need to head home — so I'm out. Take care, brother."
 		sound=""
 		time="7" />
 
@@ -425,7 +425,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|До встречи!"
+		value="HAMZA|See you later!"
 		sound=""
 		time="3" />
 
@@ -435,7 +435,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Неплохая гонка выдалась, не так ли, Хамза?"
+		value="MANSUR|Not a bad race, huh?"
 		sound=""
 		time="5" />
 
@@ -445,7 +445,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Да, гонка была что надо!"
+		value="HAMZA|Yeah, that was one hell of a race!"
 		sound=""
 		time="4" />
 
@@ -455,7 +455,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Куда дальше поедем?"
+		value="MANSUR|Where to next?"
 		sound=""
 		time="3" />
 
@@ -465,7 +465,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Не знаю, можем просто покататься, поговорить."
+		value="HAMZA|I don't know… maybe we can just take a drive and talk for a bit."
 		sound=""
 		time="4" />
 
@@ -475,7 +475,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Почему бы и не..."
+		value="MANSUR|Why no..."
 		sound=""
 		time="3" />
 
@@ -484,7 +484,7 @@
 		modelAutosized="true"
 		modelName="gadget_12"
 		modelSlot="1"
-		value="RADIO|Внимание всем! На Гадад совершено нападение безумцев! Нам нужна помощь в отражении атаки всех, кто находится рядом!"
+		value="RADIO|Attention all units! Gadad is under attack by madmens. All in the area — immediately assist with defense!"
 		sound=""
 		time="8" />
 
@@ -494,7 +494,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Некогда нам кататься! Быстрее поехали отбивать нападение!"
+		value="MANSUR|No time for joyrides! Move it — we've got an attack to stop!"
 		sound=""
 		time="5" />
 
@@ -504,7 +504,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Яха-а-а! Вот это гонка выдалась! Так я ещё и победил в ней! Вау!"
+		value="MANSUR|YEEEAH! Now that was a race! And I still pulled off the win? No way!"
 		sound=""
 		time="5" />
 
@@ -514,7 +514,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Молодец, Мансур! Прирождённый гонщик!"
+		value="HAMZA|Hell yeah, Mansur! You were born for this!"
 		sound=""
 		time="4" />
 
@@ -524,7 +524,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Ну что? Куда дальше поедем?"
+		value="MANSUR|So… where to next?"
 		sound=""
 		time="3" />
 
@@ -534,7 +534,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Вот шайтан! Совсем немного не успел!"
+		value="MANSUR|Shaitan! So close… I almost had him!"
 		sound=""
 		time="5" />
 
@@ -544,7 +544,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Не огорчайся, Мансур, в следующий раз победа будет за тобой!"
+		value="HAMZA|Don't beat yourself up, Mansur. Next time, the victory will be yours"
 		sound=""
 		time="5" />
 
@@ -554,7 +554,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Эх, ладно, не всегда же побеждать. Куда дальше поедем?"
+		value="MANSUR|Guess not every battle ends in victory. So where to next?"
 		sound=""
 		time="5" />
 
@@ -564,7 +564,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|О боже, сколько же здесь этих безумцев. Нам будет явно непросто..."
+		value="MANSUR|Oh God… how many of madmans are there?! This is gonna be a hell of a fight…"
 		sound=""
 		time="5" />
 
@@ -574,7 +574,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Давай смелее, мы же не можем просто стоять и смотреть!"
+		value="HAMZA|Move it! We can't just stand here and watch!"
 		sound=""
 		time="4" />
 
@@ -584,7 +584,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Фух... Мы справились."
+		value="MANSUR|Phew… We made it."
 		sound=""
 		time="3" />
 
@@ -594,7 +594,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Слушай, похоже на какое-то организованное нападение. Разве может столько сильно вооруженных машин резко решить напасть на город?!"
+		value="HAMZA|Listen, this wasn't random. There's no way that many heavily armed vehicles just decided to hit the city outta nowhere."
 		sound=""
 		time="8" />
 
@@ -604,7 +604,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Да, очень похоже на организованное нападение... Но как будто это происходит впервые... Главное, что мы справились, остальное не так важно."
+		value="MANSUR|Yeah, looks like a coordinated attack… though you'd think it was their first time doing it. Point is, we held up. The rest? Not our problem."
 		sound=""
 		time="9" />
 
@@ -614,7 +614,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Ты прав. У нас есть те, кто погиб?"
+		value="HAMZA|You're right… Have we lost anyone?"
 		sound=""
 		time="4" />
 
@@ -624,7 +624,7 @@
 		modelSkin="2"
 		modelCfg="315"
 		modelSlot="1"
-		value="JAMIL|Да, и их не мало. До вашего приезда погибло примерно человек десять. Скажу больше... Мансур..."
+		value="JAMIL|Yeah, and it's not just a few. Ten people were dead before you even arrived. And listen… Mansur…"
 		sound=""
 		time="7" />
 
@@ -634,7 +634,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Что?!"
+		value="MANSUR|What?!"
 		sound=""
 		time="3" />
 
@@ -644,7 +644,7 @@
 		modelSkin="2"
 		modelCfg="315"
 		modelSlot="1"
-		value="JAMIL|Твоя сестра... Она, к сожалению, стала первой, кто погиб от рук безумцев... Её случайно задело взрывной волной от ракеты..."
+		value="JAMIL|Your sister… she was the first to fall... One of those madmans launched a rocket — she was caught in the blast..."
 		sound=""
 		time="9" />
 
@@ -654,7 +654,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Чт.. Как... Эти безумные ракшаксы убили мою сестру!.."
+		value="MANSUR|Wha… How…? Those mad rakshaks killed my sister…"
 		sound=""
 		time="5" />
 
@@ -664,7 +664,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Мансур, мне очень жаль."
+		value="HAMZA|Mansur… I'm so sorry."
 		sound=""
 		time="4" />
 
@@ -684,7 +684,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Мансур, тебе не кажется, что пора действовать? Нам нужно узнать, откуда лезут эти шайтаны, и найти путь уничтожить их!"
+		value="HAMZA|Mansur, don't you think it's time for our move? We need to find where these shaitans are coming from and cut them down before they come for us again."
 		sound=""
 		time="7" />
 
@@ -694,7 +694,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Хамза... Не сейчас, прошу тебя... Оставь меня в покое..."
+		value="MANSUR|Hamza… not now, please… just leave me alone…"
 		sound=""
 		time="5" />
 
@@ -704,7 +704,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Мансур..."
+		value="HAMZA|Mansur..."
 		sound=""
 		time="3" />
 
@@ -714,7 +714,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Я сказал... ОСТАВЬ МЕНЯ В ПОКОЕ!"
+		value="MANSUR|I said… LEAVE ME ALONE!"
 		sound=""
 		time="5" />
 
@@ -724,7 +724,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Ладно, как скажешь..."
+		value="HAMZA|Alright. If you say so."
 		sound=""
 		time="4" />
 
@@ -734,7 +734,7 @@
 		modelSkin="0"
 		modelCfg="171"
 		modelSlot="1"
-		value="FATHER|Хамза?! Хамза, отвечай!"
+		value="FATHER|Hamza?! Come on, respond!"
 		sound=""
 		time="4" />
 
@@ -744,7 +744,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Отец, что такое?"
+		value="HAMZA|Father, what's wrong?"
 		sound=""
 		time="4" />
 
@@ -754,7 +754,7 @@
 		modelSkin="0"
 		modelCfg="171"
 		modelSlot="1"
-		value="FATHER|Я слышал по рации, что на Гадад напали безумцы. Вы в порядке?!"
+		value="FATHER|Heard over the radio — Gadad under attack by madmens. Are you guys okay?!"
 		sound=""
 		time="5" />
 
@@ -764,7 +764,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Да, мы в порядке. На момент начала нападения нас не было в Гададе, но мы приехали помогать. Однако без потерь не обошлось... Погибла сестра Мансура..."
+		value="HAMZA|We're alive. Weren't in Gadad when things went bad — got here as fast as we could. But not everyone made it out… Mansur's sister… she's gone."
 		sound=""
 		time="8" />
 
@@ -774,7 +774,7 @@
 		modelSkin="0"
 		modelCfg="171"
 		modelSlot="1"
-		value="FATHER|Какой ужас..."
+		value="FATHER|What a nightmare…"
 		sound=""
 		time="3" />
 
@@ -784,7 +784,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Не то слово... Мне нужно переговорить с Мансуром, скоро буду."
+		value="HAMZA|You're not wrong… I need to talk to Mansur. Be there soon."
 		sound=""
 		time="5" />
 
@@ -794,7 +794,7 @@
 		modelSkin="0"
 		modelCfg="171"
 		modelSlot="1"
-		value="FATHER|Жду."
+		value="FATHER|Hurry up."
 		sound=""
 		time="3" />
 
@@ -804,7 +804,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Смотри! Кажется, это тот самый, о котором говорил Шараф!"
+		value="MANSUR|Look! That must be the one Sharaf was talking about!"
 		sound=""
 		time="5" />
 
@@ -814,7 +814,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Жёлтый Урал... И синяя эмблема с волком. Это опредённо тот, кто нам нужен!"
+		value="HAMZA|Yellow Ural… and a blue emblem with a wolf. That's him!"
 		sound=""
 		time="6" />
 
@@ -824,7 +824,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Мы можем убить его сразу, а можем и проследовать за ним. Вдруг он нас на свою базу приведёт!"
+		value="MANSUR|We put a bullet in him now… or we see where that bastard's headed. Might just get lucky."
 		sound=""
 		time="6" />
 
@@ -834,7 +834,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Нет. Никаких слежек."
+		value="HAMZA|Not a chance."
 		sound=""
 		time="3" />
 
@@ -844,7 +844,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Эй, ты! Стоять!"
+		value="HAMZA|Hey, you! Freeze!"
 		sound=""
 		time="4" />
 
@@ -854,7 +854,7 @@
 		modelSkin="2"
 		modelCfg="350"
 		modelSlot="1"
-		value="ROBBER|Чего тебе надо? Отвали, сопля!"
+		value="ROBBER|What do you want?! Back off, punk!"
 		sound=""
 		time="5" />
 
@@ -864,7 +864,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Для начала верни то, что украл!"
+		value="HAMZA|Start by giving back what you stole, or I'll rip it out of your hands myself."
 		sound=""
 		time="5" />
 
@@ -874,7 +874,7 @@
 		modelSkin="2"
 		modelCfg="350"
 		modelSlot="1"
-		value="ROBBER|Мелочь, я не понимаю, о чём ты, иди гуляй, пока я тебе кузов для профилактики не изрешетил!"
+		value="ROBBER|Kid, you're wasting my time with nonsense! Walk away. Before I decide to give your truck a little bullet therapy."
 		sound=""
 		time="6" />
 
@@ -884,13 +884,13 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Я с тобой тут не шутки шучу! Не хочешь по-хорошему, будет по-плохому. Последнее желание можешь не загадывать, оно всё равно не сбудется, ведь сейчас ты умрёшь!"
+		value="HAMZA|You think I'm fooling around?! You wanna play tough? Fine. Say goodbye to your life — cause it's your last breath."
 		sound=""
 		time="12" />
 
 	<string
 		id="115"
-		value="Шараф погиб. Теперь вам не узнать, где находятся бухарцы."
+		value="Sharaf is dead. Now you will never know where the Bukharans are."
 		numButtons="1" />
 
 	<string
@@ -899,7 +899,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Ну что. Пора ехать."
+		value="HAMZA|Well then… time to roll."
 		sound=""
 		time="5" />
 
@@ -909,7 +909,7 @@
 		modelSkin="0"
 		modelCfg="15"
 		modelSlot="1"
-		value="ADRENALINIST|Внимание! Всем приготовиться!"
+		value="ADRENALINIST|Everyone, get ready!"
 		sound=""
 		time="2" />
 
@@ -919,7 +919,7 @@
 		modelSkin="0"
 		modelCfg="15"
 		modelSlot="1"
-		value="ADRENALINIST|Три!"
+		value="ADRENALINIST|Three!"
 		sound=""
 		time="2" />
 
@@ -929,7 +929,7 @@
 		modelSkin="0"
 		modelCfg="15"
 		modelSlot="1"
-		value="ADRENALINIST|Два!"
+		value="ADRENALINIST|Two!"
 		sound=""
 		time="2" />
 
@@ -939,7 +939,7 @@
 		modelSkin="0"
 		modelCfg="15"
 		modelSlot="1"
-		value="ADRENALINIST|Один!"
+		value="ADRENALINIST|One!"
 		sound=""
 		time="2" />
 
@@ -949,7 +949,7 @@
 		modelSkin="0"
 		modelCfg="15"
 		modelSlot="1"
-		value="ADRENALINIST|СТАРТ!"
+		value="ADRENALINIST|START!"
 		sound=""
 		time="2" />
 
@@ -959,7 +959,7 @@
 		modelSkin="0"
 		modelCfg="15"
 		modelSlot="1"
-		value="ADRENALINIST|Победила машина под номером 1!"
+		value="ADRENALINIST|Number 1 takes the win!"
 		sound=""
 		time="5" />
 
@@ -969,7 +969,7 @@
 		modelSkin="0"
 		modelCfg="15"
 		modelSlot="1"
-		value="ADRENALINIST|Победила машина под номером 2!"
+		value="ADRENALINIST|Number 2 takes the win!"
 		sound=""
 		time="5" />
 
@@ -979,7 +979,7 @@
 		modelSkin="0"
 		modelCfg="15"
 		modelSlot="1"
-		value="ADRENALINIST|Победила машина под номером 3!"
+		value="ADRENALINIST|Number 3 takes the win!"
 		sound=""
 		time="5" />
 
@@ -989,7 +989,7 @@
 		modelSkin="0"
 		modelCfg="15"
 		modelSlot="1"
-		value="ADRENALINIST|Победила машина под номером 4!"
+		value="ADRENALINIST|Number 4 takes the win!"
 		sound=""
 		time="5" />
 
@@ -999,7 +999,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Та-а-ак... Я на месте. Надо загрузиться по полной, чтобы на большее время хватило."
+		value="HAMZA|So… I'm here. Time to load up."
 		sound=""
 		time="5" />
 
@@ -1009,7 +1009,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Нефть доставлена, надо Марио об этом сказать."
+		value="HAMZA|Oil's been delivered. Should let Mario know."
 		sound=""
 		time="5" />
 
@@ -1019,7 +1019,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Мама, папа, привет. Нам нужно поговорить, времени немного. Мы с Хамзой решили отправиться на восток, чтобы найти место катастрофы. У нас есть догадки, что безумцы приходят именно оттуда."
+		value="MANSUR|Mom, Dad… hey. We need to talk — just a few minutes. Hamza and I decided to head east, to the crash site. We think that's where madmens are coming from."
 		sound=""
 		time="14" />
 
@@ -1029,7 +1029,7 @@
 		modelSkin="2"
 		modelCfg="285"
 		modelSlot="1"
-		value="MANSUR'S FATHER|Что?! Ты совсем потерял рассудок? После всего, что случилось с твоей сестрой, ты хочешь рисковать своей жизнью?"
+		value="MANSUR'S FATHER|What?! Are you serious right now?! After losing a sister, you wanna go get yourself killed too?!"
 		sound=""
 		time="10" />
 
@@ -1039,7 +1039,7 @@
 		modelSkin="0"
 		modelCfg="117"
 		modelSlot="1"
-		value="MANSUR'S MOTHER|Мансур, пожалуйста, не делай этого. Мы не можем потерять ещё и тебя."
+		value="MANSUR'S MOTHER|Mansur… please don't do this. We can't lose you too."
 		sound=""
 		time="7" />
 
@@ -1049,7 +1049,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Я понимаю ваши чувства, но это очень важно для нас. Если мы не отправимся туда сейчас, то наши поиски причин всего происходящего зайдут в тупик."
+		value="MANSUR|I get it… believe me, I do. But we have to go. If not now — then when? We can't let this trail go cold."
 		sound=""
 		time="12" />
 
@@ -1059,7 +1059,7 @@
 		modelSkin="2"
 		modelCfg="285"
 		modelSlot="1"
-		value="MANSUR'S FATHER|Причины? Какие еще причины? Ты хочешь найти причины, по которым твоя сестра погибла? Это безумие!"
+		value="MANSUR'S FATHER|Reasons? What more reasons do you need?! You want to dig up every last excuse for why your sister is dead? That's insane!"
 		sound=""
 		time="8" />
 
@@ -1069,7 +1069,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Нет, папа. Безумие - это постоянно отбиваться от их атак и ничего не предпринимать!"
+		value="MANSUR|No way, Dad. It's crazy to keep defending and never strike back! We can't wait forever!"
 		sound=""
 		time="7" />
 
@@ -1079,7 +1079,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Мансур прав. Мы должны это сделать. Мой отец гордится нашим решением и верит, что всё пройдёт успешно."
+		value="HAMZA|Mansur's right. We have to do this. My father is proud of our choice — and he believes we'll make it through."
 		sound=""
 		time="8" />
 
@@ -1089,7 +1089,7 @@
 		modelSkin="2"
 		modelCfg="285"
 		modelSlot="1"
-		value="MANSUR'S FATHER|Хамза, помолчи, пожалуйста! Лучше не делаешь! Мансур, ты же знаешь, насколько это опасно!"
+		value="MANSUR'S FATHER|Hamza, just shut up for a second! You're not helping! Mansur, you know how dangerous this is!"
 		sound=""
 		time="7" />
 
@@ -1099,7 +1099,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Да, я знаю. Но мы будем осторожны. Если почувствуем какую-либо опасность, мы сразу вернемся."
+		value="MANSUR|Yeah, I know. But we'll be careful. If we sense any danger — we turn back. Immediately."
 		sound=""
 		time="7" />
 
@@ -1109,7 +1109,7 @@
 		modelSkin="2"
 		modelCfg="285"
 		modelSlot="1"
-		value="MANSUR'S FATHER|Мансур, ты не понимаешь, насколько это серьезно. Оттуда еще никто не возвращался. Ты хочешь, чтобы мы потеряли и тебя?"
+		value="MANSUR'S FATHER|Mansur, listen to me — this isn't some mission you just walk away from. No one's made it back. Is that really a gamble you want to take?!"
 		sound=""
 		time="9" />
 
@@ -1119,7 +1119,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Папа, я понимаю ваши страхи. Но мы должны попытаться. Это единственный способ найти ответы и, возможно, предотвратить новые трагедии."
+		value="MANSUR|Dad, I understand your fears. But we have to try. It's the only way to find answers — and maybe stop more tragedies from happening."
 		sound=""
 		time="10" />
 
@@ -1129,7 +1129,7 @@
 		modelSkin="2"
 		modelCfg="285"
 		modelSlot="1"
-		value="MANSUR'S FATHER|Ладно, Мансур. Но обещай, что будешь осторожен и сразу же вернёшься, если что-то пойдет не так. Мы не можем потерять ещё и тебя... Мы до сих пор от потери Мусибы не отошли..."
+		value="MANSUR'S FATHER|Alright, Mansur. But promise me you'll be careful — and that you'll turn back the moment things go wrong. We can't lose you too… we're still not over Musiba's loss…"
 		sound=""
 		time="16" />
 
@@ -1139,7 +1139,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Обещаю, папа. Мы будем осторожны. Это ради неё."
+		value="MANSUR|I promise, Dad. We'll be careful. It's for her."
 		sound=""
 		time="6" />
 
@@ -1149,7 +1149,7 @@
 		modelSkin="0"
 		modelCfg="117"
 		modelSlot="1"
-		value="MANSUR'S MOTHER|Мансур. Мы верим в тебя. Будьте осторожны и возвращайтесь целыми и невредимыми."
+		value="MANSUR'S MOTHER|Mansur. We believe in you. Be careful — come back safe and sound."
 		sound=""
 		time="7" />
 
@@ -1159,7 +1159,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Спасибо, мама. Мы вернемся, обещаю."
+		value="MANSUR|Thank you… I swear, we'll return."
 		sound=""
 		time="5" />
 
@@ -1169,7 +1169,7 @@
 		modelSkin="0"
 		modelCfg="171"
 		modelSlot="1"
-		value="FATHER|Хамза? Хамза, приём!"
+		value="FATHER|Hamza? Hazma, hello!"
 		sound=""
 		time="5" />
 
@@ -1179,7 +1179,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Да, отец, слышу тебя хорошо, что случилось?"
+		value="HAMZA|Yes, father, I hear you clearly. What's happened?"
 		sound=""
 		time="5" />
 
@@ -1189,7 +1189,7 @@
 		modelSkin="0"
 		modelCfg="171"
 		modelSlot="1"
-		value="FATHER|Хамза, похоже, что тот приезжий с других земель, о котором я тебе говорил, здесь с целями, схожими с вашими. Я случайно подслушал диалог этого человека с Акилем, сейчас он направился к бухарцам. Если вы всё ещё в нашем регионе, советую поехать туда и поговорить с ним."
+		value="FATHER|Hamza! That stranger I told you about — he's talked to Akil and now he's going to the Bukharans. I guess he has the same goals as you. If you're still around — catch up with him."
 		sound=""
 		time="16" />
 
@@ -1199,7 +1199,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Понял тебя. Спасибо за информацию, отец."
+		value="HAMZA|Understood. Appreciate the info, Dad."
 		sound=""
 		time="5" />
 
@@ -1209,7 +1209,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Ну что, Мансур, поехали снова к бухарцам?"
+		value="HAMZA|So, Mansur. Ready to pay the Bukharans another visit?"
 		sound=""
 		time="5" />
 
@@ -1219,7 +1219,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Поехали."
+		value="MANSUR|Let's go."
 		sound=""
 		time="4" />
 
@@ -1229,7 +1229,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Хамза, давай ускоряйся, там бойня!"
+		value="MANSUR|Hurry up, Hamza! It's a bloodbath out there!"
 		sound=""
 		time="4" />
 
@@ -1239,7 +1239,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Я так-то вижу! Скорее!"
+		value="HAMZA|I see it — just hurry up!"
 		sound=""
 		time="4" />
 
@@ -1249,7 +1249,7 @@
 		modelSkin="0"
 		modelCfg="135"
 		modelSlot="1"
-		value="OLDMAN|Вот мы и приехали в порт. Спасибо вам за защиту от супостата."
+		value="OLDMAN|Well, here we are at the harbor. Thanks for having our back out there."
 		sound=""
 		time="5" />
 
@@ -1257,7 +1257,7 @@
 		id="144"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="FOREIGNER|Всегда пожалуйста. Удачно вам переправиться на другие земли."
+		value="FOREIGNER|Hope you make it through to the other lands safe and sound."
 		sound=""
 		time="5" />
 
@@ -1267,7 +1267,7 @@
 		modelSkin="0"
 		modelCfg="135"
 		modelSlot="1"
-		value="OLDMAN|Чужеземец, сначала я не хотел тебе этого говорить, но тот человек, о котором ты спрашивал, действительно был в нашей деревне. Он отправился дальше на восток. Заклинаю тебя: не следуй за ним! Там тебя ждёт только смерть. Или то, что хуже смерти."
+		value="OLDMAN|Foreigner… at first, I didn't want to say anything. But yes — the man you're asking about was here. He went east. I beg you: don't follow him. There's only death waiting for you out there. Or something worse."
 		sound=""
 		time="12" />
 
@@ -1277,7 +1277,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Какие у нас дальнейшие планы?"
+		value="HAMZA|What's the plan now?"
 		sound=""
 		time="4" />
 
@@ -1285,7 +1285,7 @@
 		id="147"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="FOREIGNER|Делать то, что должны. Я думаю, ты понимаешь, о чём я."
+		value="FOREIGNER|We do what we gotta do. You understand me, right?"
 		sound=""
 		time="5" />
 
@@ -1295,7 +1295,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Да, понимаю. Мансур? Ты готов?"
+		value="HAMZA|Yeah, I get it. Mansur? You ready?"
 		sound=""
 		time="5" />
 
@@ -1305,7 +1305,7 @@
 		modelSkin="0"
 		modelCfg="219"
 		modelSlot="1"
-		value="MANSUR|Готов. В путь!"
+		value="MANSUR|Ready. Let's move out!"
 		sound=""
 		time="4" />
 
