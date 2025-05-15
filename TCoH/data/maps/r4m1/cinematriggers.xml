@@ -1677,7 +1677,7 @@
         CompleteQuest("DefendGadad_quest")
 		TakeQuest("TalkToMansur_quest")
 
-		AddHistory( "tcoh_firststory" )
+		AddHistory( "tcoh_firstgadaddefend" )
 		AddFadingMsgId( "fm_history_got" )
 		AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 

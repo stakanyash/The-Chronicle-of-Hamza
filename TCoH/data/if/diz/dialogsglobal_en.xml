@@ -1069,7 +1069,7 @@
 
 	<Reply
 		name="Dlg_npc_001412"
-		text='Exactly. After that incident, we decided it wasn't safe to stay among the rest. Over time, these so-called "madmen" started forming groups and attacking each other. It didn't really touch us, though — strong emotions like that are typical of the young, people like you. As for us, we were already too old for such feelings back then.'
+		text='Exactly. After that incident, we decided it wasn’t safe to stay among the rest. Over time, these so-called madmen started forming groups and attacking each other. It didn’t really touch us, though — strong emotions like that are typical of the young, people like you. As for us, we were already too old for such feelings back then.'
 		role="NPC"
 		nextReplies="Dlg_pl_001413" />
 
@@ -1612,7 +1612,7 @@
 
 	<Reply
 		name="Dlg_npc_001386"
-		text='Well, well. It's Sharaf... Our favorite snake in human skin. Bet he's here to "share" another one of his "leads" on the Bukharans. Stupid clown... Oh, almost forgot. Here's your debt. Sorry I couldn't do more. '
+		text='Well, well. It’s Sharaf... Our favorite snake in human skin. Bet he’s here to share another one of his "leads" on the Bukharans. Stupid clown... Oh, almost forgot. Here’s your debt. Sorry I couldn’t do more.'
 		role="NPC"
 		scriptResult="AddPlayerMoney(6000)"
 		nextReplies="Dlg_pl_001387" />
