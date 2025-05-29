@@ -7,7 +7,7 @@
 --
 ------------------------------------------------------------------------------
 
-version = "1.0.1"
-build = "250505a"
+version = "1.1 TEST"
+build = "250529b"
 
 LOG("The Chronicle of Hamza " .. version .. " " .. build)
