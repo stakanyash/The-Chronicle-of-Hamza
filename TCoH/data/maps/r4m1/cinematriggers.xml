@@ -642,7 +642,7 @@
 	</trigger>
 
 
-	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ -->
+	<!-- ˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜ -->
 	<trigger	Name="cinPriezdFirst"	active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
 		<script>
@@ -725,7 +725,7 @@
 		</script>
 	</trigger>
 
-	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -->
+	<!-- ˜˜˜˜˜˜˜ ˜˜˜˜, ˜˜˜˜˜ ˜˜˜ ˜˜˜˜˜˜ ˜˜˜˜˜˜˜˜˜˜˜˜˜ -->
 	<trigger Name="trENEMYLISA_DEAD" active="0">
 		<event eventid="GE_VEHICLE_WITHOUT_HEALTH" ObjName="ENEMYLISA_vehicle_0" />
 		<event	timeout="60"		eventid="GE_TIME_PERIOD" />
@@ -846,7 +846,7 @@
 		</script>
 	</trigger>
 
-	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ -->
+	<!-- ˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜˜˜˜ ˜ ˜˜˜˜˜ -->
 
 	<trigger Name="cinMovePlToR2M2_begin" active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
@@ -4259,6 +4259,66 @@
 			RestoreAllToleranceStatus()
 
 			StartConversation("Chujezemets")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="MansurFinded" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+			SetVar("MansurStart", 1)
+
+			local PCar = GetPlayerVehicle()
+			local PCarID = getObj("MansurCarCS"):GetId()
+
+			PlayCustomMusic("Techno03")
+
+			Fly("MansurFindedcam", CINEMATIC_AIM_TO_ID, PCarID, 10, 1, 1)
+			StartCinematic()
+
+			if PCar then
+				PCar:SetGamePositionOnGround(CVector(5784.098, 251.058, 7529.827))
+				PCar:SetRotation(Quaternion(-0.001, -0.585, 0.003, 0.811))
+			end
+
+			TActivate("MansurFinded_fade")
+			TActivate("MansurFinded_end")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger	Name="MansurFinded_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			local p = GetPlayerVehicle()
+			if p then
+				p:SetExternalPathByName("HamzaFindMansur_path")
+				p:LimitMaxSpeed(20)
+				p:SetCustomLinearVelocity(20)
+			end
+		
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MansurFinded_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+			StopPlayingCustomMusic()
+
+			local p = GetPlayerVehicle()
+			if p then
+				p:SetExternalPathByName("HamzaFindMansur_path")
+				p:PlaceToEndOfPath("HamzaFindMansur_path")
+				p:UnlimitMaxSpeed()
+			end
+
+			StartConversation("MansurFindeddlg")
 
 			trigger:Deactivate()
 		</script>

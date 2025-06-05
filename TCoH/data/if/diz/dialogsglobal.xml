@@ -466,7 +466,140 @@
 		text="Спасибо. Счастливо!"
 		role="PLAYER"
 		scriptResult="CompleteQuest('GoTalkWithIdris_quest'); TakeQuest('TalkWithAkil_quest'); EndConversation()" />
-<!--Root/r4m1/The Chronicle of Hamza/Акиль--><!--Root/r4m1/The Chronicle of Hamza/Шараф--><!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев--><!--Root/r4m1/The Chronicle of Hamza/Марио--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Вернулись от отца-->
+<!--Root/r4m1/The Chronicle of Hamza/Акиль--><!--Root/r4m1/The Chronicle of Hamza/Шараф--><!--Root/r4m1/The Chronicle of Hamza/Староста Бухарцев--><!--Root/r4m1/The Chronicle of Hamza/Марио--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец--><!--Root/r4m1/The Chronicle of Hamza/Мусиба-->
+	<Reply
+		name="Dlg_npc_002220"
+		text="Привет, Хамза! Ты к Мансуру?"
+		role="NPC"
+		scriptCondition="QuestStatus('GoToMansur_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_002221" />
+
+	<Reply
+		name="Dlg_pl_002221"
+		text="Привет, Мусиба, да, я к Мансуру. Только я смотрю его нигде нет."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002222" />
+
+	<Reply
+		name="Dlg_npc_002222"
+		text="Он опять со своим грузовиком за городом возится. Не понимаю, ломается он у него что-ли часто."
+		role="NPC"
+		nextReplies="Dlg_pl_002223" />
+
+	<Reply
+		name="Dlg_pl_002223"
+		text="Понятно. Видимо ждать его придётся ещё долго. Что ты делаешь?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002224" />
+
+	<Reply
+		name="Dlg_npc_002224"
+		text="У меня почти получилось понять, что это за диск. Я же не один год пытаюсь понять, что на нём находится."
+		role="NPC"
+		nextReplies="Dlg_pl_002225" />
+
+	<Reply
+		name="Dlg_pl_002225"
+		text="Диск? Это ещё что такое?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002226" />
+
+	<Reply
+		name="Dlg_npc_002226"
+		text="Предмет из прошлого для хранения информации. Только погляди на него. На такой небольшой круг помещалось раньше столько информации..."
+		role="NPC"
+		nextReplies="Dlg_pl_002227" />
+
+	<Reply
+		name="Dlg_pl_002227"
+		text="Ты уже что-то узнала с этого диска?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002228" />
+
+	<Reply
+		name="Dlg_npc_002228"
+		text="Да, смотри. Раньше та земля, где мы сейчас живём снизу до верху была залита водой!"
+		role="NPC"
+		nextReplies="Dlg_pl_002229" />
+
+	<Reply
+		name="Dlg_pl_002229"
+		text="Ничего себе! А где же раньше люди то жили? В воде?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002230" />
+
+	<Reply
+		name="Dlg_npc_002230"
+		text="Ха-ха-ха! Ну ты и дурачок! Конечно, нет! Они просто жили не там, где мы сейчас ходим, а в другом месте. Вот, гляди, похоже на новости из того времени!"
+		role="NPC"
+		nextReplies="Dlg_pl_002231" />
+
+	<Reply
+		name="Dlg_pl_002231"
+		text="[07.01.2010 - Рок-группа MaNga представит Турцию на Евровидении-2010]| 2010 год? Эти новости стары, как мир! Знать бы ещё, что всё это значит. Рок-группа, Евровидении..."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002232" />
+
+	<Reply
+		name="Dlg_npc_002232"
+		text="Разумеется! Ведь это новости из прошлого мира! А рок-группа это связано с музыкой. Евровидение это конкурс музыкантов, который проводился в те времена. По крайней мере как рассказывается в старинных документах. Возьми это, почитаешь хоть, что тогда происходило."
+		role="NPC"
+		nextReplies="Dlg_pl_002233" />
+
+	<Reply
+		name="Dlg_pl_002233"
+		text="Спасибо, почитаю. Знаешь, с тобой даже не скучно смотреть, как краска сохнет. Ты всегда найдёшь, что рассказать о прошлом мире."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002234" />
+
+	<Reply
+		name="Dlg_npc_002234"
+		text="Ну наконец-то ты понял, что история это интересно!"
+		role="NPC"
+		nextReplies="Dlg_pl_002235" />
+
+	<Reply
+		name="Dlg_pl_002235"
+		text="Интересны отдельные случаи, а не вся история."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002236" />
+
+	<Reply
+		name="Dlg_npc_002236"
+		text="Зря ты так думаешь..."
+		role="NPC"
+		nextReplies="Dlg_pl_002237" />
+
+	<Reply
+		name="Dlg_pl_002237"
+		text="А зачем мне изучать историю, если есть ты, которая всё расскажет?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002238" />
+
+	<Reply
+		name="Dlg_npc_002238"
+		text="Ха-ха-ха, Хамза. Ты не только дурачок, а ещё и лодырь самый настоящий!"
+		role="NPC"
+		nextReplies="Dlg_pl_002239" />
+
+	<Reply
+		name="Dlg_pl_002239"
+		text="Может быть, может быть..."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002240" />
+
+	<Reply
+		name="Dlg_npc_002240"
+		text="Ладно, мне пора. Пока, Хамза."
+		role="NPC"
+		nextReplies="Dlg_pl_002241" />
+
+	<Reply
+		name="Dlg_pl_002241"
+		text="Пока. [А мне бы надо найти Мансура.]"
+		role="PLAYER"
+		scriptResult="EndConversation(); CompleteQuest('GoToMansur_quest'); TakeQuest('FindMansur_quest'); TActivate('CreateMansurRepairer')" />
+<!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Вернулись от отца-->
 	<Reply
 		name="Dlg_npc_002085"
 		text="Ну что? Как съездил?"
@@ -4549,7 +4682,7 @@
 		name="Dlg_npc_001334"
 		text="Хамза?! Ты чего это вдруг на грузовике своего отца приехал? С твоим что-то случилось?!"
 		role="NPC"
-		scriptCondition="QuestStatus('GoToMansur_quest')==Q_TAKEN"
+		scriptCondition="QuestStatus('FindMansur_quest')==Q_TAKEN and GetVar('MansurStart').AsInt==1"
 		nextReplies="Dlg_pl_001335" />
 
 	<Reply
@@ -4572,7 +4705,7 @@
 
 	<Reply
 		name="Dlg_npc_001338"
-		text="Хм-м-м... Ну ладно. Допустим. Слушай, раз у нас обоих теперь Урал. Я тут собирался чуть позже принять участие в гонке неподалёку, как раз на Уралах проводят. Не хочешь со мной принять участие?"
+		text="Хм-м-м... Ну ладно. Допустим. Слушай, раз у нас обоих теперь Урал. Я тут собирался чуть позже принять участие в гонке неподалёку, как раз на Уралах проводят. Не просто же так тут с ним вожусь! Хочешь со мной принять участие?"
 		role="NPC"
 		nextReplies="Dlg_pl_001339" />
 

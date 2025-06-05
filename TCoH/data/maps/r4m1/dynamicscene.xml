@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="1207">
+	LastId="1209">
 	<TargetNamesForDestroy
 		Names="urod1 urod2 urod3 urod4 urod5 urod6 urod7 urod8 urod9" />
 
@@ -90,13 +90,23 @@
 				SpokenCount="0" />
 
 			<Object
+				Name="Gadad_Musiba"
+				Belong="1023"
+				Prototype="NPC"
+				ModelName="r4_1_woman"
+				skin="0"
+				cfg="109"
+				helloReplyNames="Dlg_npc_002220"
+				SpokenCount="0" />
+
+			<Object
 				Name="Gadad_Mansur"
 				Belong="1023"
 				Prototype="NPC"
 				ModelName="r4_man"
 				skin="1"
 				cfg="195"
-				helloReplyNames="Dlg_npc_001334 Dlg_npc_001362 Dlg_npc_001578 Dlg_npc_001592 Dlg_npc_001598 Dlg_npc_002091 Dlg_npc_002141"
+				helloReplyNames="Dlg_npc_001362 Dlg_npc_001578 Dlg_npc_001592 Dlg_npc_001598 Dlg_npc_002091 Dlg_npc_002141"
 				SpokenCount="0" />
 
 			<Object
@@ -20206,6 +20216,14 @@
 			cfg="171"
 			helloReplyNames="Dlg_npc_002163"
 			SpokenCount="0" />
+		<Object
+			Name="MansurFindeddlg"
+			Belong="1100"
+			Prototype="NPC"
+			ModelName="r4_man"
+			cfg="219"
+			helloReplyNames="Dlg_npc_001334"
+			SpokenCount="0" />
 	</Object>
 
 	<Object
@@ -20402,6 +20420,13 @@
 		Prototype="genericLocation"
 		Pos="5751.232 249.002 7159.627"
 		Radius="20.000" />
+
+	<Object
+		Name="FindMansurQuest_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="5627.266 249.002 7543.521"
+		Radius="200.000" />
 
 	<Object
 		Belong="1100"
