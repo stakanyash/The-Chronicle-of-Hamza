@@ -4279,6 +4279,10 @@
 			StartCinematic()
 
 			if PCar then
+				PCar:SetCustomControlEnabled( true )
+				PCar:SetCustomLinearVelocity( 0 )
+				PCar:SetThrottle( 0 )
+				PCar:SetCustomControlEnabled( false )
 				PCar:SetGamePositionOnGround(CVector(5784.098, 251.058, 7529.827))
 				PCar:SetRotation(Quaternion(-0.001, -0.585, 0.003, 0.811))
 			end
