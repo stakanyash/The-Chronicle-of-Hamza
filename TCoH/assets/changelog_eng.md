@@ -1,7 +1,7 @@
 ### Version 1.1 [TBA]
 
 - Fixed a bug where the script triggered by Mansur’s vehicle death during the "Defense of Gadad" and "Rescue the Bukharans" quests didn’t activate due to an incorrect technical vehicle name
-- English localization added **(thanks to nEmPoBu4 for proofreading)**
+- English localization added **(thanks to Seel for narrator voiceover and to nEmPoBu4 for proofreading)**
 - Reworked the "Visit Mansur" quest at the beginning of the game: added a dialogue with Musiba; Mansur is now located outside the city instead of in the bar
 - Added a modified female NPC face mask from the first region for Musiba and Mansur’s mother
 - Restored the dead-end ending from the original game in Zarmek
@@ -9,6 +9,8 @@
 - Reverted the difficulty nerf for "Professional" to original values
 - Reintroduced the "Master" difficulty with a minor nerf
 - Fixed a bug where enemies in the Bukhara defense quest became friendly to the player after loading an autosave
+- Various debug information has been removed
+- Minor bugfixes
 
 ### Version 1.0.1 [250505a]
 

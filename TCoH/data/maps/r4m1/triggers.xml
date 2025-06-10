@@ -2618,21 +2618,17 @@
 			local WinNumber = GetVar("WinningNumber").AsInt
 
 			if WinNumber == BetNumber then
+				println("Betting amount is: "..BetAmount)
+				println("Betting number is: "..BetNumber)
+				println("Winning number is: "..WinNumber)
+				println("Winning amount is: "..BetAmount*BetCoeff)
+
 				AddPlayerMoney(BetAmount * BetCoeff)
 			else
+				println("Betting amount is: "..BetAmount)
+				println("Betting number is: "..BetNumber)
+				println("Winning number is: "..WinNumber)
 				println("Your bet "..BetNumber.." is lost!")
-			end
-
-			-- Debug --
-
-			println("Betting amount is: "..BetAmount)
-			println("Betting number is: "..BetNumber)
-			println("Winning number is: "..WinNumber)
-
-			if WinNumber == BetNumber then
-				println("Winning amount is: "..BetAmount*BetCoeff)
-			else
-				println("Winning amount is: 0")
 			end
 
 			trigger:Deactivate()  
