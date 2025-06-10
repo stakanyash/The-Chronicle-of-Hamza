@@ -266,5 +266,9 @@
 
 	<string
 		id="tcoh_aboutdesert"
-		value="I expected the Desert of Death to be a pretty messed-up place, but not like this. All around — heaps of junk, countless danger zones. And the worst part — that total, eerie silence, broken only when you run into the madmen. I don’t get how Sergo managed to cross this place time after time — with risks like these, something was bound to go wrong eventually. At least we didn’t end up stuck here with him forever. We even found him, somehow — though visibility is awful and spotting him was a real pain. Came damn close to driving right past him, swear to god. I can feel it — the end is near..." />	
+		value="I expected the Desert of Death to be a pretty messed-up place, but not like this. All around — heaps of junk, countless danger zones. And the worst part — that total, eerie silence, broken only when you run into the madmen. I don’t get how Sergo managed to cross this place time after time — with risks like these, something was bound to go wrong eventually. At least we didn’t end up stuck here with him forever. We even found him, somehow — though visibility is awful and spotting him was a real pain. Came damn close to driving right past him, swear to god. I can feel it — the end is near..." />
+
+	<string
+		id="tcoh_aftermusibameet"
+		value="The days go by, the years go by — and Mansur is still messing around with his truck, as always! But at least I met his sister Musiba in the city. She studies history of the past. To be honest, I'm not really into that — I think we should live in the here and now. What happened back then… well, it happened. But I always notice: whenever she talks about events from the past, I actually enjoy listening to her. And recently, I caught myself thinking — &quot;Am I really interested in history, or do I just like her?&quot; — and I realized it's the latter. It's kind of hard to put into words… I hope one day I manage to take her out for a walk or something. She never goes anywhere — buried in her studies up to her ears! That way madness lies — though I guess we’re used to madness by now…" />	
 </resource>

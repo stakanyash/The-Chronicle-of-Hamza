@@ -280,6 +280,16 @@
 		isMainQuest="1" />
 
 	<QuestInfo
+		questName="FindMansur_quest"
+		briefDiz="Find Mansur"
+		fullDiz="Musiba said that Mansur is once again messing around with his truck outside the city. I don't feel like waiting for him at the bar, so I need to go find him."
+		isMainQuest="1">
+		<Map
+			name="r4m1"
+			targetObjName="FindMansurQuest_loc" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="FindMoreMadmans_quest"
 		briefDiz="Find the madmen"
 		fullDiz="We’d barely arrived in these lands when we were attacked by the madmen! So they’re here too. That explains why no one’s dared come this way for so many years. Chances are, they’ve been based here all along. Need to try and find their base."

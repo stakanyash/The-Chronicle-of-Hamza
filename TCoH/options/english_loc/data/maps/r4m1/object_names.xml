@@ -367,4 +367,16 @@
 	<Object
 		Name="MansurAfterBuharaSave_talk"
 		FullName="Mansur" />
+
+	<Object
+		Name="Gadad_Musiba"
+		FullName="Musiba" />
+
+	<Object
+		Name="MansurFindeddlg"
+		FullName="Mansur" />
+
+	<Object
+		Name="Chujezemets"
+		FullName="Foreigner" />
 </ObjectNames>

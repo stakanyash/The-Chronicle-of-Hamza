@@ -536,13 +536,13 @@
 
 	<Reply
 		name="Dlg_pl_002231"
-		text="[07.01.2010 - Рок-группа MaNga представит Турцию на Евровидении-2010]| 2010 год? Эти новости стары, как мир! Знать бы ещё, что всё это значит. Рок-группа, Евровидении..."
+		text="[07.01.2010 - Рок-группа MaNga представит Турцию на Евровидении-2010]| 2010 год? Эти новости стары, как мир! Знать бы ещё, что всё это значит. Рок-группа, Евровидение..."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002232" />
 
 	<Reply
 		name="Dlg_npc_002232"
-		text="Разумеется! Ведь это новости из прошлого мира! А рок-группа это связано с музыкой. Евровидение это конкурс музыкантов, который проводился в те времена. По крайней мере как рассказывается в старинных документах. Возьми это, почитаешь хоть, что тогда происходило."
+		text="Разумеется они стары как мир! Ведь это новости из прошлого мира! А рок-группа это связано с музыкой. Евровидение это конкурс музыкантов, который проводился в те времена. По крайней мере как рассказывается в старинных документах. Возьми это, почитаешь хоть, что тогда происходило."
 		role="NPC"
 		nextReplies="Dlg_pl_002233" />
 
@@ -584,21 +584,21 @@
 
 	<Reply
 		name="Dlg_pl_002239"
-		text="Может быть, может быть..."
+		text="Я не лодырь, мне просто интересно узнавать об этом от тебя.|[Это она не понимает или я плохо намекаю, что она мне нравится?!]"
 		role="PLAYER"
 		nextReplies="Dlg_npc_002240" />
 
 	<Reply
 		name="Dlg_npc_002240"
-		text="Ладно, мне пора. Пока, Хамза."
+		text="Брось, Хамза. Займись этим сам и поймёшь, что это интересно само по себе, а не потому что я тебе об этом рассказываю. Ладно, мне пора. Пока, Хамза. Ещё увидимся."
 		role="NPC"
 		nextReplies="Dlg_pl_002241" />
 
 	<Reply
 		name="Dlg_pl_002241"
-		text="Пока. [А мне бы надо найти Мансура.]"
+		text="До встречи.|[А мне бы надо найти Мансура.]"
 		role="PLAYER"
-		scriptResult="EndConversation(); CompleteQuest('GoToMansur_quest'); TakeQuest('FindMansur_quest'); TActivate('CreateMansurRepairer')" />
+		scriptResult="EndConversation(); CompleteQuest('GoToMansur_quest'); TakeQuest('FindMansur_quest'); TActivate('MansurFinded_cs_launch'); TActivate('CreateMansurRepairer'); AddBook('r4_07012010newsarchive'); TActivate('musibameet_addhistory')" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Первая встреча--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека--><!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Вернулись от отца-->
 	<Reply
 		name="Dlg_npc_002085"
@@ -4737,14 +4737,14 @@
 		name="Dlg_pl_001652"
 		text="Почему бы и нет? Поехали."
 		role="PLAYER"
-		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUralSpec'); LeaveTown()" />
+		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUralSpec'); EndConversation()" />
 
 	<Reply
 		name="Dlg_pl_001341"
 		text="Хм-м-м... Заманчиво. Поехали!"
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() >= 2500"
-		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUral'); LeaveTown()" />
+		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TakeQuest('GonkaUral'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/После нападения безумцев на город-->
 	<Reply
 		name="Dlg_npc_001362"

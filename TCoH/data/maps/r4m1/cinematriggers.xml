@@ -1535,7 +1535,7 @@
         
         SetCameraBehindPlayerVehicle()
 
-		TActivate("AfterGadadDefendRolik_Start")
+		TActivate("AfterGadadDefendRolik_Activate")
 		TActivate("MansurCar_DieOnGadadDefend")
 
         trigger:Deactivate()
@@ -1545,7 +1545,7 @@
 	<!-- The Chronicle of Hamza: After Gadad Defend -->
 
 	<trigger Name="AfterGadadDefendRolik_Start" active="0">
-		<event	eventid="GE_OBJECT_DIE"		ObjName="GadadDebyli" />
+		<event timeout="3" eventid="GE_TIME_PERIOD" />
 		<script>
 		PlayCustomMusic("Bio02")
 
@@ -2400,7 +2400,9 @@
 				end
 			end
 
-			AutoSave()
+			TActivate("CoastBtl_autosave")
+
+			SetVar("CoastAutoSave", 0)
 
 			TActivate("AivanJrDies")
 			TActivate("OneOfBuharaDies")
@@ -2408,6 +2410,32 @@
 			TActivate("AttackersDies")
 			TActivate("PlayerDiesOnBuharaAndJrDefend")
 			TActivate("SetTolerance_BuharaSave")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="CoastBtl_autosave"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("CoastAutoSave").AsInt == 0 then
+				SetVar("CoastAutoSave", 1)
+				AutoSave()
+			end
+
+			TActivate("SetToleranceForCoastBattle")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="SetToleranceForCoastBattle"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SetTolerance(1100,1025, RS_ENEMY)
+			SetTolerance(1026,1025, RS_ENEMY)
+			SetTolerance(1090,1025, RS_ENEMY)
+			SetTolerance(1095,1025, RS_ENEMY)
 
 			trigger:Deactivate()
 		</script>

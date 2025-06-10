@@ -466,6 +466,140 @@
 		text="Thank you. May Musiba's memory guide your path. Ride safe."
 		role="PLAYER"
 		scriptResult="CompleteQuest('GoTalkWithIdris_quest'); TakeQuest('TalkWithAkil_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Akil--><!--Root/r4m1/The Chronicle of Hamza/Sharaf--><!--Root/r4m1/The Chronicle of Hamza/Buhara Headman--><!--Root/r4m1/The Chronicle of Hamza/Mario--><!--Root/r4m1/The Chronicle of Hamza/Foreigner--><!--Root/r4m1/The Chronicle of Hamza/Musiba-->
+	<Reply
+		name="Dlg_npc_002220"
+		text="Hey, Hamza! Looking for Mansur?"
+		role="NPC"
+		scriptCondition="QuestStatus('GoToMansur_quest')==Q_TAKEN"
+		nextReplies="Dlg_pl_002221" />
+
+	<Reply
+		name="Dlg_pl_002221"
+		text="Hey, Musiba. Yeah, I am — but he’s nowhere to be seen."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002222" />
+
+	<Reply
+		name="Dlg_npc_002222"
+		text="Out of town again, messing with that truck of his. Honestly, I think it breaks down more than it runs."
+		role="NPC"
+		nextReplies="Dlg_pl_002223" />
+
+	<Reply
+		name="Dlg_pl_002223"
+		text="Figures. Guess I’ll be waiting a while. What are you up to?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002224" />
+
+	<Reply
+		name="Dlg_npc_002224"
+		text="I think I’m finally close to figuring out what this disk is. I’ve been trying to decode it for years."
+		role="NPC"
+		nextReplies="Dlg_pl_002225" />
+
+	<Reply
+		name="Dlg_pl_002225"
+		text="A disk? What kind of disk?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002226" />
+
+	<Reply
+		name="Dlg_npc_002226"
+		text="It’s an old data storage device. Just look at it — this tiny circle used to hold so much information..."
+		role="NPC"
+		nextReplies="Dlg_pl_002227" />
+
+	<Reply
+		name="Dlg_pl_002227"
+		text="And? Have you managed to read anything from it yet?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002228" />
+
+	<Reply
+		name="Dlg_npc_002228"
+		text="Yeah! Check this out — apparently, this whole land used to be completely underwater!"
+		role="NPC"
+		nextReplies="Dlg_pl_002229" />
+
+	<Reply
+		name="Dlg_pl_002229"
+		text="Seriously? So, people just lived underwater or what?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002230" />
+
+	<Reply
+		name="Dlg_npc_002230"
+		text="Ha! You’re such a joker. Of course not! They just lived somewhere else. Here, look — seems like old news broadcasts!"
+		role="NPC"
+		nextReplies="Dlg_pl_002231" />
+
+	<Reply
+		name="Dlg_pl_002231"
+		text="[Jan 7, 2010 – Rock band MaNga to represent Turkey at Eurovision 2010] | 2010? That’s ancient history! And what does any of this even mean? Rock band? Eurovision?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002232" />
+
+	<Reply
+		name="Dlg_npc_002232"
+		text="Exactly! It is ancient history — from the old world. A rock band was a music group, and Eurovision was a big song contest back then. At least, that’s what the old texts say. Here, take this — you might enjoy reading what life used to be like."
+		role="NPC"
+		nextReplies="Dlg_pl_002233" />
+
+	<Reply
+		name="Dlg_pl_002233"
+		text="Thanks, I will. You know, you could make even watching paint dry sound exciting. You always have a story from the old world."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002234" />
+
+	<Reply
+		name="Dlg_npc_002234"
+		text="Told you — history can be fun!"
+		role="NPC"
+		nextReplies="Dlg_pl_002235" />
+
+	<Reply
+		name="Dlg_pl_002235"
+		text="Some parts, maybe. Not the whole thing."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002236" />
+
+	<Reply
+		name="Dlg_npc_002236"
+		text="That’s where you’re wrong..."
+		role="NPC"
+		nextReplies="Dlg_pl_002237" />
+
+	<Reply
+		name="Dlg_pl_002237"
+		text="Why should I bother studying history when I have you to tell me everything?"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002238" />
+
+	<Reply
+		name="Dlg_npc_002238"
+		text="Haha, Hamza. You’re not just a joker — you’re the laziest bum I know!"
+		role="NPC"
+		nextReplies="Dlg_pl_002239" />
+
+	<Reply
+		name="Dlg_pl_002239"
+		text="I’m not lazy! I just like hearing about it from you.|[Is she really not getting it, or am I being way too subtle about liking her?!]"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002240" />
+
+	<Reply
+		name="Dlg_npc_002240"
+		text="Come on, Hamza. Dig into it yourself. You’ll see it’s interesting in its own right — not just ‘cause I’m the one talking about it. Anyway, I’ve got to go. See you around!"
+		role="NPC"
+		nextReplies="Dlg_pl_002241" />
+
+	<Reply
+		name="Dlg_pl_002241"
+		text="See you.|[Alright, time to go find Mansur.]"
+		role="PLAYER"
+		scriptResult="EndConversation(); CompleteQuest('GoToMansur_quest'); TakeQuest('FindMansur_quest'); TActivate('MansurFinded_cs_launch'); TActivate('CreateMansurRepairer'); AddBook('r4_07012010newsarchive')" />
+
 <!--Root/r4m1/The Chronicle of Hamza/Akil--><!--Root/r4m1/The Chronicle of Hamza/Sharaf--><!--Root/r4m1/The Chronicle of Hamza/Buhara Headman--><!--Root/r4m1/The Chronicle of Hamza/Mario--><!--Root/r4m1/The Chronicle of Hamza/Foreigner--><!--Root/r4m1/The Chronicle of Hamza/Foreigner/First meet--><!--Root/r4m1/The Chronicle of Hamza/Foreigner/After came back from Zarmek--><!--Root/r4m1/The Chronicle of Hamza/Foreigner/Back from father-->
 	<Reply
 		name="Dlg_npc_002085"
@@ -4548,7 +4682,7 @@
 		name="Dlg_npc_001334"
 		text="Hamza?! Why are you suddenly showing up in your dad's truck? Did something happen to yours?!"
 		role="NPC"
-		scriptCondition="QuestStatus('GoToMansur_quest')==Q_TAKEN"
+		scriptCondition="QuestStatus('FindMansur_quest')==Q_TAKEN and GetVar('MansurStart').AsInt==1"
 		nextReplies="Dlg_pl_001335" />
 
 	<Reply
@@ -4570,10 +4704,10 @@
 		nextReplies="Dlg_npc_001338" />
 
 	<Reply
-		name="Dlg_npc_001338"
-		text="Hmm... Alright, fine. Let's go with that. Hey, since we both got Ural now — I was planning to join a race not far from here later on, they're doing it with Urals. Want to come along?"
-		role="NPC"
-		nextReplies="Dlg_pl_001339" />
+        name="Dlg_npc_001338"
+        text="Hmm... Alright, fine. Let's go with that. Hey, since we both got Ural now — I was planning to join a race not far from here later on, they're doing it with Urals. I'm not just tinkering with it for fun, you know! Want to come along?"
+        role="NPC"
+        nextReplies="Dlg_pl_001339" />
 
 	<Reply
 		name="Dlg_pl_001339"
@@ -4603,14 +4737,14 @@
 		name="Dlg_pl_001652"
 		text="Sure, why not? Let's go."
 		role="PLAYER"
-		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUralSpec'); LeaveTown()" />
+		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUralSpec'); EndConversation()" />
 
 	<Reply
 		name="Dlg_pl_001341"
 		text="Not bad. Alright, let's roll!"
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() >= 2500"
-		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUral'); LeaveTown()" />
+		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUral'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Mansur/After madmen attack-->
 	<Reply
 		name="Dlg_npc_001362"

@@ -297,6 +297,24 @@
 		</script>
 	</trigger>
 
+	<trigger	Name="titlestr"	active="0">
+		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
+		<script>
+			Fly("end2_cam_plane", CINEMATIC_NO_AIM, nil, 70, 0,1)
+			StartCinematic()
+
+			AddCinematicMessage(5968, 0.2)
+			AddCinematicMessage(5969, 0.2)
+			AddCinematicMessage(5970, 0.2)
+			AddCinematicMessage(5971, 0.2)
+
+			TActivate("End_tr_titles")
+			TActivate("End_tr_end")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
 	<trigger	Name="GoodEnd_tr"	active="0">
 		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
 		<script>
@@ -326,8 +344,8 @@
 			TActivate("GoodEnd_tr_77775")
 			TActivate("GoodEnd_tr_77776")
 			TActivate("GoodEnd_tr_77777")
-			TActivate("GoodEnd_tr_titles")
-			TActivate("GoodEnd_tr_end")
+			TActivate("End_tr_titles")
+			TActivate("End_tr_end")
 
 			trigger:Deactivate()
 		</script>
@@ -395,10 +413,15 @@
 		</script>
 	</trigger>
 
-	<trigger Name="GoodEnd_tr_titles" active="0">
+	<trigger Name="End_tr_titles" active="0">
 		<event msgid="5968" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
 		<script>
-        	PlayCustomMusic("EndGameGood")
+			local VAR = GetVar("DeadEnd").AsInt
+			if VAR == 1 then
+        		PlayCustomMusic("DeathEndmusic")
+			else
+				PlayCustomMusic("EndGameGood")
+			end
 
 			RuleConsole("g_postEffect BWFadeOut")
 
@@ -410,7 +433,7 @@
 		</script>
 	</trigger>
 
-	<trigger	Name="GoodEnd_tr_end"	active="0">
+	<trigger	Name="End_tr_end"	active="0">
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
@@ -755,18 +778,26 @@
 		<script>
 			EnableGodMode()
 			SaveAllToleranceStatus(RS_NEUTRAL)
---			TActivate("cinPlateFirst")
-			GetPlayerVehicle():SetCustomLinearVelocity( 0 )
-			GetPlayerVehicle():LimitMaxSpeed(8)
+
+			local PVh = GetPlayerVehicle()
+			if PVh then
+				PVh:SetCustomControlEnabled( true )
+				PVh:SetCustomLinearVelocity( 0 )
+				PVh:SetThrottle( 0 )
+				PVh:SetCustomControlEnabled( false )
+			end
 
 			TActivate("cinPlate_FadeIn")
 			TActivate("cinPlate_End")
 			TActivate("cinPlate_FullEnd")
 			TActivate("cinPlate_cam03")
+
 			Fly("ToTarelka", CINEMATIC_NO_AIM, nil, 7, 1,1)
 			StartCinematic()
+
 			PlayCustomMusic("Death02")
 			AddCinematicMessage( 501, 0.25 )
+			
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -775,12 +806,34 @@
 		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />`
 		<script>
 			SetWeather(0)
-			SetGameTime(10, 0)
+			SetGameTime(0, 0)
 
-			GetPlayerVehicle():SetGamePositionOnGround(CVector(getPos("TarelkaPoint_loc")))
-			GetPlayerVehicle():SetRotation(Quaternion(-0.007, -0.169, -0.001, 0.986))
-			GetPlayerVehicle():SetExternalPathByName("ToTarelka_Path")
---			TActivate("cinPlate_FadeIn2")
+			local PVh = GetPlayerVehicle()
+			if PVh then
+				PVh:SetGamePositionOnGround(CVector(2976.321, 228.257, 2223.550))
+				PVh:SetRotation(Quaternion(0.000, -0.104, -0.000, 0.995))
+			end
+
+
+			local a = getObj("AivenStand")
+			if a then
+				a:SetGamePositionOnGround(CVector(getPos("TarelkaPoint_loc")))
+				a:SetRotation(Quaternion(-0.007, -0.169, -0.001, 0.986))
+				a:SetExternalPathByName("ToTarelka_Path")
+				a:SetCruisingSpeed(8)
+			elseif not a then
+				local ac = getObj("AivenCarZRS_vehicle_0")
+				if ac then
+					ac:Remove()
+				end
+
+				local ad = CreateVehicleEx("BelazShot1","AivenStand",CVector(getPos("TarelkaPoint_loc")), 1095)
+				if ad then
+					ad:SetRotation(Quaternion(-0.007, -0.169, -0.001, 0.986))
+					ad:SetExternalPathByName("ToTarelka_Path")
+					ad:SetCruisingSpeed(8)
+				end
+			end
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -790,9 +843,12 @@
 		<script>
 			SetGameTime(20, 0)
 
-			GetPlayerVehicle():SetExternalPathByName("ToTarelka_Path")
-			GetPlayerVehicle():PlaceToEndOfPath("ToTarelka_Path")
-			GetPlayerVehicle():SetRotation(Quaternion(0.063, -0.316, -0.030, 0.946))
+			local a = getObj("AivenStand")
+			if a then
+				a:SetExternalPathByName("ToTarelka_Path")
+				a:PlaceToEndOfPath("ToTarelka_Path")
+				a:SetRotation(Quaternion(0.063, -0.316, -0.030, 0.946))
+			end
 			
 			CreateHuman( "Human_player_slow", 1100, CVector(2921.602, 226.276, 2359.396), "PlayerHuman", "ToTarelkaHuman_Path2")
 			CreateHuman( "Human_player_slow", 1100, CVector(0, 0, 0), "PlayerHuman3")
@@ -851,7 +907,12 @@
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
 			StopPlayingCustomMusic()
-			SpawnMessageBox( "8901" )
+
+			local b = SpawnMessageBox( "8901" )
+			if b==1 then
+				TActivate("titlestr")
+			end
+
 			ShowDeathMenu()
 			trigger:Deactivate()
 		</script>

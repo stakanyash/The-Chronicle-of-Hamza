@@ -1864,10 +1864,20 @@
 		</script>
 	</trigger>
 
-	<trigger Name="MansurCar_DieOnGadadDefend" active="0">
-		<event eventid="GE_OBJECT_DIE" ObjName="MansurTachka_vehicle_0" />
+	<trigger Name="AfterGadadDefendRolik_Activate" active="0">
+		<event	eventid="GE_OBJECT_DIE"		ObjName="GadadDebyli" />
 		<script>
-            TDeactivate("AfterGadadDefendRolik_Start")
+            TActivate("AfterGadadDefendRolik_Start")
+			TDeactivate("MansurCar_DieOnGadadDefend")
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="MansurCar_DieOnGadadDefend" active="0">
+		<event eventid="GE_OBJECT_DIE" ObjName="MansurCarAR_vehicle_0" />
+		<script>
+            TDeactivate("AfterGadadDefendRolik_Activate")
 
 		    SpawnMessageBox("8906")
 
@@ -2334,7 +2344,7 @@
 	</trigger>
 
 	<trigger Name="MansurDiesOnBuharaAndJrDefend" active="0">
-		<event	eventid="GE_OBJECT_DIE"		ObjName="MansurCar_vehicle_0" />
+		<event	eventid="GE_OBJECT_DIE"		ObjName="MansurCarSB_vehicle_0" />
 		<script>
             SpawnMessageBox("8906")
 
@@ -3522,6 +3532,17 @@
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
 			AddHistory("tcoh_akilsus")
+			AddFadingMsgId("fm_history_got")
+			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="musibameet_addhistory" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddHistory("tcoh_aftermusibameet")
 			AddFadingMsgId("fm_history_got")
 			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 

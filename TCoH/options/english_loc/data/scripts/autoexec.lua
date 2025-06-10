@@ -9,6 +9,6 @@
 
 version = "1.1"
 build = "250610a"
-lang = "RU"
+lang = "EN"
 
 LOG("The Chronicle of Hamza " .. version .. " " .. build .. " " .. lang)
