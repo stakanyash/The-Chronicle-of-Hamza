@@ -587,7 +587,7 @@
 	</Path>
 
 	<Path Name = "t1_cam">
-		<Point  coord="2663.506 355.840 516.924" rotation="0.001 -0.760 -0.001 0.650"/>
+		<Point  coord="2671.614 352.490 511.399" rotation="0.027 -0.070 -0.002 0.997"/>
 	</Path>
 
 	<Path Name = "AfterCoastFight_cam">

@@ -4051,6 +4051,9 @@
 
 			PlayCustomMusic("passage04end1")
 
+			RuleConsole("cinematicFadePeriod 3")
+			RuleConsole("g_drawSky false")
+
 			local Plf = GetPlayerVehicle()
 			if Plf then
 				Plf:SetExternalPathByName("end1_path")
@@ -4170,6 +4173,9 @@
 			TActivate("BadEnd_tr_77774")
 			TActivate("BadEnd_tr_titles")
 			TActivate("BadEnd_tr_end")
+
+			RuleConsole("cinematicFadePeriod 1")
+			RuleConsole("g_drawSky true")
 
 			trigger:Deactivate()
 		</script>

@@ -1934,44 +1934,32 @@
 
 	<string
 		id="77772"
-		value="After the destruction of the source of contamination, life in Vahat and across the world seemed as though it would finally begin to heal..."
+		value="After the destruction of the source of contamination, life in Vahat and across the world seemed as though it would finally begin to heal… However, the explosion in the sky and the powerful blast that followed proved to be far more devastating than anyone had anticipated. Vahat was nearly completely destroyed, and only a handful managed to survive the chaos."
 		sound="data\sounds\Speech\rolik\bad_end_1.ogg"
 		time="1" />
 
 	<string
-		id="777721"
-		value="However, the explosion in the sky and the powerful blast that followed proved to be far more devastating than anyone had anticipated. Vahat was nearly completely destroyed, and only a handful managed to survive the chaos."
-		sound="data\sounds\Speech\rolik\bad_end_1_2.ogg"
-		time="1" />
-
-	<string
 		id="77773"
-		value="Hamza, along with the few remaining survivors, decided to leave the ruined city and cross the Death Desert in hopes of finding refuge in the neighboring region. The journey through the desert proved to be incredibly difficult."
+		value="Hamza, along with the few remaining survivors, decided to leave the ruined city and cross the Desert of Death in hopes of finding refuge in the neighboring region. The journey through the desert proved to be incredibly difficult. The stress and horror of what they had endured robbed many of their focus, and some members of the group became lost in the endless sands."
 		sound="data\sounds\Speech\rolik\bad_end_2.ogg"
 		time="1" />
 
 	<string
 		id="777731"
-		value="The stress and horror of what they had endured robbed many of their focus, and some members of the group became lost in the endless sands. Others became victims of the few remaining madmen who still roamed the desert."
+		value="Others became victims of the few remaining madmen who still roamed the desert..."
 		sound="data\sounds\Speech\rolik\bad_end_3.ogg"
 		time="1" />
 
 	<string
 		id="77774"
-		value="When Hamza and the remaining survivors finally reached the neighboring region, they were met with a new shock. The explosion had far more global consequences than they could have imagined. The neighboring region lay in partial ruins, and the people were desperate."
+		value="When Hamza and the remaining survivors finally reached the neighboring region, they were met with a new shock. The explosion had far more global consequences than they could have imagined. Much of the region was destroyed and its people were desperate. Destruction and chaos engulfed everything around them, and hope for a better future began to fade."
 		sound="data\sounds\Speech\rolik\bad_end_4.ogg"
 		time="1" />
 
 	<string
 		id="77775"
-		value="Destruction and chaos engulfed everything around them, and hope for a better future began to fade. Hamza realized that his mission to destroy the source of the infection had led to unforeseen and catastrophic consequences."
+		value="Hamza realized that his mission to destroy the source of contamination had led to unforeseen and catastrophic consequences. He understood that his actions, though intended to save the world, had ultimately resulted in even greater destruction and suffering."
 		sound="data\sounds\Speech\rolik\bad_end_5.ogg"
-		time="1" />
-
-	<string
-		id="777751"
-		value="He understood that his actions, though intended to save the world, had ultimately resulted in even greater destruction and suffering."
-		sound="data\sounds\Speech\rolik\bad_end_5_1.ogg"
 		time="1" />
 
 	<string
@@ -1983,9 +1971,9 @@
 	<string
 		id="5968"
 		msgType="SCROLL"
-		image="data\if\ico\CinemaPanel\foreground_movie_clear_midle.dds"
-		upOverlay="data\if\ico\CinemaPanel\foreground_movie_clear_up.dds"
-		downOverlay="data\if\ico\CinemaPanel\foreground_movie_clear.dds"
+		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
+		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
+		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
 		value="@ffffa600Developer studio «Targem Games»| | | |@ffffa600Internal producer||@ffffffffStanislav «scorp» Skorb| | |@ffffa600Technical director||@ffffffffAlexey Skriabin| | |@ffffa600Project manager||@ffffffffEvgeniy «Hrrr» Khrunov| | |@ffffa600Writer||@ffffffffAlexey «Alex TG» Tchestnikh| | |@ffffa600Lead programmer||@ffffffffAnton «anger» Savin| | |@ffffa600Lead designer||@ffffffffAlexey «Alex TG» Tchestnikh| | |@ffffa600Lead artist||@ffffffffAlexander «Alex ML» Margushin| | |@ffffa600Designers||@ffffffffDenis «mif2000» Galanin|@ffffffffSergey «JSinx» Udurminskiy|@ffffffffAlexey «Razaz» Anufriev|@ffffffffStanislav «scorp» Skorb|@ffffffffBoris «borg» Smirnov| | |@ffffa600Programmers||@ffffffffElena «SoftKitty» Evdokimova|@ffffffffIvan «Vano» Vlasov|@ffffffffIlya «phosgen» Ruzakov|@ffffffffMaxim «Shadow» Sarmanov|@ffffffffSergey «Ice Cat» Kluchkovsky|@ffffffffIgor «Goryh» Dyagterev| | |@ffffa600Artists||@ffffffffAlexander «Alex ML» Margushin|@ffffffffIvan Snigirev|@ffffffffEvgeny «Dzhin» Goltsov|@ffffffffVladimir «Price» Seleznev|@ffffffffStanislav «Staz» Cherva|@ffffffffRustam «Rychi» Turey|@ffffffffEvgeny  Tokarev|@ffffffffSergey «Sega» Mitryaev|@ffffffffViktor «isymbosi» Koryakin|@ffffffffRoman Latynov| | |@ffffa600Level designers||@ffffffffDenis «mif2000» Galanin|@ffffffffSergey «JSinx» Udurminskiy|@ffffffffArtem «solo» Solovev|@ffffffffDaniil «HiKiller» Kondratiev|@ffffffffStanislav «Staz» Cherva| | |@ffffa600Interface designer||@ffffffffMikhail «Rai» Matvienko| | |@ffffa600FX||@ffffffffAlexey «Hal» Lobanov| | |@ffffa600Sound director||@ffffffffAnton Popov|@ffffffffEkaterina Shvemmer| | |@ffffa600Quality assurance||@ffffffffVyacheslav «ls» Avdeev| | |@ffffa600PR-manager||@ffffffffSvetlana «Crystal» Tchestnikh| | |@ffffa600The soundtrack includes tracks|@ffffa600of the music contest winners||@ffffffffAlexander Chekster|@ffffffffBoris Vedensky|@ffffffffAlexander Treger|@ffffffffMikhail Sidorov|@ffffffffAlexander Lisenkov|@ffffffffParalaxeen|@ffffffffIgor Belousov| | |@ffffa600Special thanks to||@ffffffffConstantine Sokharev - programming|@ffffffffSvyatoslav Patashnikov - management|@ffffffffAlexey Andruschenko – web design"
 		sound=""
 		fontSize="19"
@@ -1995,9 +1983,9 @@
 	<string
 		id="5969"
 		msgType="SCROLL"
-		image="data\if\ico\CinemaPanel\foreground_movie_clear_midle.dds"
-		upOverlay="data\if\ico\CinemaPanel\foreground_movie_clear_up.dds"
-		downOverlay="data\if\ico\CinemaPanel\foreground_movie_clear.dds"
+		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
+		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
+		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
 		value="@ffffa600Publisher «Buka Entertainment»| | | |@ffffa600Producer||@ffffffffIvan Bunakov| | |@ffffa600Senior executive producer||@ffffffffIvan Moroz| | |@ffffa600Sales managers||@ffffffffYouriy Virich|@ffffffffAlexey Pisklukov| | |@ffffa600Technical expert||@ffffffffKirill Bestemyanov| | |@ffffa600Sound expert||@ffffffffRuslan Dmitriev| | |@ffffa600Cover designers||@ffffffffSanan Ushanov|@ffffffffDaniella Klimashevskaya| | |@ffffa600PR manager||@ffffffffAlexey Pastushenko| | |@ffffa600PR manager’s assistant||@ffffffffOleg Morozov| | |@ffffa600Producer’s assistant||@ffffffffAlexey Peshekhonov|@ffffffffNikolay Safronov| | |@ffffa600Manager of new teams||@ffffffffNikolay Safronov| | |@ffffa600Executive producer||@ffffffffAlexander Pak| | |@ffffa600QA supervisor||@ffffffffEvgeny Popov|@ffffffffIvan Rid| | |@ffffa600QA team||@ffffffffAnton Epishin|@ffffffffDmitry Lesin|@ffffffffAlexander Poloshin|@ffffffffEvgeny Popov|@ffffffffIvan Raynov|@ffffffffIvan Rid|@ffffffffAlexey Chebotarev| | |@ffffa600External testing||@ffffffffPeter Beliaev|@ffffffffAlexey Bunak|@ffffffffIgor Dmitriev|@ffffffffMichael Matushov|@ffffffffDenis Sokolov|@ffffffffIgor Peshekhontsev|@ffffffffDmitry Chichikov|@ffffffffAlexey Shekhovtsev|@ffffffffIlia Yusipov|@ffffffffTimur Yusipov| | |@ffffa600Sales department||@ffffffffMaxim O. Alexeev|@ffffffffMaxim U. Alexeev|@ffffffffMaxim A. Alexeev|@ffffffffNatalia Ankundinova|@ffffffffElena Antonova|@ffffffffIlia Brovchenko|@ffffffffPavel Grigoriev|@ffffffffVictoria Kiseleva|@ffffffffAlexander Kochetkov|@ffffffffPavel Kruglov|@ffffffffAndrey Osipov|@ffffffffAlexandr Petrinsky|@ffffffffOlga Polkovnikova|@ffffffffLarisa Savelieva|@ffffffffEvgeny Samsonov|@ffffffffSvetlana Samsonova|@ffffffffValery Tikhvonski|@ffffffffSergey Fedosof| | |@ffffa600Marketing||@ffffffffTatiana Vasekina| | |@ffffa600Community manager||@ffffffffAlexander Kovalev| | |@ffffa600Experts’ council||@ffffffffVladimir Miniaev|@ffffffffMaxim N. Mikhalev|@ffffffffIvan Moroz|@ffffffffSergey Rudenko|@ffffffffVitaly Kharitonenko| | |@ffffa600Juridical support||@ffffffffGeorgy Vitaliev| | |@ffffa600Technical support||@ffffffffEvgeny Dmitriev| | |@ffffa600CEO||@ffffffffAlexander Mikhailov| | |@ffffa600CFO||@ffffffffMarina Ravoon| | |@ffffa600Marketing department’s head||@ffffffffMaxim N. Mikhalev| | |@ffffa600Sales department’s head||@ffffffffTatiana Ustinova| | |@ffffa600Development department’s head||@ffffffffIvan Bunalov| | |@ffffa600Special thanks||@ffffffffYoulia Belova|@ffffffffSergey Bobkov|@ffffffffIlia Brovchenko|@ffffffffDmitry Zakharov|@ffffffffDmitry Kuleshov|@ffffffffDmitry Lesin|@ffffffffVladimir Miniaev|@ffffffffIvan Moroz|@ffffffffMarina Ravoon|@ffffffffIvan Rid|@ffffffffInna Sutsepina|@ffffffffIgor Ustinov|@ffffffffIrina Tsareva|@ffffffffVictoria Enns"
 		sound=""
 		fontSize="19"
@@ -2007,9 +1995,9 @@
 	<string
 		id="5970"
 		msgType="SCROLL"
-		image="data\if\ico\CinemaPanel\foreground_movie_clear_midle.dds"
-		upOverlay="data\if\ico\CinemaPanel\foreground_movie_clear_up.dds"
-		downOverlay="data\if\ico\CinemaPanel\foreground_movie_clear.dds"
+		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
+		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
+		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
 		value="@ffffa600Community Patch / Remaster| | | |@ffffa600Aleksandr «Seel» Parfenenkov||@ffffffffproject manager, tools, design| | |@ffffa600Aleksandr «ThePlain» Fateev||@fffffffftools, graphics, 3D modeling| | |@ffffa600Alexei «__nEmPoBu4__» Smirnov||@ffffffff3D modeling, scripting, quests| | |@ffffa600Anna Zhukova||@ffffffffgraphic design| | |@ffffa600Anton Popov||@ffffffffmusic| | |@ffffa600Vladislav «OverLine» Kurochkin||@ffffffffcontent design, level design| | |@ffffa600Dmitry «Gnome» Saschenko||@ffffffffscripting, quests, 3D modeling| | |@ffffa600Ivan «ICAS-14» Cherepanov||@ffffffff3D modeling| | |@ffffa600Leonid «KoYoT» Kochetov||@ffffffffbugfixes| | |@ffffa600Maxim «Spok» Berdnikov||@ffffffff3D modeling| | |@ffffa600Mark «Apocalypse007» Malygin||@fffffffftext proofreading| | |@ffffa600Nick «BIBIKUZ» Kononenko||@ffffffff3D modeling| | |@ffffa600Pavel «pavlikrpg» Ivanov||@ffffffffscripting, quests| | |@ffffa600Serafim «Varisane» Shagin||@ffffffffcontent design| | |@ffffa600Expert’s council||@ffffffffBuba|@ffffffffOracle|@ffffffffRusya_27|@ffffffffTraygen|@ffffffffSemimahov| | |@ffffa600Testing||@ffffffffSuslo Red|@ffffffffIvan «MrKarfen» Atamanov|@ffffffffSemen «Omezera» Ozeritsky|@ffffffffPushistik_7977|@ffffffffAnarxolis|@ffffffffScorpyX|@ffffffffAlexander192|@ffffffffTerorchat| | |@ffffa600Special thanks to||@ffffffffDeus Ex Machina community|@ffffffffdiscord.gg/qKK2Efx||@ffffffffEM2ch community|@ffffffffvk.com/em2ch||@ffffffffEx Machina VK public page|@ffffffffvk.com/exmachina2||@ffffffff«Ïàâëèê RPG»’s channel viewers||@ffffffffOur wifes, girlfriends, husbands, relatives and cats,|@ffffffffwho tolerated us during the development||@ffffffffTo all of those who waited for and supported this project"
 		sound=""
 		fontSize="19"
@@ -2022,7 +2010,7 @@
 		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"
 		upOverlay="data\if\ico\CinemaPanel\scene_scroll_top.dds"
 		downOverlay="data\if\ico\CinemaPanel\scene_scroll_btm.dds"
-		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Development| | |@ffffffffNikita «stakan» Kashlev||@ffffa600plot, quests, scripts, 3D modeling| | |@ffffffffSerafim «Varisane» Shagin||@ffffa600text edits, scripts, plot, development assistance| | |@ffffffffKaren Gevondyan||@ffffa600text edits, plot| | |@ffffffffEvgeny «E Jet» Kolchin||@ffffa600development assistance| | |@ffffffffGeorgy «EmerEh» Zhukov||@ffffa600Russian narrator voiceover| | |@ffffffffAleksandr «Seel» Parfenenkov||@ffffa600English narrator voiceover| | |@ffffffffIvan «Carsen» Buryashkin||@ffffa600development assistance| | |@ffffffffAnastasia «k0waidesu»||@ffffa600ending texts| | | |@ffffa600Testing| | |@ffffffffSerafim «Varisane» Shagin||@ffffffffEvgeny «E Jet» Kolchin||@ffffffffAlexey «__nEmPoBu4__» Smirnov| | | |@ffffa600Borrowings||@ffffffffFull-size model of Sergo||@ffffa600Author:|@ffffffffMaxim «Spok» Berdnikov| | |@ffffffffDeteriorating condition effects taken from the|@ffffa600«possesed» @ffffffffmodification||@ffffa600Authors:|@ffffffffAlexey «__nEmPoBu4__» Smirnov|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffEnding slides taken from the|@ffffa600«Improved Storyline» @ffffffffmodification||@ffffa600Author:|@ffffffffPavel «pavlikRPG» Ivanov| | |@ffffa600Credits music||@ffffffffAnton Popov - Dramatic Theme (Full Version)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)| | |@ffffa600Huge @ffffffffthanks to the @ffffa600Deus Ex Machina @ffffffffcommunity|@fffffffffor the help provided during development| | |@ffffa600Thank you for playing!"
+		value="@ffffa600The Chronicle of Hamza| | | |@ffffa600Development| | |@ffffffffNikita «stakan» Kashlev||@ffffa600plot, quests, scripts, 3D modeling| | |@ffffffffSerafim «Varisane» Shagin||@ffffa600text edits, scripts, plot, development assistance| | |@ffffffffKaren Gevondyan||@ffffa600text edits, plot| | |@ffffffffEvgeny «E Jet» Kolchin||@ffffa600development assistance| | |@ffffffffGeorgy «EmerEh» Zhukov||@ffffa600Russian narrator voiceover| | |@ffffffffAleksandr «Seel» Parfenenkov||@ffffa600English narrator voiceover| | |@ffffffffIvan «Carsen» Buryashkin||@ffffa600development assistance| | |@ffffffffAlexey «__nEmPoBu4__» Smirnov||@ffffa600English proofreading| | | |@ffffa600Testing| | |@ffffffffSerafim «Varisane» Shagin||@ffffffffEvgeny «E Jet» Kolchin||@ffffffffAlexey «__nEmPoBu4__» Smirnov| | | |@ffffa600Borrowings||@ffffffffFull-size model of Sergo||@ffffa600Author:|@ffffffffMaxim «Spok» Berdnikov| | |@ffffffffDeteriorating condition effects taken from the|@ffffa600«possesed» @ffffffffmodification||@ffffa600Authors:|@ffffffffAlexey «__nEmPoBu4__» Smirnov|@ffffffffDOLBOYASCHERS_TEAM| | |@ffffffffEnding slides taken from the|@ffffa600«Improved Storyline» @ffffffffmodification||@ffffa600Author:|@ffffffffPavel «pavlikRPG» Ivanov| | |@ffffa600Credits music||@ffffffffEx Machina OST - Passage04 (AI extended)|@ffffffffGnome627 - Quiet Dialogue (Extended, Remixed)|@ffffffffAnton Popov - Dramatic Theme (Full Version)| | |@ffffa600Huge @ffffffffthanks to the @ffffa600Deus Ex Machina @ffffffffand @ffFF0000EM2ch @ffffffffcommunities|@fffffffffor the help provided during development| | |@ffffa600Thank you for playing!"
 		sound=""
 		fontSize="20"
 		scrollSpeed="2.0"

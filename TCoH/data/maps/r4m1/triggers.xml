@@ -3496,6 +3496,12 @@
 		<script>
 			if GL_PassToMap == true then
 			   AddSaleItems()
+
+			   local P = GetPlayerVehicle()
+			   if P then
+					P:SetCustomControlEnabled(false)
+			   end
+
 				if QuestStatus("blocktaken_quest")==Q_TAKEN or QuestStatus("blockleaved_quest")==Q_TAKEN then
 					local Alf = getObj("AivenCarDD_vehicle_0")
 					if Alf then
@@ -3508,11 +3514,8 @@
 						Mlf:SetGamePositionOnGround(CVector(3152.506, 273.339, 7445.637))
 						Mlf:SetRotation(Quaternion(0.020, 0.939, -0.017, 0.344))
 					end
-				end				
-			   println("Map change detected! Sale items added.")
+				end
 			   GL_PassToMap = false
-
-			   GetPlayerVehicle():SetCustomControlEnabled(false)
 			end
 		</script>
 	</trigger>

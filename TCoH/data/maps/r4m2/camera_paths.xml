@@ -39,7 +39,7 @@
 	</Path>
 
 	<Path Name = "end2_cam_plane">
-		<Point  coord="1233.918 389.860 3670.014" rotation="-0.003 0.836 -0.004 0.548"/>
+		<Point  coord="1223.958 386.876 3670.258" rotation="-0.000 0.980 0.001 -0.199"/>
 	</Path>
 
 	<Path Name = "NearBase">
