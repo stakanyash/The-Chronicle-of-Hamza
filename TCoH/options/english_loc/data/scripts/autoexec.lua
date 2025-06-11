@@ -8,7 +8,7 @@
 ------------------------------------------------------------------------------
 
 version = "1.1"
-build = "250610a"
+build = "250611a"
 lang = "EN"
 
 LOG("The Chronicle of Hamza " .. version .. " " .. build .. " " .. lang)
