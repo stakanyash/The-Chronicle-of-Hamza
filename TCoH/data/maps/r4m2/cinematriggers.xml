@@ -300,16 +300,20 @@
 	<trigger	Name="titlestr"	active="0">
 		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
 		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
 			Fly("end2_cam_plane", CINEMATIC_NO_AIM, nil, 70, 0,1)
 			StartCinematic()
 
+			AddCinematicMessage(77770, 0)
 			AddCinematicMessage(5968, 0.2)
 			AddCinematicMessage(5969, 0.2)
 			AddCinematicMessage(5970, 0.2)
 			AddCinematicMessage(5971, 0.2)
 
-			TActivate("End_tr_titles")
-			TActivate("End_tr_end")
+			RuleConsole("cinematicFadePeriod 1")
+
+			TActivate("titles_tr_end")
 
 			trigger:Deactivate()
 		</script>
@@ -333,11 +337,8 @@
 			AddCinematicMessage(77775, 0.5)
 			AddCinematicMessage(77776, 0.5)
 			AddCinematicMessage(77777, 0.5)
-			AddCinematicMessage(77770, 0)
-			AddCinematicMessage(5968, 0.2)
-			AddCinematicMessage(5969, 0.2)
-			AddCinematicMessage(5970, 0.2)
-			AddCinematicMessage(5971, 0.2)
+
+			RuleConsole("cinematicFadePeriod 3")
 
 			TActivate("GoodEnd_tr_77772")
 			TActivate("GoodEnd_tr_77773")
@@ -434,6 +435,18 @@
 	</trigger>
 
 	<trigger	Name="End_tr_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+
+			TActivate("titlestr")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="titles_tr_end"	active="0">
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
