@@ -598,7 +598,7 @@
 		name="Dlg_pl_002241"
 		text="See you.|[Alright, time to go find Mansur.]"
 		role="PLAYER"
-		scriptResult="EndConversation(); CompleteQuest('GoToMansur_quest'); TakeQuest('FindMansur_quest'); TActivate('MansurFinded_cs_launch'); TActivate('CreateMansurRepairer'); AddBook('r4_07012010newsarchive')" />
+		scriptResult="EndConversation(); CompleteQuest('GoToMansur_quest'); TakeQuest('FindMansur_quest'); TActivate('MansurFinded_cs_launch'); TActivate('CreateMansurRepairer'); AddBook('r4_07012010newsarchive'); TActivate('musibameet_addhistory')" />
 
 <!--Root/r4m1/The Chronicle of Hamza/Akil--><!--Root/r4m1/The Chronicle of Hamza/Sharaf--><!--Root/r4m1/The Chronicle of Hamza/Buhara Headman--><!--Root/r4m1/The Chronicle of Hamza/Mario--><!--Root/r4m1/The Chronicle of Hamza/Foreigner--><!--Root/r4m1/The Chronicle of Hamza/Foreigner/First meet--><!--Root/r4m1/The Chronicle of Hamza/Foreigner/After came back from Zarmek--><!--Root/r4m1/The Chronicle of Hamza/Foreigner/Back from father-->
 	<Reply
@@ -4737,14 +4737,14 @@
 		name="Dlg_pl_001652"
 		text="Sure, why not? Let's go."
 		role="PLAYER"
-		scriptResult="CompleteQuest('FindMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUralSpec'); EndConversation()" />
+		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUralSpec'); EndConversation()" />
 
 	<Reply
 		name="Dlg_pl_001341"
 		text="Not bad. Alright, let's roll!"
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() >= 2500"
-		scriptResult="CompleteQuest('FindMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUral'); EndConversation()" />
+		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUral'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Mansur/After madmen attack-->
 	<Reply
 		name="Dlg_npc_001362"
