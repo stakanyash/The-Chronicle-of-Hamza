@@ -121,8 +121,13 @@
 
 		<Level
 			Name="HardLevel"
-			EnemyWeaponCoeff="1.25"
-			EnemyShootingDelay="0.6"/>
+			EnemyWeaponCoeff="1.5"
+			EnemyShootingDelay="0.5"/>
+
+		<Level
+			Name="ImpossibleLevel"
+			EnemyWeaponCoeff="2.0"
+			EnemyShootingDelay="0.25"/>
 	</DifficultyLevels>
 
 	<Price

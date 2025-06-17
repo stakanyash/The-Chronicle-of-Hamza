@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
+<ObjectNames>
+
+    <Object
+		Name="ExitToR4M1"
+		FullName="Road to Vahat" />
+
+	<Object
+		Name="ExitToR1M1"
+		FullName="Road to Krai" />
+
+	<Object
+		Name="HamzaChoose"
+		FullName="Hamza" />
+
+</ObjectNames>

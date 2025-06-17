@@ -177,11 +177,12 @@
 		</script>
 	</trigger>
 
-	<trigger	Name="trMoveToPlate"	active="0">
+	<trigger	Name="trMoveToPlate"	active="1">
 		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="PlateRadiation_loc" />
 		<script>
 --			println("PLATE")
 			TActivate("cinPlateFirst")
+			SetVar("DeadEnd", 1)
 			trigger:Deactivate()
 		</script>
 	</trigger>

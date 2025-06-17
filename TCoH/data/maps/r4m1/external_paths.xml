@@ -2182,6 +2182,15 @@
 	</Path>
 
 	<Path
+		Name="HamzaFindMansur_path">
+		<Point
+			coord="5738.438 7546.684" />
+
+		<Point
+			coord="5650.942 7541.963" />
+	</Path>
+
+	<Path
 		Name="HamzaGoToSaveBuhara">
 		<Point
 			coord="2641.791 6741.607" />

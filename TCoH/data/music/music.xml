@@ -191,7 +191,6 @@
 		/>
 
 <!-- 		cinematics music		 -->
-
 	<model
 		id="Battle01"
 		file="data\music\cinematics\Battle01.ogg" />
@@ -312,4 +311,10 @@
 	<model
 		id="passage04end1"
 		file="data\music\cinematics\passage04_end1.ogg" />
+	<model
+		id="DeathEndmusic"
+		file="data\music\cinematics\em_dramatic_theme.ogg" />
+	<model
+		id="DEAmb"
+		file="data\music\cinematics\deadend_amb.ogg" />
 </Music>

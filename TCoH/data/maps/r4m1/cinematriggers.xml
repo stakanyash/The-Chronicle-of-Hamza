@@ -642,7 +642,7 @@
 	</trigger>
 
 
-	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ -->
+	<!-- ˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜ -->
 	<trigger	Name="cinPriezdFirst"	active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
 		<script>
@@ -725,7 +725,7 @@
 		</script>
 	</trigger>
 
-	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -->
+	<!-- ˜˜˜˜˜˜˜ ˜˜˜˜, ˜˜˜˜˜ ˜˜˜ ˜˜˜˜˜˜ ˜˜˜˜˜˜˜˜˜˜˜˜˜ -->
 	<trigger Name="trENEMYLISA_DEAD" active="0">
 		<event eventid="GE_VEHICLE_WITHOUT_HEALTH" ObjName="ENEMYLISA_vehicle_0" />
 		<event	timeout="60"		eventid="GE_TIME_PERIOD" />
@@ -846,7 +846,7 @@
 		</script>
 	</trigger>
 
-	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ -->
+	<!-- ˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜˜˜˜ ˜ ˜˜˜˜˜ -->
 
 	<trigger Name="cinMovePlToR2M2_begin" active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
@@ -1535,7 +1535,7 @@
         
         SetCameraBehindPlayerVehicle()
 
-		TActivate("AfterGadadDefendRolik_Start")
+		TActivate("AfterGadadDefendRolik_Activate")
 		TActivate("MansurCar_DieOnGadadDefend")
 
         trigger:Deactivate()
@@ -1545,7 +1545,7 @@
 	<!-- The Chronicle of Hamza: After Gadad Defend -->
 
 	<trigger Name="AfterGadadDefendRolik_Start" active="0">
-		<event	eventid="GE_OBJECT_DIE"		ObjName="GadadDebyli" />
+		<event timeout="3" eventid="GE_TIME_PERIOD" />
 		<script>
 		PlayCustomMusic("Bio02")
 
@@ -1677,7 +1677,7 @@
         CompleteQuest("DefendGadad_quest")
 		TakeQuest("TalkToMansur_quest")
 
-		AddHistory( "tcoh_firststory" )
+		AddHistory( "tcoh_firstgadaddefend" )
 		AddFadingMsgId( "fm_history_got" )
 		AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 
@@ -2400,7 +2400,9 @@
 				end
 			end
 
-			AutoSave()
+			TActivate("CoastBtl_autosave")
+
+			SetVar("CoastAutoSave", 0)
 
 			TActivate("AivanJrDies")
 			TActivate("OneOfBuharaDies")
@@ -2408,6 +2410,32 @@
 			TActivate("AttackersDies")
 			TActivate("PlayerDiesOnBuharaAndJrDefend")
 			TActivate("SetTolerance_BuharaSave")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="CoastBtl_autosave"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("CoastAutoSave").AsInt == 0 then
+				SetVar("CoastAutoSave", 1)
+				AutoSave()
+			end
+
+			TActivate("SetToleranceForCoastBattle")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="SetToleranceForCoastBattle"	active="0">
+		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<script>
+			SetTolerance(1100,1025, RS_ENEMY)
+			SetTolerance(1026,1025, RS_ENEMY)
+			SetTolerance(1090,1025, RS_ENEMY)
+			SetTolerance(1095,1025, RS_ENEMY)
 
 			trigger:Deactivate()
 		</script>
@@ -3090,7 +3118,7 @@
 
 			local CCar = CreateVehicleEx("BelazShot1","AivenCar",CVector(5749.218, 251.050, 7186.484), 1095)
 			if CCar then
-				CCar:SetSkin(1)
+				CCar:SetSkin(0)
 				CCar:SetRotation(Quaternion(-0.003, -0.996, 0.002, 0.091))
 			end
 
@@ -4023,6 +4051,9 @@
 
 			PlayCustomMusic("passage04end1")
 
+			RuleConsole("cinematicFadePeriod 3")
+			RuleConsole("g_drawSky false")
+
 			local Plf = GetPlayerVehicle()
 			if Plf then
 				Plf:SetExternalPathByName("end1_path")
@@ -4122,6 +4153,14 @@
 
 			PlayCustomMusic("Bio08")
 
+			musvol = GetConfigMusVol()
+
+			if musvol == 100 then
+				RuleConsole("snd_2dVolume "..musvol)
+			else
+				RuleConsole("snd_2dVolume "..musvol + 5)
+			end
+
 			CreateNewDummyObject("end_plane", "ending", -1, -1, CVector(2671.585, 350.571, 515.247), Quaternion(0.000, 0.998, -0.005, -0.065), 0)
 
 			AddCinematicMessage(77770, 0)
@@ -4142,6 +4181,9 @@
 			TActivate("BadEnd_tr_77774")
 			TActivate("BadEnd_tr_titles")
 			TActivate("BadEnd_tr_end")
+
+			RuleConsole("cinematicFadePeriod 1")
+			RuleConsole("g_drawSky true")
 
 			trigger:Deactivate()
 		</script>
@@ -4259,6 +4301,70 @@
 			RestoreAllToleranceStatus()
 
 			StartConversation("Chujezemets")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="MansurFinded" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			SaveAllToleranceStatus(RS_NEUTRAL)
+			SetVar("MansurStart", 1)
+
+			local PCar = GetPlayerVehicle()
+			local PCarID = getObj("MansurCarCS"):GetId()
+
+			PlayCustomMusic("Techno03")
+
+			Fly("MansurFindedcam", CINEMATIC_AIM_TO_ID, PCarID, 10, 1, 1)
+			StartCinematic()
+
+			if PCar then
+				PCar:SetCustomControlEnabled( true )
+				PCar:SetCustomLinearVelocity( 0 )
+				PCar:SetThrottle( 0 )
+				PCar:SetCustomControlEnabled( false )
+				PCar:SetGamePositionOnGround(CVector(5784.098, 251.058, 7529.827))
+				PCar:SetRotation(Quaternion(-0.001, -0.585, 0.003, 0.811))
+			end
+
+			TActivate("MansurFinded_fade")
+			TActivate("MansurFinded_end")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger	Name="MansurFinded_fade"	active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			local p = GetPlayerVehicle()
+			if p then
+				p:SetExternalPathByName("HamzaFindMansur_path")
+				p:LimitMaxSpeed(20)
+				p:SetCustomLinearVelocity(20)
+			end
+		
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MansurFinded_end"	active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+			StopPlayingCustomMusic()
+
+			local p = GetPlayerVehicle()
+			if p then
+				p:SetExternalPathByName("HamzaFindMansur_path")
+				p:PlaceToEndOfPath("HamzaFindMansur_path")
+				p:UnlimitMaxSpeed()
+			end
+
+			StartConversation("MansurFindeddlg")
 
 			trigger:Deactivate()
 		</script>

@@ -1,0 +1,89 @@
+# unique service name
+name: tcoh
+
+# required human readable info
+display_name: The Chronicle of Hamza
+version: "1.1"
+build: "250617a"
+description: |
+  The Chronicle of Hamza – a story-driven mod set in fourth region. The events of the mod begin around the time when the original game's protagonist is upgrading their truck to head to Vahat. The main character, Hamza, along with his friend Mansur and the original protagonist, must uncover the causes of the 2011 catastrophe and solve the problem of the constant emergence of madmen in the region.
+
+  The mod's timeline overlaps with the original game but is a work of fiction by the author and does not claim to align with the original game's events!
+
+  Big thanks to: Seel, EmerEh, Varisane, E Jet, Carsen, nEmPoBu4, Deus Ex Machina and EM2ch
+  
+authors: stakan
+
+# optional human readable info
+release_date: "28.04.2025"
+language: eng
+link: https://github.com/stakanyash/The-Chronicle-of-Hamza
+trailer_url: https://www.youtube.com/watch?v=4J572zPNDqs
+logo: assets/tcoh_logo.png
+install_banner: assets/tcoh_banner.png
+change_log: assets/changelog_eng.md
+tags: [story]
+screenshots:
+  - img: assets/scr0.jpg
+    text: |
+      The Chronicle of Hamza main menu
+  - img: assets/scr1.jpg
+    text: |
+      Opening cutscene
+  - img: assets/scr2.jpg
+    text: |
+      Ural race
+  - img: assets/scr4.jpg
+    text: |
+      Desert of Death map
+  - img: assets/scr5.jpg
+    text: |
+      Desert of Death map
+  - img: assets/scr6.jpg
+    text: |
+      Cutscene of one of the story quests
+  - img: assets/scr7.jpg
+    text: |
+      The effect of poor health
+  - img: assets/scr8.jpg
+    text: |
+      Cutscene of one of the endings
+
+data_dirs:
+  - data
+
+options_base_dir: options
+
+compatible_minor_versions: false
+compatible_patch_versions: false
+
+config_options:
+  firstLevel: "r4m1"
+
+# installation confguration
+patcher_version_requirement: "2.2.1"
+prerequisites: 
+  - name: community_remaster
+    versions:
+      - ">=1.14.1"
+    optional_content:
+     - hd_gun_models
+     - hd_vehicle_models
+     - ost_remaster
+     - english_localization
+
+# optional mod content
+optional_content:
+  - name: english_loc
+    display_name: English Localization
+    forced_option: True
+    data_dirs: 
+      - "english_loc"
+    description: |
+      English localization for The Chronicle of Hamza.
+  - name: eng_orig_va
+    display_name: English Radio Voice Acting from HTA
+    data_dirs: 
+      - "eng_orig_va"
+    description: |
+      Replaces Russian radio voice acting with original from English version of Hard Truck Apocalypse.

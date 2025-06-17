@@ -587,11 +587,16 @@
 	</Path>
 
 	<Path Name = "t1_cam">
-		<Point  coord="2663.506 355.840 516.924" rotation="0.001 -0.760 -0.001 0.650"/>
+		<Point  coord="2671.614 352.490 511.399" rotation="0.027 -0.070 -0.002 0.997"/>
 	</Path>
 
 	<Path Name = "AfterCoastFight_cam">
 		<Point  coord="1615.292 288.027 6547.733" rotation="-0.077 -0.496 0.044 0.864"/>
 		<Point  coord="1685.862 273.290 6588.860" rotation="-0.077 -0.496 0.044 0.864"/>
+	</Path>
+
+	<Path Name = "MansurFindedcam">
+		<Point  coord="5859.041 267.894 7545.787" rotation="-0.055 0.792 -0.071 0.604"/>
+		<Point  coord="5642.562 258.217 7559.278" rotation="-0.075 0.908 -0.185 0.369"/>
 	</Path>
 </Paths>

@@ -1235,6 +1235,41 @@
 		</script>
 	</trigger>
 
+	<trigger Name="CreateMansurRepairer" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+            SetTolerance(1100, 1090, RS_ALLY)
+			SetTolerance(1090, 1002, RS_ENEMY)
+			SetTolerance(1090, 1062, RS_ENEMY)
+			SetTolerance(1090, 1023, RS_ALLY)
+			SetTolerance(1090, 1025, RS_NEUTRAL)
+			SetTolerance(1090, 1060, RS_NEUTRAL)
+
+            local M = CreateVehicleEx("UralMansur","MansurCarCS",CVector(5626.962, 251.059, 7543.884), 1090)
+			if M then
+				M:SetSkin(1)
+				M:SetRotation(Quaternion(0.001, 0.006, 0.003, 1.000))
+			end
+
+			CreateNewDummyObject( "SergoFull", "MansurHuman", -1, -1, CVector(5628.931, 249.059, 7544.242), Quaternion(-0.4966, 0.5098, 0.5032, 0.4902), 0)
+
+			local pseudomansur = getObj("MansurHuman")
+			if pseudomansur then
+				pseudomansur:SetNodeAction(AT_RESERVED1)
+			end
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger	Name="MansurFinded_cs_launch"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="FindMansurQuest_loc" />
+		<script>
+			TActivate("MansurFinded")
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
 	<trigger Name="ConnectMansur" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
@@ -1245,7 +1280,17 @@
 			SetTolerance(1090, 1025, RS_NEUTRAL)
 			SetTolerance(1090, 1060, RS_NEUTRAL)
 
-            TeamCreate("MansurCar", 1090, CVector(5623.750, 250.032, 7175.120), {"UralMansur"}, nil, nil, Quaternion(-0.000, -0.999, -0.001, 0.052))
+			local M = getObj("MansurCarCS")
+			if M then
+				M:Remove()
+			end
+
+			local Mh = getObj("MansurHuman")
+			if Mh then
+				Mh:Remove()
+			end
+
+            TeamCreate("MansurCar", 1090, CVector(5626.962, 251.059, 7543.884), {"UralMansur"}, nil, nil, Quaternion(0.001, 0.006, 0.003, 1.000))
 
 			local vehMansur = getObj("MansurCar_vehicle_0")
 			if vehMansur then
@@ -1819,10 +1864,20 @@
 		</script>
 	</trigger>
 
-	<trigger Name="MansurCar_DieOnGadadDefend" active="0">
-		<event eventid="GE_OBJECT_DIE" ObjName="MansurTachka_vehicle_0" />
+	<trigger Name="AfterGadadDefendRolik_Activate" active="0">
+		<event	eventid="GE_OBJECT_DIE"		ObjName="GadadDebyli" />
 		<script>
-            TDeactivate("AfterGadadDefendRolik_Start")
+            TActivate("AfterGadadDefendRolik_Start")
+			TDeactivate("MansurCar_DieOnGadadDefend")
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="MansurCar_DieOnGadadDefend" active="0">
+		<event eventid="GE_OBJECT_DIE" ObjName="MansurCarAR_vehicle_0" />
+		<script>
+            TDeactivate("AfterGadadDefendRolik_Activate")
 
 		    SpawnMessageBox("8906")
 
@@ -2289,7 +2344,7 @@
 	</trigger>
 
 	<trigger Name="MansurDiesOnBuharaAndJrDefend" active="0">
-		<event	eventid="GE_OBJECT_DIE"		ObjName="MansurCar_vehicle_0" />
+		<event	eventid="GE_OBJECT_DIE"		ObjName="MansurCarSB_vehicle_0" />
 		<script>
             SpawnMessageBox("8906")
 
@@ -2563,21 +2618,17 @@
 			local WinNumber = GetVar("WinningNumber").AsInt
 
 			if WinNumber == BetNumber then
+				println("Betting amount is: "..BetAmount)
+				println("Betting number is: "..BetNumber)
+				println("Winning number is: "..WinNumber)
+				println("Winning amount is: "..BetAmount*BetCoeff)
+
 				AddPlayerMoney(BetAmount * BetCoeff)
 			else
+				println("Betting amount is: "..BetAmount)
+				println("Betting number is: "..BetNumber)
+				println("Winning number is: "..WinNumber)
 				println("Your bet "..BetNumber.." is lost!")
-			end
-
-			-- Debug --
-
-			println("Betting amount is: "..BetAmount)
-			println("Betting number is: "..BetNumber)
-			println("Winning number is: "..WinNumber)
-
-			if WinNumber == BetNumber then
-				println("Winning amount is: "..BetAmount*BetCoeff)
-			else
-				println("Winning amount is: 0")
 			end
 
 			trigger:Deactivate()  
@@ -3445,6 +3496,12 @@
 		<script>
 			if GL_PassToMap == true then
 			   AddSaleItems()
+
+			   local P = GetPlayerVehicle()
+			   if P then
+					P:SetCustomControlEnabled(false)
+			   end
+
 				if QuestStatus("blocktaken_quest")==Q_TAKEN or QuestStatus("blockleaved_quest")==Q_TAKEN then
 					local Alf = getObj("AivenCarDD_vehicle_0")
 					if Alf then
@@ -3457,11 +3514,8 @@
 						Mlf:SetGamePositionOnGround(CVector(3152.506, 273.339, 7445.637))
 						Mlf:SetRotation(Quaternion(0.020, 0.939, -0.017, 0.344))
 					end
-				end				
-			   println("Map change detected! Sale items added.")
+				end
 			   GL_PassToMap = false
-
-			   GetPlayerVehicle():SetCustomControlEnabled(false)
 			end
 		</script>
 	</trigger>
@@ -3477,6 +3531,17 @@
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
 			AddHistory("tcoh_akilsus")
+			AddFadingMsgId("fm_history_got")
+			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="musibameet_addhistory" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddHistory("tcoh_aftermusibameet")
 			AddFadingMsgId("fm_history_got")
 			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 

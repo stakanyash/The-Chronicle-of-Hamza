@@ -7,7 +7,11 @@
 
 В модификации отсутствует озвучка, за исключением рассказчика.
 
-**Озвучка рассказчика:** [Эмер](https://www.youtube.com/@emerehhhhh)
+---
+
+**Озвучка рассказчика (Русская версия):** [Эмер](https://www.youtube.com/@emerehhhhh)
+
+**Озвучка рассказчика (Английская версия):** [Seel](https://github.com/Zvetkov)
 
 ---
 <div align="center">
@@ -20,9 +24,8 @@
 ### Список изменений:
 
 - Альтернативный сюжет четвёртого региона от лица жителя Вахата
-- Две основные концовки и четыре тупиковых
+- Две основные концовки и пять тупиковых
 - Новая карта "Пустыня Смерти", соединяющая Край и Вахат
-- Удалена сложность "Мастер" и произведён нёрф сложности "Профессионал"
 - Три главных героя, которые постоянно участвуют в событиях сюжета
 
 --- 
@@ -31,11 +34,13 @@
 
 **[Эмер](https://www.youtube.com/@emerehhhhh)** - озвучка рассказчика
 
+**[Seel](https://github.com/Zvetkov)** - озвучка рассказчика в английской версии
+
 **[Varisane](https://github.com/Varisane)** - тестирование, текстовые правки, сюжет, скрипты
 
 **[E Jet](https://github.com/ejetaxeblevich)** - помощь в разработке
 
-**[nEmPoBu4](https://github.com/lyokhatankist)** - тестирование
+**[nEmPoBu4](https://github.com/lyokhatankist)** - тестирование, пруфридинг английской локализации
 
 **[Carsen](https://github.com/CarsenStream)** - помощь в разработке, тестирование
 
@@ -52,7 +57,9 @@
 
 - Некоторые скрипты, автор: **[E Jet](https://github.com/ejetaxeblevich)**
 
-- Слайды в концовках: **[Impoved Storyline](https://github.com/zatinu322/ImprovedStoryline)**, автор: **[pavlikRPG](https://github.com/zatinu322/)**
+- Слайды в концовках, музыка в тупиковой концовке Зармека: **[Impoved Storyline](https://github.com/zatinu322/ImprovedStoryline)**, автор: **[pavlikRPG](https://github.com/zatinu322/)**
+
+- Выкрик Чужеземца в тупиковой концовке Зармека: **[Community Disaster](https://github.com/zatinu322/stream_builds/)**, автор: **[pavlikRPG](https://github.com/zatinu322/)**
 
 ---
 

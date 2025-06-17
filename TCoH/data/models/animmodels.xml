@@ -486,6 +486,14 @@
 		composite="0" />
 
 	<model
+		id="r4_1_woman"
+		file="data\models\Masks\Region4\woman\dwellerwomanmenu.gam"
+		shadow="1"
+		windwavy="0"
+		trans="0"
+		composite="0" />
+
+	<model
 		id="r2_man"
 		file="data\models\Masks\Region2\man\Dwellermenu2.gam"
 		shadow="1"
