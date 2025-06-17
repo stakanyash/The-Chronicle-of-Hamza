@@ -17,36 +17,33 @@ The mod lacks voice acting, except for the narrator.
 
 ---
 
-### At this moment English version of mod is unavaiable! Follow updates on my YouTube or Discord. Links down below.
-
---- 
-
 ### Narrator's Voice:
 
 **Russian version:** [EmerEh](https://www.youtube.com/@emerehhhhh)
 
-**English version:** TBA
+**English version:** [Seel](https://github.com/Zvetkov)
 
 ---  
 ### Changelog:  
 
 - Alternate storyline for fourth region from the perspective of a Vahat resident  
-- Two main endings and four dead ends  
+- Two main endings and five dead ends  
 - A new map, "Desert of Death" connecting Krai and Vahat
-- Removed the "Master" difficulty and nerfed "Professional" difficulty  
 - Three main characters who actively participate in the story  
 
 ---  
 
 ### **Credits:**  
 
-**[EmerEh](https://www.youtube.com/@emerehhhhh)** – Narrator's voice  
+**[EmerEh](https://www.youtube.com/@emerehhhhh)** – Russian narrator voiceover
+
+**[Seel](https://github.com/Zvetkov)** - English narrator voiceover
 
 **[Varisane](https://github.com/Varisane)** – Testing, text edits, story, scripts  
 
 **[E Jet](https://github.com/ejetaxeblevich)** – Development assistance  
 
-**[nEmPoBu4](https://github.com/lyokhatankist)** – Testing  
+**[nEmPoBu4](https://github.com/lyokhatankist)** – Testing, English proofreading
 
 **[Carsen](https://github.com/CarsenStream)** – Development assistance, testing  
 
@@ -57,13 +54,15 @@ The mod lacks voice acting, except for the narrator.
 
 - Fullsize Sergo model by **Spok**  
 
-- Deteriorating condition scripts from the **"Possessed" mod** by **[nEmPoBu4](https://github.com/lyokhatankist)**  
+- Deteriorating condition scripts from the **"possessed" mod** by **[nEmPoBu4](https://github.com/lyokhatankist)**  
 
 - Ending credits music (one of the endings): **Gnome627 – [Quiet Dialogue (extended, remixed)](https://youtu.be/bhsTFClFSjo)**  
 
 - Some scripts by **[E Jet](https://github.com/ejetaxeblevich)**  
 
-- Ending slides from **[Improved Storyline](https://github.com/zatinu322/ImprovedStoryline)** by **[pavlikRPG](https://github.com/zatinu322/)**
+- Ending slides and Zarmek deadend music from **[Improved Storyline](https://github.com/zatinu322/ImprovedStoryline)** by **[pavlikRPG](https://github.com/zatinu322/)**
+
+- The Foreigner's scream in Zarmek's dead-end ending from **[Community Disaster](https://github.com/zatinu322/stream_builds/)** by **[pavlikRPG](https://github.com/zatinu322/)**
 
 ---
 **If you have found a bug, a flaw or just want to leave feedback about the modification, you can do it on my [Discord server](https://discord.gg/5UAjrrsM5B) in the "bugreports" channel, or on the [Deus Ex Machina](https://discord.gg/PVW57kr) server in the channel "The Chronicle of Hamza" of the section "витрина-модов"**.
