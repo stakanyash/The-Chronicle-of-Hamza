@@ -2536,7 +2536,7 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 			<Part id = "CABIN_GIANT_GUN" 		Prototype = "big_swingfire01" /> 
 			<Part id = "BASKET"			Prototype = "belazCargo05" />
 			<Part id = "BASKET_BIG_GUN_0" 	Prototype = "kpvt01" /> 
-			<Part id = "BASKET_SIDE_GUN_0"	Prototype = "mrakSideGun" /> 
+			<Part id = "BASKET_SIDE_GUN_0"	Prototype = "marsSideGun" /> 
 		</Parts>
 	</Prototype>
 
@@ -2550,7 +2550,7 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 			<Part id = "CABIN_GIANT_GUN" 		Prototype = "octopus01" /> 
 			<Part id = "BASKET"			Prototype = "belazCargo05" />
 			<Part id = "BASKET_BIG_GUN_0" 	Prototype = "kpvt01" /> 
-			<Part id = "BASKET_SIDE_GUN_0"	Prototype = "marsSideGun" /> 
+			<Part id = "BASKET_SIDE_GUN_0"	Prototype = "zeusSideGun" /> 
 		</Parts>
 	</Prototype>
 

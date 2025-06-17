@@ -3118,7 +3118,7 @@
 
 			local CCar = CreateVehicleEx("BelazShot1","AivenCar",CVector(5749.218, 251.050, 7186.484), 1095)
 			if CCar then
-				CCar:SetSkin(1)
+				CCar:SetSkin(0)
 				CCar:SetRotation(Quaternion(-0.003, -0.996, 0.002, 0.091))
 			end
 
@@ -4152,6 +4152,14 @@
 			StartCinematic()
 
 			PlayCustomMusic("Bio08")
+
+			musvol = GetConfigMusVol()
+
+			if musvol == 100 then
+				RuleConsole("snd_2dVolume "..musvol)
+			else
+				RuleConsole("snd_2dVolume "..musvol + 5)
+			end
 
 			CreateNewDummyObject("end_plane", "ending", -1, -1, CVector(2671.585, 350.571, 515.247), Quaternion(0.000, 0.998, -0.005, -0.065), 0)
 

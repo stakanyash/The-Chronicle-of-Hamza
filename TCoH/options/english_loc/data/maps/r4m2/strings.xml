@@ -190,7 +190,7 @@
 		modelSlot="0"
 		value="HAMZA|This land is nothing like our own..."
 		sound=""
-		time="5" />
+		time="6" />
 
 	<string
 		id="601"
@@ -198,7 +198,7 @@
 		modelSlot="1"
 		value="FOREIGNER|I've seen worse — we'll break through. What's the plan?"
 		sound=""
-		time="5" />
+		time="6" />
 
 	<string
 		id="602"
@@ -208,7 +208,7 @@
 		modelSlot="1"
 		value="MANSUR|To look for the madmen here — isn't that exactly why we came?"
 		sound=""
-		time="5" />
+		time="6" />
 
 	<string
 		id="603"
@@ -218,7 +218,7 @@
 		modelSlot="0"
 		value="HAMZA|What's the plan if we find them?"
 		sound=""
-		time="4" />
+		time="5" />
 
 	<string
 		id="604"
@@ -226,7 +226,7 @@
 		modelSlot="1"
 		value="FOREIGNER|We'll figure it out as we go."
 		sound=""
-		time="4" />
+		time="5" />
 
 	<string
 		id="605"
@@ -236,7 +236,7 @@
 		modelSlot="1"
 		value="MANSUR|We won't have to hunt them down — they're already here to greet us! Attack!"
 		sound=""
-		time="5" />
+		time="7" />
 
 	<string
 		id="606"
@@ -246,7 +246,7 @@
 		modelSlot="1"
 		value="MANSUR|Damn khimars! We had barely arrived, and they were already on us! Luckily, we fought them off."
 		sound=""
-		time="5" />
+		time="8" />
 
 	<string
 		id="607"
@@ -254,7 +254,7 @@
 		modelSlot="1"
 		value="FOREIGNER|So they're here after all… Guess that means we're not chasing shadows."
 		sound=""
-		time="6" />
+		time="8" />
 
 	<string
 		id="608"
@@ -264,7 +264,7 @@
 		modelSlot="0"
 		value="HAMZA|Yeah, but where do we go from here?.."
 		sound=""
-		time="4" />
+		time="5" />
 
 	<string
 		id="609"
@@ -274,7 +274,7 @@
 		modelSlot="1"
 		value="MANSUR|Let's ride — wherever the road takes us! I'm already itching to take down these haras!"
 		sound=""
-		time="5" />
+		time="7" />
 
 	<string
 		id="610"
@@ -282,7 +282,7 @@
 		modelSlot="1"
 		value="FOREIGNER|Hey, buddy, chill. Three of us? Them? Way more. Screw up once, and we're just gonna be another pair of boots feeding the dirt."
 		sound=""
-		time="10" />
+		time="11" />
 
 	<string
 		id="611"
@@ -292,7 +292,7 @@
 		modelSlot="1"
 		value="MANSUR|You're right — but I still stand by my idea. Let's just ride wherever the road takes us."
 		sound=""
-		time="6" />
+		time="7" />
 
 	<string
 		id="612"
@@ -330,7 +330,7 @@
 		modelSlot="1"
 		value="FOREIGNER|Fully agree! Let's move out!"
 		sound=""
-		time="4" />
+		time="5" />
 
 	<string
 		id="616"
@@ -340,7 +340,7 @@
 		modelSlot="0"
 		value="HAMZA|Mansur! What the hell?"
 		sound=""
-		time="3" />
+		time="5" />
 
 	<string
 		id="617"
@@ -350,7 +350,7 @@
 		modelSlot="1"
 		value="MANSUR|It's too dangerous here! You do what you want — I'm heading back."
 		sound=""
-		time="4" />
+		time="7" />
 
 	<string
 		id="618"
@@ -360,7 +360,7 @@
 		modelSlot="0"
 		value="HAMZA|There's no escape! Ahmak! You better pray I don't come back!"
 		sound=""
-		time="5" />
+		time="7" />
 
 	<string
 		id="619"
@@ -368,7 +368,7 @@
 		modelSlot="1"
 		value="FOREIGNER|Damn, how many of these bandits are there?! They just keep coming!"
 		sound=""
-		time="5" />
+		time="6" />
 
 	<string
 		id="620"
@@ -396,7 +396,7 @@
 		modelSlot="1"
 		value="SCIENTIST|You won't be able to defeat them even with our help. Follow us if you want to live."
 		sound=""
-		time="6" />
+		time="7" />
 
 	<string
 		id="623"
@@ -448,7 +448,7 @@
 		modelSlot="0"
 		value="HAMZA|Not sure, but I think we'd better head back. It's getting late!"
 		sound=""
-		time="5" />
+		time="6" />
 
 	<string
 		id="77770"
@@ -508,18 +508,12 @@
 		sound=""
 		fontSize="20"
 		scrollSpeed="2.0"
-		time="57" />
+		time="65" />
 
 	<string
 		id="77772"
-		value="After activating the blocker and neutralizing the source of contamination, life in Vahat and across the world began to slowly return to normal."
+		value="Soon after the blocker had been activated and the contamination source was neutralized, life in Vahat and across the world began to slowly return to normal. The power of the Source, which had held so many people captive for decades, started to fade. It marked the beginning of the end of an era of madness, and the dawn of a new age of hope and healing."
 		sound="data\sounds\Speech\rolik\good_end_1.ogg"
-		time="1" />
-
-    <string
-		id="777721"
-		value="The power of the ship, which had held so many people captive for decades, started to fade. It marked the beginning of the end of an era of madness, and the dawn of a new age of hope and healing."
-		sound="data\sounds\Speech\rolik\good_end_1_2.ogg"
 		time="1" />
 
 	<string
@@ -542,7 +536,7 @@
 
 	<string
 		id="77774"
-		value="The foreigner who had aided Hamza and Mansur in their mission also became a legend. His name was spoken with respect and gratitude. He returned to Vahata to witness the fruits of his efforts and to share in the joy with his new friends."
+		value="The Foreigner who had aided Hamza and Mansur in their mission also became a legend. His name was spoken with respect and gratitude. He returned to Vahat to witness the results of his efforts and to share in the joy with his new friends."
 		sound="data\sounds\Speech\rolik\good_end_4.ogg"
 		time="1" />
 

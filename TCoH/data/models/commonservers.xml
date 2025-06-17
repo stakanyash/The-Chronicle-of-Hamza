@@ -698,6 +698,7 @@
 		<Item id="R4M0Ambient" />
 		<Item id="passage04end1" />
 		<Item id="DeathEndmusic" />
+		<Item id="DEAmb" />
 
 			
 	</MusicServer>

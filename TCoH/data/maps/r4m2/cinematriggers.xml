@@ -313,6 +313,19 @@
 
 			RuleConsole("cinematicFadePeriod 1")
 
+			local VAR = GetVar("DeadEnd").AsInt
+			if VAR == 1 then
+        		PlayCustomMusic("DeathEndmusic")
+			else
+				PlayCustomMusic("EndGameGood")
+			end
+
+			RuleConsole("g_postEffect BWFadeOut")
+
+			RuleConsole("snd_2dVolume 0")
+			RuleConsole("snd_3dVolume 0")
+			RuleConsole("mus_Volume 85")
+
 			TActivate("titles_tr_end")
 
 			trigger:Deactivate()
@@ -327,16 +340,17 @@
 			Fly("end2_cam_plane", CINEMATIC_NO_AIM, nil, 70, 0,1)
 			StartCinematic()
 
+			musvol = GetConfigMusVol()
+
+			if musvol == 100 then
+				RuleConsole("snd_2dVolume "..musvol)
+			else
+				RuleConsole("snd_2dVolume "..musvol + 5)
+			end
+
 			CreateNewDummyObject("end_plane", "ending", -1, -1, CVector(1226.059, 384.649, 3666.912), Quaternion(0.005, -0.196, -0.001, 0.980), 0)
 
-			AddCinematicMessage(77770, 0)
-			AddCinematicMessage(77772, 0.5)
-			AddCinematicMessage(77773, 0.5)
-			AddCinematicMessage(77771, 0.5)
-			AddCinematicMessage(77774, 0.5)
-			AddCinematicMessage(77775, 0.5)
-			AddCinematicMessage(77776, 0.5)
-			AddCinematicMessage(77777, 0.5)
+			ShowGoodEndNarrator()
 
 			RuleConsole("cinematicFadePeriod 3")
 
@@ -345,7 +359,6 @@
 			TActivate("GoodEnd_tr_77775")
 			TActivate("GoodEnd_tr_77776")
 			TActivate("GoodEnd_tr_77777")
-			TActivate("End_tr_titles")
 			TActivate("End_tr_end")
 
 			trigger:Deactivate()
@@ -411,26 +424,6 @@
 			end
 
 			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="End_tr_titles" active="0">
-		<event msgid="5968" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
-		<script>
-			local VAR = GetVar("DeadEnd").AsInt
-			if VAR == 1 then
-        		PlayCustomMusic("DeathEndmusic")
-			else
-				PlayCustomMusic("EndGameGood")
-			end
-
-			RuleConsole("g_postEffect BWFadeOut")
-
-			RuleConsole("snd_2dVolume 0")
-			RuleConsole("snd_3dVolume 0")
-			RuleConsole("mus_Volume 85")
-
-        	trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -808,7 +801,12 @@
 			Fly("ToTarelka", CINEMATIC_NO_AIM, nil, 7, 1,1)
 			StartCinematic()
 
-			PlayCustomMusic("Death02")
+			musvol = GetConfigMusVol()
+
+			RuleConsole("snd_2dVolume "..musvol - 15)
+			RuleConsole("snd_3dVolume 0")
+
+			PlayCustomMusic("DEAmb")
 			AddCinematicMessage( 501, 0.25 )
 			
 			trigger:Deactivate()
@@ -820,6 +818,7 @@
 		<script>
 			SetWeather(0)
 			SetGameTime(0, 0)
+			RuleConsole("g_postEffect BWFadeIn")
 
 			local PVh = GetPlayerVehicle()
 			if PVh then
@@ -828,7 +827,7 @@
 			end
 
 
-			local a = getObj("AivenStand")
+			local a = getObj("AivenStandBase")
 			if a then
 				a:SetGamePositionOnGround(CVector(getPos("TarelkaPoint_loc")))
 				a:SetRotation(Quaternion(-0.007, -0.169, -0.001, 0.986))
@@ -840,7 +839,7 @@
 					ac:Remove()
 				end
 
-				local ad = CreateVehicleEx("BelazShot1","AivenStand",CVector(getPos("TarelkaPoint_loc")), 1095)
+				local ad = CreateVehicleEx("BelazShot1","AivenMovePlate",CVector(getPos("TarelkaPoint_loc")), 1095)
 				if ad then
 					ad:SetRotation(Quaternion(-0.007, -0.169, -0.001, 0.986))
 					ad:SetExternalPathByName("ToTarelka_Path")
@@ -854,8 +853,6 @@
 	<trigger	Name="cinPlate_End"	active="0">
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<script>
-			SetGameTime(20, 0)
-
 			local a = getObj("AivenStand")
 			if a then
 				a:SetExternalPathByName("ToTarelka_Path")
@@ -871,6 +868,8 @@
 			Fly("ToTarelka2", CINEMATIC_NO_AIM, nil, 17, 0,0)
 			Fly("ToTarelka3", CINEMATIC_NO_AIM, nil, 11, 0,1)
 			StartCinematic()
+
+			RuleConsole("g_postEffect BWFadeIn")
 
 			AddCinematicMessage( 502, 0.25 )
 
@@ -910,11 +909,136 @@
 		<event flypath="ToTarelka3" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
 			AddCinematicMessage( 504, 0.5 )
---			SetGameTime(0, 0)
+			AddCinematicMessage( 505, 0.5 )
+			RuleConsole("g_postEffect BWFadeIn")
+
+			TActivate("AivenEffect")
 			trigger:Deactivate()
 		</script>
 	</trigger>
 
+	<trigger Name="AivenEffect" active="0">
+		<event msgid="505" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+			RuleConsole("snd_3dVolume "..musvol - 10)
+			RuleConsole("g_postEffect cinematic04")
+
+			TActivate("AivenEffect1")
+
+			CreateEffectTTLed("ET_PS_UFO01", CVector(2913.875, 224.979, 2375.140), Quaternion(0.0000, 0.0000, 0.0000, 1.0000), 1000)
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="AivenEffect1" active="0">
+		<event timeout="0.15" eventid="GE_TIME_PERIOD" />
+		<script>
+            RuleConsole("g_postEffect cinematic02")
+
+			TActivate("AivenEffect2")
+
+			CreateEffectTTLed("ET_PS_UFO01", CVector(2913.875, 224.979, 2375.140), Quaternion(0.0000, 0.0000, 0.0000, 1.0000), 1000)
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="AivenEffect2" active="0">
+		<event timeout="0.15" eventid="GE_TIME_PERIOD" />
+		<script>
+            RuleConsole("g_postEffect cinematic03")
+
+			TActivate("AivenEffect3")
+
+			CreateEffectTTLed("ET_PS_UFO01", CVector(2913.875, 224.979, 2375.140), Quaternion(0.0000, 0.0000, 0.0000, 1.0000), 1000)
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="AivenEffect3" active="0">
+		<event timeout="0.15" eventid="GE_TIME_PERIOD" />
+		<script>
+            RuleConsole("g_postEffect cinematic04")
+
+			TActivate("AivenEffect4")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="AivenEffect4" active="0">
+		<event timeout="0.15" eventid="GE_TIME_PERIOD" />
+		<script>
+            RuleConsole("g_postEffect cinematic05")
+
+			TActivate("AivenEffect5")
+
+			CreateEffectTTLed("ET_PS_UFO01", CVector(2913.875, 224.979, 2375.140), Quaternion(0.0000, 0.0000, 0.0000, 1.0000), 1000)
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="AivenEffect5" active="0">
+		<event timeout="0.15" eventid="GE_TIME_PERIOD" />
+		<script>
+            RuleConsole("g_postEffect cinematic02")
+
+			TActivate("AivenEffect6")
+
+			CreateEffectTTLed("ET_PS_UFO01", CVector(2913.875, 224.979, 2375.140), Quaternion(0.0000, 0.0000, 0.0000, 1.0000), 1000)
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="AivenEffect6" active="0">
+		<event timeout="0.15" eventid="GE_TIME_PERIOD" />
+		<script>
+            RuleConsole("g_postEffect cinematic04")
+
+			TActivate("AivenEffect7")
+
+			CreateEffectTTLed("ET_PS_UFO01", CVector(2913.875, 224.979, 2375.140), Quaternion(0.0000, 0.0000, 0.0000, 1.0000), 1000)
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="AivenEffect7" active="0">
+		<event timeout="0.15" eventid="GE_TIME_PERIOD" />
+		<script>
+            RuleConsole("g_postEffect cinematic03")
+
+			TActivate("AivenEffect8")
+
+			CreateEffectTTLed("ET_PS_UFO01", CVector(2913.875, 224.979, 2375.140), Quaternion(0.0000, 0.0000, 0.0000, 1.0000), 1000)
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="AivenEffect8" active="0">
+		<event timeout="0.15" eventid="GE_TIME_PERIOD" />
+		<script>
+            RuleConsole("g_postEffect cinematic05")
+
+			CreateEffectTTLed("ET_PS_UFO01", CVector(2913.875, 224.979, 2375.140), Quaternion(0.0000, 0.0000, 0.0000, 1.0000), 1000)
+
+			local vr = GetVar("EffectLoop").AsInt
+			if vr ~= 2 then
+				TActivate("AivenEffect1")
+				SetVar("EffectLoop", 1)
+			elseif vr == 1 then
+				TActivate("AivenEffect1")
+				SetVar("EffectLoop", 2)
+			end
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
 
 	<trigger	Name="cinPlate_FullEnd"	active="0">
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
@@ -925,6 +1049,8 @@
 			if b==1 then
 				TActivate("titlestr")
 			end
+
+			RuleConsole("g_postEffect BWFadeOut")
 
 			ShowDeathMenu()
 			trigger:Deactivate()
@@ -956,7 +1082,7 @@
 				PVeh:SetRotation(Quaternion(0.001, -0.195, 0.003, 0.981))
 			end
 
-			local AVeh = getObj("AivenStand")
+			local AVeh = getObj("AivenStandBase")
 			if AVeh then
 				AVeh:SetGamePositionOnGround(CVector(2958.213, 229.796, 2257.992))
 				AVeh:SetRotation(Quaternion(-0.000, -0.069, -0.000, 0.998))
@@ -1008,7 +1134,7 @@
 
 			SetCameraBehindPlayerVehicle()
 
-			local AVeh = getObj("AivenStand")
+			local AVeh = getObj("AivenStandBase")
 			if AVeh then
 				AVeh:Remove()
 			end
@@ -1118,9 +1244,9 @@
 				local Plf = GetPlayerVehicle()
 				local PlfID = GetPlayerVehicleId()
 
-				Fly("firstarrive_cam01", CINEMATIC_NO_AIM, nil, 19, 0, 0)
-				Fly("firstarrive_cam02", CINEMATIC_AIM_TO_ID, PlfID, 15, 0, 0)
-				Fly("firstarrive_cam03", CINEMATIC_NO_AIM, nil, 8, 0, 1)
+				Fly("firstarrive_cam01", CINEMATIC_NO_AIM, nil, 21, 0, 0)
+				Fly("firstarrive_cam02", CINEMATIC_AIM_TO_ID, PlfID, 18, 0, 0)
+				Fly("firstarrive_cam03", CINEMATIC_NO_AIM, nil, 10, 0, 1)
 
 				StartCinematic()
 
@@ -1292,7 +1418,7 @@
 
 			PlayCustomMusic("IntenseDialogue01")
 
-			Fly("madmandefeated_cam01", CINEMATIC_NO_AIM, nil, 44, 1, 1)
+			Fly("madmandefeated_cam01", CINEMATIC_NO_AIM, nil, 56, 1, 1)
 			StartCinematic()
 
 			TActivate("AfterMadManFight_cs_fade")
@@ -1396,7 +1522,7 @@
 				AivenCreate:SetSkin(3)
 			end
 
-			Fly("findbase_cam01", CINEMATIC_NO_AIM, nil, 15, 1, 1)
+			Fly("findbase_cam01", CINEMATIC_NO_AIM, nil, 16, 1, 1)
 			StartCinematic()
 
 			AddCinematicMessage( 613, 0.5 )
@@ -1500,7 +1626,7 @@
 			SetTolerance(1095, 1062, RS_ALLY)
 			SetTolerance(1090, 1062, RS_ALLY)
 
-			Fly("mansurleaves_cam", CINEMATIC_AIM_TO_ID, MVehID, 14, 1, 1)
+			Fly("mansurleaves_cam", CINEMATIC_AIM_TO_ID, MVehID, 21, 1, 1)
 			StartCinematic()
 
 			TActivate("MansurLeaves_cs_Fade")
@@ -1570,8 +1696,8 @@
 				PVeh:SetThrottle(0)
 			end
 
-			Fly("SavePlInBase1", CINEMATIC_NO_AIM, nil, 6, 1, 0)
-			Fly("SavePlInBase2", CINEMATIC_NO_AIM, nil, 10, 0, 1)
+			Fly("SavePlInBase1", CINEMATIC_NO_AIM, nil, 7, 1, 0)
+			Fly("SavePlInBase2", CINEMATIC_NO_AIM, nil, 11, 0, 1)
 
 			CompleteQuest("FindMoreMadmans_quest")
 
@@ -1745,8 +1871,8 @@
 	<trigger	Name="HelpersArrived_cs_End5"	active="0">
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<script>
-			local poslist = {CVector(3318.065, 300, 2001.583),CVector(3325.100, 300, 2002.163),CVector(3315.300, 300, 2017.859),CVector(3296.973, 300, 2036.113), CVector(3307.902, 300, 2038.657), CVector(3328.054, 256.977, 2044.362)}
-			local rotlist = {Quaternion(-0.011, 0.994, 0.005, 0.105), Quaternion(0.006, 0.998, 0.009, 0.063), Quaternion(-0.016, 0.963, 0.015, 0.269), Quaternion(-0.037, 0.940, 0.042, 0.337), Quaternion(-0.027, 0.971, 0.030, 0.235), Quaternion(0.004, -0.989, -0.001, -0.148)}
+			local poslist = {CVector(3318.065, 300, 2001.583),CVector(3325.100, 300, 2002.163),CVector(3315.300, 300, 2017.859),CVector(3296.973, 300, 2036.113), CVector(3307.902, 300, 2038.657)}
+			local rotlist = {Quaternion(-0.011, 0.994, 0.005, 0.105), Quaternion(0.006, 0.998, 0.009, 0.063), Quaternion(-0.016, 0.963, 0.015, 0.269), Quaternion(-0.037, 0.940, 0.042, 0.337), Quaternion(-0.027, 0.971, 0.030, 0.235)}
 			for i=1,4 do
 				local veh = getObj("SciefVeh"..i)
 				if veh then
@@ -1768,8 +1894,14 @@
 
 			local AVeh = getObj("AivenStand")
 			if AVeh then
-				AVeh:SetGamePositionOnGround(poslist[6])
-				AVeh:SetRotation(Quaternion(rotlist[6]))
+				AVeh:Remove()
+			end
+
+			local AC = CreateVehicleEx("BelazShot1", "AivenStandBase", CVector(3328.054, 256.977, 2044.362), 1095)
+			if AC then
+				AC:SetSkin(0)
+				AC:SetRotation(Quaternion(0.004, -0.989, -0.001, -0.148))
+				AC:setGodMode(1)
 			end
 
 			Fly("SavePlInBase6", CINEMATIC_NO_AIM, nil, 6, 0,1)

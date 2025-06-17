@@ -2186,6 +2186,7 @@
 
 		<!-- Environment -->
 		<Item id="S_SEA" />
+		<Item id="S_UFO01" />
 		<Item id="S_WIND_GRASS" />
 		<Item id="S_MARSH" />
 		<Item id="S_MOUNT" />

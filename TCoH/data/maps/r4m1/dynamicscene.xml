@@ -94,7 +94,6 @@
 				Belong="1023"
 				Prototype="NPC"
 				ModelName="r4_1_woman"
-				skin="0"
 				cfg="109"
 				helloReplyNames="Dlg_npc_002220"
 				SpokenCount="0" />
@@ -1543,13 +1542,13 @@
 		Belong="1002"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_GadadTeam"
-		DropOutTimeOut="40.000"
+		DropOutTimeOut="60.000"
 		InfectionLair="r4m1_GadadTeam"
 		HadPlayerInside="0">
 		<Polygon>
 			<Point
-				x="5211.398"
-				y="7351.601" />
+				x="5121.810"
+				y="7127.850" />
 
 			<Point
 				x="5565.039"
@@ -1618,24 +1617,8 @@
 				y="6627.294" />
 
 			<Point
-				x="5200.699"
-				y="6968.945" />
-
-			<Point
 				x="5451.921"
 				y="6314.063" />
-
-			<Point
-				x="5598.129"
-				y="6230.967" />
-
-			<Point
-				x="5303.522"
-				y="6572.016" />
-
-			<Point
-				x="5265.696"
-				y="7207.894" />
 
 			<Point
 				x="4576.338"
@@ -1690,48 +1673,20 @@
 				y="6866.242" />
 
 			<Point
-				x="5252.750"
-				y="6593.542" />
+				x="5014.599"
+				y="6938.946" />
 
 			<Point
-				x="5196.738"
-				y="6455.599" />
+				x="4822.773"
+				y="6994.336" />
 
 			<Point
-				x="5276.651"
-				y="6427.800" />
+				x="4615.722"
+				y="7144.700" />
 
 			<Point
-				x="5328.783"
-				y="6429.520" />
-
-			<Point
-				x="5135.608"
-				y="7040.907" />
-
-			<Point
-				x="5165.119"
-				y="6943.374" />
-
-			<Point
-				x="5227.745"
-				y="6905.834" />
-
-			<Point
-				x="5256.867"
-				y="6818.014" />
-
-			<Point
-				x="5518.177"
-				y="6336.816" />
-
-			<Point
-				x="5489.725"
-				y="6388.752" />
-
-			<Point
-				x="5592.934"
-				y="6344.522" />
+				x="4565.284"
+				y="7026.792" />
 		</DropOut>
 	</Object>
 
@@ -1740,7 +1695,7 @@
 		Belong="1062"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_GadadTeam"
-		DropOutTimeOut="40.000"
+		DropOutTimeOut="60.000"
 		InfectionLair="r4m1_GadadTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -1941,7 +1896,7 @@
 		Belong="1002"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4_BanditesTeam"
-		DropOutTimeOut="40.000"
+		DropOutTimeOut="50.000"
 		InfectionLair="r4_BanditesTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -2242,7 +2197,7 @@
 		Belong="1062"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_KazifTeam"
-		DropOutTimeOut="40.000"
+		DropOutTimeOut="50.000"
 		InfectionLair="r4m1_KazifTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -2503,7 +2458,7 @@
 		Belong="1002"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_KazifTeam"
-		DropOutTimeOut="40.000"
+		DropOutTimeOut="50.000"
 		InfectionLair="r4m1_KazifTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -2716,7 +2671,7 @@
 		Belong="1002"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_KefTeam"
-		DropOutTimeOut="40.000"
+		DropOutTimeOut="50.000"
 		InfectionLair="r4m1_KefTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -2865,7 +2820,7 @@
 		Belong="1062"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_GadadTeam"
-		DropOutTimeOut="40.000"
+		DropOutTimeOut="50.000"
 		InfectionLair="r4m1_GadadTeam"
 		HadPlayerInside="0">
 		<Polygon>
@@ -20216,6 +20171,7 @@
 			cfg="171"
 			helloReplyNames="Dlg_npc_002163"
 			SpokenCount="0" />
+
 		<Object
 			Name="MansurFindeddlg"
 			Belong="1100"
@@ -20238,7 +20194,7 @@
 		Belong="1062"
 		Prototype="InfectionZone"
 		InfectionTeamPrototypeName="r4m1_GadadTeam"
-		DropOutTimeOut="40.000"
+		DropOutTimeOut="50.000"
 		InfectionLair="r4m1_GadadTeam"
 		HadPlayerInside="0">
 		<Polygon>

@@ -264,7 +264,7 @@ function RaceCutsceneCams()
 end
 
 function CreateGadadAttackers()
-	CreateTeam("GadadDebyli",1062,CVector(5525.333, 260.348, 6889.820),{"TankBez","UralShot","BelazShot1","TankBez","TankBez"},CVector(5587.709, 260.537, 6833.567), nil)
+	CreateTeam("GadadDebyli",1062,CVector(5525.333, 260.348, 6889.820),{"TankBez","UralShot","BelazShot","TankBez","TankBez"},CVector(5587.709, 260.537, 6833.567), nil)
 
 	local GApos = {CVector(getPos("GadadMadSpawn1")), CVector(getPos("GadadMadSpawn2")), CVector(getPos("GadadMadSpawn3")), CVector(getPos("GadadMadSpawn4")), CVector(getPos("GadadMadSpawn5"))}
 	local GArot = {Quaternion(0.004, 0.903, -0.001, 0.431), Quaternion(0.003, 0.397, -0.003, 0.918), Quaternion(0.003, 0.190, 0.006, 0.982), Quaternion(0.003, 0.997, -0.003, -0.075), Quaternion(0.009, 0.986, -0.004, 0.167)}
@@ -425,40 +425,6 @@ function CreateBuharaAndAivanJr()
 	end
 end
 
-function BuharaEvacutedCreateCars()
-	local PlVeh = GetPlayerVehicle()
-	if PlVeh then
-		PlVeh:SetGamePositionOnGround(CVector(getPos("BuharaEvacuated_cs_Player_loc")))
-		PlVeh:SetRotation(Quaternion(0.017, -0.297, 0.018, 0.954))
-	end
-
-	local vehB1 = CreateVehicleEx("DemoUral1","Buhara_0",CVector(getPos("BuhSpawn_loc")), 1026)
-	if vehB1 then
-		vehB1:SetGamePositionOnGround(CVector(getPos("BuharaEvacuated_cs_Buhara0_loc")))
-		vehB1:SetRotation(Quaternion(0.020, 0.672, -0.008, 0.740))
-		vehB1:SetSkin(0)
-	end
-
-	local veh2 = CreateVehicleEx("DemoMolokovoz1","Buhara_1",CVector(getPos("BuhSpawn_loc"))+CVector(7, 0, 7), 1026)
-	if veh2 then
-		veh2:SetGamePositionOnGround(CVector(getPos("BuharaEvacuated_cs_Buhara1_loc")))
-		veh2:SetRotation(Quaternion(0.010, 0.880, 0.003, 0.475))
-		veh2:SetSkin(0)
-	end
-
-	local ManCarCreate = CreateVehicleEx("UralMansur", "MansurCarCS", CVector(getPos("BuharaEvacuated_cs_Mansur_loc")), 1090)
-	if ManCarCreate then
-		ManCarCreate:SetRotation(Quaternion(0.023, -0.814, -0.019, 0.580))
-		ManCarCreate:SetSkin(1)
-	end
-
-	local AivenCreate = CreateVehicleEx("BelazShot1", "MansurCarCS", CVector(getPos("BuharaEvacuated_cs_AivenJr_loc")), 1095)
-	if AivenCreate then
-		AivenCreate:SetRotation(Quaternion(-0.006, 0.922, 0.008, -0.387))
-		AivenCreate:SetSkin(3)
-	end
-end
-
 function CreateMadmanZarmek()
 	CreateTeam("Bezumtsi",1062,CVector(2572.051, 267.215, 3917.664),{"TankBez","UralShot1","TankBez"},CVector(2594.501, 262.854, 3906.361), nil)
 
@@ -537,9 +503,9 @@ end
 
 function MadmanCutsceneSpawn()
 	local Madman1 = CreateVehicleEx("UralShot","MadmanInvaders0",CVector(getPos("Madman_invasion_loc_0")), 1062)
-	local Madman2 = CreateVehicleEx("BelazShot1","MadmanInvaders1",CVector(getPos("Madman_invasion_loc_1")), 1062)
+	local Madman2 = CreateVehicleEx("BelazShot","MadmanInvaders1",CVector(getPos("Madman_invasion_loc_1")), 1062)
 	local Madman3 = CreateVehicleEx("UralShot","MadmanInvaders2",CVector(getPos("Madman_invasion_loc_2")), 1062)
-	local Madman4 = CreateVehicleEx("BelazShot1","MadmanInvaders3",CVector(getPos("Madman_invasion_loc_3")), 1062)
+	local Madman4 = CreateVehicleEx("BelazShot","MadmanInvaders3",CVector(getPos("Madman_invasion_loc_3")), 1062)
 
 	for i=0,3 do
 		local MadmanCar = getObj("MadmanInvaders"..i)
@@ -620,8 +586,8 @@ function MadmanCutsceneNeftegradRemove()
 end
 
 function MadmanCutsceneKefSpawn()
-	local Attackers = CreateTeam("Kef_Attack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot","BelazShot1","TankBez"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
-	local Defenders = CreateTeam("Kef_Defend",1025,CVector(getPos("BuharAttack_loc")),{"BelazShot1","UralShot","PlayerStartCar","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local Attackers = CreateTeam("Kef_Attack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot","BelazShot","TankBez"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local Defenders = CreateTeam("Kef_Defend",1025,CVector(getPos("BuharAttack_loc")),{"BelazShot","UralShot","PlayerStartCar","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	for i=0,4 do
 		local AVehs = getObj("Kef_Attack_vehicle_"..i)
@@ -910,9 +876,9 @@ end
 
 function GadadBotSpawn()
 	local Madman1 = CreateVehicleEx("UralShot","GMadmanInvaders0",CVector(getPos("Gadad_attack_loc_0")), 1062)
-	local Madman2 = CreateVehicleEx("BelazShot1","GMadmanInvaders1",CVector(getPos("Gadad_attack_loc_1")), 1062)
+	local Madman2 = CreateVehicleEx("BelazShot","GMadmanInvaders1",CVector(getPos("Gadad_attack_loc_1")), 1062)
 	local Madman3 = CreateVehicleEx("UralShot","GMadmanInvaders2",CVector(getPos("Gadad_attack_loc_2")), 1062)
-	local Madman4 = CreateVehicleEx("BelazShot1","GMadmanInvaders3",CVector(getPos("Gadad_attack_loc_3")), 1062)
+	local Madman4 = CreateVehicleEx("BelazShot","GMadmanInvaders3",CVector(getPos("Gadad_attack_loc_3")), 1062)
 
 	local skin0 = GetVar("GadadASkin1").AsInt
 	local skin1 = GetVar("GadadASkin2").AsInt
@@ -956,7 +922,7 @@ function GadadBotSpawn()
 end
 
 function DespawnBotsSpawnFightersGadad()
-	local Attackers = CreateTeam("MadmanInvadersGadad",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","BelazShot1","UralShot","BelazShot1"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local Attackers = CreateTeam("MadmanInvadersGadad",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","BelazShot","UralShot","BelazShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	local Askin0 = GetVar("GadadASkin1").AsInt
 	local Askin1 = GetVar("GadadASkin2").AsInt
@@ -1006,10 +972,10 @@ function SpawnBotsKef()
 	local A1 = CreateVehicleEx("UralShot","KMadmanInvaders0",CVector(getPos("Kef_Attack_loc_0")), 1062)
 	local A2 = CreateVehicleEx("TankBez","KMadmanInvaders1",CVector(getPos("Kef_Attack_loc_1")), 1062)
 	local A3 = CreateVehicleEx("UralShot","KMadmanInvaders2",CVector(getPos("Kef_Attack_loc_2")), 1062)
-	local A4 = CreateVehicleEx("BelazShot1","KMadmanInvaders3",CVector(getPos("Kef_Attack_loc_3")), 1062)
+	local A4 = CreateVehicleEx("BelazShot","KMadmanInvaders3",CVector(getPos("Kef_Attack_loc_3")), 1062)
 	local A5 = CreateVehicleEx("TankBez","KMadmanInvaders4",CVector(getPos("Kef_Attack_loc_4")), 1062)
 
-	local D1 = CreateVehicleEx("BelazShot1","KMadmanDefend0",CVector(getPos("Kef_Defend_loc_0")), 1025)
+	local D1 = CreateVehicleEx("BelazShot","KMadmanDefend0",CVector(getPos("Kef_Defend_loc_0")), 1025)
 	local D2 = CreateVehicleEx("UralShot","KMadmanDefend1",CVector(getPos("Kef_Defend_loc_1")), 1025)
 	local D3 = CreateVehicleEx("PlayerStartCar","KMadmanDefend2",CVector(getPos("Kef_Defend_loc_2")), 1025)
 	local D4 = CreateVehicleEx("Hunter01","KMadmanDefend3",CVector(getPos("Kef_Defend_loc_3")), 1025)
@@ -1101,8 +1067,8 @@ function SpawnBotsKef()
 end
 
 function DespawnBotsSpawnFightersKef()
-	local Attackers = CreateTeam("KefInvasionAttack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","BelazShot1","UralShot","BelazShot1"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
-	local Defenders = CreateTeam("KefInvasionDefend",1025,CVector(getPos("BuharAttack_loc")),{"BelazShot1","UralShot","PlayerStartCar","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local Attackers = CreateTeam("KefInvasionAttack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","BelazShot","UralShot","BelazShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local Defenders = CreateTeam("KefInvasionDefend",1025,CVector(getPos("BuharAttack_loc")),{"BelazShot","UralShot","PlayerStartCar","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	local Dskin0 = GetVar("KefDSkin0").AsInt
 	local Dskin1 = GetVar("KefDSkin1").AsInt
@@ -1743,5 +1709,32 @@ function AddSaleItems()
 		KCabinBasketRep:AddItems("uralCab01", 1)
 		KCabinBasketRep:AddItems("uralCab02", 1)
 		KCabinBasketRep:AddItems("uralCab04", 1)
+	end
+end
+
+function ShowGoodEndNarrator()
+	if lang == "RU" then
+		AddCinematicMessage(77770, 0)
+		AddCinematicMessage(77772, 0.5)
+		AddCinematicMessage(77773, 0.5)
+		AddCinematicMessage(77771, 0.5)
+		AddCinematicMessage(77774, 0.5)
+		AddCinematicMessage(77775, 0.5)
+		AddCinematicMessage(77776, 0.5)
+		AddCinematicMessage(77777, 0.5)
+	elseif lang == "EN" then
+		AddCinematicMessage(77770, 0)
+		AddCinematicMessage(77772, 0.5)
+		AddCinematicMessage(77773, 0.5)
+		AddCinematicMessage(777732, 0.5)
+		AddCinematicMessage(77771, 0.5)
+		AddCinematicMessage(77774, 0.5)
+		AddCinematicMessage(77775, 0.5)
+		AddCinematicMessage(77776, 0.5)
+		AddCinematicMessage(77777, 0.5)
+		AddCinematicMessage(777771, 0.5)
+	else
+		LOG("TCoH.lua ERROR: 'lang' is not defined!")
+		LOG("'lang' is: "..lang)
 	end
 end
