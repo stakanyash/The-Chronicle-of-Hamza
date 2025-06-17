@@ -7,7 +7,7 @@
 - Reworked the "Visit Mansur" quest at the beginning of the game: added a dialogue with Musiba; Mansur is now located outside the city instead of in the bar
 - Fixed a bug where the script triggered by Mansur’s vehicle death during the "Defense of Gadad" and "Rescue the Bukharans" quests didn’t activate due to an incorrect technical vehicle name
 - Fixed a bug where enemies in the Bukhara defense quest became friendly to the player after loading an autosave
-- Added a modified female NPC face mask from the first region for Musiba and Mansur’s mother
+- Added a modified female NPC face mask from the first region for Musiba
 - Added a book and a lore entry received after speaking with Musiba
 - The minimum number of coins awarded at the beginning of the game has been increased from 800 to 1000
 - Reduced enemy spawn rate in Vahat and Desert of Death
