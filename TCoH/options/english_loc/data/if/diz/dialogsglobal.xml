@@ -4737,14 +4737,14 @@
 		name="Dlg_pl_001652"
 		text="Sure, why not? Let's go."
 		role="PLAYER"
-		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUralSpec'); EndConversation()" />
+		scriptResult="CompleteQuest('FindMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUralSpec'); EndConversation()" />
 
 	<Reply
 		name="Dlg_pl_001341"
 		text="Not bad. Alright, let's roll!"
 		role="PLAYER"
 		scriptCondition="GetPlayerMoney() >= 2500"
-		scriptResult="CompleteQuest('GoToMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUral'); EndConversation()" />
+		scriptResult="CompleteQuest('FindMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUral'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Mansur/After madmen attack-->
 	<Reply
 		name="Dlg_npc_001362"
