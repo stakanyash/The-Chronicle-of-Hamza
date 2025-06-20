@@ -1124,7 +1124,7 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 		LowGearShiftLimit	= "2500"
 		HighGearShiftLimit	= "6000"
 
-		SteeringSpeed		= "2.0"
+		SteeringSpeed		= "2.5"
 
 		BlastWave		= "bigBlastWave"
 		
@@ -1139,7 +1139,7 @@ $Id: Vehicles.xml,v 1.123 2005/11/28 07:43:58 anton Exp $
 		IntersectionRadius	= "7.0"
 		TakingRadius		= "30.0"
 
-		DriftCoeff		= "0.3"
+		DriftCoeff		= "0.2"
 
 		MassSize		= "5 3 12"
 		MassTranslation		= "0 -2.3 0"

@@ -1209,6 +1209,10 @@
 			TActivate("CarNameToUral")
 			TActivate("trA1")
 
+			VehSkin = tonumber(GetPlayerVehicle():GetSkin())
+
+			SetVar("PlayerVehSkin", VehSkin)
+
 			local town1 = GetEntityByName("TheKef")
 			if town1 then town1:SetOpenGateToPlayer( false ) end
 
@@ -1353,8 +1357,9 @@
 			local plcar=CreateVehicleEx("UralDadHamza_Race","PlayerFormula",  CVector(getPos("RaceStart4_loc"))+CVector(0,1,0), 1100)
 			local pl=g_Player
 			if pl and plcar then 
+			   local VehSkin = GetVar("PlayerVehSkin").AsInt
 			   plcar:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
-			   plcar:SetSkin(7)	
+			   plcar:SetSkin(VehSkin)	
 			   plcar:setImmortalMode(1)
 			   plcar:SetMaxTorque(690)
 			   plcar:SetMaxSpeed(83.4)
