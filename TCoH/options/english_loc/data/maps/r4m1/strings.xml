@@ -1921,6 +1921,36 @@
 		time="5" />
 
 	<string
+		id="754"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="MANSUR|Hamza! Are you okay?"
+		sound=""
+		time="5" />
+
+	<string
+		id="764"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|They fixed the car, and I'm fine. So everything's good."
+		sound=""
+		time="6" />
+
+	<string
+		id="774"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="MANSUR|Good to hear. Heading home, or do you have other plans?"
+		sound=""
+		time="6" />
+
+	<string
 		id="77770"
 		msgType="SCROLL"
 		image="data\if\ico\CinemaPanel\foreground_movie_shade_midle.dds"

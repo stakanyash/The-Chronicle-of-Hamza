@@ -542,7 +542,7 @@
 				Prototype="NPC"
 				ModelName="r4_man"
 				cfg="15"
-				helloReplyNames="Adrenalin_NPC_dialog_1 Dlg_npc_001653"
+				helloReplyNames="Adrenalin_NPC_dialog_1 Dlg_npc_001653 Dlg_npc_002242"
 				SpokenCount="0" />
 		</Object>
 

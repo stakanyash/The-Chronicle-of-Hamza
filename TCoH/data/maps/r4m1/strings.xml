@@ -457,7 +457,37 @@
 		modelSlot="1"
 		value="МАНСУР|Куда дальше поедем?"
 		sound=""
-		time="3" />
+		time="4" />
+
+	<string
+		id="754"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Хамза! С тобой всё в порядке?"
+		sound=""
+		time="5" />
+
+	<string
+		id="764"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Машину починили, сам я цел. Так что всё в порядке."
+		sound=""
+		time="6" />
+
+	<string
+		id="774"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="219"
+		modelSlot="1"
+		value="МАНСУР|Ну хорошо. Ты домой или есть иные предложения?"
+		sound=""
+		time="6" />
 
 	<string
 		id="78"
@@ -2042,7 +2072,7 @@
 
 	<string
 		id="8912"
-		value="Сегодня гонок нет! Попробуйте вернутся позднее." 
+		value="Сегодня гонок нет! Попробуйте вернуться позднее." 
 		numButtons="1"/>
 
 	<string

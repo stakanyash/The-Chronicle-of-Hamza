@@ -1873,7 +1873,7 @@
 		name="Dlg_pl_001361"
 		text="Отлично, спасибо. Мансур, поехали! Давай покажем им, где раки зимуют!"
 		role="PLAYER"
-		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
+		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace'); TakeQuest('RacingUral_quest')" />
 
 	<Reply
 		name="Dlg_pl_001352"
@@ -1915,7 +1915,7 @@
 		name="Dlg_pl_002211"
 		text="Отлично. Спасибо!"
 		role="PLAYER"
-		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
+		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace'); TakeQuest('RacingUral_quest')" />
 
 	<Reply
 		name="Dlg_pl_001355"
@@ -1945,7 +1945,7 @@
 		name="Dlg_pl_001491"
 		text="Поехали!"
 		role="PLAYER"
-		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
+		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace'); TakeQuest('RacingUral_quest')" />
 <!--Root/r4m1/The Chronicle of Hamza/Гонка/Если Хамза - зритель-->
 	<Reply
 		name="Dlg_npc_001653"
@@ -4677,6 +4677,131 @@
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
 		scriptResult="CreateRacers(); LeaveTown(true)" />
+<!--Root/r4m1/The Chronicle of Hamza/Гонка/Если Хамза разбился-->
+	<Reply
+		name="Dlg_npc_002242"
+		text="Молодой человек, как же так получилось? Ваша машина сюда еле доковыляла с трассы!"
+		role="NPC"
+		scriptCondition="GetVar('PlayerCrashed').AsInt==1"
+		nextReplies="Dlg_pl_002243" />
+
+	<Reply
+		name="Dlg_pl_002243"
+		text="Я просто не справился с управлением..."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002244" />
+
+	<Reply
+		name="Dlg_npc_002244"
+		text="Понимаю, ничего страшного, бывает. Я вас неприпоминаю, вы скорее всего впервые участие принимали?"
+		role="NPC"
+		nextReplies="Dlg_pl_002245" />
+
+	<Reply
+		name="Dlg_pl_002245"
+		text="Да."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002246" />
+
+	<Reply
+		name="Dlg_npc_002246"
+		text='Ну вот, всё приходит с опытом, так что "не получилось сейчас - получится потом". Не волнуйтесь, у нас для тех, кто принимает участие в первый раз починка разбитой машины абсолютно бесплатно.'
+		role="NPC"
+		nextReplies="Dlg_pl_002247" />
+
+	<Reply
+		name="Dlg_pl_002247"
+		text="Правда? Спасибо большое!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002248" />
+
+	<Reply
+		name="Dlg_npc_002248"
+		text="Не стоит благодарностей. Смотрите, кажется гонка вот-вот завершится."
+		role="NPC"
+		scriptResult="racefailwinner = math.random(1,3)"
+		nextReplies="Dlg_pl_002249" />
+
+	<Reply
+		name="Dlg_pl_002249"
+		text="И кто там побеждает? Не вижу."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002250 Dlg_npc_002251 Dlg_npc_002252" />
+
+	<Reply
+		name="Dlg_npc_002252"
+		text="Машина под номером 3. Кажется, это ваш друг."
+		role="NPC"
+		scriptCondition="racefailwinner == 3"
+		nextReplies="Dlg_pl_002255" />
+
+	<Reply
+		name="Dlg_pl_002255"
+		text="И правда, это Мансур! Ай, молодца!"
+		role="PLAYER"
+		nextReplies="Dlg_npc_002258" />
+
+	<Reply
+		name="Dlg_npc_002258"
+		text="Получается, всё что не делается, всё к лучшему. Поздравляю. Спасибо вам за участие и берегите себя."
+		role="NPC"
+		nextReplies="Dlg_pl_002261" />
+
+	<Reply
+		name="Dlg_pl_002261"
+		text="Спасибо, до встречи."
+		role="PLAYER"
+		scriptResult="SetVar('PlayerCrashed',2); TActivate('AfterRaceRolik_begin'); FailQuest('RacingUral_quest'); EndConversation()" />
+
+	<Reply
+		name="Dlg_npc_002251"
+		text="Машина под номером 2. "
+		role="NPC"
+		scriptCondition="racefailwinner == 2"
+		nextReplies="Dlg_pl_002254" />
+
+	<Reply
+		name="Dlg_pl_002254"
+		text="Эх, это не Мансур. Что-же, всё равно думаю гонка неплохая для них выдалась."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002257" />
+
+	<Reply
+		name="Dlg_npc_002257"
+		text="Ничего, в следующий раз повезёт. Спасибо за участие и берегите себя."
+		role="NPC"
+		nextReplies="Dlg_pl_002260" />
+
+	<Reply
+		name="Dlg_pl_002260"
+		text="Спасибо, до встречи."
+		role="PLAYER"
+		scriptResult="SetVar('PlayerCrashed',2); TActivate('AfterRaceRolik_begin'); FailQuest('RacingUral_quest'); EndConversation()" />
+
+	<Reply
+		name="Dlg_npc_002250"
+		text="Машина под номером 1."
+		role="NPC"
+		scriptCondition="racefailwinner == 1"
+		nextReplies="Dlg_pl_002253" />
+
+	<Reply
+		name="Dlg_pl_002253"
+		text="Эх, это не Мансур. Что-же, всё равно думаю гонка неплохая для них выдалась."
+		role="PLAYER"
+		nextReplies="Dlg_npc_002256" />
+
+	<Reply
+		name="Dlg_npc_002256"
+		text="Ничего, в следующий раз повезёт. Спасибо за участие и берегите себя."
+		role="NPC"
+		nextReplies="Dlg_pl_002259" />
+
+	<Reply
+		name="Dlg_pl_002259"
+		text="Спасибо, до встречи."
+		role="PLAYER"
+		scriptResult="SetVar('PlayerCrashed',2); TActivate('AfterRaceRolik_begin'); FailQuest('RacingUral_quest'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/Первый приезд на Урале-->
 	<Reply
 		name="Dlg_npc_001334"

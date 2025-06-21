@@ -1209,6 +1209,10 @@
 			TActivate("CarNameToUral")
 			TActivate("trA1")
 
+			VehSkin = tonumber(GetPlayerVehicle():GetSkin())
+
+			SetVar("PlayerVehSkin", VehSkin)
+
 			local town1 = GetEntityByName("TheKef")
 			if town1 then town1:SetOpenGateToPlayer( false ) end
 
@@ -1353,8 +1357,9 @@
 			local plcar=CreateVehicleEx("UralDadHamza_Race","PlayerFormula",  CVector(getPos("RaceStart4_loc"))+CVector(0,1,0), 1100)
 			local pl=g_Player
 			if pl and plcar then 
+			   local VehSkin = GetVar("PlayerVehSkin").AsInt
 			   plcar:SetRotation(Quaternion(0.000, -0.999, 0.000, 0.050))
-			   plcar:SetSkin(7)	
+			   plcar:SetSkin(VehSkin)	
 			   plcar:setImmortalMode(1)
 			   plcar:SetMaxTorque(690)
 			   plcar:SetMaxSpeed(83.4)
@@ -1404,7 +1409,6 @@
 			end
 
 			TActivate("RaceStart_cs")
-			TActivate("trFalseStar1")
 			TActivate("trRaceCarDie1")
 			TActivate("trCheckPoints1")
 			TActivate("trPlayerFormulaDie1")
@@ -1429,7 +1433,6 @@
 		<script>
 			AddFadingMsgId( "fm_race_start_0" )
 			AddImportantFadingMsgByStrIdFormatted( "fm_race_start_0" )
-			TDeactivate("trFalseStar1")
 			TActivate("trFormulaMoving1")
 			local maxcar = GetVar("CountCar").AsInt
 			for i=1,maxcar-1 do
@@ -1440,18 +1443,6 @@
 				    veh1:SetExternalPathByName("Gonka_StartPath_"..let[nump])
 			    end
 			end
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger	Name="trFalseStar1" active="0">
-		<event	eventid="GE_OBJECT_LEAVES_LOCATION"	ObjName="RaceStart8_loc" />
-		<script>
-			AddFadingMsgId( "fm_race_start_false" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_race_start_false" )
-			TDeactivate("trRaceTimer1")
-			TDeactivate("trStartRace1")
-			TActivate("trFalseStartRace1")
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -1617,7 +1608,7 @@
 			local Plf = GetPlayerVehicle()
 			local PlfID = GetPlayerVehicleId()
 
-			GetPlayerVehicle():setGodMode(1)
+			Plf:setGodMode(1)
 
 			FlyLinked("linkedcam", CTochID, 5, 0, 1, PlfID)
 			StartCinematic()
@@ -1634,7 +1625,8 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-			GetPlayerVehicle():setGodMode(0)
+			local Plf = GetPlayerVehicle()
+			Plf:setGodMode(0)
 			
 			trigger:Deactivate()
 		</script>
@@ -1660,35 +1652,22 @@
 			    AddCinematicMessage( 8, 0.5 )
 			end
 		    TActivate("trRemoveAllRace1")
-    		SetVar("PlayerPlace",0)
-		    trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger	Name="trFalseStartRace1"	active="0">
-		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
-		<script>
-			local Plf = GetPlayerVehicle()
-			local PlfID = GetPlayerVehicleId()
-			local PlfCoor = Plf:GetPosition()
-			PlfCoor.y = PlfCoor.y + 25*0.74
-			PlfCoor.z = PlfCoor.z + 25*0.74
-
-			Plf:SetCustomControlEnabled(true)
-			Plf:SetCustomLinearVelocity(0)
-			Plf:SetThrottle(0)
-			Plf:SetCustomControlEnabled(false)
-
-			FlyAround(6, 0, 6, 6, PlfCoor, PlfID, 1, 1 )
-			StartCinematic()
+			TActivate("trPlayerFormulaDie1_End")
 			SetVar("PlayerPlace",0)
-		    AddCinematicMessage( 9, 0.5 )
-		    TActivate("trRemoveAllRace1")
+    		SetVar("PlayerCrashed",1)
 		    trigger:Deactivate()
 		</script>
 	</trigger>
 
-
+	<trigger Name="trPlayerFormulaDie1_End" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			StartConversation("Kazif_Adrenalinshik")
+			
+			trigger:Deactivate()
+		</script>
+	</trigger>
 
 	<trigger	Name="trRemoveAllRace1"	active="0">
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
@@ -3523,7 +3502,18 @@
 	<trigger	Name="RaceClosedMsg"	active="1">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="StartGonka_loc" />
 		<script>
-			SpawnMessageBox("8912")
+			local b = SpawnMessageBox("8912")
+			if b == 1 then
+				local PVH = GetPlayerVehicle()
+				if PVH then
+					PVH:SetGamePositionOnGround(CVector(4410.569, 281.094, 2051.014))
+					PVH:SetRotation(Quaternion(0.003, 0.571, 0.001, 0.821))
+					PVH:SetCustomControlEnabled( true )
+					PVH:SetCustomLinearVelocity( 0 )
+					PVH:SetThrottle( 0 )
+					PVH:SetCustomControlEnabled( false )
+				end
+			end
 		</script>
 	</trigger>
 
