@@ -1622,7 +1622,7 @@
 			local Plf = GetPlayerVehicle()
 			local PlfID = GetPlayerVehicleId()
 
-			GetPlayerVehicle():setGodMode(1)
+			Plf:setGodMode(1)
 
 			FlyLinked("linkedcam", CTochID, 5, 0, 1, PlfID)
 			StartCinematic()
@@ -1639,7 +1639,8 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-			GetPlayerVehicle():setGodMode(0)
+			local Plf = GetPlayerVehicle()
+			Plf:setGodMode(0)
 			
 			trigger:Deactivate()
 		</script>
