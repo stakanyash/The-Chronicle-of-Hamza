@@ -1,3 +1,13 @@
+### Version 1.1.1 [250621b]
+
+- Fixed a bug that caused the game to softlock when failing the story race
+- Added a dialog with Adrenalinist in case of failing the race
+- The racing Ural now uses the player's current car skin
+- Added additional lines to the cutscene after the race that play if the race is failed
+- Improved handling of the racing Ural
+- Mansur's car now drives away slower at the end of the cutscene following the first encounter with the Madmen
+- Updated screenshots for the English localization in ComMod
+
 ### Version 1.1 [250617a]
 
 - English localization added **(thanks to Seel for narrator voiceover; to nEmPoBu4 and Varisane for proofreading)**

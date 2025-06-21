@@ -1291,10 +1291,10 @@
 		<script>
 			local mancar2 = GetEntityByName("MansurCar")
 			if mancar2 then
-				mancar2:SetCruisingSpeed(40)
+				mancar2:SetCruisingSpeed(30)
 				mancar2:SetExternalPathByName("MansurStartGame_3")
 				mancar2:SetThrottle( 1 )
-				mancar2:SetCustomLinearVelocity( 20 ) 
+				mancar2:SetCustomLinearVelocity( 15 ) 
 			end
 
 			AddCinematicMessage(66, 0.5)
@@ -1343,54 +1343,73 @@
 	<trigger Name="AfterRaceRolik_begin" active="0">
 		<event	timeout="0.01"			eventid="GE_TIME_PERIOD" />
 		<script>
-        PlayCustomMusic("QuietDialogue01")
+			PlayCustomMusic("QuietDialogue01")
 
-		SaveAllToleranceStatus(RS_NEUTRAL)
+			SaveAllToleranceStatus(RS_NEUTRAL)
 
-		local Plf = GetPlayerVehicle()
-        local PlfID = GetPlayerVehicleId()
+			local Plf = GetPlayerVehicle()
+			local PlfID = GetPlayerVehicleId()
 
-		Fly("AfterRaceRolik_cam01", CINEMATIC_AIM_TO_ID, PlfID, 21, 1, 0 )
-		Fly("AfterRaceRolik_cam02", CINEMATIC_AIM_TO_ID, PlfID, 13, 0, 1 )
-
-		StartCinematic()
-
-		TActivate("AfterRaceRolik_cam02")
-		TActivate("AfterRaceRolik_End")
-		
-		if QuestStatus("GonkaUral")==Q_COMPLETED then
-			AddCinematicMessage( 75, 0.25 )
-			AddCinematicMessage( 76, 0.25 )
-			AddCinematicMessage( 77, 0.25 )
-		elseif QuestStatus("GonkaUralSpec")==Q_COMPLETED then
-			local WinNumber = GetVar("WinningNumber").AsInt
-			if WinNumber == 3 then
-				AddCinematicMessage( 752, 0.25 )
-				AddCinematicMessage( 762, 0.25 )
-				AddCinematicMessage( 772, 0.25 )
-			else
-				AddCinematicMessage( 753, 0.25 )
-				AddCinematicMessage( 763, 0.25 )
-				AddCinematicMessage( 773, 0.25 )
+			local ManVeh = getObj("MansurCar")
+			if not ManVeh then
+				local ManCar = CreateVehicleEx("UralMansur","MansurCar",CVector(4615.387, 280.066, 2194.772), 1090)
+				if ManCar then
+					ManCar:SetRotation(Quaternion(0.000, 0.993, 0.001, -0.118))
+					ManCar:SetSkin(1)
+				end
 			end
-		end
 
-		AddCinematicMessage( 78, 0.25 )
-		AddCinematicMessage( 79, 0.25 )
+			if QuestStatus("RacingUral_quest")==Q_FAILED then
+				cam1Dur = 25
+			else
+				cam1Dur = 22
+			end
 
-        trigger:Deactivate()
+			Fly("AfterRaceRolik_cam01", CINEMATIC_AIM_TO_ID, PlfID, cam1Dur, 1, 0 )
+			Fly("AfterRaceRolik_cam02", CINEMATIC_AIM_TO_ID, PlfID, 13, 0, 1 )
+
+			StartCinematic()
+
+			TActivate("AfterRaceRolik_cam02")
+			TActivate("AfterRaceRolik_End")
+			
+			if QuestStatus("RacingUral_quest")==Q_COMPLETED then
+				AddCinematicMessage( 75, 0.25 )
+				AddCinematicMessage( 76, 0.25 )
+				AddCinematicMessage( 77, 0.25 )
+			elseif QuestStatus("RacingUral_quest")==Q_FAILED then
+				AddCinematicMessage( 754, 0.25 )
+				AddCinematicMessage( 764, 0.25 )
+				AddCinematicMessage( 774, 0.25 )
+			elseif QuestStatus("GonkaUralSpec")==Q_COMPLETED then
+				local WinNumber = GetVar("WinningNumber").AsInt
+				if WinNumber == 3 then
+					AddCinematicMessage( 752, 0.25 )
+					AddCinematicMessage( 762, 0.25 )
+					AddCinematicMessage( 772, 0.25 )
+				else
+					AddCinematicMessage( 753, 0.25 )
+					AddCinematicMessage( 763, 0.25 )
+					AddCinematicMessage( 773, 0.25 )
+				end
+			end
+
+			AddCinematicMessage( 78, 0.25 )
+			AddCinematicMessage( 79, 0.25 )
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
 	<trigger Name="AfterRaceRolik_cam02" active="0">
 		<event flypath="AfterRaceRolik_cam02" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
 		<script>
-        PlayCustomMusic("Passage05")
+			PlayCustomMusic("Passage05")
 
-		AddCinematicMessage( 80, 0.25 )
-		AddCinematicMessage( 81, 0.25 )
+			AddCinematicMessage( 80, 0.25 )
+			AddCinematicMessage( 81, 0.25 )
 
-        trigger:Deactivate()
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -1398,42 +1417,49 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-    	RestoreAllToleranceStatus()
+			RestoreAllToleranceStatus()
 
-		SetCameraBehindPlayerVehicle()
+			SetCameraBehindPlayerVehicle()
 
-		StopPlayingCustomMusic()
+			StopPlayingCustomMusic()
 
-		local MCar = getObj("MansurCar")
-		if MCar then
-		    MCar:Remove()
-		end
+			local MCar = getObj("MansurCar")
+			if MCar then
+				MCar:Remove()
+			end
 
-		local town1 = GetEntityByName("TheKef")
-		if town1 then town1:SetOpenGateToPlayer( true ) end
+			local town1 = GetEntityByName("TheKef")
+			if town1 then town1:SetOpenGateToPlayer( true ) end
 
-		local town2 = GetEntityByName("TheGadad")
-		if town2 then town2:SetOpenGateToPlayer( true ) end
+			local town2 = GetEntityByName("TheGadad")
+			if town2 then town2:SetOpenGateToPlayer( true ) end
 
-		local town3 = GetEntityByName("TheKazif")
-		if town3 then town3:SetOpenGateToPlayer( true ) end
+			local town3 = GetEntityByName("TheKazif")
+			if town3 then town3:SetOpenGateToPlayer( true ) end
 
-		local a = GetEntityByName("StartGonka_loc")
-		if a then a:SetProperty("Active", 1) end
+			local a = GetEntityByName("StartGonka_loc")
+			if a then a:SetProperty("Active", 1) end
 
-		SetVar("MaxLap", 2)
-		SetVar("CountCar", 8)
+			if QuestStatus("RacingUral_quest")==Q_FAILED then
+				local PVh = GetPlayerVehicle()
+				local PVhMaxHealth = GetPlayerMaxHealth()
+				local PVhCurHealth = GetPlayerHealth()
 
-		TActivate("Kef_Sell_Add")
-		TActivate("Gadad_Sell_Add")
-		TActivate("Kazif_Sell_Add")
-		TActivate("all_sale_added_fading")
+				if PVhMaxHealth > PVhCurHealth then
+					PVh:AddModifier("hp", ""..PVhMaxHealth)
+				end
+			end
 
-		TActivate("ConnectMansur_AfterRace")
-		TActivate("GadadForDefendrolik_start")
-		TakeQuest("DefendGadad_quest")
+			TActivate("Kef_Sell_Add")
+			TActivate("Gadad_Sell_Add")
+			TActivate("Kazif_Sell_Add")
+			TActivate("all_sale_added_fading")
 
-        trigger:Deactivate()
+			TActivate("ConnectMansur_AfterRace")
+			TActivate("GadadForDefendrolik_start")
+			TakeQuest("DefendGadad_quest")
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 

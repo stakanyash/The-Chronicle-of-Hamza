@@ -379,6 +379,13 @@
 		SubQuestsCondition="and"
 		CheckAll="0"
 		ConditionToGive="all complete" />
+
+	<quest
+		Name="RacingUral_quest"
+		Automatic="0"
+		SubQuestsCondition="and"
+		CheckAll="0"
+		ConditionToGive="all complete" />
 <!--Root/r4m1/Сюжетные/The Chronicle of Hamza/После гонки-->
 	<quest
 		Name="DefendGadad_quest"
