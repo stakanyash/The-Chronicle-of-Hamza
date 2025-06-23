@@ -1,3 +1,15 @@
+### Version 1.1.2 [250624a]
+
+- Fixed a bug where the race quest did not complete
+- "Crazy Soldiers" renamed to "Madmen" (Russian localization)
+- Names added for the city defenders vehicles
+- From enemies, in addition to Electronics and Books, there is now a chance to drop Work Equipment and Tobacco
+- When transitioning to Zarmek and the Desert of Death, the player's vehicle movement is blocked (unlocked after transition)
+- Fixed a bug where the Foreigner had no background during dialogue in Zarmek
+- Fixed a bug with missing destination point in Zarmek when returning to Vahat
+- Text correction in Russian localization
+- Fixed a bug in the English version where the "Find Mansur" quest did not complete
+
 ### Version 1.1.1 [250621b]
 
 - Fixed a bug that caused the game to softlock when failing the story race
