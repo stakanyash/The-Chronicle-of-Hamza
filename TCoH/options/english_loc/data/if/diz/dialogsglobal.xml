@@ -22,20 +22,20 @@
 		name="Dlg_npc_001567"
 		text="Wait a second… You don't know who was supposed to bring him the blocker to the Sowth?"
 		role="NPC"
-		scriptCondition="GetVar('AivenJrTalk').AsInt==0 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
+		scriptCondition="GetVar('AivenJrTalk').AsInt==1 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001568" />
 
 	<Reply
 		name="Dlg_pl_001568"
 		text="Same here. I'd like to know that too."
 		role="PLAYER"
-		scriptResult="SetVar('AivenJrTalk', 1); StartConversation('ScientiferVillage_Bar_Scientif')" />
+		scriptResult="SetVar('AivenJrTalk', 2); StartConversation('ScientiferVillage_Bar_Scientif')" />
 <!--Root/r4m2/Story/The Chronicle of Hamza/Foreigner/While talking with scientist/2nd part-->
 	<Reply
 		name="Dlg_npc_001571"
 		text="You're right — we should go back. But why would we need Mansur? He already screwed us over and walked away."
 		role="NPC"
-		scriptCondition="GetVar('AivenJrTalk').AsInt==1 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
+		scriptCondition="GetVar('AivenJrTalk').AsInt==2 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001572" />
 
 	<Reply
@@ -54,7 +54,7 @@
 		name="Dlg_pl_001574"
 		text="Let's move. Time to turn back."
 		role="PLAYER"
-		scriptResult="SetVar('AivenJrTalk', 2); StartConversation('ScientiferVillage_Bar_Scientif')" />
+		scriptResult="SetVar('AivenJrTalk', 3); StartConversation('ScientiferVillage_Bar_Scientif')" />
 <!--Root/r4m2/Story/The Chronicle of Hamza/Scientist/First meet-->
 	<Reply
 		name="r4m2_Bar_Scientist_1_N01"
@@ -359,7 +359,8 @@
 		name="Dlg_npc_001566"
 		text="Exactly. About two decades ago, he was given a mission — to bring a blocker here from the Sowth, which can only be reached through the Desert of Death. According to what I know, he left to get it… and no one's seen him after this."
 		role="NPC"
-		nextReplies="Dlg_pl_001577" />
+		nextReplies="Dlg_pl_001577"
+		scriptResult="SetVar('AivenJrTalk', 1)" />
 
 	<Reply
 		name="Dlg_pl_001577"

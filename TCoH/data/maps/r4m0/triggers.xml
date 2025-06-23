@@ -13,6 +13,21 @@
 		</script>
 	</trigger>
 
+	<trigger	Name="PassToMap_Enable_Control"	active="1">
+		<event eventid="GE_GAME_START" ObjName="Player1" />
+		<script>
+			if GL_PassToMap == true then
+
+			   local P = GetPlayerVehicle()
+			   if P then
+					P:SetCustomControlEnabled(false)
+			   end
+
+			   GL_PassToMap = false
+			end
+		</script>
+	</trigger>
+
 <!-- Первый приезд в Пустыню Смерти -->
 
 	<trigger Name="ArrivedToDD" active="1">

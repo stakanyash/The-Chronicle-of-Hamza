@@ -355,6 +355,8 @@
 				local b = SpawnMessageBox( "8801" )
 				if b == 1 then
 					PassToMap("r4m2", "FromR4M1", -1 )
+					GL_PassToMap = true
+					P:SetCustomControlEnabled( true )
 				else
 					TActivate("cinExit42ReturnFirst")
 				end
@@ -378,6 +380,8 @@
 
 				if b == 1 then
 					PassToMap("r4m0", "FromR4M1", -1 )
+					GL_PassToMap = true
+					P:SetCustomControlEnabled( true )
 
 					if QuestStatus("GoToDesertOfDeath_quest")==Q_TAKEN then
 						local Alf = getObj("AivenCarGTK_vehicle_0")
@@ -401,6 +405,8 @@
 					if b == 1 then
 						PassToMap("r4m0", "FromR4M1", -1 )
 						SetVar("DriveToDD", 1)
+						GL_PassToMap = true
+						P:SetCustomControlEnabled( true )
 
 						if QuestStatus("GoToDesertOfDeath_quest")==Q_TAKEN then
 							local Alf = getObj("AivenCarGTK_vehicle_0")
@@ -1609,6 +1615,7 @@
 			local PlfID = GetPlayerVehicleId()
 
 			Plf:setGodMode(1)
+			CompleteQuest("RacingUral_quest")
 
 			FlyLinked("linkedcam", CTochID, 5, 0, 1, PlfID)
 			StartCinematic()

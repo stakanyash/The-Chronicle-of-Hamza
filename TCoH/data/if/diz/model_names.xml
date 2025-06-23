@@ -1817,6 +1817,11 @@
 		value="Скаут" />
 
 	<Item
+		id="Ural"
+		locForm="0"
+		value="Урал" />
+
+	<Item
 		id="Molokovoz"
 		locForm="0"
 		value="Молоковоз" />
