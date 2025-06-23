@@ -1676,42 +1676,42 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-		RestoreAllToleranceStatus()
+			RestoreAllToleranceStatus()
 
-		local MVeh = getObj("MansurCar1")
-		if MVeh then
-		    MVeh:Remove()
-		end
+			local MVeh = getObj("MansurCar1")
+			if MVeh then
+				MVeh:Remove()
+			end
 
-		local DzhaCar = getObj("DzhamilCar")
-		if DzhaCar then
-		    DzhaCar:Remove()
-		end
+			local DzhaCar = getObj("DzhamilCar")
+			if DzhaCar then
+				DzhaCar:Remove()
+			end
 
-		local town1 = GetEntityByName("TheKef")
-		if town1 then town1:SetOpenGateToPlayer( true ) end
+			local town1 = GetEntityByName("TheKef")
+			if town1 then town1:SetOpenGateToPlayer( true ) end
 
-		local town2 = GetEntityByName("TheGadad")
-		if town2 then town2:SetOpenGateToPlayer( true ) end
+			local town2 = GetEntityByName("TheGadad")
+			if town2 then town2:SetOpenGateToPlayer( true ) end
 
-		local town3 = GetEntityByName("TheKazif")
-		if town3 then town3:SetOpenGateToPlayer( true ) end
+			local town3 = GetEntityByName("TheKazif")
+			if town3 then town3:SetOpenGateToPlayer( true ) end
 
-		local a = GetEntityByName("StartGonka_loc")
-		if a then a:SetProperty("Active",1) end
+			local a = GetEntityByName("StartGonka_loc")
+			if a then a:SetProperty("Active",1) end
 
-        CompleteQuest("DefendGadad_quest")
-		TakeQuest("TalkToMansur_quest")
+			CompleteQuest("DefendGadad_quest")
+			TakeQuest("TalkToMansur_quest")
 
-		AddHistory( "tcoh_firstgadaddefend" )
-		AddFadingMsgId( "fm_history_got" )
-		AddImportantFadingMsgByStrIdFormatted("fm_history_got")
+			AddHistory( "tcoh_firstgadaddefend" )
+			AddFadingMsgId( "fm_history_got" )
+			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 
-		StopPlayingCustomMusic()
-        
-        SetCameraBehindPlayerVehicle()
+			StopPlayingCustomMusic()
+			
+			SetCameraBehindPlayerVehicle()
 
-        trigger:Deactivate()
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -1720,43 +1720,43 @@
 	<trigger Name="MansurSeeRob_start" active="0">
 		<event	timeout="0.01"			eventid="GE_TIME_PERIOD" />
 		<script>
-		SaveAllToleranceStatus(RS_NEUTRAL)
+			SaveAllToleranceStatus(RS_NEUTRAL)
 
-		local PVeh = GetPlayerVehicle()
-		if PVeh then
-			PVeh:SetThrottle( 0 )
-			PVeh:SetCustomLinearVelocity( 8 )
-			PVeh:SetGamePositionOnGround( CVector(5760.192, 251.149, 4867.326))
-			PVeh:SetRotation(Quaternion(0.000, 0.962, -0.002, -0.273))
-		end
+			local PVeh = GetPlayerVehicle()
+			if PVeh then
+				PVeh:SetThrottle( 0 )
+				PVeh:SetCustomLinearVelocity( 8 )
+				PVeh:SetGamePositionOnGround( CVector(5760.192, 251.149, 4867.326))
+				PVeh:SetRotation(Quaternion(0.000, 0.962, -0.002, -0.273))
+			end
 
-		local RobVeh = CreateVehicleEx("UralShot1","RobCar",CVector(5621.561, 251.949, 4983.046), 1024)
-		if RobVeh then
-		    RobVeh:SetRotation(Quaternion(0.011, 0.968, 0.004, 0.250))
-			RobVeh:SetExternalPathByName("Rob_Path")
-			RobVeh:SetCruisingSpeed(15)
-		end
+			local RobVeh = CreateVehicleEx("UralShot1","RobCar",CVector(5621.561, 251.949, 4983.046), 1024)
+			if RobVeh then
+				RobVeh:SetRotation(Quaternion(0.011, 0.968, 0.004, 0.250))
+				RobVeh:SetExternalPathByName("Rob_Path")
+				RobVeh:SetCruisingSpeed(15)
+			end
 
-		local RVeh = GetEntityByName("RobCar")
-		local RobVehID = RVeh:GetId()
+			local RVeh = GetEntityByName("RobCar")
+			local RobVehID = RVeh:GetId()
 
-		local Plf = GetPlayerVehicle()
-        local PlfID = GetPlayerVehicleId()
+			local Plf = GetPlayerVehicle()
+			local PlfID = GetPlayerVehicleId()
 
-		Fly("MansurSeeRob_cam01", CINEMATIC_AIM_TO_ID, RobVehID, 6, 1, 0 )
-		Fly("MansurSeeRob_cam02", CINEMATIC_AIM_TO_ID, RobVehID, 7, 0, 0 )
-		Fly("MansurSeeRob_cam03", CINEMATIC_AIM_TO_ID, RobVehID, 11, 0, 0 )
-		Fly("MansurSeeRob_cam04", CINEMATIC_AIM_TO_ID, PlfID, 34, 0, 1 )
+			Fly("MansurSeeRob_cam01", CINEMATIC_AIM_TO_ID, RobVehID, 6, 1, 0 )
+			Fly("MansurSeeRob_cam02", CINEMATIC_AIM_TO_ID, RobVehID, 7, 0, 0 )
+			Fly("MansurSeeRob_cam03", CINEMATIC_AIM_TO_ID, RobVehID, 11, 0, 0 )
+			Fly("MansurSeeRob_cam04", CINEMATIC_AIM_TO_ID, PlfID, 34, 0, 1 )
 
-		StartCinematic()
+			StartCinematic()
 
-        TActivate("MansurSeeRob_Fade")
-        TActivate("MansurSeeRob_cam02")
-		TActivate("MansurSeeRob_cam03")
-		TActivate("MansurSeeRob_cam04")
-		TActivate("MansurSeeRob_End")
+			TActivate("MansurSeeRob_Fade")
+			TActivate("MansurSeeRob_cam02")
+			TActivate("MansurSeeRob_cam03")
+			TActivate("MansurSeeRob_cam04")
+			TActivate("MansurSeeRob_End")
 
-        trigger:Deactivate()
+			trigger:Deactivate()
 		</script>
 	</trigger>
 

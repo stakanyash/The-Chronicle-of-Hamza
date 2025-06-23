@@ -1006,50 +1006,50 @@ $Id: Infection.xml,v 1.48 2005/11/28 07:43:57 anton Exp $
 	<Prototype
 		Class 		= "VehiclesGenerator"
 		Name		= "GadadGenerator"
-                DesiredCount 				= "1-3"
+        DesiredCount 				= "1-3"
 		partOfSchwartzForCabin 			= "0.15"  
 		partOfSchwartzForBasket 		= "0.15"
 		partOfSchwartzForGuns 			= "0.54"
 		partOfSchwartzForWares 			= "0.20" >
 		<Description 
 			VehiclesPrototypes	="UralForSale HunterEnemySpawn"		
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="townaffixGenerator"
 			PartOfSchwartz="0.35" />
 		<Description 
 			VehiclesPrototypes	="BelazForSale HunterEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="ScoutEnemySpawn HunterEnemySpawn BelazForSale" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="ScoutEnemySpawn HunterEnemySpawn UralForSale" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="UralForSale HunterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="UralForSale FighterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 
 		<Description 
 			VehiclesPrototypes	="MolokovozForSale FighterEnemySpawn ScoutEnemySpawn " 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="MolokovozForSale HunterEnemySpawn ScoutEnemySpawn " 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 	</Prototype>
@@ -1072,33 +1072,33 @@ $Id: Infection.xml,v 1.48 2005/11/28 07:43:57 anton Exp $
 		partOfSchwartzForWares 			= "0.20" >
 		<Description 
 			VehiclesPrototypes	="ScoutEnemySpawn FighterEnemySpawn HunterEnemySpawn"		
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="townaffixGenerator"
 			PartOfSchwartz="0.35" />
 		<Description 
 			VehiclesPrototypes	="HunterEnemySpawn UralForSale" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="UralForSale HunterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="UralForSale FighterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 
 		<Description 
 			VehiclesPrototypes	="MolokovozForSale FighterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="MolokovozForSale HunterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 
@@ -1123,33 +1123,33 @@ $Id: Infection.xml,v 1.48 2005/11/28 07:43:57 anton Exp $
 		partOfSchwartzForWares 			= "0.20" >
 		<Description 
 			VehiclesPrototypes	="FighterEnemySpawn UralForSale"		
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="townaffixGenerator"
 			PartOfSchwartz="0.35" />
 		<Description 
 			VehiclesPrototypes	="ScoutEnemySpawn HunterEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="UralForSale HunterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="UralForSale FighterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 
 		<Description 
 			VehiclesPrototypes	="MolokovozForSale FighterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="MolokovozForSale HunterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 
@@ -1173,38 +1173,38 @@ $Id: Infection.xml,v 1.48 2005/11/28 07:43:57 anton Exp $
 		partOfSchwartzForWares 			= "0.20" >
 		<Description 
 			VehiclesPrototypes	="FighterEnemySpawn CruiserEnemySpawn"		
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco"
 			GunAffixGeneratorPrototype="townaffixGenerator"
 			PartOfSchwartz="0.35" />
 		<Description 
 			VehiclesPrototypes	="DozerEnemySpawn HunterEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="UralForSale HunterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="UralForSale FighterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 
 		<Description 
 			VehiclesPrototypes	="MolokovozForSale FighterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="MolokovozForSale HunterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="BelazForSale HunterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 
@@ -1229,38 +1229,38 @@ $Id: Infection.xml,v 1.48 2005/11/28 07:43:57 anton Exp $
 		partOfSchwartzForWares 			= "0.20" >
 		<Description 
 			VehiclesPrototypes	="FighterEnemySpawn UralForSale"		
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="townaffixGenerator"
 			PartOfSchwartz="0.35" />
 		<Description 
 			VehiclesPrototypes	="BelazForSale HunterEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="UralForSale HunterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="UralForSale FighterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 
 		<Description 
 			VehiclesPrototypes	="MolokovozForSale FighterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="MolokovozForSale HunterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 		<Description 
 			VehiclesPrototypes	="BelazForSale HunterEnemySpawn ScoutEnemySpawn" 	
-			WaresPrototypes="electronics book"
+			WaresPrototypes="electronics book tobacco machinery"
 			GunAffixGeneratorPrototype="villageaffixGenerator"
 			PartOfSchwartz="0.3" />
 

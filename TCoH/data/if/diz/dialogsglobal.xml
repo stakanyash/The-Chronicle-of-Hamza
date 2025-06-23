@@ -22,20 +22,20 @@
 		name="Dlg_npc_001567"
 		text="Подождите... Вы не знаете, кто и откуда ему должен был доставить в Южный этот блокиратор?"
 		role="NPC"
-		scriptCondition="GetVar('AivenJrTalk').AsInt==0 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
+		scriptCondition="GetVar('AivenJrTalk').AsInt==1 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001568" />
 
 	<Reply
 		name="Dlg_pl_001568"
 		text="Да, у меня такой же вопрос."
 		role="PLAYER"
-		scriptResult="SetVar('AivenJrTalk', 1); StartConversation('ScientiferVillage_Bar_Scientif')" />
+		scriptResult="SetVar('AivenJrTalk', 2); StartConversation('ScientiferVillage_Bar_Scientif')" />
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/Чужеземец/При диалоге с учёным/Вторая часть-->
 	<Reply
 		name="Dlg_npc_001571"
 		text="Ты прав, нам надо вернуться. Только зачем нам Мансур? Он же, по сути, нас кинул на произвол судьбы!"
 		role="NPC"
-		scriptCondition="GetVar('AivenJrTalk').AsInt==1 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
+		scriptCondition="GetVar('AivenJrTalk').AsInt==2 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001572" />
 
 	<Reply
@@ -54,7 +54,7 @@
 		name="Dlg_pl_001574"
 		text="Нам пора. В обратный путь."
 		role="PLAYER"
-		scriptResult="SetVar('AivenJrTalk', 2); StartConversation('ScientiferVillage_Bar_Scientif')" />
+		scriptResult="SetVar('AivenJrTalk', 3); StartConversation('ScientiferVillage_Bar_Scientif')" />
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/Первая встреча-->
 	<Reply
 		name="r4m2_Bar_Scientist_1_N01"
@@ -359,7 +359,8 @@
 		name="Dlg_npc_001566"
 		text="Именно. Ему пару десятков лет назад было поручено задание доставить сюда блокиратор из города Южного, до которого можно добраться через Пустыню Смерти. По моей информации, он уехал за ним, но с того момента его более никто не видел."
 		role="NPC"
-		nextReplies="Dlg_pl_001577" />
+		nextReplies="Dlg_pl_001577"
+		scriptResult="SetVar('AivenJrTalk', 1)" />
 
 	<Reply
 		name="Dlg_pl_001577"
@@ -4892,7 +4893,7 @@
 
 	<Reply
 		name="Dlg_pl_001365"
-		text="Мансур, очнись ты, наконец! Слышишь, что я говорю? Думаешь, это последнее нападение безумцев? Почему-то я полностью уверен в том, что это не отнюдь последнее их нападение! Нам НУЖНО хотя бы попытаться что-то с этим сделать! Если мы будем дальше сидеть и ничего не делать, они будут нападать снова! И тогда уже может погибнуть кто угодно! В том числе ты! В том числе и я! Кто угодно может погибнуть! Ты этого хочешь добиться?! Мы должны это сделать, чтобы как минимум отомстить за твою сестру!"
+		text="Мансур, очнись ты, наконец! Слышишь, что я говорю? Думаешь, это последнее нападение безумцев? Почему-то я полностью уверен в том, что это отнюдь не последнее их нападение! Нам НУЖНО хотя бы попытаться что-то с этим сделать! Если мы будем дальше сидеть и ничего не делать, они будут нападать снова! И тогда уже может погибнуть кто угодно! В том числе ты! В том числе и я! Кто угодно может погибнуть! Ты этого хочешь добиться?! Мы должны это сделать, чтобы как минимум отомстить за твою сестру!"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001366" />
 
