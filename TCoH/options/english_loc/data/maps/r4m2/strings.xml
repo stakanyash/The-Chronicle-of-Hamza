@@ -121,29 +121,37 @@
 	<string
 		id="501"
 		modelName="mask_hero"
-		value="|I feel the power beckoning me to the saucer."
+		value="FOREIGNER|I feel the power beckoning me to the saucer."
 		sound="data\sounds\Speech\r4m2\r4m2_501_hero.ogg"
 		time="1" />
 
 	<string
 		id="502"
 		modelName="mask_hero"
-		value="|Faster! How slow can this machine go! Argh, to hell with it!"
+		value="FOREIGNER|Faster! How slow can this machine go! Argh, to hell with it!"
 		sound="data\sounds\Speech\r4m2\r4m2_502_hero.ogg"
 		time="1" />
 
 	<string
 		id="503"
 		modelName="mask_hero"
-		value="|I can't stop, but it's getting harder and harder for me to walk..."
+		value="FOREIGNER|I can't stop, but it's getting harder and harder for me to walk..."
 		sound="data\sounds\Speech\r4m2\r4m2_503_hero.ogg"
 		time="1" />
 
 	<string
 		id="504"
 		modelName="mask_hero"
-		value="|Goddamn it... I... can... n-o-t... m...o...v...e... Argh..."
+		value="FOREIGNER|Goddamn it... I... can... n-o-t... m...o...v...e... Argh..."
 		sound="data\sounds\Speech\r4m2\r4m2_504_hero.ogg"
+		time="1" />
+
+	<string
+		id="505"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="FOREIGNER|AAAAAAAAAAAAAAAAAAA!"
+		sound="data\sounds\speech\r4m2\foreigner_scream.ogg"
 		time="1" />
 
 	<string
