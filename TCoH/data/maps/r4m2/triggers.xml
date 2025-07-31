@@ -7,6 +7,7 @@
 			SetVar("PlayBattleMus", 1)
 			SetVar("ScientistTalk", 0)
 			SetVar("AivenJrTalk", 0)
+			SetVar("GL_PlateClose", 0)
 
 			SetRadarUpgrade(1)
            
@@ -195,9 +196,47 @@
 	<trigger	Name="trMoveToPlate"	active="1">
 		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="PlateRadiation_loc" />
 		<script>
---			println("PLATE")
-			TActivate("cinPlateFirst")
-			SetVar("DeadEnd", 1)
+			if QuestStatus("BackToVahat_quest") == Q_TAKEN or QuestStatus("LookAtTarelka_quest") == Q_TAKEN or QuestStatus("TalkToVasilyi_quest") == Q_TAKEN then
+				TActivate("cinPlateFirst")
+				SetVar("DeadEnd", 1)
+				trigger:Deactivate()
+			else
+				TActivate("PlayerDamageIfCloseToPlate")
+			end
+		</script>
+	</trigger>
+
+	<trigger Name="PlayerDamageIfCloseToPlate" active="0">
+		<event timeout="1" eventid="GE_TIME_PERIOD" />
+		<script>
+			local run = GetEntityByName("PlateRadiation_loc")
+			local pl = GetPlayerVehicle()
+			local len
+
+			if run then
+				len = Dist(pl, run)
+				if (600 >= len) then
+					pl:AddModifier("hp","- 50")
+					RuleConsole("g_postEffect cinematic02")
+					TActivate("tr_die_msg")
+				else
+					RuleConsole("g_postEffect cinematicEnd")
+					SetVar("GL_PlateClose", 0)
+					trigger:Deactivate()
+				end
+			end
+		</script>
+	</trigger>
+
+	<trigger Name="tr_die_msg" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("GL_PlateClose").AsInt == 0 then
+				AddFadingMsgId( "fm_die" )
+				AddImportantFadingMsgByStrIdFormatted("fm_die")
+				SetVar("GL_PlateClose", 1)
+			end
+
 			trigger:Deactivate()
 		</script>
 	</trigger>

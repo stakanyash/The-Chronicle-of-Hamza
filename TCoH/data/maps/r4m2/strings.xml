@@ -122,7 +122,7 @@
 		id="501"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="я чувствую силу, ман€щую мен€ к тарелке."
+		value="„”∆≈«≈ћ≈÷|я чувствую силу, ман€щую мен€ к тарелке."
 		sound="data\sounds\Speech\r4m2\r4m2_501_hero.ogg"
 		time="1" />
 
@@ -130,7 +130,7 @@
 		id="502"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="—корее!  ак медленно катитс€ эта машина! Ќу еЄ к черт€м!"
+		value="„”∆≈«≈ћ≈÷|—корее!  ак медленно катитс€ эта машина! Ќу еЄ к черт€м!"
 		sound="data\sounds\Speech\r4m2\r4m2_502_hero.ogg"
 		time="1" />
 
@@ -138,7 +138,7 @@
 		id="503"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="я не могу остановитьс€, но мне всЄ сложней идти..."
+		value="„”∆≈«≈ћ≈÷|я не могу остановитьс€, но мне всЄ сложней идти..."
 		sound="data\sounds\Speech\r4m2\r4m2_503_hero.ogg"
 		time="1" />
 
@@ -146,7 +146,7 @@
 		id="504"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="„Єрт побери... я... Ќе... м-о-г-у... д...в...и...г...а...т...ь..."
+		value="„”∆≈«≈ћ≈÷|„Єрт побери... я... Ќе... м-о-г-у... д...в...и...г...а...т...ь..."
 		sound="data\sounds\Speech\r4m2\r4m2_504_hero.ogg"
 		time="1" />
 
@@ -154,7 +154,7 @@
 		id="505"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="јјјјјјјјјјјјјјјјјјјјјјјј!"
+		value="„”∆≈«≈ћ≈÷|јјјјјјјјјјјјјјјјјјјјјјјј!"
 		sound="data\sounds\speech\r4m2\foreigner_scream.ogg"
 		time="1" />
 <!-- когда поговорили с ученым и выбрали одну из сюжетных линий, игрока перебрасывают почти к выходу с карты -->
