@@ -375,7 +375,7 @@
 				P:SetCustomLinearVelocity( 0 )
 			end
 
-			if QuestStatus("BackToKef_afterinvasion_quest")==Q_COMPLETED and GetVar("DriveToDD").AsInt==1 then
+			if QuestStatus("BackToKef_afterinvasion_quest")==Q_COMPLETED then
 				local b = SpawnMessageBox( "8801" )
 
 				if b == 1 then
@@ -396,32 +396,6 @@
 					end
 				else
 					TActivate("cinExit11ReturnFirst")
-				end
-			elseif QuestStatus("BackToKef_afterinvasion_quest")==Q_COMPLETED and GetVar("DriveToDD").AsInt~=1 then
-				local a = SpawnMessageBox( "8913" )
-				if a == 1 then
-					local b = SpawnMessageBox( "8801" )
-
-					if b == 1 then
-						PassToMap("r4m0", "FromR4M1", -1 )
-						SetVar("DriveToDD", 1)
-						GL_PassToMap = true
-						P:SetCustomControlEnabled( true )
-
-						if QuestStatus("GoToDesertOfDeath_quest")==Q_TAKEN then
-							local Alf = getObj("AivenCarGTK_vehicle_0")
-							if Alf then
-								Alf:Remove()
-							end
-
-							local Mlf = getObj("MansurCarBTK_vehicle_0")
-							if Mlf then
-								Mlf:Remove()
-							end
-						end
-					else
-						TActivate("cinExit11ReturnFirst")
-					end
 				end
 			else
 				TActivate("cinExit11ReturnFirst")
