@@ -359,8 +359,8 @@
 		name="Dlg_npc_001566"
 		text="Именно. Ему пару десятков лет назад было поручено задание доставить сюда блокиратор из города Южного, до которого можно добраться через Пустыню Смерти. По моей информации, он уехал за ним, но с того момента его более никто не видел."
 		role="NPC"
-		nextReplies="Dlg_pl_001577"
-		scriptResult="SetVar('AivenJrTalk', 1)" />
+		scriptResult="SetVar('AivenJrTalk', 1)"
+		nextReplies="Dlg_pl_001577" />
 
 	<Reply
 		name="Dlg_pl_001577"
@@ -6076,7 +6076,7 @@
 		name="Dlg_pl_002200"
 		text="Я всегда могу вернуться к Василию и активировать блокиратор."
 		role="PLAYER"
-		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN and QuestStatus('Failed2ndEnd_quest')==Q_COMPLETED "
+		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN and QuestStatus('blocktaken_quest')==Q_COMPLETED "
 		nextReplies="Dlg_npc_002201" />
 
 	<Reply
@@ -6119,7 +6119,7 @@
 		name="Dlg_pl_002168"
 		text="Мы всегда можем вернуться обратно и забрать блокиратор."
 		role="PLAYER"
-		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN and not (QuestStatus('Failed2ndEnd_quest')==Q_COMPLETED)"
+		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN and QuestStatus('blockleaved_quest')==Q_COMPLETED"
 		nextReplies="Dlg_npc_002169" />
 
 	<Reply

@@ -6076,7 +6076,7 @@
 		name="Dlg_pl_002200"
 		text="I can always go back to Vasily and activate the blocker myself."
 		role="PLAYER"
-		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN and QuestStatus('Failed2ndEnd_quest')==Q_COMPLETED "
+		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN and QuestStatus('blocktaken_quest')==Q_COMPLETED "
 		nextReplies="Dlg_npc_002201" />
 
 	<Reply
@@ -6119,7 +6119,7 @@
 		name="Dlg_pl_002168"
 		text="We can always go back and get the blocker ourselves."
 		role="PLAYER"
-		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN and not (QuestStatus('Failed2ndEnd_quest')==Q_COMPLETED)"
+		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN and QuestStatus('blockleaved_quest')==Q_COMPLETED"
 		nextReplies="Dlg_npc_002169" />
 
 	<Reply
