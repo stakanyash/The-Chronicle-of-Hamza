@@ -1,3 +1,23 @@
+### Version 1.1.3 [250731a]
+
+**Vahat**
+
+- Fixed an issue where Hamza could say an incorrect line during the ending dialogue with his father
+- Removed the warning before the first transition to the Desert of Death
+
+**Desert of Death**
+
+- Added 3 lootboxes
+- Reworked the road to one of Sergo’s possible locations
+- Removed an unnecessary "invisible wall" near the lighthouse
+- Hornet and Specter removed from the possible loot drops
+- Reduced map visibility
+
+**Zarmek**
+
+- Fixed an issue where the Foreigner could approach the saucer despite not being present on the map
+- Fixed missing Foreigner’s scream in the dead-end ending (English localization)
+
 ### Version 1.1.2 [250624a]
 
 - Fixed a bug where the race quest did not complete
