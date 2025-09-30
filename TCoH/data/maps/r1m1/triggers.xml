@@ -160,6 +160,7 @@
 
 			TActivate( "FirstArriveToKrai_cs_music" )
 			TActivate( "FirstArriveToKrai_cam02" )
+			TActivate( "FirstArriveToKrai_cam03" )
 			TActivate( "FirstArriveToKrai_End" )
 
 			trigger:Deactivate()
@@ -345,8 +346,6 @@
 			RestoreAllToleranceStatus()
 			SetCameraBehindPlayerVehicle()
 
-			StopPlayingCustomMusic()
-
 			local P = GetPlayerVehicle()
 			if P then
 				P:SetExternalPathByName("hamzapath_fatk")
@@ -356,17 +355,21 @@
 
 			local A = getObj("AivenCarCS")
 			if A then
-				A:Remove()
+				A:SetExternalPathByName("aivenpath_fatk")
+				A:PlaceToEndOfPath("aivenpath_fatk")
 			end
 
-			TActivate("RotateBack_tr")
-			TActivate("AC_GTO")
-			TActivate("BadFeel_activate_tr")
-			TActivate("AutoSave_GTO_tr")
-			TActivate("Shiza_tr")
+			CreateNewDummyObject( "dweller_player", "Aivencemetery_pm", -1, -1, CVector(3065.113, 355.844, 3366.409), Quaternion(-0.042, -0.726, 0.045, 0.685), 0)
 
-			AddFadingMsgId( "fm_manualsavedis" )
-			AddImportantFadingMsgByStrIdFormatted("fm_manualsavedis")
+			local A = getObj("Aivencemetery_pm")
+			if A then
+				A:SetNodeAction(AT_MOVE2)
+			end
+
+			CompleteQuest("GoToOracle_FollowForeigner_quest")
+			TakeQuest("GoToOracle_WhereForeignerGo_quest")
+
+			TActivate("Aivencemetery_cs_start")
 
 			trigger:Deactivate()
 		</script>
@@ -386,7 +389,7 @@
 	<trigger Name="AC_GTO" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-			TeamCreate("AivenCar", 1095, CVector(getPos("AivenSpawn_loc")), {"BelazShot1"}, nil, nil, Quaternion(0.018, -0.847, 0.041, 0.529))
+			TeamCreate("AivenCar", 1095, CVector(getPos("AivenSpawn_loc")), {"BelazShot1"}, nil, nil, Quaternion(-0.005, -0.704, 0.004, 0.711))
 
 			local vehAiven = getObj("AivenCar_vehicle_0")
 			if vehAiven then
@@ -800,7 +803,7 @@
 		</script>
 	</trigger>
 
-	<!-- ˜˜˜˜ ˜˜˜˜˜ ˜˜˜˜˜˜˜˜ ˜˜˜˜˜ ˜ ˜˜˜˜˜˜˜˜˜˜˜˜˜˜ ˜˜˜˜ -->
+	<!-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
 	<trigger Name="REVOLUTIONFAIL" active="0">
 		<event timeout="0.1" eventid="GE_TIME_PERIOD" />
 		<script>

@@ -198,6 +198,9 @@
 		id="Battle02"
 		file="data\music\cinematics\Battle02.ogg" />
 	<model
+		id="Battle02_cursed"
+		file="data\music\cinematics\battle02_cursed.ogg" />
+	<model
 		id="Battle03"
 		file="data\music\cinematics\Battle03.ogg" />
 	<model

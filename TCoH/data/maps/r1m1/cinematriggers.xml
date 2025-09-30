@@ -116,6 +116,7 @@
 				Plf:PlaceToEndOfPath("hamzapath_rb")
 			end
 
+			FailQuestIfTaken("GoToOracle_ContinueToOracle_quest")
 			FailQuestIfTaken("GoToOracle_quest")
 			TakeQuest("HurryBackToHome_quest")
 
@@ -132,6 +133,135 @@
 			end
 
 			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+-- TCoH: cemetery --
+
+	<trigger Name="Aivencemetery_cs_start" active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="Aivencemetery_loc" />
+		<script>
+			CinemaFiltersUse()
+
+			SaveAllToleranceStatus(RS_NEUTRAL)
+
+			PlayCustomMusic("Sadness1")
+
+			Fly("cemetery_cam01", CINEMATIC_NO_AIM, 0, 10, 1, 0 )
+			Fly("cemetery_cam02", CINEMATIC_NO_AIM, 0, 11, 0, 0 )
+			Fly("cemetery_cam03", CINEMATIC_NO_AIM, 0, 10, 0, 0 )
+			Fly("cemetery_cam04", CINEMATIC_NO_AIM, 0, 25, 0, 0 )
+			Fly("cemetery_cam05", CINEMATIC_NO_AIM, 0, 17, 0, 1 )
+			StartCinematic()
+
+			TActivate("Aivencemetery_cs_fade")
+			TActivate("Aivencemetery_cs_cam02")
+			TActivate("Aivencemetery_cs_cam03")
+			TActivate("Aivencemetery_cs_cam04")
+			TActivate("Aivencemetery_cs_cam05")
+			TActivate("Aivencemetery_cs_end")
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger Name="Aivencemetery_cs_fade" active="0">
+		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
+		<script>
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetGamePositionOnGround(CVector(3212.326, 364.586, 3359.376))
+				P:SetRotation(Quaternion(-0.011, -0.694, 0.074, 0.716))
+				P:SetCustomLinearVelocity(25)
+				P:LimitMaxSpeed(25)
+				P:SetExternalPathByName("hamzapath_fatk1")
+				P:setGodMode(1)
+			end
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger Name="Aivencemetery_cs_cam02" active="0">
+		<event flypath="cemetery_cam02" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage(9061, 0.25)
+			AddCinematicMessage(9062, 0.25)
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger Name="Aivencemetery_cs_cam03" active="0">
+		<event flypath="cemetery_cam03" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage(9063, 0.25)
+			AddCinematicMessage(9064, 0.25)
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger Name="Aivencemetery_cs_cam04" active="0">
+		<event flypath="cemetery_cam04" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage(9065, 0.25)
+			AddCinematicMessage(9066, 0.25)
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger Name="Aivencemetery_cs_cam05" active="0">
+		<event flypath="cemetery_cam05" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			AddCinematicMessage(9067, 0.25)
+			AddCinematicMessage(9068, 0.25)
+
+			trigger:Deactivate()    
+		</script>
+	</trigger>
+
+	<trigger Name="Aivencemetery_cs_end" active="0">
+		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
+		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
+		<script>
+			RestoreAllToleranceStatus()
+			SetCameraBehindPlayerVehicle()
+
+			StopPlayingCustomMusic()
+
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetExternalPathByName("hamzapath_fatk1")
+				P:PlaceToEndOfPath("hamzapath_fatk1")
+				P:UnlimitMaxSpeed()
+				P:setGodMode(0)
+			end
+
+			local A = getObj("AivenCarCS")
+			if A then
+				A:Remove()
+			end
+
+			local A = getObj("Aivencemetery_pm")
+			if A then
+				A:Remove()
+			end 
+
+			CompleteQuest("GoToOracle_WhereForeignerGo_quest")
+			TakeQuest("GoToOracle_ContinueToOracle_quest")
+
+			TActivate("RotateBack_tr")
+			TActivate("AC_GTO")
+			TActivate("BadFeel_activate_tr")
+			TActivate("AutoSave_GTO_tr")
+			TActivate("Shiza_tr")
+
+			AddFadingMsgId( "fm_manualsavedis" )
+			AddImportantFadingMsgByStrIdFormatted("fm_manualsavedis")
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -280,14 +410,14 @@
 
 
 <!-- первый бандит -->
-	<trigger Name="ZASADA_1" active="0">
+	<trigger Name="ZASADA_1" active="1">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="GameLoc_1" />
 		<script>
 			CinemaFiltersUse()
 
 			SaveAllToleranceStatus(RS_NEUTRAL)
 
-			PlayCustomMusic("Battle02")
+			PlayCustomMusic("Battle02_cursed")
 
 			Fly("cam01", CINEMATIC_NO_AIM, 0, 5, 1, 1 )
 			StartCinematic()
@@ -303,7 +433,7 @@
 	<trigger	Name="trZasada1_cam01"	active="0">
 		<event eventid="GE_CINEMATIC_ENTER_FADE_IN" ObjName="Player1" />
 		<script>
-			CreateVehicleEx("Sml101","FirstB_0",CVector(2888.161, 346.333, 2342.007), 1002)
+			CreateVehicleEx("r1m1_bug01s","FirstB_0",CVector(2888.161, 346.333, 2342.007), 1000)
 
 			local FVehicle = GetEntityByName("FirstB_0")
 			if FVehicle then
@@ -349,7 +479,7 @@
 				FVehicle:Remove()
 			end
 
-			TeamCreate("FirstB",1002,CVector(2957.974, 333.446, 2394.033),{"Sml101"})
+			TeamCreate("FirstB",1000,CVector(2957.974, 333.446, 2394.033),{"r1m1_bug01s"})
 			local terr = GetEntityByName("FirstB_vehicle_0")
 			if terr then
 				terr:SetSkin ( skin )

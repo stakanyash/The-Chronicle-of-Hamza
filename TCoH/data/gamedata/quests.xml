@@ -631,7 +631,28 @@
 		Automatic="0"
 		SubQuestsCondition="and"
 		CheckAll="0"
-		ConditionToGive="all complete" />
+		ConditionToGive="all complete">
+		<quest
+			Name="GoToOracle_FollowForeigner_quest"
+			Automatic="0"
+			SubQuestsCondition="and"
+			CheckAll="0"
+			ConditionToGive="all complete" />
+
+		<quest
+			Name="GoToOracle_WhereForeignerGo_quest"
+			Automatic="0"
+			SubQuestsCondition="and"
+			CheckAll="0"
+			ConditionToGive="all complete" />
+
+		<quest
+			Name="GoToOracle_ContinueToOracle_quest"
+			Automatic="0"
+			SubQuestsCondition="and"
+			CheckAll="0"
+			ConditionToGive="all complete" />
+	</quest>
 
 	<quest
 		Name="GoToVasiliy_quest"

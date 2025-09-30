@@ -1,3 +1,10 @@
+### Version 1.2 [250930a]
+
+- Race music changed. The previously AI-generated track has been replaced with an original composition
+- Quest "Visit the Oracle" updated. Now in the Krai, the main character has a short dialogue with the Foreigner regarding his past
+- Fixed a bug where, in the final cutscene of one ending, caravans could block the player's vehicle
+- Added a cursed version of "battle02" for the quest in the Krai
+
 ### Version 1.1.3 [250731a]
 
 **Vahat**

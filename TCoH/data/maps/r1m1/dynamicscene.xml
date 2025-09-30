@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="4378">
+	LastId="4380">
 	<TargetNamesForDestroy
 		Names="u1 u2 u3 u4 u5 u6 u7 u8 u9" />
 
@@ -21106,13 +21106,6 @@
 		Pos="3314.762 358.458 3122.425" />
 
 	<Object
-		Name="brick_wall12776"
-		Belong="-1"
-		Prototype="Breakable_BrickWall1"
-		Pos="3392.016 367.476 3269.086"
-		Rot="0.000 -0.528 0.000 0.849" />
-
-	<Object
 		Name="brick_wall22777"
 		Belong="-1"
 		Prototype="Breakable_BrickWall2"
@@ -37336,7 +37329,7 @@
 		Name="AivenSpawn_loc"
 		Belong="1100"
 		Prototype="genericLocation"
-		Pos="3395.117 366.392 3249.528"
+		Pos="3074.940 355.790 3365.973"
 		Radius="10.000" />
 
 	<Object
@@ -37344,5 +37337,12 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="3263.559 351.704 3026.760"
+		Radius="100.000" />
+
+	<Object
+		Name="Aivencemetery_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3074.437 355.820 3367.891"
 		Radius="100.000" />
 </DynamicScene>

@@ -433,7 +433,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Whoa… There's no sand here. Not even a bit."
+		value="HAMZA|Whoa... There's no sand here. Not even a bit."
 		sound=""
 		time="5" />
 
@@ -475,9 +475,79 @@
 		id="906"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="FOREIGNER|Let's just keep moving. We've got something bigger to focus on than my past."
+		value="FOREIGNER|Gotta step away for a sec, hang on."
 		sound=""
 		time="7" />
+
+	<string
+		id="9061"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="FOREIGNER|..."
+		sound=""
+		time="4" />
+
+	<string
+		id="9062"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|Are these all the ones you once lived with?.."
+		sound=""
+		time="6" />
+
+	<string
+		id="9063"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="FOREIGNER|Yes… it's exactly them…"
+		sound=""
+		time="5" />
+
+	<string
+		id="9064"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|But… where is your father?.."
+		sound=""
+		time="4" />
+
+	<string
+		id="9065"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="FOREIGNER|Here he is… They burned the village while I was taking Sergo's package. And why did I even take it?.. If only I had known back then…"
+		sound=""
+		time="13" />
+
+	<string
+		id="9066"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="HAMZA|Don't blame yourself, you could hardly have changed anything. Besides, you might have died along with all the others."
+		sound=""
+		time="11" />
+
+	<string
+		id="9067"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="FOREIGNER|I'd have been better off burning with them back then…"
+		sound=""
+		time="6" />
+
+	<string
+		id="9068"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="FOREIGNER|Alright… enough moping. Let’s get back to our main task."
+		sound=""
+		time="9" />
 
 	<string
 		id="907"
@@ -493,7 +563,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Something's wrong… I don't feel right. Now I understand what Vasiliy meant… Oh God… Is it happening to me too?"
+		value="HAMZA|Something's wrong... I don't feel right. Now I understand what Vasiliy meant˜ Oh God˜ Is it happening to me too?"
 		sound=""
 		time="10" />
 
@@ -501,7 +571,7 @@
 		id="909"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="FOREIGNER|I think you're right… Perhaps we should go back before it gets worse."
+		value="FOREIGNER|I think you're right... Perhaps we should go back before it gets worse."
 		sound=""
 		time="6" />
 
@@ -511,7 +581,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Yeah, you're right. Keep going — I think I can manage to make it back on my own."
+		value="HAMZA|Yeah, you're right. Keep going. I think I can manage to make it back on my own."
 		sound=""
 		time="6" />
 
@@ -529,7 +599,7 @@
 		modelSkin="0"
 		modelCfg="141"
 		modelSlot="0"
-		value="HAMZA|Absolutely. Don't even think about arguing — I've got this."
+		value="HAMZA|Absolutely. Don't even think about arguing. I've got this."
 		sound=""
 		time="5" />
 

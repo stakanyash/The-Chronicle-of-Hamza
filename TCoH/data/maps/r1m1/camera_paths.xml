@@ -347,6 +347,31 @@
 		<Point  coord="3459.182 389.780 3320.357" rotation="-0.048 0.843 -0.076 0.531"/>
 	</Path>
 
+	<Path Name = "cemetery_cam01">
+		<Point  coord="3209.699 376.574 3354.315" rotation="-0.042 0.675 -0.039 0.735"/>
+		<Point  coord="3100.259 366.331 3389.326" rotation="-0.044 0.860 -0.075 0.503"/>
+	</Path>
+
+	<Path Name = "cemetery_cam02">
+		<Point  coord="3069.702 368.459 3375.386" rotation="-0.149 0.778 -0.202 0.576"/>
+		<Point  coord="3066.027 368.459 3383.493" rotation="-0.105 0.880 -0.231 0.402"/>
+	</Path>
+
+	<Path Name = "cemetery_cam03">
+		<Point  coord="3050.355 360.410 3390.775" rotation="0.008 0.981 -0.043 -0.187"/>
+		<Point  coord="3045.666 360.410 3388.305" rotation="0.011 0.948 -0.034 -0.315"/>
+	</Path>
+
+	<Path Name = "cemetery_cam04">
+		<Point  coord="3052.926 357.529 3369.015" rotation="-0.078 0.661 -0.070 0.743"/>
+		<Point  coord="3060.455 359.146 3368.118" rotation="-0.078 0.661 -0.070 0.743"/>
+	</Path>
+
+	<Path Name = "cemetery_cam05">
+		<Point  coord="3037.681 362.716 3376.687" rotation="-0.077 -0.820 0.114 0.556"/>
+		<Point  coord="3028.532 365.503 3380.319" rotation="-0.077 -0.820 0.114 0.556"/>
+	</Path>
+
 	<Path Name = "rotateback_cam01">
 		<Point  coord="1364.919 293.715 2896.498" rotation="0.001 -0.126 -0.000 0.992"/>
 		<Point  coord="1384.637 294.306 2987.170" rotation="-0.007 -0.103 0.001 0.995"/>

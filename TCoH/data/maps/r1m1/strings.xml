@@ -475,9 +475,79 @@
 		id="906"
 		modelName="mask_hero"
 		modelSlot="1"
-		value="ЧУЖЕЗЕМЕЦ|Давай просто поедем дальше, у нас есть цель поважнее моей биографии."
+		value="ЧУЖЕЗЕМЕЦ|Мне нужно отлучиться ненадолго, подожди пожалуйста."
 		sound=""
 		time="7" />
+
+	<string
+		id="9061"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|..."
+		sound=""
+		time="4" />
+
+	<string
+		id="9062"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Это все те, с кем ты когда-то жил?.."
+		sound=""
+		time="6" />
+
+	<string
+		id="9063"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Да... Именно они..."
+		sound=""
+		time="5" />
+
+	<string
+		id="9064"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|А где твой отец?.."
+		sound=""
+		time="4" />
+
+	<string
+		id="9065"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Вот он... Деревню сожгли, пока я отвозил пакет Серго. И зачем я его только повёз?.. Знал бы я тогда..."
+		sound=""
+		time="13" />
+
+	<string
+		id="9066"
+		modelName="r4_man"
+		modelSkin="0"
+		modelCfg="141"
+		modelSlot="0"
+		value="ХАМЗА|Не вини себя, ты навряд ли что-то смог бы изменить. Тем более, ты мог погибнуть вместе со всеми остальными."
+		sound=""
+		time="11" />
+
+	<string
+		id="9067"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Да лучше бы я тогда сгорел вместе со всеми..."
+		sound=""
+		time="6" />
+
+	<string
+		id="9068"
+		modelName="mask_hero"
+		modelSlot="1"
+		value="ЧУЖЕЗЕМЕЦ|Ладно... Хватит сопли распускать. Давай вернёмся к нашей основной задаче."
+		sound=""
+		time="9" />
 
 	<string
 		id="907"

@@ -4018,7 +4018,13 @@
 	<trigger	Name="Ending1_tr"	active="0">
 		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
-			SaveAllToleranceStatus(RS_NEUTRAL)			
+			SetGameTime(12,00)
+
+			SaveAllToleranceStatus(RS_NEUTRAL)	
+			
+			SetTolerance(1100, 1025, RS_ENEMY)
+			SetTolerance(1100, 1023, RS_ENEMY)
+			ShowHostileVehicles(false)
 
 			local Plf = GetPlayerVehicle()
 			
@@ -4160,6 +4166,10 @@
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
 			RestoreAllToleranceStatus()
+
+			SetTolerance(1100, 1025, RS_ALLY)
+			SetTolerance(1100, 1023, RS_ALLY)
+			ShowHostileVehicles(true)
 
 			TActivate("BadEnd_tr")
 
