@@ -341,6 +341,10 @@
 			file="data\models\AnimModels.xml" />
 
 		<Item
+			id="grave3"
+			file="data\models\AnimModels.xml" />
+
+		<Item
 			id="workshop2"
 			file="data\models\AnimModels.xml" />
 

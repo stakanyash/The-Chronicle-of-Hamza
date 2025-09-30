@@ -785,7 +785,7 @@
 		name="Dlg_pl_002195"
 		text="Поехали."
 		role="PLAYER"
-		scriptResult="CompleteQuest('Failed2ndEnd_quest'); TakeQuest('GoToOracle_quest'); TActivate('MA_Rem_DD'); TActivate('A_C_GTO'); EndConversation()" />
+		scriptResult="CompleteQuest('Failed2ndEnd_quest'); TakeQuest('GoToOracle_quest'); TakeQuest('GoToOracle_FollowForeigner_quest'); TActivate('MA_Rem_DD'); TActivate('A_C_GTO'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/Возвращение из Пустыни Смерти/Если блокиратор взят-->
 	<Reply
 		name="Dlg_npc_002124"
@@ -834,7 +834,7 @@
 		name="Dlg_pl_002132"
 		text="Ладно. Поехали к этому Оракулу."
 		role="PLAYER"
-		scriptResult="CompleteQuest('blocktaken_quest'); TakeQuest('GoToOracle_quest'); TActivate('MA_Rem_DD'); TActivate('A_C_GTO'); EndConversation()" />
+		scriptResult="CompleteQuest('blocktaken_quest'); TakeQuest('GoToOracle_quest'); TakeQuest('GoToOracle_FollowForeigner_quest'); TActivate('MA_Rem_DD'); TActivate('A_C_GTO'); EndConversation()" />
 
 	<Reply
 		name="Dlg_pl_002131"
@@ -889,7 +889,7 @@
 		name="Dlg_pl_002138"
 		text="Ладно, поехали к этому Оракулу."
 		role="PLAYER"
-		scriptResult="CompleteQuest('blockleaved_quest'); TakeQuest('GoToOracle_quest'); TActivate('MA_Rem_DD'); TActivate('A_C_GTO'); EndConversation()" />
+		scriptResult="CompleteQuest('blockleaved_quest'); TakeQuest('GoToOracle_quest'); TakeQuest('GoToOracle_FollowForeigner_quest'); TActivate('MA_Rem_DD'); TActivate('A_C_GTO'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Чужеземец/После возвращения из Зармека/Первая часть-->
 	<Reply
 		name="Dlg_npc_001588"

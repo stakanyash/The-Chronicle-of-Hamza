@@ -449,6 +449,45 @@
 	</QuestInfo>
 
 	<QuestInfo
+		questName="GoToOracle_ContinueToOracle_quest"
+		briefDiz="Continue heading to the Oracle"
+		isMainQuest="1">
+		<Map
+			name="r1m1"
+			targetObjName="RotateBack_loc" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="GoToOracle_FollowForeigner_quest"
+		briefDiz="Follow the Foreigner to the Oracle"
+		isMainQuest="1">
+		<Map
+			name="r4m0"
+			targetObjName="ExitToR1M1" />
+
+		<Map
+			name="r4m1"
+			targetObjName="ExitFromMapToR4M0_loc" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="GoToOracle_WhereForeignerGo_quest"
+		briefDiz="Check where the Foreigner went"
+		isMainQuest="1">
+		<Map
+			name="r1m1"
+			targetObjName="Aivencemetery_loc" />
+
+		<Map
+			name="r4m0"
+			targetObjName="ExitToR1M1" />
+
+		<Map
+			name="r4m1"
+			targetObjName="ExitFromMapToR4M0_loc" />
+	</QuestInfo>
+
+	<QuestInfo
 		questName="GoToOracle_quest"
 		briefDiz="Head to the Oracle"
 		fullDiz="Foreigner says he knows how to solve our problem, but we need to go see someone — the Oracle."

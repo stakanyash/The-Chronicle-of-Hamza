@@ -659,6 +659,7 @@
 
 		<Item id="Battle01" />
 		<Item id="Battle02" />
+		<Item id="Battle02_cursed" />
 		<Item id="Battle03" />
 		<Item id="Bio01" />
 		<Item id="Bio02" />

@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <Paths>
 	<Path
+		Name="aivenpath_fatk">
+		<Point
+			coord="3717.776 2898.191" />
+
+		<Point
+			coord="3717.673 3035.490" />
+
+		<Point
+			coord="3680.128 3199.142" />
+
+		<Point
+			coord="3659.263 3259.904" />
+
+		<Point
+			coord="3615.909 3296.445" />
+
+		<Point
+			coord="3485.036 3308.507" />
+
+		<Point
+			coord="3400.375 3353.214" />
+
+		<Point
+			coord="3314.082 3352.413" />
+
+		<Point
+			coord="3218.768 3360.962" />
+
+		<Point
+			coord="3120.710 3363.098" />
+
+		<Point
+			coord="3074.784 3365.855" />
+	</Path>
+
+	<Path
+		Name="aivenpath_rb">
+		<Point
+			coord="1386.538 3076.530" />
+	</Path>
+
+	<Path
 		Name="aivenrunout_path">
 		<Point
 			coord="1451.488 3150.667" />
@@ -43,36 +85,6 @@
 
 		<Point
 			coord="2332.398 3838.268" />
-	</Path>
-
-	<Path
-		Name="aivenpath_fatk">
-		<Point
-			coord="3717.776 2898.191" />
-
-		<Point
-			coord="3717.673 3035.490" />
-
-		<Point
-			coord="3680.128 3199.142" />
-
-		<Point
-			coord="3659.263 3259.904" />
-
-		<Point
-			coord="3615.909 3296.445" />
-
-		<Point
-			coord="3481.752 3303.982" />
-
-		<Point
-			coord="3395.163 3249.242" />
-	</Path>
-
-	<Path
-		Name="aivenpath_rb">
-		<Point
-			coord="1386.538 3076.530" />
 	</Path>
 
 	<Path
@@ -802,6 +814,18 @@
 
 		<Point
 			coord="3396.884 3235.823" />
+	</Path>
+
+	<Path
+		Name="hamzapath_fatk1">
+		<Point
+			coord="3143.085 3359.846" />
+
+		<Point
+			coord="3101.823 3380.840" />
+
+		<Point
+			coord="3076.007 3382.582" />
 	</Path>
 
 	<Path

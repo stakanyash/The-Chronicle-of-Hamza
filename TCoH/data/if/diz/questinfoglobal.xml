@@ -449,13 +449,34 @@
 	</QuestInfo>
 
 	<QuestInfo
-		questName="GoToOracle_quest"
-		briefDiz="Отправиться к Оракулу"
-		fullDiz="Чужеземец говорит, что знает, как можно решить нашу проблему, но для этого нужно отправиться к некоему Оракулу."
+		questName="GoToOracle_ContinueToOracle_quest"
+		briefDiz="Продолжить следовать к Оракулу"
 		isMainQuest="1">
 		<Map
 			name="r1m1"
 			targetObjName="RotateBack_loc" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="GoToOracle_FollowForeigner_quest"
+		briefDiz="Следовать за Чужеземцем к Оракулу"
+		isMainQuest="1">
+		<Map
+			name="r4m0"
+			targetObjName="ExitToR1M1" />
+
+		<Map
+			name="r4m1"
+			targetObjName="ExitFromMapToR4M0_loc" />
+	</QuestInfo>
+
+	<QuestInfo
+		questName="GoToOracle_WhereForeignerGo_quest"
+		briefDiz="Посмотреть куда отлучился Чужеземец"
+		isMainQuest="1">
+		<Map
+			name="r1m1"
+			targetObjName="Aivencemetery_loc" />
 
 		<Map
 			name="r4m0"
@@ -465,6 +486,12 @@
 			name="r4m1"
 			targetObjName="ExitFromMapToR4M0_loc" />
 	</QuestInfo>
+
+	<QuestInfo
+		questName="GoToOracle_quest"
+		briefDiz="Отправиться к Оракулу"
+		fullDiz="Чужеземец говорит, что знает, как можно решить нашу проблему, но для этого нужно отправиться к некоему Оракулу."
+		isMainQuest="1" />
 
 	<QuestInfo
 		questName="GoToVasiliy_quest"
