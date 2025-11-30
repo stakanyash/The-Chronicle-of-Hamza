@@ -1,188 +1,188 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DialogsResource><!--Root-->
 	<Reply
-        name="Dynamic01"
-        text="As-Salamu alaykum, brother!"
-        role="NPC"
-        scriptResult="ConversationWnd:ShowDynamicQuestsMenu()"
-        nextReplies="EndDlg22 Dlg_pl_000021" />
+		name="Dynamic01"
+		text="As-Salamu alaykum, brother!"
+		role="NPC"
+		scriptResult="ConversationWnd:ShowDynamicQuestsMenu()"
+		nextReplies="EndDlg22 Dlg_pl_000021" />
 
-    <Reply
-        name="Dlg_pl_000021"
-        text="Looks like I got the wrong door."
-        role="PLAYER"
-        scriptCondition="GetCurNpc():HasNotTakenDynamicQuests()"
-        scriptResult="ConversationWnd:EndConversation()" />
+	<Reply
+		name="Dlg_pl_000021"
+		text="Oops, I mistook the door."
+		role="PLAYER"
+		scriptCondition="GetCurNpc():HasNotTakenDynamicQuests()"
+		scriptResult="ConversationWnd:EndConversation()" />
 
-    <Reply
-        name="Dynamic01_plYes0"
-        text="Of course, I accept."
-        role="PLAYER"
-        scriptResult="ConversationWnd:GetCurrentDynamicQuest():Take(); ConversationWnd:EndConversation()" />
+	<Reply
+		name="Dynamic01_plYes0"
+		text="So be it. I will take this task."
+		role="PLAYER"
+		scriptResult="ConversationWnd:GetCurrentDynamicQuest():Take(); ConversationWnd:EndConversation()" />
 
-    <Reply
-        name="Dynamic01_plNo0"
-        text="I'd prefer to decline."
-        role="PLAYER"
-        scriptResult="ConversationWnd:EndConversation()" />
+	<Reply
+		name="Dynamic01_plNo0"
+		text="Forgive me, but I cannot accept this."
+		role="PLAYER"
+		scriptResult="ConversationWnd:EndConversation()" />
 
-    <Reply
-        name="Dynamic01_Destroy00"
-        text="Alaykumu as-salam! Is there work for me?"
-        role="PLAYER"
-        nextReplies="Dynamic01_Destroy00_npc0" />
+	<Reply
+		name="Dynamic01_Destroy00"
+		text="Alaykumu as-salam! Is there work for me?"
+		role="PLAYER"
+		nextReplies="Dynamic01_Destroy00_npc0" />
 
-    <Reply
-        name="Dynamic01_Destroy00_npc0"
-        text="A repeat-offending thief is at large in the area. The bounty on his head is %3d."
-        role="NPC"
-        nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
+	<Reply
+		name="Dynamic01_Destroy00_npc0"
+		text="A sly thief has resurfaced in these lands again - may the desert sands curse his steps. There is a reward of %3d for his head."
+		role="NPC"
+		nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
 
-    <Reply
-        name="Dynamic01_Destroy01"
-        text="Alaykumu as-salam! Is there work for me?"
-        role="PLAYER"
-        nextReplies="Dynamic01_Destroy01_npc0" />
+	<Reply
+		name="Dynamic01_Destroy01"
+		text="Alaykumu as-salam! Is there work for me?"
+		role="PLAYER"
+		nextReplies="Dynamic01_Destroy01_npc0" />
 
-    <Reply
-        name="Dynamic01_Destroy01_npc0"
-        text="Someone is burning crops and poisoning wells. Most likely an enemy spy. Kill him and you'll receive %3d."
-        role="NPC"
-        nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
+	<Reply
+		name="Dynamic01_Destroy01_npc0"
+		text="By the scorching winds, someone has been setting fire to the fields and poisoning the wells! Surely the work of a spy from a hostile tribe. Find this wretch and put an end to his deeds - you will earn %3d."
+		role="NPC"
+		nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
 
-    <Reply
-        name="Dynamic01_Destroy02"
-        text="Alaykumu as-salam! Is there work for me?"
-        role="PLAYER"
-        nextReplies="Dynamic01_Destroy02_npc0" />
+	<Reply
+		name="Dynamic01_Destroy02"
+		text="Alaykumu as-salam! Is there work for me?"
+		role="PLAYER"
+		nextReplies="Dynamic01_Destroy02_npc0" />
 
-    <Reply
-        name="Dynamic01_Destroy02_npc0"
-        text="A madman is riding through the countryside, setting ambushes and scaring villagers. He's not very dangerous, but people are complaining. Deal with him, and %3d is yours."
-        role="NPC"
-        nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
+	<Reply
+		name="Dynamic01_Destroy02_npc0"
+		text="A mad wanderer roams the roads, setting ambushes and frightening peaceful villagers. He isn’t truly dangerous, but the people suffer. Deal with him and %3d shall be your reward."
+		role="NPC"
+		nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
 
-    <Reply
-        name="Dynamic01_Reach00"
-        text="Alaykumu as-salam! Is there work for me?"
-        role="PLAYER"
-        nextReplies="Dynamic01_Reach00_npc0" />
+	<Reply
+		name="Dynamic01_Reach00"
+		text="Alaykumu as-salam! Is there work for me?"
+		role="PLAYER"
+		nextReplies="Dynamic01_Reach00_npc0" />
 
-    <Reply
-        name="Dynamic01_Reach00_npc0"
-        text="You need to deliver some research data and samples to settlement %2n. You will be paid upon arrival. %3d is a fine reward for such a minor task."
-        role="NPC"
-        nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
+	<Reply
+		name="Dynamic01_Reach00_npc0"
+		text="There is a task - simple, yet important. You must deliver research notes and samples to the settlement of %2n. They will pay you upon arrival. For this service, you are owed %3d."
+		role="NPC"
+		nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
 
-    <Reply
-        name="Dynamic01_Reach01"
-        text="Alaykumu as-salam! Is there work for me?"
-        role="PLAYER"
-        nextReplies="Dynamic01_Reach01_npc0" />
+	<Reply
+		name="Dynamic01_Reach01"
+		text="Alaykumu as-salam! Is there work for me?"
+		role="PLAYER"
+		nextReplies="Dynamic01_Reach01_npc0" />
 
-    <Reply
-        name="Dynamic01_Reach01_npc0"
-        text="We've prepared a small parcel to village %2n. Deliver it when you pass by. It's not urgent. Once done, they’ll pay you %3d."
-        role="NPC"
-        nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
+	<Reply
+		name="Dynamic01_Reach01_npc0"
+		text="We have prepared a small parcel for the settlement of %2n. Deliver it when your path leads you through those lands. It is no urgent matter. Once it’s done, you will be given %3d."
+		role="NPC"
+		nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
 
-    <Reply
-        name="Dynamic01_Convoy00"
-        text="Alaykumu as-salam! Is there work for me?"
-        role="PLAYER"
-        nextReplies="Dynamic01_Convoy00_npc0" />
+	<Reply
+		name="Dynamic01_Convoy00"
+		text="Alaykumu as-salam! Is there work for me?"
+		role="PLAYER"
+		nextReplies="Dynamic01_Convoy00_npc0" />
 
-    <Reply
-        name="Dynamic01_Convoy00_npc0"
-        text="The roads have become unsafe, and a friend of mine needs to get to %2n. Protect him along the way – and you'll receive %3d upon arrival."
-        role="NPC"
-        nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
+	<Reply
+		name="Dynamic01_Convoy00_npc0"
+		text="The roads have grown dangerous, and an acquaintance of mine must reach %2n without delay. Protect him on the way - and you will receive %3d upon arrival."
+		role="NPC"
+		nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
 
-    <Reply
-        name="Dynamic01_Convoy01"
-        text="Alaykumu as-salam! Is there work for me?"
-        role="PLAYER"
-        nextReplies="Dynamic01_Convoy01_npc0" />
+	<Reply
+		name="Dynamic01_Convoy01"
+		text="Alaykumu as-salam! Is there work for me?"
+		role="PLAYER"
+		nextReplies="Dynamic01_Convoy01_npc0" />
 
-    <Reply
-        name="Dynamic01_Convoy01_npc0"
-        text="Some traders are establishing commerce with a neighboring town and transporting sample goods. Escort them to village %2n and make sure no one follows. Oh, and the reward is %3d."
-        role="NPC"
-        nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
+	<Reply
+		name="Dynamic01_Convoy01_npc0"
+		text="Some traders are working to establish commerce with a neighboring city and are carrying samples of their goods. Escort them to the settlement of %2n and ensure no shadows follow. Ah yes - the reward is %3d."
+		role="NPC"
+		nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
 
-    <Reply
-        name="EndDlg11"
-        text="Alaykumu as-salam! Is there work for me?"
-        role="PLAYER"
-        scriptResult="ConversationWnd:EndConversation()"
-        nextReplies="Dlg_npc_0000171" />
+	<Reply
+		name="EndDlg11"
+		text="Alaykumu as-salam! Is there work for me?"
+		role="PLAYER"
+		scriptResult="ConversationWnd:EndConversation()"
+		nextReplies="Dlg_npc_0000171" />
 
-    <Reply
-        name="EndDlg22"
-        text="Alaykumu as-salam! What's new?"
-        role="PLAYER"
-        scriptCondition="not GetCurNpc():HasNotTakenDynamicQuests()"
-        nextReplies="Dlg_npc_0000171" />
+	<Reply
+		name="EndDlg22"
+		text="Alaykumu as-salam! What's new?"
+		role="PLAYER"
+		scriptCondition="not GetCurNpc():HasNotTakenDynamicQuests()"
+		nextReplies="Dlg_npc_0000171" />
 
-    <Reply
-        name="Dlg_npc_0000171"
-        text="Believe it or not, everything's fine! There's even nothing to offer!"
-        role="NPC"
-        nextReplies="Dlg_pl_0000181" />
+	<Reply
+		name="Dlg_npc_0000171"
+		text="Praise be to Allah, all is fine! Nothing interesting here, brother!"
+		role="NPC"
+		nextReplies="Dlg_pl_0000181" />
 
-    <Reply
-        name="Dlg_pl_0000181"
-        text="Too bad. Well, I'll drop by another time."
-        role="PLAYER"
-        scriptResult="ConversationWnd:EndConversation()" />
+	<Reply
+		name="Dlg_pl_0000181"
+		text="Well then, I’ll drop by again sometime."
+		role="PLAYER"
+		scriptResult="ConversationWnd:EndConversation()" />
 
-    <Reply
-        name="Dynamic01_Peace00"
-        text="I’ve run into a problem: I had a quarrel with faction %2b..."
-        role="PLAYER"
-        nextReplies="Dynamic01_Peace00_npc0" />
+	<Reply
+		name="Dynamic01_Peace00"
+		text="I’ve run into a problem: I had a quarrel with faction %2b..."
+		role="PLAYER"
+		nextReplies="Dynamic01_Peace00_npc0" />
 
-    <Reply
-        name="Dynamic01_Peace00_npc0"
-        text="Seems like you really made %2b declare you their blood enemy... I have some connections, so for %3d percent of your current funds, I can speak up for you at the city council."
-        role="NPC"
-        nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
+	<Reply
+		name="Dynamic01_Peace00_npc0"
+		text="Seems like you really made %2b declare you their blood enemy... I have some connections, so for %3d percent of your current funds, I can speak up for you at the city council."
+		role="NPC"
+		nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
 
-    <Reply
-        name="Dynamic01_Peace01"
-        text="This time I need help. %2b and I couldn't reach an agreement on one matter, and now..."
-        role="PLAYER"
-        nextReplies="Dynamic01_Peace01_npc0" />
+	<Reply
+		name="Dynamic01_Peace01"
+		text="This time I need help. %2b and I couldn't reach an agreement on one matter, and now..."
+		role="PLAYER"
+		nextReplies="Dynamic01_Peace01_npc0" />
 
-    <Reply
-        name="Dynamic01_Peace01_npc0"
-        text="I know that %2b refuses to deal with you. For a modest fee of %3d percent of your current funds, I can help you gain some respect among them."
-        role="NPC"
-        nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
+	<Reply
+		name="Dynamic01_Peace01_npc0"
+		text="I know that %2b refuses to deal with you. For a modest fee of %3d percent of your current funds, I can help you gain some respect among them."
+		role="NPC"
+		nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
 
-    <Reply
-        name="Dynamic01_Hunt00"
-        text="Alaykumu as-salam! Is there work for me?"
-        role="PLAYER"
-        nextReplies="Dynamic01_Hunt00_npc0" />
+	<Reply
+		name="Dynamic01_Hunt00"
+		text="Alaykumu as-salam! Is there work for me?"
+		role="PLAYER"
+		nextReplies="Dynamic01_Hunt00_npc0" />
 
-    <Reply
-        name="Dynamic01_Hunt00_npc0"
-        text="Hunting season on bandits has been declared. Destroying each hostile vehicle will earn you %3d. Payment is made after the hunt ends."
-        role="NPC"
-        nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
+	<Reply
+		name="Dynamic01_Hunt00_npc0"
+		text="A hunting season has been declared on the desert bandits. Each hostile machine you destroy will earn you %3d. Payment will be provided at the end of the hunt."
+		role="NPC"
+		nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
 
-    <Reply
-        name="Dynamic01_Hunt01"
-        text="Alaykumu as-salam! Is there work for me?"
-        role="PLAYER"
-        nextReplies="Dynamic01_Hunt01_npc0" />
+	<Reply
+		name="Dynamic01_Hunt01"
+		text="Alaykumu as-salam! Is there work for me?"
+		role="PLAYER"
+		nextReplies="Dynamic01_Hunt01_npc0" />
 
-    <Reply
-        name="Dynamic01_Hunt01_npc0"
-        text="Bandits have lost all shame! They raid our territories like they're going to their own warehouse. We must teach them a good lesson. Shoot down a few, let them fear us. Finish within the deadline – and you'll get %3d for each of them."
-        role="NPC"
-        nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
+	<Reply
+		name="Dynamic01_Hunt01_npc0"
+		text="The bandits have lost all shame! They raid our lands as if walking into their own tents. Teach them a lesson. Bring down several of them within the allotted time - and you will receive %3d for each."
+		role="NPC"
+		nextReplies="Dynamic01_plYes0 Dynamic01_plNo0" />
 
 	<Reply
 		name="Dynamic00"
