@@ -15,6 +15,19 @@ function StartMoney()
 	end
 end
 
+function SetMainMenuTime()
+	local now = os.date("*t")
+	local hour = now.hour
+
+	if hour then
+		SetGameTime(hour, 0)
+	else
+		LOG("TCoH: mainmenu.ssl: Can't get current hour. Reported hour: "..hour..".")
+	end
+
+	LOG("TCoH: mainmenu.ssl: Current hour: "..hour..", game time set accordingly.")
+end
+
 function CreateFirstAttackersCS()
 	CreateVehicleEx("UralStartBez","FrstAttacker0",CVector(2572.051, 267.215, 3917.664), 1062)
 	CreateVehicleEx("UralStartBez","FrstAttacker1",CVector(2572.051, 267.215, 3917.664), 1062)
