@@ -28,6 +28,36 @@
 - Новая карта "Пустыня Смерти", соединяющая Край и Вахат
 - Три главных героя, которые постоянно участвуют в событиях сюжета
 
+---
+### Скриншоты:
+<div align="center">
+  
+> ![scr0](https://github.com/user-attachments/assets/681d16b3-85bd-4226-bc9a-cd87ad3b9137)
+Главное меню The Chronicle of Hamza
+
+>![scr1](https://github.com/user-attachments/assets/994ad2d4-bb9c-4223-b972-511e9084cf5b)
+Начальная катсцена
+
+>![scr2](https://github.com/user-attachments/assets/16143ec5-b6ae-426b-8b82-023fed76121a)
+Сюжетная гонка
+
+>![scr4](https://github.com/user-attachments/assets/923d24d2-8836-47fd-99c8-b31fe081057e)
+Карта Пустыня Смерти
+
+>![scr5](https://github.com/user-attachments/assets/24f1a438-d954-4a35-9291-394ff20dfa82)
+Карта Пустыня Смерти
+
+>![scr6](https://github.com/user-attachments/assets/428e13b6-4fcf-4c20-8a19-b8259ab64b76)
+Катсцена одного из сюжетных квестов
+
+>![scr7](https://github.com/user-attachments/assets/e7b45523-6dcc-4bd3-95d7-c6e4bf3f9c66)
+Эффект плохого самочувствия (по одной из двух веток)
+
+>![scr8](https://github.com/user-attachments/assets/1973d8da-5ef4-4d5f-aea9-9192b9d6e3d4)
+Катсцена одной из концовок
+
+</div>
+
 --- 
 ### Спасибо:
 
