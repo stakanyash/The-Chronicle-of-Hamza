@@ -3,107 +3,107 @@
 	<Sample
 		id="1"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Шабаб, мы не одни!" />
+		text="Враг на горизонте, держитесь!" />
 
 	<Sample
 		id="2"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Заряжай! Пускай дрожат!" />
+		text="Приготовьтесь к огню, шабаб!" />
 
 	<Sample
 		id="3"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Сдохните, шакалы!" />
+		text="Сгиньте, малаун!" />
 
 	<Sample
 		id="4"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="За мной, к победе!" />
+		text="Вперед, к победе и чести!" />
 
 	<Sample
 		id="5"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Лови!" />
+		text="Попробуй отбиться!" />
 
 	<Sample
 		id="6"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="На, получай!" />
+		text="На, получай, куфр!" />
 
 	<Sample
 		id="7"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="За мои сандалии!" />
+		text="Пусть это будет первым уроком!" />
 
 	<Sample
 		id="8"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Пёс!" />
+		text="За честь моего дома!" />
 
 	<Sample
 		id="9"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Чуть в голову не попало!" />
+		text="Едва не попал, сабр!" />
 
 	<Sample
 		id="10"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Шу, черт побери?!" />
+		text="Проклятье, промах!" />
 
 	<Sample
 		id="11"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Пф, просто царапина." />
+		text="Всего лишь царапина, справимся!" />
 
 	<Sample
 		id="12"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Не в первый раз такое, справимся!" />
+		text="Мы справимся, это лишь начало!" />
 
 	<Sample
 		id="13"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Сдохни, джахш!" />
+		text="Сгинь, мерзавец, васак!" />
 
 	<Sample
 		id="14"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Тут выживет только сильнейший!" />
+		text="Только сильнейший останется!" />
 
 	<Sample
 		id="15"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Этот уже не встанет!" />
+		text="Этот больше не встанет!" />
 
 	<Sample
 		id="16"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Кто следующий?!" />
+		text="Кто осмелится теперь?" />
 
 	<Sample
 		id="17"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="А ну разбежались, шакалы!" />
+		text="Так будет с каждым, кто встанет на нашем пути, куфр!" />
 
 	<Sample
 		id="18"
-		ssound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Прощайте, друзья. Я ухожу..." />
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Прощайте, друзья, мой путь здесь завершается." />
 
 	<Sample
 		id="19"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Вот и всё, конец дороги..." />
+		text="Вот и конец дороги, иншаллах." />
 
 	<Sample
 		id="20"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Ах! Промахнулся!" />
+		text="Ах, промахнулся!" />
 
 	<Sample
 		id="21"
 		sound="data\sounds\radio\r_player_empty_0.ogg"
-		text="Нееет!" />
+		text="Нееет! Малаун, помоги!" />
 
 	<Sample
 		id="22"
