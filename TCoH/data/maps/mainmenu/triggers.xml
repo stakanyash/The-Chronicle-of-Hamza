@@ -3,14 +3,31 @@
 	<trigger	Name="maimmenutr"	active="1">
 		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
-			SaveAllToleranceStatus(RS_NEUTRAL)			
+			SaveAllToleranceStatus(RS_NEUTRAL)	
+
+			local now = os.date("*t")
+			local hour = now.hour
+
+			if (hour - 5) * (12 - hour - 1) >= 0 then
+				SetGameTime(9, 0)
+			elseif (hour - 12) * (18 - hour - 1) >= 0 then
+				SetGameTime(12, 0)
+			elseif (hour - 18) * (22 - hour - 1) >= 0 then
+				SetGameTime(20, 0)
+			elseif (hour - 22) * (24 - hour - 1) >= 0 or (hour - 0) * (5 - hour - 1) >= 0 then
+				SetGameTime(0, 0)
+			else
+				LOG("TCoH: mainmenu.ssl: Can't get current hour. Reported hour: "..hour..".")
+			end
+
+			LOG("TCoH: mainmenu.ssl: Current hour: "..hour..", game time set accordingly.")
 
 			local Plf = GetPlayerVehicle()
 			
 			if Plf then			
 				Plf:LimitMaxSpeed(35)				
 				Plf:SetExternalPathByName("mm_path1")
-				Plf:SetSkin(7)
+				Plf:SetRandomSkin()
 			end
 
 			local PlfID = GetPlayerVehicleId()

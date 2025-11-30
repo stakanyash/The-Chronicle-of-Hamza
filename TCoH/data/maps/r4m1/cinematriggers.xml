@@ -642,7 +642,7 @@
 	</trigger>
 
 
-	<!-- ˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜ -->
+	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ -->
 	<trigger	Name="cinPriezdFirst"	active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
 		<script>
@@ -725,7 +725,7 @@
 		</script>
 	</trigger>
 
-	<!-- ˜˜˜˜˜˜˜ ˜˜˜˜, ˜˜˜˜˜ ˜˜˜ ˜˜˜˜˜˜ ˜˜˜˜˜˜˜˜˜˜˜˜˜ -->
+	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -->
 	<trigger Name="trENEMYLISA_DEAD" active="0">
 		<event eventid="GE_VEHICLE_WITHOUT_HEALTH" ObjName="ENEMYLISA_vehicle_0" />
 		<event	timeout="60"		eventid="GE_TIME_PERIOD" />
@@ -846,7 +846,7 @@
 		</script>
 	</trigger>
 
-	<!-- ˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜˜˜˜ ˜ ˜˜˜˜˜ -->
+	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ -->
 
 	<trigger Name="cinMovePlToR2M2_begin" active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
@@ -994,6 +994,7 @@
 			    PCar:SetExternalPathByName("XamzaStartGame_1")
 				PCar:SetThrottle( 1 )    
 				PCar:SetCustomControlEnabled( false )
+				PCar:SetRandomSkin()
 			end
 
 			local PSkin = GetPlayerVehicle():GetSkin()
@@ -1153,7 +1154,13 @@
 
 		RestoreAllToleranceStatus()
 
-		SetCameraBehindPlayerVehicle()
+		local Bez = GetEntityByName("StartDebyli_vehicle_2")
+		if Bez then	
+			local BezID = GetEntityByName("StartDebyli_vehicle_2"):GetId()
+			SetCameraDirectionToObj(BezID)
+		else
+			SetCameraBehindPlayerVehicle()
+		end
 
 		trigger:Deactivate()
 		</script>
@@ -1172,7 +1179,7 @@
 
 			local mfEndCar = GetEntityByName("MansurTachka_vehicle_0")
 			    if mfEndCar then
-				mfEndCar:Remove()
+					mfEndCar:Remove()
 			end
 
 			CreateVehicleEx("UralMansur","MansurCar",CVector(2529.488, 266.557, 3914.102), 1090)
@@ -1200,14 +1207,17 @@
 			local MCar = GetEntityByName("MansurCar")
 			local MCarID = MCar:GetId()
 
-            FlyLinked( "afterbattleHamza_cam1", nil, 110, 1, 0, PlfID ) 
-			FlyLinked( "afterbattleHamza_cam3", nil, 37, 0, 0, PlfID )
-			FlyLinked( "afterbattleHamza_cam4", nil, 6, 0, 1, MCarID )  
+			Fly("afterbattleHamza_cam1", CINEMATIC_AIM_TO_ID, PlfID, 46, 1, 0 )
+			FlyLinked("afterbattleHamza_cam2", MCarID, 39, 0, 0, PlfID)
+			Fly("afterbattleHamza_cam2_1", CINEMATIC_AIM_TO_ID, PlfID, 30, 0, 0 )
+			Fly("afterbattleHamza_cam3", CINEMATIC_AIM_TO_ID, PlfID, 37, 0, 0 )
+			Fly("afterbattleHamza_cam4", CINEMATIC_AIM_TO_ID, MCarID, 6, 0, 1 )
 
 			StartCinematic()
 
 			TActivate("AfterBezumBoiRolik_quietdialogue")
-			TActivate("AfterBezumBoiRolik_cam03")
+			TActivate("AfterBezumBoiRolik_changepositions")
+			TActivate("AfterBezumBoiRolik_cam02")
 
             TActivate("AfterBezumBoiRolik_Fade")
 			TActivate("AfterBezumBoiRolik_End")
@@ -1244,15 +1254,6 @@
 			AddCinematicMessage(48, 0.5)
 			AddCinematicMessage(49, 0.5)
 			AddCinematicMessage(50, 0.5)
-			AddCinematicMessage(51, 0.5)
-			AddCinematicMessage(52, 0.5)
-			AddCinematicMessage(53, 0.5)
-			AddCinematicMessage(54, 0.5)
-			AddCinematicMessage(55, 0.5)
-			AddCinematicMessage(56, 0.5)
-			AddCinematicMessage(57, 0.5)
-			AddCinematicMessage(58, 0.5)
-			AddCinematicMessage(59, 0.5)
 
 			TActivate("AfterBezumBoiRolik_quietdialogue")
 			TActivate("AfterBezumBoiRolik_cam03")
@@ -1265,6 +1266,56 @@
 		<event msgid="55" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
 		<script>
 			PlayCustomMusic("QuietDialogue02")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="AfterBezumBoiRolik_changepositions" active="0">
+		<event msgid="58" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+			local mancar2 = GetEntityByName("MansurCar")
+			if mancar2 then
+				mancar2:SetExternalPathByName("MansurStartGame_2_1")
+			end
+
+			local PCar = GetPlayerVehicle()
+			if PCar then
+				PCar:SetExternalPathByName("HamzaStartGame_2_1")
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="AfterBezumBoiRolik_cam02" active="0">
+		<event flypath="afterbattleHamza_cam2" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			RuleConsole("cinematic_spring_coeff 1.5")
+
+			AddCinematicMessage(51, 0.5)
+			AddCinematicMessage(52, 0.5)
+			AddCinematicMessage(53, 0.5)
+			AddCinematicMessage(54, 0.5)
+
+			TActivate("AfterBezumBoiRolik_cam02_1")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+	
+	<trigger Name="AfterBezumBoiRolik_cam02_1" active="0">
+		<event flypath="afterbattleHamza_cam2_1" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			RuleConsole("cinematic_spring_coeff 0.3")
+
+			AddCinematicMessage(55, 0.5)
+			AddCinematicMessage(56, 0.5)
+			AddCinematicMessage(57, 0.5)
+			AddCinematicMessage(58, 0.5)
+			AddCinematicMessage(59, 0.5)
+
+			TActivate("AfterBezumBoiRolik_cam03")
 
 			trigger:Deactivate()
 		</script>
@@ -1315,7 +1366,8 @@
 		local PCar = GetPlayerVehicle()
 			if PCar then
 				PCar:UnlimitMaxSpeed()
-				PCar:PlaceToEndOfPath("HamzarStartGame_2")
+				PCar:SetExternalPathByName("HamzaStartGame_2_1")
+				PCar:PlaceToEndOfPath("HamzaStartGame_2_1")
 			end
 
 		TakeQuest("BackToHome_quest")

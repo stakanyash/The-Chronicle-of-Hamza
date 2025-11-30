@@ -180,8 +180,15 @@
 	<Path Name = "afterbattleHamza_cam1">
 		<Point  coord="2594.641 279.527 4014.721" rotation="-0.037 0.933 -0.100 0.344"/>
 		<Point  coord="2483.193 280.512 4339.878" rotation="0.002 0.996 -0.028 -0.085"/>
-		<Point  coord="2431.325 279.862 4535.343" rotation="-0.038 -0.674 0.035 0.737"/>
-		<Point  coord="2479.786 283.951 4735.699" rotation="0.001 0.991 -0.133 -0.010"/>
+		<Point  coord="2456.294 291.922 4572.605" rotation="0.008 0.992 -0.097 -0.077"/>
+	</Path>
+
+	<Path Name="afterbattleHamza_cam2">
+    	<Point coord="-10 5 -15" />
+		<Point coord="25 5 20" />
+	</Path>
+	
+	<Path Name = "afterbattleHamza_cam2_1">
 		<Point  coord="2299.032 286.220 4835.651" rotation="-0.018 -0.774 0.023 0.632"/>
 		<Point  coord="2329.083 279.861 4970.332" rotation="-0.032 0.863 -0.054 0.501"/>
 	</Path>
