@@ -29,7 +29,37 @@ The mod lacks voice acting, except for the narrator.
 - Alternate storyline for fourth region from the perspective of a Vahat resident  
 - Two main endings and five dead ends  
 - A new map, "Desert of Death" connecting Krai and Vahat
-- Three main characters who actively participate in the story  
+- Three main characters who actively participate in the story
+
+---
+### Screenshots:
+<div align="center">
+  
+> ![scr0_en](https://github.com/user-attachments/assets/d2ca387d-96a6-48a8-b428-4fb2fb2ef08b)
+The Chronicle of Hamza main menu
+
+> ![scr1_en](https://github.com/user-attachments/assets/77e7da24-2e05-4123-b2ff-e7ce4d7f0dd1)
+Opening cutscene
+
+>![scr2](https://github.com/user-attachments/assets/16143ec5-b6ae-426b-8b82-023fed76121a)
+Ural race
+
+>![scr4](https://github.com/user-attachments/assets/923d24d2-8836-47fd-99c8-b31fe081057e)
+Desert of Death map
+
+>![scr5](https://github.com/user-attachments/assets/24f1a438-d954-4a35-9291-394ff20dfa82)
+Desert of Death map
+
+> ![scr6_en](https://github.com/user-attachments/assets/fba97f99-0a7a-4a5f-8e22-2e376cb0bee3)
+Cutscene of one of the story quests
+
+> ![scr7_en](https://github.com/user-attachments/assets/1b876906-6a5f-4c63-b760-b543cf348920)
+The effect of poor health
+
+> ![scr8_en](https://github.com/user-attachments/assets/00aa573c-e305-4a59-a5f2-f081d1326a04)
+Cutscene of one of the endings
+
+</div>
 
 ---  
 
