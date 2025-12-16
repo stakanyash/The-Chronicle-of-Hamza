@@ -213,6 +213,10 @@
 		value="You've strayed too far from the desert. Your condition is nearing critical." />
 
 	<string
+		id="fm_sick_4thstage"
+		value="You've strayed too far from the desert. Your condition is critical." />
+
+	<string
 		id="fm_hurryup"
 		value="You'd better hurry. @ffFF1500Or die..." />
 

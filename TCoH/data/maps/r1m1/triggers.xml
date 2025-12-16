@@ -6,7 +6,10 @@
 			SetVar("GL_BadFeel1", 1)
 			SetVar("GL_BadFeel2", 1)
 			SetVar("GL_BadFeel3", 1)
+			SetVar("GL_BadFeel4", 1)
 			SetVar("GL_Update", 1)
+
+			SetVar("GL_BadFeelStage", 0)
 
 		    trigger:Deactivate()
 		</script>
@@ -14,74 +17,119 @@
 
 	-- TCoH: Bad Feel --
 
-	<trigger Name="BadFeel" active="0">
-		<event timeout="1" eventid="GE_TIME_PERIOD" />
+	<trigger Name="BadFeel_activate_tr" active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_activate_loc" />
 		<script>
-			local run = GetEntityByName("LisaRolik_loc")
-			local pl = GetPlayerVehicle()
-			local len
+			TActivate( "BadFeel_1stStage_EnterLoc" )
+			TActivate( "BadFeel_2ndStage_EnterLoc" )
+			TActivate( "BadFeel_3rdStage_EnterLoc" )
+			TActivate( "BadFeel_4thStage_EnterLoc" )
 
-			if run then
-				len = Dist(pl, run)
-				if (600 >= len) then
-					pl:AddModifier("hp","- 10.2")
-					RuleConsole("g_postEffect wHamza_feelbad02")
-					TActivate("tr_sick_3rdstage_msg")
-				elseif (1100 >= len) then
-					pl:AddModifier("hp","- 5.8")
-					RuleConsole("g_postEffect wHamza_feelbad01")
-					TActivate("tr_sick_2ndstage_msg")
-				elseif (1500 >= len) then
-					pl:AddModifier("hp","- 1.0")
-					RuleConsole("g_postEffect wHamza_feelbad00")
-					TActivate("tr_sick_1ststage_msg")
-				else
-					RuleConsole("g_postEffect cinematicEnd")
-					if QuestStatus("HurryBackToHome_quest")==Q_TAKEN and GetVar("GL_Update").AsInt == 1 then
-						UpdateWeather()
-						SetVar("GL_Update", 0)
-					end
+			TActivate("BadFeel_RemoveHP")
+
+			AddFadingMsgId( "fm_sick" )
+			AddImportantFadingMsgByStrIdFormatted("fm_sick")
+
+			AllowSave(false)
+
+			trigger:Deactivate() 
+		</script>
+	</trigger>
+
+	<trigger Name="BadFeel_Remove_PS" active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_leave" />
+		<script>
+			RuleConsole("g_postEffect cinematicEnd")
+			SetVar("GL_BadFeelStage", 0)
+
+			if QuestStatus("HurryBackToHome_quest")==Q_TAKEN then
+				if GetVar("GL_Update").AsInt == 1 then
+					UpdateWeather()
+					SetVar("GL_Update", 0)
 				end
 			end
 		</script>
 	</trigger>
 
-	<trigger Name="tr_sick_3rdstage_msg" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
+	<trigger Name="BadFeel_1stStage_EnterLoc" active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_1" />
 		<script>
-			if GetVar("GL_BadFeel3").AsInt == 1 then
-				AddFadingMsgId( "fm_sick_3rdstage" )
-				AddImportantFadingMsgByStrIdFormatted("fm_sick_3rdstage")
-				SetVar("GL_BadFeel3", 0)
-			end
+			RuleConsole("g_postEffect wHamza_feelbad00")
 
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="tr_sick_2ndstage_msg" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-			if GetVar("GL_BadFeel2").AsInt == 1 then
-				AddFadingMsgId( "fm_sick_2ndstage" )
-				AddImportantFadingMsgByStrIdFormatted("fm_sick_2ndstage")
-				SetVar("GL_BadFeel2", 0)
-			end
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="tr_sick_1ststage_msg" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
 			if GetVar("GL_BadFeel1").AsInt == 1 then
 				AddFadingMsgId( "fm_sick_1ststage" )
 				AddImportantFadingMsgByStrIdFormatted("fm_sick_1ststage")
 				SetVar("GL_BadFeel1", 0)
 			end
 
-			trigger:Deactivate()
+			SetVar("GL_BadFeelStage", 1)
+
+			TActivate("BadFeel_Remove_PS")
+		</script>
+	</trigger>
+
+	<trigger Name="BadFeel_2ndStage_EnterLoc" active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_2" />
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_2_1" />
+		<script>
+			RuleConsole("g_postEffect wHamza_feelbad01")
+
+			if GetVar("GL_BadFeel2").AsInt == 1 then
+				AddFadingMsgId( "fm_sick_2ndstage" )
+				AddImportantFadingMsgByStrIdFormatted("fm_sick_2ndstage")
+				SetVar("GL_BadFeel2", 0)
+			end
+
+			SetVar("GL_BadFeelStage", 2)
+		</script>
+	</trigger>
+	
+	<trigger Name="BadFeel_3rdStage_EnterLoc" active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_3" />
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_3_1" />
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_3_2" />
+		<script>
+			RuleConsole("g_postEffect wHamza_feelbad02")
+			
+			if GetVar("GL_BadFeel3").AsInt == 1 then
+				AddFadingMsgId( "fm_sick_3rdstage" )
+				AddImportantFadingMsgByStrIdFormatted("fm_sick_3rdstage")
+				SetVar("GL_BadFeel3", 0)
+			end
+
+			SetVar("GL_BadFeelStage", 3)
+		</script>
+	</trigger>
+
+	<trigger Name="BadFeel_4thStage_EnterLoc" active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_4" />
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_4_1" />
+		<script>
+			RuleConsole("g_postEffect wHamza_feelbad03")
+			
+			if GetVar("GL_BadFeel4").AsInt == 1 then
+				AddFadingMsgId( "fm_sick_4thstage" )
+				AddImportantFadingMsgByStrIdFormatted("fm_sick_4thstage")
+				SetVar("GL_BadFeel4", 0)
+			end
+
+			SetVar("GL_BadFeelStage", 4)
+		</script>
+	</trigger>
+
+	<trigger Name="BadFeel_RemoveHP" active="0">
+		<event timeout="1" eventid="GE_TIME_PERIOD" />
+		<script>
+			local PV = GetPlayerVehicle()
+
+			local badFeelHp = { 1.0, 5.8, 10.2, 20.4 }
+
+			local stage = GetVar("GL_BadFeelStage").AsInt
+			local value = badFeelHp[stage]
+
+			if value then
+				PV:AddModifier("hp", "- " .. value)
+			end
 		</script>
 	</trigger>
 
@@ -409,20 +457,6 @@
 			end
 
 			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="BadFeel_activate_tr" active="0">
-		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_activate_loc" />
-		<script>
-			TActivate( "BadFeel" )
-
-			AddFadingMsgId( "fm_sick" )
-			AddImportantFadingMsgByStrIdFormatted("fm_sick")
-
-			AllowSave(false)
-
-			trigger:Deactivate() 
 		</script>
 	</trigger>
 
