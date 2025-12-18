@@ -2,6 +2,7 @@
 <Paths>
 	<Path Name="mm_campath">
 		<Point coord="-10 5 40" />
+		<Point coord="-40 5 -10" />
 	</Path>
 
 	<Path Name="mm_campath1">
@@ -11,7 +12,6 @@
 	<Path Name="mm_campath2">
     	<Point coord="-10 5 -15" />
 		<Point coord="40 5 10" />
-		<Point coord="-10 5 40" />
 	</Path>
 
 	<Path Name="mm_campath3">
@@ -19,11 +19,28 @@
 		<Point coord="40 5 10" />
 		<Point coord="-10 5 -15" />
 		<Point coord="10 8 -20" />
-		<Point coord="20 20 -40" />
+	</Path>
+
+	<Path Name="mm_campath4">
+    	<Point coord="40 5 10" />
 		<Point coord="-10 5 40" />
+	</Path>
+
+	<Path Name="mm_campath5">
+    	<Point  coord="4552.020 278.805 4863.589"/>
+		<Point  coord="4360.467 248.327 4709.505"/>
+	</Path>
+
+	<Path Name="mm_campath6">
+    	<Point coord="-10 5 -15" />
 		<Point coord="40 5 10" />
-		<Point coord="-10 5 -15" />
-		<Point coord="10 8 -20" />
-		<Point coord="20 20 -40" />
+	</Path>
+
+	<Path Name="mm_campath7">
+    	<Point  coord="3050.455 259.410 4209.034"/>
+		<Point  coord="2819.909 255.190 3990.429"/>
+		<Point  coord="2421.986 305.499 3896.499"/>
+		<Point  coord="2250.734 294.272 3830.925"/>
+		<Point  coord="2139.594 258.759 3709.050"/>
 	</Path>
 </Paths>
