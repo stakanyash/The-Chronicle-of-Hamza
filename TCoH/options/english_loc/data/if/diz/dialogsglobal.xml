@@ -359,8 +359,8 @@
 		name="Dlg_npc_001566"
 		text="Exactly. About two decades ago, he was given a mission — to bring a blocker here from the Sowth, which can only be reached through the Desert of Death. According to what I know, he left to get it… and no one's seen him after this."
 		role="NPC"
-		nextReplies="Dlg_pl_001577"
-		scriptResult="SetVar('AivenJrTalk', 1)" />
+		scriptResult="SetVar('AivenJrTalk', 1)"
+		nextReplies="Dlg_pl_001577" />
 
 	<Reply
 		name="Dlg_pl_001577"
@@ -600,8 +600,7 @@
 		text="See you.|[Alright, time to go find Mansur.]"
 		role="PLAYER"
 		scriptResult="EndConversation(); CompleteQuest('GoToMansur_quest'); TakeQuest('FindMansur_quest'); TActivate('MansurFinded_cs_launch'); TActivate('CreateMansurRepairer'); AddBook('r4_07012010newsarchive'); TActivate('musibameet_addhistory')" />
-
-<!--Root/r4m1/The Chronicle of Hamza/Akil--><!--Root/r4m1/The Chronicle of Hamza/Sharaf--><!--Root/r4m1/The Chronicle of Hamza/Buhara Headman--><!--Root/r4m1/The Chronicle of Hamza/Mario--><!--Root/r4m1/The Chronicle of Hamza/Foreigner--><!--Root/r4m1/The Chronicle of Hamza/Foreigner/First meet--><!--Root/r4m1/The Chronicle of Hamza/Foreigner/After came back from Zarmek--><!--Root/r4m1/The Chronicle of Hamza/Foreigner/Back from father-->
+<!--Root/r4m1/The Chronicle of Hamza/Foreigner/First meet--><!--Root/r4m1/The Chronicle of Hamza/Foreigner/After came back from Zarmek--><!--Root/r4m1/The Chronicle of Hamza/Foreigner/Back from father-->
 	<Reply
 		name="Dlg_npc_002085"
 		text="So? How was the trip?"
@@ -1204,7 +1203,7 @@
 
 	<Reply
 		name="Dlg_npc_001412"
-		text='Exactly. After that incident, we decided it wasn’t safe to stay among the rest. Over time, these so-called madmen started forming groups and attacking each other. It didn’t really touch us, though — strong emotions like that are typical of the young, people like you. As for us, we were already too old for such feelings back then.'
+		text="Exactly. After that incident, we decided it wasn’t safe to stay among the rest. Over time, these so-called madmen started forming groups and attacking each other. It didn’t really touch us, though — strong emotions like that are typical of the young, people like you. As for us, we were already too old for such feelings back then."
 		role="NPC"
 		nextReplies="Dlg_pl_001413" />
 
@@ -4830,10 +4829,10 @@
 		nextReplies="Dlg_npc_001338" />
 
 	<Reply
-        name="Dlg_npc_001338"
-        text="Hmm... Alright, fine. Let's go with that. Hey, since we both got Ural now — I was planning to join a race not far from here later on, they're doing it with Urals. I'm not just tinkering with it for fun, you know! Want to come along?"
-        role="NPC"
-        nextReplies="Dlg_pl_001339" />
+		name="Dlg_npc_001338"
+		text="Hmm... Alright, fine. Let's go with that. Hey, since we both got Ural now — I was planning to join a race not far from here later on, they're doing it with Urals. I'm not just tinkering with it for fun, you know! Want to come along?"
+		role="NPC"
+		nextReplies="Dlg_pl_001339" />
 
 	<Reply
 		name="Dlg_pl_001339"
@@ -5764,15 +5763,15 @@
 
 	<Reply
 		name="Dlg_npc_001502"
-		text="Are you sure? Because all I see is trouble on the horizon. You need to be careful, Hamza."
+		text="Are you sure? Because all I see is trouble on the horizon. You need to be careful, Hamza. I won’t let you end up like your mother, Maysa al-Kadri. She wanted to solve this problem too - and what was the result? I don’t think I need to remind you."
 		role="NPC"
 		nextReplies="Dlg_pl_001503" />
 
 	<Reply
 		name="Dlg_pl_001503"
-		text="Thank you for understanding, father."
+		text="I remember perfectly what happened to my mother. This is for her. For the Musiba. For all of us. Don’t worry, Father, everything will be fine."
 		role="PLAYER"
-		scriptResult="CompleteQuest('TalkToFatherAfterSharaf_quest'); TakeQuest('KillTheRob_quest'); TActivate('MansurSeeRob_activate'); EndConversation()" />
+		scriptResult="CompleteQuest('TalkToFatherAfterSharaf_quest'); TakeQuest('KillTheRob_quest'); TActivate('MansurSeeRob_activate'); AddBook('r4_27092221news'); TActivate('aboutmother_addhistory'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Father/Before Zarmek trip-->
 	<Reply
 		name="Dlg_npc_001522"

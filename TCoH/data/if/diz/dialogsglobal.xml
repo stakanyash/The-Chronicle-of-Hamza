@@ -5764,15 +5764,15 @@
 
 	<Reply
 		name="Dlg_npc_001502"
-		text="Ты уверен? Потому что я вижу только проблемы на горизонте. Ты должен быть осторожен, Хамза."
+		text="Ты уверен? Потому что я вижу только проблемы на горизонте. Ты должен быть осторожен, Хамза. Я не позволю тебе закончить как твоя мама Майса аль-Кадри. Она тоже хотела решить эту проблему и какой из этого итог? Я не думаю, что тебе стоит напоминать."
 		role="NPC"
 		nextReplies="Dlg_pl_001503" />
 
 	<Reply
 		name="Dlg_pl_001503"
-		text="Спасибо за понимание, отец."
+		text="Я прекрасно помню что случилось с матерью. Это за неё. За Мусибу. За всех нас. Не волнуйся, отец, всё будет в порядке."
 		role="PLAYER"
-		scriptResult="CompleteQuest('TalkToFatherAfterSharaf_quest'); TakeQuest('KillTheRob_quest'); TActivate('MansurSeeRob_activate'); EndConversation()" />
+		scriptResult="CompleteQuest('TalkToFatherAfterSharaf_quest'); TakeQuest('KillTheRob_quest'); TActivate('MansurSeeRob_activate'); AddBook('r4_27092221news'); TActivate('aboutmother_addhistory'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/Перед поездкой в Зармек-->
 	<Reply
 		name="Dlg_npc_001522"

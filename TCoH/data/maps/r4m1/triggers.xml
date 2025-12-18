@@ -42,7 +42,7 @@
 	</trigger>
 <!--
 **************************************************************************************************
-** Сюжет
+** пїЅпїЅпїЅпїЅпїЅ
 **************************************************************************************************
 -->
 	<trigger	Name="trStartMap"	active="0">
@@ -210,7 +210,7 @@
 
 <!--
 **************************************************************************************************
-** Эвакуация в порт
+** пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
 **************************************************************************************************
 -->
 	<trigger	Name="trPlayerEnterToPort"	active="0">
@@ -324,7 +324,7 @@
 
 
 
--- Взрывы бочек --
+-- пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ --
 	<trigger	Name="trBabah"	active="1">
 		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="Babah_loc" />
 		<script>
@@ -462,7 +462,7 @@
 
 <!--
 **************************************************************************************************
-** Гонки
+** пїЅпїЅпїЅпїЅпїЅ
 **************************************************************************************************
 -->
 	<trigger	Name="trA"	active="0">
@@ -711,7 +711,7 @@
 					if name=="PlayerFormula" then
 --					  println(2)
 						local pointnum = GetVar("NextPoint").AsInt
--- Игрок приехал в правильный чекпоинт
+-- пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 						if locnum==pointnum then
 --					  println(3)
 							AddFadingMsgId( "fm_race_chekpoint" )
@@ -3519,4 +3519,14 @@
 			trigger:Deactivate()  
 		</script>
 	</trigger>
+
+	<trigger Name="aboutmother_addhistory" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddHistory("tcoh_aboutmother")
+			AddFadingMsgId("fm_history_got")
+			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
+
+			trigger:Deactivate()  
+		</script>
 </triggers>
