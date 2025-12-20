@@ -3529,4 +3529,5 @@
 
 			trigger:Deactivate()  
 		</script>
+	</trigger>
 </triggers>
