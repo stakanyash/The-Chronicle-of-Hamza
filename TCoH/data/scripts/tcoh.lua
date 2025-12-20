@@ -1,4 +1,21 @@
--- The Chronicle of Hamza scripts --
+-- The Chronicle of Hamza --
+
+-- Debug functions --
+
+if GetComputerName() == "STAKANYASH" then
+    println("TCoH: Developer mode is active")
+    CONFIG_DEVELOPER = true
+else
+    CONFIG_DEVELOPER = false
+end
+
+function DevPrint(msg)
+	if CONFIG_DEVELOPER == true then
+		println(msg)
+	end
+end
+
+-- Game functions --
 
 function StartMoney()
 	if GetVar("AddedStartMoney").AsInt==0 then
@@ -6,6 +23,7 @@ function StartMoney()
 		local max = 2500
 		local randomMoney = math.random(min, max)
 		g_Player:AddMoney( randomMoney )
+		DevPrint("StartMoney: Added "..randomMoney.." coins.")
 
 		SetVar("AddedStartMoney", 1)
 	else
@@ -34,99 +52,41 @@ function CreateFirstAttackersCS()
 	CreateVehicleEx("BezHunter","FrstAttacker2",CVector(2572.051, 267.215, 3917.664), 1062)
 	CreateVehicleEx("UralStartBez","FrstAttacker3",CVector(2572.051, 267.215, 3917.664), 1062)
 
-	local veh0 = getObj("FrstAttacker0")
-	if veh0 then
-		veh0:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
-		veh0:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_0")))
-		veh0:SetRandomSkin()
+	for i=0,3 do
+		local veh = getObj("FrstAttacker"..i)
+		if veh then
+			veh:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
+			veh:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_"..i)))
+			veh:SetRandomSkin()
+		end
+
+		local skin = GetEntityByName("FrstAttacker"..i):GetSkin()
+
+		SetVar("FirstAttackSkin"..i, tonumber(skin))
+		DevPrint("CreateFirstAttackersCS: FirstAttackSkin"..i.." is: "..skin)
 	end
-
-	local veh1 = getObj("FrstAttacker1")
-	if veh1 then
-		veh1:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
-		veh1:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_1")))
-		veh1:SetRandomSkin()
-	end
-
-	local veh2 = getObj("FrstAttacker2")
-	if veh2 then
-		veh2:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
-		veh2:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_2")))
-		veh2:SetRandomSkin()
-	end
-
-	local veh3 = getObj("FrstAttacker3")
-	if veh3 then
-		veh3:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
-		veh3:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_3")))
-		veh3:SetRandomSkin()
-	end
-
-	local skin0 = GetEntityByName("FrstAttacker0"):GetSkin() 
-	local skin1 = GetEntityByName("FrstAttacker1"):GetSkin() 
-	local skin2 = GetEntityByName("FrstAttacker2"):GetSkin() 
-	local skin3 = GetEntityByName("FrstAttacker3"):GetSkin() 
-
-	SetVar("FirstAttackSkin0", tonumber(skin0))
-	SetVar("FirstAttackSkin1", tonumber(skin1))
-	SetVar("FirstAttackSkin2", tonumber(skin2))
-	SetVar("FirstAttackSkin3", tonumber(skin3))
 end
 
 function CreateFirstAttackers()
 	CreateTeam("StartDebyli",1062,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","UralStartBez","BezHunter", "UralStartBez"},CVector(2594.501, 262.854, 3906.361), nil)
 
-	local skin0 = GetVar("FirstAttackSkin0").AsInt
-	local skin1 = GetVar("FirstAttackSkin1").AsInt
-	local skin2 = GetVar("FirstAttackSkin2").AsInt
-	local skin3 = GetVar("FirstAttackSkin3").AsInt
+	for i=0,3 do
+		local skin = GetVar("FirstAttackSkin"..i).AsInt
+		DevPrint("CreateFirstAttackers: FirstAttackSkin"..i.." is: "..skin)
 
-	local veh0cs = getObj("FrstAttacker0")
-	if veh0cs then
-		veh0cs:Remove()
-	end
+		local vehcs = getObj("FrstAttacker"..i)
+		if vehcs then
+			vehcs:Remove()
+			DevPrint("CreateFirstAttackers: Vehicle FrstAttacker"..i.." removed.")
+		end
 
-	local veh1cs = getObj("FrstAttacker1")
-	if veh1cs then
-		veh1cs:Remove()
-	end
-
-	local veh2cs = getObj("FrstAttacker2")
-	if veh2cs then
-		veh2cs:Remove()
-	end
-
-	local veh3cs = getObj("FrstAttacker3")
-	if veh3cs then
-		veh3cs:Remove()
-	end
-
-	local veh0 = getObj("StartDebyli_vehicle_0")
-	if veh0 then
-		veh0:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
-		veh0:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_0")))
-		veh0:SetSkin(skin0)
-	end
-
-	local veh1 = getObj("StartDebyli_vehicle_1")
-	if veh1 then
-		veh1:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
-		veh1:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_1")))
-		veh1:SetSkin(skin1)
-	end
-
-	local veh2 = getObj("StartDebyli_vehicle_2")
-	if veh2 then
-		veh2:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
-		veh2:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_2")))
-		veh2:SetSkin(skin2)
-	end
-
-	local veh3 = getObj("StartDebyli_vehicle_3")
-	if veh3 then
-		veh3:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
-		veh3:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_3")))
-		veh3:SetSkin(skin3)
+		local veh = getObj("StartDebyli_vehicle_"..i)
+		if veh then
+			veh:SetRotation(Quaternion(-0.055, -0.774, 0.005, 0.631))
+			veh:SetGamePositionOnGround(CVector(getPos("FirstDeb_spawnloc_"..i)))
+			veh:SetSkin(skin)
+			DevPrint("CreateFirstAttackers: Skin "..skin.." for vehicle: "..i)
+		end
 	end
 end
 
@@ -214,6 +174,8 @@ function RaceCutsceneCams()
 
 	local FVeh4_1 = GetEntityByName("Formula4_1")
 	local FVeh4_1ID = FVeh4_1:GetId()
+
+	DevPrint("RaceCutsceneCams: Winning number is "..winnum)
 
 	if winnum == 1 then		
 		Fly("RaceStart_cam04", CINEMATIC_AIM_TO_ID, FVeh1ID, 3, 1, 0 )
@@ -1430,6 +1392,8 @@ function CreateSergo()
 	if sergod then
 		sergod:SetNodeAction(AT_RESERVED1)
 	end
+
+	DevPrint("CreateSergo: Sergo position is "..Sergo)
 end
 
 function ConnectAivenDD()
@@ -1509,41 +1473,49 @@ function GetWalkers()
 	local hum1 = getObj("Human517")
 	if hum1 == nil then
 		hum1 = CreateHuman("Human", 1001, CVector(2961.945, 228.022, 2322.317), "hum1", "")
+		DevPrint("GetWalkers: hum1 is not found! Spawning a new one...")
 	end
 
 	local hum2 = getObj("Human516")
 	if hum2 == nil then
 		hum2 = CreateHuman("Human", 1001, CVector(2953.504, 227.431, 2314.889), "hum2", "")
+		DevPrint("GetWalkers: hum2 is not found! Spawning a new one...")
 	end
 
 	local hum3 = getObj("Human3493")
 	if hum3 == nil then
 		hum3 = CreateHuman("Human3", 1001, CVector(2943.511, 226.274, 2347.507), "hum3", "")
+		DevPrint("GetWalkers: hum3 is not found! Spawning a new one...")
 	end
 
 	local hum4 = getObj("Human514")
 	if hum4 == nil then
 		hum4 = CreateHuman("Human", 1001, CVector(2931.955, 226.906, 2339.359), "hum4", "")
+		DevPrint("GetWalkers: hum4 is not found! Spawning a new one...")
 	end
 
 	local hum5 = getObj("Human491")
 	if hum5 == nil then
 		hum5 = CreateHuman("Human", 1001, CVector(2942.255, 227.331, 2330.157), "hum5", "")
+		DevPrint("GetWalkers: hum5 is not found! Spawning a new one...")
 	end
 
 	local hum6 = getObj("Human492")
 	if hum6 == nil then
 		hum6 = CreateHuman("Human", 1001, CVector(2953.030, 226.643, 2344.396), "hum6", "")
+		DevPrint("GetWalkers: hum6 is not found! Spawning a new one...")
 	end
 
 	local hum7 = getObj("Human487")
 	if hum7 == nil then
 		hum7 = CreateHuman("Human", 1001, CVector(2938.669, 226.457, 2345.319), "hum7", "")
+		DevPrint("GetWalkers: hum7 is not found! Spawning a new one...")
 	end
 
 	local hum8 = getObj("Human3494")
 	if hum8 == nil then
 		hum8 = CreateHuman("Human3", 1001, CVector(2936.213, 224.973, 2360.407), "hum8", "")
+		DevPrint("GetWalkers: hum8 is not found! Spawning a new one...")
 	end
 end
 
@@ -1567,6 +1539,7 @@ function AddSaleItems()
 		KefVehiclesRepo:AddItems("UralForSale", 1)
 		KefVehiclesRepo:AddItems("BelazForSale", 1)
 		KefVehiclesRepo:AddItems("MirotvorecForSale", 1)
+		DevPrint("AddSaleItems: Prototypes added to Kef.")
 	end
 
 	if KefCabinBasketRep then
@@ -1613,6 +1586,7 @@ function AddSaleItems()
 		KefCabinBasketRep:AddItems("uralCab04", 1)
 		KefCabinBasketRep:AddItems("uralCab05", 1)
 		KefCabinBasketRep:AddItems("uralCab05", 1)
+		DevPrint("AddSaleItems: Cabs and baskets added to Kef.")
 	end
 
 	-- Gadad --
@@ -1621,6 +1595,7 @@ function AddSaleItems()
 		GadadVehiclesRepo:AddItems("UralForSale", 1)
 		GadadVehiclesRepo:AddItems("BelazForSale", 1)
 		GadadVehiclesRepo:AddItems("MirotvorecForSale", 1)
+		DevPrint("AddSaleItems: Prototypes added to Gadad.")
 	end
 
 	if GCabinBasketRep then
@@ -1669,6 +1644,7 @@ function AddSaleItems()
 		GCabinBasketRep:AddItems("uralCab02", 1)
 		GCabinBasketRep:AddItems("uralCab03", 1)
 		GCabinBasketRep:AddItems("uralCab04", 1)
+		DevPrint("AddSaleItems: Cabs and baskets added to Gadad.")
 	end
 
 	-- Kazif --
@@ -1677,6 +1653,7 @@ function AddSaleItems()
 		KaVehiclesRepo:AddItems("UralForSale", 1)
 		KaVehiclesRepo:AddItems("BelazForSale", 1)
 		KaVehiclesRepo:AddItems("MirotvorecForSale", 1)
+		DevPrint("AddSaleItems: Prototypes added to Kazif.")
 	end
 
 	if KCabinBasketRep then
@@ -1722,6 +1699,7 @@ function AddSaleItems()
 		KCabinBasketRep:AddItems("uralCab01", 1)
 		KCabinBasketRep:AddItems("uralCab02", 1)
 		KCabinBasketRep:AddItems("uralCab04", 1)
+		DevPrint("AddSaleItems: Cabs and baskets added to Kazif.")
 	end
 end
 
@@ -1747,7 +1725,8 @@ function ShowGoodEndNarrator()
 		AddCinematicMessage(77777, 0.5)
 		AddCinematicMessage(777771, 0.5)
 	else
-		LOG("TCoH.lua ERROR: 'lang' is not defined!")
+		LOG("TCoH.lua ERROR: 'lang' is not in [RU, EN] or not defined!")
 		LOG("'lang' is: "..lang)
+		LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
 	end
 end
