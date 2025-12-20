@@ -374,7 +374,7 @@
 		ConditionToGive="all complete" />
 
 	<quest
-		Name="GonkaUralSpec"
+		Name="RacingUralSpec_quest"
 		Automatic="0"
 		SubQuestsCondition="and"
 		CheckAll="0"

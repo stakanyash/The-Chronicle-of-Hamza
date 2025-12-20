@@ -1117,52 +1117,52 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-		local ManCar = GetEntityByName("MansurCar")
-		    if ManCar then
-		        ManCar:PlaceToEndOfPath("MansurStartGame_1")
+			RestoreAllToleranceStatus()
+			
+			local ManCar = GetEntityByName("MansurCar")
+				if ManCar then
+					ManCar:PlaceToEndOfPath("MansurStartGame_1")
+				end
+
+			local PCar = GetPlayerVehicle()
+				if PCar then
+					PCar:UnlimitMaxSpeed()
+					PCar:PlaceToEndOfPath("XamzaStartGame_1")
+					PCar:setGodMode(0)
+				end
+
+			local mCar = getObj("MansurCar")
+				if mCar then
+					mCar:Remove()
+				end
+
+			CreateTeam("MansurTachka",1090,CVector(2485.159, 272.206, 3927.403),{"UralMansur"})
+
+			local mfCar = GetEntityByName("MansurTachka_vehicle_0")
+				if mfCar then
+					mfCar:SetSkin(1)
 			end
 
-		local PCar = GetPlayerVehicle()
-			if PCar then
-				PCar:UnlimitMaxSpeed()
-				PCar:PlaceToEndOfPath("XamzaStartGame_1")
-				PCar:setGodMode(0)
+			TDeactivate("HamzaStartGameRolik_Attack")
+
+			CreateFirstAttackers()
+
+			TActivate("FirstDebyli_Die")
+			TActivate("MansurCar_Die")
+
+			if (GetVar("StartBattle").AsInt==1) then
+				PlayCustomMusic("Passage03b")
 			end
 
-		local mCar = getObj("MansurCar")
-			if mCar then
-			    mCar:Remove()
-		    end
+			local Bez = GetEntityByName("StartDebyli_vehicle_2")
+			if Bez then	
+				local BezID = GetEntityByName("StartDebyli_vehicle_2"):GetId()
+				SetCameraDirectionToObj(BezID)
+			else
+				SetCameraBehindPlayerVehicle()
+			end
 
-		CreateTeam("MansurTachka",1090,CVector(2485.159, 272.206, 3927.403),{"UralMansur"})
-
-		local mfCar = GetEntityByName("MansurTachka_vehicle_0")
-		    if mfCar then
-		        mfCar:SetSkin(1)
-		end
-
-		TDeactivate("HamzaStartGameRolik_Attack")
-
-		CreateFirstAttackers()
-
-		TActivate("FirstDebyli_Die")
-		TActivate("MansurCar_Die")
-
-		if (GetVar("StartBattle").AsInt==1) then
-			PlayCustomMusic("Passage03b")
-		end
-
-		RestoreAllToleranceStatus()
-
-		local Bez = GetEntityByName("StartDebyli_vehicle_2")
-		if Bez then	
-			local BezID = GetEntityByName("StartDebyli_vehicle_2"):GetId()
-			SetCameraDirectionToObj(BezID)
-		else
-			SetCameraBehindPlayerVehicle()
-		end
-
-		trigger:Deactivate()
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -1433,7 +1433,7 @@
 				AddCinematicMessage( 754, 0.25 )
 				AddCinematicMessage( 764, 0.25 )
 				AddCinematicMessage( 774, 0.25 )
-			elseif QuestStatus("GonkaUralSpec")==Q_COMPLETED then
+			elseif QuestStatus("RacingUralSpec_quest")==Q_COMPLETED then
 				local WinNumber = GetVar("WinningNumber").AsInt
 				if WinNumber == 3 then
 					AddCinematicMessage( 752, 0.25 )
@@ -1489,9 +1489,6 @@
 			local town3 = GetEntityByName("TheKazif")
 			if town3 then town3:SetOpenGateToPlayer( true ) end
 
-			local a = GetEntityByName("StartGonka_loc")
-			if a then a:SetProperty("Active", 1) end
-
 			if QuestStatus("RacingUral_quest")==Q_FAILED then
 				local PVh = GetPlayerVehicle()
 				local PVhMaxHealth = GetPlayerMaxHealth()
@@ -1502,9 +1499,7 @@
 				end
 			end
 
-			TActivate("Kef_Sell_Add")
-			TActivate("Gadad_Sell_Add")
-			TActivate("Kazif_Sell_Add")
+			AddSaleItems()
 			TActivate("all_sale_added_fading")
 
 			TActivate("ConnectMansur_AfterRace")
@@ -2077,6 +2072,13 @@
 
 			local Plf = GetPlayerVehicle()
         	local PlfID = GetPlayerVehicleId()
+
+			if Plf then
+				Plf:SetCustomControlEnabled( true )
+				Plf:SetCustomLinearVelocity( 0 )
+				Plf:SetThrottle( 0 )
+				Plf:SetCustomControlEnabled( false )
+			end
 			
 			Fly("RaceStart_cam01", CINEMATIC_AIM_TO_ID, FVeh1ID, 3, 1, 0 )
 			Fly("RaceStart_cam02", CINEMATIC_AIM_TO_ID, FVeh2ID, 3, 0, 0 )
@@ -3152,7 +3154,7 @@
 			    end
 			end
 
-			CompleteQuest("GonkaUralSpec")
+			CompleteQuest("RacingUralSpec_quest")
 
 			trigger:Deactivate()
 		</script>

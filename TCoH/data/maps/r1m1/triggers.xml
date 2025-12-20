@@ -15,6 +15,22 @@
 		</script>
 	</trigger>
 
+	-- TCoH: Posteffect update --
+
+	<trigger    Name="trExitFromTowns"     active="1">
+        <event eventid="GE_LEAVE_TOWN" ObjName="TheTown"/>
+        <event eventid="GE_LEAVE_TOWN" ObjName="TheGloohoe"/>
+        <event eventid="GE_LEAVE_TOWN" ObjName="TheOilVillage"/>
+        <event eventid="GE_LEAVE_TOWN" ObjName="TheContraVillage"/>
+        <event eventid="GE_LEAVE_TOWN" ObjName="TheFreedom"/>
+        <event eventid="GE_LEAVE_TOWN" ObjName="PetrolStationTown1"/>
+        <event eventid="GE_LEAVE_TOWN" ObjName="PetrolStationTown2"/>
+        <event eventid="GE_LEAVE_TOWN" ObjName="PetrolStationTown3"/>
+        <script>
+            UpdateWeather()
+        </script>
+    </trigger> 
+
 	-- TCoH: Bad Feel --
 
 	<trigger Name="BadFeel_activate_tr" active="0">
