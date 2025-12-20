@@ -1219,6 +1219,7 @@
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
 		<script>
 			if QuestStatus("GoToZarmek_quest")==Q_TAKEN then
+				ShowHostileVehicles(false)
 				SaveAllToleranceStatus(RS_NEUTRAL)
 
 				local vehAiven = getObj("AivenCar_vehicle_0")
@@ -1361,6 +1362,8 @@
 			if (GetVar("PlayBattleMus").AsInt==1) then
 				PlayCustomMusic("Passage03")
 			end	
+
+			ShowHostileVehicles(true)
 
 			CreateMansurandAivenDefenders()
 
