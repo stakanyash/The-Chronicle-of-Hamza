@@ -2209,6 +2209,8 @@
 			TActivate("BuharaDiesOnWayToPort")
 			TActivate("ConnectAiven")
 			TActivate("BuharaPoints")
+			TActivate("Zasada_Spawn_0_tr")
+			TActivate("Zasada_Spawn_1_tr")
 
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active",0) end
@@ -3343,6 +3345,30 @@
 			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 
 			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger	Name="Zasada_Spawn_0_tr"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="AlfaZasada_spawn_loc_0" />
+		<script>
+			local sp = AlfaAmbushSpawn(1)
+			if sp == true then
+				DevPrint("AlfaAmbushSpawn: Spawned ambush on position 0.")
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="Zasada_Spawn_1_tr"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="AlfaZasada_spawn_loc_1" />
+		<script>
+			local sp = AlfaAmbushSpawn(2)
+			if sp == true then
+				DevPrint("AlfaAmbushSpawn: Spawned ambush on position 1.")
+			end
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 </triggers>

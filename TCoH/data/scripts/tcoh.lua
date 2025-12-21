@@ -5,6 +5,9 @@
 if GetComputerName() == "STAKANYASH" then
     println("TCoH: Developer mode is active")
     CONFIG_DEVELOPER = true
+
+	-- include test.lua
+	EXECUTE_SCRIPT "data\\scripts\\test.lua"
 else
     CONFIG_DEVELOPER = false
 end
@@ -1728,5 +1731,36 @@ function ShowGoodEndNarrator()
 		LOG("TCoH.lua ERROR: 'lang' is not in [RU, EN] or not defined!")
 		LOG("'lang' is: "..lang)
 		LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
+	end
+end
+
+function AlfaAmbushSpawn(int)
+	if int == 1 then
+		CreateTeam("AlfaAmbush0",1062,CVector(2572.051, 267.215, 3917.664),{"DemoMolokovoz1","BezHunter", "UralShot"})
+
+		for i=0,2 do
+			local AlAmVeh = getObj("AlfaAmbush0_vehicle_"..i)
+			if AlAmVeh then
+				AlAmVeh:SetGamePositionOnGround(CVector(getPos("AlfaZasada_spawn_0_veh_loc_"..i)))
+				AlAmVeh:SetRandomSkin()
+			end
+		end
+
+		return true
+	elseif int == 2 then
+		CreateTeam("AlfaAmbush1",1062,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","TankBez", "Hunter01"})
+
+		for i=0,2 do
+			local AlAmVeh = getObj("AlfaAmbush1_vehicle_"..i)
+			if AlAmVeh then
+				AlAmVeh:SetGamePositionOnGround(CVector(getPos("AlfaZasada_spawn_1_veh_loc_"..i)))
+				AlAmVeh:SetRandomSkin()
+			end
+		end
+
+		return true
+	else
+		LOG("TCoH.lua ERROR in AlfaAmbushSpawn function: Invalid value!")
+		return false
 	end
 end
