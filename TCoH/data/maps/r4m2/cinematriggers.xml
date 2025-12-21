@@ -1078,19 +1078,25 @@
 			if PVeh then
 				PVeh:SetCustomLinearVelocity( 0 )
 				PVeh:SetThrottle(0)
-				PVeh:SetGamePositionOnGround(CVector(2981.734, 229.482, 2238.954))
-				PVeh:SetRotation(Quaternion(0.001, -0.195, 0.003, 0.981))
+				PVeh:SetGamePositionOnGround(CVector(getPos("HamzaToPlate_loc")))
+				PVeh:SetRotation(Quaternion(-0.007, -0.287, 0.003, 0.958))
+				PVeh:LimitMaxSpeed(10)
+				PVeh:SetExternalPathByName("Hamza_ToPlate_Path")
+				PVeh:SetCustomLinearVelocity(5)
 			end
 
 			local AVeh = getObj("AivenStandBase")
 			if AVeh then
-				AVeh:SetGamePositionOnGround(CVector(2958.213, 229.796, 2257.992))
-				AVeh:SetRotation(Quaternion(-0.000, -0.069, -0.000, 0.998))
+				AVeh:SetGamePositionOnGround(CVector(getPos("ForeignerToPlate_loc")))
+				AVeh:SetRotation(Quaternion(-0.004, -0.357, -0.004, 0.934))
+				AVeh:SetCruisingSpeed(10)
+				AVeh:SetExternalPathByName("Foreigner_ToPlate_Path")
+				AVeh:SetCustomLinearVelocity(5)
 			end
 
 			PlayCustomMusic("Bio01")
 
-			Fly("NearTarelka0", CINEMATIC_NO_AIM, nil, 8, 1,0)
+			Fly("NearTarelka0", CINEMATIC_NO_AIM, nil, 12, 1,0)
 			Fly("NearTarelka1", CINEMATIC_NO_AIM, nil, 7, 0,0)
 			Fly("NearTarelka2", CINEMATIC_NO_AIM, nil, 23, 0,1)
 			StartCinematic()
@@ -1121,6 +1127,18 @@
 			AddCinematicMessage( 627, 0.5 )
 			AddCinematicMessage( 628, 0.5 )
 
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetExternalPathByName("Hamza_ToPlate_Path")
+				P:PlaceToEndOfPath("Hamza_ToPlate_Path")
+			end
+
+			local A = getObj("AivenStandBase")
+			if A then
+				A:SetExternalPathByName("Foreigner_ToPlate_Path")
+				A:PlaceToEndOfPath("Foreigner_ToPlate_Path")
+			end
+			
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -1137,6 +1155,13 @@
 			local AVeh = getObj("AivenStandBase")
 			if AVeh then
 				AVeh:Remove()
+			end
+
+			local P = GetPlayerVehicle()
+			if P then
+				P:SetExternalPathByName("Hamza_ToPlate_Path")
+				P:PlaceToEndOfPath("Hamza_ToPlate_Path")
+				P:UnlimitMaxSpeed()
 			end
 
 			TActivate("AVeh_connect_afterplate")

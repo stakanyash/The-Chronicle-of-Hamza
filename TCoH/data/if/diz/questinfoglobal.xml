@@ -638,15 +638,6 @@
 	</QuestInfo>
 
 	<QuestInfo
-		questName="RaceUralSpec_quest"
-		briefDiz="ѕосмотреть на гонку"
-		fullDiz="”частники зан€ли свои места, а мне пора на трибуну."
-		isMainQuest="0">
-		<Map
-			name="r4m1" />
-	</QuestInfo>
-
-	<QuestInfo
 		questName="RacingUralSpec_quest"
 		briefDiz="ѕосмотреть на гонку"
 		fullDiz="я решил отказатьс€ от гонки и зан€ть место на трибуне. ¬рем€ насладитьс€ крутой гонкой, котора€ бывает раз в год!"

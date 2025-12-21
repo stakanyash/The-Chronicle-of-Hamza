@@ -33,7 +33,7 @@
 <!--Root/r4m2/Story/The Chronicle of Hamza/Foreigner/While talking with scientist/2nd part-->
 	<Reply
 		name="Dlg_npc_001571"
-		text="You're right — we should go back. But why would we need Mansur? He already screwed us over and walked away."
+		text="You're right - we should go back. But why would we need Mansur? He already screwed us over and walked away."
 		role="NPC"
 		scriptCondition="GetVar('AivenJrTalk').AsInt==2 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001572" />
@@ -58,7 +58,7 @@
 <!--Root/r4m2/Story/The Chronicle of Hamza/Scientist/First meet-->
 	<Reply
 		name="r4m2_Bar_Scientist_1_N01"
-		text="My people got here just in time. A few seconds later — and there'd be nothing left of you but ash."
+		text="My people arrived just in time! Another moment, and only ashes and desert wind would remain of you."
 		role="NPC"
 		scriptCondition="GetVar('ScientistTalk').AsInt==0 and QuestStatus('FindMoreMadmans_quest')==Q_COMPLETED"
 		scriptResult="CompleteQuest('DestroyMadmans_quest')"
@@ -66,13 +66,13 @@
 
 	<Reply
 		name="r4m2_Bar_Scientist_1_N02"
-		text="Who are you and why'd you help us?"
+		text="Who are you? And why did you interfere?"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_1_N03" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_1_N03"
-		text="We help all who suffer. Anyone who comes here deserves royal treatment."
+		text="We are the ones who do not let travelers disappear without a trace. Everyone who comes here deserves respect... and caution."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_1_N04" />
 
@@ -84,19 +84,19 @@
 
 	<Reply
 		name="r4m2_Bar_Scientist_1_N05"
-		text="This place draws the bravest and smartest from all corners of the world… just to break them. I meet every traveler who comes through — and try to talk them out of going further."
+		text="This place attracts the strong and intelligent from all over the world... only to consume them. I meet everyone at the threshold and ask, “Think twice - don't go any further.”"
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_1_N06" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_1_N06"
-		text="Our mission is to wipe out the madmen! We've come too far to stop now."
+		text="We are not the type to stop. We have come too far to retreat when we are so close to our goal."
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_1_N07" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_1_N07"
-		text="You might go too far. Someone was supposed to end all this not long ago… and we never saw him again."
+		text="Sometimes, the step to the goal is a precipice. One traveler was close to the outcome just recently... but we never saw him return."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_1_N08" />
 
@@ -140,7 +140,7 @@
 
 	<Reply
 		name="Dlg_pl_002176"
-		text="That's right. We found the blocker — so what do we do with it now?"
+		text="That's right. We found the blocker - so what do we do with it now?"
 		role="PLAYER"
 		nextReplies="Dlg_npc_002177" />
 
@@ -170,7 +170,7 @@
 
 	<Reply
 		name="Dlg_npc_002181"
-		text="If I'm right — yeah, it should."
+		text="If I'm right - yeah, it should."
 		role="NPC"
 		nextReplies="Dlg_pl_002182" />
 
@@ -182,19 +182,19 @@
 
 	<Reply
 		name="Dlg_npc_002183"
-		text="Then you'd better be ready for anything. It might do nothing — or make things worse. But hey, life's boring without a little risk."
+		text="Then you'd better be ready for anything. It might do nothing - or make things worse. But hey, life's boring without a little risk."
 		role="NPC"
 		nextReplies="Dlg_pl_002184 Dlg_pl_002185" />
 
 	<Reply
 		name="Dlg_pl_002185"
-		text="Nope, that's not gonna work. Foreigner had his own plan — and honestly, it sounds a hell of a lot better than yours."
+		text="Nope, that's not gonna work. Foreigner had his own plan - and honestly, it sounds a hell of a lot better than yours."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002187" />
 
 	<Reply
 		name="Dlg_npc_002187"
-		text="Very well. You fear the risk — I understand. But if another path has opened… then perhaps fate wants you to walk it."
+		text="Very well. You fear the risk - I understand. But if another path has opened… then perhaps fate wants you to walk it."
 		role="NPC"
 		nextReplies="Dlg_pl_002188" />
 
@@ -212,7 +212,7 @@
 
 	<Reply
 		name="Dlg_npc_002186"
-		text="Then approach the ship, but not too close — otherwise you won't make it and end up like all the others standing motionless around it ever since they got near. Turn on the blocker once you're behind them all, by pressing this button. After that, leave it there and walk away. The effect won't be instant — you'll have to wait."
+		text="Then approach the ship, but not too close - otherwise you won't make it and end up like all the others standing motionless around it ever since they got near. Turn on the blocker once you're behind them all, by pressing this button. After that, leave it there and walk away. The effect won't be instant - you'll have to wait."
 		role="NPC"
 		nextReplies="Dlg_pl_002189" />
 
@@ -224,20 +224,20 @@
 <!--Root/r4m2/Story/The Chronicle of Hamza/Scientist/After seeing ship/1stpart-->
 	<Reply
 		name="r4m2_Bar_Scientist_2_N01"
-		text="What strength of spirit! You resisted the voice of the heavens themselves!"
+		text="What strength of spirit! You resisted the voice from heaven..."
 		role="NPC"
 		scriptCondition="GetVar('ScientistTalk').AsInt==1 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN "
 		nextReplies="r4m2_Bar_Scientist_2_N02" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N02"
-		text="We haven't heard anything like that."
+		text="We didn't hear anything."
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N03" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N03"
-		text="So, we made the right choice. Few people can get close to the source and find the strength to return. We've been waiting for you for many years."
+		text="So you are the ones we have been waiting for. Only a few reach this place and do not lose their minds. We have been calling you for years."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N04" />
 
@@ -249,91 +249,91 @@
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N05"
-		text="You have to stop the madness that started many years ago."
+		text="You are called upon to stop the madness that began long ago."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N06" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N06"
-		text="We're ready. But tell us — what's really going on here?"
+		text="We're ready. But tell us - what happened here?"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N07" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N07"
-		text="Long ago, our world was whole — there were huge nations, cities packed with millions of people, machines that made decisions for us. Everything seemed simple and clear. But then, in a single moment, everything changed..."
+		text="We had a world that was as unified as a river flowing into the sea. Cities with millions of inhabitants, iron birds in the sky, machines that thought instead of people... Everything was going smoothly - until the end came."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N08" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N08"
-		text="Machines that think? That's not gonna end well… So what actually happened?"
+		text="Machines that think? That's where the trouble started... What happened?"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N09" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N09"
-		text="We saw it ourselves — an unidentified flying object was detected and shot down by the Space Defense Forces. My colleagues and I were sent to investigate this strange phenomenon. The situation was extremely tense: it was dangerous to be in that country at the time because of the ongoing war against terrorists. We worked fast, always feeling like intelligence agencies from major powers — and local guerrillas — were watching us."
+		text="A sky ship was shot down over the desert - you must have seen it. My comrades and I were sent to investigate. In those days, war was raging here: terrorists, spies from a great power, partisans - everyone wanted to be the first to get their hands on the loot. We hurried as if Jahannam were breathing down our necks."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N10" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N10"
-		text="I don't get half of what you're saying… But from what I hear, the old world wasn't any better than the one we've got now."
+		text="I didn't understand much of what you said... But it seems that your former world was no better than the present one."
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N11" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N11"
-		text="Maybe… I never really thought about it. When we finally got inside the ship — and make no mistake, that was a spaceship — we were on top of the world. The possibilities were endless: new medicines, ultra-strong materials, groundbreaking tech… But instead of miracles, we found only death. People crushed by machines, three of my colleagues took their own lives within two days. And then… the worst came when we opened that sealed chamber in the central compartment…"
+		text="Maybe... I didn't think about it. As soon as we entered the ship - yes, it was a ship! - we were overcome with wild jubilation. We dreamed of medicines that would cure all diseases, of metals that would never rust... But instead of miracles, we found death. People were dying under the wheels of machines, and three of my comrades hanged themselves in two days. And then... we opened an airtight chamber in the heart of the ship..."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N12" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N12"
-		text="That was a huge mistake. How could you ignore such clear warnings? You've seen them with your very own eyes!"
+		text="You shouldn't have done that. Didn't you see the signs? Even a jackal won't touch a dead carcass if it senses a curse."
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N13" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N13"
-		text="We're scientists. We don't believe in omens or signs. Anyway, I'll go on. It looked like some kind of system, that had remained dormant before, activated. Something beyond belief happened… My colleagues… their bodies literally exploded… Then there was a Voice — in my mind. I passed out and woke up here, outside the camp. I called for help, but no one answered. The radio was silent. That's when I knew — something terrible had transpired."
+		text="We are scientists. We trusted reason, not superstition. But I will continue: something awakened inside me. My comrades... their bodies were torn apart from within. A voice sounded in my head - not from this world. I fell unconscious... I woke up here, in this camp. I called for help - no one answered. The radio was silent. I knew: the world had fallen."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N14" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N14"
-		text="You scientists really did burn the world down, didn't you? All in the name of curiosity."
+		text="So it was you who destroyed everything, just out of curiosity?"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N15" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N15"
-		text="Yes. That knowledge is eating me alive from the inside. I should be punished, but I don't feel pain. I can't even die! God knows how many times I've tried to end it all… It was horrible. I thought I was the last one left in the world. But when the first survivors started showing up, joy quickly turned into horror. People had changed. Just look at me — or at yourself. Or your companion! I'm afraid to even imagine what's hiding behind your masks."
+		text="Yes. This thought gnaws at me like a scorpion in the night. I must suffer... but the pain is silent. Even death rejects me. How many times have I tried to leave this world - to no avail. I thought I was alone... But then the survivors came. First - joy, then - horror. Look at me. Look at yourself. Or at the one walking with you... What do your masks hide?"
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N16" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N16"
-		text="Are you serious right now? This mask is what keeps us alive in this hell!"
+		text="A mask is only protection against contaminated air!"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N17" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N17"
-		text="You can say whatever you want. But the worst part is — that thing is still running even now, and the poison keeps leaking into the air."
+		text="Say what you want. Call it contagion. But the scariest thing is that the machine is still working. And darkness continues to seep into the sky."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N18" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N18"
-		text="So if we stop it, the air will clear up and people will go back to normal? Then why didn't you go back and shut it down yourself?"
+		text="So, if we stop it, the air will be purified? People will regain their appearance?"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N19" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N19"
-		text="I can't get near it! And I can't leave either! I'm cursed to stay close to this damned machine forever. All I can do is beg those who come here to destroy this monstrosity. But no one's managed to do it yet…"
+		text="Perhaps. But I cannot return there... and I cannot leave. The curse keeps me here - neither forward nor backward. I only beg everyone who comes: destroy this monster. But no one has yet returned alive..."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N20a" />
 
@@ -357,7 +357,7 @@
 
 	<Reply
 		name="Dlg_npc_001566"
-		text="Exactly. About two decades ago, he was given a mission — to bring a blocker here from the Sowth, which can only be reached through the Desert of Death. According to what I know, he left to get it… and no one's seen him after this."
+		text="Exactly. About two decades ago, he was given a mission - to bring a blocker here from the Sowth, which can only be reached through the Desert of Death. According to what I know, he left to get it… and no one's seen him after this."
 		role="NPC"
 		scriptResult="SetVar('AivenJrTalk', 1)"
 		nextReplies="Dlg_pl_001577" />
@@ -434,7 +434,7 @@
 
 	<Reply
 		name="Dlg_npc_001374"
-		text="I'm afraid I can't help with that. Only the Buharas might've known — but no one's seen them in years. One day, they just packed up and left, without a word. Many have tried to find them since… all in vain. Who knows — maybe they left these lands long ago."
+		text="I'm afraid I can't help with that. Only the Buharas might've known - but no one's seen them in years. One day, they just packed up and left, without a word. Many have tried to find them since… all in vain. Who knows - maybe they left these lands long ago."
 		role="NPC"
 		nextReplies="Dlg_pl_001375" />
 
@@ -446,7 +446,7 @@
 
 	<Reply
 		name="Dlg_npc_001376"
-		text="As far as I know, Akil's been looking into it lately. You should ask him — maybe he's got something to go on. By the way… what made you suddenly start digging into where those madmen came from?"
+		text="As far as I know, Akil's been looking into it lately. You should ask him - maybe he's got something to go on. By the way… what made you suddenly start digging into where those madmen came from?"
 		role="NPC"
 		nextReplies="Dlg_pl_001377" />
 
@@ -458,7 +458,7 @@
 
 	<Reply
 		name="Dlg_npc_001378"
-		text="That's awful news… She was one of the last who truly knew our past. I'm sorry. Whatever you're planning — may you succeed. For her."
+		text="That's awful news… She was one of the last who truly knew our past. I'm sorry. Whatever you're planning - may you succeed. For her."
 		role="NPC"
 		nextReplies="Dlg_pl_001379" />
 
@@ -477,7 +477,7 @@
 
 	<Reply
 		name="Dlg_pl_002221"
-		text="Hey, Musiba. Yeah, I am — but he’s nowhere to be seen."
+		text="Hey, Musiba. Yeah, I am - but he’s nowhere to be seen."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002222" />
 
@@ -507,7 +507,7 @@
 
 	<Reply
 		name="Dlg_npc_002226"
-		text="It’s an old data storage device. Just look at it — this tiny circle used to hold so much information..."
+		text="It’s an old data storage device. Just look at it - this tiny circle used to hold so much information..."
 		role="NPC"
 		nextReplies="Dlg_pl_002227" />
 
@@ -519,7 +519,7 @@
 
 	<Reply
 		name="Dlg_npc_002228"
-		text="Yeah! Check this out — apparently, this whole land used to be completely underwater!"
+		text="Yeah! Check this out - apparently, this whole land used to be completely underwater!"
 		role="NPC"
 		nextReplies="Dlg_pl_002229" />
 
@@ -531,7 +531,7 @@
 
 	<Reply
 		name="Dlg_npc_002230"
-		text="Ha! You’re such a joker. Of course not! They just lived somewhere else. Here, look — seems like old news broadcasts!"
+		text="Ha! You’re such a joker. Of course not! They just lived somewhere else. Here, look - seems like old news broadcasts!"
 		role="NPC"
 		nextReplies="Dlg_pl_002231" />
 
@@ -543,7 +543,7 @@
 
 	<Reply
 		name="Dlg_npc_002232"
-		text="Exactly! It is ancient history — from the old world. A rock band was a music group, and Eurovision was a big song contest back then. At least, that’s what the old texts say. Here, take this — you might enjoy reading what life used to be like."
+		text="Exactly! It is ancient history - from the old world. A rock band was a music group, and Eurovision was a big song contest back then. At least, that’s what the old texts say. Here, take this - you might enjoy reading what life used to be like."
 		role="NPC"
 		nextReplies="Dlg_pl_002233" />
 
@@ -555,7 +555,7 @@
 
 	<Reply
 		name="Dlg_npc_002234"
-		text="Told you — history can be fun!"
+		text="Told you - history can be fun!"
 		role="NPC"
 		nextReplies="Dlg_pl_002235" />
 
@@ -579,7 +579,7 @@
 
 	<Reply
 		name="Dlg_npc_002238"
-		text="Haha, Hamza. You’re not just a joker — you’re the laziest bum I know!"
+		text="Haha, Hamza. You’re not just a joker - you’re the laziest bum I know!"
 		role="NPC"
 		nextReplies="Dlg_pl_002239" />
 
@@ -591,7 +591,7 @@
 
 	<Reply
 		name="Dlg_npc_002240"
-		text="Come on, Hamza. Dig into it yourself. You’ll see it’s interesting in its own right — not just ‘cause I’m the one talking about it. Anyway, I’ve got to go. See you around!"
+		text="Come on, Hamza. Dig into it yourself. You’ll see it’s interesting in its own right - not just 'cause I’m the one talking about it. Anyway, I’ve got to go. See you around!"
 		role="NPC"
 		nextReplies="Dlg_pl_002241" />
 
@@ -678,13 +678,13 @@
 
 	<Reply
 		name="Dlg_npc_002103"
-		text="Fine, we'll try. But the desert's a mess — visibility's terrible. I barely found my way out here. How the hell are we supposed to know where to look?"
+		text="Fine, we'll try. But the desert's a mess - visibility's terrible. I barely found my way out here. How the hell are we supposed to know where to look?"
 		role="NPC"
 		nextReplies="Dlg_pl_002104" />
 
 	<Reply
 		name="Dlg_pl_002104"
-		text="We'll search as long as it takes. So, just to be clear — the only thing that can stop us out there are the madmen, right?"
+		text="We'll search as long as it takes. So, just to be clear - the only thing that can stop us out there are the madmen, right?"
 		role="PLAYER"
 		nextReplies="Dlg_npc_002105" />
 
@@ -715,13 +715,13 @@
 
 	<Reply
 		name="Dlg_npc_002109"
-		text="Afraid so. I'll say it again — the visibility out there is terrible. I could barely see past my own truck. And there's wreckage everywhere — almost ran into a couple of them while trying to get through."
+		text="Afraid so. I'll say it again - the visibility out there is terrible. I could barely see past my own truck. And there's wreckage everywhere - almost ran into a couple of them while trying to get through."
 		role="NPC"
 		nextReplies="Dlg_pl_002110" />
 
 	<Reply
 		name="Dlg_pl_002110"
-		text="Well then, looks like we'll have to improvise — again. Based on what you told us about the desert, we don't really have a choice."
+		text="Well then, looks like we'll have to improvise - again. Based on what you told us about the desert, we don't really have a choice."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002111" />
 
@@ -771,13 +771,13 @@
 
 	<Reply
 		name="Dlg_pl_002193"
-		text="He said the blocker has minor damage — but it could either do nothing… or make everything worse."
+		text="He said the blocker has minor damage - but it could either do nothing… or make everything worse."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002194" />
 
 	<Reply
 		name="Dlg_npc_002194"
-		text="Makes no sense. If it's just a scratch, why the hell's he panicking? Anyway… fine. If you say we go to the Oracle — then let's go."
+		text="Makes no sense. If it's just a scratch, why the hell's he panicking? Anyway… fine. If you say we go to the Oracle - then let's go."
 		role="NPC"
 		nextReplies="Dlg_pl_002195" />
 
@@ -796,7 +796,7 @@
 
 	<Reply
 		name="Dlg_pl_002125"
-		text="We've got the blocker. That means the next step is clear — find out how to use it. And for that, we talk to Vasily."
+		text="We've got the blocker. That means the next step is clear - find out how to use it. And for that, we talk to Vasily."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002126" />
 
@@ -856,7 +856,7 @@
 <!--Root/r4m1/The Chronicle of Hamza/Foreigner/Back from Desert of Death/Åñëè íå áðàëè áëîêèðàòîð-->
 	<Reply
 		name="Dlg_npc_002133"
-		text="So… what now? We don't have the blocker, we don't have a solid plan either. I've got an idea — but I'm not sure it'll work."
+		text="So… what now? We don't have the blocker, we don't have a solid plan either. I've got an idea - but I'm not sure it'll work."
 		role="NPC"
 		scriptCondition="GetVar('ChujezemetsTalk').AsInt==9 and QuestStatus('blockleaved_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_002134" />
@@ -906,13 +906,13 @@
 
 	<Reply
 		name="Dlg_npc_001590"
-		text="Exactly. I still have this feeling like I was the one who delivered the blocker to him — though I can't be sure. Still… something just doesn't sit right."
+		text="Exactly. I still have this feeling like I was the one who delivered the blocker to him - though I can't be sure. Still… something just doesn't sit right."
 		role="NPC"
 		nextReplies="Dlg_pl_001591" />
 
 	<Reply
 		name="Dlg_pl_001591"
-		text="Even if you did deliver the blocker to Sergo — what happened after that isn't on you. He's the one who didn't make it through."
+		text="Even if you did deliver the blocker to Sergo - what happened after that isn't on you. He's the one who didn't make it through."
 		role="PLAYER"
 		scriptResult="SetVar('ChujezemetsTalk', 5); StartConversation('Gadad_Mansur')" />
 <!--Root/r4m1/The Chronicle of Hamza/Foreigner/After came back from Zarmek/2ndpart-->
@@ -950,7 +950,7 @@
 
 	<Reply
 		name="Dlg_pl_001537"
-		text="Wait, wait! We're not enemies — we helped you! Bukhara knows us, they can vouch for us!"
+		text="Wait, wait! We're not enemies - we helped you! Bukhara knows us, they can vouch for us!"
 		role="PLAYER"
 		scriptResult="SetVar('ChujezemetsTalk', 1); StartConversation('r4m1_BuharsLeader')" />
 <!--Root/r4m1/The Chronicle of Hamza/Foreigner/First meet/2ndpart-->
@@ -969,7 +969,7 @@
 
 	<Reply
 		name="Dlg_npc_001542"
-		text="I'm here to find the ones who destroyed my village — and make them pay. You'd better not be one of those madmen."
+		text="I'm here to find the ones who destroyed my village - and make them pay. You'd better not be one of those madmen."
 		role="NPC"
 		nextReplies="Dlg_pl_001543" />
 
@@ -1018,7 +1018,7 @@
 <!--Root/r4m1/The Chronicle of Hamza/Foreigner/First meet/4thpart-->
 	<Reply
 		name="Dlg_npc_001560"
-		text="I've got a device that can call in a ship. I'll use it to evacuate the Bukharans — somewhere where real people still live."
+		text="I've got a device that can call in a ship. I'll use it to evacuate the Bukharans - somewhere where real people still live."
 		role="NPC"
 		scriptCondition="GetVar('ChujezemetsTalk').AsInt==3 and QuestStatus('GoToBuharaAgain_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001561" />
@@ -1044,7 +1044,7 @@
 
 	<Reply
 		name="Dlg_npc_001472"
-		text="Because of what happened with the attack on Ghadad, nobody dares to go to Khazif for oil anymore! “Too risky!” Our reserves are running dry — the local oil deposit has dried up years ago! No one knows what to do! Everyone's trying to find a driver in Alikham or even Ghadad itself, but so far? All we get are rejections!"
+		text="Because of what happened with the attack on Ghadad, nobody dares to go to Khazif for oil anymore! “Too risky!” Our reserves are running dry - the local oil deposit has dried up years ago! No one knows what to do! Everyone's trying to find a driver in Alikham or even Ghadad itself, but so far? All we get are rejections!"
 		role="NPC"
 		nextReplies="Dlg_pl_001473" />
 
@@ -1056,7 +1056,7 @@
 
 	<Reply
 		name="Dlg_npc_001474"
-		text="No way, I can't let you two get involved — I've heard about your plan to take down the madmen once and for all. I'm fully behind you on that! I don't want helping us with the oil to get in the way of ridding us of this curse. And honestly? This job is dangerous enough as it is. You wouldn't even be driving your own truck — and believe me, a rig full of oil is like a beacon for raiders and madmen. They'll jump at the chance to hit it. That's why we're looking for someone with real experience."
+		text="No way, I can't let you two get involved - I've heard about your plan to take down the madmen once and for all. I'm fully behind you on that! I don't want helping us with the oil to get in the way of ridding us of this curse. And honestly? This job is dangerous enough as it is. You wouldn't even be driving your own truck - and believe me, a rig full of oil is like a beacon for raiders and madmen. They'll jump at the chance to hit it. That's why we're looking for someone with real experience."
 		role="NPC"
 		nextReplies="Dlg_pl_001475" />
 
@@ -1068,7 +1068,7 @@
 
 	<Reply
 		name="Dlg_npc_002196"
-		text="Wait a second — since you're so sure of yourself, we actually do have a vehicle for backup. It's way sturdier than the junk locals usually drive, so the risk's not as bad."
+		text="Wait a second - since you're so sure of yourself, we actually do have a vehicle for backup. It's way sturdier than the junk locals usually drive, so the risk's not as bad."
 		role="NPC"
 		nextReplies="Dlg_pl_002197" />
 
@@ -1080,7 +1080,7 @@
 
 	<Reply
 		name="Dlg_npc_001476"
-		text="Fine. Make it one run and that's it. We'll use that time to find a real driver. You've got something bigger on your hands. Talk to Mansur first — cause if he doesn't agree, I'm not letting you go solo."
+		text="Fine. Make it one run and that's it. We'll use that time to find a real driver. You've got something bigger on your hands. Talk to Mansur first - cause if he doesn't agree, I'm not letting you go solo."
 		role="NPC"
 		nextReplies="Dlg_pl_001477" />
 
@@ -1105,7 +1105,7 @@
 
 	<Reply
 		name="Dlg_npc_001488"
-		text="Great. Grab the trucks from the outskirts of the city and head to Oilburg — it's right here on the map. Just say it's for Kef, and they'll load everything for you."
+		text="Great. Grab the trucks from the outskirts of the city and head to Oilburg - it's right here on the map. Just say it's for Kef, and they'll load everything for you."
 		role="NPC"
 		nextReplies="Dlg_pl_001489" />
 
@@ -1130,7 +1130,7 @@
 
 	<Reply
 		name="Dlg_npc_001506"
-		text="Great! Unfortunately, it won't last long — but I hope we'll find someone else to make the run for more oil."
+		text="Great! Unfortunately, it won't last long - but I hope we'll find someone else to make the run for more oil."
 		role="NPC"
 		nextReplies="Dlg_pl_001507" />
 
@@ -1191,7 +1191,7 @@
 
 	<Reply
 		name="Dlg_npc_001410"
-		text="I'm really sorry to hear that… Alright, I'll tell you what I know. Many years ago, the world went through a major upheaval. After that, we managed to rebuild and start over with a clean slate. But after some time, people began noticing strange and unexplainable changes in behavior — sudden shifts from joy to aggression. We couldn't figure out what was going on for a long time.  Then one day, a calm and kind man suddenly attacked his own family. The next morning, he claimed he didn't remember anything, but no one believed him. He was sentenced to execution. And from that moment on, it became impossible to trust even those closest to you."
+		text="I'm really sorry to hear that… Alright, I'll tell you what I know. Many years ago, the world went through a major upheaval. After that, we managed to rebuild and start over with a clean slate. But after some time, people began noticing strange and unexplainable changes in behavior - sudden shifts from joy to aggression. We couldn't figure out what was going on for a long time.  Then one day, a calm and kind man suddenly attacked his own family. The next morning, he claimed he didn't remember anything, but no one believed him. He was sentenced to execution. And from that moment on, it became impossible to trust even those closest to you."
 		role="NPC"
 		nextReplies="Dlg_pl_001411" />
 
@@ -1203,7 +1203,7 @@
 
 	<Reply
 		name="Dlg_npc_001412"
-		text="Exactly. After that incident, we decided it wasn’t safe to stay among the rest. Over time, these so-called madmen started forming groups and attacking each other. It didn’t really touch us, though — strong emotions like that are typical of the young, people like you. As for us, we were already too old for such feelings back then."
+		text="Exactly. After that incident, we decided it wasn’t safe to stay among the rest. Over time, these so-called madmen started forming groups and attacking each other. It didn’t really touch us, though - strong emotions like that are typical of the young, people like you. As for us, we were already too old for such feelings back then."
 		role="NPC"
 		nextReplies="Dlg_pl_001413" />
 
@@ -1215,7 +1215,7 @@
 
 	<Reply
 		name="Dlg_npc_001420"
-		text="Not far from our lands, further to the east. But please — don't go there! Whatever awaits you there is worse than death! Swear to me that you'll never go there!"
+		text="Not far from our lands, further to the east. But please - don't go there! Whatever awaits you there is worse than death! Swear to me that you'll never go there!"
 		role="NPC"
 		nextReplies="Dlg_pl_001421" />
 
@@ -1263,7 +1263,7 @@
 
 	<Reply
 		name="Dlg_npc_001418"
-		text="Sure, you can say that — but nothing's stopping them from sending more people here anyway."
+		text="Sure, you can say that - but nothing's stopping them from sending more people here anyway."
 		role="NPC"
 		nextReplies="Dlg_pl_001419" />
 
@@ -1282,7 +1282,7 @@
 
 	<Reply
 		name="Dlg_pl_001539"
-		text="See? Told you! We're not your enemies. More than that — looks like we're after the same thing."
+		text="See? Told you! We're not your enemies. More than that - looks like we're after the same thing."
 		role="PLAYER"
 		scriptResult="SetVar('BuharaSaveTalk', 1); StartConversation('Chujezemets')" />
 <!--Root/r4m1/The Chronicle of Hamza/Buhara Headman/Second dialog/Second part-->
@@ -1301,7 +1301,7 @@
 
 	<Reply
 		name="Dlg_npc_001558"
-		text="There's a harbor nearby, but there are no ships left. Although we checked all the equipment — it still works."
+		text="There's a harbor nearby, but there are no ships left. Although we checked all the equipment - it still works."
 		role="NPC"
 		nextReplies="Dlg_pl_001559" />
 
@@ -1333,13 +1333,13 @@
 
 	<Reply
 		name="Dlg_pl_001389"
-		text="Dunno where Akil took off to — but answer me this: do you really know something about the Bukharans?!"
+		text="Dunno where Akil took off to - but answer me this: do you really know something about the Bukharans?!"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001390" />
 
 	<Reply
 		name="Dlg_npc_001390"
-		text="Yeah, I've got a damn clue! But does Akil care? Nope — he's convinced I'm just talking trash. And he didn't even bother checking the places I suggested!"
+		text="Yeah, I've got a damn clue! But does Akil care? Nope - he's convinced I'm just talking trash. And he didn't even bother checking the places I suggested!"
 		role="NPC"
 		nextReplies="Dlg_pl_001391" />
 
@@ -1357,7 +1357,7 @@
 
 	<Reply
 		name="Dlg_pl_001393"
-		text="No choice then — we're in. What do we need to do? [Just try pulling one of your tricks again… and this time, I won't let you walk away with it.]"
+		text="No choice then - we're in. What do we need to do? [Just try pulling one of your tricks again… and this time, I won't let you walk away with it.]"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001394" />
 
@@ -1381,13 +1381,13 @@
 
 	<Reply
 		name="Dlg_pl_001397"
-		text="But there are tons of yellow Ural trucks in these lands — all of them full of thugs! How the hell are we supposed to find the right one?!"
+		text="But there are tons of yellow Ural trucks in these lands - all of them full of thugs! How the hell are we supposed to find the right one?!"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001398" />
 
 	<Reply
 		name="Dlg_npc_001398"
-		text="Hold on, let me finish. Don't cut in like that. His truck had something unique — a blue emblem with a wolf. Never saw anything like it since."
+		text="Hold on, let me finish. Don't cut in like that. His truck had something unique - a blue emblem with a wolf. Never saw anything like it since."
 		role="NPC"
 		nextReplies="Dlg_pl_001399" />
 
@@ -1399,7 +1399,7 @@
 
 	<Reply
 		name="Dlg_npc_001400"
-		text="Go find him. Once you do and teach him a lesson — come ba... [Ha-a-amza!] Wait… isn't that your father calling? Anyway, return when it's done."
+		text="Go find him. Once you do and teach him a lesson - come ba... [Ha-a-amza!] Wait… isn't that your father calling? Anyway, return when it's done."
 		role="NPC"
 		nextReplies="Dlg_pl_001401" />
 
@@ -1431,13 +1431,13 @@
 
 	<Reply
 		name="Dlg_pl_001405"
-		text="C'mon, faster — get to the truck!"
+		text="C'mon, faster - get to the truck!"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001441" />
 
 	<Reply
 		name="Dlg_npc_001441"
-		text="They're right at the city's edge — don't wait, strike as soon as you're out!"
+		text="They're right at the city's edge - don't wait, strike as soon as you're out!"
 		role="NPC"
 		nextReplies="Dlg_pl_001442" />
 
@@ -1462,7 +1462,7 @@
 
 	<Reply
 		name="Dlg_npc_001427"
-		text="Sorry, got carried away for a second. Where was I? Oh right — the Bukharans. They might be near the coast. If they're really there… better tell Akil yourself. Maybe he'll finally listen to you."
+		text="Sorry, got carried away for a second. Where was I? Oh right - the Bukharans. They might be near the coast. If they're really there… better tell Akil yourself. Maybe he'll finally listen to you."
 		role="NPC"
 		nextReplies="Dlg_pl_001428" />
 
@@ -1474,7 +1474,7 @@
 
 	<Reply
 		name="Dlg_npc_001429"
-		text="I've never met the Bukharans in person before — but I'm sure I'd recognize them. Once, I saw an old group photo from a Vahat festival. Among all those familiar faces, there was one man whose mask and clothes looked completely foreign — and far more worn out than the others. And just recently, I came across people like him on the coast. The moment they spotted me… they vanished. I didn't push it — pretended not to notice, and left."
+		text="I've never met the Bukharans in person before - but I'm sure I'd recognize them. Once, I saw an old group photo from a Vahat festival. Among all those familiar faces, there was one man whose mask and clothes looked completely foreign - and far more worn out than the others. And just recently, I came across people like him on the coast. The moment they spotted me… they vanished. I didn't push it - pretended not to notice, and left."
 		role="NPC"
 		nextReplies="Dlg_pl_001430" />
 
@@ -1498,7 +1498,7 @@
 
 	<Reply
 		name="Dlg_npc_001433"
-		text="The Bukharans are wise — they'd never risk leaving. Crossing the Desert of Death and surviving is next to impossible… My friend Sergo did it more than once, but he never came back from his last trip…"
+		text="The Bukharans are wise - they'd never risk leaving. Crossing the Desert of Death and surviving is next to impossible… My friend Sergo did it more than once, but he never came back from his last trip…"
 		role="NPC"
 		nextReplies="Dlg_pl_001434" />
 
@@ -1528,13 +1528,13 @@
 
 	<Reply
 		name="Dlg_pl_001438"
-		text="If I were them, I'd take that step too… because from what I've heard — they've got nothing left to lose."
+		text="If I were them, I'd take that step too… because from what I've heard - they've got nothing left to lose."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001439" />
 
 	<Reply
 		name="Dlg_npc_001439"
-		text="Don't waste time — head there now. And when you come back… tell me how it went."
+		text="Don't waste time - head there now. And when you come back… tell me how it went."
 		role="NPC"
 		nextReplies="Dlg_pl_001440" />
 
@@ -1577,7 +1577,7 @@
 
 	<Reply
 		name="Dlg_pl_001457"
-		text="No, I'm just surprised he acted so fast. Expeditions like that aren't cheap — and they take a lot of time. That's all."
+		text="No, I'm just surprised he acted so fast. Expeditions like that aren't cheap - and they take a lot of time. That's all."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001458" />
 
@@ -1589,13 +1589,13 @@
 
 	<Reply
 		name="Dlg_pl_001459"
-		text="Not exactly. Me and Mansur talked it over — we're thinking of heading further east to see what's out there."
+		text="Not exactly. Me and Mansur talked it over - we're thinking of heading further east to see what's out there."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001460" />
 
 	<Reply
 		name="Dlg_npc_001460"
-		text="No one's gone that far east in a hundred years! I try not to believe rumors, but people say most of the madmen come from there. If that's true… you drive in, and you won't be driving out — not alive, at least."
+		text="No one's gone that far east in a hundred years! I try not to believe rumors, but people say most of the madmen come from there. If that's true… you drive in, and you won't be driving out - not alive, at least."
 		role="NPC"
 		nextReplies="Dlg_pl_001461" />
 
@@ -1613,19 +1613,19 @@
 
 	<Reply
 		name="Dlg_pl_001463"
-		text="I'm grateful for your help. But it's not your call to make what's worth the risk and what's not. It's our mission — and we'll see it through to the end."
+		text="I'm grateful for your help. But it's not your call to make what's worth the risk and what's not. It's our mission - and we'll see it through to the end."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001464" />
 
 	<Reply
 		name="Dlg_npc_001464"
-		text="Fine. Suit yourself. I'm out — got better things to do than argue. Just don't say I didn't warn you."
+		text="Fine. Suit yourself. I'm out - got better things to do than argue. Just don't say I didn't warn you."
 		role="NPC"
 		nextReplies="Dlg_pl_001465" />
 
 	<Reply
 		name="Dlg_pl_001465"
-		text="Wait — something's clearly happened since we left. Everyone's running around like crazy! What happened?!"
+		text="Wait - something's clearly happened since we left. Everyone's running around like crazy! What happened?!"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001466" />
 
@@ -1655,7 +1655,7 @@
 
 	<Reply
 		name="Dlg_pl_001447"
-		text="The madmen — they appear because of a disaster that happened long ago… out east. To be honest, I'm thinking of heading to those lands myself."
+		text="The madmen - they appear because of a disaster that happened long ago… out east. To be honest, I'm thinking of heading to those lands myself."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001448" />
 
@@ -1679,19 +1679,19 @@
 
 	<Reply
 		name="Dlg_pl_001451"
-		text="I'm grateful for your help. But it's not your call to make what's worth the risk and what's not. It's our mission — and we'll see it through to the end."
+		text="I'm grateful for your help. But it's not your call to make what's worth the risk and what's not. It's our mission - and we'll see it through to the end."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001452" />
 
 	<Reply
 		name="Dlg_npc_001452"
-		text="Fine. Suit yourself. I'm out — got better things to do than argue. Just don't say I didn't warn you."
+		text="Fine. Suit yourself. I'm out - got better things to do than argue. Just don't say I didn't warn you."
 		role="NPC"
 		nextReplies="Dlg_pl_001453" />
 
 	<Reply
 		name="Dlg_pl_001453"
-		text="Wait — something's clearly happened since we left. Everyone's running around like crazy! What happened?!"
+		text="Wait - something's clearly happened since we left. Everyone's running around like crazy! What happened?!"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001468" />
 
@@ -1722,7 +1722,7 @@
 
 	<Reply
 		name="Dlg_npc_001382"
-		text="Nothing concrete to tell, I'm afraid. We've sent teams out again and again — all return with nothing. Hope is fading with every passing day..."
+		text="Nothing concrete to tell, I'm afraid. We've sent teams out again and again - all return with nothing. Hope is fading with every passing day..."
 		role="NPC"
 		nextReplies="Dlg_pl_001383" />
 
@@ -1772,7 +1772,7 @@
 
 	<Reply
 		name="Dlg_npc_002214"
-		text="You already found them? And you didn't tell me? I actually listened to Sharaf — turns out we've never checked the coast at all!"
+		text="You already found them? And you didn't tell me? I actually listened to Sharaf - turns out we've never checked the coast at all!"
 		role="NPC"
 		nextReplies="Dlg_pl_002215" />
 
@@ -1796,7 +1796,7 @@
 
 	<Reply
 		name="Dlg_npc_002218"
-		text="They don't get a say in the matter! The mission is clear — bring them back home or eliminate them... You heard nothing, understand?! Now go. Move!"
+		text="They don't get a say in the matter! The mission is clear - bring them back home or eliminate them... You heard nothing, understand?! Now go. Move!"
 		role="NPC"
 		nextReplies="Dlg_pl_002219" />
 
@@ -1807,21 +1807,15 @@
 		scriptResult="SetVar('AkilExplains', 1); TakeQuest('TalkToFatherPrepToTrip_quest'); TActivate('AkilSus_tr'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Race/If Hamza races-->
 	<Reply
-		name="Adrenalin_NPC_dialog_1"
-		text="Welcome, young ones! Don't miss your chance — we're holding Ural truck races today. And since you've already got yourselves these trucks, wouldn't make sense to miss it!"
-		role="NPC"
-		scriptCondition="QuestStatus('GonkaUral')==Q_TAKEN"
-		nextReplies="Dlg_pl_001348" />
-
-	<Reply
 		name="Dlg_pl_001348"
 		text="We came here for this."
 		role="PLAYER"
+		scriptResult="SetVar('PlayerRaceDecision', 1)"
 		nextReplies="Dlg_npc_001349" />
 
 	<Reply
 		name="Dlg_npc_001349"
-		text="Great! Then you know the drill — 2,500 coins for the entry fee."
+		text="Great! Then you know the drill - 2,500 coins for the entry fee."
 		role="NPC"
 		nextReplies="Dlg_pl_001350 Dlg_pl_001424" />
 
@@ -1854,7 +1848,7 @@
 
 	<Reply
 		name="Dlg_npc_001358"
-		text="The rules are simple: false start — you're out. Wreck your truck — you're out. Finish first — 20,000 coins. Second place — 10,000. Third — 5,000. One lap only — Urals aren't exactly built for speed like race cars. During the race, your vehicle will be equipped with a booster that can double its nominal speed. And for safety reasons — yours and everyone else's — all weapons must be removed before the start."
+		text="The rules are simple: false start - you're out. Wreck your truck - you're out. Finish first - 20,000 coins. Second place - 10,000. Third - 5,000. One lap only - Urals aren't exactly built for speed like race cars. During the race, your vehicle will be equipped with a booster that can double its nominal speed. And for safety reasons - yours and everyone else's - all weapons must be removed before the start."
 		role="NPC"
 		nextReplies="Dlg_pl_001359" />
 
@@ -1872,9 +1866,9 @@
 
 	<Reply
 		name="Dlg_pl_001361"
-		text="Great, appreciate it! C'mon, Mansur — let's ride! Show these guys what a real driver looks like."
+		text="Great, appreciate it! C'mon, Mansur - let's ride! Show these guys what a real driver looks like."
 		role="PLAYER"
-		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001352"
@@ -1896,7 +1890,7 @@
 
 	<Reply
 		name="Dlg_npc_002208"
-		text="You know what — forget it. I can already tell you don't really know the rules. Let me spell it out: false start — you're out. Wreck your truck — you're out. First place gets 20 000. Second place — 10 000. Third — 5 000. One lap only — Urals aren't exactly race cars, if you catch my drift. During the race, your truck will be equipped with a speed booster that doubles its top speed. And yes — all weapons must be removed for safety. Yours and everyone else's."
+		text="You know what - forget it. I can already tell you don't really know the rules. Let me spell it out: false start - you're out. Wreck your truck - you're out. First place gets 20 000. Second place - 10 000. Third - 5 000. One lap only - Urals aren't exactly race cars, if you catch my drift. During the race, your truck will be equipped with a speed booster that doubles its top speed. And yes - all weapons must be removed for safety. Yours and everyone else's."
 		role="NPC"
 		nextReplies="Dlg_pl_002209" />
 
@@ -1916,17 +1910,17 @@
 		name="Dlg_pl_002211"
 		text="Perfect. Thanks!"
 		role="PLAYER"
-		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001355"
-		text="Sure. Wrong start — you're out. Wreck your truck — you're out. First place gets 20 000, second — 10 000, third — 5 000. One lap only."
+		text="Sure. Wrong start - you're out. Wreck your truck - you're out. First place gets 20 000, second - 10 000, third - 5 000. One lap only."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001356" />
 
 	<Reply
 		name="Dlg_npc_001356"
-		text="Perfect… but you missed something. Your truck will be equipped with a speed booster — doubles its top speed. And yes — all weapons must be removed for safety. Yours and everyone else's."
+		text="Perfect… but you missed something. Your truck will be equipped with a speed booster - doubles its top speed. And yes - all weapons must be removed for safety. Yours and everyone else's."
 		role="NPC"
 		nextReplies="Dlg_pl_001357" />
 
@@ -1938,7 +1932,7 @@
 
 	<Reply
 		name="Dlg_npc_001490"
-		text="Appreciate the cooperation. Now, if you'll follow me — it's time to take your starting positions. The race is about to kick off."
+		text="Appreciate the cooperation. Now, if you'll follow me - it's time to take your starting positions. The race is about to kick off."
 		role="NPC"
 		nextReplies="Dlg_pl_001491" />
 
@@ -1946,24 +1940,18 @@
 		name="Dlg_pl_001491"
 		text="Let's do this!"
 		role="PLAYER"
-		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace')" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 <!--Root/r4m1/The Chronicle of Hamza/Race/If Hamza watch race-->
-	<Reply
-		name="Dlg_npc_001653"
-		text="Welcome, young ones! Don't miss your chance — we're holding Ural truck races today. And since you've already got yourselves these trucks, wouldn't make sense to miss it!"
-		role="NPC"
-		scriptCondition="QuestStatus('GonkaUralSpec')==Q_TAKEN"
-		nextReplies="Dlg_pl_001654" />
-
 	<Reply
 		name="Dlg_pl_001654"
 		text="My friend will be racing. I'm here just to watch."
 		role="PLAYER"
+		scriptResult="SetVar('PlayerRaceDecision', 2)"
 		nextReplies="Dlg_npc_001655" />
 
 	<Reply
 		name="Dlg_npc_001655"
-		text="Alright, the stands are free for family and friends of the racers — so please, take your seat. Or… maybe you're feeling lucky and want to place a bet?"
+		text="Alright, the stands are free for family and friends of the racers - so please, take your seat. Or… maybe you're feeling lucky and want to place a bet?"
 		role="NPC"
 		nextReplies="Dlg_pl_001656 Dlg_pl_001657" />
 
@@ -1981,9 +1969,9 @@
 
 	<Reply
 		name="Dlg_pl_002084"
-		text="Thank you. Show ‘em what you're made of, Mansur."
+		text="Thank you. Show 'em what you're made of, Mansur."
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001656"
@@ -1994,13 +1982,13 @@
 
 	<Reply
 		name="Dlg_npc_001658"
-		text="So… who are you betting on? Your friend's in slot number 3. There are only four racers total. No official favorites — the rules are the same for all. It all comes down to skill."
+		text="So… who are you betting on? Your friend's in slot number 3. There are only four racers total. No official favorites - the rules are the same for all. It all comes down to skill."
 		role="NPC"
 		nextReplies="Dlg_pl_001659 Dlg_pl_001660 Dlg_pl_001662 Dlg_pl_001663" />
 
 	<Reply
 		name="Dlg_pl_001663"
-		text="Number four — let's see what he's got."
+		text="Number four - let's see what he's got."
 		role="PLAYER"
 		scriptResult="SetVar('BettingNumber', 4)"
 		nextReplies="Dlg_npc_001666" />
@@ -2043,15 +2031,15 @@
 
 	<Reply
 		name="Dlg_npc_001766"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001770" />
 
 	<Reply
 		name="Dlg_pl_001770"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001758"
@@ -2063,7 +2051,7 @@
 
 	<Reply
 		name="Dlg_npc_002038"
-		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002048" />
 
@@ -2075,15 +2063,15 @@
 
 	<Reply
 		name="Dlg_npc_002049"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002050" />
 
 	<Reply
 		name="Dlg_pl_002050"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001757"
@@ -2095,7 +2083,7 @@
 
 	<Reply
 		name="Dlg_npc_002037"
-		text="Alright, your bet of 500 coins on truck number 4 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 4 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002045" />
 
@@ -2107,15 +2095,15 @@
 
 	<Reply
 		name="Dlg_npc_002046"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002047" />
 
 	<Reply
 		name="Dlg_pl_002047"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001756"
@@ -2127,7 +2115,7 @@
 
 	<Reply
 		name="Dlg_npc_002036"
-		text="Alright, your bet of 250 coins on truck number 4 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 4 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002042" />
 
@@ -2139,15 +2127,15 @@
 
 	<Reply
 		name="Dlg_npc_002043"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002044" />
 
 	<Reply
 		name="Dlg_pl_002044"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001755"
@@ -2159,7 +2147,7 @@
 
 	<Reply
 		name="Dlg_npc_002035"
-		text="Alright, your bet of 100 coins on truck number 4 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 4 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002039" />
 
@@ -2171,15 +2159,15 @@
 
 	<Reply
 		name="Dlg_npc_002040"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002041" />
 
 	<Reply
 		name="Dlg_pl_002041"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001713"
@@ -2213,15 +2201,15 @@
 
 	<Reply
 		name="Dlg_npc_001824"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001825" />
 
 	<Reply
 		name="Dlg_pl_001825"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001822"
@@ -2233,7 +2221,7 @@
 
 	<Reply
 		name="Dlg_npc_002063"
-		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002064" />
 
@@ -2245,15 +2233,15 @@
 
 	<Reply
 		name="Dlg_npc_002065"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002066" />
 
 	<Reply
 		name="Dlg_pl_002066"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001821"
@@ -2265,7 +2253,7 @@
 
 	<Reply
 		name="Dlg_npc_002059"
-		text="Alright, your bet of 500 coins on truck number 4 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 4 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002060" />
 
@@ -2277,15 +2265,15 @@
 
 	<Reply
 		name="Dlg_npc_002061"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002062" />
 
 	<Reply
 		name="Dlg_pl_002062"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001820"
@@ -2297,7 +2285,7 @@
 
 	<Reply
 		name="Dlg_npc_002055"
-		text="Alright, your bet of 250 coins on truck number 4 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 4 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002056" />
 
@@ -2309,15 +2297,15 @@
 
 	<Reply
 		name="Dlg_npc_002057"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002058" />
 
 	<Reply
 		name="Dlg_pl_002058"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001819"
@@ -2329,7 +2317,7 @@
 
 	<Reply
 		name="Dlg_npc_002051"
-		text="Alright, your bet of 100 coins on truck number 4 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 4 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002052" />
 
@@ -2341,19 +2329,19 @@
 
 	<Reply
 		name="Dlg_npc_002053"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002054" />
 
 	<Reply
 		name="Dlg_pl_002054"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001723"
-		text="Man, I didn't come here to fight with you! I told you — no bet. Drop it."
+		text="Man, I didn't come here to fight with you! I told you - no bet. Drop it."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001730" />
 
@@ -2365,21 +2353,21 @@
 
 	<Reply
 		name="Dlg_pl_001738"
-		text="Don't waste your breath. I'm not betting — now or later."
+		text="Don't waste your breath. I'm not betting - now or later."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001834" />
 
 	<Reply
 		name="Dlg_npc_001834"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001835" />
 
 	<Reply
 		name="Dlg_pl_001835"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001737"
@@ -2402,15 +2390,15 @@
 
 	<Reply
 		name="Dlg_npc_001832"
-		text="Wow, someone's got a temper. Alright alright — no bet, no problem. Take your spot in the stands."
+		text="Wow, someone's got a temper. Alright alright - no bet, no problem. Take your spot in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001833" />
 
 	<Reply
 		name="Dlg_pl_001833"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001830"
@@ -2422,7 +2410,7 @@
 
 	<Reply
 		name="Dlg_npc_002079"
-		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount — 3000 coins."
+		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount - 3000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002080" />
 
@@ -2434,15 +2422,15 @@
 
 	<Reply
 		name="Dlg_npc_002081"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002082" />
 
 	<Reply
 		name="Dlg_pl_002082"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001829"
@@ -2454,7 +2442,7 @@
 
 	<Reply
 		name="Dlg_npc_002075"
-		text="Alright, your bet of 500 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount — 1500 coins."
+		text="Alright, your bet of 500 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount - 1500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002076" />
 
@@ -2466,15 +2454,15 @@
 
 	<Reply
 		name="Dlg_npc_002077"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002078" />
 
 	<Reply
 		name="Dlg_pl_002078"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001828"
@@ -2486,7 +2474,7 @@
 
 	<Reply
 		name="Dlg_npc_002071"
-		text="Alright, your bet of 250 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount — 750 coins."
+		text="Alright, your bet of 250 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount - 750 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002072" />
 
@@ -2498,15 +2486,15 @@
 
 	<Reply
 		name="Dlg_npc_002073"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002074" />
 
 	<Reply
 		name="Dlg_pl_002074"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001827"
@@ -2518,7 +2506,7 @@
 
 	<Reply
 		name="Dlg_npc_002067"
-		text="Alright, your bet of 100 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount — 300 coins."
+		text="Alright, your bet of 100 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount - 300 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002068" />
 
@@ -2530,15 +2518,15 @@
 
 	<Reply
 		name="Dlg_npc_002069"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002070" />
 
 	<Reply
 		name="Dlg_pl_002070"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001685"
@@ -2550,7 +2538,7 @@
 
 	<Reply
 		name="Dlg_npc_001702"
-		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002032" />
 
@@ -2562,15 +2550,15 @@
 
 	<Reply
 		name="Dlg_npc_002033"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002034" />
 
 	<Reply
 		name="Dlg_pl_002034"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001684"
@@ -2582,7 +2570,7 @@
 
 	<Reply
 		name="Dlg_npc_001701"
-		text="Alright, your bet of 500 coins on truck number 4 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 4 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002029" />
 
@@ -2594,15 +2582,15 @@
 
 	<Reply
 		name="Dlg_npc_002030"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002031" />
 
 	<Reply
 		name="Dlg_pl_002031"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001683"
@@ -2614,7 +2602,7 @@
 
 	<Reply
 		name="Dlg_npc_001700"
-		text="Alright, your bet of 250 coins on truck number 4 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 4 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002026" />
 
@@ -2626,15 +2614,15 @@
 
 	<Reply
 		name="Dlg_npc_002027"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002028" />
 
 	<Reply
 		name="Dlg_pl_002028"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001682"
@@ -2646,7 +2634,7 @@
 
 	<Reply
 		name="Dlg_npc_001699"
-		text="Alright, your bet of 100 coins on truck number 4 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 4 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002023" />
 
@@ -2658,15 +2646,15 @@
 
 	<Reply
 		name="Dlg_npc_002024"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002025" />
 
 	<Reply
 		name="Dlg_pl_002025"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001662"
@@ -2713,15 +2701,15 @@
 
 	<Reply
 		name="Dlg_npc_001763"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001769" />
 
 	<Reply
 		name="Dlg_pl_001769"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001753"
@@ -2733,7 +2721,7 @@
 
 	<Reply
 		name="Dlg_npc_001979"
-		text="Alright, your bet of 1000 coins on truck number 3 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 3 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001989" />
 
@@ -2745,15 +2733,15 @@
 
 	<Reply
 		name="Dlg_npc_001990"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001991" />
 
 	<Reply
 		name="Dlg_pl_001991"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001752"
@@ -2765,7 +2753,7 @@
 
 	<Reply
 		name="Dlg_npc_001978"
-		text="Alright, your bet of 500 coins on truck number 3 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 3 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001986" />
 
@@ -2777,15 +2765,15 @@
 
 	<Reply
 		name="Dlg_npc_001987"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001988" />
 
 	<Reply
 		name="Dlg_pl_001988"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001751"
@@ -2797,7 +2785,7 @@
 
 	<Reply
 		name="Dlg_npc_001977"
-		text="Alright, your bet of 250 coins on truck number 3 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 3 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001983" />
 
@@ -2809,15 +2797,15 @@
 
 	<Reply
 		name="Dlg_npc_001984"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001985" />
 
 	<Reply
 		name="Dlg_pl_001985"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001750"
@@ -2829,7 +2817,7 @@
 
 	<Reply
 		name="Dlg_npc_001976"
-		text="Alright, your bet of 100 coins on truck number 3 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 3 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001980" />
 
@@ -2841,15 +2829,15 @@
 
 	<Reply
 		name="Dlg_npc_001981"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001982" />
 
 	<Reply
 		name="Dlg_pl_001982"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001711"
@@ -2883,15 +2871,15 @@
 
 	<Reply
 		name="Dlg_npc_001816"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001817" />
 
 	<Reply
 		name="Dlg_pl_001817"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001814"
@@ -2903,7 +2891,7 @@
 
 	<Reply
 		name="Dlg_npc_001994"
-		text="Alright, your bet of 1000 coins on truck number 3 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 3 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002004" />
 
@@ -2915,15 +2903,15 @@
 
 	<Reply
 		name="Dlg_npc_002005"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002006" />
 
 	<Reply
 		name="Dlg_pl_002006"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001812"
@@ -2935,7 +2923,7 @@
 
 	<Reply
 		name="Dlg_npc_001813"
-		text="Alright, your bet of 500 coins on truck number 3 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 3 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002001" />
 
@@ -2947,15 +2935,15 @@
 
 	<Reply
 		name="Dlg_npc_002002"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002003" />
 
 	<Reply
 		name="Dlg_pl_002003"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001811"
@@ -2967,7 +2955,7 @@
 
 	<Reply
 		name="Dlg_npc_001993"
-		text="Alright, your bet of 250 coins on truck number 3 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 3 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001998" />
 
@@ -2979,15 +2967,15 @@
 
 	<Reply
 		name="Dlg_npc_001999"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002000" />
 
 	<Reply
 		name="Dlg_pl_002000"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001810"
@@ -2999,7 +2987,7 @@
 
 	<Reply
 		name="Dlg_npc_001992"
-		text="Alright, your bet of 100 coins on truck number 3 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 3 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001995" />
 
@@ -3011,19 +2999,19 @@
 
 	<Reply
 		name="Dlg_npc_001996"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001997" />
 
 	<Reply
 		name="Dlg_pl_001997"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001722"
-		text="Man, I didn't come here to fight with you! I told you — no bet. Drop it."
+		text="Man, I didn't come here to fight with you! I told you - no bet. Drop it."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001729" />
 
@@ -3035,21 +3023,21 @@
 
 	<Reply
 		name="Dlg_pl_001736"
-		text="Don't waste your breath. I'm not betting — now or later."
+		text="Don't waste your breath. I'm not betting - now or later."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001807" />
 
 	<Reply
 		name="Dlg_npc_001807"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001808" />
 
 	<Reply
 		name="Dlg_pl_001808"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001735"
@@ -3072,15 +3060,15 @@
 
 	<Reply
 		name="Dlg_npc_001805"
-		text="Wow, someone's got a temper. Alright alright — no bet, no problem. Take your spot in the stands."
+		text="Wow, someone's got a temper. Alright alright - no bet, no problem. Take your spot in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001806" />
 
 	<Reply
 		name="Dlg_pl_001806"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001803"
@@ -3092,7 +3080,7 @@
 
 	<Reply
 		name="Dlg_npc_002012"
-		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount — 3000 coins."
+		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount - 3000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002020" />
 
@@ -3104,15 +3092,15 @@
 
 	<Reply
 		name="Dlg_npc_002021"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002022" />
 
 	<Reply
 		name="Dlg_pl_002022"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001802"
@@ -3124,7 +3112,7 @@
 
 	<Reply
 		name="Dlg_npc_002011"
-		text="Alright, your bet of 500 coins on truck number 3 has been accepted. If it wins, your payout will be triple the original amount — 1500 coins."
+		text="Alright, your bet of 500 coins on truck number 3 has been accepted. If it wins, your payout will be triple the original amount - 1500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002017" />
 
@@ -3136,15 +3124,15 @@
 
 	<Reply
 		name="Dlg_npc_002018"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002019" />
 
 	<Reply
 		name="Dlg_pl_002019"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001801"
@@ -3156,7 +3144,7 @@
 
 	<Reply
 		name="Dlg_npc_002010"
-		text="Alright, your bet of 250 coins on truck number 3 has been accepted. If it wins, your payout will be triple the original amount — 750 coins."
+		text="Alright, your bet of 250 coins on truck number 3 has been accepted. If it wins, your payout will be triple the original amount - 750 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002014" />
 
@@ -3168,15 +3156,15 @@
 
 	<Reply
 		name="Dlg_npc_002015"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002016" />
 
 	<Reply
 		name="Dlg_pl_002016"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001800"
@@ -3188,7 +3176,7 @@
 
 	<Reply
 		name="Dlg_npc_002007"
-		text="Alright, your bet of 100 coins on truck number 3 has been accepted. If it wins, your payout will be triple the original amount — 300 coins."
+		text="Alright, your bet of 100 coins on truck number 3 has been accepted. If it wins, your payout will be triple the original amount - 300 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_002008" />
 
@@ -3200,15 +3188,15 @@
 
 	<Reply
 		name="Dlg_npc_002009"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_002013" />
 
 	<Reply
 		name="Dlg_pl_002013"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001680"
@@ -3220,7 +3208,7 @@
 
 	<Reply
 		name="Dlg_npc_001698"
-		text="Alright, your bet of 1000 coins on truck number 3 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 3 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001973" />
 
@@ -3232,15 +3220,15 @@
 
 	<Reply
 		name="Dlg_npc_001974"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001975" />
 
 	<Reply
 		name="Dlg_pl_001975"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001679"
@@ -3252,7 +3240,7 @@
 
 	<Reply
 		name="Dlg_npc_001697"
-		text="Alright, your bet of 500 coins on truck number 3 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 3 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001970" />
 
@@ -3264,15 +3252,15 @@
 
 	<Reply
 		name="Dlg_npc_001971"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001972" />
 
 	<Reply
 		name="Dlg_pl_001972"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001678"
@@ -3284,7 +3272,7 @@
 
 	<Reply
 		name="Dlg_npc_001696"
-		text="Alright, your bet of 250 coins on truck number 3 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 3 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001967" />
 
@@ -3296,15 +3284,15 @@
 
 	<Reply
 		name="Dlg_npc_001968"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001969" />
 
 	<Reply
 		name="Dlg_pl_001969"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001677"
@@ -3316,7 +3304,7 @@
 
 	<Reply
 		name="Dlg_npc_001695"
-		text="Alright, your bet of 100 coins on truck number 3 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 3 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001964" />
 
@@ -3328,15 +3316,15 @@
 
 	<Reply
 		name="Dlg_npc_001965"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001966" />
 
 	<Reply
 		name="Dlg_pl_001966"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001660"
@@ -3383,15 +3371,15 @@
 
 	<Reply
 		name="Dlg_npc_001765"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001768" />
 
 	<Reply
 		name="Dlg_pl_001768"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001748"
@@ -3403,7 +3391,7 @@
 
 	<Reply
 		name="Dlg_npc_001914"
-		text="Alright, your bet of 1000 coins on truck number 2 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 2 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001921" />
 
@@ -3415,15 +3403,15 @@
 
 	<Reply
 		name="Dlg_npc_001922"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001923" />
 
 	<Reply
 		name="Dlg_pl_001923"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001747"
@@ -3435,7 +3423,7 @@
 
 	<Reply
 		name="Dlg_npc_001913"
-		text="Alright, your bet of 500 coins on truck number 2 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 2 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001918" />
 
@@ -3447,15 +3435,15 @@
 
 	<Reply
 		name="Dlg_npc_001919"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001920" />
 
 	<Reply
 		name="Dlg_pl_001920"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001746"
@@ -3467,7 +3455,7 @@
 
 	<Reply
 		name="Dlg_npc_001912"
-		text="Alright, your bet of 250 coins on truck number 2 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 2 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001915" />
 
@@ -3479,15 +3467,15 @@
 
 	<Reply
 		name="Dlg_npc_001916"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001917" />
 
 	<Reply
 		name="Dlg_pl_001917"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001745"
@@ -3499,7 +3487,7 @@
 
 	<Reply
 		name="Dlg_npc_001908"
-		text="Alright, your bet of 100 coins on truck number 2 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 2 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001909" />
 
@@ -3511,15 +3499,15 @@
 
 	<Reply
 		name="Dlg_npc_001910"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001911" />
 
 	<Reply
 		name="Dlg_pl_001911"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001709"
@@ -3553,15 +3541,15 @@
 
 	<Reply
 		name="Dlg_npc_001930"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001931" />
 
 	<Reply
 		name="Dlg_pl_001931"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001928"
@@ -3573,7 +3561,7 @@
 
 	<Reply
 		name="Dlg_npc_001936"
-		text="Alright, your bet of 1000 coins on truck number 2 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 2 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001945" />
 
@@ -3585,15 +3573,15 @@
 
 	<Reply
 		name="Dlg_npc_001946"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001947" />
 
 	<Reply
 		name="Dlg_pl_001947"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001927"
@@ -3605,7 +3593,7 @@
 
 	<Reply
 		name="Dlg_npc_001935"
-		text="Alright, your bet of 500 coins on truck number 2 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 2 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001942" />
 
@@ -3617,15 +3605,15 @@
 
 	<Reply
 		name="Dlg_npc_001943"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001944" />
 
 	<Reply
 		name="Dlg_pl_001944"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001926"
@@ -3637,7 +3625,7 @@
 
 	<Reply
 		name="Dlg_npc_001934"
-		text="Alright, your bet of 250 coins on truck number 2 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 2 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001939" />
 
@@ -3649,15 +3637,15 @@
 
 	<Reply
 		name="Dlg_npc_001940"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001941" />
 
 	<Reply
 		name="Dlg_pl_001941"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001925"
@@ -3669,7 +3657,7 @@
 
 	<Reply
 		name="Dlg_npc_001932"
-		text="Alright, your bet of 100 coins on truck number 2 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 2 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001933" />
 
@@ -3681,19 +3669,19 @@
 
 	<Reply
 		name="Dlg_npc_001937"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001938" />
 
 	<Reply
 		name="Dlg_pl_001938"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001721"
-		text="Man, I didn't come here to fight with you! I told you — no bet. Drop it."
+		text="Man, I didn't come here to fight with you! I told you - no bet. Drop it."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001728" />
 
@@ -3705,21 +3693,21 @@
 
 	<Reply
 		name="Dlg_pl_001734"
-		text="Don't waste your breath. I'm not betting — now or later."
+		text="Don't waste your breath. I'm not betting - now or later."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001797" />
 
 	<Reply
 		name="Dlg_npc_001797"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001798" />
 
 	<Reply
 		name="Dlg_pl_001798"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001733"
@@ -3742,15 +3730,15 @@
 
 	<Reply
 		name="Dlg_npc_001795"
-		text="Wow, someone's got a temper. Alright alright — no bet, no problem. Take your spot in the stands."
+		text="Wow, someone's got a temper. Alright alright - no bet, no problem. Take your spot in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001796" />
 
 	<Reply
 		name="Dlg_pl_001796"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001793"
@@ -3762,7 +3750,7 @@
 
 	<Reply
 		name="Dlg_npc_001954"
-		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount — 3000 coins."
+		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount - 3000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001961" />
 
@@ -3774,15 +3762,15 @@
 
 	<Reply
 		name="Dlg_npc_001962"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001963" />
 
 	<Reply
 		name="Dlg_pl_001963"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001792"
@@ -3794,7 +3782,7 @@
 
 	<Reply
 		name="Dlg_npc_001953"
-		text="Alright, your bet of 500 coins on truck number 2 has been accepted. If it wins, your payout will be triple the original amount — 1500 coins."
+		text="Alright, your bet of 500 coins on truck number 2 has been accepted. If it wins, your payout will be triple the original amount - 1500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001958" />
 
@@ -3806,15 +3794,15 @@
 
 	<Reply
 		name="Dlg_npc_001959"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001960" />
 
 	<Reply
 		name="Dlg_pl_001960"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001791"
@@ -3826,7 +3814,7 @@
 
 	<Reply
 		name="Dlg_npc_001952"
-		text="Alright, your bet of 250 coins on truck number 2 has been accepted. If it wins, your payout will be triple the original amount — 750 coins."
+		text="Alright, your bet of 250 coins on truck number 2 has been accepted. If it wins, your payout will be triple the original amount - 750 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001955" />
 
@@ -3838,15 +3826,15 @@
 
 	<Reply
 		name="Dlg_npc_001956"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001957" />
 
 	<Reply
 		name="Dlg_pl_001957"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001790"
@@ -3858,7 +3846,7 @@
 
 	<Reply
 		name="Dlg_npc_001948"
-		text="Alright, your bet of 100 coins on truck number 2 has been accepted. If it wins, your payout will be triple the original amount — 300 coins."
+		text="Alright, your bet of 100 coins on truck number 2 has been accepted. If it wins, your payout will be triple the original amount - 300 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001949" />
 
@@ -3870,15 +3858,15 @@
 
 	<Reply
 		name="Dlg_npc_001950"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001951" />
 
 	<Reply
 		name="Dlg_pl_001951"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001675"
@@ -3890,7 +3878,7 @@
 
 	<Reply
 		name="Dlg_npc_001694"
-		text="Alright, your bet of 1000 coins on truck number 2 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 2 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001905" />
 
@@ -3902,15 +3890,15 @@
 
 	<Reply
 		name="Dlg_npc_001906"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001907" />
 
 	<Reply
 		name="Dlg_pl_001907"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001674"
@@ -3922,7 +3910,7 @@
 
 	<Reply
 		name="Dlg_npc_001693"
-		text="Alright, your bet of 500 coins on truck number 2 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 2 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001902" />
 
@@ -3934,15 +3922,15 @@
 
 	<Reply
 		name="Dlg_npc_001903"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001904" />
 
 	<Reply
 		name="Dlg_pl_001904"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001673"
@@ -3954,7 +3942,7 @@
 
 	<Reply
 		name="Dlg_npc_001692"
-		text="Alright, your bet of 250 coins on truck number 2 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 2 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001899" />
 
@@ -3966,15 +3954,15 @@
 
 	<Reply
 		name="Dlg_npc_001900"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001901" />
 
 	<Reply
 		name="Dlg_pl_001901"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001672"
@@ -3986,7 +3974,7 @@
 
 	<Reply
 		name="Dlg_npc_001691"
-		text="Alright, your bet of 100 coins on truck number 2 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 2 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001896" />
 
@@ -3998,19 +3986,19 @@
 
 	<Reply
 		name="Dlg_npc_001897"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001898" />
 
 	<Reply
 		name="Dlg_pl_001898"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001659"
-		text="First truck — I'm putting my coin on him."
+		text="First truck - I'm putting my coin on him."
 		role="PLAYER"
 		scriptResult="SetVar('BettingNumber', 1)"
 		nextReplies="Dlg_npc_001664" />
@@ -4053,15 +4041,15 @@
 
 	<Reply
 		name="Dlg_npc_001764"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001767" />
 
 	<Reply
 		name="Dlg_pl_001767"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001743"
@@ -4073,7 +4061,7 @@
 
 	<Reply
 		name="Dlg_npc_001839"
-		text="Alright, your bet of 1000 coins on truck number 1 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 1 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001869" />
 
@@ -4085,15 +4073,15 @@
 
 	<Reply
 		name="Dlg_npc_001870"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001871" />
 
 	<Reply
 		name="Dlg_pl_001871"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001742"
@@ -4105,7 +4093,7 @@
 
 	<Reply
 		name="Dlg_npc_001838"
-		text="Alright, your bet of 500 coins on truck number 1 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 1 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001866" />
 
@@ -4117,15 +4105,15 @@
 
 	<Reply
 		name="Dlg_npc_001867"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001868" />
 
 	<Reply
 		name="Dlg_pl_001868"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001741"
@@ -4137,7 +4125,7 @@
 
 	<Reply
 		name="Dlg_npc_001837"
-		text="Alright, your bet of 250 coins on truck number 1 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 1 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001863" />
 
@@ -4149,15 +4137,15 @@
 
 	<Reply
 		name="Dlg_npc_001864"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001865" />
 
 	<Reply
 		name="Dlg_pl_001865"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001740"
@@ -4169,7 +4157,7 @@
 
 	<Reply
 		name="Dlg_npc_001836"
-		text="Alright, your bet of 100 coins on truck number 1 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 1 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001860" />
 
@@ -4181,15 +4169,15 @@
 
 	<Reply
 		name="Dlg_npc_001861"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001862" />
 
 	<Reply
 		name="Dlg_pl_001862"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001707"
@@ -4223,15 +4211,15 @@
 
 	<Reply
 		name="Dlg_npc_001777"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001778" />
 
 	<Reply
 		name="Dlg_pl_001778"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001775"
@@ -4243,7 +4231,7 @@
 
 	<Reply
 		name="Dlg_npc_001843"
-		text="Alright, your bet of 1000 coins on truck number 1 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 1 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001881" />
 
@@ -4255,15 +4243,15 @@
 
 	<Reply
 		name="Dlg_npc_001882"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001883" />
 
 	<Reply
 		name="Dlg_pl_001883"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001774"
@@ -4275,7 +4263,7 @@
 
 	<Reply
 		name="Dlg_npc_001842"
-		text="Alright, your bet of 500 coins on truck number 1 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 1 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001878" />
 
@@ -4287,15 +4275,15 @@
 
 	<Reply
 		name="Dlg_npc_001879"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001880" />
 
 	<Reply
 		name="Dlg_pl_001880"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001773"
@@ -4307,7 +4295,7 @@
 
 	<Reply
 		name="Dlg_npc_001841"
-		text="Alright, your bet of 250 coins on truck number 1 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 1 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001875" />
 
@@ -4319,15 +4307,15 @@
 
 	<Reply
 		name="Dlg_npc_001876"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001877" />
 
 	<Reply
 		name="Dlg_pl_001877"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001772"
@@ -4339,7 +4327,7 @@
 
 	<Reply
 		name="Dlg_npc_001840"
-		text="Alright, your bet of 100 coins on truck number 1 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 1 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001872" />
 
@@ -4351,19 +4339,19 @@
 
 	<Reply
 		name="Dlg_npc_001873"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001874" />
 
 	<Reply
 		name="Dlg_pl_001874"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001719"
-		text="Man, I didn't come here to fight with you! I told you — no bet. Drop it."
+		text="Man, I didn't come here to fight with you! I told you - no bet. Drop it."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001727" />
 
@@ -4375,21 +4363,21 @@
 
 	<Reply
 		name="Dlg_pl_001732"
-		text="Don't waste your breath. I'm not betting — now or later."
+		text="Don't waste your breath. I'm not betting - now or later."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001787" />
 
 	<Reply
 		name="Dlg_npc_001787"
-		text="Got it. No bet — then please, take your seat in the stands."
+		text="Got it. No bet - then please, take your seat in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001788" />
 
 	<Reply
 		name="Dlg_pl_001788"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001731"
@@ -4412,15 +4400,15 @@
 
 	<Reply
 		name="Dlg_npc_001785"
-		text="Wow, someone's got a temper. Alright alright — no bet, no problem. Take your spot in the stands."
+		text="Wow, someone's got a temper. Alright alright - no bet, no problem. Take your spot in the stands."
 		role="NPC"
 		nextReplies="Dlg_pl_001786" />
 
 	<Reply
 		name="Dlg_pl_001786"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001783"
@@ -4432,7 +4420,7 @@
 
 	<Reply
 		name="Dlg_npc_001847"
-		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount — 3000 coins."
+		text="Alright, your bet of 1000 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount - 3000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001893" />
 
@@ -4444,15 +4432,15 @@
 
 	<Reply
 		name="Dlg_npc_001894"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001895" />
 
 	<Reply
 		name="Dlg_pl_001895"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001782"
@@ -4464,7 +4452,7 @@
 
 	<Reply
 		name="Dlg_npc_001846"
-		text="Alright, your bet of 500 coins on truck number 1 has been accepted. If it wins, your payout will be triple the original amount — 1500 coins."
+		text="Alright, your bet of 500 coins on truck number 1 has been accepted. If it wins, your payout will be triple the original amount - 1500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001890" />
 
@@ -4476,15 +4464,15 @@
 
 	<Reply
 		name="Dlg_npc_001891"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001892" />
 
 	<Reply
 		name="Dlg_pl_001892"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001781"
@@ -4496,7 +4484,7 @@
 
 	<Reply
 		name="Dlg_npc_001845"
-		text="Alright, your bet of 250 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount — 750 coins."
+		text="Alright, your bet of 250 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount - 750 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001887" />
 
@@ -4508,15 +4496,15 @@
 
 	<Reply
 		name="Dlg_npc_001888"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001889" />
 
 	<Reply
 		name="Dlg_pl_001889"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001780"
@@ -4528,7 +4516,7 @@
 
 	<Reply
 		name="Dlg_npc_001844"
-		text="Alright, your bet of 100 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount — 300 coins."
+		text="Alright, your bet of 100 coins on truck number 4 has been accepted. If it wins, your payout will be triple the original amount - 300 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001884" />
 
@@ -4540,7 +4528,7 @@
 
 	<Reply
 		name="Dlg_npc_001885"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001886" />
 
@@ -4548,7 +4536,7 @@
 		name="Dlg_pl_001886"
 		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001670"
@@ -4560,7 +4548,7 @@
 
 	<Reply
 		name="Dlg_npc_001690"
-		text="Alright, your bet of 1000 coins on truck number 1 has been accepted. If it wins, you'll receive double — 2000 coins."
+		text="Alright, your bet of 1000 coins on truck number 1 has been accepted. If it wins, you'll receive double - 2000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001857" />
 
@@ -4572,15 +4560,15 @@
 
 	<Reply
 		name="Dlg_npc_001858"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001859" />
 
 	<Reply
 		name="Dlg_pl_001859"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001669"
@@ -4592,7 +4580,7 @@
 
 	<Reply
 		name="Dlg_npc_001689"
-		text="Alright, your bet of 500 coins on truck number 1 has been accepted. If it wins, you'll receive double — 1000 coins."
+		text="Alright, your bet of 500 coins on truck number 1 has been accepted. If it wins, you'll receive double - 1000 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001854" />
 
@@ -4604,15 +4592,15 @@
 
 	<Reply
 		name="Dlg_npc_001855"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001856" />
 
 	<Reply
 		name="Dlg_pl_001856"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001668"
@@ -4624,7 +4612,7 @@
 
 	<Reply
 		name="Dlg_npc_001688"
-		text="Alright, your bet of 250 coins on truck number 1 has been accepted. If it wins, you'll receive double — 500 coins."
+		text="Alright, your bet of 250 coins on truck number 1 has been accepted. If it wins, you'll receive double - 500 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001851" />
 
@@ -4636,15 +4624,15 @@
 
 	<Reply
 		name="Dlg_npc_001852"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001853" />
 
 	<Reply
 		name="Dlg_pl_001853"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001667"
@@ -4656,7 +4644,7 @@
 
 	<Reply
 		name="Dlg_npc_001687"
-		text="Alright, your bet of 100 coins on truck number 1 has been accepted. If it wins, you'll receive double — 200 coins."
+		text="Alright, your bet of 100 coins on truck number 1 has been accepted. If it wins, you'll receive double - 200 coins."
 		role="NPC"
 		nextReplies="Dlg_pl_001848" />
 
@@ -4668,15 +4656,15 @@
 
 	<Reply
 		name="Dlg_npc_001849"
-		text="Head up and cheer ‘em on."
+		text="Head up and cheer 'em on."
 		role="NPC"
 		nextReplies="Dlg_pl_001850" />
 
 	<Reply
 		name="Dlg_pl_001850"
-		text="Thank you. Show ‘em what you're made of, Mansur!"
+		text="Thank you. Show 'em what you're made of, Mansur!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 <!--Root/r4m1/The Chronicle of Hamza/Race/If Hamza crashed-->
 	<Reply
 		name="Dlg_npc_002242"
@@ -4693,7 +4681,7 @@
 
 	<Reply
 		name="Dlg_npc_002244"
-		text="I understand, no worries. It happens. I didn't see you before — is this your first time participating?"
+		text="I understand, no worries. It happens. I didn't see you before - is this your first time participating?"
 		role="NPC"
 		nextReplies="Dlg_pl_002245" />
 
@@ -4705,7 +4693,7 @@
 
 	<Reply
 		name="Dlg_npc_002246"
-		text='Well, everything comes with experience, so "didn’t work out now — will work out later". Don’t worry, for those taking part for the first time, we offer free repairs.'
+		text='Well, everything comes with experience, so "didn’t work out now - will work out later". Don’t worry, for those taking part for the first time, we offer free repairs.'
 		role="NPC"
 		nextReplies="Dlg_pl_002247" />
 
@@ -4802,6 +4790,13 @@
 		text="Thanks, see you."
 		role="PLAYER"
 		scriptResult="SetVar('PlayerCrashed',2); TActivate('AfterRaceRolik_begin'); FailQuest('RacingUral_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Race/General-->
+	<Reply
+		name="Dlg_npc_002262"
+		text="Welcome, young ones! Don't miss your chance - we're holding Ural truck races today. And since you've already got yourselves these trucks, wouldn't make sense to miss it!"
+		role="NPC"
+		scriptCondition="QuestStatus('GonkaUral')==Q_TAKEN"
+		nextReplies="Dlg_pl_001348 Dlg_pl_001654" />
 <!--Root/r4m1/The Chronicle of Hamza/Mansur/First Ural arrive-->
 	<Reply
 		name="Dlg_npc_001334"
@@ -4812,7 +4807,7 @@
 
 	<Reply
 		name="Dlg_pl_001335"
-		text="Nah. My one's still good. Dad just gave me his truck — says he doesn't use it anymore."
+		text="Nah. My one's still good. Dad just gave me his truck - says he doesn't use it anymore."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001336" />
 
@@ -4830,7 +4825,7 @@
 
 	<Reply
 		name="Dlg_npc_001338"
-		text="Hmm... Alright, fine. Let's go with that. Hey, since we both got Ural now — I was planning to join a race not far from here later on, they're doing it with Urals. I'm not just tinkering with it for fun, you know! Want to come along?"
+		text="Hmm... Alright, fine. Let's go with that. Hey, since we both got Ural now - I was planning to join a race not far from here later on, they're doing it with Urals. I'm not just tinkering with it for fun, you know! Want to come along?"
 		role="NPC"
 		nextReplies="Dlg_pl_001339" />
 
@@ -4880,7 +4875,7 @@
 
 	<Reply
 		name="Dlg_pl_001363"
-		text="Mansur, I know it's hard for you now. But if we do nothing, the madmen will strike again — and next time, we might lose even more of our own."
+		text="Mansur, I know it's hard for you now. But if we do nothing, the madmen will strike again - and next time, we might lose even more of our own."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001364" />
 
@@ -4892,7 +4887,7 @@
 
 	<Reply
 		name="Dlg_pl_001365"
-		text="Mansur, will you finally wake the hell up?! Are you even listening to me?! You think this was the last time those madmen are gonna come after us? Don't make me laugh — I know it's not over! We have to DO something! If we just sit here like cowards, they'll be back! And next time, anyone could die! You! Me! Anyone! You want that?! Is that what you want?! Then stay here and keep crying! But I'm not letting your sister's death be for nothing! We're doing this — if only to burn every last one of them down!"
+		text="Mansur, will you finally wake the hell up?! Are you even listening to me?! You think this was the last time those madmen are gonna come after us? Don't make me laugh - I know it's not over! We have to DO something! If we just sit here like cowards, they'll be back! And next time, anyone could die! You! Me! Anyone! You want that?! Is that what you want?! Then stay here and keep crying! But I'm not letting your sister's death be for nothing! We're doing this - if only to burn every last one of them down!"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001366" />
 
@@ -4928,7 +4923,7 @@
 
 	<Reply
 		name="Dlg_pl_001371"
-		text="No worries. Get in — we're wasting time!"
+		text="No worries. Get in - we're wasting time!"
 		role="PLAYER"
 		scriptResult="EndConversation(); CompleteQuest('TalkToMansur_quest'); AddPlayerMoney(500); TakeQuest('GoTalkWithIdris_quest')" />
 <!--Root/r4m1/The Chronicle of Hamza/Mansur/After Mario dialog-->
@@ -4947,13 +4942,13 @@
 
 	<Reply
 		name="Dlg_npc_001480"
-		text="Let me guess — you went ahead and volunteered, didn't you?"
+		text="Let me guess - you went ahead and volunteered, didn't you?"
 		role="NPC"
 		nextReplies="Dlg_pl_001481" />
 
 	<Reply
 		name="Dlg_pl_001481"
-		text="Exactly. But only once. Mario wouldn't let me near it after that — turns out he knows what we're up to and wants us focused on dealing with the madmen instead. I'll take another car, and you'll be in the one Mario's giving us for backup. We're likely going to get ambushed, so having backup is a must. Mario won't let me go alone — and honestly? I don't really want to either… What do you think?"
+		text="Exactly. But only once. Mario wouldn't let me near it after that - turns out he knows what we're up to and wants us focused on dealing with the madmen instead. I'll take another car, and you'll be in the one Mario's giving us for backup. We're likely going to get ambushed, so having backup is a must. Mario won't let me go alone - and honestly? I don't really want to either… What do you think?"
 		role="PLAYER"
 		nextReplies="Dlg_npc_002198" />
 
@@ -4977,7 +4972,7 @@
 
 	<Reply
 		name="Dlg_pl_001483"
-		text="You really sure? We won't have a second to relax — not while we're carrying oil."
+		text="You really sure? We won't have a second to relax - not while we're carrying oil."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001484" />
 
@@ -4995,7 +4990,7 @@
 <!--Root/r4m1/The Chronicle of Hamza/Mansur/After oil deliver-->
 	<Reply
 		name="Dlg_npc_001512"
-		text="Hamza. We can't wait around anymore — time to take the next step."
+		text="Hamza. We can't wait around anymore - time to take the next step."
 		role="NPC"
 		scriptCondition="QuestStatus('TalkToMansurAfterOil_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001513" />
@@ -5032,7 +5027,7 @@
 
 	<Reply
 		name="Dlg_npc_001518"
-		text="So what then?! C'mon, Hamza! We started this — we gotta finish it! We already have a rough idea where those madmen are coming from. We just need to confirm it! If things get dangerous, we pull out — simple as that!"
+		text="So what then?! C'mon, Hamza! We started this - we gotta finish it! We already have a rough idea where those madmen are coming from. We just need to confirm it! If things get dangerous, we pull out - simple as that!"
 		role="NPC"
 		nextReplies="Dlg_pl_001519" />
 
@@ -5057,7 +5052,7 @@
 <!--Root/r4m1/The Chronicle of Hamza/Mansur/In the middle of first talk with Foreigner-->
 	<Reply
 		name="Dlg_npc_001548"
-		text="Hamza, they look like jasus — I don't recognize a single face among them!"
+		text="Hamza, they look like jasus - I don't recognize a single face among them!"
 		role="NPC"
 		scriptCondition="QuestStatus('GoToBuharaAgain_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001549" />
@@ -5107,19 +5102,19 @@
 
 	<Reply
 		name="Dlg_npc_002093"
-		text="A massive convoy of vehicles is moving in on us from the east — looks like the madmen are getting serious this time! No way this is a coincidence. I think they're coming for revenge… for our little visit."
+		text="A massive convoy of vehicles is moving in on us from the east - looks like the madmen are getting serious this time! No way this is a coincidence. I think they're coming for revenge… for our little visit."
 		role="NPC"
 		nextReplies="Dlg_pl_002094" />
 
 	<Reply
 		name="Dlg_pl_002094"
-		text="You don't expect the madmen to be organized — but those sudden, well-planned attacks on cities? That's real. And it looks like we're next. What's our move?"
+		text="You don't expect the madmen to be organized - but those sudden, well-planned attacks on cities? That's real. And it looks like we're next. What's our move?"
 		role="PLAYER"
 		nextReplies="Dlg_npc_002095" />
 
 	<Reply
 		name="Dlg_npc_002095"
-		text="I don't know yet — my father didn't say how many are coming. It could be so many that even if everyone in the region stood against them… we wouldn't stand a chance."
+		text="I don't know yet - my father didn't say how many are coming. It could be so many that even if everyone in the region stood against them… we wouldn't stand a chance."
 		role="NPC"
 		nextReplies="Dlg_pl_002096" />
 
@@ -5138,7 +5133,7 @@
 
 	<Reply
 		name="Dlg_pl_002114"
-		text="You sure? Believe me, I still haven't gotten over what you pulled back at the madmen's base — and I'm afraid you'll bolt the moment things go south again."
+		text="You sure? Believe me, I still haven't gotten over what you pulled back at the madmen's base - and I'm afraid you'll bolt the moment things go south again."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002115" />
 
@@ -5168,7 +5163,7 @@
 <!--Root/r4m1/The Chronicle of Hamza/Mansur/After came back from Krai-->
 	<Reply
 		name="Dlg_npc_002141"
-		text="Hamza! Where the hell did you two disappear to?! I just stepped away to talk to my father — came back, and you were gone! And wait… where's the Foreigner himself?!"
+		text="Hamza! Where the hell did you two disappear to?! I just stepped away to talk to my father - came back, and you were gone! And wait… where's the Foreigner himself?!"
 		role="NPC"
 		scriptCondition="GetVar('MansurTalk').AsInt==6 and QuestStatus('HurryBackToHome_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_002142" />
@@ -5187,7 +5182,7 @@
 
 	<Reply
 		name="Dlg_pl_002144"
-		text="Wait, I'm not done yet. We crossed the Desert of Death and reached the land where the Foreigner used to live. But the moment we drove a bit further, I started to feel sick. At one point, it got really bad — so we decided: he'd keep going, and I'd head back."
+		text="Wait, I'm not done yet. We crossed the Desert of Death and reached the land where the Foreigner used to live. But the moment we drove a bit further, I started to feel sick. At one point, it got really bad - so we decided: he'd keep going, and I'd head back."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002145" />
 
@@ -5229,19 +5224,19 @@
 
 	<Reply
 		name="Dlg_npc_002151"
-		text="So a machine's gonna fix everything? Yeah, right — and I'm the King of the Desert."
+		text="So a machine's gonna fix everything? Yeah, right - and I'm the King of the Desert."
 		role="NPC"
 		nextReplies="Dlg_pl_002152" />
 
 	<Reply
 		name="Dlg_pl_002152"
-		text="Cut the doubt, alright? Yeah, he wasn't sure — but he said it himself, “it might be our only chance.” And after all this time with him… I think he can be trusted."
+		text="Cut the doubt, alright? Yeah, he wasn't sure - but he said it himself, “it might be our only chance.” And after all this time with him… I think he can be trusted."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002153" />
 
 	<Reply
 		name="Dlg_npc_002153"
-		text="You trust him — I get it. But what's our move? Are we just supposed to wait here?"
+		text="You trust him - I get it. But what's our move? Are we just supposed to wait here?"
 		role="NPC"
 		nextReplies="Dlg_pl_002154" />
 
@@ -5259,7 +5254,7 @@
 
 	<Reply
 		name="Dlg_pl_002156"
-		text="I'll go talk to my father — bring him up to speed on everything he missed. Then we wait. Nothing else we can do."
+		text="I'll go talk to my father - bring him up to speed on everything he missed. Then we wait. Nothing else we can do."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002157" />
 
@@ -5290,7 +5285,7 @@
 
 	<Reply
 		name="Dlg_npc_001580"
-		text="I couldn't take the risk, Hamza! The fact that you came back alive and unharmed — that's pure luck! I told you I'd pull out if things got too dangerous. I could've left even when we first arrived and got ambushed! And don't tell me those madmen are patrolling the borders — they're just everywhere!"
+		text="I couldn't take the risk, Hamza! The fact that you came back alive and unharmed - that's pure luck! I told you I'd pull out if things got too dangerous. I could've left even when we first arrived and got ambushed! And don't tell me those madmen are patrolling the borders - they're just everywhere!"
 		role="NPC"
 		nextReplies="Dlg_pl_001581" />
 
@@ -5302,13 +5297,13 @@
 
 	<Reply
 		name="Dlg_npc_001582"
-		text="You're right, I messed up. Anyway — tell me what happened after I left."
+		text="You're right, I messed up. Anyway - tell me what happened after I left."
 		role="NPC"
 		nextReplies="Dlg_pl_001583" />
 
 	<Reply
 		name="Dlg_pl_001583"
-		text="We fought the madmen at the base. Then the scientists showed up and pulled us out. The area beyond is safe now. We found the crash site — it's a huge flying saucer, surrounded by paralyzed people. It's… really creepy. And I also found out something about Sergo..."
+		text="We fought the madmen at the base. Then the scientists showed up and pulled us out. The area beyond is safe now. We found the crash site - it's a huge flying saucer, surrounded by paralyzed people. It's… really creepy. And I also found out something about Sergo..."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001584" />
 
@@ -5320,7 +5315,7 @@
 
 	<Reply
 		name="Dlg_pl_001585"
-		text='He was given a mission decades ago — to deliver a certain "blocker" that was supposed to undo all the damage caused by the Catastrophe. He was meant to pick it up from the lands beyond the Desert of Death… but you know what happe...'
+		text='He was given a mission decades ago - to deliver a certain "blocker" that was supposed to undo all the damage caused by the Catastrophe. He was meant to pick it up from the lands beyond the Desert of Death… but you know what happe...'
 		role="PLAYER"
 		nextReplies="Dlg_npc_001586" />
 
@@ -5332,7 +5327,7 @@
 
 	<Reply
 		name="Dlg_pl_001587"
-		text="Mansur, don't interrupt! You made me lose my whole line of thought! Oh yeah… right. He never came back from there. But the key thing is — Sergo isn't just connected to us two. He's known elsewhere too… Am I right?"
+		text="Mansur, don't interrupt! You made me lose my whole line of thought! Oh yeah… right. He never came back from there. But the key thing is - Sergo isn't just connected to us two. He's known elsewhere too… Am I right?"
 		role="PLAYER"
 		scriptResult="SetVar('MansurTalk', 1); StartConversation('Chujezemets')" />
 <!--Root/r4m1/The Chronicle of Hamza/Mansur/After came back from Zarmek/Âòîðàÿ ÷àñòü-->
@@ -5351,26 +5346,26 @@
 <!--Root/r4m1/The Chronicle of Hamza/Mansur/After came back from Zarmek/Òðåòüÿ ÷àñòü-->
 	<Reply
 		name="Dlg_npc_001598"
-		text="No, this time is different. I spoke with my parents while you were gone — made them understand that if I leave again, I'll finish what I start. Last time, I ran on a promise. This time? No promises. Just vengeance!"
+		text="No, this time is different. I spoke with my parents while you were gone - made them understand that if I leave again, I'll finish what I start. Last time, I ran on a promise. This time? No promises. Just vengeance!"
 		role="NPC"
 		scriptCondition="GetVar('MansurTalk').AsInt==2 and QuestStatus('BackToVahat_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_001599" />
 
 	<Reply
 		name="Dlg_pl_001599"
-		text="Glad to hear that mindset. I'll step out for a bit — going to meet with my father. Maybe use that time to think up a plan. Let's be smart about this."
+		text="Glad to hear that mindset. I'll step out for a bit - going to meet with my father. Maybe use that time to think up a plan. Let's be smart about this."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001600" />
 
 	<Reply
 		name="Dlg_npc_001600"
-		text="Alright, but hurry up — I can't wait to finish this once and for all!"
+		text="Alright, but hurry up - I can't wait to finish this once and for all!"
 		role="NPC"
 		nextReplies="Dlg_pl_001601" />
 
 	<Reply
 		name="Dlg_pl_001601"
-		text="Mansur, take it easy. We need to think this through — don't wanna end up with your face in the sand. Alright, I'm off. Be back soon."
+		text="Mansur, take it easy. We need to think this through - don't wanna end up with your face in the sand. Alright, I'm off. Be back soon."
 		role="PLAYER"
 		scriptResult="CompleteQuest('BackToVahat_quest'); TakeQuest('GoToFatherAfterZarmek_quest'); getObj('AivenCarZRS_vehicle_0'):Remove(); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Father/First arrive (not fixed)-->
@@ -5449,13 +5444,13 @@
 
 	<Reply
 		name="Dlg_npc_001636"
-		text="Believe me, it'll be easier for me to just ask someone for a ride. Or better yet, I can always use yours. Although, if you want — you can sell it."
+		text="Believe me, it'll be easier for me to just ask someone for a ride. Or better yet, I can always use yours. Although, if you want - you can sell it."
 		role="NPC"
 		nextReplies="Dlg_pl_001637" />
 
 	<Reply
 		name="Dlg_pl_001637"
-		text="No, I won't sell my car — let it stay just in case. Father, you won't mind if I go meet Mansur?"
+		text="No, I won't sell my car - let it stay just in case. Father, you won't mind if I go meet Mansur?"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001638" />
 
@@ -5473,7 +5468,7 @@
 
 	<Reply
 		name="Dlg_pl_001305"
-		text="I'll be honest — yeah, I did. And not just once."
+		text="I'll be honest - yeah, I did. And not just once."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001308" />
 
@@ -5527,13 +5522,13 @@
 
 	<Reply
 		name="Dlg_npc_001630"
-		text="Believe me, it'll be easier for me to just ask someone for a ride. Or better yet, I can always use yours. Although, if you want — you can sell it."
+		text="Believe me, it'll be easier for me to just ask someone for a ride. Or better yet, I can always use yours. Although, if you want - you can sell it."
 		role="NPC"
 		nextReplies="Dlg_pl_001631" />
 
 	<Reply
 		name="Dlg_pl_001631"
-		text="No, I won't sell my car — let it stay just in case. Father, you won't mind if I go meet Mansur?"
+		text="No, I won't sell my car - let it stay just in case. Father, you won't mind if I go meet Mansur?"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001632" />
 
@@ -5576,7 +5571,7 @@
 
 	<Reply
 		name="Dlg_npc_001328"
-		text="Glad you managed to handle them. And of course, I appreciate your honesty. But next time, try to call for help. Who knows — what if a whole pack of madmen attacks you, and you wouldn't be able to deal with them on your own? I really don't want you two playing heroes for no reason."
+		text="Glad you managed to handle them. And of course, I appreciate your honesty. But next time, try to call for help. Who knows - what if a whole pack of madmen attacks you, and you wouldn't be able to deal with them on your own? I really don't want you two playing heroes for no reason."
 		role="NPC"
 		nextReplies="Dlg_pl_001329" />
 
@@ -5612,13 +5607,13 @@
 
 	<Reply
 		name="Dlg_npc_001646"
-		text="Believe me, it'll be easier for me to just ask someone for a ride. Or better yet, I can always use yours. Although, if you want — you can sell it."
+		text="Believe me, it'll be easier for me to just ask someone for a ride. Or better yet, I can always use yours. Although, if you want - you can sell it."
 		role="NPC"
 		nextReplies="Dlg_pl_001647" />
 
 	<Reply
 		name="Dlg_pl_001647"
-		text="No, I won't sell my car — let it stay just in case. Father, you won't mind if I go meet Mansur?"
+		text="No, I won't sell my car - let it stay just in case. Father, you won't mind if I go meet Mansur?"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001648" />
 
@@ -5678,13 +5673,13 @@
 
 	<Reply
 		name="Dlg_npc_001642"
-		text="Believe me, it'll be easier for me to just ask someone for a ride. Or better yet, I can always use yours. Although, if you want — you can sell it."
+		text="Believe me, it'll be easier for me to just ask someone for a ride. Or better yet, I can always use yours. Although, if you want - you can sell it."
 		role="NPC"
 		nextReplies="Dlg_pl_001643" />
 
 	<Reply
 		name="Dlg_pl_001643"
-		text="No, I won't sell my car — let it stay just in case. Father, you won't mind if I go meet Mansur?"
+		text="No, I won't sell my car - let it stay just in case. Father, you won't mind if I go meet Mansur?"
 		role="PLAYER"
 		nextReplies="Dlg_npc_001644" />
 
@@ -5745,13 +5740,13 @@
 
 	<Reply
 		name="Dlg_pl_001499"
-		text="There are things better left in the dark — at least for now."
+		text="There are things better left in the dark - at least for now."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001500" />
 
 	<Reply
 		name="Dlg_npc_001500"
-		text="Secrets? You're talking about secrets? We don't have room for secrets, Hamza! You have to understand — your actions could put all of us in danger! Do you really think I can't connect the recent attack on Ghadad with your conversation with Akil, who's been searching for the elders who vanished long ago? And Sharaf! He's shouting every day that he knows where they are! And we both know what kind of man Sharaf is!"
+		text="Secrets? You're talking about secrets? We don't have room for secrets, Hamza! You have to understand - your actions could put all of us in danger! Do you really think I can't connect the recent attack on Ghadad with your conversation with Akil, who's been searching for the elders who vanished long ago? And Sharaf! He's shouting every day that he knows where they are! And we both know what kind of man Sharaf is!"
 		role="NPC"
 		nextReplies="Dlg_pl_001501" />
 
@@ -5794,13 +5789,13 @@
 
 	<Reply
 		name="Dlg_pl_001525"
-		text="Father, I'm ready to tell you what's going on. The truth is, after what happened in Ghadad, Mansur and I decided to find out where the madmen are coming from — and how to destroy them. Right now, we're close to figuring out their origin. Obviously, the two of us alone won't be able to wipe them all out. But it's worth confirming our suspicions."
+		text="Father, I'm ready to tell you what's going on. The truth is, after what happened in Ghadad, Mansur and I decided to find out where the madmen are coming from - and how to destroy them. Right now, we're close to figuring out their origin. Obviously, the two of us alone won't be able to wipe them all out. But it's worth confirming our suspicions."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001526" />
 
 	<Reply
 		name="Dlg_npc_001526"
-		text="And this is what you were hiding from me? Did you really think I wouldn't support you? Hamza, I'm proud of you — and of Mansur! Do what you must. When are you planning to leave?"
+		text="And this is what you were hiding from me? Did you really think I wouldn't support you? Hamza, I'm proud of you - and of Mansur! Do what you must. When are you planning to leave?"
 		role="NPC"
 		nextReplies="Dlg_pl_001527" />
 
@@ -5812,19 +5807,19 @@
 
 	<Reply
 		name="Dlg_npc_001528"
-		text="Good luck to you both. If anything goes wrong, try to reach out — we'll help however we can."
+		text="Good luck to you both. If anything goes wrong, try to reach out - we'll help however we can."
 		role="NPC"
 		nextReplies="Dlg_pl_001529" />
 
 	<Reply
 		name="Dlg_pl_001529"
-		text="Thank you, father. I heard there's trouble with the oil supply — I brought some, but Mario said it won't last long."
+		text="Thank you, father. I heard there's trouble with the oil supply - I brought some, but Mario said it won't last long."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001530" />
 
 	<Reply
 		name="Dlg_npc_001530"
-		text="I just spoke to Mario. There's someone — a man who agreed to help us. He actually left to get the oil while he was waiting for you to come back. And he's not from here — he's from the outer lands."
+		text="I just spoke to Mario. There's someone - a man who agreed to help us. He actually left to get the oil while he was waiting for you to come back. And he's not from here - he's from the outer lands."
 		role="NPC"
 		nextReplies="Dlg_pl_001531" />
 
@@ -5842,7 +5837,7 @@
 
 	<Reply
 		name="Dlg_pl_001533"
-		text="Alright then. Father, Mansur's probably been waiting long enough — we should get going."
+		text="Alright then. Father, Mansur's probably been waiting long enough - we should get going."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001534" />
 
@@ -5867,7 +5862,7 @@
 
 	<Reply
 		name="Dlg_pl_001603"
-		text="As you can see — I'm fine."
+		text="As you can see - I'm fine."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001604" />
 
@@ -5879,7 +5874,7 @@
 
 	<Reply
 		name="Dlg_pl_001605"
-		text="Another time. It's a long story — I need to talk about something else."
+		text="Another time. It's a long story - I need to talk about something else."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001606" />
 
@@ -5891,19 +5886,19 @@
 
 	<Reply
 		name="Dlg_pl_001607"
-		text="We're heading into the Desert of Death. We found out that Sergo was supposed to end this endless invasion of the madmen — but he never came back..."
+		text="We're heading into the Desert of Death. We found out that Sergo was supposed to end this endless invasion of the madmen - but he never came back..."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001608" />
 
 	<Reply
 		name="Dlg_npc_001608"
-		text="I know Sergo never came back. Lately, he's been going into the Desert of Death more and more often, always meeting with Sharaf, becoming more withdrawn and gloomy. All he ever talked about was how he had to complete his mission — no matter the cost. No man in that state could have defended himself. But how exactly was he supposed to stop the madmen?"
+		text="I know Sergo never came back. Lately, he's been going into the Desert of Death more and more often, always meeting with Sharaf, becoming more withdrawn and gloomy. All he ever talked about was how he had to complete his mission - no matter the cost. No man in that state could have defended himself. But how exactly was he supposed to stop the madmen?"
 		role="NPC"
 		nextReplies="Dlg_pl_001609" />
 
 	<Reply
 		name="Dlg_pl_001609"
-		text="He was given orders decades ago — to pick up a blocker from the neighboring region on a certain day and bring it to the disaster site."
+		text="He was given orders decades ago - to pick up a blocker from the neighboring region on a certain day and bring it to the disaster site."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001610" />
 
@@ -5957,7 +5952,7 @@
 
 	<Reply
 		name="Dlg_npc_001618"
-		text="Okay, let me piece this together. You found the madmen's base, decided to attack it, Mansur ran off, you were saved by some scientists who told you what Sergo was supposed to do — and now you want to go into the Desert of Death? But why?"
+		text="Okay, let me piece this together. You found the madmen's base, decided to attack it, Mansur ran off, you were saved by some scientists who told you what Sergo was supposed to do - and now you want to go into the Desert of Death? But why?"
 		role="NPC"
 		nextReplies="Dlg_pl_001619" />
 
@@ -5969,7 +5964,7 @@
 
 	<Reply
 		name="Dlg_npc_001620"
-		text="Turns out, you told me everything I wanted to know — and you said it'd take long to explain!"
+		text="Turns out, you told me everything I wanted to know - and you said it'd take long to explain!"
 		role="NPC"
 		nextReplies="Dlg_pl_001621" />
 
@@ -5999,13 +5994,13 @@
 
 	<Reply
 		name="Dlg_pl_001625"
-		text="Not sure yet — need to work out a solid plan. Hopefully, Mansur and the Foreigner are on it right now."
+		text="Not sure yet - need to work out a solid plan. Hopefully, Mansur and the Foreigner are on it right now."
 		role="PLAYER"
 		nextReplies="Dlg_npc_001626" />
 
 	<Reply
 		name="Dlg_npc_001626"
-		text="Then get going — head over to them and work it out together! No point in hanging around here doing nothing. And if things go sideways, try to reach out. Same goes for when you find Sergo."
+		text="Then get going - head over to them and work it out together! No point in hanging around here doing nothing. And if things go sideways, try to reach out. Same goes for when you find Sergo."
 		role="NPC"
 		nextReplies="Dlg_pl_001627" />
 
@@ -6017,7 +6012,7 @@
 <!--Root/r4m1/The Chronicle of Hamza/Father/Ending 1 (after Krai)--><!--Root/r4m1/The Chronicle of Hamza/Father/Ending 1 (after Krai)/×àñòü 1-->
 	<Reply
 		name="Dlg_npc_002159"
-		text="Hamza! Where have you been?! Mansur said you came back from the Desert, then he went to talk to his father for a bit — and when he got back, you were gone! Didn't I tell you to contact me once you found Sergo? Did you even find him? And where the hell did you go after coming back from the Desert of Death?!"
+		text="Hamza! Where have you been?! Mansur said you came back from the Desert, then he went to talk to his father for a bit - and when he got back, you were gone! Didn't I tell you to contact me once you found Sergo? Did you even find him? And where the hell did you go after coming back from the Desert of Death?!"
 		role="NPC"
 		scriptCondition="QuestStatus('TalkWithFather_AfterKrai_quest')==Q_TAKEN"
 		nextReplies="Dlg_pl_002160" />
@@ -6061,7 +6056,7 @@
 
 	<Reply
 		name="Dlg_pl_002166"
-		text="As far as I get it — just wait for news from the Foreigner."
+		text="As far as I get it - just wait for news from the Foreigner."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002167" />
 
@@ -6129,7 +6124,7 @@
 
 	<Reply
 		name="Dlg_pl_002170"
-		text="We'll go to the scientists — they should know what to do."
+		text="We'll go to the scientists - they should know what to do."
 		role="PLAYER"
 		nextReplies="Dlg_npc_002171" />
 
@@ -9876,7 +9871,7 @@
 
 	<Reply
 		name="Dlg_npc_000435"
-		text="Âñòðåòüñÿ ñ èõ ñâÿçíûì â áàðå Òîñêàíû. Ïàðîëü: ‘Íî÷ü äëèííà', îòçûâ: ‘Íî ðàññâåò áëèçîê'."
+		text="Âñòðåòüñÿ ñ èõ ñâÿçíûì â áàðå Òîñêàíû. Ïàðîëü: 'Íî÷ü äëèííà', îòçûâ: 'Íî ðàññâåò áëèçîê'."
 		role="NPC"
 		nextReplies="Dlg_pl_000436" />
 

@@ -43,12 +43,36 @@
 	</Path>
 
 	<Path
+		Name="Foreigner_ToPlate_Path">
+		<Point
+			coord="2979.661 2170.802" />
+
+		<Point
+			coord="2961.847 2226.634" />
+
+		<Point
+			coord="2962.675 2250.021" />
+	</Path>
+
+	<Path
 		Name="HamzaAttackMadmanBase_path">
 		<Point
 			coord="1972.532 1112.904" />
 
 		<Point
 			coord="2038.184 1103.319" />
+	</Path>
+
+	<Path
+		Name="Hamza_ToPlate_Path">
+		<Point
+			coord="3001.671 2188.527" />
+
+		<Point
+			coord="2980.608 2223.851" />
+
+		<Point
+			coord="2976.457 2264.993" />
 	</Path>
 
 	<Path
