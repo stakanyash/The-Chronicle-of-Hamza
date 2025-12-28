@@ -1776,3 +1776,54 @@ function AlfaAmbushSpawn(int)
 		return false
 	end
 end
+
+-- E Jet's function --
+-- Returns all player weapon slots as a table converted to a string --
+
+function GetListOfPlayerGuns()
+    local Plv = GetPlayerVehicle()
+    local parts={"CABIN_","BASKET_","CHASSIS_"}
+    local slots={"SMALL_","BIG_","GIANT_","SIDE_","SPECIAL_"}
+    local guns={"GUN","GUN_0","GUN_1","GUN_2","WEAPON"}
+    local i,j,k=1,1,1
+    local s,g=1,1
+    local ListOfPlayerGuns = {}
+    ListOfPlayerGuns[s] = {}
+    while parts[i] do
+    while slots[j] do
+        g=1
+        while guns[k] do
+        local gunslot=parts[i]..slots[j]..guns[k]
+        if gunslot then
+            if Plv:CanPartBeAttached(gunslot) then
+                local slotagain = Plv:GetPartByName(gunslot)
+                if slotagain then
+                    local ok, gun = pcall(function()
+                        local prop = slotagain:GetProperty("Prototype")
+                        return prop and prop.AsString
+                    end)
+
+                    if ok and gun then
+                        ListOfPlayerGuns[s][g] = tostring(gunslot)
+                        g = g + 1
+                        ListOfPlayerGuns[s][g] = tostring(gun)
+                        s = s + 1
+                        ListOfPlayerGuns[s] = {}
+                        g = 1
+                    end
+                end
+            end
+        end
+        k=k+1
+        end
+        k=1
+        j=j+1
+    end
+    j=1
+    i=i+1
+    end  
+    if not ListOfPlayerGuns[getn(ListOfPlayerGuns)][1] then
+    table.remove(ListOfPlayerGuns)
+    end
+    return ListOfPlayerGuns
+end

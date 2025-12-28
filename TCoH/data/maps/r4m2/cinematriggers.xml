@@ -1674,6 +1674,39 @@
 				ManCarCreate:setGodMode(1)
 			end
 
+			local PlProt = GetPlayerVehicle():GetProperty("Prototype").AsString
+			local PlCab = GetPlayerVehicle():GetCabin():GetProperty("Prototype").AsString
+			local PlCargo = GetPlayerVehicle():GetBasket():GetProperty("Prototype").AsString
+			local PlSkin = GetPlayerVehicle():GetSkin()
+			ML_PlPos = GetPlayerVehicle():GetPosition()
+			ML_PlRot = GetPlayerVehicle():GetRotation()
+			local myGuns = GetListOfPlayerGuns()
+
+			CreateTeam("vehCopy", 1100, CVector(ML_PlPos), {PlProt})
+
+			local CVehicle = GetEntityByName("vehCopy_vehicle_0")
+			if CVehicle then
+				CVehicle:SetNewPart("CABIN", PlCab)
+				CVehicle:SetNewPart("BASKET", PlCargo)
+				CVehicle:SetSkin (PlSkin)
+				CVehicle:SetGamePositionOnGround(CVector(ML_PlPos))
+				CVehicle:SetRotation(Quaternion(ML_PlRot))
+
+				for i, item in ipairs(myGuns) do
+					local slot = item[1]
+					local gun = item[2]
+					if CVehicle:CanPartBeAttached(slot) then
+						CVehicle:SetNewPart(slot, gun)
+					end
+				end
+			end
+
+			local vehPlayer = GetPlayerVehicle()
+			if vehPlayer then
+				vehPlayer:SetGamePositionOnGround(CVector(2254.228, 340.473, 589.846))
+				vehPlayer:SetRotation(Quaternion(-0.094, 0.189, 0.003, 0.978))
+			end
+
 			AddCinematicMessage( 616, 0.5 )
 			AddCinematicMessage( 617, 0.5 )
 			AddCinematicMessage( 618, 0.5 )
@@ -1700,6 +1733,17 @@
 			if Aivan then
 				Aivan:setGodMode(0)
 				Aivan:setImmortalMode(1)
+			end
+
+			local Pl = GetPlayerVehicle()
+			if Pl then
+				Pl:SetGamePositionOnGround(ML_PlPos)
+				Pl:SetRotation(ML_PlRot)
+			end
+
+			local CopyVeh = GetEntityByName("vehCopy_vehicle_0")
+			if CopyVeh then
+				CopyVeh:Remove()
 			end
 
 			SetTolerance(1095, 1062, RS_ENEMY)
