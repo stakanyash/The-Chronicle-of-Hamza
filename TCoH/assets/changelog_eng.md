@@ -1,3 +1,25 @@
+### Version 1.3 [251229a]
+
+- Reworked the cutscene after the first battle with the madmen: now Mansur drives up to the gas station at the moment of the repair dialogue
+- Added a new book and entry in "History" that delve deeper into Hamza's past
+- Updated the ailment system in the Krai: added a fourth stage that deals 20 HP damage per second when moving toward the villages
+- In the main menu, game time is now set based on the computer's system time (thanks to OverLine for inspiration)
+- Reduced the size of graves in Glukhoe
+- Reworked the cutscene on the main menu map
+- Fixed a bug where Rainmetall at the start of the game could appear with a burned skin
+- Rewrote dialogues with bartenders in the fourth region
+- Rewrote the dialogue with scientist Vasily
+- Changed the racing quest. Now the decision is made in Kazif, and to start you need to drive up to the race track
+- Fixed an error where dynamic enemies could spawn in the first Zarmek cutscene
+- Hamza's radio lines have been rewritten
+- Changed the first saucer inspection cutscene
+- Performed equalization of music for the racing quest
+- Changed the quest to escort the Bukharians to the port. Now Alfaran ambushes will be waiting along the route
+- Fixed an error where the Foreigner in the Krai would not drive toward Vatherland when skipping the cutscene
+- Changed the cutscene of Mansur's escape from the madmen's base in Zarmek
+- Added dynamic enemy spawning at the madmen's base in Zarmek. Becomes active after the quest battle
+- Some bug and localization fixes
+
 ### Version 1.2 [250930a]
 
 - Race music changed. The previously AI-generated track has been replaced with an original composition

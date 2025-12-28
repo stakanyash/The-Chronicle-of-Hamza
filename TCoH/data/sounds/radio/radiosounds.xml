@@ -135,7 +135,7 @@
 		<Enemy>
 		</Enemy>
 	</Group>
-	<Group name="Madmen" belongs="1062">
+	<Group name="Madmen" belongs="1062 1093">
 		<Neutral>
 		</Neutral>
 		<Enemy>

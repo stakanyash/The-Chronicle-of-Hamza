@@ -2016,7 +2016,19 @@
 			TDeactivate("HelpersArrived_cs_End4")
 			TDeactivate("HelpersArrived_cs_End5")
 
+			
+			for i=1,4 do
+				local mm = getObj("MBArmy0"..i)
+				if mm then
+				mm:Remove()
+				end
+			end
+
 			SetTolerance(1095, 1061, RS_ALLY)
+
+			SetTolerance(1100, 1093, RS_ENEMY)
+			SetTolerance(1095, 1093, RS_ENEMY)
+			SetTolerance(1090, 1093, RS_ENEMY)
 
 			StartConversation("ScientiferVillage_Bar_Scientif")
 			StopPlayingCustomMusic()
