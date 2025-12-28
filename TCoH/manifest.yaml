@@ -12,6 +12,7 @@ description: |
 
   Отдельное спасибо: Seel, Эмер, Varisane, E Jet, Carsen, nEmPoBu4, Deus Ex Machina и EM2ch
   
+
 authors: стакан
 
 # optional human readable info
@@ -48,11 +49,14 @@ screenshots:
   - img: assets/scr8.jpg
     text: |
       Катсцена одной из концовок
+
 data_dirs:
   - data
 
 compatible_minor_versions: false
 compatible_patch_versions: false
+
+options_base_dir: options
 
 config_options:
   firstLevel: "r4m1"

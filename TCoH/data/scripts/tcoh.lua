@@ -1735,7 +1735,7 @@ function ShowGoodEndNarrator()
 end
 
 function AlfaAmbushSpawn(int)
-	if int == 1 then
+	if int == 0 then
 		CreateTeam("AlfaAmbush0",1062,CVector(2572.051, 267.215, 3917.664),{"DemoMolokovoz1","BezHunter", "UralShot"})
 
 		for i=0,2 do
@@ -1747,13 +1747,25 @@ function AlfaAmbushSpawn(int)
 		end
 
 		return true
-	elseif int == 2 then
+	elseif int == 1 then
 		CreateTeam("AlfaAmbush1",1062,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","TankBez", "Hunter01"})
 
 		for i=0,2 do
 			local AlAmVeh = getObj("AlfaAmbush1_vehicle_"..i)
 			if AlAmVeh then
 				AlAmVeh:SetGamePositionOnGround(CVector(getPos("AlfaZasada_spawn_1_veh_loc_"..i)))
+				AlAmVeh:SetRandomSkin()
+			end
+		end
+
+		return true
+	elseif int == 2 then
+		CreateTeam("AlfaAmbush2",1062,CVector(2572.051, 267.215, 3917.664),{"Hunter01","BelazShot", "Hunter01"})
+
+		for i=0,2 do
+			local AlAmVeh = getObj("AlfaAmbush2_vehicle_"..i)
+			if AlAmVeh then
+				AlAmVeh:SetGamePositionOnGround(CVector(getPos("AlfaZasada_spawn_2_veh_loc_"..i)))
 				AlAmVeh:SetRandomSkin()
 			end
 		end

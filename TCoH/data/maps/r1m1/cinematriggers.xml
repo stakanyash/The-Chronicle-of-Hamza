@@ -69,30 +69,6 @@
 			AddCinematicMessage(911, 0.25)
 			AddCinematicMessage(912, 0.25)
 
-			TActivate("AivenLeaves_tr")
-
-			trigger:Deactivate()    
-		</script>
-	</trigger>
-
-	<trigger Name="AivenLeaves_tr" active="0">
-		<event msgid="912" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
-		<script>
-        	TActivate("AivenLeaves_tr_start")
-
-        	trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="AivenLeaves_tr_start" active="0">
-		<event timeout="1" eventid="GE_TIME_PERIOD" />
-		<script>
-			local Alf = getObj("AivenCarCSRT")
-			if Alf then
-				Alf:SetExternalPathByName("aivenrunout_path")
-				Alf:SetCruisingSpeed(90)
-			end
-
 			trigger:Deactivate()    
 		</script>
 	</trigger>
@@ -104,6 +80,14 @@
 			RestoreAllToleranceStatus()
 			PlayCustomMusic("Passage05")
 			SetCameraBehindPlayerVehicle()
+
+			local Alf = getObj("AivenCarCSRT")
+			if Alf then
+				Alf:SetExternalPathByName("aivenpath_rb")
+				Alf:PlaceToEndOfPath("aivenpath_rb")
+				Alf:SetExternalPathByName("aivenrunout_path")
+				Alf:SetCruisingSpeed(90)
+			end
 
 			TActivate("Hurryup_msg")
 			TActivate("AivenReached")
@@ -265,7 +249,7 @@
 		</script>
 	</trigger>
 
-<!-- Начальный ролик. -->
+<!-- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. -->
 	<trigger Name="StartRolikGame" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
@@ -409,7 +393,7 @@
 
 
 
-<!-- первый бандит -->
+<!-- пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ -->
 	<trigger Name="ZASADA_1" active="1">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="GameLoc_1" />
 		<script>
@@ -510,7 +494,7 @@
 
 
 
-<!-- Lisa встреча в городе -->
+<!-- Lisa пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ -->
 	<trigger Name="loc_lisa" active="0">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="LisaRolik_loc" />
 		<script>
@@ -612,7 +596,7 @@
 
 
 
-<!-- Lisa 1 деревня -->
+<!-- Lisa 1 пїЅпїЅпїЅпїЅпїЅпїЅпїЅ -->
 	<trigger Name="RolikBegin_LISA1" active="0">
 		<event timeout="0.01" eventid="GE_TIME_PERIOD" />
 		<script>
@@ -728,7 +712,7 @@
 
 
 
-<!-- lisa 2 деревня -->
+<!-- lisa 2 пїЅпїЅпїЅпїЅпїЅпїЅпїЅ -->
 	<trigger Name="RolikBegin_LISA2" active="0">
 		<event timeout="0.01" eventid="GE_TIME_PERIOD" />
 		<script>
@@ -840,7 +824,7 @@
 
 
 
-<!-- Lisa 3 деревня -->
+<!-- Lisa 3 пїЅпїЅпїЅпїЅпїЅпїЅпїЅ -->
 	<trigger Name="RolikBegin_Lisa3" active="0">
 		<event timeout="0.01" eventid="GE_TIME_PERIOD" />
 		<script>
@@ -1241,7 +1225,7 @@
 
 
 
-<!-- ролик "мертвый отец" -->
+<!-- пїЅпїЅпїЅпїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ" -->
 	<trigger Name="RolikBegin_FatherDeath" active="0">
 		<event timeout=" 0 " eventid="GE_TIME_PERIOD" />
 		<script>
@@ -1375,7 +1359,7 @@
 
 
 
-<!-- ролик "умерающий отец" -->
+<!-- пїЅпїЅпїЅпїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ" -->
 	<trigger Name="RolikBegin_Father" active="0">
 		<event timeout=" 0 " eventid="GE_TIME_PERIOD" />
 		<script>
@@ -1680,7 +1664,7 @@
 
 
 
-<!-- Победа на базе над ублюдками Феликса  -->
+<!-- пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ  -->
 	<trigger Name="RolikBegin_Felix3" active="0">
 		<event timeout="0.01" eventid="GE_TIME_PERIOD" />
 		<script>
@@ -1789,7 +1773,7 @@
 
 
 
-<!-- Победа над Феликсом -->
+<!-- пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ -->
 	<trigger Name="RolikBegin_Felix4" active="0">
 		<event timeout="0.01" eventid="GE_TIME_PERIOD" />
 		<script>

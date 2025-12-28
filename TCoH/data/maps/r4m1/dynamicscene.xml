@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="1217">
+	LastId="1221">
 	<TargetNamesForDestroy
 		Names="urod1 urod2 urod3 urod4 urod5 urod6 urod7 urod8 urod9" />
 
@@ -20385,10 +20385,6 @@
 		Radius="200.000" />
 
 	<Object
-		Belong="1100"
-		Prototype="someRecollection" />
-
-	<Object
 		Name="AlfaZasada_spawn_0_veh_loc_0"
 		Belong="1100"
 		Prototype="genericLocation"
@@ -20442,5 +20438,37 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="2309.698 268.457 4957.377"
-		Radius="80.000" />
+		Radius="70.000" />
+
+	<Object
+		Belong="1100"
+		Prototype="someRecollection" />
+
+	<Object
+		Name="AlfaZasada_spawn_2_veh_loc_0"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1896.761 215.882 3265.428"
+		Radius="10.000" />
+
+	<Object
+		Name="AlfaZasada_spawn_2_veh_loc_1"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1875.675 215.796 3282.433"
+		Radius="10.000" />
+
+	<Object
+		Name="AlfaZasada_spawn_2_veh_loc_2"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1905.194 215.819 3290.071"
+		Radius="10.000" />
+
+	<Object
+		Name="AlfaZasada_spawn_loc_2"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2533.867 268.983 3983.678"
+		Radius="10.000" />
 </DynamicScene>

@@ -15,7 +15,7 @@
 		</script>
 	</trigger>
 
-	-- TCoH: Posteffect update --
+	-- TCoH: Posteffect update after leave town --
 
 	<trigger    Name="trExitFromTowns"     active="1">
         <event eventid="GE_LEAVE_TOWN" ObjName="TheTown"/>
@@ -27,7 +27,16 @@
         <event eventid="GE_LEAVE_TOWN" ObjName="PetrolStationTown2"/>
         <event eventid="GE_LEAVE_TOWN" ObjName="PetrolStationTown3"/>
         <script>
-            UpdateWeather()
+			local Stage = GetVar("GL_BadFeelStage").AsInt
+			if Stage == 1 then
+				RuleConsole("g_postEffect wHamza_feelbad00")
+			elseif Stage == 2 then
+				RuleConsole("g_postEffect wHamza_feelbad01")
+			elseif Stage == 3 then
+				RuleConsole("g_postEffect wHamza_feelbad02")
+			elseif Stage == 4 then
+				RuleConsole("g_postEffect wHamza_feelbad03")
+			end
         </script>
     </trigger> 
 
@@ -104,6 +113,7 @@
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_3" />
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_3_1" />
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_3_2" />
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="BadFeel_PS_loc_4_off" />
 		<script>
 			RuleConsole("g_postEffect wHamza_feelbad02")
 			

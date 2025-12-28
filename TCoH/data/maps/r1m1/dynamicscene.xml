@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="4389">
+	LastId="4391">
 	<TargetNamesForDestroy
 		Names="u1 u2 u3 u4 u5 u6 u7 u8 u9" />
 
@@ -37408,4 +37408,11 @@
 		Prototype="genericLocation"
 		Pos="2821.086 340.298 2281.852"
 		Radius="125.000" />
+
+	<Object
+		Name="BadFeel_PS_loc_4_off"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1267.059 289.110 2586.992"
+		Radius="450.000" />
 </DynamicScene>

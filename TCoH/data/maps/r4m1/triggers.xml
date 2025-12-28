@@ -21,7 +21,7 @@
 			SetVar("BettingCoeff", 2)
 			SetVar("EndRaceSpeed", 10)
 			SetVar("DriveToDD", 0)
-			
+
 		    trigger:Deactivate()
 		</script>
 	</trigger>
@@ -2211,6 +2211,7 @@
 			TActivate("BuharaPoints")
 			TActivate("Zasada_Spawn_0_tr")
 			TActivate("Zasada_Spawn_1_tr")
+			TActivate("Zasada_Spawn_2_tr")
 
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active",0) end
@@ -3351,7 +3352,7 @@
 	<trigger	Name="Zasada_Spawn_0_tr"	active="0">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="AlfaZasada_spawn_loc_0" />
 		<script>
-			local sp = AlfaAmbushSpawn(1)
+			local sp = AlfaAmbushSpawn(0)
 			if sp == true then
 				DevPrint("AlfaAmbushSpawn: Spawned ambush on position 0.")
 			end
@@ -3363,9 +3364,21 @@
 	<trigger	Name="Zasada_Spawn_1_tr"	active="0">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="AlfaZasada_spawn_loc_1" />
 		<script>
-			local sp = AlfaAmbushSpawn(2)
+			local sp = AlfaAmbushSpawn(1)
 			if sp == true then
 				DevPrint("AlfaAmbushSpawn: Spawned ambush on position 1.")
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="Zasada_Spawn_2_tr"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="AlfaZasada_spawn_loc_2" />
+		<script>
+			local sp = AlfaAmbushSpawn(2)
+			if sp == true then
+				DevPrint("AlfaAmbushSpawn: Spawned ambush on position 2.")
 			end
 
 			trigger:Deactivate()
