@@ -1,4 +1,4 @@
-### Version 1.3 [251229a]
+### Version 1.3 [251230a]
 
 - Reworked the cutscene after the first battle with the madmen: now Mansur drives up to the gas station at the moment of the repair dialogue
 - Added a new book and entry in "History" that delve deeper into Hamza's past
