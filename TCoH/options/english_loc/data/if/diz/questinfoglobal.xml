@@ -51,7 +51,7 @@
 
 		<Map
 			name="r4m2"
-			targetObjName="ExitFromMap" />
+			targetObjName="ToR4M1" />
 	</QuestInfo>
 
 	<QuestInfo

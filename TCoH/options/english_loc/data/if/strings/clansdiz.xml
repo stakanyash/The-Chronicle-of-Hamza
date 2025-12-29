@@ -25,6 +25,14 @@
 		value="" />
 
 	<string
+		id="Belong_1093"
+		value="Madmans" />
+
+	<string
+		id="Belong_1093_abb"
+		value="Madman" />
+
+	<string
 		id="Belong_1095"
 		value="Foreigner" />
 

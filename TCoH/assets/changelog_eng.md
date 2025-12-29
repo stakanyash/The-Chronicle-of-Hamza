@@ -18,7 +18,7 @@
 - Fixed an error where the Foreigner in the Krai would not drive toward Vatherland when skipping the cutscene
 - Changed the cutscene of Mansur's escape from the madmen's base in Zarmek
 - Added dynamic enemy spawning at the madmen's base in Zarmek. Becomes active after the quest battle
-- Some bug and localization fixes
+- Some bug and English localization fixes
 
 ### Version 1.2 [250930a]
 
