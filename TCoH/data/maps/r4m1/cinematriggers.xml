@@ -642,7 +642,7 @@
 	</trigger>
 
 
-	<!-- ˜˜˜˜˜ ˜˜˜˜˜˜˜ ˜˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜ -->
+	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ -->
 	<trigger	Name="cinPriezdFirst"	active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
 		<script>
@@ -725,7 +725,7 @@
 		</script>
 	</trigger>
 
-	<!-- ˜˜˜˜˜˜˜ ˜˜˜˜, ˜˜˜˜˜ ˜˜˜ ˜˜˜˜˜˜ ˜˜˜˜˜˜˜˜˜˜˜˜˜ -->
+	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -->
 	<trigger Name="trENEMYLISA_DEAD" active="0">
 		<event eventid="GE_VEHICLE_WITHOUT_HEALTH" ObjName="ENEMYLISA_vehicle_0" />
 		<event	timeout="60"		eventid="GE_TIME_PERIOD" />
@@ -846,7 +846,7 @@
 		</script>
 	</trigger>
 
-	<!-- ˜˜˜˜˜˜˜˜ ˜˜ ˜˜˜˜˜˜˜˜ ˜ ˜˜˜˜˜ -->
+	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ -->
 
 	<trigger Name="cinMovePlToR2M2_begin" active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
@@ -994,6 +994,7 @@
 			    PCar:SetExternalPathByName("XamzaStartGame_1")
 				PCar:SetThrottle( 1 )    
 				PCar:SetCustomControlEnabled( false )
+				PCar:SetRandomSkin()
 			end
 
 			local PSkin = GetPlayerVehicle():GetSkin()
@@ -1116,46 +1117,52 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-		local ManCar = GetEntityByName("MansurCar")
-		    if ManCar then
-		        ManCar:PlaceToEndOfPath("MansurStartGame_1")
+			RestoreAllToleranceStatus()
+			
+			local ManCar = GetEntityByName("MansurCar")
+				if ManCar then
+					ManCar:PlaceToEndOfPath("MansurStartGame_1")
+				end
+
+			local PCar = GetPlayerVehicle()
+				if PCar then
+					PCar:UnlimitMaxSpeed()
+					PCar:PlaceToEndOfPath("XamzaStartGame_1")
+					PCar:setGodMode(0)
+				end
+
+			local mCar = getObj("MansurCar")
+				if mCar then
+					mCar:Remove()
+				end
+
+			CreateTeam("MansurTachka",1090,CVector(2485.159, 272.206, 3927.403),{"UralMansur"})
+
+			local mfCar = GetEntityByName("MansurTachka_vehicle_0")
+				if mfCar then
+					mfCar:SetSkin(1)
 			end
 
-		local PCar = GetPlayerVehicle()
-			if PCar then
-				PCar:UnlimitMaxSpeed()
-				PCar:PlaceToEndOfPath("XamzaStartGame_1")
-				PCar:setGodMode(0)
+			TDeactivate("HamzaStartGameRolik_Attack")
+
+			CreateFirstAttackers()
+
+			TActivate("FirstDebyli_Die")
+			TActivate("MansurCar_Die")
+
+			if (GetVar("StartBattle").AsInt==1) then
+				PlayCustomMusic("Passage03b")
 			end
 
-		local mCar = getObj("MansurCar")
-			if mCar then
-			    mCar:Remove()
-		    end
+			local Bez = GetEntityByName("StartDebyli_vehicle_2")
+			if Bez then	
+				local BezID = GetEntityByName("StartDebyli_vehicle_2"):GetId()
+				SetCameraDirectionToObj(BezID)
+			else
+				SetCameraBehindPlayerVehicle()
+			end
 
-		CreateTeam("MansurTachka",1090,CVector(2485.159, 272.206, 3927.403),{"UralMansur"})
-
-		local mfCar = GetEntityByName("MansurTachka_vehicle_0")
-		    if mfCar then
-		        mfCar:SetSkin(1)
-		end
-
-		TDeactivate("HamzaStartGameRolik_Attack")
-
-		CreateFirstAttackers()
-
-		TActivate("FirstDebyli_Die")
-		TActivate("MansurCar_Die")
-
-		if (GetVar("StartBattle").AsInt==1) then
-			PlayCustomMusic("Passage03b")
-		end
-
-		RestoreAllToleranceStatus()
-
-		SetCameraBehindPlayerVehicle()
-
-		trigger:Deactivate()
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -1172,7 +1179,7 @@
 
 			local mfEndCar = GetEntityByName("MansurTachka_vehicle_0")
 			    if mfEndCar then
-				mfEndCar:Remove()
+					mfEndCar:Remove()
 			end
 
 			CreateVehicleEx("UralMansur","MansurCar",CVector(2529.488, 266.557, 3914.102), 1090)
@@ -1200,14 +1207,17 @@
 			local MCar = GetEntityByName("MansurCar")
 			local MCarID = MCar:GetId()
 
-            FlyLinked( "afterbattleHamza_cam1", nil, 110, 1, 0, PlfID ) 
-			FlyLinked( "afterbattleHamza_cam3", nil, 37, 0, 0, PlfID )
-			FlyLinked( "afterbattleHamza_cam4", nil, 6, 0, 1, MCarID )  
+			Fly("afterbattleHamza_cam1", CINEMATIC_AIM_TO_ID, PlfID, 46, 1, 0 )
+			FlyLinked("afterbattleHamza_cam2", MCarID, 39, 0, 0, PlfID)
+			Fly("afterbattleHamza_cam2_1", CINEMATIC_AIM_TO_ID, PlfID, 30, 0, 0 )
+			Fly("afterbattleHamza_cam3", CINEMATIC_AIM_TO_ID, PlfID, 37, 0, 0 )
+			Fly("afterbattleHamza_cam4", CINEMATIC_AIM_TO_ID, MCarID, 6, 0, 1 )
 
 			StartCinematic()
 
 			TActivate("AfterBezumBoiRolik_quietdialogue")
-			TActivate("AfterBezumBoiRolik_cam03")
+			TActivate("AfterBezumBoiRolik_changepositions")
+			TActivate("AfterBezumBoiRolik_cam02")
 
             TActivate("AfterBezumBoiRolik_Fade")
 			TActivate("AfterBezumBoiRolik_End")
@@ -1244,15 +1254,6 @@
 			AddCinematicMessage(48, 0.5)
 			AddCinematicMessage(49, 0.5)
 			AddCinematicMessage(50, 0.5)
-			AddCinematicMessage(51, 0.5)
-			AddCinematicMessage(52, 0.5)
-			AddCinematicMessage(53, 0.5)
-			AddCinematicMessage(54, 0.5)
-			AddCinematicMessage(55, 0.5)
-			AddCinematicMessage(56, 0.5)
-			AddCinematicMessage(57, 0.5)
-			AddCinematicMessage(58, 0.5)
-			AddCinematicMessage(59, 0.5)
 
 			TActivate("AfterBezumBoiRolik_quietdialogue")
 			TActivate("AfterBezumBoiRolik_cam03")
@@ -1265,6 +1266,56 @@
 		<event msgid="55" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
 		<script>
 			PlayCustomMusic("QuietDialogue02")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="AfterBezumBoiRolik_changepositions" active="0">
+		<event msgid="58" eventid="GE_START_CINEMATIC_MSG" ObjName="Player1" />
+		<script>
+			local mancar2 = GetEntityByName("MansurCar")
+			if mancar2 then
+				mancar2:SetExternalPathByName("MansurStartGame_2_1")
+			end
+
+			local PCar = GetPlayerVehicle()
+			if PCar then
+				PCar:SetExternalPathByName("HamzaStartGame_2_1")
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="AfterBezumBoiRolik_cam02" active="0">
+		<event flypath="afterbattleHamza_cam2" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			RuleConsole("cinematic_spring_coeff 1.5")
+
+			AddCinematicMessage(51, 0.5)
+			AddCinematicMessage(52, 0.5)
+			AddCinematicMessage(53, 0.5)
+			AddCinematicMessage(54, 0.5)
+
+			TActivate("AfterBezumBoiRolik_cam02_1")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+	
+	<trigger Name="AfterBezumBoiRolik_cam02_1" active="0">
+		<event flypath="afterbattleHamza_cam2_1" eventid="GE_START_CINEMATIC_FLY" ObjName="Player1" />
+		<script>
+			RuleConsole("cinematic_spring_coeff 0.3")
+
+			AddCinematicMessage(55, 0.5)
+			AddCinematicMessage(56, 0.5)
+			AddCinematicMessage(57, 0.5)
+			AddCinematicMessage(58, 0.5)
+			AddCinematicMessage(59, 0.5)
+
+			TActivate("AfterBezumBoiRolik_cam03")
 
 			trigger:Deactivate()
 		</script>
@@ -1315,7 +1366,8 @@
 		local PCar = GetPlayerVehicle()
 			if PCar then
 				PCar:UnlimitMaxSpeed()
-				PCar:PlaceToEndOfPath("HamzarStartGame_2")
+				PCar:SetExternalPathByName("HamzaStartGame_2_1")
+				PCar:PlaceToEndOfPath("HamzaStartGame_2_1")
 			end
 
 		TakeQuest("BackToHome_quest")
@@ -1381,7 +1433,7 @@
 				AddCinematicMessage( 754, 0.25 )
 				AddCinematicMessage( 764, 0.25 )
 				AddCinematicMessage( 774, 0.25 )
-			elseif QuestStatus("GonkaUralSpec")==Q_COMPLETED then
+			elseif QuestStatus("RacingUralSpec_quest")==Q_COMPLETED then
 				local WinNumber = GetVar("WinningNumber").AsInt
 				if WinNumber == 3 then
 					AddCinematicMessage( 752, 0.25 )
@@ -1437,9 +1489,6 @@
 			local town3 = GetEntityByName("TheKazif")
 			if town3 then town3:SetOpenGateToPlayer( true ) end
 
-			local a = GetEntityByName("StartGonka_loc")
-			if a then a:SetProperty("Active", 1) end
-
 			if QuestStatus("RacingUral_quest")==Q_FAILED then
 				local PVh = GetPlayerVehicle()
 				local PVhMaxHealth = GetPlayerMaxHealth()
@@ -1450,9 +1499,7 @@
 				end
 			end
 
-			TActivate("Kef_Sell_Add")
-			TActivate("Gadad_Sell_Add")
-			TActivate("Kazif_Sell_Add")
+			AddSaleItems()
 			TActivate("all_sale_added_fading")
 
 			TActivate("ConnectMansur_AfterRace")
@@ -2025,6 +2072,13 @@
 
 			local Plf = GetPlayerVehicle()
         	local PlfID = GetPlayerVehicleId()
+
+			if Plf then
+				Plf:SetCustomControlEnabled( true )
+				Plf:SetCustomLinearVelocity( 0 )
+				Plf:SetThrottle( 0 )
+				Plf:SetCustomControlEnabled( false )
+			end
 			
 			Fly("RaceStart_cam01", CINEMATIC_AIM_TO_ID, FVeh1ID, 3, 1, 0 )
 			Fly("RaceStart_cam02", CINEMATIC_AIM_TO_ID, FVeh2ID, 3, 0, 0 )
@@ -3100,7 +3154,7 @@
 			    end
 			end
 
-			CompleteQuest("GonkaUralSpec")
+			CompleteQuest("RacingUralSpec_quest")
 
 			trigger:Deactivate()
 		</script>

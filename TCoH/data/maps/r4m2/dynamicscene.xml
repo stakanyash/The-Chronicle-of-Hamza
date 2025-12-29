@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="502">
+	LastId="504">
 	<TargetNamesForDestroy
 		Names="urod1 urod2 urod3 urod4 urod5 urod6 urod7 urod8 urod9" />
 
@@ -73,9 +73,10 @@
 				cfg="85"
 				helloReplyNames="r4m2_Bar_Scientist_1_N01 r4m2_Bar_Scientist_2_N01 Dlg_npc_001569 Dlg_npc_001575 Dlg_npc_002175"
 				SpokenCount="0" />
+
 			<Object
 				Name="Chujezemets_r4m2"
-				Belong="1100"
+				Belong="1061"
 				Prototype="NPC"
 				ModelName="mask_hero"
 				helloReplyNames="Dlg_npc_001567 Dlg_npc_001571"
@@ -881,8 +882,7 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="2494.815 168.550 2812.253"
-		Radius="750.884">
-	</Object>
+		Radius="750.884" />
 
 	<Object
 		Flags="21"
@@ -4653,4 +4653,199 @@
 		Prototype="genericLocation"
 		Pos="2035.257 299.657 1146.176"
 		Radius="10.000" />
+
+	<Object
+		Name="ForeignerToPlate_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2979.697 227.414 2171.052"
+		Radius="10.000" />
+
+	<Object
+		Name="HamzaToPlate_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3003.164 227.363 2190.613"
+		Radius="10.000" />
+
+	<Object
+		Name="MadmansBase"
+		Belong="1093"
+		Prototype="InfectionZone"
+		InfectionTeamPrototypeName="r4_MadmanTeam"
+		DropOutTimeOut="30.000"
+		InfectionLair="r4_MadmanTeam"
+		HadPlayerInside="0">
+		<Polygon>
+			<Point
+				x="2384.545"
+				y="1588.999" />
+
+			<Point
+				x="2186.625"
+				y="1647.955" />
+
+			<Point
+				x="2039.611"
+				y="1307.900" />
+
+			<Point
+				x="2131.562"
+				y="699.988" />
+
+			<Point
+				x="2613.780"
+				y="769.955" />
+
+			<Point
+				x="2607.424"
+				y="1306.519" />
+		</Polygon>
+
+		<DropOut>
+			<Point
+				x="2294.533"
+				y="1582.450" />
+
+			<Point
+				x="2214.965"
+				y="1595.951" />
+
+			<Point
+				x="2167.578"
+				y="1515.556" />
+
+			<Point
+				x="2323.921"
+				y="1538.517" />
+
+			<Point
+				x="2393.227"
+				y="1440.973" />
+
+			<Point
+				x="2357.495"
+				y="1355.015" />
+
+			<Point
+				x="2257.901"
+				y="1434.427" />
+
+			<Point
+				x="2259.261"
+				y="1373.931" />
+
+			<Point
+				x="2295.132"
+				y="1369.849" />
+
+			<Point
+				x="2216.814"
+				y="1322.347" />
+
+			<Point
+				x="2259.032"
+				y="1242.191" />
+
+			<Point
+				x="2421.802"
+				y="1079.116" />
+
+			<Point
+				x="2487.318"
+				y="1024.959" />
+
+			<Point
+				x="2506.309"
+				y="942.012" />
+
+			<Point
+				x="2492.197"
+				y="870.144" />
+
+			<Point
+				x="2479.304"
+				y="814.698" />
+
+			<Point
+				x="2197.861"
+				y="1003.826" />
+
+			<Point
+				x="2184.021"
+				y="968.830" />
+
+			<Point
+				x="2176.552"
+				y="907.718" />
+
+			<Point
+				x="2185.587"
+				y="857.966" />
+
+			<Point
+				x="2185.588"
+				y="815.674" />
+
+			<Point
+				x="2338.492"
+				y="854.211" />
+
+			<Point
+				x="2366.291"
+				y="906.664" />
+
+			<Point
+				x="2375.807"
+				y="964.779" />
+
+			<Point
+				x="2304.411"
+				y="902.130" />
+
+			<Point
+				x="2345.105"
+				y="1213.693" />
+
+			<Point
+				x="2283.520"
+				y="1146.097" />
+
+			<Point
+				x="2315.780"
+				y="1051.981" />
+
+			<Point
+				x="2241.414"
+				y="1026.383" />
+
+			<Point
+				x="2091.928"
+				y="1242.186" />
+
+			<Point
+				x="2108.593"
+				y="1338.525" />
+
+			<Point
+				x="2125.903"
+				y="1390.337" />
+
+			<Point
+				x="2142.735"
+				y="1462.579" />
+
+			<Point
+				x="2144.727"
+				y="1214.941" />
+
+			<Point
+				x="2187.203"
+				y="1114.511" />
+
+			<Point
+				x="2403.042"
+				y="1129.402" />
+		</DropOut>
+	</Object>
 </DynamicScene>

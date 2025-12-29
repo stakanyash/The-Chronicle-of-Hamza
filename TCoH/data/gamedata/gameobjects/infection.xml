@@ -1213,6 +1213,60 @@ $Id: Infection.xml,v 1.48 2005/11/28 07:43:57 anton Exp $
 
 	<Prototype
 		Class			= "InfectionTeam"
+		Name			= "r4_MadmanTeam"
+		DecisionMatrix	        	= "teammain.lua"
+		VehiclesGenerator 	= "r4_MadmanGenerator">
+		<Vehicles/>
+	</Prototype>
+
+	<Prototype
+		Class 		= "VehiclesGenerator"
+		Name		= "r4_MadmanGenerator"
+        DesiredCount 					= "2-3"
+		partOfSchwartzForCabin 			= "0.15"  
+		partOfSchwartzForBasket 		= "0.15"
+		partOfSchwartzForGuns 			= "0.54"
+		partOfSchwartzForWares 			= "0.20" >
+		<Description 
+			VehiclesPrototypes	="FighterEnemySpawn CruiserEnemySpawn"		
+			WaresPrototypes="electronics book tobacco"
+			GunAffixGeneratorPrototype="townaffixGenerator"
+			PartOfSchwartz="0.35" />
+		<Description 
+			VehiclesPrototypes	="HunterEnemySpawn" 	
+			WaresPrototypes="electronics book tobacco machinery"
+			GunAffixGeneratorPrototype="villageaffixGenerator"
+			PartOfSchwartz="0.3" />
+		<Description 
+			VehiclesPrototypes	="HunterEnemySpawn" 	
+			WaresPrototypes="electronics book tobacco machinery"
+			GunAffixGeneratorPrototype="villageaffixGenerator"
+			PartOfSchwartz="0.3" />
+		<Description 
+			VehiclesPrototypes	="FighterEnemySpawn" 	
+			WaresPrototypes="electronics book tobacco machinery"
+			GunAffixGeneratorPrototype="villageaffixGenerator"
+			PartOfSchwartz="0.3" />
+
+		<Description 
+			VehiclesPrototypes	="FighterEnemySpawn" 	
+			WaresPrototypes="electronics book tobacco machinery"
+			GunAffixGeneratorPrototype="villageaffixGenerator"
+			PartOfSchwartz="0.3" />
+		<Description 
+			VehiclesPrototypes	="HunterEnemySpawn" 	
+			WaresPrototypes="electronics book tobacco machinery"
+			GunAffixGeneratorPrototype="villageaffixGenerator"
+			PartOfSchwartz="0.3" />
+		<Description 
+			VehiclesPrototypes	="HunterEnemySpawn" 	
+			WaresPrototypes="electronics book tobacco machinery"
+			GunAffixGeneratorPrototype="villageaffixGenerator"
+			PartOfSchwartz="0.3" />
+	</Prototype>
+
+	<Prototype
+		Class			= "InfectionTeam"
 		Name			= "r4m0_BanditesTeam"
 		DecisionMatrix	        	= "teammain.lua"
 		VehiclesGenerator 	= "r4m0_BanditesGenerator">

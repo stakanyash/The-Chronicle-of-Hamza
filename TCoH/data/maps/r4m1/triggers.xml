@@ -21,7 +21,7 @@
 			SetVar("BettingCoeff", 2)
 			SetVar("EndRaceSpeed", 10)
 			SetVar("DriveToDD", 0)
-			
+
 		    trigger:Deactivate()
 		</script>
 	</trigger>
@@ -42,7 +42,7 @@
 	</trigger>
 <!--
 **************************************************************************************************
-** Сюжет
+** пїЅпїЅпїЅпїЅпїЅ
 **************************************************************************************************
 -->
 	<trigger	Name="trStartMap"	active="0">
@@ -210,7 +210,7 @@
 
 <!--
 **************************************************************************************************
-** Эвакуация в порт
+** пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
 **************************************************************************************************
 -->
 	<trigger	Name="trPlayerEnterToPort"	active="0">
@@ -324,7 +324,7 @@
 
 
 
--- Взрывы бочек --
+-- пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ --
 	<trigger	Name="trBabah"	active="1">
 		<event	eventid="GE_OBJECT_ENTERS_LOCATION"	ObjName="Babah_loc" />
 		<script>
@@ -462,7 +462,7 @@
 
 <!--
 **************************************************************************************************
-** Гонки
+** пїЅпїЅпїЅпїЅпїЅ
 **************************************************************************************************
 -->
 	<trigger	Name="trA"	active="0">
@@ -711,7 +711,7 @@
 					if name=="PlayerFormula" then
 --					  println(2)
 						local pointnum = GetVar("NextPoint").AsInt
--- Игрок приехал в правильный чекпоинт
+-- пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 						if locnum==pointnum then
 --					  println(3)
 							AddFadingMsgId( "fm_race_chekpoint" )
@@ -1093,7 +1093,7 @@
 			SetCameraBehindPlayerVehicle()
 
 			local a = GetEntityByName("StartGonka_loc")
-			if a then a:SetProperty("Active",0) end
+			if a then a:SetProperty("Active",1) end
 
 			TActivate("HamzaStartRolikBegin")
 
@@ -1182,30 +1182,6 @@
 			trigger:Deactivate()
 		</script>
 	</trigger>
-
-	<trigger Name="StartUralRace" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-			TActivate("CarNameToUral")
-			TActivate("trA1")
-
-			VehSkin = tonumber(GetPlayerVehicle():GetSkin())
-
-			SetVar("PlayerVehSkin", VehSkin)
-
-			local town1 = GetEntityByName("TheKef")
-			if town1 then town1:SetOpenGateToPlayer( false ) end
-
-			local town2 = GetEntityByName("TheGadad")
-			if town2 then town2:SetOpenGateToPlayer( false ) end
-
-			local town3 = GetEntityByName("TheKazif")
-			if town3 then town3:SetOpenGateToPlayer( false ) end
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
 
 	<trigger Name="CarNameToUral" active="0">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
@@ -2038,196 +2014,6 @@
 		</script>
 	</trigger>
 
-	<trigger Name="Kef_Sell_Add" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-            local KefWorkshop = GetEntityByName("Kef_Workshop")
-			local VehiclesRepo = KefWorkshop:GetRepositoryByTypename("Vehicles")
-			local CabinBasketRepo = KefWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
-			
-			if VehiclesRepo then
-				VehiclesRepo:AddItems("UralForSale", 1)
-				VehiclesRepo:AddItems("BelazForSale", 1)
-				VehiclesRepo:AddItems("MirotvorecForSale", 1)
-			end
-
-			if CabinBasketRepo then
-				CabinBasketRepo:AddItems("bugCargo02", 1)
-				CabinBasketRepo:AddItems("bugCargo03", 1)
-				CabinBasketRepo:AddItems("molokovozCargo02", 1)
-				CabinBasketRepo:AddItems("molokovozCargo03", 1)
-				CabinBasketRepo:AddItems("uralCargo01", 1)
-				CabinBasketRepo:AddItems("uralCargo02", 1)
-				CabinBasketRepo:AddItems("uralCargo03", 1)
-				CabinBasketRepo:AddItems("uralCargo04", 1)
-				CabinBasketRepo:AddItems("belazCargo01", 1)
-				CabinBasketRepo:AddItems("belazCargo02", 1)
-				CabinBasketRepo:AddItems("belazCargo03", 1)
-				CabinBasketRepo:AddItems("belazCargo04", 1)
-				CabinBasketRepo:AddItems("belazCargo02", 1)
-				CabinBasketRepo:AddItems("belazCargo03", 1)
-				CabinBasketRepo:AddItems("belazCargo04", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo01", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo02", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo03", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo05", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo03", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo05", 1)
-				CabinBasketRepo:AddItems("bugCab02", 1)
-				CabinBasketRepo:AddItems("bugCab03", 1)
-				CabinBasketRepo:AddItems("molokovozCab02", 1)
-				CabinBasketRepo:AddItems("molokovozCab03", 1)
-				CabinBasketRepo:AddItems("belazCab01", 1)
-				CabinBasketRepo:AddItems("belazCab02", 1)
-				CabinBasketRepo:AddItems("belazCab03", 1)
-				CabinBasketRepo:AddItems("belazCab04", 1)
-				CabinBasketRepo:AddItems("belazCab03", 1)
-				CabinBasketRepo:AddItems("belazCab04", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab01", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab02", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab03", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab05", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab02", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab03", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab05", 1)
-				CabinBasketRepo:AddItems("uralCab02", 1)
-				CabinBasketRepo:AddItems("uralCab03", 1)
-				CabinBasketRepo:AddItems("uralCab04", 1)
-				CabinBasketRepo:AddItems("uralCab05", 1)
-				CabinBasketRepo:AddItems("uralCab05", 1)
-			end
-
-			trigger:Deactivate() 
-		</script>
-	</trigger>
-
-	<trigger Name="Gadad_Sell_Add" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-            local GadadWorkshop = GetEntityByName("Gadad_Workshop")
-			local VehiclesRepo = GadadWorkshop:GetRepositoryByTypename("Vehicles")
-			local CabinBasketRepo = GadadWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
-			
-			if VehiclesRepo then
-				VehiclesRepo:AddItems("UralForSale", 1)
-				VehiclesRepo:AddItems("BelazForSale", 1)
-				VehiclesRepo:AddItems("MirotvorecForSale", 1)
-			end
-
-			if CabinBasketRepo then
-				CabinBasketRepo:AddItems("bugCargo02", 1)
-				CabinBasketRepo:AddItems("bugCargo03", 1)
-				CabinBasketRepo:AddItems("molokovozCargo02", 1)
-				CabinBasketRepo:AddItems("molokovozCargo03", 1)
-				CabinBasketRepo:AddItems("uralCargo01", 1)
-				CabinBasketRepo:AddItems("uralCargo02", 1)
-				CabinBasketRepo:AddItems("uralCargo03", 1)
-				CabinBasketRepo:AddItems("uralCargo01", 1)
-				CabinBasketRepo:AddItems("uralCargo02", 1)
-				CabinBasketRepo:AddItems("uralCargo03", 1)
-				CabinBasketRepo:AddItems("belazCargo01", 1)
-				CabinBasketRepo:AddItems("belazCargo02", 1)
-				CabinBasketRepo:AddItems("belazCargo03", 1)
-				CabinBasketRepo:AddItems("belazCargo04", 1)
-				CabinBasketRepo:AddItems("belazCargo05", 1)
-				CabinBasketRepo:AddItems("belazCargo03", 1)
-				CabinBasketRepo:AddItems("belazCargo04", 1)
-				CabinBasketRepo:AddItems("belazCargo05", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo01", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo02", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo03", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo04", 1)
-				CabinBasketRepo:AddItems("bugCab02", 1)
-				CabinBasketRepo:AddItems("bugCab03", 1)
-				CabinBasketRepo:AddItems("molokovozCab02", 1)
-				CabinBasketRepo:AddItems("molokovozCab03", 1)
-				CabinBasketRepo:AddItems("belazCab01", 1)
-				CabinBasketRepo:AddItems("belazCab02", 1)
-				CabinBasketRepo:AddItems("belazCab03", 1)
-				CabinBasketRepo:AddItems("belazCab04", 1)
-				CabinBasketRepo:AddItems("belazCab05", 1)
-				CabinBasketRepo:AddItems("belazCab03", 1)
-				CabinBasketRepo:AddItems("belazCab04", 1)
-				CabinBasketRepo:AddItems("belazCab05", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab01", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab02", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab03", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab04", 1)
-				CabinBasketRepo:AddItems("uralCab02", 1)
-				CabinBasketRepo:AddItems("uralCab03", 1)
-				CabinBasketRepo:AddItems("uralCab04", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab04", 1)
-				CabinBasketRepo:AddItems("uralCab02", 1)
-				CabinBasketRepo:AddItems("uralCab03", 1)
-				CabinBasketRepo:AddItems("uralCab04", 1)
-			end
-
-			trigger:Deactivate() 
-		</script>
-	</trigger>
-
-	<trigger Name="Kazif_Sell_Add" active="0">
-		<event timeout="0" eventid="GE_TIME_PERIOD" />
-		<script>
-            local KazifWorkshop = GetEntityByName("Kazif_Workshop")
-			local VehiclesRepo = KazifWorkshop:GetRepositoryByTypename("Vehicles")
-			local CabinBasketRepo = KazifWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
-			
-			if VehiclesRepo then
-				VehiclesRepo:AddItems("UralForSale", 1)
-				VehiclesRepo:AddItems("BelazForSale", 1)
-				VehiclesRepo:AddItems("MirotvorecForSale", 1)
-			end
-
-			if CabinBasketRepo then
-				CabinBasketRepo:AddItems("bugCargo02", 1)
-				CabinBasketRepo:AddItems("bugCargo03", 1)
-				CabinBasketRepo:AddItems("molokovozCargo02", 1)
-				CabinBasketRepo:AddItems("molokovozCargo03", 1)
-				CabinBasketRepo:AddItems("uralCargo01", 1)
-				CabinBasketRepo:AddItems("uralCargo02", 1)
-				CabinBasketRepo:AddItems("uralCargo04", 1)
-				CabinBasketRepo:AddItems("belazCargo01", 1)
-				CabinBasketRepo:AddItems("belazCargo02", 1)
-				CabinBasketRepo:AddItems("belazCargo03", 1)
-				CabinBasketRepo:AddItems("belazCargo05", 1)
-				CabinBasketRepo:AddItems("belazCargo03", 1)
-				CabinBasketRepo:AddItems("belazCargo05", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo01", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo02", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo03", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo04", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo05", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo03", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo04", 1)
-				CabinBasketRepo:AddItems("mirotvorecCargo05", 1)
-				CabinBasketRepo:AddItems("bugCab02", 1)
-				CabinBasketRepo:AddItems("bugCab03", 1)
-				CabinBasketRepo:AddItems("molokovozCab02", 1)
-				CabinBasketRepo:AddItems("molokovozCab03", 1)
-				CabinBasketRepo:AddItems("belazCab01", 1)
-				CabinBasketRepo:AddItems("belazCab02", 1)
-				CabinBasketRepo:AddItems("belazCab03", 1)
-				CabinBasketRepo:AddItems("belazCab05", 1)
-				CabinBasketRepo:AddItems("belazCab03", 1)
-				CabinBasketRepo:AddItems("belazCab05", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab01", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab02", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab03", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab04", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab05", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab03", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab04", 1)
-				CabinBasketRepo:AddItems("mirotvorecCab05", 1)
-				CabinBasketRepo:AddItems("uralCab01", 1)
-				CabinBasketRepo:AddItems("uralCab02", 1)
-				CabinBasketRepo:AddItems("uralCab04", 1)
-			end
-
-			trigger:Deactivate() 
-		</script>
-	</trigger>
-
 	<trigger	Name="HamzaReturnCar"	active="0">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="OilVehicleChange_loc" />
 		<script>
@@ -2423,6 +2209,9 @@
 			TActivate("BuharaDiesOnWayToPort")
 			TActivate("ConnectAiven")
 			TActivate("BuharaPoints")
+			TActivate("Zasada_Spawn_0_tr")
+			TActivate("Zasada_Spawn_1_tr")
+			TActivate("Zasada_Spawn_2_tr")
 
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active",0) end
@@ -3475,24 +3264,53 @@
 						Mlf:SetRotation(Quaternion(0.020, 0.939, -0.017, 0.344))
 					end
 				end
+
 			   GL_PassToMap = false
 			end
 		</script>
 	</trigger>
 
-	<trigger	Name="RaceClosedMsg"	active="1">
+	<trigger	Name="RaceClosedMsgOrStart"	active="1">
 		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="StartGonka_loc" />
 		<script>
-			local b = SpawnMessageBox("8912")
-			if b == 1 then
-				local PVH = GetPlayerVehicle()
-				if PVH then
-					PVH:SetGamePositionOnGround(CVector(4410.569, 281.094, 2051.014))
-					PVH:SetRotation(Quaternion(0.003, 0.571, 0.001, 0.821))
-					PVH:SetCustomControlEnabled( true )
-					PVH:SetCustomLinearVelocity( 0 )
-					PVH:SetThrottle( 0 )
-					PVH:SetCustomControlEnabled( false )
+			if QuestStatus("GonkaUral")==Q_TAKEN then
+				local PlD = GetVar("PlayerRaceDecision").AsInt
+				if PlD == 1 then
+					CompleteQuest("GonkaUral")
+					TakeQuest("RacingUral_quest")
+
+					TActivate("CarNameToUral")
+					TActivate("trA1")
+
+					VehSkin = tonumber(GetPlayerVehicle():GetSkin())
+
+					SetVar("PlayerVehSkin", VehSkin)
+
+					local town1 = GetEntityByName("TheKef")
+					if town1 then town1:SetOpenGateToPlayer( false ) end
+
+					local town2 = GetEntityByName("TheGadad")
+					if town2 then town2:SetOpenGateToPlayer( false ) end
+
+					local town3 = GetEntityByName("TheKazif")
+					if town3 then town3:SetOpenGateToPlayer( false ) end
+				else
+					CompleteQuest("GonkaUral")
+					TakeQuest("RacingUralSpec_quest")
+					CreateRacers()
+				end
+			else
+				local b = SpawnMessageBox("8912")
+				if b == 1 then
+					local PVH = GetPlayerVehicle()
+					if PVH then
+						PVH:SetGamePositionOnGround(CVector(4410.569, 281.094, 2051.014))
+						PVH:SetRotation(Quaternion(0.003, 0.571, 0.001, 0.821))
+						PVH:SetCustomControlEnabled( true )
+						PVH:SetCustomLinearVelocity( 0 )
+						PVH:SetThrottle( 0 )
+						PVH:SetCustomControlEnabled( false )
+					end
 				end
 			end
 		</script>
@@ -3517,6 +3335,53 @@
 			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
 
 			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger Name="aboutmother_addhistory" active="0">
+		<event timeout="0" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddHistory("tcoh_aboutmother")
+			AddFadingMsgId("fm_history_got")
+			AddImportantFadingMsgByStrIdFormatted("fm_history_got")
+
+			trigger:Deactivate()  
+		</script>
+	</trigger>
+
+	<trigger	Name="Zasada_Spawn_0_tr"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="AlfaZasada_spawn_loc_0" />
+		<script>
+			local sp = AlfaAmbushSpawn(0)
+			if sp == true then
+				DevPrint("AlfaAmbushSpawn: Spawned ambush on position 0.")
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="Zasada_Spawn_1_tr"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="AlfaZasada_spawn_loc_1" />
+		<script>
+			local sp = AlfaAmbushSpawn(1)
+			if sp == true then
+				DevPrint("AlfaAmbushSpawn: Spawned ambush on position 1.")
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="Zasada_Spawn_2_tr"	active="0">
+		<event eventid="GE_OBJECT_ENTERS_LOCATION" ObjName="AlfaZasada_spawn_loc_2" />
+		<script>
+			local sp = AlfaAmbushSpawn(2)
+			if sp == true then
+				DevPrint("AlfaAmbushSpawn: Spawned ambush on position 2.")
+			end
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 </triggers>

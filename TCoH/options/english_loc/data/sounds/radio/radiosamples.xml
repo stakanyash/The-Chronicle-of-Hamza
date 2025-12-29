@@ -1,114 +1,114 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <RadioSamples><!-- Player-->
 	<Sample
-        id="1"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Shabang, we're not alone!" />
+		id="1"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Enemy on the horizon, hold your ground!" />
 
-    <Sample
-        id="2"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Load up! Let 'em tremble!" />
+	<Sample
+		id="2"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Prepare to fire, shabab!" />
 
-    <Sample
-        id="3"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Die, you jackals!" />
+	<Sample
+		id="3"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Get lost, malun!" />
 
-    <Sample
-        id="4"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Follow me, to victory!" />
+	<Sample
+		id="4"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Forward, to victory and honor!" />
 
-    <Sample
-        id="5"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Catch!" />
+	<Sample
+		id="5"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Try to fight back!" />
 
-    <Sample
-        id="6"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Here, take that!" />
+	<Sample
+		id="6"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Take this, kufr!" />
 
-    <Sample
-        id="7"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="For my sandals!" />
+	<Sample
+		id="7"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Let this be your first lesson!" />
 
-    <Sample
-        id="8"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Dog!" />
+	<Sample
+		id="8"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="For the honor of my house!" />
 
-    <Sample
-        id="9"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="That almost hit me in the head!" />
+	<Sample
+		id="9"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Almost hit, sabr!" />
 
-    <Sample
-        id="10"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="What the hell, man?!" />
+	<Sample
+		id="10"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Damn, a miss!" />
 
-    <Sample
-        id="11"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Pfft, just a scratch." />
+	<Sample
+		id="11"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Just a scratch, we'll manage!" />
 
-    <Sample
-        id="12"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Not our first rodeo — we'll handle it!" />
+	<Sample
+		id="12"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="We can handle this, it's only the beginning!" />
 
-    <Sample
-        id="13"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Drop dead, dzhakhs!" />
+	<Sample
+		id="13"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Perish, scoundrel, wasak!" />
 
-    <Sample
-        id="14"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Only the strongest survive here!" />
+	<Sample
+		id="14"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Only the strongest will remain!" />
 
-    <Sample
-        id="15"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="This one won't be getting up!" />
+	<Sample
+		id="15"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="This one won't rise again!" />
 
-    <Sample
-        id="16"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Who's next?!" />
+	<Sample
+		id="16"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Who dares now?" />
 
-    <Sample
-        id="17"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Scream, jackals!" />
+	<Sample
+		id="17"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="So it will be for anyone who stands in our way, kufr!" />
 
-    <Sample
-        id="18"
-        ssound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Farewell, friends. I'm leaving..." />
+	<Sample
+		id="18"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Farewell, friends, my path ends here." />
 
-    <Sample
-        id="19"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Well, that's it... end of the line." />
+	<Sample
+		id="19"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="This is the end of the road, inshallah." />
 
-    <Sample
-        id="20"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Ah! Missed!" />
+	<Sample
+		id="20"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Ah, a miss!" />
 
-    <Sample
-        id="21"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="Noooo!" />
+	<Sample
+		id="21"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="Nooo! Malun, help!" />
 
-    <Sample
-        id="22"
-        sound="data\sounds\radio\r_player_empty_0.ogg"
-        text="You'll regret this!" />
+	<Sample
+		id="22"
+		sound="data\sounds\radio\r_player_empty_0.ogg"
+		text="You will regret this!" />
 
     <!-- Foreigner-->
     <Sample

@@ -2,7 +2,7 @@
 <World
 	name="Object299"
 	class="SgNode"
-	LastId="76477122">
+	LastId="76477350">
 	<Node
 		name="Object3"
 		class="SgAnimatedModelNode"
@@ -16149,9 +16149,10 @@
 	<Node
 		name="Object76476960"
 		class="SgAnimatedModelNode"
-		org="3045.118 0.000 3361.629"
+		org="3048.403 0.000 3361.832"
 		orgRel="1"
 		rot="0.0000 0.7071 0.0000 0.7071"
+		scale="0.600 0.600 0.600"
 		id="grave3"
 		ndmAction="0"
 		skin="1" />
@@ -16159,9 +16160,10 @@
 	<Node
 		name="Object76476961"
 		class="SgAnimatedModelNode"
-		org="3044.838 0.000 3366.622"
+		org="3048.314 0.000 3365.777"
 		orgRel="1"
 		rot="0.0000 0.7086 0.0000 0.7056"
+		scale="0.600 0.600 0.600"
 		id="grave3"
 		ndmAction="0"
 		skin="2" />
@@ -16169,9 +16171,10 @@
 	<Node
 		name="Object76476962"
 		class="SgAnimatedModelNode"
-		org="3044.613 0.000 3371.804"
+		org="3048.284 0.000 3369.661"
 		orgRel="1"
-		rot="0.0000 0.6994 0.0000 0.7148"
+		rot="0.0000 0.6994 0.0000 0.7147"
+		scale="0.600 0.600 0.600"
 		id="grave3"
 		ndmAction="0"
 		skin="3" />
@@ -16179,9 +16182,10 @@
 	<Node
 		name="Object76476963"
 		class="SgAnimatedModelNode"
-		org="3044.272 0.000 3377.111"
+		org="3048.208 0.000 3373.618"
 		orgRel="1"
-		rot="0.0000 0.6994 0.0000 0.7148"
+		rot="0.0000 0.6994 0.0000 0.7147"
+		scale="0.600 0.600 0.600"
 		id="grave3"
 		ndmAction="0"
 		skin="4" />
@@ -16189,9 +16193,10 @@
 	<Node
 		name="Object76476964"
 		class="SgAnimatedModelNode"
-		org="3052.126 0.000 3363.887"
+		org="3052.274 0.000 3364.130"
 		orgRel="1"
 		rot="0.0000 0.7071 0.0000 0.7071"
+		scale="0.600 0.600 0.600"
 		id="grave3"
 		ndmAction="0"
 		skin="5" />
@@ -16199,9 +16204,10 @@
 	<Node
 		name="Object76476966"
 		class="SgAnimatedModelNode"
-		org="3051.611 0.000 3374.986"
+		org="3052.433 0.000 3371.122"
 		orgRel="1"
 		rot="0.0000 0.7025 0.0000 0.7117"
+		scale="0.600 0.600 0.600"
 		id="grave3"
 		ndmAction="0"
 		skin="6" />
@@ -16209,9 +16215,10 @@
 	<Node
 		name="Object76476967"
 		class="SgAnimatedModelNode"
-		org="3052.028 0.000 3369.348"
+		org="3052.452 0.000 3367.742"
 		orgRel="1"
 		rot="0.0000 0.7133 0.0000 0.7009"
+		scale="0.600 0.600 0.600"
 		id="grave3"
 		ndmAction="0" />
 </World>

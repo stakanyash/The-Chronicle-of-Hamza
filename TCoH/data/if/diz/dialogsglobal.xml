@@ -58,7 +58,7 @@
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/Первая встреча-->
 	<Reply
 		name="r4m2_Bar_Scientist_1_N01"
-		text="Мои люди подоспели вовремя, ещё немного - и от вас остался бы только пепел!"
+		text="Мои люди прибыли вовремя! Ещё миг - и от вас остался бы лишь пепел, да ветер пустыни."
 		role="NPC"
 		scriptCondition="GetVar('ScientistTalk').AsInt==0 and QuestStatus('FindMoreMadmans_quest')==Q_COMPLETED"
 		scriptResult="CompleteQuest('DestroyMadmans_quest')"
@@ -66,13 +66,13 @@
 
 	<Reply
 		name="r4m2_Bar_Scientist_1_N02"
-		text="Кто вы и почему помогли нам?"
+		text="Кто вы? И зачем вмешались?"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_1_N03" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_1_N03"
-		text="Мы помогаем всем страждущим. Каждый, кто приходит сюда, достоин царского обращения."
+		text="Мы - те, кто не даёт путникам сгинуть без следа. Каждый, кто приходит сюда, достоин уважения… и предостережения."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_1_N04" />
 
@@ -84,19 +84,19 @@
 
 	<Reply
 		name="r4m2_Bar_Scientist_1_N05"
-		text="Это место привлекает со всего света самых смелых и умных людей. Но только для того, чтобы погубить их! Я встречаю каждого и пытаюсь отговорить следовать дальше."
+		text="Это место манит сильных и умных со всего света… только чтобы поглотить их. Я встречаю каждого у порога и прошу: «Подумай дважды — не ступай дальше»."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_1_N06" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_1_N06"
-		text="Наша цель уничтожить безумцев! Мы слишком много пережили, чтобы остановиться в шаге до цели."
+		text="Мы не из тех, кто останавливается. Мы прошли слишком многое, чтобы отступить в шаге от цели."
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_1_N07" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_1_N07"
-		text="Вы можете зайти слишком далеко. Один человек должен был закончить это всё не так давно, но мы его так и не дождались."
+		text="Бывает, что шаг до цели - и есть пропасть. Один путник был близок к развязке совсем недавно… но мы так и не дождались его возвращения."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_1_N08" />
 
@@ -224,20 +224,20 @@
 <!--Root/r4m2/Сюжетные/The Chronicle of Hamza/У ученого/После поездки к тарелке/Первая часть-->
 	<Reply
 		name="r4m2_Bar_Scientist_2_N01"
-		text="Какая сила духа! Вы смогли противиться голосу небес!"
+		text="Какая сила духа! Вы устояли перед голосом с небес…"
 		role="NPC"
 		scriptCondition="GetVar('ScientistTalk').AsInt==1 and QuestStatus('TalkToVasilyi_quest')==Q_TAKEN "
 		nextReplies="r4m2_Bar_Scientist_2_N02" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N02"
-		text="Ничего такого мы не слышали."
+		text="Мы ничего не слышали."
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N03" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N03"
-		text="Значит, мы сделали верный выбор. Редкие люди могут приблизиться к источнику и найти в себе силы вернуться. Мы ждали вас долгие годы."
+		text="Значит, вы - те, кого мы ждали. Лишь немногие доходят до этого места и не теряют разум. Мы звали вас годами."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N04" />
 
@@ -249,91 +249,91 @@
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N05"
-		text="Вы призваны остановить безумие, начатое много лет назад."
+		text="Вы призваны остановить безумие, начатое давным-давно."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N06" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N06"
-		text="Мы готовы. Но расскажи нам, что здесь происходит?"
+		text="Мы готовы. Но расскажи - что здесь произошло?"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N07" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N07"
-		text="Когда-то наш мир был единым целым. Существовали огромные государства, города с миллионными населением, машины, которые принимали решения за нас. Всё казалось простым и ясным. Но в один момент всё изменилось..."
+		text="Был у нас мир - единый, как река, впадающая в море. Города с миллионами жителей, железные птицы в небе, машины, что думали вместо людей… Всё шло гладко - пока не пришёл конец."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N08" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N08"
-		text="Машины, которые думают? Это не может кончиться хорошо... Что же произошло?"
+		text="Машины, которые думают? Вот где началась беда… Что случилось?"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N09" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N09"
-		text="Силы космической обороны обнаружили и сбили неопознанный летающий объект, вы его видели. Меня и моих коллег отправили исследовать этот необычный феномен. Ситуация была крайне напряжённой: из-за борьбы с террористами в этой стране было опасно находиться. Мы работали в спешке, чувствуя дыхание разведслужб крупных держав и местных партизан."
+		text="Над пустыней сбили небесный корабль - вы, верно, видели его. Меня и товарищей послали разобраться. В те дни здесь кипела война: террористы, разведчики великой державы, партизаны - каждый хотел первой добычи. Мы спешили, как будто Джаханнам дышал в спину."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N10" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N10"
-		text="Я мало что понимаю из твоих слов… Но, судя по всему, прежний мир был не лучше нынешнего."
+		text="Я мало понял из твоих слов… Но, кажется, ваш прежний мир был не лучше нынешнего."
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N11" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N11"
-		text="Возможно… я об этом не задумывался… Когда нам удалось проникнуть внутрь корабля, а это без сомнений был корабль, нас охватила эйфория. Какие перспективы открывались перед нами: новые лекарства, сверхпрочные материалы, революционные технологии… Но вместо этого мы нашли только смерть: работники погибали под колесами техники, трое моих коллег покончили с собой за два дня исследований. Но самое ужасное произошло, когда мы вскрыли герметичную камеру в центральном отсеке…"
+		text="Возможно… Я не задумывался. Как только мы вошли внутрь корабля - да, это был корабль! - нас охватило безумное ликование. Мы мечтали о лекарствах, что исцелят все болезни, о металлах, что не знает ржавчина… Но вместо чуда - смерть. Люди гибли под колёсами машин, трое моих товарищей повесились за два дня. А потом… мы открыли герметичную камеру в сердце корабля…"
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N12" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N12"
-		text="Вам не следовало этого делать. Как можно было игнорировать такие явные предупреждающие сигналы?"
+		text="Вам не следовало этого делать. Разве вы не видели знаков? Даже шакал не тронет мёртвую тушу, если чует проклятие."
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N13" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N13"
-		text="Мы же учёные! Суеверия нам чужды. Я продолжу: видимо, активировалась спящая до того момента автоматика. Произошло что-то невообразимое… Мои коллеги… их тела буквально взорвались… В моей голове зазвучал Голос… Я потерял сознание и очнулся снаружи, в этом лагере… Я звал на помощь, но никто не пришёл. Радио молчало. Я понял, что произошла катастрофа."
+		text="Мы - учёные. Доверяли разуму, а не суевериям. Но я продолжу: внутри что-то пробудилось. Мои товарищи… их тела разорвало изнутри. В голове зазвучал Голос - не из мира сего. Я упал без памяти… Очнулся здесь, в этом лагере. Звал на помощь - никто не ответил. Радио молчало. Я знал: мир пал."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N14" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N14"
-		text="Значит, ты и такие, как ты, разрушили мир ради удовлетворения своего любопытства?"
+		text="Так это вы, ради любопытства, разрушили всё?"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N15" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N15"
-		text="Да. Это знание разъедает меня изнутри. Я должен быть наказан, но я не чувствую боли. Я даже не могу умереть! Бог знает, сколько раз я пытался покончить с собой… Это было ужасно. Я думал, что остался один во всем мире. Но когда ко мне начали приходить первые выжившие, радость быстро сменилась ужасом. Люди изменились. Посмотри на меня или на себя. Или на своего попутчика! Я боюсь даже представить, что скрывают ваши маски!"
+		text="Да. Эта мысль гложет меня, как скорпион в ночи. Я должен страдать… но боль молчит. Даже смерть отвергает меня. Сколько раз я пытался уйти из этого мира - без толку. Я думал, остался один… Но потом пришли выжившие. Сначала - радость, потом - ужас. Посмотри на меня. Посмотри на себя. Или на того, кто идёт с тобой… Что скрывают ваши маски?"
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N16" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N16"
-		text="О чём ты говоришь? Маска защищает нас от заражённого воздуха!"
+		text="Маска - лишь защита от заражённого воздуха!"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N17" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N17"
-		text="Можешь говорить что угодно. Пусть это будет заражённый воздух. Но самое страшное, что устройство продолжает работать и сейчас, и зараза всё ещё поступает в атмосферу."
+		text="Говори, что хочешь. Назови это заразой. Но страшнее всего - машина всё ещё работает. И тьма продолжает сочиться в небо."
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N18" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N18"
-		text="Значит, если мы остановим это, воздух очистится и люди снова станут нормальными? Почему же ты сам не вернулся и не выключил это устройство?"
+		text="Значит, если мы остановим её - воздух очистится? Люди вернут себе облик?"
 		role="PLAYER"
 		nextReplies="r4m2_Bar_Scientist_2_N19" />
 
 	<Reply
 		name="r4m2_Bar_Scientist_2_N19"
-		text="Я не могу подойти к нему! И уйти я тоже не могу! Я проклят вечно находиться рядом с этой проклятой машиной. Я могу только просить тех, кто приходит, уничтожить это чудовище. Но пока никому это не удалось…"
+		text="Возможно. Но я не могу вернуться туда… и не могу уйти. Проклятие держит меня у этого места - ни шагу вперёд, ни шагу назад. Я лишь молю каждого, кто приходит: уничтожьте это чудовище. Но никто ещё не вернулся живым…"
 		role="NPC"
 		nextReplies="r4m2_Bar_Scientist_2_N20a" />
 
@@ -1807,19 +1807,6 @@
 		scriptResult="SetVar('AkilExplains', 1); TakeQuest('TalkToFatherPrepToTrip_quest'); TActivate('AkilSus_tr'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Гонка/Если Хамза принимает участие-->
 	<Reply
-		name="Adrenalin_NPC_dialog_1"
-		text="Приветствую, молодые люди! Не упустите свой шанс - сегодня у нас проводятся гонки на Уралах. Как я вижу, вы приехали на этих автомобилях, так что вы точно не захотите пропустить это событие!"
-		role="NPC"
-		scriptCondition="QuestStatus('GonkaUral')==Q_TAKEN"
-		nextReplies="Dlg_pl_001348" />
-
-	<Reply
-		name="Dlg_pl_001348"
-		text="Ради этого мы и приехали сюда."
-		role="PLAYER"
-		nextReplies="Dlg_npc_001349" />
-
-	<Reply
 		name="Dlg_npc_001349"
 		text="Отлично! Вам нужно внести взнос в размере 2 500 монет."
 		role="NPC"
@@ -1874,7 +1861,7 @@
 		name="Dlg_pl_001361"
 		text="Отлично, спасибо. Мансур, поехали! Давай покажем им, где раки зимуют!"
 		role="PLAYER"
-		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace'); TakeQuest('RacingUral_quest')" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001352"
@@ -1916,7 +1903,7 @@
 		name="Dlg_pl_002211"
 		text="Отлично. Спасибо!"
 		role="PLAYER"
-		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace'); TakeQuest('RacingUral_quest')" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001355"
@@ -1946,21 +1933,8 @@
 		name="Dlg_pl_001491"
 		text="Поехали!"
 		role="PLAYER"
-		scriptResult="LeaveTown(true); CompleteQuest('GonkaUral'); TActivate('StartUralRace'); TakeQuest('RacingUral_quest')" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 <!--Root/r4m1/The Chronicle of Hamza/Гонка/Если Хамза - зритель-->
-	<Reply
-		name="Dlg_npc_001653"
-		text="Приветствую, молодые люди! Не упустите свой шанс - сегодня у нас проводятся гонки на Уралах. Как я вижу, вы приехали на этих автомобилях, так что вы точно не захотите пропустить это событие! "
-		role="NPC"
-		scriptCondition="QuestStatus('GonkaUralSpec')==Q_TAKEN"
-		nextReplies="Dlg_pl_001654" />
-
-	<Reply
-		name="Dlg_pl_001654"
-		text="Участвовать будет только мой друг. Я лишь буду зрителем."
-		role="PLAYER"
-		nextReplies="Dlg_npc_001655" />
-
 	<Reply
 		name="Dlg_npc_001655"
 		text="Хорошо, вход на зрительскую трибуну для родных и друзей участников бесплатный, так что прошу занять своё место. Или, возможно, вы хотите сделать ставку?"
@@ -1983,7 +1957,7 @@
 		name="Dlg_pl_002084"
 		text="Спасибо! Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001656"
@@ -2015,7 +1989,6 @@
 		name="Dlg_pl_001686"
 		text="Знаете, я передумал, не буду делать ставку."
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)"
 		nextReplies="Dlg_npc_001706" />
 
 	<Reply
@@ -2052,7 +2025,7 @@
 		name="Dlg_pl_001770"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001758"
@@ -2084,7 +2057,7 @@
 		name="Dlg_pl_002050"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001757"
@@ -2116,7 +2089,7 @@
 		name="Dlg_pl_002047"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001756"
@@ -2148,7 +2121,7 @@
 		name="Dlg_pl_002044"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001755"
@@ -2180,7 +2153,7 @@
 		name="Dlg_pl_002041"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001713"
@@ -2222,7 +2195,7 @@
 		name="Dlg_pl_001825"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001822"
@@ -2254,7 +2227,7 @@
 		name="Dlg_pl_002066"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001821"
@@ -2286,7 +2259,7 @@
 		name="Dlg_pl_002062"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001820"
@@ -2318,7 +2291,7 @@
 		name="Dlg_pl_002058"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001819"
@@ -2350,7 +2323,7 @@
 		name="Dlg_pl_002054"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001723"
@@ -2380,7 +2353,7 @@
 		name="Dlg_pl_001835"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001737"
@@ -2411,7 +2384,7 @@
 		name="Dlg_pl_001833"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001830"
@@ -2443,7 +2416,7 @@
 		name="Dlg_pl_002082"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001829"
@@ -2475,7 +2448,7 @@
 		name="Dlg_pl_002078"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001828"
@@ -2507,7 +2480,7 @@
 		name="Dlg_pl_002074"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001827"
@@ -2539,7 +2512,7 @@
 		name="Dlg_pl_002070"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001685"
@@ -2571,7 +2544,7 @@
 		name="Dlg_pl_002034"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001684"
@@ -2603,7 +2576,7 @@
 		name="Dlg_pl_002031"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001683"
@@ -2635,7 +2608,7 @@
 		name="Dlg_pl_002028"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001682"
@@ -2667,7 +2640,7 @@
 		name="Dlg_pl_002025"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001662"
@@ -2722,7 +2695,7 @@
 		name="Dlg_pl_001769"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001753"
@@ -2754,7 +2727,7 @@
 		name="Dlg_pl_001991"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001752"
@@ -2786,7 +2759,7 @@
 		name="Dlg_pl_001988"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001751"
@@ -2818,7 +2791,7 @@
 		name="Dlg_pl_001985"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001750"
@@ -2850,7 +2823,7 @@
 		name="Dlg_pl_001982"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001711"
@@ -2892,7 +2865,7 @@
 		name="Dlg_pl_001817"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001814"
@@ -2924,7 +2897,7 @@
 		name="Dlg_pl_002006"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001812"
@@ -2956,7 +2929,7 @@
 		name="Dlg_pl_002003"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001811"
@@ -2988,7 +2961,7 @@
 		name="Dlg_pl_002000"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001810"
@@ -3020,7 +2993,7 @@
 		name="Dlg_pl_001997"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001722"
@@ -3050,7 +3023,7 @@
 		name="Dlg_pl_001808"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001735"
@@ -3081,7 +3054,7 @@
 		name="Dlg_pl_001806"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001803"
@@ -3113,7 +3086,7 @@
 		name="Dlg_pl_002022"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001802"
@@ -3145,7 +3118,7 @@
 		name="Dlg_pl_002019"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001801"
@@ -3177,7 +3150,7 @@
 		name="Dlg_pl_002016"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001800"
@@ -3209,7 +3182,7 @@
 		name="Dlg_pl_002013"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001680"
@@ -3241,7 +3214,7 @@
 		name="Dlg_pl_001975"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001679"
@@ -3273,7 +3246,7 @@
 		name="Dlg_pl_001972"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001678"
@@ -3305,7 +3278,7 @@
 		name="Dlg_pl_001969"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001677"
@@ -3337,7 +3310,7 @@
 		name="Dlg_pl_001966"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001660"
@@ -3392,7 +3365,7 @@
 		name="Dlg_pl_001768"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001748"
@@ -3424,7 +3397,7 @@
 		name="Dlg_pl_001923"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001747"
@@ -3456,7 +3429,7 @@
 		name="Dlg_pl_001920"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001746"
@@ -3488,7 +3461,7 @@
 		name="Dlg_pl_001917"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001745"
@@ -3520,7 +3493,7 @@
 		name="Dlg_pl_001911"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001709"
@@ -3562,7 +3535,7 @@
 		name="Dlg_pl_001931"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001928"
@@ -3594,7 +3567,7 @@
 		name="Dlg_pl_001947"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001927"
@@ -3626,7 +3599,7 @@
 		name="Dlg_pl_001944"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001926"
@@ -3658,7 +3631,7 @@
 		name="Dlg_pl_001941"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001925"
@@ -3690,7 +3663,7 @@
 		name="Dlg_pl_001938"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001721"
@@ -3720,7 +3693,7 @@
 		name="Dlg_pl_001798"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001733"
@@ -3751,7 +3724,7 @@
 		name="Dlg_pl_001796"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001793"
@@ -3783,7 +3756,7 @@
 		name="Dlg_pl_001963"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001792"
@@ -3815,7 +3788,7 @@
 		name="Dlg_pl_001960"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001791"
@@ -3847,7 +3820,7 @@
 		name="Dlg_pl_001957"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001790"
@@ -3879,7 +3852,7 @@
 		name="Dlg_pl_001951"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001675"
@@ -3911,7 +3884,7 @@
 		name="Dlg_pl_001907"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001674"
@@ -3943,7 +3916,7 @@
 		name="Dlg_pl_001904"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001673"
@@ -3975,7 +3948,7 @@
 		name="Dlg_pl_001901"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001672"
@@ -4007,7 +3980,7 @@
 		name="Dlg_pl_001898"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001659"
@@ -4062,7 +4035,7 @@
 		name="Dlg_pl_001767"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001743"
@@ -4094,7 +4067,7 @@
 		name="Dlg_pl_001871"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001742"
@@ -4126,7 +4099,7 @@
 		name="Dlg_pl_001868"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001741"
@@ -4158,7 +4131,7 @@
 		name="Dlg_pl_001865"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001740"
@@ -4190,7 +4163,7 @@
 		name="Dlg_pl_001862"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001707"
@@ -4232,7 +4205,7 @@
 		name="Dlg_pl_001778"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001775"
@@ -4264,7 +4237,7 @@
 		name="Dlg_pl_001883"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001774"
@@ -4296,7 +4269,7 @@
 		name="Dlg_pl_001880"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001773"
@@ -4328,7 +4301,7 @@
 		name="Dlg_pl_001877"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001772"
@@ -4360,7 +4333,7 @@
 		name="Dlg_pl_001874"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001719"
@@ -4390,7 +4363,7 @@
 		name="Dlg_pl_001788"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001731"
@@ -4421,7 +4394,7 @@
 		name="Dlg_pl_001786"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001783"
@@ -4453,7 +4426,7 @@
 		name="Dlg_pl_001895"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001782"
@@ -4485,7 +4458,7 @@
 		name="Dlg_pl_001892"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001781"
@@ -4517,7 +4490,7 @@
 		name="Dlg_pl_001889"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001780"
@@ -4549,7 +4522,7 @@
 		name="Dlg_pl_001886"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001670"
@@ -4581,7 +4554,7 @@
 		name="Dlg_pl_001859"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001669"
@@ -4613,7 +4586,7 @@
 		name="Dlg_pl_001856"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001668"
@@ -4645,7 +4618,7 @@
 		name="Dlg_pl_001853"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 
 	<Reply
 		name="Dlg_pl_001667"
@@ -4677,7 +4650,7 @@
 		name="Dlg_pl_001850"
 		text="Спасибо. Удачи, Мансур!"
 		role="PLAYER"
-		scriptResult="CreateRacers(); LeaveTown(true)" />
+		scriptResult="LeaveTown(false); SetCoordinateForQuest('GonkaUral', CVector(getPos('StartGonka_loc')))" />
 <!--Root/r4m1/The Chronicle of Hamza/Гонка/Если Хамза разбился-->
 	<Reply
 		name="Dlg_npc_002242"
@@ -4803,6 +4776,27 @@
 		text="Спасибо, до встречи."
 		role="PLAYER"
 		scriptResult="SetVar('PlayerCrashed',2); TActivate('AfterRaceRolik_begin'); FailQuest('RacingUral_quest'); EndConversation()" />
+<!--Root/r4m1/The Chronicle of Hamza/Гонка/Общее-->
+	<Reply
+		name="Dlg_npc_002262"
+		text="Приветствую, молодые люди! Не упустите свой шанс - сегодня у нас проводятся гонки на Уралах. Как я вижу, вы приехали на этих автомобилях, так что вы точно не захотите пропустить это событие!"
+		role="NPC"
+		scriptCondition="QuestStatus('GonkaUral')==Q_TAKEN"
+		nextReplies="Dlg_pl_002263 Dlg_pl_002264" />
+
+	<Reply
+		name="Dlg_pl_002264"
+		text="Участвовать будет только мой друг. Я лишь буду зрителем."
+		role="PLAYER"
+		scriptResult="SetVar('PlayerRaceDecision', 2)"
+		nextReplies="Dlg_npc_001655" />
+
+	<Reply
+		name="Dlg_pl_002263"
+		text="Ради этого мы и приехали сюда. "
+		role="PLAYER"
+		scriptResult="SetVar('PlayerRaceDecision', 1)"
+		nextReplies="Dlg_npc_001349" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/Первый приезд на Урале-->
 	<Reply
 		name="Dlg_npc_001334"
@@ -4845,31 +4839,12 @@
 		name="Dlg_npc_001340"
 		text="Победитель получит 20 000 монет, тот, кто приедет вторым, получит 10 000 монет, а третье место - 5 000 монет. Но нужно будет оплатить взнос за участие - 2 500 монет. И у гонки будет всего один круг. Ну как, согласен?"
 		role="NPC"
-		nextReplies="Dlg_pl_001341 Dlg_pl_001650" />
+		nextReplies="Dlg_pl_002265" />
 
 	<Reply
-		name="Dlg_pl_001650"
-		text="Прости, но мне не хочется."
+		name="Dlg_pl_002265"
+		text="Поехали, но насчёт участия решу на месте."
 		role="PLAYER"
-		nextReplies="Dlg_npc_001651" />
-
-	<Reply
-		name="Dlg_npc_001651"
-		text="Может, тогда съездишь со мной и просто побудешь зрителем?"
-		role="NPC"
-		nextReplies="Dlg_pl_001652" />
-
-	<Reply
-		name="Dlg_pl_001652"
-		text="Почему бы и нет? Поехали."
-		role="PLAYER"
-		scriptResult="CompleteQuest('FindMansur_quest'); TActivate('ConnectMansur'); TActivate('MansurFollowGonka_tr'); TakeQuest('GonkaUralSpec'); EndConversation()" />
-
-	<Reply
-		name="Dlg_pl_001341"
-		text="Хм-м-м... Заманчиво. Поехали!"
-		role="PLAYER"
-		scriptCondition="GetPlayerMoney() >= 2500"
 		scriptResult="CompleteQuest('FindMansur_quest'); TActivate('ConnectMansur'); TakeQuest('GonkaUral'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Мансур/После нападения безумцев на город-->
 	<Reply
@@ -5764,15 +5739,15 @@
 
 	<Reply
 		name="Dlg_npc_001502"
-		text="Ты уверен? Потому что я вижу только проблемы на горизонте. Ты должен быть осторожен, Хамза."
+		text="Ты уверен? Потому что я вижу только проблемы на горизонте. Ты должен быть осторожен, Хамза. Я не позволю тебе закончить как твоя мама Майса аль-Кадри. Она тоже хотела решить эту проблему и какой из этого итог? Я не думаю, что тебе стоит напоминать."
 		role="NPC"
 		nextReplies="Dlg_pl_001503" />
 
 	<Reply
 		name="Dlg_pl_001503"
-		text="Спасибо за понимание, отец."
+		text="Я прекрасно помню что случилось с матерью. Это за неё. За Мусибу. За всех нас. Не волнуйся, отец, всё будет в порядке."
 		role="PLAYER"
-		scriptResult="CompleteQuest('TalkToFatherAfterSharaf_quest'); TakeQuest('KillTheRob_quest'); TActivate('MansurSeeRob_activate'); EndConversation()" />
+		scriptResult="CompleteQuest('TalkToFatherAfterSharaf_quest'); TakeQuest('KillTheRob_quest'); TActivate('MansurSeeRob_activate'); AddBook('r4_27092221news'); TActivate('aboutmother_addhistory'); EndConversation()" />
 <!--Root/r4m1/The Chronicle of Hamza/Отец/Перед поездкой в Зармек-->
 	<Reply
 		name="Dlg_npc_001522"

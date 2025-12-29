@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="1212">
+	LastId="1215">
 	<TargetNamesForDestroy
 		Names="urod1 urod2 urod3 urod4 urod5 urod6 urod7 urod8 urod9" />
 
@@ -16490,13 +16490,34 @@
 		Radius="10.000" />
 
 	<Object
-		Belong="1100"
-		Prototype="someRecollection" />
-
-	<Object
 		Name="SwitchCam_loc"
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="2446.417 291.319 5417.691"
+		Radius="20.000" />
+
+	<Object
+		Name="SwitchCam_2_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="6032.059 248.551 4266.121"
+		Radius="20.000" />
+
+	<Object
+		Name="SwitchCam_3_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="4645.719 247.077 4850.489"
+		Radius="20.000" />
+
+	<Object
+		Belong="1100"
+		Prototype="someRecollection" />
+
+	<Object
+		Name="SwitchCam_4_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="3050.308 248.963 4173.524"
 		Radius="20.000" />
 </DynamicScene>

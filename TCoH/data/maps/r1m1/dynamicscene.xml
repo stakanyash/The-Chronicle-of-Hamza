@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="4380">
+	LastId="4391">
 	<TargetNamesForDestroy
 		Names="u1 u2 u3 u4 u5 u6 u7 u8 u9" />
 
@@ -37345,4 +37345,74 @@
 		Prototype="genericLocation"
 		Pos="3074.437 355.820 3367.891"
 		Radius="100.000" />
+
+	<Object
+		Name="BadFeel_PS_loc_1"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2561.923 346.520 2308.368"
+		Radius="130.000" />
+
+	<Object
+		Name="BadFeel_PS_loc_2"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2099.175 338.495 2355.526"
+		Radius="130.000" />
+
+	<Object
+		Name="BadFeel_PS_loc_3"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1783.473 304.890 2666.014"
+		Radius="190.000" />
+
+	<Object
+		Name="BadFeel_PS_loc_4"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1174.744 288.000 2103.594"
+		Radius="300.000" />
+
+	<Object
+		Name="BadFeel_PS_loc_3_1"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2291.174 309.900 3008.835"
+		Radius="200.000" />
+
+	<Object
+		Name="BadFeel_PS_loc_2_1"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2353.175 323.647 2676.806"
+		Radius="130.000" />
+
+	<Object
+		Name="BadFeel_PS_loc_3_2"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1853.751 319.766 2227.674"
+		Radius="80.000" />
+
+	<Object
+		Name="BadFeel_PS_loc_4_1"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1871.058 322.500 1949.089"
+		Radius="85.000" />
+
+	<Object
+		Name="BadFeel_PS_loc_leave"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="2821.086 340.298 2281.852"
+		Radius="125.000" />
+
+	<Object
+		Name="BadFeel_PS_loc_4_off"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="1267.059 289.110 2586.992"
+		Radius="450.000" />
 </DynamicScene>

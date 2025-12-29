@@ -353,8 +353,8 @@
 	</Path>
 
 	<Path Name = "cemetery_cam02">
-		<Point  coord="3069.702 368.459 3375.386" rotation="-0.149 0.778 -0.202 0.576"/>
-		<Point  coord="3066.027 368.459 3383.493" rotation="-0.105 0.880 -0.231 0.402"/>
+		<Point  coord="3058.138 358.687 3372.991" rotation="-0.055 0.844 -0.089 0.526"/>
+		<Point  coord="3058.707 358.687 3364.279" rotation="-0.090 0.604 -0.069 0.789"/>
 	</Path>
 
 	<Path Name = "cemetery_cam03">
@@ -363,8 +363,8 @@
 	</Path>
 
 	<Path Name = "cemetery_cam04">
-		<Point  coord="3052.926 357.529 3369.015" rotation="-0.078 0.661 -0.070 0.743"/>
-		<Point  coord="3060.455 359.146 3368.118" rotation="-0.078 0.661 -0.070 0.743"/>
+		<Point  coord="3054.093 357.280 3367.810" rotation="-0.082 0.707 -0.083 0.698"/>
+		<Point  coord="3055.825 357.693 3367.833" rotation="-0.082 0.707 -0.083 0.698"/>
 	</Path>
 
 	<Path Name = "cemetery_cam05">

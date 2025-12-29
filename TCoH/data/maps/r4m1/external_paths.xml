@@ -2206,6 +2206,27 @@
 	</Path>
 
 	<Path
+		Name="HamzaStartGame_2_1">
+		<Point
+			coord="2286.809 4983.579" />
+
+		<Point
+			coord="2272.668 4994.366" />
+
+		<Point
+			coord="2261.235 4996.494" />
+
+		<Point
+			coord="2251.407 4993.318" />
+
+		<Point
+			coord="2246.489 4983.160" />
+
+		<Point
+			coord="2261.240 4981.201" />
+	</Path>
+
+	<Path
 		Name="HamzarStartGame_2">
 		<Point
 			coord="2516.671 4106.850" />
@@ -4447,9 +4468,24 @@
 	</Path>
 
 	<Path
+		Name="MansurStartGame_2_1">
+		<Point
+			coord="2276.531 4956.768" />
+	</Path>
+
+	<Path
 		Name="MansurStartGame_3">
 		<Point
-			coord="2319.052 5020.776" />
+			coord="2320.827 5083.874" />
+
+		<Point
+			coord="2314.992 5169.918" />
+
+		<Point
+			coord="2311.214 5222.196" />
+
+		<Point
+			coord="2316.931 5255.649" />
 	</Path>
 
 	<Path

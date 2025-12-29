@@ -9,6 +9,11 @@
 			SetVar("AivenJrTalk", 0)
 			SetVar("GL_PlateClose", 0)
 
+			SetTolerance(1100, 1093, RS_ALLY)
+			SetTolerance(1095, 1093, RS_ALLY)
+			SetTolerance(1090, 1093, RS_ALLY)
+			SetTolerance(1062, 1093, RS_ALLY)
+
 			SetRadarUpgrade(1)
            
 			trigger:Deactivate()
