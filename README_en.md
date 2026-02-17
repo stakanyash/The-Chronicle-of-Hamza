@@ -3,9 +3,10 @@
 
 **The Chronicle of Hamza** – a story-driven mod set in fourth region. The events of the mod begin around the time when the original game's protagonist is upgrading their truck to head to Vahat. The main character, Hamza, along with his friend Mansur and the original protagonist, must uncover the causes of the 2011 catastrophe and solve the problem of the constant emergence of madmen in the region.
 
-The mod's timeline overlaps with the original game but is a work of fiction by the author and does not claim to align with the original game's events!
-
-The mod lacks voice acting, except for the narrator.
+> [!WARNING]
+> The mod's timeline overlaps with the original game but is a work of fiction by the author and does not claim to align with the original game's events!
+> 
+> The mod lacks voice acting, except for the narrator.
 
 ---
 
