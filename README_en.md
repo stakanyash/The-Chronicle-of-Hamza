@@ -1,6 +1,14 @@
 # The Chronicle of Hamza
 ![tcoh_banner](TCoH/assets/tcoh_banner.png)
 
+<div align="center">
+  
+![status](https://img.shields.io/badge/status-released-green)
+![version](https://img.shields.io/badge/version-1.3-blue)
+![language](https://img.shields.io/badge/language-RU%20%7C%20EN-purple)
+
+</div>
+
 **The Chronicle of Hamza** – a story-driven mod set in fourth region. The events of the mod begin around the time when the original game's protagonist is upgrading their truck to head to Vahat. The main character, Hamza, along with his friend Mansur and the original protagonist, must uncover the causes of the 2011 catastrophe and solve the problem of the constant emergence of madmen in the region.
 
 > [!WARNING]
@@ -17,14 +25,7 @@
 </div>
 
 ---
-
-### Narrator's Voice:
-
-**Russian version:** [EmerEh](https://www.youtube.com/@emerehhhhh)
-
-**English version:** [Seel](https://github.com/Zvetkov)
-
----  
+ 
 ### Changelog:  
 
 - Alternate storyline for fourth region from the perspective of a Vahat resident  
@@ -66,17 +67,17 @@ Cutscene of one of the endings
 
 ### **Credits:**  
 
-**[EmerEh](https://www.youtube.com/@emerehhhhh)** – Russian narrator voiceover
+- **[EmerEh](https://www.youtube.com/@emerehhhhh)** – Russian narrator voiceover
 
-**[Seel](https://github.com/Zvetkov)** - English narrator voiceover
+- **[Seel](https://github.com/Zvetkov)** - English narrator voiceover
 
-**[Varisane](https://github.com/Varisane)** – Testing, text edits, story, scripts  
+- **[Varisane](https://github.com/Varisane)** – Testing, text edits, story, scripts  
 
-**[E Jet](https://github.com/ejetaxeblevich)** – Development assistance  
+- **[E Jet](https://github.com/ejetaxeblevich)** – Development assistance  
 
-**[nEmPoBu4](https://github.com/lyokhatankist)** – Testing, English proofreading
+- **[nEmPoBu4](https://github.com/lyokhatankist)** – Testing, English proofreading
 
-**[Carsen](https://github.com/CarsenStream)** – Development assistance, testing  
+- **[Carsen](https://github.com/CarsenStream)** – Development assistance, testing  
 
 **Special thanks to the communities [Deus Ex Machina](https://github.com/DeusExMachinaTeam) and [EM2ch](https://vk.com/em2ch) for their support in development.**  
 
@@ -96,4 +97,8 @@ Cutscene of one of the endings
 - The Foreigner's scream in Zarmek's dead-end ending from **[Community Disaster](https://github.com/zatinu322/stream_builds/)** by **[pavlikRPG](https://github.com/zatinu322/)**
 
 ---
-**If you have found a bug, a flaw or just want to leave feedback about the modification, you can do it on my [Discord server](https://discord.gg/5UAjrrsM5B) in the "bugreports" channel, or on the [Deus Ex Machina](https://discord.gg/PVW57kr) server in the channel "The Chronicle of Hamza" of the section "витрина-модов"**.
+
+### Feedback & Support
+
+- **Submit a [bug report](https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new)**
+- **Leave your [feedback](https://discord.com/invite/Cd5GanuYud)**
