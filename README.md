@@ -1,18 +1,20 @@
 # The Chronicle of Hamza
 ![tcoh_banner](TCoH/assets/tcoh_banner.png)
 
+<div align="center">
+  
+![status](https://img.shields.io/badge/status-released-green)
+![version](https://img.shields.io/badge/version-1.3-blue)
+![language](https://img.shields.io/badge/language-RU%20%7C%20EN-purple)
+
+</div>
+
 **The Chronicle of Hamza** - cюжетная модификация, действие которой разворачивается в 4-м регионе. События мода начинаются примерно в то время, когда главный герой оригинальной игры будет укреплять свой грузовик, чтобы отправиться в Вахат. Главному герою Хамзе предстоит вместе со своим другом Мансуром и главным героем оригинала выяснить причины катастрофы 2011 года, а так-же решить проблему постоянного появления безумцев в регионе.
 
 > [!WARNING]
 > События модификации по временному отрезку пересекаются с оригиналом, но являются художественным вымыслом автора и не претендуют на совпадения с событиями оригинальной игры!
 > 
 > В модификации отсутствует озвучка, за исключением рассказчика.
-
----
-
-**Озвучка рассказчика (Русская версия):** [Эмер](https://www.youtube.com/@emerehhhhh)
-
-**Озвучка рассказчика (Английская версия):** [Seel](https://github.com/Zvetkov)
 
 ---
 <div align="center">
@@ -63,17 +65,17 @@
 ### Спасибо:
 
 
-**[Эмер](https://www.youtube.com/@emerehhhhh)** - озвучка рассказчика
+- **[Эмер](https://www.youtube.com/@emerehhhhh)** - озвучка рассказчика
 
-**[Seel](https://github.com/Zvetkov)** - озвучка рассказчика в английской версии
+- **[Seel](https://github.com/Zvetkov)** - озвучка рассказчика в английской версии
 
-**[Varisane](https://github.com/Varisane)** - тестирование, текстовые правки, сюжет, скрипты
+- **[Varisane](https://github.com/Varisane)** - тестирование, текстовые правки, сюжет, скрипты
 
-**[E Jet](https://github.com/ejetaxeblevich)** - помощь в разработке
+- **[E Jet](https://github.com/ejetaxeblevich)** - помощь в разработке
 
-**[nEmPoBu4](https://github.com/lyokhatankist)** - тестирование, пруфридинг английской локализации
+- **[nEmPoBu4](https://github.com/lyokhatankist)** - тестирование, пруфридинг английской локализации
 
-**[Carsen](https://github.com/CarsenStream)** - помощь в разработке, тестирование
+- **[Carsen](https://github.com/CarsenStream)** - помощь в разработке, тестирование
 
 **Отдельное спасибо сообществам [Deus Ex Machina](https://github.com/DeusExMachinaTeam) и [EM2ch/Эмдвач](https://vk.com/em2ch) за оказанную помощь в разработке.**
 
@@ -94,4 +96,7 @@
 
 ---
 
-**Если вы нашли какой-то баг, недоработку или просто хотите оставить отзыв о модификации, то сделать вы это можете на моём [Discord-сервере](https://discord.gg/5UAjrrsM5B), либо же на сервере [Deus Ex Machina](https://discord.gg/PVW57kr) в канале "The Chronicle of Hamza" разделa "витрина-модов"**
+### Обратная связь:
+
+- **Оставить [багрепорт](https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new)**
+- **Оставить [отзыв](https://discord.com/invite/Cd5GanuYud)**
