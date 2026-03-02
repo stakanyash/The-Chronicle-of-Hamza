@@ -641,8 +641,6 @@
 		</script>
 	</trigger>
 
-
-	<!-- ����� ������� ��������� �� ����� -->
 	<trigger	Name="cinPriezdFirst"	active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
 		<script>
@@ -725,7 +723,6 @@
 		</script>
 	</trigger>
 
-	<!-- ������� ����, ����� ��� ������ ������������� -->
 	<trigger Name="trENEMYLISA_DEAD" active="0">
 		<event eventid="GE_VEHICLE_WITHOUT_HEALTH" ObjName="ENEMYLISA_vehicle_0" />
 		<event	timeout="60"		eventid="GE_TIME_PERIOD" />
@@ -845,8 +842,6 @@
 			trigger:Deactivate()
 		</script>
 	</trigger>
-
-	<!-- �������� �� �������� � ����� -->
 
 	<trigger Name="cinMovePlToR2M2_begin" active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
@@ -2653,6 +2648,12 @@
 			StopPlayingCustomMusic()
 			SetCameraBehindPlayerVehicle()
 			RestoreAllToleranceStatus()
+
+			-- Reset Alfaran relationship
+			SetTolerance(1100,1025, RS_ALLY)
+			SetTolerance(1026,1025, RS_NEUTRAL)
+			SetTolerance(1090,1025, RS_ALLY)
+			SetTolerance(1095,1025, RS_ALLY)
 
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active", 1) end

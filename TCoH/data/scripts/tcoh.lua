@@ -381,18 +381,13 @@ function CreateBuharaAndAivanJr()
 	CreateTeam("Buharers",1026, CVector(getPos("BuhSpawn_loc")),{"DemoUral1","DemoMolokovoz1"})
 	CreateTeam("AivanJr", 1095, CVector(getPos("BuhSpawn_loc")),{"BelazShot1"})
 
-	local buhara0 = getObj("Buharers_vehicle_0")
-	if buhara0 then
-		buhara0:SetGamePositionOnGround(CVector(getPos("BuhDefSpawn0_loc")))
-		buhara0:SetRotation(Quaternion(-0.022, 0.083, -0.023, 0.996))
-		buhara0:SetSkin(0)
-	end
-
-	local buhara1 = getObj("Buharers_vehicle_1")
-	if buhara1 then
-		buhara1:SetGamePositionOnGround(CVector(getPos("BuhDefSpawn1_loc")))
-		buhara1:SetRotation(Quaternion(-0.022, 0.083, -0.023, 0.996))
-		buhara1:SetSkin(0)
+	for i=0,1 do
+		local buhara = getObj("Buharers_vehicle_"..i)
+		if buhara then
+			buhara:SetGamePositionOnGround(CVector(getPos("BuhDefSpawn"..i.."_loc")))
+			buhara:SetRotation(Quaternion(-0.022, 0.083, -0.023, 0.996))
+			buhara:SetSkin(0)
+		end
 	end
 
 	local aivanjr = getObj("AivanJr_vehicle_0")
@@ -1523,186 +1518,80 @@ function GetWalkers()
 end
 
 function AddSaleItems()
-	-- locals --
-	local KefWorkshop = GetEntityByName("Kef_Workshop")
-	local KefVehiclesRepo = KefWorkshop:GetRepositoryByTypename("Vehicles")
-	local KefCabinBasketRep = KefWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
+	local shops = {
+		{
+			name     = "Kef",
+			entity   = "Kef_Workshop",
+			cargo    = {
+				"bugCargo02","bugCargo03",
+				"molokovozCargo02","molokovozCargo03",
+				"uralCargo01","uralCargo02","uralCargo03","uralCargo04",
+				"belazCargo01","belazCargo02","belazCargo03","belazCargo04",
+				"mirotvorecCargo01","mirotvorecCargo02","mirotvorecCargo03","mirotvorecCargo05",
+			},
+			cabs     = {
+				"bugCab02","bugCab03",
+				"molokovozCab02","molokovozCab03",
+				"belazCab01","belazCab02","belazCab03","belazCab04",
+				"mirotvorecCab01","mirotvorecCab02","mirotvorecCab03","mirotvorecCab05",
+				"uralCab02","uralCab03","uralCab04","uralCab05",
+			},
+		},
+		{
+			name     = "Gadad",
+			entity   = "Gadad_Workshop",
+			cargo    = {
+				"bugCargo02","bugCargo03",
+				"molokovozCargo02","molokovozCargo03",
+				"uralCargo01","uralCargo02","uralCargo03",
+				"belazCargo01","belazCargo02","belazCargo03","belazCargo04","belazCargo05",
+				"mirotvorecCargo01","mirotvorecCargo02","mirotvorecCargo03","mirotvorecCargo04",
+			},
+			cabs     = {
+				"bugCab02","bugCab03",
+				"molokovozCab02","molokovozCab03",
+				"belazCab01","belazCab02","belazCab03","belazCab04","belazCab05",
+				"mirotvorecCab01","mirotvorecCab02","mirotvorecCab03","mirotvorecCab04",
+				"uralCab02","uralCab03","uralCab04",
+			},
+		},
+		{
+			name     = "Kazif",
+			entity   = "Kazif_Workshop",
+			cargo    = {
+				"bugCargo02","bugCargo03",
+				"molokovozCargo02","molokovozCargo03",
+				"uralCargo01","uralCargo02","uralCargo04",
+				"belazCargo01","belazCargo02","belazCargo03","belazCargo05",
+				"mirotvorecCargo01","mirotvorecCargo02","mirotvorecCargo03","mirotvorecCargo04","mirotvorecCargo05",
+			},
+			cabs     = {
+				"bugCab02","bugCab03",
+				"molokovozCab02","molokovozCab03",
+				"belazCab01","belazCab02","belazCab03","belazCab05",
+				"mirotvorecCab01","mirotvorecCab02","mirotvorecCab03","mirotvorecCab04","mirotvorecCab05",
+				"uralCab01","uralCab02","uralCab04",
+			},
+		},
+	}
 
-	local KazifWorkshop = GetEntityByName("Kazif_Workshop")
-	local KaVehiclesRepo = KazifWorkshop:GetRepositoryByTypename("Vehicles")
-	local KCabinBasketRep = KazifWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
+	for _, shop in ipairs(shops) do
+		local workshop    = GetEntityByName(shop.entity)
+		local vehiclesRepo = workshop:GetRepositoryByTypename("Vehicles")
+		local cabinRepo    = workshop:GetRepositoryByTypename("CabinsAndBaskets")
 
-	local GadadWorkshop = GetEntityByName("Gadad_Workshop")
-	local GadadVehiclesRepo = GadadWorkshop:GetRepositoryByTypename("Vehicles")
-	local GCabinBasketRep = GadadWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
-	
-	-- Kef --
+		if vehiclesRepo then
+			vehiclesRepo:AddItems("UralForSale", 1)
+			vehiclesRepo:AddItems("BelazForSale", 1)
+			vehiclesRepo:AddItems("MirotvorecForSale", 1)
+			DevPrint("AddSaleItems: Prototypes added to " .. shop.name .. ".")
+		end
 
-	if KefVehiclesRepo then
-		KefVehiclesRepo:AddItems("UralForSale", 1)
-		KefVehiclesRepo:AddItems("BelazForSale", 1)
-		KefVehiclesRepo:AddItems("MirotvorecForSale", 1)
-		DevPrint("AddSaleItems: Prototypes added to Kef.")
-	end
-
-	if KefCabinBasketRep then
-		KefCabinBasketRep:AddItems("bugCargo02", 1)
-		KefCabinBasketRep:AddItems("bugCargo03", 1)
-		KefCabinBasketRep:AddItems("molokovozCargo02", 1)
-		KefCabinBasketRep:AddItems("molokovozCargo03", 1)
-		KefCabinBasketRep:AddItems("uralCargo01", 1)
-		KefCabinBasketRep:AddItems("uralCargo02", 1)
-		KefCabinBasketRep:AddItems("uralCargo03", 1)
-		KefCabinBasketRep:AddItems("uralCargo04", 1)
-		KefCabinBasketRep:AddItems("belazCargo01", 1)
-		KefCabinBasketRep:AddItems("belazCargo02", 1)
-		KefCabinBasketRep:AddItems("belazCargo03", 1)
-		KefCabinBasketRep:AddItems("belazCargo04", 1)
-		KefCabinBasketRep:AddItems("belazCargo02", 1)
-		KefCabinBasketRep:AddItems("belazCargo03", 1)
-		KefCabinBasketRep:AddItems("belazCargo04", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo01", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo02", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo03", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo05", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo03", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo05", 1)
-		KefCabinBasketRep:AddItems("bugCab02", 1)
-		KefCabinBasketRep:AddItems("bugCab03", 1)
-		KefCabinBasketRep:AddItems("molokovozCab02", 1)
-		KefCabinBasketRep:AddItems("molokovozCab03", 1)
-		KefCabinBasketRep:AddItems("belazCab01", 1)
-		KefCabinBasketRep:AddItems("belazCab02", 1)
-		KefCabinBasketRep:AddItems("belazCab03", 1)
-		KefCabinBasketRep:AddItems("belazCab04", 1)
-		KefCabinBasketRep:AddItems("belazCab03", 1)
-		KefCabinBasketRep:AddItems("belazCab04", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab01", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab02", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab03", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab05", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab02", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab03", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab05", 1)
-		KefCabinBasketRep:AddItems("uralCab02", 1)
-		KefCabinBasketRep:AddItems("uralCab03", 1)
-		KefCabinBasketRep:AddItems("uralCab04", 1)
-		KefCabinBasketRep:AddItems("uralCab05", 1)
-		KefCabinBasketRep:AddItems("uralCab05", 1)
-		DevPrint("AddSaleItems: Cabs and baskets added to Kef.")
-	end
-
-	-- Gadad --
-	
-	if GadadVehiclesRepo then
-		GadadVehiclesRepo:AddItems("UralForSale", 1)
-		GadadVehiclesRepo:AddItems("BelazForSale", 1)
-		GadadVehiclesRepo:AddItems("MirotvorecForSale", 1)
-		DevPrint("AddSaleItems: Prototypes added to Gadad.")
-	end
-
-	if GCabinBasketRep then
-		GCabinBasketRep:AddItems("bugCargo02", 1)
-		GCabinBasketRep:AddItems("bugCargo03", 1)
-		GCabinBasketRep:AddItems("molokovozCargo02", 1)
-		GCabinBasketRep:AddItems("molokovozCargo03", 1)
-		GCabinBasketRep:AddItems("uralCargo01", 1)
-		GCabinBasketRep:AddItems("uralCargo02", 1)
-		GCabinBasketRep:AddItems("uralCargo03", 1)
-		GCabinBasketRep:AddItems("uralCargo01", 1)
-		GCabinBasketRep:AddItems("uralCargo02", 1)
-		GCabinBasketRep:AddItems("uralCargo03", 1)
-		GCabinBasketRep:AddItems("belazCargo01", 1)
-		GCabinBasketRep:AddItems("belazCargo02", 1)
-		GCabinBasketRep:AddItems("belazCargo03", 1)
-		GCabinBasketRep:AddItems("belazCargo04", 1)
-		GCabinBasketRep:AddItems("belazCargo05", 1)
-		GCabinBasketRep:AddItems("belazCargo03", 1)
-		GCabinBasketRep:AddItems("belazCargo04", 1)
-		GCabinBasketRep:AddItems("belazCargo05", 1)
-		GCabinBasketRep:AddItems("mirotvorecCargo01", 1)
-		GCabinBasketRep:AddItems("mirotvorecCargo02", 1)
-		GCabinBasketRep:AddItems("mirotvorecCargo03", 1)
-		GCabinBasketRep:AddItems("mirotvorecCargo04", 1)
-		GCabinBasketRep:AddItems("bugCab02", 1)
-		GCabinBasketRep:AddItems("bugCab03", 1)
-		GCabinBasketRep:AddItems("molokovozCab02", 1)
-		GCabinBasketRep:AddItems("molokovozCab03", 1)
-		GCabinBasketRep:AddItems("belazCab01", 1)
-		GCabinBasketRep:AddItems("belazCab02", 1)
-		GCabinBasketRep:AddItems("belazCab03", 1)
-		GCabinBasketRep:AddItems("belazCab04", 1)
-		GCabinBasketRep:AddItems("belazCab05", 1)
-		GCabinBasketRep:AddItems("belazCab03", 1)
-		GCabinBasketRep:AddItems("belazCab04", 1)
-		GCabinBasketRep:AddItems("belazCab05", 1)
-		GCabinBasketRep:AddItems("mirotvorecCab01", 1)
-		GCabinBasketRep:AddItems("mirotvorecCab02", 1)
-		GCabinBasketRep:AddItems("mirotvorecCab03", 1)
-		GCabinBasketRep:AddItems("mirotvorecCab04", 1)
-		GCabinBasketRep:AddItems("uralCab02", 1)
-		GCabinBasketRep:AddItems("uralCab03", 1)
-		GCabinBasketRep:AddItems("uralCab04", 1)
-		GCabinBasketRep:AddItems("mirotvorecCab04", 1)
-		GCabinBasketRep:AddItems("uralCab02", 1)
-		GCabinBasketRep:AddItems("uralCab03", 1)
-		GCabinBasketRep:AddItems("uralCab04", 1)
-		DevPrint("AddSaleItems: Cabs and baskets added to Gadad.")
-	end
-
-	-- Kazif --
-	
-	if KaVehiclesRepo then
-		KaVehiclesRepo:AddItems("UralForSale", 1)
-		KaVehiclesRepo:AddItems("BelazForSale", 1)
-		KaVehiclesRepo:AddItems("MirotvorecForSale", 1)
-		DevPrint("AddSaleItems: Prototypes added to Kazif.")
-	end
-
-	if KCabinBasketRep then
-		KCabinBasketRep:AddItems("bugCargo02", 1)
-		KCabinBasketRep:AddItems("bugCargo03", 1)
-		KCabinBasketRep:AddItems("molokovozCargo02", 1)
-		KCabinBasketRep:AddItems("molokovozCargo03", 1)
-		KCabinBasketRep:AddItems("uralCargo01", 1)
-		KCabinBasketRep:AddItems("uralCargo02", 1)
-		KCabinBasketRep:AddItems("uralCargo04", 1)
-		KCabinBasketRep:AddItems("belazCargo01", 1)
-		KCabinBasketRep:AddItems("belazCargo02", 1)
-		KCabinBasketRep:AddItems("belazCargo03", 1)
-		KCabinBasketRep:AddItems("belazCargo05", 1)
-		KCabinBasketRep:AddItems("belazCargo03", 1)
-		KCabinBasketRep:AddItems("belazCargo05", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo01", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo02", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo03", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo04", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo05", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo03", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo04", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo05", 1)
-		KCabinBasketRep:AddItems("bugCab02", 1)
-		KCabinBasketRep:AddItems("bugCab03", 1)
-		KCabinBasketRep:AddItems("molokovozCab02", 1)
-		KCabinBasketRep:AddItems("molokovozCab03", 1)
-		KCabinBasketRep:AddItems("belazCab01", 1)
-		KCabinBasketRep:AddItems("belazCab02", 1)
-		KCabinBasketRep:AddItems("belazCab03", 1)
-		KCabinBasketRep:AddItems("belazCab05", 1)
-		KCabinBasketRep:AddItems("belazCab03", 1)
-		KCabinBasketRep:AddItems("belazCab05", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab01", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab02", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab03", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab04", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab05", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab03", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab04", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab05", 1)
-		KCabinBasketRep:AddItems("uralCab01", 1)
-		KCabinBasketRep:AddItems("uralCab02", 1)
-		KCabinBasketRep:AddItems("uralCab04", 1)
-		DevPrint("AddSaleItems: Cabs and baskets added to Kazif.")
+		if cabinRepo then
+			for _, item in ipairs(shop.cargo) do cabinRepo:AddItems(item, 1) end
+			for _, item in ipairs(shop.cabs)  do cabinRepo:AddItems(item, 1) end
+			DevPrint("AddSaleItems: Cabs and baskets added to " .. shop.name .. ".")
+		end
 	end
 end
 
@@ -1736,7 +1625,7 @@ end
 
 function AlfaAmbushSpawn(int)
 	if int == 0 then
-		CreateTeam("AlfaAmbush0",1062,CVector(2572.051, 267.215, 3917.664),{"DemoMolokovoz1","BezHunter", "UralShot"})
+		CreateTeam("AlfaAmbush0",1025,CVector(2572.051, 267.215, 3917.664),{"DemoMolokovoz1","BezHunter", "UralShot"})
 
 		for i=0,2 do
 			local AlAmVeh = getObj("AlfaAmbush0_vehicle_"..i)
@@ -1748,7 +1637,7 @@ function AlfaAmbushSpawn(int)
 
 		return true
 	elseif int == 1 then
-		CreateTeam("AlfaAmbush1",1062,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","TankBez", "Hunter01"})
+		CreateTeam("AlfaAmbush1",1025,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","TankBez", "Hunter01"})
 
 		for i=0,2 do
 			local AlAmVeh = getObj("AlfaAmbush1_vehicle_"..i)
@@ -1760,7 +1649,7 @@ function AlfaAmbushSpawn(int)
 
 		return true
 	elseif int == 2 then
-		CreateTeam("AlfaAmbush2",1062,CVector(2572.051, 267.215, 3917.664),{"Hunter01","BelazShot", "Hunter01"})
+		CreateTeam("AlfaAmbush2",1025,CVector(2572.051, 267.215, 3917.664),{"Hunter01","BelazShot", "Hunter01"})
 
 		for i=0,2 do
 			local AlAmVeh = getObj("AlfaAmbush2_vehicle_"..i)
