@@ -92,6 +92,8 @@ Cutscene of one of the endings
 
 - Some scripts by **[E Jet](https://github.com/ejetaxeblevich)**  
 
+- Some scripts from **[apaTche](https://github.com/lyokhatankist/ExM-apaTche)** by **[nEmPoBu4](https://github.com/lyokhatankist)**
+
 - Ending slides and Zarmek deadend music from **[Improved Storyline](https://github.com/zatinu322/ImprovedStoryline)** by **[pavlikRPG](https://github.com/zatinu322/)**
 
 - The Foreigner's scream in Zarmek's dead-end ending from **[Community Disaster](https://github.com/zatinu322/stream_builds/)** by **[pavlikRPG](https://github.com/zatinu322/)**

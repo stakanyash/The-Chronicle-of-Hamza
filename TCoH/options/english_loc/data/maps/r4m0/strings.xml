@@ -145,4 +145,9 @@
 		id="8002"
 		value="Warning!||Leaving for Vahat is unavailable during the &quot;Find Sergo&quot; quest!"
 		numButtons="1"/>
+	
+	<string
+		id="666"
+		value="ExM: TCoH has encountered an ERROR!|Check exmachina.log for more info.||В ExM: TCoH возникла ОШИБКА!|Смотрите exmachina.log для подробной информации." 
+		numButtons="1"/>
 </resource>

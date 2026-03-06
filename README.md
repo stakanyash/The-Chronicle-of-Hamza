@@ -90,6 +90,8 @@
 
 - Некоторые скрипты, автор: **[E Jet](https://github.com/ejetaxeblevich)**
 
+- Некоторые скрипты: **[apaTche](https://github.com/lyokhatankist/ExM-apaTche), автор: [nEmPoBu4](https://github.com/lyokhatankist)**
+
 - Слайды в концовках, музыка в тупиковой концовке Зармека: **[Impoved Storyline](https://github.com/zatinu322/ImprovedStoryline)**, автор: **[pavlikRPG](https://github.com/zatinu322/)**
 
 - Выкрик Чужеземца в тупиковой концовке Зармека: **[Community Disaster](https://github.com/zatinu322/stream_builds/)**, автор: **[pavlikRPG](https://github.com/zatinu322/)**

@@ -22,6 +22,14 @@
 			SetVar("EndRaceSpeed", 10)
 			SetVar("DriveToDD", 0)
 
+			-- TCoH Autosave VAR's --
+
+			SetVar("CoastAutoSave", 1)
+			SetVar("MI_Autosave", 1)
+			SetVar("MI_Gadad_Autosave", 1)
+			SetVar("MI_Kef_Autosave", 1)
+			SetVar("MI_NG_Autosave", 1)
+
 		    trigger:Deactivate()
 		</script>
 	</trigger>
@@ -33,7 +41,7 @@
 				local AlihamTimer = GetVar("AlihamTimerIsOn").AsInt
 
 				if AlihamTimer > 0 then
-					TActivate("RepelAliham_timer")
+					TActivate("Repel_timer")
 				end
 			end
 			
@@ -2446,6 +2454,114 @@
 		</script>
 	</trigger>
 
+	-- Repel timer --
+
+	<trigger Name="Repel_timer" active="0">
+		<event timeout="0.5" eventid="GE_TIME_PERIOD" />
+		<script>
+			AddFadingMsgId("fm_repel_timer_180sec")
+			AddImportantFadingMsgByStrIdFormatted("fm_repel_timer_180sec")
+
+			SetVar("PreviousTimeRepel_timer_120sec", 1)
+			TActivate("Repel_timer_120sec")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Repel_timer_120sec" active="0">
+		<event timeout="60" eventid="GE_TIME_PERIOD" />
+		<script>
+			if TimerHack(60, "Repel_timer_120sec") then 
+				return 
+			end
+
+			AddFadingMsgId("fm_repel_timer_120sec")
+			AddImportantFadingMsgByStrIdFormatted("fm_repel_timer_120sec")
+
+			SetVar("PreviousTimeRepel_timer_60sec", 1)
+			TActivate("Repel_timer_60sec")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Repel_timer_60sec" active="0">
+		<event timeout="60" eventid="GE_TIME_PERIOD" />
+		<script>
+			if TimerHack(60, "Repel_timer_60sec") then 
+				return 
+			end
+
+			AddFadingMsgId("fm_repel_timer_60sec")
+			AddImportantFadingMsgByStrIdFormatted("fm_repel_timer_60sec")
+
+			SetVar("PreviousTimeRepel_timer_30sec", 1)
+			TActivate("Repel_timer_30sec")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Repel_timer_30sec" active="0">
+		<event timeout="30" eventid="GE_TIME_PERIOD" />
+		<script>
+			if TimerHack(30, "Repel_timer_30sec") then
+				return 
+			end
+
+			AddFadingMsgId("fm_repel_timer_30sec")
+			AddImportantFadingMsgByStrIdFormatted("fm_repel_timer_30sec")
+
+			SetVar("PreviousTimeRepel_timer_15sec", 1)
+			TActivate("Repel_timer_15sec")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Repel_timer_15sec" active="0">
+		<event timeout="15" eventid="GE_TIME_PERIOD" />
+		<script>
+			if TimerHack(15, "Repel_timer_15sec") then 
+				return 
+			end
+
+			AddFadingMsgId("fm_repel_timer_15sec")
+			AddImportantFadingMsgByStrIdFormatted("fm_repel_timer_15sec")
+
+			SetVar("PreviousTimeRepel_timerexpires", 1)
+			TActivate("Repel_timerexpires")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="Repel_timerexpires" active="0">
+		<event timeout="15" eventid="GE_TIME_PERIOD" />
+		<script>
+			if TimerHack(15, "Repel_timerexpires") then 
+				return 
+			end
+
+			local quests = {
+				{"RepelMadmanInvasionAliham_quest", "RepelAlihamFailed_cs"},
+				{"RepelMadmanInvasionGadad_quest", "RepelGadadFailed_cs"},
+				{"RepelMadmanInvasionKef_quest", "RepelKefFailed_cs"},
+				{"RepelMadmanInvasionNeftegrad_quest", "RepelNGFailed_cs"}
+			}
+
+			for _, q in ipairs(quests) do
+				if QuestStatus(q[1]) == Q_TAKEN then
+					TActivate(q[2])
+					break
+				end
+			end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
 	-- Aliham invasion --
 
 	<trigger Name="RepelAliham_enter_time" active="0">
@@ -2488,75 +2604,6 @@
 		</script>
 	</trigger>
 
-	<trigger Name="RepelAliham_timer" active="0">
-		<event timeout="2" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_180sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_180sec" )
-
-			TActivate("RepelAliham_timer_120sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelAliham_timer_120sec" active="0">
-		<event timeout="60" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_120sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_120sec" )
-
-			TActivate("RepelAliham_timer_60sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelAliham_timer_60sec" active="0">
-		<event timeout="60" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_60sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_60sec" )
-
-			TActivate("RepelAliham_timer_30sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelAliham_timer_30sec" active="0">
-		<event timeout="30" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_30sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_30sec" )
-
-			TActivate("RepelAliham_timer_15sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelAliham_timer_15sec" active="0">
-		<event timeout="15" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_15sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_15sec" )
-
-			TActivate("RepelAliham_timerexpires")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelAliham_timerexpires" active="0">
-		<event timeout="15" eventid="GE_TIME_PERIOD" />
-		<script>
-			TActivate("RepelAlihamFailed_cs")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
 	<trigger	Name="AlihamDefended"	active="0">
 		<event	eventid="GE_OBJECT_DIE"		ObjName="MadmanInvadersAliham" />
 		<script>
@@ -2591,43 +2638,51 @@
 
 	-- Gadad invasion --
 
+	<trigger	Name="RepelGadad_Activate"	active="0">
+		<event eventid="GE_OBJECT_LEAVES_LOCATION" ObjName="NearAliham_loc" />
+		<script>
+			TActivate("Repel_timer")
+			TActivate("RepelGadad_enter")
+		</script>
+	</trigger>
+
 	<trigger	Name="RepelGadad_enter"	active="0">
 		<event timeout="1" eventid="GE_TIME_PERIOD" />
 		<script>
-		local run = GetEntityByName("GMadmanInvaders0")
-		local pl = GetPlayerVehicle()
-		local len
+			local run = GetEntityByName("GMadmanInvaders0")
+			local pl = GetPlayerVehicle()
+			local len
 
-		if run then
-			len = Dist(pl, run)
-			if (650 >= len) then
-				DespawnBotsSpawnFightersGadad()
+			if run then
+				len = Dist(pl, run)
+				if (350 >= len) then
+					DespawnBotsSpawnFightersGadad()
 
-				SetTolerance(1023,1100,RS_ALLY)
-				SetTolerance(1023,1090,RS_ALLY)
-				SetTolerance(1023,1095,RS_ALLY)
-				SetTolerance(1023,1062,RS_ENEMY)
-				SetTolerance(1100,1062,RS_ENEMY)
-				SetTolerance(1090,1062,RS_ENEMY)
-				SetTolerance(1095,1062,RS_ENEMY)
+					SetTolerance(1023,1100,RS_ALLY)
+					SetTolerance(1023,1090,RS_ALLY)
+					SetTolerance(1023,1095,RS_ALLY)
+					SetTolerance(1023,1062,RS_ENEMY)
+					SetTolerance(1100,1062,RS_ENEMY)
+					SetTolerance(1090,1062,RS_ENEMY)
+					SetTolerance(1095,1062,RS_ENEMY)
 
-				local MCar = getObj("MansurCarMD_vehicle_0")
-				if MCar then
-					MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
-					MCar:SetRotation(GetPlayerVehicle():GetRotation())
+					local MCar = getObj("MansurCarMD_vehicle_0")
+					if MCar then
+						MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
+						MCar:SetRotation(GetPlayerVehicle():GetRotation())
+					end
+
+					local ACar = getObj("AivenCarMD_vehicle_0")
+					if ACar then
+						ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
+						ACar:SetRotation(GetPlayerVehicle():GetRotation())
+					end
+
+					TActivate("GadadDefended")
+
+					trigger:Deactivate()
 				end
-
-				local ACar = getObj("AivenCarMD_vehicle_0")
-				if ACar then
-					ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
-					ACar:SetRotation(GetPlayerVehicle():GetRotation())
-				end
-
-				TActivate("GadadDefended")
-
-				trigger:Deactivate()
 			end
-		end
 		</script>
 	</trigger>
 
@@ -2637,75 +2692,6 @@
 			TActivate("GadadDefended_cs_start")	
 
 			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="RepelGadad_timer" active="0">
-		<event timeout="2" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_180sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_180sec" )
-
-			TActivate("RepelGadad_timer_120sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelGadad_timer_120sec" active="0">
-		<event timeout="60" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_120sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_120sec" )
-
-			TActivate("RepelGadad_timer_60sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelGadad_timer_60sec" active="0">
-		<event timeout="60" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_60sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_60sec" )
-
-			TActivate("RepelGadad_timer_30sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelGadad_timer_30sec" active="0">
-		<event timeout="30" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_30sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_30sec" )
-
-			TActivate("RepelGadad_timer_15sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelGadad_timer_15sec" active="0">
-		<event timeout="15" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_15sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_15sec" )
-
-			TActivate("RepelGadad_timerexpires")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelGadad_timerexpires" active="0">
-		<event timeout="15" eventid="GE_TIME_PERIOD" />
-		<script>
-			TActivate("RepelGadadFailed_cs")
-
-			trigger:Deactivate()  
 		</script>
 	</trigger>
 
@@ -2728,112 +2714,51 @@
 
 	-- Kef invasion --
 
+	<trigger	Name="RepelKef_launch"	active="0">
+		<event eventid="GE_OBJECT_LEAVES_LOCATION" ObjName="NearGadad_loc" />
+		<script>
+			TActivate("Repel_timer")
+			TActivate("RepelKef_enter")
+		</script>
+	</trigger>
+
 	<trigger	Name="RepelKef_enter"	active="0">
 		<event timeout="1" eventid="GE_TIME_PERIOD" />
 		<script>
-		local run = GetEntityByName("KMadmanInvaders0")
-		local pl = GetPlayerVehicle()
-		local len
+			local run = GetEntityByName("KMadmanInvaders0")
+			local pl = GetPlayerVehicle()
+			local len
 
-		if run then
-			len = Dist(pl, run)
-			if (650 >= len) then
-				DespawnBotsSpawnFightersKef()
+			if run then
+				len = Dist(pl, run)
+				if (450 >= len) then
+					DespawnBotsSpawnFightersKef()
 
-				SetTolerance(1025,1100,RS_ALLY)
-				SetTolerance(1025,1090,RS_ALLY)
-				SetTolerance(1025,1095,RS_ALLY)
-				SetTolerance(1025,1062,RS_ENEMY)
-				SetTolerance(1100,1062,RS_ENEMY)
-				SetTolerance(1090,1062,RS_ENEMY)
-				SetTolerance(1095,1062,RS_ENEMY)
+					SetTolerance(1025,1100,RS_ALLY)
+					SetTolerance(1025,1090,RS_ALLY)
+					SetTolerance(1025,1095,RS_ALLY)
+					SetTolerance(1025,1062,RS_ENEMY)
+					SetTolerance(1100,1062,RS_ENEMY)
+					SetTolerance(1090,1062,RS_ENEMY)
+					SetTolerance(1095,1062,RS_ENEMY)
 
-				local MCar = getObj("MansurCarMD_vehicle_0")
-				if MCar then
-					MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
-					MCar:SetRotation(GetPlayerVehicle():GetRotation())
+					local MCar = getObj("MansurCarMD_vehicle_0")
+					if MCar then
+						MCar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(10,0,0))
+						MCar:SetRotation(GetPlayerVehicle():GetRotation())
+					end
+
+					local ACar = getObj("AivenCarMD_vehicle_0")
+					if ACar then
+						ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
+						ACar:SetRotation(GetPlayerVehicle():GetRotation())
+					end
+
+					TActivate("KefDefended")
+
+					trigger:Deactivate()
 				end
-
-				local ACar = getObj("AivenCarMD_vehicle_0")
-				if ACar then
-					ACar:SetGamePositionOnGround(getPos(GetPlayerVehicle())+CVector(20,0,0))
-					ACar:SetRotation(GetPlayerVehicle():GetRotation())
-				end
-
-				TActivate("KefDefended")
-
-				trigger:Deactivate()
 			end
-		end
-		</script>
-	</trigger>
-
-	<trigger Name="RepelKef_timer" active="0">
-		<event timeout="2" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_180sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_180sec" )
-
-			TActivate("RepelKef_timer_120sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelKef_timer_120sec" active="0">
-		<event timeout="60" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_120sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_120sec" )
-
-			TActivate("RepelKef_timer_60sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelKef_timer_60sec" active="0">
-		<event timeout="60" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_60sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_60sec" )
-
-			TActivate("RepelKef_timer_30sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelKef_timer_30sec" active="0">
-		<event timeout="30" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_30sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_30sec" )
-
-			TActivate("RepelKef_timer_15sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelKef_timer_15sec" active="0">
-		<event timeout="15" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_15sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_15sec" )
-
-			TActivate("RepelKef_timerexpires")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelKef_timerexpires" active="0">
-		<event timeout="15" eventid="GE_TIME_PERIOD" />
-		<script>
-			TActivate("RepelKefFailed_cs")
-
-			trigger:Deactivate()  
 		</script>
 	</trigger>
 
@@ -2949,72 +2874,11 @@
 		</script>
 	</trigger>
 
-	<trigger Name="RepelNG_timer" active="0">
-		<event timeout="2" eventid="GE_TIME_PERIOD" />
+	<trigger	Name="RepelNG_Autosave"	active="0">
+		<event eventid="GE_OBJECT_LEAVES_LOCATION" ObjName="NearKef_loc" />
 		<script>
-			AddFadingMsgId( "fm_repel_timer_180sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_180sec" )
-
-			TActivate("RepelNG_timer_120sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelNG_timer_120sec" active="0">
-		<event timeout="60" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_120sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_120sec" )
-
-			TActivate("RepelNG_timer_60sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelNG_timer_60sec" active="0">
-		<event timeout="60" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_60sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_60sec" )
-
-			TActivate("RepelNG_timer_30sec")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelNG_timer_30sec" active="0">
-		<event timeout="30" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_30sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_30sec" )
-
-			TActivate("RepelNG_timer_15sec")
-
-			trigger:Deactivate()
-		</script>
-	</trigger>
-
-	<trigger Name="RepelNG_timer_15sec" active="0">
-		<event timeout="15" eventid="GE_TIME_PERIOD" />
-		<script>
-			AddFadingMsgId( "fm_repel_timer_15sec" )
-			AddImportantFadingMsgByStrIdFormatted( "fm_repel_timer_15sec" )
-
-			TActivate("RepelNG_timerexpires")
-
-			trigger:Deactivate()  
-		</script>
-	</trigger>
-
-	<trigger Name="RepelNG_timerexpires" active="0">
-		<event timeout="15" eventid="GE_TIME_PERIOD" />
-		<script>
-			TActivate("RepelNGFailed_cs")
-
-			trigger:Deactivate()  
+			TActivate("Repel_timer")
+			TActivate("RepelNG_enter")
 		</script>
 	</trigger>
 
@@ -3051,7 +2915,7 @@
 
 			if run then
 				len = Dist(pl, run)
-				if (650 >= len) then
+				if (350 >= len) then
 					DespawnBotsSpawnFightersNG()
 
 					SetTolerance(1060,1100,RS_ALLY)
@@ -3105,12 +2969,12 @@
 		<script>
 			TActivate("NGDefended_cs_start")
 
-			TDeactivate("RepelNG_timer")
-			TDeactivate("RepelNG_timer_120sec")
-			TDeactivate("RepelNG_timer_60sec")
-			TDeactivate("RepelNG_timer_30sec")
-			TDeactivate("RepelNG_timer_15sec")
-			TDeactivate("RepelNG_timerexpires")
+			TDeactivate("Repel_timer")
+			TDeactivate("Repel_timer_120sec")
+			TDeactivate("Repel_timer_60sec")
+			TDeactivate("Repel_timer_30sec")
+			TDeactivate("Repel_timer_15sec")
+			TDeactivate("Repel_timerexpires")
 
 			trigger:Deactivate()
 		</script>

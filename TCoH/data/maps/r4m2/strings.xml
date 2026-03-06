@@ -587,4 +587,9 @@
 	<string
 		id="8901"
 		value="Чужеземец подъехал слишком близко к Источнику и был поглощён его силой, как и многие до него. Без него ваша миссия стала невыполнимой..." />
+
+	<string
+		id="666"
+		value="В ExM: TCoH возникла ОШИБКА!|Смотрите exmachina.log для подробной информации.||ExM: TCoH has encountered an ERROR!|Check exmachina.log for more info." 
+		numButtons="1"/>
 </resource>

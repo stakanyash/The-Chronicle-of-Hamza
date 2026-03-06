@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="1221">
+	LastId="1223">
 	<TargetNamesForDestroy
 		Names="urod1 urod2 urod3 urod4 urod5 urod6 urod7 urod8 urod9" />
 
@@ -19657,7 +19657,7 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="5479.287 248.997 6598.525"
-		Radius="100.000" />
+		Radius="250.000" />
 
 	<Object
 		Name="BanditKefSpawn1"
@@ -20441,10 +20441,6 @@
 		Radius="140.000" />
 
 	<Object
-		Belong="1100"
-		Prototype="someRecollection" />
-
-	<Object
 		Name="AlfaZasada_spawn_2_veh_loc_0"
 		Belong="1100"
 		Prototype="genericLocation"
@@ -20471,4 +20467,8 @@
 		Prototype="genericLocation"
 		Pos="2533.867 268.983 3983.678"
 		Radius="150.000" />
+
+	<Object
+		Belong="1100"
+		Prototype="someRecollection" />
 </DynamicScene>

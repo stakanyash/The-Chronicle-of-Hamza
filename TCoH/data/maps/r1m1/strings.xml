@@ -658,5 +658,9 @@
 		value="ExMachina||Вы хотите воспользоваться|интерактивной системой помощи игры?"
 		numButtons="2" />
 
+	<string
+		id="666"
+		value="В ExM: TCoH возникла ОШИБКА!|Смотрите exmachina.log для подробной информации.||ExM: TCoH has encountered an ERROR!|Check exmachina.log for more info." 
+		numButtons="1"/>
 	
 </resource>

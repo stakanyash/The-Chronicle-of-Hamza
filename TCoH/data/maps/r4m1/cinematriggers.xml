@@ -2493,9 +2493,23 @@
 	<trigger	Name="CoastBtl_autosave"	active="0">
 		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
-			if GetVar("CoastAutoSave").AsInt == 0 then
-				SetVar("CoastAutoSave", 1)
-				AutoSave()
+			if GetVar("CoastAutoSave").AsInt == 1 then
+				SetVar("CoastAutoSave", 0)
+
+				if lang == "RU" then
+					AutoSave("Спасение Бухарцев")
+				elseif lang == "EN" then
+					AutoSave("Rescue of the Bukharas")
+				else
+					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
+					LOG('"lang" is: '..lang)
+					LOG('Mod version is: '..version)
+					LOG('Mod build is: '..build)
+					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
+					
+					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
+					SpawnMessageBox("666")
+				end
 			end
 
 			TActivate("SetToleranceForCoastBattle")
@@ -3395,15 +3409,40 @@
 
 			PlayCustomMusic("Passage02a")
 
+			-- Vagabounds ally for this quest --
+
+			SetTolerance(1100, 1002, RS_ALLY)
+			SetTolerance(1090, 1002, RS_ALLY)
+			SetTolerance(1095, 1002, RS_ALLY)
+			SetTolerance(1025, 1002, RS_ALLY)
+
 			trigger:Deactivate()
 		</script>
 	</trigger>
 
 	<trigger	Name="MadmanInvasionAutoSave"	active="0">
-		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
 		<script>
+			if GetVar("MI_Autosave").AsInt == 1 then
+				SetVar("MI_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Вторжение безумцев: Алихам")
+				elseif lang == "EN" then
+					AutoSave("Madman invasion: Alikham")
+				else
+					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
+					LOG('"lang" is: '..lang)
+					LOG('Mod version is: '..version)
+					LOG('Mod build is: '..build)
+					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
+					
+					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
+					SpawnMessageBox("666")
+				end
+			end
+
 			AllowSave(false)
-			AutoSave()
 
 			trigger:Deactivate()
 		</script>
@@ -3413,7 +3452,7 @@
 		<event	eventid="GE_OBJECT_LEAVES_LOCATION"	ObjName="InvasionActivate_loc" />
 		<script>
 			TActivate("RepelAliham_enter_time")
-			TActivate("RepelAliham_timer")
+			TActivate("Repel_timer")
 
 			trigger:Deactivate()
 		</script>
@@ -3443,12 +3482,12 @@
 				vehPlayer:SetCustomControlEnabled( false )
 			end
 			
-			TDeactivate("RepelAliham_timer")
-			TDeactivate("RepelAliham_timer_120sec")
-			TDeactivate("RepelAliham_timer_60sec")
-			TDeactivate("RepelAliham_timer_30sec")
-			TDeactivate("RepelAliham_timer_15sec")
-			TDeactivate("RepelAliham_timerexpires")
+			TDeactivate("Repel_timer")
+			TDeactivate("Repel_timer_120sec")
+			TDeactivate("Repel_timer_60sec")
+			TDeactivate("Repel_timer_30sec")
+			TDeactivate("Repel_timer_15sec")
+			TDeactivate("Repel_timerexpires")
 
 			TActivate("AlihamDefended_cs_end")
 
@@ -3462,8 +3501,7 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-			TActivate("RepelGadad_timer")
-			TActivate("RepelGadad_enter")
+			TActivate("RepelGadad_Activate")
 
 			GadadBotSpawn()
 
@@ -3473,6 +3511,36 @@
 			RestoreAllToleranceStatus()
 
 			SetCameraBehindPlayerVehicle()
+
+			TActivate("MI_Gadad_Autosave_tr")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MI_Gadad_Autosave_tr"	active="0">
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("MI_Gadad_Autosave").AsInt == 1 then
+				SetVar("MI_Gadad_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Вторжение безумцев: Гадад")
+				elseif lang == "EN" then
+					AutoSave("Madman invasion: Gadad")
+				else
+					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
+					LOG('"lang" is: '..lang)
+					LOG('Mod version is: '..version)
+					LOG('Mod build is: '..build)
+					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
+					
+					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
+					SpawnMessageBox("666")
+				end
+			end
+
+			AllowSave(false)
 
 			trigger:Deactivate()
 		</script>
@@ -3576,12 +3644,12 @@
 				vehPlayer:SetCustomControlEnabled( false )
 			end
 			
-			TDeactivate("RepelGadad_timer")
-			TDeactivate("RepelGadad_timer_120sec")
-			TDeactivate("RepelGadad_timer_60sec")
-			TDeactivate("RepelGadad_timer_30sec")
-			TDeactivate("RepelGadad_timer_15sec")
-			TDeactivate("RepelGadad_timerexpires")
+			TDeactivate("Repel_timer")
+			TDeactivate("Repel_timer_120sec")
+			TDeactivate("Repel_timer_60sec")
+			TDeactivate("Repel_timer_30sec")
+			TDeactivate("Repel_timer_15sec")
+			TDeactivate("Repel_timerexpires")
 
 			TActivate("GadadDefended_cs_end")
 
@@ -3597,8 +3665,7 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-			TActivate("RepelKef_timer")
-			TActivate("RepelKef_enter")
+			TActivate("RepelKef_launch")
 
 			CompleteQuest("RepelMadmanInvasionGadad_quest")
 			TakeQuest("RepelMadmanInvasionKef_quest")
@@ -3606,6 +3673,36 @@
 			RestoreAllToleranceStatus()
 
 			SetCameraBehindPlayerVehicle()
+
+			TActivate("MI_Kef_Autosave_tr")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MI_Kef_Autosave_tr"	active="0">
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("MI_Kef_Autosave").AsInt == 1 then
+				SetVar("MI_Kef_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Вторжение безумцев: Кеф")
+				elseif lang == "EN" then
+					AutoSave("Madman invasion: Kef")
+				else
+					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
+					LOG('"lang" is: '..lang)
+					LOG('Mod version is: '..version)
+					LOG('Mod build is: '..build)
+					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
+					
+					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
+					SpawnMessageBox("666")
+				end
+			end
+
+			AllowSave(false)
 
 			trigger:Deactivate()
 		</script>
@@ -3706,12 +3803,12 @@
 				Father:SetSkin(Fskin)
 			end
 
-			TDeactivate("RepelKef_timer")
-			TDeactivate("RepelKef_timer_120sec")
-			TDeactivate("RepelKef_timer_60sec")
-			TDeactivate("RepelKef_timer_30sec")
-			TDeactivate("RepelKef_timer_15sec")
-			TDeactivate("RepelKef_timerexpires")
+			TDeactivate("Repel_timer")
+			TDeactivate("Repel_timer_120sec")
+			TDeactivate("Repel_timer_60sec")
+			TDeactivate("Repel_timer_30sec")
+			TDeactivate("Repel_timer_15sec")
+			TDeactivate("Repel_timerexpires")
 			
 			TActivate("KefDefended_cs_171msg")
 			TActivate("KefDefended_cs_end")
@@ -3794,17 +3891,48 @@
 			MadmanCutsceneNeftegradRemove()
 			NeftegradBotSpawn()
 
-			SetTolerance(1025,1100,RS_ALLY)
-			SetTolerance(1025,1090,RS_ALLY)
-			SetTolerance(1025,1095,RS_ALLY)
+			TDeactivate("PlayerTP_KefDefended")
 
-			TActivate("RepelNG_enter")
-			TActivate("RepelNG_timer")
+			TActivate("RepelNG_Autosave")
 			TActivate("ConnectAiven_defendNG")
 			TActivate("ConnectMansur_defendNG")
 			TActivate("ConnectFather_defendNG")
 
+			SetTolerance(1025,1100,RS_ALLY)
+			SetTolerance(1025,1090,RS_ALLY)
+			SetTolerance(1025,1095,RS_ALLY)
+
+			TActivate("MI_NG_Autosave_tr")
+
 			PlayCustomMusic("Battle01")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MI_NG_Autosave_tr"	active="0">
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("MI_NG_Autosave").AsInt == 1 then
+				SetVar("MI_NG_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Вторжение безумцев: Нефтеград")
+				elseif lang == "EN" then
+					AutoSave("Madman invasion: Oilburg")
+				else
+					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
+					LOG('"lang" is: '..lang)
+					LOG('Mod version is: '..version)
+					LOG('Mod build is: '..build)
+					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
+					
+					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
+					SpawnMessageBox("666")
+				end
+			end
+
+			AllowSave(false)
 
 			trigger:Deactivate()
 		</script>
@@ -4036,6 +4164,13 @@
 
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active",1) end
+
+			-- Restore Vagabounds status back to enemy --
+
+			SetTolerance(1100, 1002, RS_ENEMY)
+			SetTolerance(1090, 1002, RS_ENEMY)
+			SetTolerance(1095, 1002, RS_ENEMY)
+			SetTolerance(1025, 1002, RS_ENEMY)
 
 			trigger:Deactivate()
 		</script>

@@ -18,6 +18,12 @@ function DevPrint(msg)
 	end
 end
 
+function DevLOG(msg)
+	if CONFIG_DEVELOPER == true then
+		LOG("[I] TCoH DEVLOG: "..msg)
+	end
+end
+
 -- Game functions --
 
 function StartMoney()
@@ -32,7 +38,6 @@ function StartMoney()
 	else
 		AddFadingMsgId( "fm_commandcantusetwice" )
     	AddImportantFadingMsgId( "fm_commandcantusetwice" )
-
 	end
 end
 
@@ -107,7 +112,7 @@ function CreateRacers()
 	F[1] = CreateVehicleEx("UralRace00", "Formula1", CVector(getPos("RaceStart"..positions[WinningRandom][1].."_loc"))+CVector(0,1,0), 1100)
 	F[2] = CreateVehicleEx("UralRace01", "Formula2", CVector(getPos("RaceStart"..positions[WinningRandom][2].."_loc"))+CVector(0,1,0), 1100)
 	F[3] = CreateVehicleEx("UralMansurRace", "Formula3", CVector(getPos("RaceStart"..positions[WinningRandom][3].."_loc"))+CVector(0,1,0), 1100)
-	F[4] = CreateVehicleEx("UralRace00", "Formula4", CVector(getPos("RaceStart"..positions[WinningRandom][4].."_loc"))+CVector(0,1,0), 1100)
+	F[4] = CreateVehicleEx("UralRace02", "Formula4", CVector(getPos("RaceStart"..positions[WinningRandom][4].."_loc"))+CVector(0,1,0), 1100)
 
 	for i=1,4 do
 		if F[i] then 
@@ -150,7 +155,7 @@ function CreateRacers()
 		FVeh3:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
 	end
 
-	local FVeh4 = CreateVehicleEx("UralRace00", "Formula4_1", CVector(getPos("RaceSpec_1_1M_loc"))+CVector(0,1,0), 1100)
+	local FVeh4 = CreateVehicleEx("UralRace02", "Formula4_1", CVector(getPos("RaceSpec_1_1M_loc"))+CVector(0,1,0), 1100)
 	if FVeh4 then
 		FVeh4:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
 	end
@@ -305,32 +310,20 @@ end
 function CreateTheKefAttackers()
     CreateTeam("BanditsTeam",1024,CVector(6125.474, 254.088, 5072.637),{"UralShot1", "UralShot1", "UralShot", "UralShot1"},CVector(6173.737, 255.168, 5089.908), nil)
 
-    local veh0 = getObj("BanditsTeam_vehicle_0")
-    if veh0 then
-        veh0:SetGamePositionOnGround(CVector(getPos("BanditKefSpawn1")))
-		veh0:SetRotation(Quaternion(-0.004, 0.572, 0.002, 0.821))
-		veh0:SetRandomSkin()
+    local vehPos = {CVector(getPos("BanditKefSpawn1")), CVector(getPos("BanditKefSpawn2")), CVector(getPos("BanditKefSpawn3")), CVector(getPos("BanditKefSpawn4"))}
+    local vehRot = {Quaternion(-0.004, 0.572, 0.002, 0.821), Quaternion(0.008, 0.385, -0.003, 0.923), Quaternion(-0.000, 0.385, -0.001, 0.923), Quaternion(-0.000, 0.385, -0.001, 0.923)}
+
+    local veh = {}
+    for i=1,4 do
+        veh[i] = getObj("BanditsTeam_vehicle_"..(i-1))
     end
 
-    local veh1 = getObj("BanditsTeam_vehicle_1")
-    if veh1 then
-        veh1:SetGamePositionOnGround(CVector(getPos("BanditKefSpawn2")))
-		veh1:SetRotation(Quaternion(0.008, 0.385, -0.003, 0.923))
-		veh1:SetRandomSkin()
-    end
-
-    local veh2 = getObj("BanditsTeam_vehicle_2")
-    if veh2 then
-        veh2:SetGamePositionOnGround(CVector(getPos("BanditKefSpawn3")))
-		veh2:SetRotation(Quaternion(-0.000, 0.385, -0.001, 0.923))
-		veh2:SetRandomSkin()
-    end
-
-	local veh3 = getObj("BanditsTeam_vehicle_3")
-    if veh3 then
-        veh3:SetGamePositionOnGround(CVector(getPos("BanditKefSpawn4")))
-		veh3:SetRotation(Quaternion(-0.000, 0.385, -0.001, 0.923))
-		veh3:SetRandomSkin()
+    for i=1,4 do
+        if veh[i] then
+            veh[i]:SetGamePositionOnGround(vehPos[i])
+            veh[i]:SetRotation(vehRot[i])
+            veh[i]:SetRandomSkin()
+        end
     end
 end
 
@@ -1617,9 +1610,14 @@ function ShowGoodEndNarrator()
 		AddCinematicMessage(77777, 0.5)
 		AddCinematicMessage(777771, 0.5)
 	else
-		LOG("TCoH.lua ERROR: 'lang' is not in [RU, EN] or not defined!")
-		LOG("'lang' is: "..lang)
+		LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
+		LOG('"lang" is: '..lang)
+		LOG('Mod version is: '..version)
+		LOG('Mod build is: '..build)
 		LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
+		
+		println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
+		SpawnMessageBox("666")
 	end
 end
 
@@ -1715,4 +1713,48 @@ function GetListOfPlayerGuns()
     table.remove(ListOfPlayerGuns)
     end
     return ListOfPlayerGuns
+end
+
+-- ExM: apaTche function --
+-- function that allows for an easy fix of trigger duplication caused by GE_TIME_PERIOD timer
+
+function TimerHack(seconds, unique_id)
+	local retVal = true
+	local currentTime = "etto"..os.time()
+	currentTime = string.sub(currentTime, 9)
+	if math.floor(seconds)~=seconds then
+		currentTime = os.clock()
+	end
+	local triggerID = ""
+	if unique_id then
+		triggerID = triggerID..unique_id
+	end
+
+	previousTime = GetVar("PreviousTime"..triggerID).AsInt
+	if previousTime ~= -1 then
+		previousTime = tonumber(GetVar("PreviousTime"..triggerID).AsString)
+		DevLOG("currentTime is "..currentTime..", previousTime is "..previousTime)
+	end
+	
+	if previousTime <= 0 then
+		DevLOG("previousTime is undefined")
+		previousTime = currentTime
+		SetVar("PreviousTime"..triggerID, previousTime)
+	end
+
+	local timeDifference = math.abs(currentTime - previousTime)
+	if seconds >= 10 then
+		timeDifference = timeDifference + 1
+	elseif seconds < 1 then
+		timeDifference = timeDifference + 0.025
+	end
+
+	DevLOG("timeDifference is "..timeDifference)
+	if seconds <= timeDifference then
+		DevLOG("it's more than "..seconds)
+		retVal = false
+		SetVar("PreviousTime"..triggerID, currentTime)
+	end
+
+	return retVal
 end

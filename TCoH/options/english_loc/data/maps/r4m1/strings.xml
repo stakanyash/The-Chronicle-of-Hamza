@@ -2101,7 +2101,12 @@
 
 	<string
 		id="8909"
-		value="Warning!||Manual saving is temporarily disabled during this quest." 
+		value="Warning!||During the quest, several automatic saves will occur, which may cause the game to &quot;freeze&quot; for a few seconds.||Manual saving is temporarily disabled during this quest." 
+		numButtons="1"/>
+
+	<string
+		id="666"
+		value="ExM: TCoH has encountered an ERROR!|Check exmachina.log for more info.||В ExM: TCoH возникла ОШИБКА!|Смотрите exmachina.log для подробной информации." 
 		numButtons="1"/>
 
 	<string
@@ -2117,10 +2122,5 @@
 	<string
 		id="8912"
 		value="There are no races today! Try coming back later." 
-		numButtons="1"/>
-
-	<string
-		id="8913"
-		value="Warning!||To enter the Desert of Death, it is recommended to have a full supply of health and fuel, as there are no gas stations available on the map!" 
 		numButtons="1"/>
 </resource>

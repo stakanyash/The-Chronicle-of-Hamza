@@ -599,4 +599,9 @@
 	<string
 		id="8901"
 		value="The Foreigner drew too close to the Source and was consumed by its power, like many before him. Without him, your mission has become impossible..." />
+
+	<string
+		id="666"
+		value="ExM: TCoH has encountered an ERROR!|Check exmachina.log for more info.||В ExM: TCoH возникла ОШИБКА!|Смотрите exmachina.log для подробной информации." 
+		numButtons="1"/>
 </resource>
