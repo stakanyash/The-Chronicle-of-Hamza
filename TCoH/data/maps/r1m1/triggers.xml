@@ -462,14 +462,7 @@
 				elseif lang == "EN" then
 					AutoSave("Go to Oracle")
 				else
-					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
-					LOG('"lang" is: '..lang)
-					LOG('Mod version is: '..version)
-					LOG('Mod build is: '..build)
-					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
-					
-					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
-					SpawnMessageBox("666")
+					TCoH_langError()
 				end
 			end
 

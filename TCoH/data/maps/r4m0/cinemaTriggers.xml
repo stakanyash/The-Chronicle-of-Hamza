@@ -185,14 +185,7 @@
 							elseif lang == "EN" then
 								AutoSave("Find Sergo")
 							else
-								LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
-								LOG('"lang" is: '..lang)
-								LOG('Mod version is: '..version)
-								LOG('Mod build is: '..build)
-								LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
-								
-								println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
-								SpawnMessageBox("666")
+								TCoH_langError()
 							end
 						end
 						
@@ -543,14 +536,7 @@
 				elseif lang == "EN" then
 					AutoSave("Search Sergo: Return to Vahat")
 				else
-					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
-					LOG('"lang" is: '..lang)
-					LOG('Mod version is: '..version)
-					LOG('Mod build is: '..build)
-					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
-					
-					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
-					SpawnMessageBox("666")
+					TCoH_langError()
 				end
 			end
 		</script>
@@ -633,14 +619,7 @@
 				elseif lang == "EN" then
 					AutoSave("The end is near: Return to Vahat")
 				else
-					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
-					LOG('"lang" is: '..lang)
-					LOG('Mod version is: '..version)
-					LOG('Mod build is: '..build)
-					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
-					
-					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
-					SpawnMessageBox("666")
+					TCoH_langError()
 				end
 			end
 		</script>

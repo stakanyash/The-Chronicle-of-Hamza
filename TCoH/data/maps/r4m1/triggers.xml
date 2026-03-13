@@ -20,34 +20,23 @@
 			SetVar("MansurTalk", 0)
 			SetVar("BettingCoeff", 2)
 			SetVar("EndRaceSpeed", 10)
-			SetVar("DriveToDD", 0)
+			SetVar("InvasionStatus", 0)
 
-			-- TCoH Autosave VAR's --
+			-- TCoH Autosave VAR's -- 
 
+			SetVar("GameStart_AutoSave", 1)
+			SetVar("AfterRace_AutoSave", 1)
 			SetVar("CoastAutoSave", 1)
 			SetVar("MI_Autosave", 1)
 			SetVar("MI_Gadad_Autosave", 1)
 			SetVar("MI_Kef_Autosave", 1)
 			SetVar("MI_NG_Autosave", 1)
+			SetVar("MI_End_Autosave", 1)
 
 		    trigger:Deactivate()
 		</script>
 	</trigger>
 
-	<trigger	Name="TimersCheck"	active="1">
-		<event	timeout="0"		eventid="GE_TIME_PERIOD" />
-		<script>
-			if QuestStatus("RepelMadmanInvasionAliham_quest")==Q_TAKEN then
-				local AlihamTimer = GetVar("AlihamTimerIsOn").AsInt
-
-				if AlihamTimer > 0 then
-					TActivate("Repel_timer")
-				end
-			end
-			
-		    trigger:Deactivate()
-		</script>
-	</trigger>
 <!--
 **************************************************************************************************
 ** ׁ‏זוע
@@ -2392,6 +2381,42 @@
 		</script>
 	</trigger>
 
+	-- Invasion: Check for music --
+
+	<trigger Name="InvasionMusicCheckLoad" active="1">
+		<event eventid="GE_FRAMES_PASSED" />
+		<script>
+			-- Check current quest state
+			QuestInvasionMusicCheck()
+
+			-- Check if LEAVE_TOWN trigger is active
+
+			local IMC_TR = getObj("InvasionMusicCheck")
+			if IMC_TR:IsActivated() == 0 then
+				IMC_TR:Activate()
+			end
+		</script>
+	</trigger>
+
+	<trigger Name="InvasionMusicCheck" active="0">
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="TheGadad"			/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="TheKef"			/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="TheKazif"			/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="r4_AlihamVil"		/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="TheOilCity"		/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="TheZuhel"			/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown1"/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown2"/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown3"/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown4"/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown5"/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown6"/>
+		<event	eventid="GE_LEAVE_TOWN"	ObjName="PetrolStationTown7"/>/>
+		<script>
+            QuestInvasionMusicCheck()
+		</script>
+	</trigger>
+
 	-- Invasion connect --
 
 	<trigger Name="ConnectMansur_madmaninvasion" active="0">
@@ -2462,7 +2487,9 @@
 			AddFadingMsgId("fm_repel_timer_180sec")
 			AddImportantFadingMsgByStrIdFormatted("fm_repel_timer_180sec")
 
-			SetVar("PreviousTimeRepel_timer_120sec", 1)
+			local currentTime = "etto"..os.time()
+			currentTime = string.sub(currentTime, 9)
+			SetVar("PreviousTimeRepel_timer_120sec", currentTime)
 			TActivate("Repel_timer_120sec")
 
 			trigger:Deactivate()
@@ -2479,7 +2506,9 @@
 			AddFadingMsgId("fm_repel_timer_120sec")
 			AddImportantFadingMsgByStrIdFormatted("fm_repel_timer_120sec")
 
-			SetVar("PreviousTimeRepel_timer_60sec", 1)
+			local currentTime = "etto"..os.time()
+			currentTime = string.sub(currentTime, 9)
+			SetVar("PreviousTimeRepel_timer_60sec", currentTime)
 			TActivate("Repel_timer_60sec")
 
 			trigger:Deactivate()
@@ -2496,7 +2525,9 @@
 			AddFadingMsgId("fm_repel_timer_60sec")
 			AddImportantFadingMsgByStrIdFormatted("fm_repel_timer_60sec")
 
-			SetVar("PreviousTimeRepel_timer_30sec", 1)
+			local currentTime = "etto"..os.time()
+			currentTime = string.sub(currentTime, 9)
+			SetVar("PreviousTimeRepel_timer_30sec", currentTime)
 			TActivate("Repel_timer_30sec")
 
 			trigger:Deactivate()
@@ -2513,7 +2544,9 @@
 			AddFadingMsgId("fm_repel_timer_30sec")
 			AddImportantFadingMsgByStrIdFormatted("fm_repel_timer_30sec")
 
-			SetVar("PreviousTimeRepel_timer_15sec", 1)
+			local currentTime = "etto"..os.time()
+			currentTime = string.sub(currentTime, 9)
+			SetVar("PreviousTimeRepel_timer_15sec", currentTime)
 			TActivate("Repel_timer_15sec")
 
 			trigger:Deactivate()
@@ -2530,7 +2563,9 @@
 			AddFadingMsgId("fm_repel_timer_15sec")
 			AddImportantFadingMsgByStrIdFormatted("fm_repel_timer_15sec")
 
-			SetVar("PreviousTimeRepel_timerexpires", 1)
+			local currentTime = "etto"..os.time()
+			currentTime = string.sub(currentTime, 9)
+			SetVar("PreviousTimeRepel_timerexpires", currentTime)
 			TActivate("Repel_timerexpires")
 
 			trigger:Deactivate()
@@ -2915,7 +2950,7 @@
 
 			if run then
 				len = Dist(pl, run)
-				if (350 >= len) then
+				if (450 >= len) then
 					DespawnBotsSpawnFightersNG()
 
 					SetTolerance(1060,1100,RS_ALLY)
@@ -2969,12 +3004,7 @@
 		<script>
 			TActivate("NGDefended_cs_start")
 
-			TDeactivate("Repel_timer")
-			TDeactivate("Repel_timer_120sec")
-			TDeactivate("Repel_timer_60sec")
-			TDeactivate("Repel_timer_30sec")
-			TDeactivate("Repel_timer_15sec")
-			TDeactivate("Repel_timerexpires")
+			MadmanInvasionTimerDeactivate()
 
 			trigger:Deactivate()
 		</script>

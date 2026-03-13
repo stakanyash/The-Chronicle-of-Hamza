@@ -1375,6 +1375,8 @@
 
 		TActivate("CreateDadCar")
 
+		TActivate("TCoH_GameStart_AutoSave")
+
 		RestoreAllToleranceStatus()
 
 		SetCameraBehindPlayerVehicle()
@@ -1382,6 +1384,25 @@
 		StopPlayingCustomMusic()
 
         trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="TCoH_GameStart_AutoSave" active="0">
+		<event	timeout="0.5"			eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("GameStart_AutoSave").AsInt == 1 then
+				SetVar("GameStart_AutoSave", 0)
+
+				if lang == "RU" then
+					AutoSave("Начало игры")
+				elseif lang == "EN" then
+					AutoSave("Start of the game")
+				else
+					TCoH_langError()
+				end
+			end
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -1505,13 +1526,33 @@
 		</script>
 	</trigger>
 
+	<trigger Name="TCoH_AfterRace_AutoSave" active="0">
+		<event	timeout="0.5"			eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("AfterRace_AutoSave").AsInt == 1 then
+				SetVar("AfterRace_AutoSave", 0)
+
+				if lang == "RU" then
+					AutoSave("После гонки")
+				elseif lang == "EN" then
+					AutoSave("After race")
+				else
+					TCoH_langError()
+				end
+			end
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
 	<trigger Name="all_sale_added_fading" active="0">
 		<event	timeout="1"			eventid="GE_TIME_PERIOD" />
 		<script>
-		AddFadingMsgId( "fm_all_sale_added" )
-		AddImportantFadingMsgByStrIdFormatted( "fm_all_sale_added" )
+			AddFadingMsgId( "fm_all_sale_added" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_all_sale_added" )
 
-        trigger:Deactivate()
+			TActivate("TCoH_AfterRace_AutoSave")
+				
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -2477,8 +2518,6 @@
 
 			TActivate("CoastBtl_autosave")
 
-			SetVar("CoastAutoSave", 0)
-
 			TActivate("AivanJrDies")
 			TActivate("OneOfBuharaDies")
 			TActivate("MansurDiesOnBuharaAndJrDefend")
@@ -2501,14 +2540,7 @@
 				elseif lang == "EN" then
 					AutoSave("Rescue of the Bukharas")
 				else
-					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
-					LOG('"lang" is: '..lang)
-					LOG('Mod version is: '..version)
-					LOG('Mod build is: '..build)
-					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
-					
-					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
-					SpawnMessageBox("666")
+					TCoH_langError()
 				end
 			end
 
@@ -3241,7 +3273,7 @@
 		<script>
 			AddCinematicMessage( 153, 0.25 )
 
-			MadmanCutsceneNeftegradSpawn()
+			MadmanCutsceneNeftegradSpawn(1)
 
 			SetTolerance(1060, 1062, RS_NEUTRAL)	 
 
@@ -3389,6 +3421,10 @@
 				CCar:Remove()
 			end
 
+			TActivate("InvasionMusicCheck")
+
+			SetVar("InvasionStatus", 1)
+
 			local town1 = GetEntityByName("TheKef")
 			if town1 then town1:SetOpenGateToPlayer( false ) end
 
@@ -3409,13 +3445,6 @@
 
 			PlayCustomMusic("Passage02a")
 
-			-- Vagabounds ally for this quest --
-
-			SetTolerance(1100, 1002, RS_ALLY)
-			SetTolerance(1090, 1002, RS_ALLY)
-			SetTolerance(1095, 1002, RS_ALLY)
-			SetTolerance(1025, 1002, RS_ALLY)
-
 			trigger:Deactivate()
 		</script>
 	</trigger>
@@ -3431,14 +3460,7 @@
 				elseif lang == "EN" then
 					AutoSave("Madman invasion: Alikham")
 				else
-					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
-					LOG('"lang" is: '..lang)
-					LOG('Mod version is: '..version)
-					LOG('Mod build is: '..build)
-					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
-					
-					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
-					SpawnMessageBox("666")
+					TCoH_langError()
 				end
 			end
 
@@ -3482,12 +3504,7 @@
 				vehPlayer:SetCustomControlEnabled( false )
 			end
 			
-			TDeactivate("Repel_timer")
-			TDeactivate("Repel_timer_120sec")
-			TDeactivate("Repel_timer_60sec")
-			TDeactivate("Repel_timer_30sec")
-			TDeactivate("Repel_timer_15sec")
-			TDeactivate("Repel_timerexpires")
+			MadmanInvasionTimerDeactivate()
 
 			TActivate("AlihamDefended_cs_end")
 
@@ -3512,6 +3529,8 @@
 
 			SetCameraBehindPlayerVehicle()
 
+			SetVar("InvasionStatus", 2)
+
 			TActivate("MI_Gadad_Autosave_tr")
 
 			trigger:Deactivate()
@@ -3529,14 +3548,7 @@
 				elseif lang == "EN" then
 					AutoSave("Madman invasion: Gadad")
 				else
-					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
-					LOG('"lang" is: '..lang)
-					LOG('Mod version is: '..version)
-					LOG('Mod build is: '..build)
-					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
-					
-					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
-					SpawnMessageBox("666")
+					TCoH_langError()
 				end
 			end
 
@@ -3644,12 +3656,7 @@
 				vehPlayer:SetCustomControlEnabled( false )
 			end
 			
-			TDeactivate("Repel_timer")
-			TDeactivate("Repel_timer_120sec")
-			TDeactivate("Repel_timer_60sec")
-			TDeactivate("Repel_timer_30sec")
-			TDeactivate("Repel_timer_15sec")
-			TDeactivate("Repel_timerexpires")
+			MadmanInvasionTimerDeactivate()
 
 			TActivate("GadadDefended_cs_end")
 
@@ -3674,6 +3681,8 @@
 
 			SetCameraBehindPlayerVehicle()
 
+			SetVar("InvasionStatus", 3)
+
 			TActivate("MI_Kef_Autosave_tr")
 
 			trigger:Deactivate()
@@ -3691,14 +3700,7 @@
 				elseif lang == "EN" then
 					AutoSave("Madman invasion: Kef")
 				else
-					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
-					LOG('"lang" is: '..lang)
-					LOG('Mod version is: '..version)
-					LOG('Mod build is: '..build)
-					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
-					
-					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
-					SpawnMessageBox("666")
+					TCoH_langError()
 				end
 			end
 
@@ -3803,12 +3805,7 @@
 				Father:SetSkin(Fskin)
 			end
 
-			TDeactivate("Repel_timer")
-			TDeactivate("Repel_timer_120sec")
-			TDeactivate("Repel_timer_60sec")
-			TDeactivate("Repel_timer_30sec")
-			TDeactivate("Repel_timer_15sec")
-			TDeactivate("Repel_timerexpires")
+			MadmanInvasionTimerDeactivate()
 			
 			TActivate("KefDefended_cs_171msg")
 			TActivate("KefDefended_cs_end")
@@ -3828,7 +3825,7 @@
 		<script>
 			PlayCustomMusic("Passage04")
 
-			MadmanCutsceneNeftegradSpawn()
+			MadmanCutsceneNeftegradSpawn(2)
 
 			SetTolerance(1062, 1060, RS_ENEMY)
 
@@ -3902,6 +3899,8 @@
 			SetTolerance(1025,1090,RS_ALLY)
 			SetTolerance(1025,1095,RS_ALLY)
 
+			SetVar("InvasionStatus", 4)
+
 			TActivate("MI_NG_Autosave_tr")
 
 			PlayCustomMusic("Battle01")
@@ -3921,14 +3920,7 @@
 				elseif lang == "EN" then
 					AutoSave("Madman invasion: Oilburg")
 				else
-					LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
-					LOG('"lang" is: '..lang)
-					LOG('Mod version is: '..version)
-					LOG('Mod build is: '..build)
-					LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
-					
-					println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
-					SpawnMessageBox("666")
+					TCoH_langError()
 				end
 			end
 
@@ -4147,6 +4139,8 @@
 
 			AllowSave(true)
 
+			TActivate("MI_End_Autosave_tr")
+
 			local town1 = GetEntityByName("TheKef")
 			if town1 then town1:SetOpenGateToPlayer( true ) end
 
@@ -4165,12 +4159,26 @@
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active",1) end
 
-			-- Restore Vagabounds status back to enemy --
+			trigger:Deactivate()
+		</script>
+	</trigger>
 
-			SetTolerance(1100, 1002, RS_ENEMY)
-			SetTolerance(1090, 1002, RS_ENEMY)
-			SetTolerance(1095, 1002, RS_ENEMY)
-			SetTolerance(1025, 1002, RS_ENEMY)
+	<trigger	Name="MI_End_Autosave_tr"	active="0">
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("MI_End_Autosave").AsInt == 1 then
+				SetVar("MI_End_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Вернуться в Кеф")
+				elseif lang == "EN" then
+					AutoSave("Return to Kef")
+				else
+					TCoH_langError()
+				end
+			end
+
+			AllowSave(false)
 
 			trigger:Deactivate()
 		</script>

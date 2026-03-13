@@ -48,10 +48,10 @@ function SetMainMenuTime()
 	if hour then
 		SetGameTime(hour, 0)
 	else
-		LOG("TCoH: mainmenu.ssl: Can't get current hour. Reported hour: "..hour..".")
+		LOG("[E] TCoH: mainmenu.ssl: Can't get current hour. Reported hour: "..hour..".")
 	end
 
-	LOG("TCoH: mainmenu.ssl: Current hour: "..hour..", game time set accordingly.")
+	LOG("[I] TCoH: mainmenu.ssl: Current hour: "..hour..", game time set accordingly.")
 end
 
 function CreateFirstAttackersCS()
@@ -468,10 +468,23 @@ function CreateMansurandAivenAttack()
 end
 
 function MadmanCutsceneSpawn()
-	local Madman1 = CreateVehicleEx("UralShot","MadmanInvaders0",CVector(getPos("Madman_invasion_loc_0")), 1062)
-	local Madman2 = CreateVehicleEx("BelazShot","MadmanInvaders1",CVector(getPos("Madman_invasion_loc_1")), 1062)
-	local Madman3 = CreateVehicleEx("UralShot","MadmanInvaders2",CVector(getPos("Madman_invasion_loc_2")), 1062)
-	local Madman4 = CreateVehicleEx("BelazShot","MadmanInvaders3",CVector(getPos("Madman_invasion_loc_3")), 1062)
+	local AttackerPrototypes = {"UralShot", "TankBez", "BelazShot", "MirotvorecDefender", "CoolBelaz_2"}
+
+	local selectedProtos = {}
+	for i = 1, 4 do
+		local idx = math.random(1, table.getn(AttackerPrototypes))
+		selectedProtos[i] = AttackerPrototypes[idx]
+	end
+
+	SetVar("GadadAProto0", selectedProtos[1])
+	SetVar("GadadAProto1", selectedProtos[2])
+	SetVar("GadadAProto2", selectedProtos[3])
+	SetVar("GadadAProto3", selectedProtos[4])
+
+	local Madman1 = CreateVehicleEx(GetVar("GadadAProto0").AsString,"MadmanInvaders0",CVector(getPos("Madman_invasion_loc_0")), 1062)
+	local Madman2 = CreateVehicleEx(GetVar("GadadAProto1").AsString,"MadmanInvaders1",CVector(getPos("Madman_invasion_loc_1")), 1062)
+	local Madman3 = CreateVehicleEx(GetVar("GadadAProto2").AsString,"MadmanInvaders2",CVector(getPos("Madman_invasion_loc_2")), 1062)
+	local Madman4 = CreateVehicleEx(GetVar("GadadAProto3").AsString,"MadmanInvaders3",CVector(getPos("Madman_invasion_loc_3")), 1062)
 
 	for i=0,3 do
 		local MadmanCar = getObj("MadmanInvaders"..i)
@@ -496,43 +509,78 @@ function MadmanCutsceneSpawn()
 	SetVar("GadadASkin4", tonumber(Askin3))
 end
 
-function MadmanCutsceneNeftegradSpawn()
-	local Attackers = CreateTeam("Neftegrad_attackers",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+function MadmanCutsceneNeftegradSpawn(int)
+	local selectedProtos = {}
+
+	if int == 1 then
+		local AttackerPrototypes = {"UralShot", "TankBez", "BelazShot", "MirotvorecDefender", "CoolBelaz_2"}
+
+		for i = 1, 4 do
+			local idx = math.random(1, table.getn(AttackerPrototypes))
+			selectedProtos[i] = AttackerPrototypes[idx]
+		end
+
+		SetVar("NeftegradAProto0", selectedProtos[1])
+		SetVar("NeftegradAProto1", selectedProtos[2])
+		SetVar("NeftegradAProto2", selectedProtos[3])
+		SetVar("NeftegradAProto3", selectedProtos[4])
+	elseif int == 2 then
+		selectedProtos = {
+			GetVar("NeftegradAProto0").AsString,
+			GetVar("NeftegradAProto1").AsString,
+			GetVar("NeftegradAProto2").AsString,
+			GetVar("NeftegradAProto3").AsString,
+		}
+	end
+
+	local Attackers = CreateTeam("Neftegrad_attackers",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("Neftegrad_defend",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	for i=0,1 do
 		local DVehs = getObj("Neftegrad_defend_vehicle_"..i)
 		if DVehs then
 			DVehs:SetGamePositionOnGround(getPos("Neftegrad_defend_loc_"..i))
-			DVehs:SetRandomSkin()
+			if int == 1 then
+				DVehs:SetRandomSkin()
+			elseif int == 2 then
+				DVehs:SetSkin(GetVar("NeftegradDSkin"..i).AsInt)
+			end
 			DVehs:SetRotation(Quaternion(-0.000, -0.181, -0.005, 0.984))
 			DVehs:setGodMode(1)
 		end
 	end
 
-	for i=0,2 do
+	for i=0,3 do
 		local AVehs = getObj("Neftegrad_attackers_vehicle_"..i)
 		if AVehs then
 			AVehs:SetGamePositionOnGround(getPos("Neftegrad_attack_loc_"..i))
-			AVehs:SetRandomSkin()
+			if int == 1 then
+				AVehs:SetRandomSkin()
+			elseif int == 2 then
+				AVehs:SetSkin(GetVar("NeftegradASkin"..i).AsInt)
+			end
 			AVehs:SetRotation(Quaternion(0.014, -0.996, -0.056, 0.066))
 			AVehs:setGodMode(1)
 		end
 	end
 
-	local Dskin0 = GetEntityByName("Neftegrad_defend_vehicle_0"):GetSkin()
-	local Dskin1 = GetEntityByName("Neftegrad_defend_vehicle_1"):GetSkin() 
+	if int == 1 then
+		local Dskin0 = GetEntityByName("Neftegrad_defend_vehicle_0"):GetSkin()
+		local Dskin1 = GetEntityByName("Neftegrad_defend_vehicle_1"):GetSkin() 
 
-	local Askin0 = GetEntityByName("Neftegrad_attackers_vehicle_0"):GetSkin()
-	local Askin1 = GetEntityByName("Neftegrad_attackers_vehicle_1"):GetSkin() 
-	local Askin2 = GetEntityByName("Neftegrad_attackers_vehicle_2"):GetSkin() 
+		local Askin0 = GetEntityByName("Neftegrad_attackers_vehicle_0"):GetSkin()
+		local Askin1 = GetEntityByName("Neftegrad_attackers_vehicle_1"):GetSkin() 
+		local Askin2 = GetEntityByName("Neftegrad_attackers_vehicle_2"):GetSkin() 
+		local Askin3 = GetEntityByName("Neftegrad_attackers_vehicle_3"):GetSkin() 
 
-	SetVar("NeftegradDSkin0", tonumber(Dskin0))
-	SetVar("NeftegradDSkin1", tonumber(Dskin1))
+		SetVar("NeftegradDSkin0", tonumber(Dskin0))
+		SetVar("NeftegradDSkin1", tonumber(Dskin1))
 
-	SetVar("NeftegradASkin1", tonumber(Askin0))
-	SetVar("NeftegradASkin2", tonumber(Askin1))
-	SetVar("NeftegradASkin3", tonumber(Askin2))
+		SetVar("NeftegradASkin1", tonumber(Askin0))
+		SetVar("NeftegradASkin2", tonumber(Askin1))
+		SetVar("NeftegradASkin3", tonumber(Askin2))
+		SetVar("NeftegradASkin4", tonumber(Askin3))
+	end
 end
 
 function MadmanCutsceneNeftegradRemove()
@@ -543,7 +591,7 @@ function MadmanCutsceneNeftegradRemove()
 		end
 	end
 
-	for i=0,2 do
+	for i=0,3 do
 		local AVehs = getObj("Neftegrad_attackers_vehicle_"..i)
 		if AVehs then
 			AVehs:Remove()
@@ -552,7 +600,21 @@ function MadmanCutsceneNeftegradRemove()
 end
 
 function MadmanCutsceneKefSpawn()
-	local Attackers = CreateTeam("Kef_Attack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot","BelazShot","TankBez"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local AttackerPrototypes = {"UralShot", "TankBez", "BelazShot", "MirotvorecDefender", "CoolBelaz_2"}
+
+	local selectedProtos = {}
+	for i = 1, 5 do
+		local idx = math.random(1, table.getn(AttackerPrototypes))
+		selectedProtos[i] = AttackerPrototypes[idx]
+	end
+
+	SetVar("KefAProto0", selectedProtos[1])
+	SetVar("KefAProto1", selectedProtos[2])
+	SetVar("KefAProto2", selectedProtos[3])
+	SetVar("KefAProto3", selectedProtos[4])
+	SetVar("KefAProto4", selectedProtos[5])
+
+	local Attackers = CreateTeam("Kef_Attack",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("Kef_Defend",1025,CVector(getPos("BuharAttack_loc")),{"BelazShot","UralShot","PlayerStartCar","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	for i=0,4 do
@@ -618,7 +680,20 @@ function MadmanCutsceneKefRemove()
 end
 
 function MadmanCutsceneAlihamSpawn()
-	local Attackers = CreateTeam("Aliham_Attack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local AttackerPrototypes = {"UralShot", "TankBez", "BelazShot", "MirotvorecDefender", "CoolBelaz_2", "Hunter01"}
+
+	local selectedProtos = {}
+	for i = 1, 4 do
+		local idx = math.random(1, table.getn(AttackerPrototypes))
+		selectedProtos[i] = AttackerPrototypes[idx]
+	end
+
+	SetVar("AlihamAProto0", selectedProtos[1])
+	SetVar("AlihamAProto1", selectedProtos[2])
+	SetVar("AlihamAProto2", selectedProtos[3])
+	SetVar("AlihamAProto3", selectedProtos[4])
+
+	local Attackers = CreateTeam("Aliham_Attack",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("Aliham_Defend",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	for i=0,3 do
@@ -677,10 +752,10 @@ function MadmanCutsceneAlihamRemove()
 end
 
 function SpawnBotsAliham()
-	local Madman1 = CreateVehicleEx("UralShot","MadmanInvadersAliham0",CVector(getPos("Aliham_attack_loc_0")), 1062)
-	local Madman2 = CreateVehicleEx("TankBez","MadmanInvadersAliham1",CVector(getPos("Aliham_attack_loc_1")), 1062)
-	local Madman3 = CreateVehicleEx("UralShot","MadmanInvadersAliham2",CVector(getPos("Aliham_attack_loc_2")), 1062)
-	local Madman4 = CreateVehicleEx("Hunter01","MadmanInvadersAliham3",CVector(getPos("Aliham_attack_loc_3")), 1062)
+	local Madman1 = CreateVehicleEx(GetVar("AlihamAProto0").AsString,"MadmanInvadersAliham0",CVector(getPos("Aliham_attack_loc_0")), 1062)
+	local Madman2 = CreateVehicleEx(GetVar("AlihamAProto1").AsString,"MadmanInvadersAliham1",CVector(getPos("Aliham_attack_loc_1")), 1062)
+	local Madman3 = CreateVehicleEx(GetVar("AlihamAProto2").AsString,"MadmanInvadersAliham2",CVector(getPos("Aliham_attack_loc_2")), 1062)
+	local Madman4 = CreateVehicleEx(GetVar("AlihamAProto3").AsString,"MadmanInvadersAliham3",CVector(getPos("Aliham_attack_loc_3")), 1062)
 
 	local Defender1 = CreateVehicleEx("UralShot","MadmanDefendAliham0",CVector(getPos("Aliham_defend_loc_0")), 1060)
 	local Defender2 = CreateVehicleEx("DemoMolokovoz1","MadmanDefendAliham1",CVector(getPos("Aliham_defend_loc_1")), 1060)
@@ -757,7 +832,14 @@ function SpawnBotsAliham()
 end 
 
 function DespawnBotsSpawnFightersAliham()
-	local Attackers = CreateTeam("MadmanInvadersAliham",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local selectedProtos = {
+		GetVar("AlihamAProto0").AsString,
+		GetVar("AlihamAProto1").AsString,
+		GetVar("AlihamAProto2").AsString,
+		GetVar("AlihamAProto3").AsString,
+	}
+
+	local Attackers = CreateTeam("MadmanInvadersAliham",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("MadmanDefendAliham",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	local Dskin0 = GetVar("AlihamDskin0").AsInt
@@ -841,10 +923,10 @@ function DespawnBotsSpawnFightersAliham()
 end
 
 function GadadBotSpawn()
-	local Madman1 = CreateVehicleEx("UralShot","GMadmanInvaders0",CVector(getPos("Gadad_attack_loc_0")), 1062)
-	local Madman2 = CreateVehicleEx("BelazShot","GMadmanInvaders1",CVector(getPos("Gadad_attack_loc_1")), 1062)
-	local Madman3 = CreateVehicleEx("UralShot","GMadmanInvaders2",CVector(getPos("Gadad_attack_loc_2")), 1062)
-	local Madman4 = CreateVehicleEx("BelazShot","GMadmanInvaders3",CVector(getPos("Gadad_attack_loc_3")), 1062)
+	local Madman1 = CreateVehicleEx(GetVar("GadadAProto0").AsString,"GMadmanInvaders0",CVector(getPos("Gadad_attack_loc_0")), 1062)
+	local Madman2 = CreateVehicleEx(GetVar("GadadAProto1").AsString,"GMadmanInvaders1",CVector(getPos("Gadad_attack_loc_1")), 1062)
+	local Madman3 = CreateVehicleEx(GetVar("GadadAProto2").AsString,"GMadmanInvaders2",CVector(getPos("Gadad_attack_loc_2")), 1062)
+	local Madman4 = CreateVehicleEx(GetVar("GadadAProto3").AsString,"GMadmanInvaders3",CVector(getPos("Gadad_attack_loc_3")), 1062)
 
 	local skin0 = GetVar("GadadASkin1").AsInt
 	local skin1 = GetVar("GadadASkin2").AsInt
@@ -888,7 +970,14 @@ function GadadBotSpawn()
 end
 
 function DespawnBotsSpawnFightersGadad()
-	local Attackers = CreateTeam("MadmanInvadersGadad",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","BelazShot","UralShot","BelazShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local selectedProtos = {
+		GetVar("GadadAProto0").AsString,
+		GetVar("GadadAProto1").AsString,
+		GetVar("GadadAProto2").AsString,
+		GetVar("GadadAProto3").AsString,
+	}
+
+	local Attackers = CreateTeam("MadmanInvadersGadad",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	local Askin0 = GetVar("GadadASkin1").AsInt
 	local Askin1 = GetVar("GadadASkin2").AsInt
@@ -935,11 +1024,11 @@ function DespawnBotsSpawnFightersGadad()
 end
 
 function SpawnBotsKef()
-	local A1 = CreateVehicleEx("UralShot","KMadmanInvaders0",CVector(getPos("Kef_Attack_loc_0")), 1062)
-	local A2 = CreateVehicleEx("TankBez","KMadmanInvaders1",CVector(getPos("Kef_Attack_loc_1")), 1062)
-	local A3 = CreateVehicleEx("UralShot","KMadmanInvaders2",CVector(getPos("Kef_Attack_loc_2")), 1062)
-	local A4 = CreateVehicleEx("BelazShot","KMadmanInvaders3",CVector(getPos("Kef_Attack_loc_3")), 1062)
-	local A5 = CreateVehicleEx("TankBez","KMadmanInvaders4",CVector(getPos("Kef_Attack_loc_4")), 1062)
+	local A1 = CreateVehicleEx(GetVar("KefAProto0").AsString,"KMadmanInvaders0",CVector(getPos("Kef_Attack_loc_0")), 1062)
+	local A2 = CreateVehicleEx(GetVar("KefAProto1").AsString,"KMadmanInvaders1",CVector(getPos("Kef_Attack_loc_1")), 1062)
+	local A3 = CreateVehicleEx(GetVar("KefAProto2").AsString,"KMadmanInvaders2",CVector(getPos("Kef_Attack_loc_2")), 1062)
+	local A4 = CreateVehicleEx(GetVar("KefAProto3").AsString,"KMadmanInvaders3",CVector(getPos("Kef_Attack_loc_3")), 1062)
+	local A5 = CreateVehicleEx(GetVar("KefAProto4").AsString,"KMadmanInvaders4",CVector(getPos("Kef_Attack_loc_4")), 1062)
 
 	local D1 = CreateVehicleEx("BelazShot","KMadmanDefend0",CVector(getPos("Kef_Defend_loc_0")), 1025)
 	local D2 = CreateVehicleEx("UralShot","KMadmanDefend1",CVector(getPos("Kef_Defend_loc_1")), 1025)
@@ -1033,7 +1122,15 @@ function SpawnBotsKef()
 end
 
 function DespawnBotsSpawnFightersKef()
-	local Attackers = CreateTeam("KefInvasionAttack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","BelazShot","UralShot","BelazShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local selectedProtos = {
+		GetVar("KefAProto0").AsString,
+		GetVar("KefAProto1").AsString,
+		GetVar("KefAProto2").AsString,
+		GetVar("KefAProto3").AsString,
+		GetVar("KefAProto4").AsString,
+	}
+
+	local Attackers = CreateTeam("KefInvasionAttack",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("KefInvasionDefend",1025,CVector(getPos("BuharAttack_loc")),{"BelazShot","UralShot","PlayerStartCar","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	local Dskin0 = GetVar("KefDSkin0").AsInt
@@ -1133,9 +1230,10 @@ function DespawnBotsSpawnFightersKef()
 end
 
 function NeftegradBotSpawn()
-	local A1 = CreateVehicleEx("UralShot","NMadmanInvaders0",CVector(getPos("Neftegrad_attack_loc_0")), 1062)
-	local A2 = CreateVehicleEx("TankBez","NMadmanInvaders1",CVector(getPos("Neftegrad_attack_loc_1")), 1062)
-	local A3 = CreateVehicleEx("UralShot","NMadmanInvaders2",CVector(getPos("Neftegrad_attack_loc_2")), 1062)
+	local A1 = CreateVehicleEx(GetVar("NeftegradAProto0").AsString, "NMadmanInvaders0", CVector(getPos("Neftegrad_attack_loc_0")), 1062)
+	local A2 = CreateVehicleEx(GetVar("NeftegradAProto1").AsString, "NMadmanInvaders1", CVector(getPos("Neftegrad_attack_loc_1")), 1062)
+	local A3 = CreateVehicleEx(GetVar("NeftegradAProto2").AsString, "NMadmanInvaders2", CVector(getPos("Neftegrad_attack_loc_2")), 1062)
+	local A4 = CreateVehicleEx(GetVar("NeftegradAProto3").AsString, "NMadmanInvaders3", CVector(getPos("Neftegrad_attack_loc_3")), 1062)
 
 	local D1 = CreateVehicleEx("UralShot","NMadmanDefend0",CVector(getPos("Neftegrad_defend_loc_0")), 1060)
 	local D2 = CreateVehicleEx("DemoMolokovoz1","NMadmanDefend1",CVector(getPos("Neftegrad_defend_loc_1")), 1060)
@@ -1168,7 +1266,7 @@ function NeftegradBotSpawn()
 		end
 	end
 
-	for i=0,2 do
+	for i=0,3 do
 		local AVehs = getObj("NMadmanInvaders"..i)
 		if AVehs then
 			if i==0 then
@@ -1197,7 +1295,14 @@ function NeftegradBotSpawn()
 end
 
 function DespawnBotsSpawnFightersNG()
-	local Attackers = CreateTeam("NGMadmanInvaders",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local selectedProtos = {
+		GetVar("NeftegradAProto0").AsString,
+		GetVar("NeftegradAProto1").AsString,
+		GetVar("NeftegradAProto2").AsString,
+		GetVar("NeftegradAProto3").AsString,
+	}
+
+	local Attackers = CreateTeam("NGMadmanInvaders", 1062, CVector(getPos("BuharAttack_loc")), selectedProtos, CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("NGDefenders",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local SDefenders = CreateTeam("NGSDefenders",1061,CVector(getPos("BuharAttack_loc")),{"Cruiser01","Cruiser01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
@@ -1240,7 +1345,7 @@ function DespawnBotsSpawnFightersNG()
 		end
 	end
 
-	for i=0,2 do
+	for i=0,3 do
 		local a = getObj("NMadmanInvaders"..i)
 		if a then
 			a:Remove()
@@ -1255,7 +1360,8 @@ function DespawnBotsSpawnFightersNG()
 					AVehs:SetSkin(Askin0)
 				end
 			elseif i==1 then
-				AVehs:AddModifier("hp", "= 0")
+				local NGA1HP = math.random(1000, 2000)
+				AVehs:AddModifier("hp", "= "..NGA1HP)
 			elseif i==2 then
 				if 0 > Askin2 then
 					AVehs:SetRandomSkin()
@@ -1610,14 +1716,7 @@ function ShowGoodEndNarrator()
 		AddCinematicMessage(77777, 0.5)
 		AddCinematicMessage(777771, 0.5)
 	else
-		LOG('TCoH.lua ERROR: "lang" is not in [RU, EN] or not defined!')
-		LOG('"lang" is: '..lang)
-		LOG('Mod version is: '..version)
-		LOG('Mod build is: '..build)
-		LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
-		
-		println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
-		SpawnMessageBox("666")
+		TCoH_langError()
 	end
 end
 
@@ -1659,10 +1758,78 @@ function AlfaAmbushSpawn(int)
 
 		return true
 	else
-		LOG("TCoH.lua ERROR in AlfaAmbushSpawn function: Invalid value!")
+		LOG("[E] TCoH.lua ERROR in AlfaAmbushSpawn function: Invalid value!")
 		return false
 	end
 end
+
+function MadmanInvasionTimerDeactivate()
+    local triggers = {
+        "Repel_timer",
+        "Repel_timer_120sec",
+        "Repel_timer_60sec",
+        "Repel_timer_30sec",
+        "Repel_timer_15sec",
+        "Repel_timerexpires"
+    }
+
+    DevLOG("MadmanInvasionTimerDeactivate: Deactivating all triggers...")
+    for _, triggerName in ipairs(triggers) do
+        TDeactivate(triggerName)
+        DevLOG("MadmanInvasionTimerDeactivate: TDeactivate called for '" .. triggerName .. "'")
+    end
+
+    DevLOG("MadmanInvasionTimerDeactivate: Checking triggers status...")
+    local retryTriggers = {}
+    for _, triggerName in ipairs(triggers) do
+        if getObj(triggerName):IsActivated() == 1 then
+            DevLOG("MadmanInvasionTimerDeactivate: '" .. triggerName .. "' is still active, retrying deactivation...")
+            TDeactivate(triggerName)
+            retryTriggers[triggerName] = true
+        else
+            DevLOG("MadmanInvasionTimerDeactivate: '" .. triggerName .. "' is deactivated OK")
+        end
+    end
+
+    DevLOG("MadmanInvasionTimerDeactivate: Re-checking retried triggers...")
+    for triggerName, _ in pairs(retryTriggers) do
+        if getObj(triggerName):IsActivated() == 1 then
+            DevLOG("MadmanInvasionTimerDeactivate: ERROR - '" .. triggerName .. "' still active after retry!")
+            LOG("ERROR: Trigger '" .. triggerName .. "' still activated after deactivation!")
+        else
+            DevLOG("MadmanInvasionTimerDeactivate: '" .. triggerName .. "' is deactivated OK after retry")
+        end
+    end
+
+    DevLOG("MadmanInvasionTimerDeactivate: Done.")
+end
+
+function QuestInvasionMusicCheck()
+	local Q_State = GetVar("InvasionStatus").AsInt
+
+	if Q_State == 1 or Q_State == 2 or Q_State == 3 then
+		PlayCustomMusic("Passage02a")
+	elseif Q_State == 4 then	
+		PlayCustomMusic("battle01")
+	end
+
+	return Q_State
+end
+
+function TCoH_langError()
+	LOG('[E] TCoH ERROR: "lang" is not in [RU, EN] or not defined!')
+	LOG('[E] "lang" is: '..lang)
+	LOG('[E] Mod version is: '..version)
+	LOG('[E] Mod build is: '..build)
+	LOG("[E] Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
+	
+	println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
+	SpawnMessageBox("666")
+end
+
+-- End of TCoH functions --
+
+-- Borrowings starts here --
 
 -- E Jet's function --
 -- Returns all player weapon slots as a table converted to a string --

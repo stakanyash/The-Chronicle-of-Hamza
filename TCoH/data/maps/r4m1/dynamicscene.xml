@@ -20066,6 +20066,13 @@
 		Radius="1.000" />
 
 	<Object
+		Name="Neftegrad_attack_loc_3"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="6427.443 270.788 3543.893"
+		Radius="1.000" />
+
+	<Object
 		Name="Kef_Defend_loc_0"
 		Belong="1100"
 		Prototype="genericLocation"
