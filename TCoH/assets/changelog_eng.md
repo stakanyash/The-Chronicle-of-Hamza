@@ -1,3 +1,24 @@
+### Version 1.3.1 [260315a]
+
+- #### Bugfixes:
+    - Fixed a bug where ambushes in the Buhara's evacuation quest had the Madmen's belong
+    - Fixed a bug where the second and third ambushes could fail to spawn in the Buhara's evacuation quest
+    - Fixed a bug where skin generation for Oilburg attackers and defenders in the Madmen's invasion quest was triggered twice
+- #### Autosaves added:
+    - After the first battle and after the racing quest
+    - Before the battle at the Madmen's base in Zarmek
+    - After each city in the Madmen's invasion quest
+    - After completing the Madmen's invasion quest
+    - After finding Sergo and returning to the Desert of Death from the Krai
+- #### Madmen's invasion quest difficulty increase:
+    - A random pool of enemy vehicle prototypes has been added for each city:
+        - The pool includes: Tank, Hunter, Belaz, Ural, Peacekeeper
+    - The number of vehicles in Neftegrad has been increased to four
+    - One of the enemy vehicles in Neftegrad no longer explodes via script
+- #### Minor changes:
+    - Added mod language error handling, used during autosaves and narrator text display in the good ending
+    - Added a script that prevents custom music playback from being interrupted during the Madmen's invasion quest after loading a save or leaving a gas station
+
 ### Version 1.3 [251230a]
 
 - Reworked the cutscene after the first battle with the madmen: now Mansur drives up to the gas station at the moment of the repair dialogue

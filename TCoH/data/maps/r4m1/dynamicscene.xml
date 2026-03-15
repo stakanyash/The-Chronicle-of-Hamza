@@ -20476,6 +20476,14 @@
 		Radius="150.000" />
 
 	<Object
+		Flags="21"
+		Name="MI_ToOilburg_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="6410.669 251.038 5035.398"
+		Radius="100.000" />
+
+	<Object
 		Belong="1100"
 		Prototype="someRecollection" />
 </DynamicScene>

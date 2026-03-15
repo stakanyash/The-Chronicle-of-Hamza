@@ -2910,7 +2910,7 @@
 	</trigger>
 
 	<trigger	Name="RepelNG_Autosave"	active="0">
-		<event eventid="GE_OBJECT_LEAVES_LOCATION" ObjName="NearKef_loc" />
+		<event eventid="GE_OBJECT_LEAVES_LOCATION" ObjName="MI_ToOilburg_loc" />
 		<script>
 			TActivate("Repel_timer")
 			TActivate("RepelNG_enter")

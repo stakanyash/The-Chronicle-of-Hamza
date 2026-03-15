@@ -4,7 +4,7 @@
 <div align="center">
   
 ![status](https://img.shields.io/badge/status-released-green)
-![version](https://img.shields.io/badge/version-1.3-blue)
+![version](https://img.shields.io/badge/version-1.3.1-blue)
 ![language](https://img.shields.io/badge/language-RU%20%7C%20EN-purple)
 
 </div>
