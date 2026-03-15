@@ -657,4 +657,9 @@
 		id="90000"
 		value="Hard Truck: Apocalypse||Do you want to get hints on how to play?"
 		numButtons="2" />
+
+	<string
+		id="666"
+		value="ExM: TCoH has encountered an ERROR!|Check exmachina.log for more info.||В ExM: TCoH возникла ОШИБКА!|Смотрите exmachina.log для подробной информации." 
+		numButtons="1"/>
 </resource>

@@ -4,7 +4,7 @@
 <div align="center">
   
 ![status](https://img.shields.io/badge/status-released-green)
-![version](https://img.shields.io/badge/version-1.3-blue)
+![version](https://img.shields.io/badge/version-1.3.1-blue)
 ![language](https://img.shields.io/badge/language-RU%20%7C%20EN-purple)
 
 </div>
@@ -91,6 +91,8 @@ Cutscene of one of the endings
 - Ending credits music (one of the endings): **Gnome627 – [Quiet Dialogue (extended, remixed)](https://youtu.be/bhsTFClFSjo)**  
 
 - Some scripts by **[E Jet](https://github.com/ejetaxeblevich)**  
+
+- Some scripts from **[apaTche](https://github.com/lyokhatankist/ExM-apaTche)** by **[nEmPoBu4](https://github.com/lyokhatankist)**
 
 - Ending slides and Zarmek deadend music from **[Improved Storyline](https://github.com/zatinu322/ImprovedStoryline)** by **[pavlikRPG](https://github.com/zatinu322/)**
 

@@ -4,12 +4,14 @@
 	<trigger Name="GlobalVar" active="1">
 		<event timeout="0" eventid="GE_TIME_PERIOD" />
 		<script>
-        SetRadarUpgrade(1)
+			SetRadarUpgrade(1)
 
-		SetVar("SergoPlace", 0)
-		GL_Trigger = true
+			SetVar("SergoPlace", 0)
+			GL_Trigger = true
 
-		trigger:Deactivate()
+			SetVar("DoD_AutoSave", 1)
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 

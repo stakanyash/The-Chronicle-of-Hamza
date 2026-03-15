@@ -18,6 +18,12 @@ function DevPrint(msg)
 	end
 end
 
+function DevLOG(msg)
+	if CONFIG_DEVELOPER == true then
+		LOG("[I] TCoH DEVLOG: "..msg)
+	end
+end
+
 -- Game functions --
 
 function StartMoney()
@@ -32,7 +38,6 @@ function StartMoney()
 	else
 		AddFadingMsgId( "fm_commandcantusetwice" )
     	AddImportantFadingMsgId( "fm_commandcantusetwice" )
-
 	end
 end
 
@@ -43,10 +48,10 @@ function SetMainMenuTime()
 	if hour then
 		SetGameTime(hour, 0)
 	else
-		LOG("TCoH: mainmenu.ssl: Can't get current hour. Reported hour: "..hour..".")
+		LOG("[E] TCoH: mainmenu.ssl: Can't get current hour. Reported hour: "..hour..".")
 	end
 
-	LOG("TCoH: mainmenu.ssl: Current hour: "..hour..", game time set accordingly.")
+	LOG("[I] TCoH: mainmenu.ssl: Current hour: "..hour..", game time set accordingly.")
 end
 
 function CreateFirstAttackersCS()
@@ -107,7 +112,7 @@ function CreateRacers()
 	F[1] = CreateVehicleEx("UralRace00", "Formula1", CVector(getPos("RaceStart"..positions[WinningRandom][1].."_loc"))+CVector(0,1,0), 1100)
 	F[2] = CreateVehicleEx("UralRace01", "Formula2", CVector(getPos("RaceStart"..positions[WinningRandom][2].."_loc"))+CVector(0,1,0), 1100)
 	F[3] = CreateVehicleEx("UralMansurRace", "Formula3", CVector(getPos("RaceStart"..positions[WinningRandom][3].."_loc"))+CVector(0,1,0), 1100)
-	F[4] = CreateVehicleEx("UralRace00", "Formula4", CVector(getPos("RaceStart"..positions[WinningRandom][4].."_loc"))+CVector(0,1,0), 1100)
+	F[4] = CreateVehicleEx("UralRace02", "Formula4", CVector(getPos("RaceStart"..positions[WinningRandom][4].."_loc"))+CVector(0,1,0), 1100)
 
 	for i=1,4 do
 		if F[i] then 
@@ -150,7 +155,7 @@ function CreateRacers()
 		FVeh3:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
 	end
 
-	local FVeh4 = CreateVehicleEx("UralRace00", "Formula4_1", CVector(getPos("RaceSpec_1_1M_loc"))+CVector(0,1,0), 1100)
+	local FVeh4 = CreateVehicleEx("UralRace02", "Formula4_1", CVector(getPos("RaceSpec_1_1M_loc"))+CVector(0,1,0), 1100)
 	if FVeh4 then
 		FVeh4:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
 	end
@@ -305,32 +310,20 @@ end
 function CreateTheKefAttackers()
     CreateTeam("BanditsTeam",1024,CVector(6125.474, 254.088, 5072.637),{"UralShot1", "UralShot1", "UralShot", "UralShot1"},CVector(6173.737, 255.168, 5089.908), nil)
 
-    local veh0 = getObj("BanditsTeam_vehicle_0")
-    if veh0 then
-        veh0:SetGamePositionOnGround(CVector(getPos("BanditKefSpawn1")))
-		veh0:SetRotation(Quaternion(-0.004, 0.572, 0.002, 0.821))
-		veh0:SetRandomSkin()
+    local vehPos = {CVector(getPos("BanditKefSpawn1")), CVector(getPos("BanditKefSpawn2")), CVector(getPos("BanditKefSpawn3")), CVector(getPos("BanditKefSpawn4"))}
+    local vehRot = {Quaternion(-0.004, 0.572, 0.002, 0.821), Quaternion(0.008, 0.385, -0.003, 0.923), Quaternion(-0.000, 0.385, -0.001, 0.923), Quaternion(-0.000, 0.385, -0.001, 0.923)}
+
+    local veh = {}
+    for i=1,4 do
+        veh[i] = getObj("BanditsTeam_vehicle_"..(i-1))
     end
 
-    local veh1 = getObj("BanditsTeam_vehicle_1")
-    if veh1 then
-        veh1:SetGamePositionOnGround(CVector(getPos("BanditKefSpawn2")))
-		veh1:SetRotation(Quaternion(0.008, 0.385, -0.003, 0.923))
-		veh1:SetRandomSkin()
-    end
-
-    local veh2 = getObj("BanditsTeam_vehicle_2")
-    if veh2 then
-        veh2:SetGamePositionOnGround(CVector(getPos("BanditKefSpawn3")))
-		veh2:SetRotation(Quaternion(-0.000, 0.385, -0.001, 0.923))
-		veh2:SetRandomSkin()
-    end
-
-	local veh3 = getObj("BanditsTeam_vehicle_3")
-    if veh3 then
-        veh3:SetGamePositionOnGround(CVector(getPos("BanditKefSpawn4")))
-		veh3:SetRotation(Quaternion(-0.000, 0.385, -0.001, 0.923))
-		veh3:SetRandomSkin()
+    for i=1,4 do
+        if veh[i] then
+            veh[i]:SetGamePositionOnGround(vehPos[i])
+            veh[i]:SetRotation(vehRot[i])
+            veh[i]:SetRandomSkin()
+        end
     end
 end
 
@@ -381,18 +374,13 @@ function CreateBuharaAndAivanJr()
 	CreateTeam("Buharers",1026, CVector(getPos("BuhSpawn_loc")),{"DemoUral1","DemoMolokovoz1"})
 	CreateTeam("AivanJr", 1095, CVector(getPos("BuhSpawn_loc")),{"BelazShot1"})
 
-	local buhara0 = getObj("Buharers_vehicle_0")
-	if buhara0 then
-		buhara0:SetGamePositionOnGround(CVector(getPos("BuhDefSpawn0_loc")))
-		buhara0:SetRotation(Quaternion(-0.022, 0.083, -0.023, 0.996))
-		buhara0:SetSkin(0)
-	end
-
-	local buhara1 = getObj("Buharers_vehicle_1")
-	if buhara1 then
-		buhara1:SetGamePositionOnGround(CVector(getPos("BuhDefSpawn1_loc")))
-		buhara1:SetRotation(Quaternion(-0.022, 0.083, -0.023, 0.996))
-		buhara1:SetSkin(0)
+	for i=0,1 do
+		local buhara = getObj("Buharers_vehicle_"..i)
+		if buhara then
+			buhara:SetGamePositionOnGround(CVector(getPos("BuhDefSpawn"..i.."_loc")))
+			buhara:SetRotation(Quaternion(-0.022, 0.083, -0.023, 0.996))
+			buhara:SetSkin(0)
+		end
 	end
 
 	local aivanjr = getObj("AivanJr_vehicle_0")
@@ -480,10 +468,23 @@ function CreateMansurandAivenAttack()
 end
 
 function MadmanCutsceneSpawn()
-	local Madman1 = CreateVehicleEx("UralShot","MadmanInvaders0",CVector(getPos("Madman_invasion_loc_0")), 1062)
-	local Madman2 = CreateVehicleEx("BelazShot","MadmanInvaders1",CVector(getPos("Madman_invasion_loc_1")), 1062)
-	local Madman3 = CreateVehicleEx("UralShot","MadmanInvaders2",CVector(getPos("Madman_invasion_loc_2")), 1062)
-	local Madman4 = CreateVehicleEx("BelazShot","MadmanInvaders3",CVector(getPos("Madman_invasion_loc_3")), 1062)
+	local AttackerPrototypes = {"UralShot", "TankBez", "BelazShot", "MirotvorecDefender", "CoolBelaz_2"}
+
+	local selectedProtos = {}
+	for i = 1, 4 do
+		local idx = math.random(1, table.getn(AttackerPrototypes))
+		selectedProtos[i] = AttackerPrototypes[idx]
+	end
+
+	SetVar("GadadAProto0", selectedProtos[1])
+	SetVar("GadadAProto1", selectedProtos[2])
+	SetVar("GadadAProto2", selectedProtos[3])
+	SetVar("GadadAProto3", selectedProtos[4])
+
+	local Madman1 = CreateVehicleEx(GetVar("GadadAProto0").AsString,"MadmanInvaders0",CVector(getPos("Madman_invasion_loc_0")), 1062)
+	local Madman2 = CreateVehicleEx(GetVar("GadadAProto1").AsString,"MadmanInvaders1",CVector(getPos("Madman_invasion_loc_1")), 1062)
+	local Madman3 = CreateVehicleEx(GetVar("GadadAProto2").AsString,"MadmanInvaders2",CVector(getPos("Madman_invasion_loc_2")), 1062)
+	local Madman4 = CreateVehicleEx(GetVar("GadadAProto3").AsString,"MadmanInvaders3",CVector(getPos("Madman_invasion_loc_3")), 1062)
 
 	for i=0,3 do
 		local MadmanCar = getObj("MadmanInvaders"..i)
@@ -508,43 +509,78 @@ function MadmanCutsceneSpawn()
 	SetVar("GadadASkin4", tonumber(Askin3))
 end
 
-function MadmanCutsceneNeftegradSpawn()
-	local Attackers = CreateTeam("Neftegrad_attackers",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+function MadmanCutsceneNeftegradSpawn(int)
+	local selectedProtos = {}
+
+	if int == 1 then
+		local AttackerPrototypes = {"UralShot", "TankBez", "BelazShot", "MirotvorecDefender", "CoolBelaz_2"}
+
+		for i = 1, 4 do
+			local idx = math.random(1, table.getn(AttackerPrototypes))
+			selectedProtos[i] = AttackerPrototypes[idx]
+		end
+
+		SetVar("NeftegradAProto0", selectedProtos[1])
+		SetVar("NeftegradAProto1", selectedProtos[2])
+		SetVar("NeftegradAProto2", selectedProtos[3])
+		SetVar("NeftegradAProto3", selectedProtos[4])
+	elseif int == 2 then
+		selectedProtos = {
+			GetVar("NeftegradAProto0").AsString,
+			GetVar("NeftegradAProto1").AsString,
+			GetVar("NeftegradAProto2").AsString,
+			GetVar("NeftegradAProto3").AsString,
+		}
+	end
+
+	local Attackers = CreateTeam("Neftegrad_attackers",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("Neftegrad_defend",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	for i=0,1 do
 		local DVehs = getObj("Neftegrad_defend_vehicle_"..i)
 		if DVehs then
 			DVehs:SetGamePositionOnGround(getPos("Neftegrad_defend_loc_"..i))
-			DVehs:SetRandomSkin()
+			if int == 1 then
+				DVehs:SetRandomSkin()
+			elseif int == 2 then
+				DVehs:SetSkin(GetVar("NeftegradDSkin"..i).AsInt)
+			end
 			DVehs:SetRotation(Quaternion(-0.000, -0.181, -0.005, 0.984))
 			DVehs:setGodMode(1)
 		end
 	end
 
-	for i=0,2 do
+	for i=0,3 do
 		local AVehs = getObj("Neftegrad_attackers_vehicle_"..i)
 		if AVehs then
 			AVehs:SetGamePositionOnGround(getPos("Neftegrad_attack_loc_"..i))
-			AVehs:SetRandomSkin()
+			if int == 1 then
+				AVehs:SetRandomSkin()
+			elseif int == 2 then
+				AVehs:SetSkin(GetVar("NeftegradASkin"..i).AsInt)
+			end
 			AVehs:SetRotation(Quaternion(0.014, -0.996, -0.056, 0.066))
 			AVehs:setGodMode(1)
 		end
 	end
 
-	local Dskin0 = GetEntityByName("Neftegrad_defend_vehicle_0"):GetSkin()
-	local Dskin1 = GetEntityByName("Neftegrad_defend_vehicle_1"):GetSkin() 
+	if int == 1 then
+		local Dskin0 = GetEntityByName("Neftegrad_defend_vehicle_0"):GetSkin()
+		local Dskin1 = GetEntityByName("Neftegrad_defend_vehicle_1"):GetSkin() 
 
-	local Askin0 = GetEntityByName("Neftegrad_attackers_vehicle_0"):GetSkin()
-	local Askin1 = GetEntityByName("Neftegrad_attackers_vehicle_1"):GetSkin() 
-	local Askin2 = GetEntityByName("Neftegrad_attackers_vehicle_2"):GetSkin() 
+		local Askin0 = GetEntityByName("Neftegrad_attackers_vehicle_0"):GetSkin()
+		local Askin1 = GetEntityByName("Neftegrad_attackers_vehicle_1"):GetSkin() 
+		local Askin2 = GetEntityByName("Neftegrad_attackers_vehicle_2"):GetSkin() 
+		local Askin3 = GetEntityByName("Neftegrad_attackers_vehicle_3"):GetSkin() 
 
-	SetVar("NeftegradDSkin0", tonumber(Dskin0))
-	SetVar("NeftegradDSkin1", tonumber(Dskin1))
+		SetVar("NeftegradDSkin0", tonumber(Dskin0))
+		SetVar("NeftegradDSkin1", tonumber(Dskin1))
 
-	SetVar("NeftegradASkin1", tonumber(Askin0))
-	SetVar("NeftegradASkin2", tonumber(Askin1))
-	SetVar("NeftegradASkin3", tonumber(Askin2))
+		SetVar("NeftegradASkin1", tonumber(Askin0))
+		SetVar("NeftegradASkin2", tonumber(Askin1))
+		SetVar("NeftegradASkin3", tonumber(Askin2))
+		SetVar("NeftegradASkin4", tonumber(Askin3))
+	end
 end
 
 function MadmanCutsceneNeftegradRemove()
@@ -555,7 +591,7 @@ function MadmanCutsceneNeftegradRemove()
 		end
 	end
 
-	for i=0,2 do
+	for i=0,3 do
 		local AVehs = getObj("Neftegrad_attackers_vehicle_"..i)
 		if AVehs then
 			AVehs:Remove()
@@ -564,7 +600,21 @@ function MadmanCutsceneNeftegradRemove()
 end
 
 function MadmanCutsceneKefSpawn()
-	local Attackers = CreateTeam("Kef_Attack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot","BelazShot","TankBez"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local AttackerPrototypes = {"UralShot", "TankBez", "BelazShot", "MirotvorecDefender", "CoolBelaz_2"}
+
+	local selectedProtos = {}
+	for i = 1, 5 do
+		local idx = math.random(1, table.getn(AttackerPrototypes))
+		selectedProtos[i] = AttackerPrototypes[idx]
+	end
+
+	SetVar("KefAProto0", selectedProtos[1])
+	SetVar("KefAProto1", selectedProtos[2])
+	SetVar("KefAProto2", selectedProtos[3])
+	SetVar("KefAProto3", selectedProtos[4])
+	SetVar("KefAProto4", selectedProtos[5])
+
+	local Attackers = CreateTeam("Kef_Attack",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("Kef_Defend",1025,CVector(getPos("BuharAttack_loc")),{"BelazShot","UralShot","PlayerStartCar","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	for i=0,4 do
@@ -630,7 +680,20 @@ function MadmanCutsceneKefRemove()
 end
 
 function MadmanCutsceneAlihamSpawn()
-	local Attackers = CreateTeam("Aliham_Attack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local AttackerPrototypes = {"UralShot", "TankBez", "BelazShot", "MirotvorecDefender", "CoolBelaz_2", "Hunter01"}
+
+	local selectedProtos = {}
+	for i = 1, 4 do
+		local idx = math.random(1, table.getn(AttackerPrototypes))
+		selectedProtos[i] = AttackerPrototypes[idx]
+	end
+
+	SetVar("AlihamAProto0", selectedProtos[1])
+	SetVar("AlihamAProto1", selectedProtos[2])
+	SetVar("AlihamAProto2", selectedProtos[3])
+	SetVar("AlihamAProto3", selectedProtos[4])
+
+	local Attackers = CreateTeam("Aliham_Attack",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("Aliham_Defend",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	for i=0,3 do
@@ -689,10 +752,10 @@ function MadmanCutsceneAlihamRemove()
 end
 
 function SpawnBotsAliham()
-	local Madman1 = CreateVehicleEx("UralShot","MadmanInvadersAliham0",CVector(getPos("Aliham_attack_loc_0")), 1062)
-	local Madman2 = CreateVehicleEx("TankBez","MadmanInvadersAliham1",CVector(getPos("Aliham_attack_loc_1")), 1062)
-	local Madman3 = CreateVehicleEx("UralShot","MadmanInvadersAliham2",CVector(getPos("Aliham_attack_loc_2")), 1062)
-	local Madman4 = CreateVehicleEx("Hunter01","MadmanInvadersAliham3",CVector(getPos("Aliham_attack_loc_3")), 1062)
+	local Madman1 = CreateVehicleEx(GetVar("AlihamAProto0").AsString,"MadmanInvadersAliham0",CVector(getPos("Aliham_attack_loc_0")), 1062)
+	local Madman2 = CreateVehicleEx(GetVar("AlihamAProto1").AsString,"MadmanInvadersAliham1",CVector(getPos("Aliham_attack_loc_1")), 1062)
+	local Madman3 = CreateVehicleEx(GetVar("AlihamAProto2").AsString,"MadmanInvadersAliham2",CVector(getPos("Aliham_attack_loc_2")), 1062)
+	local Madman4 = CreateVehicleEx(GetVar("AlihamAProto3").AsString,"MadmanInvadersAliham3",CVector(getPos("Aliham_attack_loc_3")), 1062)
 
 	local Defender1 = CreateVehicleEx("UralShot","MadmanDefendAliham0",CVector(getPos("Aliham_defend_loc_0")), 1060)
 	local Defender2 = CreateVehicleEx("DemoMolokovoz1","MadmanDefendAliham1",CVector(getPos("Aliham_defend_loc_1")), 1060)
@@ -769,7 +832,14 @@ function SpawnBotsAliham()
 end 
 
 function DespawnBotsSpawnFightersAliham()
-	local Attackers = CreateTeam("MadmanInvadersAliham",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local selectedProtos = {
+		GetVar("AlihamAProto0").AsString,
+		GetVar("AlihamAProto1").AsString,
+		GetVar("AlihamAProto2").AsString,
+		GetVar("AlihamAProto3").AsString,
+	}
+
+	local Attackers = CreateTeam("MadmanInvadersAliham",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("MadmanDefendAliham",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	local Dskin0 = GetVar("AlihamDskin0").AsInt
@@ -853,10 +923,10 @@ function DespawnBotsSpawnFightersAliham()
 end
 
 function GadadBotSpawn()
-	local Madman1 = CreateVehicleEx("UralShot","GMadmanInvaders0",CVector(getPos("Gadad_attack_loc_0")), 1062)
-	local Madman2 = CreateVehicleEx("BelazShot","GMadmanInvaders1",CVector(getPos("Gadad_attack_loc_1")), 1062)
-	local Madman3 = CreateVehicleEx("UralShot","GMadmanInvaders2",CVector(getPos("Gadad_attack_loc_2")), 1062)
-	local Madman4 = CreateVehicleEx("BelazShot","GMadmanInvaders3",CVector(getPos("Gadad_attack_loc_3")), 1062)
+	local Madman1 = CreateVehicleEx(GetVar("GadadAProto0").AsString,"GMadmanInvaders0",CVector(getPos("Gadad_attack_loc_0")), 1062)
+	local Madman2 = CreateVehicleEx(GetVar("GadadAProto1").AsString,"GMadmanInvaders1",CVector(getPos("Gadad_attack_loc_1")), 1062)
+	local Madman3 = CreateVehicleEx(GetVar("GadadAProto2").AsString,"GMadmanInvaders2",CVector(getPos("Gadad_attack_loc_2")), 1062)
+	local Madman4 = CreateVehicleEx(GetVar("GadadAProto3").AsString,"GMadmanInvaders3",CVector(getPos("Gadad_attack_loc_3")), 1062)
 
 	local skin0 = GetVar("GadadASkin1").AsInt
 	local skin1 = GetVar("GadadASkin2").AsInt
@@ -900,7 +970,14 @@ function GadadBotSpawn()
 end
 
 function DespawnBotsSpawnFightersGadad()
-	local Attackers = CreateTeam("MadmanInvadersGadad",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","BelazShot","UralShot","BelazShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local selectedProtos = {
+		GetVar("GadadAProto0").AsString,
+		GetVar("GadadAProto1").AsString,
+		GetVar("GadadAProto2").AsString,
+		GetVar("GadadAProto3").AsString,
+	}
+
+	local Attackers = CreateTeam("MadmanInvadersGadad",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	local Askin0 = GetVar("GadadASkin1").AsInt
 	local Askin1 = GetVar("GadadASkin2").AsInt
@@ -947,11 +1024,11 @@ function DespawnBotsSpawnFightersGadad()
 end
 
 function SpawnBotsKef()
-	local A1 = CreateVehicleEx("UralShot","KMadmanInvaders0",CVector(getPos("Kef_Attack_loc_0")), 1062)
-	local A2 = CreateVehicleEx("TankBez","KMadmanInvaders1",CVector(getPos("Kef_Attack_loc_1")), 1062)
-	local A3 = CreateVehicleEx("UralShot","KMadmanInvaders2",CVector(getPos("Kef_Attack_loc_2")), 1062)
-	local A4 = CreateVehicleEx("BelazShot","KMadmanInvaders3",CVector(getPos("Kef_Attack_loc_3")), 1062)
-	local A5 = CreateVehicleEx("TankBez","KMadmanInvaders4",CVector(getPos("Kef_Attack_loc_4")), 1062)
+	local A1 = CreateVehicleEx(GetVar("KefAProto0").AsString,"KMadmanInvaders0",CVector(getPos("Kef_Attack_loc_0")), 1062)
+	local A2 = CreateVehicleEx(GetVar("KefAProto1").AsString,"KMadmanInvaders1",CVector(getPos("Kef_Attack_loc_1")), 1062)
+	local A3 = CreateVehicleEx(GetVar("KefAProto2").AsString,"KMadmanInvaders2",CVector(getPos("Kef_Attack_loc_2")), 1062)
+	local A4 = CreateVehicleEx(GetVar("KefAProto3").AsString,"KMadmanInvaders3",CVector(getPos("Kef_Attack_loc_3")), 1062)
+	local A5 = CreateVehicleEx(GetVar("KefAProto4").AsString,"KMadmanInvaders4",CVector(getPos("Kef_Attack_loc_4")), 1062)
 
 	local D1 = CreateVehicleEx("BelazShot","KMadmanDefend0",CVector(getPos("Kef_Defend_loc_0")), 1025)
 	local D2 = CreateVehicleEx("UralShot","KMadmanDefend1",CVector(getPos("Kef_Defend_loc_1")), 1025)
@@ -1045,7 +1122,15 @@ function SpawnBotsKef()
 end
 
 function DespawnBotsSpawnFightersKef()
-	local Attackers = CreateTeam("KefInvasionAttack",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","BelazShot","UralShot","BelazShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local selectedProtos = {
+		GetVar("KefAProto0").AsString,
+		GetVar("KefAProto1").AsString,
+		GetVar("KefAProto2").AsString,
+		GetVar("KefAProto3").AsString,
+		GetVar("KefAProto4").AsString,
+	}
+
+	local Attackers = CreateTeam("KefInvasionAttack",1062,CVector(getPos("BuharAttack_loc")),selectedProtos,CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("KefInvasionDefend",1025,CVector(getPos("BuharAttack_loc")),{"BelazShot","UralShot","PlayerStartCar","Hunter01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
 	local Dskin0 = GetVar("KefDSkin0").AsInt
@@ -1145,9 +1230,10 @@ function DespawnBotsSpawnFightersKef()
 end
 
 function NeftegradBotSpawn()
-	local A1 = CreateVehicleEx("UralShot","NMadmanInvaders0",CVector(getPos("Neftegrad_attack_loc_0")), 1062)
-	local A2 = CreateVehicleEx("TankBez","NMadmanInvaders1",CVector(getPos("Neftegrad_attack_loc_1")), 1062)
-	local A3 = CreateVehicleEx("UralShot","NMadmanInvaders2",CVector(getPos("Neftegrad_attack_loc_2")), 1062)
+	local A1 = CreateVehicleEx(GetVar("NeftegradAProto0").AsString, "NMadmanInvaders0", CVector(getPos("Neftegrad_attack_loc_0")), 1062)
+	local A2 = CreateVehicleEx(GetVar("NeftegradAProto1").AsString, "NMadmanInvaders1", CVector(getPos("Neftegrad_attack_loc_1")), 1062)
+	local A3 = CreateVehicleEx(GetVar("NeftegradAProto2").AsString, "NMadmanInvaders2", CVector(getPos("Neftegrad_attack_loc_2")), 1062)
+	local A4 = CreateVehicleEx(GetVar("NeftegradAProto3").AsString, "NMadmanInvaders3", CVector(getPos("Neftegrad_attack_loc_3")), 1062)
 
 	local D1 = CreateVehicleEx("UralShot","NMadmanDefend0",CVector(getPos("Neftegrad_defend_loc_0")), 1060)
 	local D2 = CreateVehicleEx("DemoMolokovoz1","NMadmanDefend1",CVector(getPos("Neftegrad_defend_loc_1")), 1060)
@@ -1180,7 +1266,7 @@ function NeftegradBotSpawn()
 		end
 	end
 
-	for i=0,2 do
+	for i=0,3 do
 		local AVehs = getObj("NMadmanInvaders"..i)
 		if AVehs then
 			if i==0 then
@@ -1209,7 +1295,14 @@ function NeftegradBotSpawn()
 end
 
 function DespawnBotsSpawnFightersNG()
-	local Attackers = CreateTeam("NGMadmanInvaders",1062,CVector(getPos("BuharAttack_loc")),{"UralShot","TankBez","UralShot"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
+	local selectedProtos = {
+		GetVar("NeftegradAProto0").AsString,
+		GetVar("NeftegradAProto1").AsString,
+		GetVar("NeftegradAProto2").AsString,
+		GetVar("NeftegradAProto3").AsString,
+	}
+
+	local Attackers = CreateTeam("NGMadmanInvaders", 1062, CVector(getPos("BuharAttack_loc")), selectedProtos, CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local Defenders = CreateTeam("NGDefenders",1060,CVector(getPos("BuharAttack_loc")),{"UralShot","DemoMolokovoz1"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 	local SDefenders = CreateTeam("NGSDefenders",1061,CVector(getPos("BuharAttack_loc")),{"Cruiser01","Cruiser01"},CVector(getPos("BAEndPoint_loc")), nil, Quaternion(-0.037, 0.992, 0.016, 0.117))
 
@@ -1252,7 +1345,7 @@ function DespawnBotsSpawnFightersNG()
 		end
 	end
 
-	for i=0,2 do
+	for i=0,3 do
 		local a = getObj("NMadmanInvaders"..i)
 		if a then
 			a:Remove()
@@ -1267,7 +1360,8 @@ function DespawnBotsSpawnFightersNG()
 					AVehs:SetSkin(Askin0)
 				end
 			elseif i==1 then
-				AVehs:AddModifier("hp", "= 0")
+				local NGA1HP = math.random(1000, 2000)
+				AVehs:AddModifier("hp", "= "..NGA1HP)
 			elseif i==2 then
 				if 0 > Askin2 then
 					AVehs:SetRandomSkin()
@@ -1523,186 +1617,80 @@ function GetWalkers()
 end
 
 function AddSaleItems()
-	-- locals --
-	local KefWorkshop = GetEntityByName("Kef_Workshop")
-	local KefVehiclesRepo = KefWorkshop:GetRepositoryByTypename("Vehicles")
-	local KefCabinBasketRep = KefWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
+	local shops = {
+		{
+			name     = "Kef",
+			entity   = "Kef_Workshop",
+			cargo    = {
+				"bugCargo02","bugCargo03",
+				"molokovozCargo02","molokovozCargo03",
+				"uralCargo01","uralCargo02","uralCargo03","uralCargo04",
+				"belazCargo01","belazCargo02","belazCargo03","belazCargo04",
+				"mirotvorecCargo01","mirotvorecCargo02","mirotvorecCargo03","mirotvorecCargo05",
+			},
+			cabs     = {
+				"bugCab02","bugCab03",
+				"molokovozCab02","molokovozCab03",
+				"belazCab01","belazCab02","belazCab03","belazCab04",
+				"mirotvorecCab01","mirotvorecCab02","mirotvorecCab03","mirotvorecCab05",
+				"uralCab02","uralCab03","uralCab04","uralCab05",
+			},
+		},
+		{
+			name     = "Gadad",
+			entity   = "Gadad_Workshop",
+			cargo    = {
+				"bugCargo02","bugCargo03",
+				"molokovozCargo02","molokovozCargo03",
+				"uralCargo01","uralCargo02","uralCargo03",
+				"belazCargo01","belazCargo02","belazCargo03","belazCargo04","belazCargo05",
+				"mirotvorecCargo01","mirotvorecCargo02","mirotvorecCargo03","mirotvorecCargo04",
+			},
+			cabs     = {
+				"bugCab02","bugCab03",
+				"molokovozCab02","molokovozCab03",
+				"belazCab01","belazCab02","belazCab03","belazCab04","belazCab05",
+				"mirotvorecCab01","mirotvorecCab02","mirotvorecCab03","mirotvorecCab04",
+				"uralCab02","uralCab03","uralCab04",
+			},
+		},
+		{
+			name     = "Kazif",
+			entity   = "Kazif_Workshop",
+			cargo    = {
+				"bugCargo02","bugCargo03",
+				"molokovozCargo02","molokovozCargo03",
+				"uralCargo01","uralCargo02","uralCargo04",
+				"belazCargo01","belazCargo02","belazCargo03","belazCargo05",
+				"mirotvorecCargo01","mirotvorecCargo02","mirotvorecCargo03","mirotvorecCargo04","mirotvorecCargo05",
+			},
+			cabs     = {
+				"bugCab02","bugCab03",
+				"molokovozCab02","molokovozCab03",
+				"belazCab01","belazCab02","belazCab03","belazCab05",
+				"mirotvorecCab01","mirotvorecCab02","mirotvorecCab03","mirotvorecCab04","mirotvorecCab05",
+				"uralCab01","uralCab02","uralCab04",
+			},
+		},
+	}
 
-	local KazifWorkshop = GetEntityByName("Kazif_Workshop")
-	local KaVehiclesRepo = KazifWorkshop:GetRepositoryByTypename("Vehicles")
-	local KCabinBasketRep = KazifWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
+	for _, shop in ipairs(shops) do
+		local workshop    = GetEntityByName(shop.entity)
+		local vehiclesRepo = workshop:GetRepositoryByTypename("Vehicles")
+		local cabinRepo    = workshop:GetRepositoryByTypename("CabinsAndBaskets")
 
-	local GadadWorkshop = GetEntityByName("Gadad_Workshop")
-	local GadadVehiclesRepo = GadadWorkshop:GetRepositoryByTypename("Vehicles")
-	local GCabinBasketRep = GadadWorkshop:GetRepositoryByTypename("CabinsAndBaskets")
-	
-	-- Kef --
+		if vehiclesRepo then
+			vehiclesRepo:AddItems("UralForSale", 1)
+			vehiclesRepo:AddItems("BelazForSale", 1)
+			vehiclesRepo:AddItems("MirotvorecForSale", 1)
+			DevPrint("AddSaleItems: Prototypes added to " .. shop.name .. ".")
+		end
 
-	if KefVehiclesRepo then
-		KefVehiclesRepo:AddItems("UralForSale", 1)
-		KefVehiclesRepo:AddItems("BelazForSale", 1)
-		KefVehiclesRepo:AddItems("MirotvorecForSale", 1)
-		DevPrint("AddSaleItems: Prototypes added to Kef.")
-	end
-
-	if KefCabinBasketRep then
-		KefCabinBasketRep:AddItems("bugCargo02", 1)
-		KefCabinBasketRep:AddItems("bugCargo03", 1)
-		KefCabinBasketRep:AddItems("molokovozCargo02", 1)
-		KefCabinBasketRep:AddItems("molokovozCargo03", 1)
-		KefCabinBasketRep:AddItems("uralCargo01", 1)
-		KefCabinBasketRep:AddItems("uralCargo02", 1)
-		KefCabinBasketRep:AddItems("uralCargo03", 1)
-		KefCabinBasketRep:AddItems("uralCargo04", 1)
-		KefCabinBasketRep:AddItems("belazCargo01", 1)
-		KefCabinBasketRep:AddItems("belazCargo02", 1)
-		KefCabinBasketRep:AddItems("belazCargo03", 1)
-		KefCabinBasketRep:AddItems("belazCargo04", 1)
-		KefCabinBasketRep:AddItems("belazCargo02", 1)
-		KefCabinBasketRep:AddItems("belazCargo03", 1)
-		KefCabinBasketRep:AddItems("belazCargo04", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo01", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo02", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo03", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo05", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo03", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCargo05", 1)
-		KefCabinBasketRep:AddItems("bugCab02", 1)
-		KefCabinBasketRep:AddItems("bugCab03", 1)
-		KefCabinBasketRep:AddItems("molokovozCab02", 1)
-		KefCabinBasketRep:AddItems("molokovozCab03", 1)
-		KefCabinBasketRep:AddItems("belazCab01", 1)
-		KefCabinBasketRep:AddItems("belazCab02", 1)
-		KefCabinBasketRep:AddItems("belazCab03", 1)
-		KefCabinBasketRep:AddItems("belazCab04", 1)
-		KefCabinBasketRep:AddItems("belazCab03", 1)
-		KefCabinBasketRep:AddItems("belazCab04", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab01", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab02", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab03", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab05", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab02", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab03", 1)
-		KefCabinBasketRep:AddItems("mirotvorecCab05", 1)
-		KefCabinBasketRep:AddItems("uralCab02", 1)
-		KefCabinBasketRep:AddItems("uralCab03", 1)
-		KefCabinBasketRep:AddItems("uralCab04", 1)
-		KefCabinBasketRep:AddItems("uralCab05", 1)
-		KefCabinBasketRep:AddItems("uralCab05", 1)
-		DevPrint("AddSaleItems: Cabs and baskets added to Kef.")
-	end
-
-	-- Gadad --
-	
-	if GadadVehiclesRepo then
-		GadadVehiclesRepo:AddItems("UralForSale", 1)
-		GadadVehiclesRepo:AddItems("BelazForSale", 1)
-		GadadVehiclesRepo:AddItems("MirotvorecForSale", 1)
-		DevPrint("AddSaleItems: Prototypes added to Gadad.")
-	end
-
-	if GCabinBasketRep then
-		GCabinBasketRep:AddItems("bugCargo02", 1)
-		GCabinBasketRep:AddItems("bugCargo03", 1)
-		GCabinBasketRep:AddItems("molokovozCargo02", 1)
-		GCabinBasketRep:AddItems("molokovozCargo03", 1)
-		GCabinBasketRep:AddItems("uralCargo01", 1)
-		GCabinBasketRep:AddItems("uralCargo02", 1)
-		GCabinBasketRep:AddItems("uralCargo03", 1)
-		GCabinBasketRep:AddItems("uralCargo01", 1)
-		GCabinBasketRep:AddItems("uralCargo02", 1)
-		GCabinBasketRep:AddItems("uralCargo03", 1)
-		GCabinBasketRep:AddItems("belazCargo01", 1)
-		GCabinBasketRep:AddItems("belazCargo02", 1)
-		GCabinBasketRep:AddItems("belazCargo03", 1)
-		GCabinBasketRep:AddItems("belazCargo04", 1)
-		GCabinBasketRep:AddItems("belazCargo05", 1)
-		GCabinBasketRep:AddItems("belazCargo03", 1)
-		GCabinBasketRep:AddItems("belazCargo04", 1)
-		GCabinBasketRep:AddItems("belazCargo05", 1)
-		GCabinBasketRep:AddItems("mirotvorecCargo01", 1)
-		GCabinBasketRep:AddItems("mirotvorecCargo02", 1)
-		GCabinBasketRep:AddItems("mirotvorecCargo03", 1)
-		GCabinBasketRep:AddItems("mirotvorecCargo04", 1)
-		GCabinBasketRep:AddItems("bugCab02", 1)
-		GCabinBasketRep:AddItems("bugCab03", 1)
-		GCabinBasketRep:AddItems("molokovozCab02", 1)
-		GCabinBasketRep:AddItems("molokovozCab03", 1)
-		GCabinBasketRep:AddItems("belazCab01", 1)
-		GCabinBasketRep:AddItems("belazCab02", 1)
-		GCabinBasketRep:AddItems("belazCab03", 1)
-		GCabinBasketRep:AddItems("belazCab04", 1)
-		GCabinBasketRep:AddItems("belazCab05", 1)
-		GCabinBasketRep:AddItems("belazCab03", 1)
-		GCabinBasketRep:AddItems("belazCab04", 1)
-		GCabinBasketRep:AddItems("belazCab05", 1)
-		GCabinBasketRep:AddItems("mirotvorecCab01", 1)
-		GCabinBasketRep:AddItems("mirotvorecCab02", 1)
-		GCabinBasketRep:AddItems("mirotvorecCab03", 1)
-		GCabinBasketRep:AddItems("mirotvorecCab04", 1)
-		GCabinBasketRep:AddItems("uralCab02", 1)
-		GCabinBasketRep:AddItems("uralCab03", 1)
-		GCabinBasketRep:AddItems("uralCab04", 1)
-		GCabinBasketRep:AddItems("mirotvorecCab04", 1)
-		GCabinBasketRep:AddItems("uralCab02", 1)
-		GCabinBasketRep:AddItems("uralCab03", 1)
-		GCabinBasketRep:AddItems("uralCab04", 1)
-		DevPrint("AddSaleItems: Cabs and baskets added to Gadad.")
-	end
-
-	-- Kazif --
-	
-	if KaVehiclesRepo then
-		KaVehiclesRepo:AddItems("UralForSale", 1)
-		KaVehiclesRepo:AddItems("BelazForSale", 1)
-		KaVehiclesRepo:AddItems("MirotvorecForSale", 1)
-		DevPrint("AddSaleItems: Prototypes added to Kazif.")
-	end
-
-	if KCabinBasketRep then
-		KCabinBasketRep:AddItems("bugCargo02", 1)
-		KCabinBasketRep:AddItems("bugCargo03", 1)
-		KCabinBasketRep:AddItems("molokovozCargo02", 1)
-		KCabinBasketRep:AddItems("molokovozCargo03", 1)
-		KCabinBasketRep:AddItems("uralCargo01", 1)
-		KCabinBasketRep:AddItems("uralCargo02", 1)
-		KCabinBasketRep:AddItems("uralCargo04", 1)
-		KCabinBasketRep:AddItems("belazCargo01", 1)
-		KCabinBasketRep:AddItems("belazCargo02", 1)
-		KCabinBasketRep:AddItems("belazCargo03", 1)
-		KCabinBasketRep:AddItems("belazCargo05", 1)
-		KCabinBasketRep:AddItems("belazCargo03", 1)
-		KCabinBasketRep:AddItems("belazCargo05", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo01", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo02", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo03", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo04", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo05", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo03", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo04", 1)
-		KCabinBasketRep:AddItems("mirotvorecCargo05", 1)
-		KCabinBasketRep:AddItems("bugCab02", 1)
-		KCabinBasketRep:AddItems("bugCab03", 1)
-		KCabinBasketRep:AddItems("molokovozCab02", 1)
-		KCabinBasketRep:AddItems("molokovozCab03", 1)
-		KCabinBasketRep:AddItems("belazCab01", 1)
-		KCabinBasketRep:AddItems("belazCab02", 1)
-		KCabinBasketRep:AddItems("belazCab03", 1)
-		KCabinBasketRep:AddItems("belazCab05", 1)
-		KCabinBasketRep:AddItems("belazCab03", 1)
-		KCabinBasketRep:AddItems("belazCab05", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab01", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab02", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab03", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab04", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab05", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab03", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab04", 1)
-		KCabinBasketRep:AddItems("mirotvorecCab05", 1)
-		KCabinBasketRep:AddItems("uralCab01", 1)
-		KCabinBasketRep:AddItems("uralCab02", 1)
-		KCabinBasketRep:AddItems("uralCab04", 1)
-		DevPrint("AddSaleItems: Cabs and baskets added to Kazif.")
+		if cabinRepo then
+			for _, item in ipairs(shop.cargo) do cabinRepo:AddItems(item, 1) end
+			for _, item in ipairs(shop.cabs)  do cabinRepo:AddItems(item, 1) end
+			DevPrint("AddSaleItems: Cabs and baskets added to " .. shop.name .. ".")
+		end
 	end
 end
 
@@ -1728,15 +1716,13 @@ function ShowGoodEndNarrator()
 		AddCinematicMessage(77777, 0.5)
 		AddCinematicMessage(777771, 0.5)
 	else
-		LOG("TCoH.lua ERROR: 'lang' is not in [RU, EN] or not defined!")
-		LOG("'lang' is: "..lang)
-		LOG("Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
+		TCoH_langError()
 	end
 end
 
 function AlfaAmbushSpawn(int)
 	if int == 0 then
-		CreateTeam("AlfaAmbush0",1062,CVector(2572.051, 267.215, 3917.664),{"DemoMolokovoz1","BezHunter", "UralShot"})
+		CreateTeam("AlfaAmbush0",1025,CVector(2572.051, 267.215, 3917.664),{"DemoMolokovoz1","BezHunter", "UralShot"})
 
 		for i=0,2 do
 			local AlAmVeh = getObj("AlfaAmbush0_vehicle_"..i)
@@ -1748,7 +1734,7 @@ function AlfaAmbushSpawn(int)
 
 		return true
 	elseif int == 1 then
-		CreateTeam("AlfaAmbush1",1062,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","TankBez", "Hunter01"})
+		CreateTeam("AlfaAmbush1",1025,CVector(2572.051, 267.215, 3917.664),{"UralStartBez","TankBez", "Hunter01"})
 
 		for i=0,2 do
 			local AlAmVeh = getObj("AlfaAmbush1_vehicle_"..i)
@@ -1760,7 +1746,7 @@ function AlfaAmbushSpawn(int)
 
 		return true
 	elseif int == 2 then
-		CreateTeam("AlfaAmbush2",1062,CVector(2572.051, 267.215, 3917.664),{"Hunter01","BelazShot", "Hunter01"})
+		CreateTeam("AlfaAmbush2",1025,CVector(2572.051, 267.215, 3917.664),{"Hunter01","BelazShot", "Hunter01"})
 
 		for i=0,2 do
 			local AlAmVeh = getObj("AlfaAmbush2_vehicle_"..i)
@@ -1772,10 +1758,78 @@ function AlfaAmbushSpawn(int)
 
 		return true
 	else
-		LOG("TCoH.lua ERROR in AlfaAmbushSpawn function: Invalid value!")
+		LOG("[E] TCoH.lua ERROR in AlfaAmbushSpawn function: Invalid value!")
 		return false
 	end
 end
+
+function MadmanInvasionTimerDeactivate()
+    local triggers = {
+        "Repel_timer",
+        "Repel_timer_120sec",
+        "Repel_timer_60sec",
+        "Repel_timer_30sec",
+        "Repel_timer_15sec",
+        "Repel_timerexpires"
+    }
+
+    DevLOG("MadmanInvasionTimerDeactivate: Deactivating all triggers...")
+    for _, triggerName in ipairs(triggers) do
+        TDeactivate(triggerName)
+        DevLOG("MadmanInvasionTimerDeactivate: TDeactivate called for '" .. triggerName .. "'")
+    end
+
+    DevLOG("MadmanInvasionTimerDeactivate: Checking triggers status...")
+    local retryTriggers = {}
+    for _, triggerName in ipairs(triggers) do
+        if getObj(triggerName):IsActivated() == 1 then
+            DevLOG("MadmanInvasionTimerDeactivate: '" .. triggerName .. "' is still active, retrying deactivation...")
+            TDeactivate(triggerName)
+            retryTriggers[triggerName] = true
+        else
+            DevLOG("MadmanInvasionTimerDeactivate: '" .. triggerName .. "' is deactivated OK")
+        end
+    end
+
+    DevLOG("MadmanInvasionTimerDeactivate: Re-checking retried triggers...")
+    for triggerName, _ in pairs(retryTriggers) do
+        if getObj(triggerName):IsActivated() == 1 then
+            DevLOG("MadmanInvasionTimerDeactivate: ERROR - '" .. triggerName .. "' still active after retry!")
+            LOG("ERROR: Trigger '" .. triggerName .. "' still activated after deactivation!")
+        else
+            DevLOG("MadmanInvasionTimerDeactivate: '" .. triggerName .. "' is deactivated OK after retry")
+        end
+    end
+
+    DevLOG("MadmanInvasionTimerDeactivate: Done.")
+end
+
+function QuestInvasionMusicCheck()
+	local Q_State = GetVar("InvasionStatus").AsInt
+
+	if Q_State == 1 or Q_State == 2 or Q_State == 3 then
+		PlayCustomMusic("Passage02a")
+	elseif Q_State == 4 then	
+		PlayCustomMusic("battle01")
+	end
+
+	return Q_State
+end
+
+function TCoH_langError()
+	LOG('[E] TCoH ERROR: "lang" is not in [RU, EN] or not defined!')
+	LOG('[E] "lang" is: '..lang)
+	LOG('[E] Mod version is: '..version)
+	LOG('[E] Mod build is: '..build)
+	LOG("[E] Report: https://github.com/stakanyash/The-Chronicle-of-Hamza/issues/new")
+	
+	println("ExM: TCoH has encountered an ERROR! Check exmachina.log for more info.")
+	SpawnMessageBox("666")
+end
+
+-- End of TCoH functions --
+
+-- Borrowings starts here --
 
 -- E Jet's function --
 -- Returns all player weapon slots as a table converted to a string --
@@ -1826,4 +1880,48 @@ function GetListOfPlayerGuns()
     table.remove(ListOfPlayerGuns)
     end
     return ListOfPlayerGuns
+end
+
+-- ExM: apaTche function --
+-- function that allows for an easy fix of trigger duplication caused by GE_TIME_PERIOD timer
+
+function TimerHack(seconds, unique_id)
+	local retVal = true
+	local currentTime = "etto"..os.time()
+	currentTime = string.sub(currentTime, 9)
+	if math.floor(seconds)~=seconds then
+		currentTime = os.clock()
+	end
+	local triggerID = ""
+	if unique_id then
+		triggerID = triggerID..unique_id
+	end
+
+	previousTime = GetVar("PreviousTime"..triggerID).AsInt
+	if previousTime ~= -1 then
+		previousTime = tonumber(GetVar("PreviousTime"..triggerID).AsString)
+		DevLOG("currentTime is "..currentTime..", previousTime is "..previousTime)
+	end
+	
+	if previousTime <= 0 then
+		DevLOG("previousTime is undefined")
+		previousTime = currentTime
+		SetVar("PreviousTime"..triggerID, previousTime)
+	end
+
+	local timeDifference = math.abs(currentTime - previousTime)
+	if seconds >= 10 then
+		timeDifference = timeDifference + 1
+	elseif seconds < 1 then
+		timeDifference = timeDifference + 0.025
+	end
+
+	DevLOG("timeDifference is "..timeDifference)
+	if seconds <= timeDifference then
+		DevLOG("it's more than "..seconds)
+		retVal = false
+		SetVar("PreviousTime"..triggerID, currentTime)
+	end
+
+	return retVal
 end

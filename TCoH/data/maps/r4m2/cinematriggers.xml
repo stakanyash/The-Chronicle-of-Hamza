@@ -1614,8 +1614,27 @@
 
 			SetCameraBehindPlayerVehicle()
 
-			TActivate("MansurLeaves_cs_start")
+			TActivate("MadmanBaseFight_autosave_tr")
 
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MadmanBaseFight_autosave_tr"	active="0">
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("MadmanBaseFight_autosave").AsInt == 1 then
+				SetVar("MadmanBaseFight_autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("База безумцев")
+				elseif lang == "EN" then
+					AutoSave("Madman's base")
+				else
+					TCoH_langError()
+				end
+			end
+			
 			trigger:Deactivate()
 		</script>
 	</trigger>

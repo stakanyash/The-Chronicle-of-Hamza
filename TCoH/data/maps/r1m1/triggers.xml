@@ -11,6 +11,8 @@
 
 			SetVar("GL_BadFeelStage", 0)
 
+			SetVar("GTO_AutoSave", 1)
+
 		    trigger:Deactivate()
 		</script>
 	</trigger>
@@ -452,7 +454,17 @@
 	<trigger Name="AutoSave_GTO_tr" active="0">
 		<event timeout="0.5" eventid="GE_TIME_PERIOD" />
 		<script>
-			AutoSave()
+			if GetVar("GTO_AutoSave").AsInt == 1 then
+				SetVar("GTO_AutoSave", 0)
+
+				if lang == "RU" then
+					AutoSave("Направиться к Оракулу")
+				elseif lang == "EN" then
+					AutoSave("Go to Oracle")
+				else
+					TCoH_langError()
+				end
+			end
 
 			AllowSave(false)
 

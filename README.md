@@ -4,7 +4,7 @@
 <div align="center">
   
 ![status](https://img.shields.io/badge/status-released-green)
-![version](https://img.shields.io/badge/version-1.3-blue)
+![version](https://img.shields.io/badge/version-1.3.1-blue)
 ![language](https://img.shields.io/badge/language-RU%20%7C%20EN-purple)
 
 </div>
@@ -89,6 +89,8 @@
 - Музыка в титрах по одной из концовок: **Gnome627 - [Quiet Dialogue (extended, remixed)](https://youtu.be/bhsTFClFSjo)**
 
 - Некоторые скрипты, автор: **[E Jet](https://github.com/ejetaxeblevich)**
+
+- Некоторые скрипты: **[apaTche](https://github.com/lyokhatankist/ExM-apaTche), автор: [nEmPoBu4](https://github.com/lyokhatankist)**
 
 - Слайды в концовках, музыка в тупиковой концовке Зармека: **[Impoved Storyline](https://github.com/zatinu322/ImprovedStoryline)**, автор: **[pavlikRPG](https://github.com/zatinu322/)**
 

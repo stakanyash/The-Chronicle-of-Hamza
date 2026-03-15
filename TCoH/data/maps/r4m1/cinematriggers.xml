@@ -641,8 +641,6 @@
 		</script>
 	</trigger>
 
-
-	<!-- пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ -->
 	<trigger	Name="cinPriezdFirst"	active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
 		<script>
@@ -725,7 +723,6 @@
 		</script>
 	</trigger>
 
-	<!-- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ -->
 	<trigger Name="trENEMYLISA_DEAD" active="0">
 		<event eventid="GE_VEHICLE_WITHOUT_HEALTH" ObjName="ENEMYLISA_vehicle_0" />
 		<event	timeout="60"		eventid="GE_TIME_PERIOD" />
@@ -845,8 +842,6 @@
 			trigger:Deactivate()
 		</script>
 	</trigger>
-
-	<!-- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ -->
 
 	<trigger Name="cinMovePlToR2M2_begin" active="0">
 		<event	timeout="0.01"		eventid="GE_TIME_PERIOD" />
@@ -1380,6 +1375,8 @@
 
 		TActivate("CreateDadCar")
 
+		TActivate("TCoH_GameStart_AutoSave")
+
 		RestoreAllToleranceStatus()
 
 		SetCameraBehindPlayerVehicle()
@@ -1387,6 +1384,25 @@
 		StopPlayingCustomMusic()
 
         trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="TCoH_GameStart_AutoSave" active="0">
+		<event	timeout="0.5"			eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("GameStart_AutoSave").AsInt == 1 then
+				SetVar("GameStart_AutoSave", 0)
+
+				if lang == "RU" then
+					AutoSave("Начало игры")
+				elseif lang == "EN" then
+					AutoSave("Start of the game")
+				else
+					TCoH_langError()
+				end
+			end
+
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -1510,13 +1526,33 @@
 		</script>
 	</trigger>
 
+	<trigger Name="TCoH_AfterRace_AutoSave" active="0">
+		<event	timeout="0.5"			eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("AfterRace_AutoSave").AsInt == 1 then
+				SetVar("AfterRace_AutoSave", 0)
+
+				if lang == "RU" then
+					AutoSave("После гонки")
+				elseif lang == "EN" then
+					AutoSave("After race")
+				else
+					TCoH_langError()
+				end
+			end
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
 	<trigger Name="all_sale_added_fading" active="0">
 		<event	timeout="1"			eventid="GE_TIME_PERIOD" />
 		<script>
-		AddFadingMsgId( "fm_all_sale_added" )
-		AddImportantFadingMsgByStrIdFormatted( "fm_all_sale_added" )
+			AddFadingMsgId( "fm_all_sale_added" )
+			AddImportantFadingMsgByStrIdFormatted( "fm_all_sale_added" )
 
-        trigger:Deactivate()
+			TActivate("TCoH_AfterRace_AutoSave")
+				
+			trigger:Deactivate()
 		</script>
 	</trigger>
 
@@ -2482,8 +2518,6 @@
 
 			TActivate("CoastBtl_autosave")
 
-			SetVar("CoastAutoSave", 0)
-
 			TActivate("AivanJrDies")
 			TActivate("OneOfBuharaDies")
 			TActivate("MansurDiesOnBuharaAndJrDefend")
@@ -2498,9 +2532,16 @@
 	<trigger	Name="CoastBtl_autosave"	active="0">
 		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
 		<script>
-			if GetVar("CoastAutoSave").AsInt == 0 then
-				SetVar("CoastAutoSave", 1)
-				AutoSave()
+			if GetVar("CoastAutoSave").AsInt == 1 then
+				SetVar("CoastAutoSave", 0)
+
+				if lang == "RU" then
+					AutoSave("Спасение Бухарцев")
+				elseif lang == "EN" then
+					AutoSave("Rescue of the Bukharas")
+				else
+					TCoH_langError()
+				end
 			end
 
 			TActivate("SetToleranceForCoastBattle")
@@ -2653,6 +2694,12 @@
 			StopPlayingCustomMusic()
 			SetCameraBehindPlayerVehicle()
 			RestoreAllToleranceStatus()
+
+			-- Reset Alfaran relationship
+			SetTolerance(1100,1025, RS_ALLY)
+			SetTolerance(1026,1025, RS_NEUTRAL)
+			SetTolerance(1090,1025, RS_ALLY)
+			SetTolerance(1095,1025, RS_ALLY)
 
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active", 1) end
@@ -3226,7 +3273,7 @@
 		<script>
 			AddCinematicMessage( 153, 0.25 )
 
-			MadmanCutsceneNeftegradSpawn()
+			MadmanCutsceneNeftegradSpawn(1)
 
 			SetTolerance(1060, 1062, RS_NEUTRAL)	 
 
@@ -3374,6 +3421,10 @@
 				CCar:Remove()
 			end
 
+			TActivate("InvasionMusicCheck")
+
+			SetVar("InvasionStatus", 1)
+
 			local town1 = GetEntityByName("TheKef")
 			if town1 then town1:SetOpenGateToPlayer( false ) end
 
@@ -3399,10 +3450,21 @@
 	</trigger>
 
 	<trigger	Name="MadmanInvasionAutoSave"	active="0">
-		<event	timeout="0.1"		eventid="GE_TIME_PERIOD" />
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
 		<script>
+			if GetVar("MI_Autosave").AsInt == 1 then
+				SetVar("MI_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Вторжение безумцев: Алихам")
+				elseif lang == "EN" then
+					AutoSave("Madman invasion: Alikham")
+				else
+					TCoH_langError()
+				end
+			end
+
 			AllowSave(false)
-			AutoSave()
 
 			trigger:Deactivate()
 		</script>
@@ -3412,7 +3474,7 @@
 		<event	eventid="GE_OBJECT_LEAVES_LOCATION"	ObjName="InvasionActivate_loc" />
 		<script>
 			TActivate("RepelAliham_enter_time")
-			TActivate("RepelAliham_timer")
+			TActivate("Repel_timer")
 
 			trigger:Deactivate()
 		</script>
@@ -3442,12 +3504,7 @@
 				vehPlayer:SetCustomControlEnabled( false )
 			end
 			
-			TDeactivate("RepelAliham_timer")
-			TDeactivate("RepelAliham_timer_120sec")
-			TDeactivate("RepelAliham_timer_60sec")
-			TDeactivate("RepelAliham_timer_30sec")
-			TDeactivate("RepelAliham_timer_15sec")
-			TDeactivate("RepelAliham_timerexpires")
+			MadmanInvasionTimerDeactivate()
 
 			TActivate("AlihamDefended_cs_end")
 
@@ -3461,8 +3518,7 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-			TActivate("RepelGadad_timer")
-			TActivate("RepelGadad_enter")
+			TActivate("RepelGadad_Activate")
 
 			GadadBotSpawn()
 
@@ -3472,6 +3528,31 @@
 			RestoreAllToleranceStatus()
 
 			SetCameraBehindPlayerVehicle()
+
+			SetVar("InvasionStatus", 2)
+
+			TActivate("MI_Gadad_Autosave_tr")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MI_Gadad_Autosave_tr"	active="0">
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("MI_Gadad_Autosave").AsInt == 1 then
+				SetVar("MI_Gadad_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Вторжение безумцев: Гадад")
+				elseif lang == "EN" then
+					AutoSave("Madman invasion: Gadad")
+				else
+					TCoH_langError()
+				end
+			end
+
+			AllowSave(false)
 
 			trigger:Deactivate()
 		</script>
@@ -3575,12 +3656,7 @@
 				vehPlayer:SetCustomControlEnabled( false )
 			end
 			
-			TDeactivate("RepelGadad_timer")
-			TDeactivate("RepelGadad_timer_120sec")
-			TDeactivate("RepelGadad_timer_60sec")
-			TDeactivate("RepelGadad_timer_30sec")
-			TDeactivate("RepelGadad_timer_15sec")
-			TDeactivate("RepelGadad_timerexpires")
+			MadmanInvasionTimerDeactivate()
 
 			TActivate("GadadDefended_cs_end")
 
@@ -3596,8 +3672,7 @@
 		<event eventid="GE_END_CINEMATIC" ObjName="Player1" />
 		<event eventid="GE_SKIP_CINEMATIC" ObjName="Player1" />
 		<script>
-			TActivate("RepelKef_timer")
-			TActivate("RepelKef_enter")
+			TActivate("RepelKef_launch")
 
 			CompleteQuest("RepelMadmanInvasionGadad_quest")
 			TakeQuest("RepelMadmanInvasionKef_quest")
@@ -3605,6 +3680,31 @@
 			RestoreAllToleranceStatus()
 
 			SetCameraBehindPlayerVehicle()
+
+			SetVar("InvasionStatus", 3)
+
+			TActivate("MI_Kef_Autosave_tr")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MI_Kef_Autosave_tr"	active="0">
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("MI_Kef_Autosave").AsInt == 1 then
+				SetVar("MI_Kef_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Вторжение безумцев: Кеф")
+				elseif lang == "EN" then
+					AutoSave("Madman invasion: Kef")
+				else
+					TCoH_langError()
+				end
+			end
+
+			AllowSave(false)
 
 			trigger:Deactivate()
 		</script>
@@ -3705,12 +3805,7 @@
 				Father:SetSkin(Fskin)
 			end
 
-			TDeactivate("RepelKef_timer")
-			TDeactivate("RepelKef_timer_120sec")
-			TDeactivate("RepelKef_timer_60sec")
-			TDeactivate("RepelKef_timer_30sec")
-			TDeactivate("RepelKef_timer_15sec")
-			TDeactivate("RepelKef_timerexpires")
+			MadmanInvasionTimerDeactivate()
 			
 			TActivate("KefDefended_cs_171msg")
 			TActivate("KefDefended_cs_end")
@@ -3730,7 +3825,7 @@
 		<script>
 			PlayCustomMusic("Passage04")
 
-			MadmanCutsceneNeftegradSpawn()
+			MadmanCutsceneNeftegradSpawn(2)
 
 			SetTolerance(1062, 1060, RS_ENEMY)
 
@@ -3793,17 +3888,43 @@
 			MadmanCutsceneNeftegradRemove()
 			NeftegradBotSpawn()
 
-			SetTolerance(1025,1100,RS_ALLY)
-			SetTolerance(1025,1090,RS_ALLY)
-			SetTolerance(1025,1095,RS_ALLY)
+			TDeactivate("PlayerTP_KefDefended")
 
-			TActivate("RepelNG_enter")
-			TActivate("RepelNG_timer")
+			TActivate("RepelNG_Autosave")
 			TActivate("ConnectAiven_defendNG")
 			TActivate("ConnectMansur_defendNG")
 			TActivate("ConnectFather_defendNG")
 
+			SetTolerance(1025,1100,RS_ALLY)
+			SetTolerance(1025,1090,RS_ALLY)
+			SetTolerance(1025,1095,RS_ALLY)
+
+			SetVar("InvasionStatus", 4)
+
+			TActivate("MI_NG_Autosave_tr")
+
 			PlayCustomMusic("Battle01")
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MI_NG_Autosave_tr"	active="0">
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("MI_NG_Autosave").AsInt == 1 then
+				SetVar("MI_NG_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Вторжение безумцев: Нефтеград")
+				elseif lang == "EN" then
+					AutoSave("Madman invasion: Oilburg")
+				else
+					TCoH_langError()
+				end
+			end
+
+			AllowSave(false)
 
 			trigger:Deactivate()
 		</script>
@@ -4018,6 +4139,8 @@
 
 			AllowSave(true)
 
+			TActivate("MI_End_Autosave_tr")
+
 			local town1 = GetEntityByName("TheKef")
 			if town1 then town1:SetOpenGateToPlayer( true ) end
 
@@ -4035,6 +4158,27 @@
 
 			local a = GetEntityByName("StartGonka_loc")
 			if a then a:SetProperty("Active",1) end
+
+			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger	Name="MI_End_Autosave_tr"	active="0">
+		<event	timeout="0.5"		eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("MI_End_Autosave").AsInt == 1 then
+				SetVar("MI_End_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Вернуться в Кеф")
+				elseif lang == "EN" then
+					AutoSave("Return to Kef")
+				else
+					TCoH_langError()
+				end
+			end
+
+			AllowSave(false)
 
 			trigger:Deactivate()
 		</script>

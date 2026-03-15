@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
 <DynamicScene
-	LastId="1221">
+	LastId="1223">
 	<TargetNamesForDestroy
 		Names="urod1 urod2 urod3 urod4 urod5 urod6 urod7 urod8 urod9" />
 
@@ -19657,7 +19657,7 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="5479.287 248.997 6598.525"
-		Radius="100.000" />
+		Radius="250.000" />
 
 	<Object
 		Name="BanditKefSpawn1"
@@ -20066,6 +20066,13 @@
 		Radius="1.000" />
 
 	<Object
+		Name="Neftegrad_attack_loc_3"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="6427.443 270.788 3543.893"
+		Radius="1.000" />
+
+	<Object
 		Name="Kef_Defend_loc_0"
 		Belong="1100"
 		Prototype="genericLocation"
@@ -20431,18 +20438,14 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="2648.750 291.328 5682.759"
-		Radius="100.000" />
+		Radius="180.000" />
 
 	<Object
 		Name="AlfaZasada_spawn_loc_1"
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="2309.698 268.457 4957.377"
-		Radius="70.000" />
-
-	<Object
-		Belong="1100"
-		Prototype="someRecollection" />
+		Radius="140.000" />
 
 	<Object
 		Name="AlfaZasada_spawn_2_veh_loc_0"
@@ -20470,5 +20473,17 @@
 		Belong="1100"
 		Prototype="genericLocation"
 		Pos="2533.867 268.983 3983.678"
-		Radius="10.000" />
+		Radius="150.000" />
+
+	<Object
+		Flags="21"
+		Name="MI_ToOilburg_loc"
+		Belong="1100"
+		Prototype="genericLocation"
+		Pos="6410.669 251.038 5035.398"
+		Radius="100.000" />
+
+	<Object
+		Belong="1100"
+		Prototype="someRecollection" />
 </DynamicScene>

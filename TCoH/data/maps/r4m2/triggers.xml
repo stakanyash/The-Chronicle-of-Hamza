@@ -8,6 +8,7 @@
 			SetVar("ScientistTalk", 0)
 			SetVar("AivenJrTalk", 0)
 			SetVar("GL_PlateClose", 0)
+			SetVar("MadmanBaseFight_autosave", 1)
 
 			SetTolerance(1100, 1093, RS_ALLY)
 			SetTolerance(1095, 1093, RS_ALLY)

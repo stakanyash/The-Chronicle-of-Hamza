@@ -177,7 +177,18 @@
 					TActivate("HintTimer_start")
 					local c = SpawnMessageBox("8001")
 					if c==1 then
-						AutoSave()
+						if GetVar("DoD_AutoSave").AsInt == 1 then
+							SetVar("DoD_AutoSave", 0)
+
+							if lang == "RU" then
+								AutoSave("Найти Серго")
+							elseif lang == "EN" then
+								AutoSave("Find Sergo")
+							else
+								TCoH_langError()
+							end
+						end
+						
 						AllowSave(false)
 					end
 					GL_Trigger = false
@@ -508,7 +519,26 @@
 			ConnectAivenDD()
 			ConnectMansurDD()
 
+			TActivate("BTV_Autosave_tr")
+
 			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="BTV_Autosave_tr" active="0">
+		<event timeout="0.5" eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("BTV_Autosave").AsInt == 1 then
+				SetVar("BTV_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Поиск Серго: Вернуться в Вахат")
+				elseif lang == "EN" then
+					AutoSave("Search Sergo: Return to Vahat")
+				else
+					TCoH_langError()
+				end
+			end
 		</script>
 	</trigger>
 
@@ -572,7 +602,26 @@
 
 			AllowSave(true)
 
+			TActivate("BF_BTV_Autosave_tr")
+
 			trigger:Deactivate()
+		</script>
+	</trigger>
+
+	<trigger Name="BF_BTV_Autosave_tr" active="0">
+		<event timeout="0.5" eventid="GE_TIME_PERIOD" />
+		<script>
+			if GetVar("BF_BTV_Autosave").AsInt == 1 then
+				SetVar("BF_BTV_Autosave", 0)
+
+				if lang == "RU" then
+					AutoSave("Конец близок: Вернуться в Вахат")
+				elseif lang == "EN" then
+					AutoSave("The end is near: Return to Vahat")
+				else
+					TCoH_langError()
+				end
+			end
 		</script>
 	</trigger>
 </triggers>
