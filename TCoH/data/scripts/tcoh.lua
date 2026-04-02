@@ -112,7 +112,7 @@ function CreateRacers()
 	F[1] = CreateVehicleEx("UralRace00", "Formula1", CVector(getPos("RaceStart"..positions[WinningRandom][1].."_loc"))+CVector(0,1,0), 1100)
 	F[2] = CreateVehicleEx("UralRace01", "Formula2", CVector(getPos("RaceStart"..positions[WinningRandom][2].."_loc"))+CVector(0,1,0), 1100)
 	F[3] = CreateVehicleEx("UralMansurRace", "Formula3", CVector(getPos("RaceStart"..positions[WinningRandom][3].."_loc"))+CVector(0,1,0), 1100)
-	F[4] = CreateVehicleEx("UralRace02", "Formula4", CVector(getPos("RaceStart"..positions[WinningRandom][4].."_loc"))+CVector(0,1,0), 1100)
+	F[4] = CreateVehicleEx("UralRace01", "Formula4", CVector(getPos("RaceStart"..positions[WinningRandom][4].."_loc"))+CVector(0,1,0), 1100)
 
 	for i=1,4 do
 		if F[i] then 
@@ -155,7 +155,7 @@ function CreateRacers()
 		FVeh3:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
 	end
 
-	local FVeh4 = CreateVehicleEx("UralRace02", "Formula4_1", CVector(getPos("RaceSpec_1_1M_loc"))+CVector(0,1,0), 1100)
+	local FVeh4 = CreateVehicleEx("UralRace01", "Formula4_1", CVector(getPos("RaceSpec_1_1M_loc"))+CVector(0,1,0), 1100)
 	if FVeh4 then
 		FVeh4:SetRotation(Quaternion(0.014, -0.011, -0.010, 1.000))
 	end

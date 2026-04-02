@@ -1,3 +1,7 @@
+### Version 1.3.1 [260402a]
+
+- Race quest hotfix
+
 ### Version 1.3.1 [260315a]
 
 - #### Bugfixes:
